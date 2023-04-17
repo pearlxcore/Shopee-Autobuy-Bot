@@ -18,13 +18,11 @@ namespace Shopee_Autobuy_Bot
 
         private void Warning_Load(object sender, EventArgs e)
         {
-
             darkCheckBoxTomorrow.Checked = Properties.Settings.Default.DontShowThisAgain;
         }
 
         private void darkCheckBoxTomorrow_CheckedChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace Shopee_Autobuy_Bot.Class
+namespace Shopee_Autobuy_Bot.Utililties
 {
     public class ChromeDriverHelper
     {

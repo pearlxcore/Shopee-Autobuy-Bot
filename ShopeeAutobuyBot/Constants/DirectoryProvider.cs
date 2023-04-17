@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Shopee_Autobuy_Bot.Constant
+namespace Shopee_Autobuy_Bot.Constants
 {
     public static class DirectoryProvider
     {
@@ -9,7 +9,5 @@ namespace Shopee_Autobuy_Bot.Constant
         public static readonly string LogDirectory = Environment.CurrentDirectory + @"\Logs\";
         public static readonly string ShopeeAccountDirectory = Environment.CurrentDirectory + @"\Shopee Account\";
         public static readonly string CurrentDirectory = Environment.CurrentDirectory + "\\";
-
-
     }
 }

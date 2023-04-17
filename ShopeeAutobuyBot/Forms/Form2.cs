@@ -2,8 +2,9 @@
 using Newtonsoft.Json;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using Shopee_Autobuy_Bot.Class;
-using Shopee_Autobuy_Bot.Constant;
+using Shopee_Autobuy_Bot.Constants;
+using Shopee_Autobuy_Bot.Models;
+using Shopee_Autobuy_Bot.Utililties;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,7 +18,7 @@ using System.Net;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
-using static Shopee_Autobuy_Bot.Helper;
+using static Shopee_Autobuy_Bot.Utililties.Helper;
 
 namespace Shopee_Autobuy_Bot
 {

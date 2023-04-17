@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Shopee_Autobuy_Bot
+namespace Shopee_Autobuy_Bot.Utililties
 {
     public static class RichTextBoxExtensions
     {
@@ -24,7 +20,7 @@ namespace Shopee_Autobuy_Bot
                 box.SelectionColor = box.ForeColor;
             }
             catch { }
-        
+
         }
 
         public static void DoubleBuffered(this DataGridView dgv, bool setting)

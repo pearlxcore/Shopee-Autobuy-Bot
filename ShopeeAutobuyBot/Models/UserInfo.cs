@@ -1,8 +1,8 @@
-﻿namespace Shopee_Autobuy_Bot
+﻿namespace Shopee_Autobuy_Bot.Models
 {
     public class UserInfo
     {
-        public string? status { get; set; }
+        public string status { get; set; }
         public string id { get; set; }
         public string password { get; set; }
         public string name { get; set; }

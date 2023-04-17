@@ -3,8 +3,9 @@ using Newtonsoft.Json;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
-using Shopee_Autobuy_Bot.Class;
-using Shopee_Autobuy_Bot.Constant;
+using Shopee_Autobuy_Bot.Constants;
+using Shopee_Autobuy_Bot.Models;
+using Shopee_Autobuy_Bot.Utililties;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,9 +21,10 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Timers;
 using System.Windows.Forms;
-using static Shopee_Autobuy_Bot.Class.BotProfileHelper;
-using static Shopee_Autobuy_Bot.Helper;
-using static Shopee_Autobuy_Bot.Helper.Shopee;
+using static Shopee_Autobuy_Bot.Utililties.BotProfileHelper;
+using static Shopee_Autobuy_Bot.Utililties.Helper;
+using static Shopee_Autobuy_Bot.Utililties.Helper.Shopee;
+
 
 namespace Shopee_Autobuy_Bot
 {
@@ -3196,7 +3198,7 @@ namespace Shopee_Autobuy_Bot
 
             var root = new BotProfileModel.Root()
             {
-                profile_name = Class.BotProfileHelper.Name,
+                profile_name = BotProfileHelper.Name,
                 BotSettings = botSettings,
                 ProductDetail = productInfo,
                 Voucher_Coin = voucherInfo,
@@ -3219,7 +3221,7 @@ namespace Shopee_Autobuy_Bot
                 var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
                 File.WriteAllText(profilePath, convertedJson);
             }
-            MessageBox.Show("New profile (" + Class.BotProfileHelper.Name + ") successfully saved into 'profile.setting'", "Profile saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("New profile (" + BotProfileHelper.Name + ") successfully saved into 'profile.setting'", "Profile saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void testCookieToolStripMenuItem_Click(object sender, EventArgs e)

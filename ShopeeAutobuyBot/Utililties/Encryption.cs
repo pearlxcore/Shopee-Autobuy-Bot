@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Shopee_Autobuy_Bot
+namespace Shopee_Autobuy_Bot.Utililties
 {
     public static class EncryptionHelper
     {

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using OpenQA.Selenium;
-using Shopee_Autobuy_Bot.Constant;
+using Shopee_Autobuy_Bot.Constants;
 using System;
 using System.Drawing;
 using System.Globalization;
@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Shopee_Autobuy_Bot
+namespace Shopee_Autobuy_Bot.Utililties
 {
     public class Helper
     {
@@ -47,7 +47,7 @@ namespace Shopee_Autobuy_Bot
             byte[] randomHex = null;
             if (lifetime == true)
             {
-                SerialNumberMagicByte = new String('0', SerialNumberMagicByte.Length);
+                SerialNumberMagicByte = new string('0', SerialNumberMagicByte.Length);
                 hex = HexStringConverter.ToByteArray(SerialNumberMagicByte);
 
                 randomHex = fortyByteOf00;
@@ -99,7 +99,7 @@ namespace Shopee_Autobuy_Bot
         {
             byte[] buffer = new byte[digits / 2];
             random.NextBytes(buffer);
-            string result = String.Concat(buffer.Select(x => x.ToString("X2")).ToArray());
+            string result = string.Concat(buffer.Select(x => x.ToString("X2")).ToArray());
             if (digits % 2 == 0)
                 return result;
             return result + random.Next(16).ToString("X");
@@ -152,7 +152,7 @@ namespace Shopee_Autobuy_Bot
             try
             {
                 Ping myPing = new Ping();
-                String host = "google.com";
+                string host = "google.com";
                 byte[] buffer = new byte[32];
                 int timeout = 1000;
                 PingOptions pingOptions = new PingOptions();
@@ -170,7 +170,7 @@ namespace Shopee_Autobuy_Bot
             try
             {
                 Ping myPing = new Ping();
-                String host = $"{HostProvider.PingHost}";
+                string host = $"{HostProvider.PingHost}";
                 byte[] buffer = new byte[32];
                 int timeout = 1000;
                 PingOptions pingOptions = new PingOptions();
@@ -651,7 +651,7 @@ namespace Shopee_Autobuy_Bot
 
     public static class HexStringConverter
     {
-        public static byte[] ToByteArray(String HexString)
+        public static byte[] ToByteArray(string HexString)
         {
             int NumberChars = HexString.Length;
             byte[] bytes = new byte[NumberChars / 2];

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using static Shopee_Autobuy_Bot.Class.BotProfileHelper;
+using static Shopee_Autobuy_Bot.Utililties.BotProfileHelper;
 
 namespace Shopee_Autobuy_Bot
 {
@@ -33,7 +33,7 @@ namespace Shopee_Autobuy_Bot
                 }
             }
 
-            Class.BotProfileHelper.Name = tbProfileName.Text;
+            Utililties.BotProfileHelper.Name = tbProfileName.Text;
             SaveProfile = true;
             this.Close();
         }

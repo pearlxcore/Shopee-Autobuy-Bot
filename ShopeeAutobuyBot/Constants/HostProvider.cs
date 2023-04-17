@@ -1,4 +1,4 @@
-﻿namespace Shopee_Autobuy_Bot.Constant
+﻿namespace Shopee_Autobuy_Bot.Constants
 {
     public static class HostProvider
     {

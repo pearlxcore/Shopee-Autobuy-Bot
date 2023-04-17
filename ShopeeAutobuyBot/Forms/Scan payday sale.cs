@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
-using Shopee_Autobuy_Bot.Class;
+using Shopee_Autobuy_Bot.Utililties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,14 +9,14 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
-using static Shopee_Autobuy_Bot.Helper;
-using static Shopee_Autobuy_Bot.Helper.QuickBuyMode;
+using static Shopee_Autobuy_Bot.Utililties.Helper;
+using static Shopee_Autobuy_Bot.Utililties.Helper.QuickBuyMode;
 
 namespace Shopee_Autobuy_Bot
 {
     public partial class Scan_payday_sale : DarkUI.Forms.DarkForm
     {
-        ChromeDriverHelper _chromeDriverHelper;
+        private ChromeDriverHelper _chromeDriverHelper;
         private string cookiePaths = "";
         private IContainer components_ = (IContainer)null;
         private JObject jAllSession;
@@ -49,12 +49,10 @@ namespace Shopee_Autobuy_Bot
                     tbLog.AppendText(text, color ?? Color.White, NewLine);
                 }
             }
-
         }
 
         private void Scan_payday_sale_Load(object sender, EventArgs e)
         {
-
             var allcookies = _chromeDriverHelper.driver.Manage().Cookies.AllCookies;
             foreach (var cookie in allcookies)
             {
@@ -63,9 +61,7 @@ namespace Shopee_Autobuy_Bot
                     SPC_EC = "SPC_EC=" + cookie.Value;
                     break;
                 }
-
             }
-
         }
 
         private string postJsonToApi(string json, string url)
@@ -86,11 +82,8 @@ namespace Shopee_Autobuy_Bot
             return response;
         }
 
-
-
         private void darkButtonScan_Click(object sender, EventArgs e)
         {
-
             //darkDataGridView1.DoubleBuffered(true);
             darkButtonScan.Enabled = false;
             var bw = new BackgroundWorker();
@@ -98,7 +91,6 @@ namespace Shopee_Autobuy_Bot
             {
                 try
                 {
-
                     stopScan = false;
                     int next_offset;
                     int total_count;
@@ -127,10 +119,6 @@ namespace Shopee_Autobuy_Bot
                     List<string> listShopId = new List<string>();
                     int i;
 
-
-
-
-
                     DataTable dt = new DataTable();
                     //dt.Columns.Add("itemId");
                     //dt.Columns.Add("shopId");
@@ -146,7 +134,6 @@ namespace Shopee_Autobuy_Bot
 
                     for (i = 150; i <= total_count; i = i + 150)
                     {
-
                         string url_ = "https://shopee.com.my/api/v4/collection/get_items?collection_id=" + collectionId + "&limit=150&show_collection_info=true&source=1&next_offset=" + i.ToString();
                         JObject collectionInfo_ = JObject.Parse(GetJson(url_));
                         JToken errorMsg_ = collectionInfo_["error_msg"];
@@ -164,8 +151,6 @@ namespace Shopee_Autobuy_Bot
                         JToken items = collectionInfo_["data"]["items"];
                         //Logger("items count: " + items.Count().ToString(), new Color?(Color.Blue), true, true, true);
 
-
-
                         if (items.Count() == 0)
                         {
                             darkButtonScan.Enabled = true;
@@ -176,7 +161,6 @@ namespace Shopee_Autobuy_Bot
                         {
                             listItemId.Add(item["item_card_full"]["itemid"].ToString());
                             listShopId.Add(item["item_card_full"]["shopid"].ToString());
-
                         }
 
                         if (stopScan)
@@ -186,14 +170,11 @@ namespace Shopee_Autobuy_Bot
                             break;
                         }
 
-
-
                         //Thread.Sleep(2000);
                         //Logger("", new Color?(Color.Blue), true, true, false);
                     }
 
                     darkLabelStatus.Text = "Listing product (" + total_count + " entry)..";
-
 
                     var numbersAndWords = listItemId.Zip(listShopId, (n, w) => new { itemid = n, shopid = w });
                     foreach (var nw in numbersAndWords)
@@ -205,7 +186,6 @@ namespace Shopee_Autobuy_Bot
                         Console.WriteLine(nw.itemid + nw.shopid);
                         itemId = nw.itemid;
                         shopId = nw.shopid;
-
 
                         string productLinkJson = string.Format("https://shopee.com.my/api/v4/item/get?itemid={0}&shopid={1}", itemId, shopId);
                         url__ = string.Format("https://shopee.com.my/product/{0}/{1}", shopId, itemId);
@@ -274,20 +254,16 @@ namespace Shopee_Autobuy_Bot
                             dt.Rows.Add(name, url__, priceStr, "0", "", "");
                         }
 
-
-
                         try
                         {
                             this.Invoke((Action)(() =>
                             {
                                 darkDataGridView1.DataSource = dt;
                                 darkDataGridView1.FirstDisplayedScrollingRowIndex = darkDataGridView1.RowCount - 1;
-
                             }));
                         }
                         catch
                         {
-
                         }
 
                         if (stopScan)
@@ -296,21 +272,16 @@ namespace Shopee_Autobuy_Bot
 
                             darkButtonScan.Enabled = true;
                             break;
-
                         }
-
                     }
                     darkButtonScan.Enabled = true;
                     darkLabelStatus.Text = "Listing done";
-
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     darkButtonScan.Enabled = true;
-
                 }
-
             };
             bw.RunWorkerCompleted += delegate
             {
@@ -374,11 +345,9 @@ namespace Shopee_Autobuy_Bot
 
             //        }
 
-
             //    }
             //    catch (System.Runtime.InteropServices.ExternalException)
             //    {
-
             //        MessageBox.Show("The Clipboard could not be accessed.", "Error");
             //    }
             //}
@@ -406,9 +375,6 @@ namespace Shopee_Autobuy_Bot
 
                     darkDataGridView1.Columns[3].SortMode =
     DataGridViewColumnSortMode.Automatic;
-
-
-
                 }
             }
             catch (Exception ex) { }
@@ -427,12 +393,9 @@ namespace Shopee_Autobuy_Bot
                         Clipboard.SetText(Convert.ToString(selectedRow.Cells[1].Value));
                         break;
                     }
-
-
                 }
                 catch (System.Runtime.InteropServices.ExternalException)
                 {
-
                     MessageBox.Show("The Clipboard could not be accessed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -451,12 +414,9 @@ namespace Shopee_Autobuy_Bot
                         Process.Start(Convert.ToString(selectedRow.Cells[1].Value));
                         break;
                     }
-
-
                 }
                 catch (System.Runtime.InteropServices.ExternalException)
                 {
-
                     MessageBox.Show("The Clipboard could not be accessed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

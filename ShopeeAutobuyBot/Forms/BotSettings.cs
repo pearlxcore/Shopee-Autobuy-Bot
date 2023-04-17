@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shopee_Autobuy_Bot.Utililties;
+using System;
 using System.Windows.Forms;
 
 namespace Shopee_Autobuy_Bot
@@ -19,7 +20,7 @@ namespace Shopee_Autobuy_Bot
             Properties.Settings.Default.PlaySound = darkCheckBoxPlaySound.Checked;
             Properties.Settings.Default.TestMode = darkCheckBoxTestMode.Checked;
             Properties.Settings.Default.RefreshSeconds = Convert.ToInt32(darkNumericUpDownRefreshSeconds.Value);
-            Shopee_Autobuy_Bot.Helper.Shopee.TimeOut = Properties.Settings.Default.TimeOut = Convert.ToInt32(darkNumericUpDownTimeOut.Value);
+            Helper.Shopee.TimeOut = Properties.Settings.Default.TimeOut = Convert.ToInt32(darkNumericUpDownTimeOut.Value);
             Properties.Settings.Default.Save();
             this.Hide();
         }
