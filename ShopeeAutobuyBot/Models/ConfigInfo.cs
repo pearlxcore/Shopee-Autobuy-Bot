@@ -1,4 +1,4 @@
-﻿namespace Shopee_Autobuy_Bot
+﻿namespace Shopee_Autobuy_Bot.Models
 {
     public class ConfigInfo
     {

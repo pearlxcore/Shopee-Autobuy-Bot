@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
-using Shopee_Autobuy_Bot.Constant;
+using Shopee_Autobuy_Bot.Constants;
+using Shopee_Autobuy_Bot.Models;
 using System;
 using System.IO;
 using System.Net;

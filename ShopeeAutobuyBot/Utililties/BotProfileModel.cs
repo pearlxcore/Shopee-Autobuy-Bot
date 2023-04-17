@@ -1,4 +1,4 @@
-﻿namespace Shopee_Autobuy_Bot.Class
+﻿namespace Shopee_Autobuy_Bot.Utililties
 {
     public class BotProfileModel
     {

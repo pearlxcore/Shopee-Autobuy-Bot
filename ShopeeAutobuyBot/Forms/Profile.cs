@@ -1,10 +1,10 @@
-﻿using Shopee_Autobuy_Bot.Class;
+﻿using Shopee_Autobuy_Bot.Utililties;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using static Shopee_Autobuy_Bot.Class.BotProfileHelper;
+using static Shopee_Autobuy_Bot.Utililties.BotProfileHelper;
 
 
 namespace Shopee_Autobuy_Bot

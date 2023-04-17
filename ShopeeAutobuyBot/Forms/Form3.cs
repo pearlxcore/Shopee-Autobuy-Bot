@@ -1,4 +1,4 @@
-﻿using Shopee_Autobuy_Bot.Constant;
+﻿using Shopee_Autobuy_Bot.Constants;
 using System;
 using System.IO;
 using System.Net;
@@ -21,7 +21,6 @@ namespace Shopee_Autobuy_Bot
 
         private string GetWithResponse(string url)
         {
-
             string html_ = string.Empty;
 
             HttpWebRequest request_ = (HttpWebRequest)WebRequest.Create(url);

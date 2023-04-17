@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Shopee_Autobuy_Bot.Class
+namespace Shopee_Autobuy_Bot.Utililties
 {
     public class BotProfileHelper
     {

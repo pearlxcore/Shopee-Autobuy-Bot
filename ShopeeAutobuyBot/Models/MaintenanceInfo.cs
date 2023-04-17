@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Shopee_Autobuy_Bot
+namespace Shopee_Autobuy_Bot.Models
 {
     public class MaintenanceInfo
     {

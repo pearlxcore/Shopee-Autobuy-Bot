@@ -318,105 +318,104 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiModel\ConfigInfo.cs" />
-    <Compile Include="ApiModel\ElementInfo.cs" />
-    <Compile Include="ApiModel\MaintenanceInfo.cs" />
-    <Compile Include="ApiModel\UpdateInfo.cs" />
-    <Compile Include="ApiModel\UserInfo.cs" />
-    <Compile Include="Class\BotProfileHelper.cs" />
-    <Compile Include="Class\BotProfileModel.cs" />
-    <Compile Include="Class\ChromeDriver.cs" />
-    <Compile Include="Class\ResponseStatus.cs" />
-    <Compile Include="Constant\HostProvider.cs" />
-    <Compile Include="Constant\DirectoryProvider.cs" />
-    <Compile Include="Form\BotSettings.cs">
+    <Compile Include="Models\ConfigInfo.cs" />
+    <Compile Include="Models\ElementInfo.cs" />
+    <Compile Include="Models\MaintenanceInfo.cs" />
+    <Compile Include="Models\UpdateInfo.cs" />
+    <Compile Include="Models\UserInfo.cs" />
+    <Compile Include="Utililties\BotProfileHelper.cs" />
+    <Compile Include="Utililties\BotProfileModel.cs" />
+    <Compile Include="Utililties\ChromeDriver.cs" />
+    <Compile Include="Utililties\ResponseStatus.cs" />
+    <Compile Include="Constants\HostProvider.cs" />
+    <Compile Include="Constants\DirectoryProvider.cs" />
+    <Compile Include="Forms\BotSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\BotSettings.Designer.cs">
+    <Compile Include="Forms\BotSettings.Designer.cs">
       <DependentUpon>BotSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class\db.cs" />
-    <Compile Include="Form\Element Editor.cs">
+    <Compile Include="Forms\Element Editor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Element Editor.Designer.cs">
+    <Compile Include="Forms\Element Editor.Designer.cs">
       <DependentUpon>Element Editor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class\Encryption.cs" />
-    <Compile Include="Form\Form1.cs">
+    <Compile Include="Utililties\Encryption.cs" />
+    <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Form1.Designer.cs">
+    <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Form2.cs">
+    <Compile Include="Forms\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Form2.Designer.cs">
+    <Compile Include="Forms\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Form3.cs">
+    <Compile Include="Forms\Form3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Form3.Designer.cs">
+    <Compile Include="Forms\Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Form4.cs">
+    <Compile Include="Forms\Form4.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Form4.Designer.cs">
+    <Compile Include="Forms\Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class\Helper.cs" />
-    <Compile Include="Form\Profile.cs">
+    <Compile Include="Utililties\Helper.cs" />
+    <Compile Include="Forms\Profile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Profile.Designer.cs">
+    <Compile Include="Forms\Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ProfileName.cs">
+    <Compile Include="Forms\ProfileName.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ProfileName.Designer.cs">
+    <Compile Include="Forms\ProfileName.Designer.cs">
       <DependentUpon>ProfileName.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Class\RichTextBoxExtensions.cs" />
-    <Compile Include="Form\Scan payday sale.cs">
+    <Compile Include="Utililties\RichTextBoxExtensions.cs" />
+    <Compile Include="Forms\Scan payday sale.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Scan payday sale.Designer.cs">
+    <Compile Include="Forms\Scan payday sale.Designer.cs">
       <DependentUpon>Scan payday sale.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Warning.cs">
+    <Compile Include="Forms\Warning.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Warning.Designer.cs">
+    <Compile Include="Forms\Warning.Designer.cs">
       <DependentUpon>Warning.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form\BotSettings.resx">
+    <EmbeddedResource Include="Forms\BotSettings.resx">
       <DependentUpon>BotSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Element Editor.resx">
+    <EmbeddedResource Include="Forms\Element Editor.resx">
       <DependentUpon>Element Editor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Form1.resx">
+    <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Form2.resx">
+    <EmbeddedResource Include="Forms\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Form3.resx">
+    <EmbeddedResource Include="Forms\Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Form4.resx">
+    <EmbeddedResource Include="Forms\Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Profile.resx">
+    <EmbeddedResource Include="Forms\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProfileName.resx">
+    <EmbeddedResource Include="Forms\ProfileName.resx">
       <DependentUpon>ProfileName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -429,10 +428,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Form\Scan payday sale.resx">
+    <EmbeddedResource Include="Forms\Scan payday sale.resx">
       <DependentUpon>Scan payday sale.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Warning.resx">
+    <EmbeddedResource Include="Forms\Warning.resx">
       <DependentUpon>Warning.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -456,9 +455,7 @@
     <Content Include="2015085.ico" />
     <None Include="Resources\htuachecker.exe" />
     <None Include="Resources\chromedriver.exe" />
-    <None Include="bin\Debug\Prod\1.9.2.0\chromedriver.exe" />
     <None Include="Resources\cashing.mp3" />
-    <None Include="bin\Debug\cashing.mp3" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
