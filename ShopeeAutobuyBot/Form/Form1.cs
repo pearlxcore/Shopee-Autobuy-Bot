@@ -24,54 +24,52 @@ using static Shopee_Autobuy_Bot.Class.BotProfileHelper;
 using static Shopee_Autobuy_Bot.Helper;
 using static Shopee_Autobuy_Bot.Helper.Shopee;
 
-
 namespace Shopee_Autobuy_Bot
 {
     public partial class Form1 : DarkUI.Forms.DarkForm
     {
-        ConfigInfo ConfigInfo = new ConfigInfo();
-        UserInfo UserInfo = new UserInfo();
-        BotProfileModel BotProfile;
-        ChromeDriverHelper ChromeDriverHelper = new ChromeDriverHelper();
+        private ConfigInfo ConfigInfo = new ConfigInfo();
+        private UserInfo UserInfo = new UserInfo();
+        private BotProfileModel BotProfile;
+        private ChromeDriverHelper ChromeDriverHelper = new ChromeDriverHelper();
         private string userId { get; set; }
 
-        static string strAtmCashDepo = "//button[contains(@class, 'product-variation') and contains(text(), 'ATM / Cash Deposit')]";
-        static string strCOD = "//button[contains(@class, 'product-variation') and contains(text(), 'Cash on Delivery')]";
+        private static string strAtmCashDepo = "//button[contains(@class, 'product-variation') and contains(text(), 'ATM / Cash Deposit')]";
+        private static string strCOD = "//button[contains(@class, 'product-variation') and contains(text(), 'Cash on Delivery')]";
 
-        static string strRetailStore = "//button[contains(@class, 'product-variation') and contains(text(), 'Cash Payment at Convenience Stores')]";
-        static string strSevenEleven = "//*[@id=\"main\"]/div/div[3]/div[2]/div[4]/div[1]/div/div[2]/div/div/div[1]/div[2]/div/div/div[2]/div/div/div[2]/div[1]";
-        static string strKkMart = "//*[@id=\"main\"]/div/div[3]/div[2]/div[4]/div[1]/div/div[2]/div/div/div[2]/div[2]/div/div/div[2]/div/div/div[2]/div[1]";
+        private static string strRetailStore = "//button[contains(@class, 'product-variation') and contains(text(), 'Cash Payment at Convenience Stores')]";
+        private static string strSevenEleven = "//*[@id=\"main\"]/div/div[3]/div[2]/div[4]/div[1]/div/div[2]/div/div/div[1]/div[2]/div/div/div[2]/div/div/div[2]/div[1]";
+        private static string strKkMart = "//*[@id=\"main\"]/div/div[3]/div[2]/div[4]/div[1]/div/div[2]/div/div/div[2]/div[2]/div/div/div[2]/div/div/div[2]/div[1]";
 
-        static string strShopeePay_5 = "//*[@id=\"main\"]/div/div[3]/div[2]/div[5]/div[1]/div/div[1]/div[2]/span[1]/button";
-        static string strShopeePay_4 = "//*[@id=\"main\"]/div/div[3]/div[2]/div[4]/div[1]/div/div[1]/div[2]/span[1]/button";
-        static string strOnlineBanking = "//button[contains(@class, 'product-variation') and contains(text(), 'Online Banking')]";
-        static string strWrongShopeePayPin = "//p[contains(text(), 'Wrong Wallet PIN')]";
-        static string strBankMaintenance = "//div[contains(@class, 'stardust-popup-content') and contains(text(), 'scheduled system maintenance')]";
-        static string strActivateShopeePayMsg = "//div[contains(@class, 'stardust-popup-content') and contains(text(), 'Please activate your wallet first before checkout.')]";
-        static string strShopeeInsufficientFund = "//div[contains(@class, 'stardust-popup-content') and contains(text(), 'Sorry, you do not have enough balance in your Shopeepay for this payment. Please choose another payment method or top up your ShopeePay to continue.')]";
-        static string strPayNowMaintenance = "//div[contains(@class, 'stardust-popup-content') and contains(text(), 'This payment channel is disabled for maintenance.')]";
+        private static string strShopeePay_5 = "//*[@id=\"main\"]/div/div[3]/div[2]/div[5]/div[1]/div/div[1]/div[2]/span[1]/button";
+        private static string strShopeePay_4 = "//*[@id=\"main\"]/div/div[3]/div[2]/div[4]/div[1]/div/div[1]/div[2]/span[1]/button";
+        private static string strOnlineBanking = "//button[contains(@class, 'product-variation') and contains(text(), 'Online Banking')]";
+        private static string strWrongShopeePayPin = "//p[contains(text(), 'Wrong Wallet PIN')]";
+        private static string strBankMaintenance = "//div[contains(@class, 'stardust-popup-content') and contains(text(), 'scheduled system maintenance')]";
+        private static string strActivateShopeePayMsg = "//div[contains(@class, 'stardust-popup-content') and contains(text(), 'Please activate your wallet first before checkout.')]";
+        private static string strShopeeInsufficientFund = "//div[contains(@class, 'stardust-popup-content') and contains(text(), 'Sorry, you do not have enough balance in your Shopeepay for this payment. Please choose another payment method or top up your ShopeePay to continue.')]";
+        private static string strPayNowMaintenance = "//div[contains(@class, 'stardust-popup-content') and contains(text(), 'This payment channel is disabled for maintenance.')]";
 
-        static string str7TransactionExceeded = "//div[contains(@class, 'stardust-popup-content') and contains(text(), 'You have exceeded the transaction limit')]";
-        static string strInformationUpdated = "//p[contains(text(), 'Some items were out of stock when attempting to place the order. Please review your cart and try again.')]";
-        static string strInformationUpdatedOkButton = "//span[contains(@class, 'stardust-popup-button stardust-popup-button--main') and contains(text(), 'OK')]";
+        private static string str7TransactionExceeded = "//div[contains(@class, 'stardust-popup-content') and contains(text(), 'You have exceeded the transaction limit')]";
+        private static string strInformationUpdated = "//p[contains(text(), 'Some items were out of stock when attempting to place the order. Please review your cart and try again.')]";
+        private static string strInformationUpdatedOkButton = "//span[contains(@class, 'stardust-popup-button stardust-popup-button--main') and contains(text(), 'OK')]";
 
+        private static string strChangeCourier = "//div[contains(@class, '_26DEZ8') and contains(text(), 'change')]";
+        private static string strDeliverAnytime = "//div[contains(text(), 'Deliver any time')]";
+        private static string strSubmitCourier = "//button[contains(text(), 'submit')]";
+        private static string strPayButtonID = "//*[@id=\"pay-button\"]";
+        private static string strShopeePayPin = "//div[contains(@class, 'digit-input active')]";
+        private static string strShopeePayCOnfirm = "//div[contains(@class, 'okText') and contains(text(), 'CONFIRM')]";
+        private static string str7ElevenOk = "//button[contains(@class, '_2W0k_h _2yXzsi') and contains(text(), 'OK')]";
+        private static string strPayCcardLabel = "//div[contains(@class, '_14itN0') and contains(text(), 'Credit / Debit Card')]";
+        private static string strPayCcardButton = "//button[contains(@class, '_2W0k_h _2yXzsi') and contains(text(), 'Pay')]";
+        private static string str7ElevenLabel = "//span[contains(@class, 'tYpued') and contains(text(), 'Cash Payment at 7-Eleven')]";
+        private static string InactiveProducts = "//button[contains(@class, 'clear-btn-style') and contains(text(), 'Remove inactive products')]";
 
-        static string strChangeCourier = "//div[contains(@class, '_26DEZ8') and contains(text(), 'change')]";
-        static string strDeliverAnytime = "//div[contains(text(), 'Deliver any time')]";
-        static string strSubmitCourier = "//button[contains(text(), 'submit')]";
-        static string strPayButtonID = "//*[@id=\"pay-button\"]";
-        static string strShopeePayPin = "//div[contains(@class, 'digit-input active')]";
-        static string strShopeePayCOnfirm = "//div[contains(@class, 'okText') and contains(text(), 'CONFIRM')]";
-        static string str7ElevenOk = "//button[contains(@class, '_2W0k_h _2yXzsi') and contains(text(), 'OK')]";
-        static string strPayCcardLabel = "//div[contains(@class, '_14itN0') and contains(text(), 'Credit / Debit Card')]";
-        static string strPayCcardButton = "//button[contains(@class, '_2W0k_h _2yXzsi') and contains(text(), 'Pay')]";
-        static string str7ElevenLabel = "//span[contains(@class, 'tYpued') and contains(text(), 'Cash Payment at 7-Eleven')]";
-        static string InactiveProducts = "//button[contains(@class, 'clear-btn-style') and contains(text(), 'Remove inactive products')]";
+        private static string ItemNotSelected = "//div[contains(@class, 'shopee-alert-popup__message') and contains(text(), 'You have not selected any items for checkout')]";
+        private static string OrderPrice = "//div[contains(@class, '_4MGXB1')]";
 
-        static string ItemNotSelected = "//div[contains(@class, 'shopee-alert-popup__message') and contains(text(), 'You have not selected any items for checkout')]";
-        static string OrderPrice = "//div[contains(@class, '_4MGXB1')]";
-
-        static string strPleaseSelectVariation = "//div[contains(@class, '_2wGcws') and contains(text(), 'Please select product variation first')]";
+        private static string strPleaseSelectVariation = "//div[contains(@class, '_2wGcws') and contains(text(), 'Please select product variation first')]";
 
         private static Mutex mutex = null;
         public bool DoneSetupQuickBuyMode = false;
@@ -79,8 +77,6 @@ namespace Shopee_Autobuy_Bot
         private IWavePlayer waveOut;
         private Mp3FileReader mp3FileReader;
         private string currentElement;
-
-
 
         public Form1(string userid, ChromeDriverHelper chromeDriverHelper)
         {
@@ -111,33 +107,26 @@ namespace Shopee_Autobuy_Bot
                     richTextBoxLogs.AppendText(text, color ?? Color.White, NewLine);
                 }
             }
-
         }
-
 
         private void darkButton1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void darkButton4_Click(object sender, EventArgs e)
         {
-
         }
 
         private void darkButton3_Click(object sender, EventArgs e)
         {
-
         }
 
         private void darkButton2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void darkButtonStart_Click(object sender, EventArgs e)
         {
-
             new Thread(() =>
             {
                 Thread.CurrentThread.IsBackground = true;
@@ -202,11 +191,8 @@ namespace Shopee_Autobuy_Bot
 
                     if (!darkTextBoxProductLink.Text.Contains("https://shopee.com.my/")) { MessageBox.Show("Link not valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
 
-
-
                     if (darkCheckBoxScheduleBot.Checked)
                     {
-
                         if (darkCheckBoxTomorrow.Checked == true)
                         {
                             //currentday = 12.00am - date.now
@@ -228,7 +214,6 @@ namespace Shopee_Autobuy_Bot
                     else
                     {
                         FlashSale = DateTime.Now/*.AddSeconds(Convert.ToDouble(darkNumericUpDownRefreshSeconds.Value))*/;
-
                     }
 
                     darkButtonDeleteAllOrder.Enabled = false;
@@ -243,12 +228,7 @@ namespace Shopee_Autobuy_Bot
                     {
                         if (radioButtonCheckOutCart.Checked == true || radioButtonPriceSpecificCARTCHECKOUT.Checked == true)
                         {
-
                             ChromeDriverHelper.driver.Navigate().GoToUrl("https://shopee.com.my/cart");
-
-
-
-
                         }
                         else
                             ChromeDriverHelper.driver.Navigate().GoToUrl(darkTextBoxProductLink.Text);
@@ -261,7 +241,6 @@ namespace Shopee_Autobuy_Bot
                             return;
                         }
                     }
-
 
                     int result = 0;
                     string str1 = "";
@@ -292,8 +271,6 @@ namespace Shopee_Autobuy_Bot
                     }
                     ProductLink = str1.TrimEnd('|').Split('|');
 
-
-
                     Logger("Autobuy starts at : " + FlashSale.ToString(), new Color?(), true, true, true);
                     darkButtonStart.Text = "Stop";
                     StartButtonString = darkButtonStart.Text;
@@ -311,15 +288,9 @@ namespace Shopee_Autobuy_Bot
                     darkSectionPanelProductDetails.Enabled = false;
                     darkSectionPanelTimerMode.Enabled = false;
                     darkSectionPanelPaymentDetails.Enabled = false;
-
                 }
             }).Start();
-
-
-
         }
-
-
 
         private void startWorkThread()
         {
@@ -376,15 +347,10 @@ namespace Shopee_Autobuy_Bot
                     {
                         ChromeDriverHelper.driver.Navigate().GoToUrl(darkTextBoxProductLink.Text);
                         ShopeeAutobuy(0, 95, Helper.isLogging);
-
                     }
                     else if (radioButtonCheckOutCart.Checked == true) //checkout form cart
                     {
-
                         ChromeDriverHelper.driver.Navigate().GoToUrl("https://shopee.com.my/cart");
-
-
-
 
                         ShopeeAutobuy(0, 96, Helper.isLogging);
                     }
@@ -395,11 +361,7 @@ namespace Shopee_Autobuy_Bot
                     }
                     else if (radioButtonPriceSpecificCARTCHECKOUT.Checked == true) // price specific CART CHECKOUT
                     {
-
                         ChromeDriverHelper.driver.Navigate().GoToUrl("https://shopee.com.my/cart");
-
-
-
 
                         ShopeeAutobuy(0, 94, Helper.isLogging);
                     }
@@ -416,12 +378,9 @@ namespace Shopee_Autobuy_Bot
                     //    darkSectionPanelProductDetails.Enabled = true;
                     //    darkSectionPanelPaymentDetails.Enabled = true;
 
-
                     //}
                     //else
                     //{
-
-
                     //    darkSectionPanelBotSettings.Enabled = true;
                     //    darkSectionPanelBuyingMode.Enabled = true;
                     //    darkSectionPanelProductDetails.Enabled = true;
@@ -431,11 +390,8 @@ namespace Shopee_Autobuy_Bot
                     //    if (radioButtonPriceSpecificCARTCHECKOUT.Checked == true)
                     //        darkSectionPanelProductDetails.Enabled = false;
 
-
-
                     //    if (radioButtonCheckOutCart.Checked == true)
                     //        darkSectionPanelProductDetails.Enabled = false;
-
 
                     //}
 
@@ -475,12 +431,9 @@ namespace Shopee_Autobuy_Bot
                             //    darkSectionPanelProductDetails.Enabled = true;
                             //    darkSectionPanelPaymentDetails.Enabled = true;
 
-
                             //}
                             //else
                             //{
-
-
                             //    darkSectionPanelBotSettings.Enabled = true;
                             //    darkSectionPanelBuyingMode.Enabled = true;
                             //    darkSectionPanelProductDetails.Enabled = true;
@@ -568,11 +521,11 @@ namespace Shopee_Autobuy_Bot
 
             Helper.SaveToLog.Append(richTextBoxLogs.Text);
 
-
             string output = DirectoryProvider.LogDirectory + "\\" + FlashSale.ToString("yyyy-dd-M--HH-mm-ss") + ".txt";
             File.AppendAllText(output, Helper.SaveToLog.ToString());
             Helper.SaveToLog.Clear();
         }
+
         private void ToTelegram()
         {
             try
@@ -621,12 +574,10 @@ namespace Shopee_Autobuy_Bot
                 string response = sb.ToString();
             }
             catch { }
-
         }
 
         private void IncreaseQuantity()
         {
-
             string strQuantity = "";
             strQuantity = darkNumericUpDownProductQuantity.Value.ToString();
 
@@ -663,7 +614,6 @@ namespace Shopee_Autobuy_Bot
                 //    Thread.Sleep(5);
                 //}
             }
-
         }
 
         private void ShopeeAutobuy(int Try = 0, int step = 1, bool isLogging = true)
@@ -673,12 +623,6 @@ namespace Shopee_Autobuy_Bot
                 darkButtonStart.Text = "Stopping...";
                 return;
             }
-
-
-
-
-
-
 
             //below specific price (cart checkout)
             if (step == 94)
@@ -745,10 +689,7 @@ namespace Shopee_Autobuy_Bot
         {
             try
             {
-
                 WaitUrlContain("https://shopee.com.my/cart");
-
-
 
                 Logger("Cart page loaded.", new Color?(Color.LawnGreen), true, true, true, isLogging);
                 Thread.Sleep(ConfigInfo.delay_step_94);
@@ -764,10 +705,6 @@ namespace Shopee_Autobuy_Bot
 
                     ChromeDriverHelper.driver.Navigate().GoToUrl("https://shopee.com.my/cart");
 
-
-
-
-
                     ShopeeAutobuy(Try, 94, Helper.isLogging);
                 }
                 else if (!IsElementPresent(By.XPath(Properties.Settings.Default.cart_strProductPriceLabel)))
@@ -778,10 +715,6 @@ namespace Shopee_Autobuy_Bot
 
                         ChromeDriverHelper.driver.Navigate().GoToUrl("https://shopee.com.my/cart");
 
-
-
-
-
                         ShopeeAutobuy(Try, 94, Helper.isLogging);
                     }
                     else
@@ -789,7 +722,6 @@ namespace Shopee_Autobuy_Bot
                 }
                 else
                 {
-
                     string strCurrentPrice = "";
                     string strUserPrice = tbBelowSpecificPriceCARTCHECKOUTPrice.Text;
                     strCurrentPrice = NewElementByXpath(Properties.Settings.Default.cart_strProductPriceLabel).Text.Replace(",", "").Replace("RM", "").Replace("$", "");
@@ -811,10 +743,6 @@ namespace Shopee_Autobuy_Bot
 
                             ChromeDriverHelper.driver.Navigate().GoToUrl("https://shopee.com.my/cart");
 
-
-
-
-
                             ShopeeAutobuy(Try, 94, Helper.isLogging);
                         }
                         else
@@ -834,7 +762,6 @@ namespace Shopee_Autobuy_Bot
                         currentElement = strCheckOutButton;
                         var CheckOutButton = NewElementByXpath(strCheckOutButton);
 
-
                         //claim multiple shop voucher
                         if (darkCheckBoxClaimShopVoucher.Checked == true)
                         {
@@ -851,8 +778,6 @@ namespace Shopee_Autobuy_Bot
                             }
                         }
 
-
-
                         ClickElement(CheckOutButton);
                         Logger("Click 'Check Out'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
                         if (IsElementPresent(By.XPath(ItemNotSelected)) == true)
@@ -868,10 +793,6 @@ namespace Shopee_Autobuy_Bot
                                 Thread.Sleep(Convert.ToInt32(darkNumericUpDownRefreshSeconds.Value) * 1000);
 
                                 ChromeDriverHelper.driver.Navigate().GoToUrl("https://shopee.com.my/cart");
-
-
-
-
 
                                 ShopeeAutobuy(Try, 94, Helper.isLogging);
                             }
@@ -895,28 +816,22 @@ namespace Shopee_Autobuy_Bot
                 Logger("[S94] Waiting for element : " + currentElement, new Color?(Color.IndianRed), true, true, true);
                 Logger(ex.Message, new Color?(Color.IndianRed), true, true, true);
 
-
                 if (darkCheckBoxRefresh.Checked == true)
                 {
                     Thread.Sleep(Convert.ToInt32(darkNumericUpDownRefreshSeconds.Value) * 1000);
 
                     ChromeDriverHelper.driver.Navigate().GoToUrl("https://shopee.com.my/cart");
 
-
-
-
                     ShopeeAutobuy(Try, 94, Helper.isLogging);
                 }
                 else
                     return;
-
             }
         }
 
         //below specific price
         private void step95(int Try)
         {
-
             try
             {
                 WaitUrlContain(darkTextBoxProductLink.Text);
@@ -935,7 +850,6 @@ namespace Shopee_Autobuy_Bot
                 catch { }
 
                 BuyNowButton = NewElementByXpath(strButtonBuyNow);
-
 
                 if (!IsElementPresent(By.XPath(strButtonBuyNow)))
                 {
@@ -1017,7 +931,6 @@ namespace Shopee_Autobuy_Bot
                                             match = false;
                                             currentVariation = str;
                                             break;
-
                                         }
                                     }
                                 }
@@ -1098,8 +1011,6 @@ namespace Shopee_Autobuy_Bot
                 Logger("[S95] Waiting for element : " + currentElement, new Color?(Color.IndianRed), true, true, true);
                 Logger(ex.Message, new Color?(Color.IndianRed), true, true, true);
 
-
-
                 if (darkCheckBoxRefresh.Checked == true)
                 {
                     Thread.Sleep(Convert.ToInt32(darkNumericUpDownRefreshSeconds.Value) * 1000);
@@ -1116,7 +1027,6 @@ namespace Shopee_Autobuy_Bot
         {
             try
             {
-
                 WaitUrlContain("https://shopee.com.my/cart");
 
                 Logger("Cart page loaded.", new Color?(Color.LawnGreen), true, true, true, isLogging);
@@ -1133,10 +1043,6 @@ namespace Shopee_Autobuy_Bot
 
                     ChromeDriverHelper.driver.Navigate().GoToUrl("https://shopee.com.my/cart");
 
-
-
-
-
                     ShopeeAutobuy(Try, 96, Helper.isLogging);
                 }
                 else if (!IsElementPresent(By.XPath(Properties.Settings.Default.cart_strProductPriceLabel)))
@@ -1146,10 +1052,6 @@ namespace Shopee_Autobuy_Bot
                         Thread.Sleep((Convert.ToInt32(darkNumericUpDownRefreshSeconds.Value) * 1000));
 
                         ChromeDriverHelper.driver.Navigate().GoToUrl("https://shopee.com.my/cart");
-
-
-
-
 
                         ShopeeAutobuy(Try, 96, Helper.isLogging);
                     }
@@ -1193,10 +1095,6 @@ namespace Shopee_Autobuy_Bot
 
                         ChromeDriverHelper.driver.Navigate().GoToUrl("https://shopee.com.my/cart");
 
-
-
-
-
                         ShopeeAutobuy(Try, 96, Helper.isLogging);
                         //WaitElementExists(CartCheckBoxAllItem);
                         //var OkButton = NewElementByXpath(CartOkButton);
@@ -1219,15 +1117,11 @@ namespace Shopee_Autobuy_Bot
                 Logger("[S96] Waiting for element : " + currentElement, new Color?(Color.IndianRed), true, true, true);
                 Logger(ex.Message, new Color?(Color.IndianRed), true, true, true);
 
-
                 if (darkCheckBoxRefresh.Checked == true)
                 {
                     Thread.Sleep(Convert.ToInt32(darkNumericUpDownRefreshSeconds.Value) * 1000);
 
                     ChromeDriverHelper.driver.Navigate().GoToUrl("https://shopee.com.my/cart");
-
-
-
 
                     ShopeeAutobuy(Try, 96, Helper.isLogging);
                 }
@@ -1286,7 +1180,6 @@ namespace Shopee_Autobuy_Bot
 
         private void step1(int Try)
         {
-
             try
             {
                 WaitUrlContain(darkTextBoxProductLink.Text);
@@ -1305,7 +1198,6 @@ namespace Shopee_Autobuy_Bot
 
                 currentElement = strButtonBuyNow;
                 BuyNowButton = NewElementByXpath(strButtonBuyNow);
-
 
                 if (!IsElementPresent(By.XPath(strButtonBuyNow)))
                 {
@@ -1387,7 +1279,6 @@ namespace Shopee_Autobuy_Bot
                                             match = false;
                                             currentVariation = str;
                                             break;
-
                                         }
                                     }
                                 }
@@ -1427,10 +1318,6 @@ namespace Shopee_Autobuy_Bot
                         }
                     }
 
-
-
-
-
                     IncreaseQuantity();
                     ClickElement(BuyNowButton);
                     Logger("Click 'Buy Now'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
@@ -1463,7 +1350,6 @@ namespace Shopee_Autobuy_Bot
                 WaitUrlContain("/cart");
                 if (ChromeDriverHelper.driver.Url.Contains("/cart"))
                 {
-
                     Logger("Cart page loaded.", new Color?(Color.LawnGreen), true, true, true, isLogging);
 
                     //claim shop voucher
@@ -1483,7 +1369,6 @@ namespace Shopee_Autobuy_Bot
                             Logger("Click 'Claim shop voucher'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
                         }
                         Thread.Sleep(ConfigInfo.delay_claim_shop_voucher);
-
                     }
 
                     Thread.Sleep(UserInfo.delay); // user specific. default 0
@@ -1508,7 +1393,6 @@ namespace Shopee_Autobuy_Bot
                     {
                         ShopeeAutobuy(Try, 5, Helper.isLogging); //skip payment & courier
                     }
-
                 }
             }
             catch (Exception ex)
@@ -1523,7 +1407,6 @@ namespace Shopee_Autobuy_Bot
 
                 ShopeeAutobuy(Try, 2, Helper.isLogging);
             }
-
         }
 
         private void step3(int Try)
@@ -1664,6 +1547,7 @@ namespace Shopee_Autobuy_Bot
                                 Logger("Select '" + darkComboBoxPaymentMethod.Text + "'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
                             }
                             break;
+
                         case "7-Eleven":
                             WaitElementVisible(strRetailStore);
                             exists = IsElementPresent(By.XPath(strRetailStore));
@@ -1696,6 +1580,7 @@ namespace Shopee_Autobuy_Bot
                             }
 
                             break;
+
                         case "Online Banking":
                             WaitElementVisible(strOnlineBanking);
                             exists = IsElementPresent(By.XPath(strOnlineBanking));
@@ -1722,6 +1607,7 @@ namespace Shopee_Autobuy_Bot
                                 Logger("Select '" + BankType + "'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
                             }
                             break;
+
                         case "ShopeePay":
                             //WaitElementVisible(strShopeePay_5);
                             //WaitElementVisible(strShopeePay_4);
@@ -1761,9 +1647,6 @@ namespace Shopee_Autobuy_Bot
 
                             break;
                     }
-
-
-
 
                     Thread.Sleep(ConfigInfo.delay_step_3); //300
                     if (IsElementPresent(By.XPath(strBankMaintenance)))
@@ -1806,14 +1689,12 @@ namespace Shopee_Autobuy_Bot
 
                 ShopeeAutobuy(Try, 3, Helper.isLogging);
             }
-
         }
 
         private void step4(int Try)
         {
             //if (Courier != "Default")
             //{
-
             //}
             //else
             //{
@@ -1857,7 +1738,6 @@ namespace Shopee_Autobuy_Bot
                 ClickElement(SubmitButton);
                 Logger("Click 'Submit'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
                 ShopeeAutobuy(Try, 5);
-
             }
             catch (Exception ex)
             {
@@ -1901,7 +1781,6 @@ namespace Shopee_Autobuy_Bot
                     //jse.ExecuteScript("arguments[0].click();", checkBox);
                     Logger("Click 'Redeem Shopee Coin'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
                     Thread.Sleep(ConfigInfo.delay_redeem_coin);
-
                 }
                 //redeem any shopee voucher
                 if (darkCheckBoxRedeemShopeeVoucher.Checked == true)
@@ -1954,11 +1833,7 @@ namespace Shopee_Autobuy_Bot
                         Logger("Click 'Place Order'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
                         timeSpan = workTime - DateTime.Now;
                         CheckoutTimeFinal = CheckoutTime - DateTime.Now;
-
                     }
-
-
-
 
                     if (darkCheckBoxPlaySound.Checked == true)
                         Cashing();
@@ -1973,7 +1848,6 @@ namespace Shopee_Autobuy_Bot
                     timeSpan = workTime - DateTime.Now;
 
                     Logger("Finish test mode in " + timeSpan.ToString("hh\\:mm\\:ss\\:ff"), new Color?(Color.White), true, true, true);
-
                 }
             }
             catch (Exception ex)
@@ -1988,7 +1862,6 @@ namespace Shopee_Autobuy_Bot
 
                 ShopeeAutobuy(Try, 5, Helper.isLogging);
             }
-
         }
 
         private void step6(int Try)
@@ -2093,12 +1966,9 @@ namespace Shopee_Autobuy_Bot
             {
                 string externalIpString = new WebClient().DownloadString("http://icanhazip.com").Replace("\\r\\n", "").Replace("\\n", "").Trim();
                 externalIp = IPAddress.Parse(externalIpString);
-
             }
             catch { }
             return externalIp.ToString();
-
-
         }
 
         private void Cashing()
@@ -2131,7 +2001,6 @@ namespace Shopee_Autobuy_Bot
             }
         }
 
-
         private void WaitUrlContain(string text)
         {
             WebDriverWait webDriverWait = new WebDriverWait(ChromeDriverHelper.driver, new TimeSpan(0, 0, TimeOut));
@@ -2146,7 +2015,6 @@ namespace Shopee_Autobuy_Bot
                 webDriverWait.Until<IWebElement>(ExpectedConditions.ElementIsVisible(By.XPath(xpath)));
             }
             catch { }
-
         }
 
         private void WaitElementExists(string xpath)
@@ -2173,8 +2041,6 @@ namespace Shopee_Autobuy_Bot
             element = ChromeDriverHelper.driver.FindElement(By.XPath(xpath));
             return element;
         }
-
-
 
         private IWebElement NewElementById(string id)
         {
@@ -2209,7 +2075,6 @@ namespace Shopee_Autobuy_Bot
             richTextBoxLogs.ScrollToCaret();
         }
 
-
         private void darkRadioButtonCountdownMode_CheckedChanged(object sender, EventArgs e)
         {
             BotSettings();
@@ -2233,10 +2098,6 @@ namespace Shopee_Autobuy_Bot
 
             return !bCreatedNew;
         }
-
-
-
-
 
         private bool checkDuplicates()
         {
@@ -2267,10 +2128,6 @@ namespace Shopee_Autobuy_Bot
                 if (!Directory.Exists(DirectoryProvider.LogDirectory))
                     Directory.CreateDirectory(DirectoryProvider.LogDirectory);
 
-
-
-
-
                 try
                 {
                     if (!Directory.Exists(DirectoryProvider.SabTempDirectory + "Executer.exe"))
@@ -2300,12 +2157,8 @@ namespace Shopee_Autobuy_Bot
                     }
                     catch
                     {
-
                     }
-
-
                 }
-
 
                 darkCheckBoxTomorrow.Checked = Properties.Settings.Default.ScheduleBotTomorrow;
                 darkCheckBoxScheduleBot.Checked = Properties.Settings.Default.ScheduleBot;
@@ -2321,7 +2174,6 @@ namespace Shopee_Autobuy_Bot
                     darkComboBoxPaymentMethod.Text = Properties.Settings.Default.PaymentMethod;
                 darkTextBoxShopeePayPin.Text = Properties.Settings.Default.ShopeePayPin;
                 darkComboBoxCourier.Text = Properties.Settings.Default.Courier;
-
 
                 darkTextBoxProductLink.Text = Properties.Settings.Default.ProductLinkMalaysia;
 
@@ -2340,16 +2192,13 @@ namespace Shopee_Autobuy_Bot
                 darkCheckBoxClaimShopVoucher.Checked = Properties.Settings.Default.ClaimShopVoucher;
                 darkCheckBoxRedeemShopeeVoucher.Checked = Properties.Settings.Default.RedeemShopeeVoucher;
 
-
                 //if (darkComboBoxPaymentMethod.Text == "ShopeePay")
                 //    darkCheckBoxRedeemShopeeVoucher.Enabled = true;
                 darkComboBoxPaymentMethod.SelectedIndexChanged += darkComboBoxPaymentMethod_SelectedIndexChanged;
 
                 try
                 {
-
                     ChromeDriverHelper.driver.Navigate().GoToUrl("https://shopee.com.my/");
-
                 }
                 catch (Exception ex)
                 {
@@ -2373,10 +2222,7 @@ namespace Shopee_Autobuy_Bot
                     }
                 }
 
-
                 Logger("Ready.", new Color?(), true, true, true);
-
-
 
                 //display title+ current version
                 //get user info n pass to UserInfo
@@ -2435,15 +2281,11 @@ namespace Shopee_Autobuy_Bot
 "7-Eleven",
 "KK Mart"};
 
-
-
-
             foreach (var item in paymentMalaysia)
             {
                 darkComboBoxPaymentMethod.Items.Add(item);
             }
         }
-
 
         private void CheckSubscription()
         {
@@ -2465,7 +2307,6 @@ namespace Shopee_Autobuy_Bot
                         //}
                         //Thread.Sleep(1500);
 
-
                         var localDateTime = GetLocalTime();
                         if (localDateTime > expiryDate) // subscription ended
                         {
@@ -2478,10 +2319,8 @@ namespace Shopee_Autobuy_Bot
 
                     Thread.Sleep(1500);
                 }
-
             }).Start();
         }
-
 
         private void BotSettings()
         {
@@ -2509,8 +2348,6 @@ namespace Shopee_Autobuy_Bot
                     darkNumericUpDownCountdownMinutes.Enabled = true;
                     darkNumericUpDownCountDownSecond.Enabled = true;
                 }
-
-
             }
             else
             {
@@ -2522,10 +2359,7 @@ namespace Shopee_Autobuy_Bot
                 darkLabel1.Enabled = false;
                 darkLabel2.Enabled = false;
                 darkLabel3.Enabled = false;
-
-
             }
-
         }
 
         private void darkNumericUpDownTimeOut_ValueChanged(object sender, EventArgs e)
@@ -2535,7 +2369,6 @@ namespace Shopee_Autobuy_Bot
 
         private string GetWithResponse(string url)
         {
-
             string html_ = string.Empty;
 
             HttpWebRequest request_ = (HttpWebRequest)WebRequest.Create(url);
@@ -2600,8 +2433,6 @@ namespace Shopee_Autobuy_Bot
                         startInfo.WindowStyle = ProcessWindowStyle.Hidden;
                         startInfo.Arguments = "\"" + currentFile + "\" \"" + tempFile + "\"";
                         Process.Start(startInfo);
-
-
                     }
                     else
                     {
@@ -2639,7 +2470,6 @@ namespace Shopee_Autobuy_Bot
                         Properties.Settings.Default.BankType = darkComboBoxBankType.Text;
                         Properties.Settings.Default.Courier = darkComboBoxCourier.Text;
 
-
                         Properties.Settings.Default.ProductLinkMalaysia = darkTextBoxProductLink.Text;
 
                         Properties.Settings.Default.ProductQuantity = Convert.ToInt32(darkNumericUpDownProductQuantity.Value);
@@ -2648,19 +2478,14 @@ namespace Shopee_Autobuy_Bot
                         Properties.Settings.Default.TimeOut = Convert.ToInt32(darkNumericUpDownTimeOut.Value);
                         Properties.Settings.Default.RefreshSeconds = Convert.ToInt32(darkNumericUpDownRefreshSeconds.Value);
                         Properties.Settings.Default.Save();
-
-
-
                     }
                     //Environment.Exit(0);
                 }
 
                 //if (File.Exists(System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\cashing.mp3"))
                 //    File.Delete(System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\cashing.mp3");
-
             }
             catch { }
-
         }
 
         private void darkButton5_Click(object sender, EventArgs e)
@@ -2674,7 +2499,6 @@ namespace Shopee_Autobuy_Bot
 
             if (IsElementPresent(By.XPath(strMore)))
             {
-
                 Logger("Deleting order(s) (To pay)..", new Color?(Color.White), true, true, true);
                 startAsync("CancelOrder");
             }
@@ -2717,12 +2541,7 @@ namespace Shopee_Autobuy_Bot
 
         private void ClearCart()
         {
-
             ChromeDriverHelper.driver.Navigate().GoToUrl("https://shopee.com.my/cart");
-
-
-
-
 
             string strCartIsEmpty = "//div[contains(@class, '_2BNbCE') and contains(text(), 'Your shopping cart is empty')]";
 
@@ -2744,12 +2563,9 @@ namespace Shopee_Autobuy_Bot
             else { MessageBox.Show("ade"); }
         }
 
-
         private void DeleteAllOrder()
         {
             Thread.Sleep(1000);
-
-
 
             while (true)
             {
@@ -2774,7 +2590,6 @@ namespace Shopee_Autobuy_Bot
                     var SelectOption = new OpenQA.Selenium.Support.UI.SelectElement(selectproxy);
                     SelectOption.SelectByText("Cancel Order");
 
-
                     Logger("STEP 1", new Color?(Color.White), true, true, true);
 
                     actions.MoveToElement(Cancelbutton);
@@ -2783,8 +2598,6 @@ namespace Shopee_Autobuy_Bot
                     Logger("STEP 2", new Color?(Color.White), true, true, true);
 
                     Thread.Sleep(500);
-
-
 
                     var ReasonCContainer = NewElementByXpath(strReasonContainer);
 
@@ -2804,7 +2617,6 @@ namespace Shopee_Autobuy_Bot
 
                     ChromeDriverHelper.driver.Navigate().GoToUrl("https://shopee.com.my/user/purchase/list/?checkout=true&type=9");
                     Thread.Sleep(1500);
-
                 }
                 else
                 {
@@ -2813,19 +2625,14 @@ namespace Shopee_Autobuy_Bot
                     darkButtonStart.Enabled = true;
                     break;
                 }
-
-
             }
-
         }
 
         private void darkCheckBoxDisableImageExtension_Click(object sender, EventArgs e)
         {
-
             MessageBox.Show("Restart program for the changes to take effect.", "Restart required", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Properties.Settings.Default.DisableImageExtension = darkCheckBoxDisableImageExtension.Checked;
             Properties.Settings.Default.Save();
-
         }
 
         private void darkRadioButtonFlashSale_CheckedChanged(object sender, EventArgs e)
@@ -2835,7 +2642,6 @@ namespace Shopee_Autobuy_Bot
 
         private void darkCheckBoxHeadless_Click(object sender, EventArgs e)
         {
-
             MessageBox.Show("Restart program for the changes to take effect.", "Restart required", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Properties.Settings.Default.Headless = darkCheckBoxHeadless.Checked;
             Properties.Settings.Default.Save();
@@ -2844,13 +2650,11 @@ namespace Shopee_Autobuy_Bot
         private void visitFacebookPageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process.Start("https://facebook.com/ShopeeAutobuyBot");
-
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
-
         }
 
         private void darkComboBoxPaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
@@ -2884,7 +2688,6 @@ namespace Shopee_Autobuy_Bot
             EnableDisableControlOnPaymentMethod();
         }
 
-
         private void EnableDisableControlOnPaymentMethod()
         {
             if (darkComboBoxPaymentMethod.Text == "ShopeePay")
@@ -2899,7 +2702,6 @@ namespace Shopee_Autobuy_Bot
                 foreach (Control x in darkSectionPanelPaymentDetails.Controls)
                 {
                     x.Enabled = false;
-
                 }
                 darkComboBoxPaymentMethod.Enabled = true;
                 darkCheckBoxRedeemCoin.Enabled = true;
@@ -2913,7 +2715,6 @@ namespace Shopee_Autobuy_Bot
                 foreach (Control x in darkSectionPanelPaymentDetails.Controls)
                 {
                     x.Enabled = false;
-
                 }
                 darkComboBoxPaymentMethod.Enabled = true;
                 darkCheckBoxRedeemCoin.Enabled = true;
@@ -2929,7 +2730,6 @@ namespace Shopee_Autobuy_Bot
                 foreach (Control x in darkSectionPanelPaymentDetails.Controls)
                 {
                     x.Enabled = false;
-
                 }
                 darkComboBoxPaymentMethod.Enabled = true;
                 darkCheckBoxRedeemCoin.Enabled = true;
@@ -2943,7 +2743,6 @@ namespace Shopee_Autobuy_Bot
                 foreach (Control x in darkSectionPanelPaymentDetails.Controls)
                 {
                     x.Enabled = false;
-
                 }
                 darkComboBoxPaymentMethod.Enabled = true;
                 darkCheckBoxRedeemCoin.Enabled = true;
@@ -2959,7 +2758,6 @@ namespace Shopee_Autobuy_Bot
                 foreach (Control x in darkSectionPanelPaymentDetails.Controls)
                 {
                     x.Enabled = false;
-
                 }
                 darkComboBoxPaymentMethod.Enabled = true;
                 darkCheckBoxRedeemCoin.Enabled = true;
@@ -2974,7 +2772,6 @@ namespace Shopee_Autobuy_Bot
                 foreach (Control x in darkSectionPanelPaymentDetails.Controls)
                 {
                     x.Enabled = false;
-
                 }
                 darkComboBoxPaymentMethod.Enabled = true;
                 darkCheckBoxRedeemCoin.Enabled = true;
@@ -2987,7 +2784,6 @@ namespace Shopee_Autobuy_Bot
                 foreach (Control x in darkSectionPanelPaymentDetails.Controls)
                 {
                     x.Enabled = false;
-
                 }
                 darkComboBoxPaymentMethod.Enabled = true;
                 darkCheckBoxRedeemShopeeVoucher.Enabled = true;
@@ -3001,7 +2797,6 @@ namespace Shopee_Autobuy_Bot
                 foreach (Control x in darkSectionPanelPaymentDetails.Controls)
                 {
                     x.Enabled = false;
-
                 }
                 darkComboBoxPaymentMethod.Enabled = true;
                 darkCheckBoxRedeemShopeeVoucher.Enabled = true;
@@ -3015,7 +2810,6 @@ namespace Shopee_Autobuy_Bot
                 darkComboBoxBankType.SelectedIndex = -1;
             }
         }
-
 
         private void darkTextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -3041,7 +2835,6 @@ namespace Shopee_Autobuy_Bot
         private void darkCheckBoxCountDownMode_CheckedChanged(object sender, EventArgs e)
         {
             BotSettings();
-
         }
 
         private void radioButtonPriceSpecific_CheckedChanged(object sender, EventArgs e)
@@ -3058,7 +2851,6 @@ namespace Shopee_Autobuy_Bot
 
         private void tbPriceSpecific_Leave(object sender, EventArgs e)
         {
-
             if (tbPriceSpecific.Text == string.Empty)
             {
                 MessageBox.Show("Invalid price format. E.g. 1.00/10.00/100.00", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -3078,15 +2870,12 @@ namespace Shopee_Autobuy_Bot
 
         private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
             MessageBox.Show("Shopee Autobuy Bot is an automation tool that help customers buying exclusive items without having to wait by their screens.\n\nDisclaimer : We are not responsible for any damage or harm to your Shopee account and your PC. Please know what you are doing.", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
 
         private void disclaimerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("We are not responsible for any damage or harm to your Shopee account and your PC. Please know what you are doing.", "Disclaimer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
         }
 
         private void changelogHistoryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -3115,15 +2904,12 @@ namespace Shopee_Autobuy_Bot
         {
             try
             {
-
             }
             catch (Exception ex) { MessageBox.Show("Fail to update configuration from server.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
-
         private void darkButton5_Click_1(object sender, EventArgs e)
         {
-
         }
 
         private void tbLast4Digit_KeyPress(object sender, KeyPressEventArgs e)
@@ -3134,10 +2920,7 @@ namespace Shopee_Autobuy_Bot
         private void darkTextBoxWalletPin_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-
         }
-
-
 
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -3162,7 +2945,7 @@ namespace Shopee_Autobuy_Bot
         {
             try
             {
-                //get delay config 
+                //get delay config
 
                 GetConfig();
 
@@ -3175,9 +2958,7 @@ namespace Shopee_Autobuy_Bot
         {
             string configResponse = GetWithResponse($"{HostProvider.Host}api/config");
             ConfigInfo = JsonConvert.DeserializeObject<ConfigInfo>(configResponse);
-
         }
-
 
         private void darkButton6_Click(object sender, EventArgs e)
         {
@@ -3248,7 +3029,6 @@ namespace Shopee_Autobuy_Bot
                 Warning w = new Warning();
                 w.ShowDialog();
             }
-
         }
 
         private void paydaySaleTipToolStripMenuItem_Click(object sender, EventArgs e)
@@ -3306,7 +3086,6 @@ namespace Shopee_Autobuy_Bot
                 /* run your code here */
                 using (WebClient client = new WebClient())
                 {
-
                     string lazadaUrl = $"{HostProvider.Host}sab/appdata/updt/Lazada%20Autobuy%20Bot.exe";
 
                     client.Proxy = WebRequest.DefaultWebProxy;
@@ -3322,7 +3101,6 @@ namespace Shopee_Autobuy_Bot
                     }
                     catch (Exception ex)
                     {
-
                     }
 
                     LazadaBotDir = Environment.CurrentDirectory + @"\Lazada Autobuy Bot";
@@ -3330,15 +3108,12 @@ namespace Shopee_Autobuy_Bot
                         Directory.CreateDirectory(LazadaBotDir);
                     client.DownloadFile(lazadaUrl, LazadaBotDir + @"\Lazada Autobuy Bot.exe");
                     notifyIcon1.Dispose();
-
                 }
 
                 DialogResult dialog = MessageBox.Show("File downloaded. Open file location?", "Lazada Autobuy Bot", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 if (dialog == DialogResult.OK)
                     Process.Start(LazadaBotDir);
-
             }).Start();
-
         }
 
         private void Client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
@@ -3362,7 +3137,6 @@ namespace Shopee_Autobuy_Bot
 
         private void SaveBotProfile()
         {
-
             var botSettings = new BotProfileModel.BotSettings()
             {
                 play_sound = darkCheckBoxPlaySound.Checked,
@@ -3455,7 +3229,6 @@ namespace Shopee_Autobuy_Bot
             {
                 MessageBox.Show("cookie: " + cookie.Name
                                 + "\nvalue: " + cookie.Value);
-
             }
         }
 
@@ -3469,7 +3242,6 @@ namespace Shopee_Autobuy_Bot
         {
             var fontSize = this.Font.Size;
             this.Font = new Font("Arial", 24, FontStyle.Bold);
-
         }
 
         private void setNewFontToolStripMenuItem_Click(object sender, EventArgs e)
@@ -3487,7 +3259,6 @@ namespace Shopee_Autobuy_Bot
         {
             Properties.Settings.Default.windowsFont = this.Font = new Font("Segoe UI", 8, FontStyle.Regular);
             Properties.Settings.Default.Save();
-
         }
 
         private void saveProfileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -3500,8 +3271,6 @@ namespace Shopee_Autobuy_Bot
 
         private void loadProfileSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-
             Profile profile = new Profile();
             profile.ShowDialog();
 
@@ -3520,10 +3289,7 @@ namespace Shopee_Autobuy_Bot
                     }
                     catch
                     {
-
                     }
-
-
                 }
 
                 darkCheckBoxTomorrow.Checked = SelectedProfile.ScheduleBot.tomorrow;
@@ -3567,7 +3333,6 @@ namespace Shopee_Autobuy_Bot
             darkTextBoxVariationString.Enabled = (cbRandom.Checked) ? false : true;
             //if (cbRandom.Checked)
             //    darkTextBoxVariationString.Text = "";
-
         }
     }
 }

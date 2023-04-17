@@ -2,7 +2,7 @@
 {
     public static class HostProvider
     {
-        public const string Host = "";
-        public const string PingHost = "";
+        public const string Host = "https://sab.pxcore.net/";
+        public const string PingHost = "sab.pxcore.net";
     }
 }

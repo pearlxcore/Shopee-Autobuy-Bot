@@ -274,7 +274,7 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
             if (!Directory.Exists(DirectoryProvider.SabTempDirectory))
                 Directory.CreateDirectory(DirectoryProvider.SabTempDirectory);
 
-            if (!File.Exists(DirectoryProvider.CurrentDirectory + @"\chromedriver.exe"))
+            if (!File.Exists(DirectoryProvider.CurrentDirectory + "chromedriver.exe"))
             {
                 MessageBox.Show("ChromeDriver not detected.  Downloading latest version..", "ChromeDriver", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Enabled = false;
@@ -326,8 +326,8 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                             process.Kill();
                         }
                         Thread.Sleep(500);
-                        if (File.Exists(DirectoryProvider.CurrentDirectory + @"\chromedriver.exe"))
-                            File.Delete(DirectoryProvider.CurrentDirectory + @"\chromedriver.exe");
+                        if (File.Exists(DirectoryProvider.CurrentDirectory + "chromedriver.exe"))
+                            File.Delete(DirectoryProvider.CurrentDirectory + "chromedriver.exe");
                     }
                     catch { }
 
