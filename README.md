@@ -1,6 +1,6 @@
 ## ShopeeAutobuyBot
 
-Shopee Autobuy Bot is an automation program for Shopee website. It uses [Selenium Framework](https://www.selenium.dev/) for the automation process.
+Shopee Autobuy Bot is an automation program for Shopee (Malaysia) website. It uses [Selenium Framework](https://www.selenium.dev/) for the automation process.
 
 I decided to make this project open source. 
 
