@@ -10,6 +10,8 @@ I will update from time to time to get rid the program from login requirement so
 
 This program will be using external api as for the configuration and program updates.
 
+Compiled program can be downloaded [here](https://github.com/pearlxcore/ShopeeAutobuyBot/releases).
+
 **Use at your own risk.**
 
 ## Screenshot
