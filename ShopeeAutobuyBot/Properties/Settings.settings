@@ -1,0 +1,186 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Shopee_Malaysia_Autobuy_Bot_Pro.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ProductLinkMalaysia" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CountdownMode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CountdownHour" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="CountdownMinutes" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="CountdownMicroSeconds" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="PaymentMethod" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="WalletPin" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Courier" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="VariationCheck" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VariationString" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ProductQuantity" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="DisableImageExtension" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CourierCheck" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Website" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BankType" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ShopeePayPin" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="TimeOut" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="RedeemCoin" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PlaySound" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Headless" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Refresh" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="FlashSaleMode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ID" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="RefreshSeconds" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="Logging" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CountdownSeconds" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="TestMode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CardLast4Digit" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="RedeemShopeeVoucher" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ClaimShopVoucher" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="BuyMode" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BelowSpecificPrice" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BelowSpecificPriceCheckout" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ScheduleBot" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ScheduleBotTomorrow" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="DontShowThisAgain" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="DontShowThisAgainTipsPrompt" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ShowTipsPromptDontShowThisAgain" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ShopeeRegion" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ProductLinkSingapore" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ProductLinkThailand" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="product_strBuyNowButton" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//button[contains(@class, 'btn-solid-primary') and contains(text(), 'buy now')]</Value>
+    </Setting>
+    <Setting Name="product_strProductVariationFlexBox" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//div[contains(@class, 'flex items-center TvGNLb')]</Value>
+    </Setting>
+    <Setting Name="product_strQuantityTextBox" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//input[contains(@class, '_14flVw z4c5Da')]</Value>
+    </Setting>
+    <Setting Name="product_strCurrentProductPrice" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//div[contains(@class, 'pmmxKx')]</Value>
+    </Setting>
+    <Setting Name="product_strSaleBanner" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//div[contains(@class, 'SwrRMG')]</Value>
+    </Setting>
+    <Setting Name="cart_strCheckOut" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//*[@id="main"]/div/div[2]/div[1]/div/div[3]/div[2]/div[7]/button[4]</Value>
+    </Setting>
+    <Setting Name="cart_strSelectAllCheckbox" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//*[@id="main"]/div/div[2]/div/div/div[3]/div[2]/div[7]/div[1]/label/div</Value>
+    </Setting>
+    <Setting Name="cart_strProductPriceLabel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//span[@class='_1CXksa']</Value>
+    </Setting>
+    <Setting Name="cart_strClaimShopVC" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//button[contains(@class, 'btn') and contains(text(), 'Claim')]</Value>
+    </Setting>
+    <Setting Name="cart_strCartEmptyLabel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//div[contains(@class, 'xkMOGx') and contains(text(), 'Your shopping cart is empty')]</Value>
+    </Setting>
+    <Setting Name="checkout_strPlaceOrder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//button[contains(@class, 'stardust-button') and contains(text(), 'Place Order')]</Value>
+    </Setting>
+    <Setting Name="chekcout_strClaimShopeeVcButton" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//button[contains(@class, '_6dwQij') and contains(text(), 'Select Voucher')]</Value>
+    </Setting>
+    <Setting Name="checkout_strShopeeVcContainer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//div[contains(@class, 'qa9DDd U0bjBP VK0V4t')]</Value>
+    </Setting>
+    <Setting Name="checkout_strShopeeVcOkButton" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//button[contains(@class, 'btn') and contains(text(), 'OK')]</Value>
+    </Setting>
+    <Setting Name="checkout_strRedeemCoinCheckbox" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//*[@id="main"]/div/div[2]/div[2]/div[3]/div[2]/div[2]/label</Value>
+    </Setting>
+    <Setting Name="checkout_strChangePaymentButton" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//div[contains(@class, '_1n5Ut6') and contains(text(), 'change')]</Value>
+    </Setting>
+    <Setting Name="windowsFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="chromeProfileList" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="chromeProfile" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

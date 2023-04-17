@@ -1,0 +1,55 @@
+Shopee Malaysia Autobuy Bot
+
+Option and its function :
+
+[Bot Settings]
+
+- 'Play sound on successful checkout' -> Playing cashing sound on every successful checkout.
+- Hide Chrome Browser' -> This might help reduce checkout time. Will take effect after restart.
+- 'Disable website image' and extension -> Enable this option will disable extension and images in webpage. This will help reducing webpage loading time.
+- 'Auto refresh webpage' -> Enable auto refresh if the program is unlisted or unavailable. You can set the interval time to 0.
+- 'Time out' -> You can adjust the time out for the bot to find the next element in webpage. If you are not sure just leave it default.
+
+[Buying Mode]
+
+- 'Countdown Mode' -> This will enable the bot to wait until your desire time before it run the autobuy.
+- 'Normal Mode' -> Normal mode will make the run do buying process right away after clicking start button.
+- 'Flash/Shocking Sale Mode' -> Enable this will make the program check the product either its in the sale or not. Autobuy will run if the product in sale.
+
+[Product Info]
+
+- 'Payment Method' -> Choose payment method .
+- 'Bank Type' -> For 'Online Banking' payment method, you need to choose which bank to use.
+- 'ShopeePay Pin' -> Specify ShopeePay pin when using 'ShopeePay' payment method.
+- 'Quantity' -> Specify quantity of product you want to buy.
+- 'Courier' -> Specify courier service.
+- 'Variation' -> For product with variation, simply type in the variation name into textbox and for multiple variation, just separate with '|' without quote. Make sure there is no spacing between variation.
+- 'Redeem Coin' -> This will enable you to redeem coin if available.
+- 'Product Link' -> Specify product link. One link at a time.
+**For 'Default' payment method and courier service, make sure your browser has default payment method and courier service set. It will be set based on last successful order.
+
+Note :
+
+- This program will use google chrome to run autobuy process. Make sure latest google chrome is installed in your PC.
+- Make sure Shopee website language is set to english.
+- It is recommend to close other chrome browser before running this program.
+- It is recommend to have Payment/Courier deafult method is set (In case you want to use 'Default' option for Payment/Courier method).
+- As for 22 June, Shopee has disabled courier option on their page so all type of courier service is removed from this program leaving only 'Default'.
+- It is recommend to not open new tab on google chrome.
+- Do not close main Chrome tab!
+- It is recommend to 'warm up' this tool by testing autobuy on random product to check wether the program selected correct profuct details before doing real order.
+- Checkout time depends on your PC/laptop performance. Good PC/laptop loads webpage faster and checkout time can be reduce.
+- For payment via 'Online Banking' and 'Credit / Debit Card', you still need to do payment manually.
+
+How to use :
+
+- For first time launch, you will be prompted by welcome message and a separate google chrome browser will be launched together.
+- Login your shopee account.
+- Specify Shopee product link.
+- Select payment method. If 'Default' is selected, this program will skip the payment method (Make sure default payment method already set). If you select 'Online Banking' method, you need to select bank type.
+- Specify ShopeePay pin for ShopeePay payment method (If you are using ShopeePay for payment method).
+- For products with variant, simply key in the variant name you want. For multiple variant just separate the variant name with '|' char for example : Red|XL.
+- Specify quantity of the product.
+- Press 'Start' button.
+- Log section will display the running process.
+
