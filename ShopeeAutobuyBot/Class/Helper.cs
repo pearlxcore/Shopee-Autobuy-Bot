@@ -63,8 +63,8 @@ namespace Shopee_Autobuy_Bot
 
 
 
-            tempFile = System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\Shopee Malaysia Autobuy Bot.exe";
-            currentFile = Environment.CurrentDirectory + @"\Shopee Malaysia Autobuy Bot.exe";
+            tempFile = DirectoryProvider.SabTempDirectory + "Shopee Autobuy Bot.exe";
+            currentFile = DirectoryProvider.CurrentDirectory + "Shopee Autobuy Bot.exe";
             var all_byte = File.ReadAllBytes(currentProgram);
             Stream S = new MemoryStream(all_byte);
 
@@ -79,8 +79,8 @@ namespace Shopee_Autobuy_Bot
 
                 byte[] bytes = S.ReadAllBytesss();
 
-                if (!Directory.Exists(System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\"))
-                    Directory.CreateDirectory(System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\");
+                if (!Directory.Exists(DirectoryProvider.SabTempDirectory))
+                    Directory.CreateDirectory(DirectoryProvider.SabTempDirectory);
 
                 File.WriteAllBytes(tempFile, bytes);
                 if (File.Exists(tempFile))

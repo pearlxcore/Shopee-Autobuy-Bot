@@ -24,6 +24,7 @@ namespace Shopee_Autobuy_Bot
     public partial class Form2 : DarkUI.Forms.DarkForm
     {
         private List<ChromeDriverHelper> chromeDriverHelpersList = new List<ChromeDriverHelper>();
+
         public Form2()
         {
             InitializeComponent();
@@ -38,15 +39,11 @@ namespace Shopee_Autobuy_Bot
             if (System.Diagnostics.Process.GetProcessesByName(System.IO.Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetEntryAssembly().Location)).Count() > count)
                 return true;
 
-
-
-
-            if (Process.GetProcessesByName("Shopee Malaysia Autobuy Bot").Length > count)
+            if (Process.GetProcessesByName("Shopee Autobuy Bot").Length > count)
                 return true;
 
-            //if (Process.GetProcessesByName("Shopee Malaysia Autobuy Bot Pro").Any())
+            //if (Process.GetProcessesByName("Shopee Autobuy Bot Pro").Any())
             //    return true;
-
 
             //if (File.Exists(fileMarkerLite))
             //    return true;
@@ -56,7 +53,6 @@ namespace Shopee_Autobuy_Bot
 
             //if (File.Exists(fileMarkerPro))
             //    return true;
-
 
             return false;
         }
@@ -76,6 +72,7 @@ namespace Shopee_Autobuy_Bot
         }
 
         private static Mutex mutex = null;
+
         private bool checkDuplicates()
         {
             const string appName = "myapp";
@@ -95,18 +92,15 @@ namespace Shopee_Autobuy_Bot
             {
                 try
                 {
-                    bool isExecuterExists = File.Exists(System.IO.Path.GetTempPath() + @"Executer.exe");
+                    bool isExecuterExists = File.Exists(DirectoryProvider.SabTempDirectory + "Executer.exe");
                     if (isExecuterExists)
-                        File.Delete(System.IO.Path.GetTempPath() + @"Executer.exe");
+                        File.Delete(DirectoryProvider.SabTempDirectory + "Executer.exe");
                 }
                 catch { }
 
-
                 string currentProgram = System.AppDomain.CurrentDomain.FriendlyName;
 
-
                 byte[] buffer;
-
 
                 // get serial number
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_DiskDrive");
@@ -126,16 +120,12 @@ namespace Shopee_Autobuy_Bot
 
                 var ProgramMagicByte_ = ReadMagicByte(currentProgram, buffer);
 
-
                 // Read all byte of current program
-
-
 
                 var ProgramMagicByte = GetHexStringFrom(ProgramMagicByte_).Replace("-", "");
                 //Console.WriteLine("Magic byte             : " + ProgramMagicByte);
 
                 bool isAllZero = ProgramMagicByte.All(c => c == '0');
-
 
                 if (!isAllZero == true && !lifetime == false)
                 {
@@ -149,7 +139,6 @@ namespace Shopee_Autobuy_Bot
                     {
                         Application.Exit();
                     }
-
                 }
                 else if (isAllZero == true && lifetime == false)
                 {
@@ -163,7 +152,6 @@ namespace Shopee_Autobuy_Bot
                     {
                         Application.Exit();
                     }
-
                 }
                 else if (isAllZero == false && !ProgramMagicByte.ToUpper().Contains(SerialNumberMagicByte.ToUpper()))
                 {
@@ -174,16 +162,14 @@ namespace Shopee_Autobuy_Bot
                     if (dialog == DialogResult.OK)
                     {
                         Process.Start("https://facebook.com/ShopeeAutobuyBot");
-
                     }
                     Environment.Exit(0);
                     return;
                     //Form2 form = new Form2();
                     //form.ShowDialog();
-                    //MessageBox.Show("You are not authorized to use this program. visit facebook.com/ShopeeLazadaMalaysiaAutobuyBot to purchase.");
+                    //MessageBox.Show("You are not authorized to use this program. visit facebook.com/ShopeeLazadaAutobuyBot to purchase.");
                     //MessageBox.Show("ProgramMagicByte        : " + ProgramMagicByte.ToUpper()
                     //           + "\nSerialNumberMagicByte : " + SerialNumberMagicByte.ToUpper());
-
                 }
                 else if (isAllZero == false && ProgramMagicByte.ToUpper().Contains(SerialNumberMagicByte.ToUpper()))
                 {
@@ -194,8 +180,6 @@ namespace Shopee_Autobuy_Bot
                     //MessageBox.Show("ProgramMagicByte        : " + ProgramMagicByte.ToUpper()
                     //           + "\nSerialNumberMagicByte : " + SerialNumberMagicByte.ToUpper());
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -209,12 +193,8 @@ namespace Shopee_Autobuy_Bot
                 Console.WriteLine(ex.StackTrace);
                 MessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-
             }
-
         }
-
-
 
         private bool IsConnectionOk()
         {
@@ -238,14 +218,12 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                     process.Kill();
                 }
                 Thread.Sleep(500);
-
             }
             catch { }
 
             try
             {
-                var shopeeAccPath = Environment.CurrentDirectory + $"\\Shopee Account\\";
-                var directories = Directory.GetDirectories(shopeeAccPath);
+                var directories = Directory.GetDirectories(DirectoryProvider.ShopeeAccountDirectory);
                 if (directories.Count() > 0)
                 {
                     foreach (var profile in directories)
@@ -255,7 +233,6 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 }
             }
             catch { }
-
 
             //try
             //{
@@ -286,7 +263,6 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
             //{
             //    MessageBox.Show(ex.Message, "Error Login");
             //}
-
         }
 
         private void CheckChromeDriverUpdate()
@@ -295,12 +271,10 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
             //{
             //1st check if chromedriver exists
 
-            var tempPath = System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\";
+            if (!Directory.Exists(DirectoryProvider.SabTempDirectory))
+                Directory.CreateDirectory(DirectoryProvider.SabTempDirectory);
 
-            if (!Directory.Exists(tempPath))
-                Directory.CreateDirectory(tempPath);
-
-            if (!File.Exists(Environment.CurrentDirectory + @"\chromedriver.exe"))
+            if (!File.Exists(DirectoryProvider.CurrentDirectory + "chromedriver.exe"))
             {
                 MessageBox.Show("ChromeDriver not detected.  Downloading latest version..", "ChromeDriver", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Enabled = false;
@@ -312,13 +286,11 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                     string htmlCode = client.DownloadString("https://chromedriver.chromium.org/home");
                     var doc = new HtmlAgilityPack.HtmlDocument();
                     doc.LoadHtml(htmlCode);
-                    foreach (HtmlNode link in doc.DocumentNode.SelectNodes("//a[@class='XqQF9c']"))
-                    {
-                        downloadUrl = link.Attributes["href"].Value;
-                        int pos = downloadUrl.LastIndexOf("=") + 1;
-                        version = downloadUrl.Substring(pos, downloadUrl.Length - pos);
-                        version = version.Remove(version.Length - 1);
-                    }
+                    var node = doc.DocumentNode.SelectSingleNode("//*[@id=\"h.e02b498c978340a_27\"]/div/div/ul[1]/li[2]/p/a");
+                    downloadUrl =node.Attributes["href"].Value.Replace("index.html?path=", "");
+                    int pos = downloadUrl.LastIndexOf("=") + 1;
+                    version = downloadUrl.Substring(pos, downloadUrl.Length - pos);
+                    version = version.Remove(version.Length - 1);
 
                     try
                     {
@@ -334,15 +306,15 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                         //don't care
                     }
 
-                    CreateWorkingDirectory();
+                    CreateSabTempDirectory();
 
                     WebClient client_ = new WebClient();
                     client_.Proxy = WebRequest.DefaultWebProxy;
                     downloadUrl = downloadUrl + "chromedriver_win32.zip";
-                    client_.DownloadFile(downloadUrl.Replace("index.html?path=", ""), System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\chromedriver_win32.zip");
+                    string zipPath = DirectoryProvider.SabTempDirectory + "chromedriver_win32.zip";
+                    client_.DownloadFile(downloadUrl, zipPath);
                     notifyIcon1.Dispose();
-                    string zipPath = System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\chromedriver_win32.zip";
-                    string extractPath = Environment.CurrentDirectory;
+                    string extractPath = DirectoryProvider.CurrentDirectory;
 
                     try
                     {
@@ -353,14 +325,15 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                         {
                             process.Kill();
                         }
-                        //Environment.Exit(0);
                         Thread.Sleep(500);
-                        if (File.Exists(Environment.CurrentDirectory + @"\chromedriver.exe"))
-                            File.Delete(Environment.CurrentDirectory + @"\chromedriver.exe");
+                        if (File.Exists(DirectoryProvider.CurrentDirectory + "chromedriver.exe"))
+                            File.Delete(DirectoryProvider.CurrentDirectory + "chromedriver.exe");
                     }
                     catch { }
 
-                    // needed explicit reference to System.IO.Compression.FileSystem
+                    // extract
+                    if (File.Exists(extractPath + @"\LICENSE.chromedriver"))
+                        File.Delete(extractPath + @"\LICENSE.chromedriver");
                     ZipFile.ExtractToDirectory(zipPath, extractPath);
                     this.Enabled = true;
                 }
@@ -385,15 +358,12 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                         int pos = downloadLink.LastIndexOf("=") + 1;
                         version = downloadLink.Substring(pos, downloadLink.Length - pos);
                         version = version.Remove(version.Length - 1);
-
                     }
-
-
                 }
 
                 //check local version
                 ProcessStartInfo startInfo = new ProcessStartInfo();
-                startInfo.FileName = Environment.CurrentDirectory + @"\chromedriver.exe";
+                startInfo.FileName = DirectoryProvider.CurrentDirectory + "chromedriver.exe";
                 startInfo.CreateNoWindow = true;
                 startInfo.WindowStyle = ProcessWindowStyle.Hidden;
                 startInfo.RedirectStandardOutput = true;
@@ -435,10 +405,10 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                     WebClient client = new WebClient();
                     client.Proxy = WebRequest.DefaultWebProxy;
                     string downloadlinkFull = downloadLink + "chromedriver_win32.zip";
-                    client.DownloadFile(downloadlinkFull.Replace("index.html?path=", ""), System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\chromedriver_win32.zip");
+                    client.DownloadFile(downloadlinkFull.Replace("index.html?path=", ""), DirectoryProvider.SabTempDirectory + "chromedriver_win32.zip");
                     notifyIcon1.Dispose();
-                    string zipPath = System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\chromedriver_win32.zip";
-                    string extractPath = Environment.CurrentDirectory;
+                    string zipPath = DirectoryProvider.SabTempDirectory + "chromedriver_win32.zip";
+                    string extractPath = DirectoryProvider.CurrentDirectory;
 
                     try
                     {
@@ -451,15 +421,14 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                         }
                         //Environment.Exit(0);
                         Thread.Sleep(500);
-                        if (File.Exists(Environment.CurrentDirectory + @"\chromedriver.exe"))
-                            File.Delete(Environment.CurrentDirectory + @"\chromedriver.exe");
+                        if (File.Exists(DirectoryProvider.CurrentDirectory + "chromedriver.exe"))
+                            File.Delete(DirectoryProvider.CurrentDirectory + "chromedriver.exe");
                     }
                     catch { }
 
                     // needed explicit reference to System.IO.Compression.FileSystem
                     ZipFile.ExtractToDirectory(zipPath, extractPath);
                     this.Enabled = true;
-
                 }
             }
             //}
@@ -468,10 +437,6 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
             //    MessageBox.Show(ex.Message,"Chromedriver download error");
             //    return;
             //}
-
-
-
-
         }
 
         private void MaintenanceCheck()
@@ -499,11 +464,7 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
             }
             //}
             //catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
-
-
-
         }
-
 
         private void CheckNewVersion()
         {
@@ -525,13 +486,13 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 this.Enabled = false;
                 MessageBox.Show("New version " + latestVersion + " (" + releaseDate + ") available to download. The file will be downloaded and launched automatically. Please wait a few seconds while the program is downloading.\n\nChangelog :\n\n" + changeLogResponse.Replace("\n", Environment.NewLine), "New version available", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                CreateWorkingDirectory();
+                CreateSabTempDirectory();
 
-                if (!File.Exists(System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\Executer.exe"))
-                    File.WriteAllBytes(System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\Executer.exe", Properties.Resources.Executer);
+                if (!File.Exists(DirectoryProvider.SabTempDirectory + "Executer.exe"))
+                    File.WriteAllBytes(DirectoryProvider.SabTempDirectory + "Executer.exe", Properties.Resources.Executer);
 
-                if (File.Exists(System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\Shopee Malaysia Autobuy Bot.exe"))
-                    File.Delete(System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\Shopee Malaysia Autobuy Bot.exe");
+                if (File.Exists(DirectoryProvider.SabTempDirectory + "Shopee Autobuy Bot.exe"))
+                    File.Delete(DirectoryProvider.SabTempDirectory + "Shopee Autobuy Bot.exe");
 
                 try
                 {
@@ -550,7 +511,7 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
 
                 WebClient client = new WebClient();
                 client.Proxy = WebRequest.DefaultWebProxy;
-                client.DownloadFile(updateUrl, System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\Shopee Malaysia Autobuy Bot.exe");
+                client.DownloadFile(updateUrl, DirectoryProvider.SabTempDirectory + "Shopee Autobuy Bot.exe");
                 updating = true;
                 notifyIcon1.Dispose();
                 Application.Exit();
@@ -588,11 +549,6 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
             return string.Concat(result);
         }
 
-
-
-
-
-
         private void darkButton1_Click(object sender, EventArgs e)
         {
             if (darkListBox1.Items.Count == 0)
@@ -624,21 +580,16 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 //LoginOriginal();
                 Login();
             }).Start();
-
         }
-
 
         private void Login()
         {
-
-
             string hashedId = EncryptionHelper.Encrypt(tbId.Text.Replace("-", "").Replace(" ", ""));
 
             try
             {
-
-
                 //check auth status
+
                 #region checkAuthStatus
 
                 string userResponse = GetWithResponse($"{HostProvider.Host}api/user/{tbId.Text}");
@@ -663,10 +614,8 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                         //string jsonBody = "{\"id\":\"" + tbId.Text + "\",\"fingerprint\":\"" + getFingerPrint().ToLower() + "\"}";
                         ////jsonBody = JsonConvert.SerializeObject(jsonBody, Formatting.Indented);
 
-
                         var data = "{ \"id\": \"" + tbId.Text + "\", \"fingerprint\": \"" + getFingerPrint().ToLower() + "\" }";
                         var setFingerprintResponse = PostWithResponse($"{HostProvider.Host}api/fingerprint", data);
-
 
                         if (!setFingerprintResponse.Equals("\"ok\""))
                         {
@@ -677,14 +626,14 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                     }
                     else if (registeredFingerprint == null && emptyFingerprint == null) //if not registered an fp are full //isEmptyFpdetected == null , means not empty fp, not authorized
                     {
-                        MessageBox.Show("You are not authorized to use this program. To buy this software, contact @ShopeeMalaysiaAutobuyBot at facebook.", "Unauthorized access", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("You are not authorized to use this program. To buy this software, contact @ShopeeAutobuyBot at facebook.", "Unauthorized access", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         tbId.Enabled = true;
                         return;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("You are not authorized to use this program. To buy this software, contact @ShopeeMalaysiaAutobuyBot at facebook.", "Unauthorized access", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("You are not authorized to use this program. To buy this software, contact @ShopeeAutobuyBot at facebook.", "Unauthorized access", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tbId.Enabled = true;
                     return;
                 }
@@ -700,6 +649,7 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                         return;
                     }
                 }
+
                 #endregion checkAuthStatus
 
                 ChromeDriverHelper chromeDriverHelper = new ChromeDriverHelper();
@@ -720,9 +670,6 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
 
         private ChromeDriverHelper firstStart(ChromeDriverHelper chromeDriverHelper)
         {
-
-
-
             chromeDriverHelper.driverService.HideCommandPromptWindow = true;
             if (darkCheckBoxDisableImageExtension.Checked == true)
             {
@@ -749,10 +696,8 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
             return chromeDriverHelper;
         }
 
-
         private string GetWithResponse(string url)
         {
-
             string html_ = string.Empty;
 
             HttpWebRequest request_ = (HttpWebRequest)WebRequest.Create(url);
@@ -776,7 +721,6 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 var response = wb.UploadString(url, "POST", data);
                 result = response;
             }
-
 
             //var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
             //httpWebRequest.ContentType = "application/json";
@@ -812,14 +756,16 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                     {
                         if (driverHelper != null)
                         {
-                            driverHelper.driver.Quit();
+                            try
+                            {
+                                driverHelper.driver.Quit();
+                            }
+                            catch { }
                         }
                     }
                 }
                 catch { }
             }
-
-
 
             Properties.Settings.Default.ID = tbId.Text;
             Properties.Settings.Default.Save();
@@ -827,17 +773,15 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
             {
                 if (updating == true)
                 {
-                    tempFile = System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\Shopee Malaysia Autobuy Bot.exe";
-                    currentFile = Environment.CurrentDirectory + @"\Shopee Malaysia Autobuy Bot.exe";
+                    tempFile = DirectoryProvider.SabTempDirectory + "Shopee Autobuy Bot.exe";
+                    currentFile = DirectoryProvider.CurrentDirectory + "Shopee Autobuy Bot.exe";
 
-                    string tempPath = Path.GetDirectoryName(tempFile);
-
-                    if (File.Exists(tempPath + @"\Executer.exe"))
-                        File.Delete(tempPath + @"\Executer.exe");
-                    File.WriteAllBytes(tempPath + @"\Executer.exe", Properties.Resources.Executer);
+                    if (File.Exists(DirectoryProvider.SabTempDirectory + "Executer.exe"))
+                        File.Delete(DirectoryProvider.SabTempDirectory + "Executer.exe");
+                    File.WriteAllBytes(DirectoryProvider.SabTempDirectory + "Executer.exe", Properties.Resources.Executer);
 
                     ProcessStartInfo startInfo = new ProcessStartInfo();
-                    startInfo.FileName = tempPath + @"\Executer.exe";
+                    startInfo.FileName = DirectoryProvider.SabTempDirectory + "Executer.exe";
                     startInfo.CreateNoWindow = true;
                     startInfo.WindowStyle = ProcessWindowStyle.Hidden;
                     startInfo.Arguments = "\"" + currentFile + "\" \"" + tempFile + "\"";
@@ -856,10 +800,8 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 }
                 //Environment.Exit(0);
                 Thread.Sleep(500);
-
             }
             catch { }
-
         }
 
         private void tbId_TextChanged(object sender, EventArgs e)
@@ -870,39 +812,26 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
 
         private void darkButton1_Click_1(object sender, EventArgs e)
         {
-
         }
-
-
 
         private void darkButton2_Click(object sender, EventArgs e)
         {
-
-
-
         }
 
         private void darkButton3_Click(object sender, EventArgs e)
         {
-
         }
 
         private void darkButton4_Click(object sender, EventArgs e)
         {
-
-
-
         }
 
         private void darkButton5_Click(object sender, EventArgs e)
         {
-
         }
 
         private void darkButton6_Click(object sender, EventArgs e)
         {
-
-
         }
 
         private string getFingerPrint()
@@ -921,10 +850,10 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
             return fingerPrint.ToLower();
         }
 
-        private void CreateWorkingDirectory()
+        private void CreateSabTempDirectory()
         {
-            if (!Directory.Exists(System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\"))
-                Directory.CreateDirectory(System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\");
+            if (!Directory.Exists(DirectoryProvider.SabTempDirectory))
+                Directory.CreateDirectory(DirectoryProvider.SabTempDirectory);
         }
 
         private void darkButton1_Click_2(object sender, EventArgs e)
@@ -944,7 +873,6 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 return;
             try
             {
-
                 Directory.Delete(Environment.CurrentDirectory + "\\Shopee Account\\" +darkListBox1.SelectedItem, true);
             }
             catch { }
@@ -955,11 +883,11 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
     public class ProgramVersion
     {
         private static int program_version_;
+
         public static int program_version
         {
             get { return program_version_; }
             set { program_version_ = value; }
         }
     }
-
 }
