@@ -75,7 +75,6 @@ namespace Shopee_Autobuy_Bot
 
         private static Mutex mutex = null;
         public bool DoneSetupQuickBuyMode = false;
-        private static string logDirectory = Environment.CurrentDirectory + "\\Logs";
 
         private IWavePlayer waveOut;
         private Mp3FileReader mp3FileReader;
@@ -529,8 +528,8 @@ namespace Shopee_Autobuy_Bot
 
         private void ExportLog()
         {
-            if (!Directory.Exists(logDirectory))
-                Directory.CreateDirectory(logDirectory);
+            if (!Directory.Exists(DirectoryProvider.LogDirectory))
+                Directory.CreateDirectory(DirectoryProvider.LogDirectory);
 
             bool testmode;
             string testMode = "Test mode : " + (testmode = (darkCheckBoxTestMode.Checked) ? true : false).ToString() + "\n";
@@ -570,7 +569,7 @@ namespace Shopee_Autobuy_Bot
             Helper.SaveToLog.Append(richTextBoxLogs.Text);
 
 
-            string output = logDirectory + "\\" + FlashSale.ToString("yyyy-dd-M--HH-mm-ss") + ".txt";
+            string output = DirectoryProvider.LogDirectory + "\\" + FlashSale.ToString("yyyy-dd-M--HH-mm-ss") + ".txt";
             File.AppendAllText(output, Helper.SaveToLog.ToString());
             Helper.SaveToLog.Clear();
         }
@@ -2265,8 +2264,8 @@ namespace Shopee_Autobuy_Bot
                     return;
                 }
 
-                if (!Directory.Exists(logDirectory))
-                    Directory.CreateDirectory(logDirectory);
+                if (!Directory.Exists(DirectoryProvider.LogDirectory))
+                    Directory.CreateDirectory(DirectoryProvider.LogDirectory);
 
 
 
@@ -2274,19 +2273,16 @@ namespace Shopee_Autobuy_Bot
 
                 try
                 {
-                    string tempPath = System.IO.Path.GetTempPath();
+                    if (!Directory.Exists(DirectoryProvider.SabTempDirectory + "Executer.exe"))
+                        Directory.CreateDirectory(DirectoryProvider.SabTempDirectory + "Executer.exe");
 
+                    if (File.Exists(DirectoryProvider.SabTempDirectory + "Executer.exe"))
+                        File.Delete(DirectoryProvider.SabTempDirectory + "Executer.exe");
 
-                    if (!Directory.Exists(tempPath + @"86dg5fd86g5d9f86b8d6\"))
-                        Directory.CreateDirectory(tempPath + @"86dg5fd86g5d9f86b8d6\");
-
-                    if (File.Exists(tempPath + @"86dg5fd86g5d9f86b8d6\Executer.exe"))
-                        File.Delete(tempPath + @"86dg5fd86g5d9f86b8d6\Executer.exe");
-
-                    if (!File.Exists(tempPath + @"86dg5fd86g5d9f86b8d6\cashing.mp3"))
-                        File.WriteAllBytes(tempPath + @"86dg5fd86g5d9f86b8d6\cashing.mp3", Properties.Resources.cashing);
+                    if (!File.Exists(DirectoryProvider.SabTempDirectory + "Executer.exe"))
+                        File.WriteAllBytes(DirectoryProvider.SabTempDirectory + "Executer.exe", Properties.Resources.cashing);
                     waveOut = new WaveOut(); // or new WaveOutEvent() if you are not using WinForms/WPF
-                    mp3FileReader = new Mp3FileReader(tempPath + @"86dg5fd86g5d9f86b8d6\cashing.mp3");
+                    mp3FileReader = new Mp3FileReader(DirectoryProvider.SabTempDirectory + "Executer.exe");
                     waveOut.Init(mp3FileReader);
                 }
                 catch { }
@@ -3083,7 +3079,7 @@ namespace Shopee_Autobuy_Bot
         private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show("Shopee Malaysia Autobuy Bot is an automation tool that help customers buying exclusive items without having to wait by their screens.\n\nDisclaimer : We are not responsible for any damage or harm to your Shopee account and your PC. Please know what you are doing.", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Shopee Autobuy Bot is an automation tool that help customers buying exclusive items without having to wait by their screens.\n\nDisclaimer : We are not responsible for any damage or harm to your Shopee account and your PC. Please know what you are doing.", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -3311,7 +3307,7 @@ namespace Shopee_Autobuy_Bot
                 using (WebClient client = new WebClient())
                 {
 
-                    string lazadaUrl = $"{HostProvider.Host}sab/appdata/updt/Lazada%20Malaysia%20Autobuy%20Bot.exe";
+                    string lazadaUrl = $"{HostProvider.Host}sab/appdata/updt/Lazada%20Autobuy%20Bot.exe";
 
                     client.Proxy = WebRequest.DefaultWebProxy;
                     try
@@ -3320,7 +3316,7 @@ namespace Shopee_Autobuy_Bot
 
                         notifyIcon1.Icon = appIcon;
                         notifyIcon1.Visible = true;
-                        notifyIcon1.BalloonTipTitle = "Lazada Malaysia Autobuy Bot";
+                        notifyIcon1.BalloonTipTitle = "Lazada Autobuy Bot";
                         notifyIcon1.BalloonTipText = "Downloading latest version.. Please wait.";
                         notifyIcon1.ShowBalloonTip(10000000);
                     }
@@ -3332,12 +3328,12 @@ namespace Shopee_Autobuy_Bot
                     LazadaBotDir = Environment.CurrentDirectory + @"\Lazada Autobuy Bot";
                     if (!Directory.Exists(LazadaBotDir))
                         Directory.CreateDirectory(LazadaBotDir);
-                    client.DownloadFile(lazadaUrl, LazadaBotDir + @"\Lazada Malaysia Autobuy Bot.exe");
+                    client.DownloadFile(lazadaUrl, LazadaBotDir + @"\Lazada Autobuy Bot.exe");
                     notifyIcon1.Dispose();
 
                 }
 
-                DialogResult dialog = MessageBox.Show("File downloaded. Open file location?", "Lazada Malaysia Autobuy Bot", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                DialogResult dialog = MessageBox.Show("File downloaded. Open file location?", "Lazada Autobuy Bot", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 if (dialog == DialogResult.OK)
                     Process.Start(LazadaBotDir);
 

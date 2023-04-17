@@ -328,6 +328,7 @@
     <Compile Include="Class\ChromeDriver.cs" />
     <Compile Include="Class\ResponseStatus.cs" />
     <Compile Include="Constant\HostProvider.cs" />
+    <Compile Include="Constant\DirectoryProvider.cs" />
     <Compile Include="Form\BotSettings.cs">
       <SubType>Form</SubType>
     </Compile>
