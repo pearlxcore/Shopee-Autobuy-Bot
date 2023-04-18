@@ -11,6 +11,8 @@ This program will be using external api as for the configuration and program upd
 
 Compiled program can be downloaded [here](https://github.com/pearlxcore/ShopeeAutobuyBot/releases).
 
+Report any bugs here [here](https://github.com/pearlxcore/ShopeeAutobuyBot/issues).
+
 **Use at your own risk.**
 
 ## Support my work
