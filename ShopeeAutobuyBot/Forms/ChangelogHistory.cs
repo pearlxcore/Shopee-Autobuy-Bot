@@ -5,9 +5,9 @@ using System.Net;
 
 namespace Shopee_Autobuy_Bot
 {
-    public partial class Form3 : DarkUI.Forms.DarkForm
+    public partial class ChangelogHistory : DarkUI.Forms.DarkForm
     {
-        public Form3()
+        public ChangelogHistory()
         {
             InitializeComponent();
         }

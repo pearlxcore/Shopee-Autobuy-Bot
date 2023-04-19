@@ -60,7 +60,7 @@
             this.darkLabel10 = new DarkUI.Controls.DarkLabel();
             this.tbCHangePaymentButton_placeOrder = new DarkUI.Controls.DarkTextBox();
             this.darkLabel9 = new DarkUI.Controls.DarkLabel();
-            this.tbCSelectShopeeVcButton_placeOrder = new DarkUI.Controls.DarkTextBox();
+            this.tbSelectShopeeVcButton_placeOrder = new DarkUI.Controls.DarkTextBox();
             this.darkLabel11 = new DarkUI.Controls.DarkLabel();
             this.tbRedeemCoinCheckbox_placeOrder = new DarkUI.Controls.DarkTextBox();
             this.darkLabel12 = new DarkUI.Controls.DarkLabel();
@@ -101,8 +101,8 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
@@ -354,7 +354,7 @@
             this.tabPage3.Controls.Add(this.darkLabel10);
             this.tabPage3.Controls.Add(this.tbCHangePaymentButton_placeOrder);
             this.tabPage3.Controls.Add(this.darkLabel9);
-            this.tabPage3.Controls.Add(this.tbCSelectShopeeVcButton_placeOrder);
+            this.tabPage3.Controls.Add(this.tbSelectShopeeVcButton_placeOrder);
             this.tabPage3.Controls.Add(this.darkLabel11);
             this.tabPage3.Controls.Add(this.tbRedeemCoinCheckbox_placeOrder);
             this.tabPage3.Controls.Add(this.darkLabel12);
@@ -440,15 +440,15 @@
             this.darkLabel9.TabIndex = 73;
             this.darkLabel9.Text = "Select Shopee voucher button :";
             // 
-            // tbCSelectShopeeVcButton_placeOrder
+            // tbSelectShopeeVcButton_placeOrder
             // 
-            this.tbCSelectShopeeVcButton_placeOrder.Location = new System.Drawing.Point(212, 64);
-            this.tbCSelectShopeeVcButton_placeOrder.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbCSelectShopeeVcButton_placeOrder.MaxLength = 100;
-            this.tbCSelectShopeeVcButton_placeOrder.Multiline = true;
-            this.tbCSelectShopeeVcButton_placeOrder.Name = "tbCSelectShopeeVcButton_placeOrder";
-            this.tbCSelectShopeeVcButton_placeOrder.Size = new System.Drawing.Size(450, 36);
-            this.tbCSelectShopeeVcButton_placeOrder.TabIndex = 72;
+            this.tbSelectShopeeVcButton_placeOrder.Location = new System.Drawing.Point(212, 64);
+            this.tbSelectShopeeVcButton_placeOrder.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbSelectShopeeVcButton_placeOrder.MaxLength = 100;
+            this.tbSelectShopeeVcButton_placeOrder.Multiline = true;
+            this.tbSelectShopeeVcButton_placeOrder.Name = "tbSelectShopeeVcButton_placeOrder";
+            this.tbSelectShopeeVcButton_placeOrder.Size = new System.Drawing.Size(450, 36);
+            this.tbSelectShopeeVcButton_placeOrder.TabIndex = 72;
             // 
             // darkLabel11
             // 
@@ -548,8 +548,8 @@
             // 
             // darkDockPanel1
             // 
-            this.darkDockPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.darkDockPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.darkDockPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.darkDockPanel1.Location = new System.Drawing.Point(0, 27);
@@ -611,7 +611,7 @@
         private DarkUI.Controls.DarkLabel darkLabel6;
         private DarkUI.Controls.DarkTextBox tbClaimShopVC_cart;
         private DarkUI.Controls.DarkLabel darkLabel9;
-        private DarkUI.Controls.DarkTextBox tbCSelectShopeeVcButton_placeOrder;
+        private DarkUI.Controls.DarkTextBox tbSelectShopeeVcButton_placeOrder;
         private DarkUI.Controls.DarkLabel darkLabel11;
         private DarkUI.Controls.DarkTextBox tbRedeemCoinCheckbox_placeOrder;
         private DarkUI.Controls.DarkLabel darkLabel12;

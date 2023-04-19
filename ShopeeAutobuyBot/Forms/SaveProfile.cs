@@ -1,15 +1,17 @@
-﻿using System;
+﻿using Shopee_Autobuy_Bot.Constants;
+using Shopee_Autobuy_Bot.Utililties;
+using System;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using static Shopee_Autobuy_Bot.Utililties.BotProfileHelper;
+using static Shopee_Autobuy_Bot.Utililties.SettingsHelper.Profile;
 
 namespace Shopee_Autobuy_Bot
 {
-    public partial class ProfileName : DarkUI.Forms.DarkForm
+    public partial class SaveProfile : DarkUI.Forms.DarkForm
     {
 
-        public ProfileName()
+        public SaveProfile()
         {
             InitializeComponent();
         }
@@ -33,8 +35,8 @@ namespace Shopee_Autobuy_Bot
                 }
             }
 
-            Utililties.BotProfileHelper.Name = tbProfileName.Text;
-            SaveProfile = true;
+            SettingsHelper.Profile.Name = tbProfileName.Text;
+            SettingsHelper.Profile.SaveProfile = true;
             this.Close();
         }
 
@@ -45,9 +47,9 @@ namespace Shopee_Autobuy_Bot
 
         private void ProfileName_Load(object sender, EventArgs e)
         {
-            if (!File.Exists("profile.setting"))
-                File.Create("profile.setting").Dispose();
-            SaveProfile = false;
+            if (!File.Exists(DirectoryProvider.ProfileSettingsPath))
+                File.Create(DirectoryProvider.ProfileSettingsPath).Dispose();
+            SettingsHelper.Profile.SaveProfile = false;
         }
     }
 }

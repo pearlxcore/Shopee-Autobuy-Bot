@@ -323,18 +323,11 @@
     <Compile Include="Models\MaintenanceInfo.cs" />
     <Compile Include="Models\UpdateInfo.cs" />
     <Compile Include="Models\UserInfo.cs" />
-    <Compile Include="Utililties\BotProfileHelper.cs" />
-    <Compile Include="Utililties\BotProfileModel.cs" />
+    <Compile Include="Models\Profile.cs" />
     <Compile Include="Utililties\ChromeDriver.cs" />
     <Compile Include="Utililties\ResponseStatus.cs" />
     <Compile Include="Constants\HostProvider.cs" />
     <Compile Include="Constants\DirectoryProvider.cs" />
-    <Compile Include="Forms\BotSettings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\BotSettings.Designer.cs">
-      <DependentUpon>BotSettings.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Element Editor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,42 +335,36 @@
       <DependentUpon>Element Editor.cs</DependentUpon>
     </Compile>
     <Compile Include="Utililties\Encryption.cs" />
-    <Compile Include="Forms\Form1.cs">
+    <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form2.cs">
+    <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Forms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form3.cs">
+    <Compile Include="Forms\ChangelogHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Form4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="Forms\ChangelogHistory.Designer.cs">
+      <DependentUpon>ChangelogHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Utililties\Helper.cs" />
-    <Compile Include="Forms\Profile.cs">
+    <Compile Include="Forms\LoadProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Profile.Designer.cs">
-      <DependentUpon>Profile.cs</DependentUpon>
+    <Compile Include="Forms\LoadProfile.Designer.cs">
+      <DependentUpon>LoadProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProfileName.cs">
+    <Compile Include="Forms\SaveProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ProfileName.Designer.cs">
-      <DependentUpon>ProfileName.cs</DependentUpon>
+    <Compile Include="Forms\SaveProfile.Designer.cs">
+      <DependentUpon>SaveProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -394,29 +381,25 @@
     <Compile Include="Forms\Warning.Designer.cs">
       <DependentUpon>Warning.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\BotSettings.resx">
-      <DependentUpon>BotSettings.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Utililties\ElementHelper.cs" />
+    <Compile Include="Utililties\SettingsHelper.cs" />
     <EmbeddedResource Include="Forms\Element Editor.resx">
       <DependentUpon>Element Editor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ChangelogHistory.resx">
+      <DependentUpon>ChangelogHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\LoadProfile.resx">
+      <DependentUpon>LoadProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Profile.resx">
-      <DependentUpon>Profile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProfileName.resx">
-      <DependentUpon>ProfileName.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\SaveProfile.resx">
+      <DependentUpon>SaveProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

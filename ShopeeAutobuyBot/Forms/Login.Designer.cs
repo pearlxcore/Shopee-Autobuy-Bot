@@ -1,6 +1,6 @@
 ﻿namespace Shopee_Autobuy_Bot
 {
-    partial class Form2
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.btnLogin = new DarkUI.Controls.DarkButton();
             this.tbId = new DarkUI.Controls.DarkTextBox();
             this.darkLabel1 = new DarkUI.Controls.DarkLabel();
@@ -79,7 +79,7 @@
             this.darkLabel1.Name = "darkLabel1";
             this.darkLabel1.Size = new System.Drawing.Size(80, 13);
             this.darkLabel1.TabIndex = 2;
-            this.darkLabel1.Text = "SAB Login Id : ";
+            this.darkLabel1.Text = "SAB LoginUser Id : ";
             // 
             // darkLabel2
             // 
