@@ -15,6 +15,30 @@ Report any bugs here [here](https://github.com/pearlxcore/ShopeeAutobuyBot/issue
 
 **Use at your own risk.**
 
+## Recommended setup:
+
+* Bot settings
+  - ✓ Play sound on successful checkout.
+  - ✓ Disable website Image & Extension.
+  - ✓ Enable and set auto refresh webpage set to 0.
+
+* Schedule Bot
+  - Set time for bot to run 5-10 second before sale started.
+
+* Buying Mode
+  - 'Below specific price' mode. Set the price a bit higher than sale's price.
+
+* Payment Method
+  - Use 'Default' to reduce checkout time but make sure to set the default payment on the browser.
+
+* Product Detail
+  - Make sure to specify the correct product link and quantity
+  - If the product contains more than 1 variation, use '|' character to separate each variation.
+
+** **Enabling coin/voucher redemption checkbox will increase checkout time. Best is to not enabling it unless you really want to use it.**
+
+** **Aim less popular product for better chances.**
+
 ## Support my work
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R524N7X)  
 
