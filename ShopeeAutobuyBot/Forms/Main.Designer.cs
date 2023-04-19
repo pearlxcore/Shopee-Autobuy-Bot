@@ -100,14 +100,10 @@ namespace Shopee_Autobuy_Bot
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.testCookieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeFontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setNewFontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetFontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateConfigurationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.paydaySaleTipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveCookiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -1038,46 +1034,14 @@ namespace Shopee_Autobuy_Bot
             // 
             this.helpToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.helpToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changeFontToolStripMenuItem,
             this.updateConfigurationToolStripMenuItem1,
             this.toolStripSeparator1,
             this.aboutToolStripMenuItem,
-            this.changeHistoryToolStripMenuItem,
-            this.paydaySaleTipToolStripMenuItem});
+            this.changeHistoryToolStripMenuItem});
             this.helpToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
             this.helpToolStripMenuItem1.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem1.Text = "Help";
-            // 
-            // changeFontToolStripMenuItem
-            // 
-            this.changeFontToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.changeFontToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setNewFontToolStripMenuItem,
-            this.resetFontToolStripMenuItem});
-            this.changeFontToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.changeFontToolStripMenuItem.Name = "changeFontToolStripMenuItem";
-            this.changeFontToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-            this.changeFontToolStripMenuItem.Text = "Font settings";
-            this.changeFontToolStripMenuItem.Visible = false;
-            // 
-            // setNewFontToolStripMenuItem
-            // 
-            this.setNewFontToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.setNewFontToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.setNewFontToolStripMenuItem.Name = "setNewFontToolStripMenuItem";
-            this.setNewFontToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.setNewFontToolStripMenuItem.Text = "Set new font";
-            this.setNewFontToolStripMenuItem.Click += new System.EventHandler(this.setNewFontToolStripMenuItem_Click);
-            // 
-            // resetFontToolStripMenuItem
-            // 
-            this.resetFontToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.resetFontToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.resetFontToolStripMenuItem.Name = "resetFontToolStripMenuItem";
-            this.resetFontToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.resetFontToolStripMenuItem.Text = "Reset font";
-            this.resetFontToolStripMenuItem.Click += new System.EventHandler(this.resetFontToolStripMenuItem_Click);
             // 
             // updateConfigurationToolStripMenuItem1
             // 
@@ -1113,15 +1077,6 @@ namespace Shopee_Autobuy_Bot
             this.changeHistoryToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
             this.changeHistoryToolStripMenuItem.Text = "Changelog history";
             this.changeHistoryToolStripMenuItem.Click += new System.EventHandler(this.changeHistoryToolStripMenuItem_Click);
-            // 
-            // paydaySaleTipToolStripMenuItem
-            // 
-            this.paydaySaleTipToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.paydaySaleTipToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.paydaySaleTipToolStripMenuItem.Name = "paydaySaleTipToolStripMenuItem";
-            this.paydaySaleTipToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-            this.paydaySaleTipToolStripMenuItem.Text = "Tips";
-            this.paydaySaleTipToolStripMenuItem.Click += new System.EventHandler(this.paydaySaleTipToolStripMenuItem_Click);
             // 
             // testToolStripMenuItem
             // 
@@ -1618,7 +1573,6 @@ namespace Shopee_Autobuy_Bot
         private DarkUI.Controls.DarkTextBox tbBelowSpecificPriceCARTCHECKOUTPrice;
         private System.Windows.Forms.RadioButton radioButtonPriceSpecificCARTCHECKOUT;
         private DarkUI.Controls.DarkButton darkButton7;
-        private System.Windows.Forms.ToolStripMenuItem paydaySaleTipToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveCookiesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem scanSaleItemsToolStripMenuItem;
@@ -1630,9 +1584,6 @@ namespace Shopee_Autobuy_Bot
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem fontTestToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changeFontToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem setNewFontToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem resetFontToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem loadProfileSettingsToolStripMenuItem;
         private DarkUI.Controls.DarkCheckBox cbRandom;
