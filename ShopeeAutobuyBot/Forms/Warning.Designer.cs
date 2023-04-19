@@ -39,11 +39,11 @@
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
             this.label1.Location = new System.Drawing.Point(11, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(348, 45);
+            this.label1.Size = new System.Drawing.Size(333, 45);
             this.label1.TabIndex = 0;
-            this.label1.Text = "\'Cart checkout\' and \'Below specific price (Cart checkout) (BETA)\' \r\ndoes not work" +
-    " with Flash/Shocking sale and not tested yet on \r\npayday sale so use these mode " +
-    "on your own risk!\r\n";
+            this.label1.Text = "\'Cart checkout\' and \'Below specific price (Cart checkout)\' \r\ndoes not work with F" +
+    "lash/Shocking sale and not tested yet on \r\npayday sale so use these mode on your" +
+    " own risk!\r\n";
             // 
             // darkButton5
             // 

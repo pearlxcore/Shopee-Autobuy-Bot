@@ -5,7 +5,7 @@ using System.Drawing;
 
 namespace Shopee_Autobuy_Bot
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@ namespace Shopee_Autobuy_Bot
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.darkSectionPanelTimerMode = new DarkUI.Controls.DarkSectionPanel();
             this.darkCheckBoxTomorrow = new DarkUI.Controls.DarkCheckBox();
             this.darkCheckBoxScheduleBot = new DarkUI.Controls.DarkCheckBox();
@@ -360,7 +360,6 @@ namespace Shopee_Autobuy_Bot
             // darkCheckBoxDisableImageExtension
             // 
             this.darkCheckBoxDisableImageExtension.AutoSize = true;
-            this.darkCheckBoxDisableImageExtension.Enabled = false;
             this.darkCheckBoxDisableImageExtension.Location = new System.Drawing.Point(24, 99);
             this.darkCheckBoxDisableImageExtension.Margin = new System.Windows.Forms.Padding(2);
             this.darkCheckBoxDisableImageExtension.Name = "darkCheckBoxDisableImageExtension";
@@ -920,7 +919,6 @@ namespace Shopee_Autobuy_Bot
             // darkCheckBoxHeadless
             // 
             this.darkCheckBoxHeadless.AutoSize = true;
-            this.darkCheckBoxHeadless.Enabled = false;
             this.darkCheckBoxHeadless.Location = new System.Drawing.Point(24, 68);
             this.darkCheckBoxHeadless.Margin = new System.Windows.Forms.Padding(2);
             this.darkCheckBoxHeadless.Name = "darkCheckBoxHeadless";
@@ -1470,7 +1468,7 @@ namespace Shopee_Autobuy_Bot
             this.labelShopeeAcc.Text = "...";
             this.labelShopeeAcc.Visible = false;
             // 
-            // Form1
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1499,7 +1497,7 @@ namespace Shopee_Autobuy_Bot
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(570, 56);
-            this.Name = "Form1";
+            this.Name = "Main";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Shopee Autobuy Bot";
@@ -1585,10 +1583,10 @@ namespace Shopee_Autobuy_Bot
         private DarkUI.Controls.DarkNumericUpDown darkNumericUpDownCountDownSecond;
         private DarkUI.Controls.DarkCheckBox darkCheckBoxTestMode;
         private DarkUI.Controls.DarkSectionPanel darkSectionPanelBuyingMode;
-        private  System.Windows.Forms.RadioButton radioButtonBuyNormal;
-        private  System.Windows.Forms.RadioButton radioButtonPriceSpecific;
-        private  System.Windows.Forms.RadioButton radioButtonShockingSale;
-        private  System.Windows.Forms.RadioButton radioButtonCheckOutCart;
+        private System.Windows.Forms.RadioButton radioButtonBuyNormal;
+        private System.Windows.Forms.RadioButton radioButtonPriceSpecific;
+        private System.Windows.Forms.RadioButton radioButtonShockingSale;
+        private System.Windows.Forms.RadioButton radioButtonCheckOutCart;
         private DarkUI.Controls.DarkTextBox tbPriceSpecific;
         private DarkUI.Controls.DarkCheckBox darkCheckBoxScheduleBot;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;

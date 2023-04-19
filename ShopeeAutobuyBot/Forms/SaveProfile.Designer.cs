@@ -1,6 +1,6 @@
 ﻿namespace Shopee_Autobuy_Bot
 {
-    partial class ProfileName
+    partial class SaveProfile
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfileName));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaveProfile));
             this.btnSave = new DarkUI.Controls.DarkButton();
             this.darkLabel14 = new DarkUI.Controls.DarkLabel();
             this.tbProfileName = new DarkUI.Controls.DarkTextBox();

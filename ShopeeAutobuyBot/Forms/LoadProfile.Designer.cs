@@ -1,6 +1,6 @@
 ﻿namespace Shopee_Autobuy_Bot
 {
-    partial class Profile
+    partial class LoadProfile
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadProfile));
             this.btnLoadProfile = new DarkUI.Controls.DarkButton();
             this.btnDeleteProfile = new DarkUI.Controls.DarkButton();
             this.darkLabel1 = new DarkUI.Controls.DarkLabel();

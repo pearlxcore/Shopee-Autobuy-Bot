@@ -1,6 +1,6 @@
 ﻿namespace Shopee_Autobuy_Bot
 {
-    partial class Form4
+    partial class ChangelogHistory
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangelogHistory));
             this.darkTextBox1 = new DarkUI.Controls.DarkTextBox();
             this.SuspendLayout();
             // 
@@ -40,26 +40,23 @@
             this.darkTextBox1.Name = "darkTextBox1";
             this.darkTextBox1.ReadOnly = true;
             this.darkTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.darkTextBox1.Size = new System.Drawing.Size(716, 628);
-            this.darkTextBox1.TabIndex = 56;
+            this.darkTextBox1.Size = new System.Drawing.Size(933, 519);
+            this.darkTextBox1.TabIndex = 0;
             this.darkTextBox1.TabStop = false;
-            this.darkTextBox1.Text = resources.GetString("darkTextBox1.Text");
             // 
-            // Form4
+            // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(716, 628);
+            this.ClientSize = new System.Drawing.Size(933, 519);
             this.Controls.Add(this.darkTextBox1);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.Name = "Form4";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Messages and Tips";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form4_FormClosing);
-            this.Load += new System.EventHandler(this.Form4_Load);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Form3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Change History";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

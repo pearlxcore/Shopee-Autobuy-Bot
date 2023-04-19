@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Shopee_Autobuy_Bot.Constants;
 using Shopee_Autobuy_Bot.Models;
+using Shopee_Autobuy_Bot.Utililties;
 using System;
 using System.IO;
 using System.Net;
@@ -23,24 +24,26 @@ namespace Shopee_Autobuy_Bot
         {
             isSaved = false;
 
-            tbBuyNowButton_product.Text = Properties.Settings.Default.product_strBuyNowButton;
-            tbVariationFlexBox_product.Text = Properties.Settings.Default.product_strProductVariationFlexBox;
-            tbQuantityTextbox_product.Text = Properties.Settings.Default.product_strQuantityTextBox;
-            tbCurrentPriceLabel_product.Text = Properties.Settings.Default.product_strCurrentProductPrice;
-            tbSaleBanner_product.Text = Properties.Settings.Default.product_strSaleBanner;
+            ElementInfo.Root element = SettingsHelper.Element.ParseElementSettingsFromFile();
 
-            tbCheckoutButton_cart.Text = Properties.Settings.Default.cart_strCheckOut;
-            tbSelectAllCheckbox_cart.Text = Properties.Settings.Default.cart_strSelectAllCheckbox;
-            tbProductPrice_cart.Text = Properties.Settings.Default.cart_strProductPriceLabel;
-            tbClaimShopVC_cart.Text = Properties.Settings.Default.cart_strClaimShopVC;
-            tbCartEmptyLabel_cart.Text = Properties.Settings.Default.cart_strCartEmptyLabel;
+            tbBuyNowButton_product.Text = element.ProductPage.BuyNowButton;
+            tbVariationFlexBox_product.Text = element.ProductPage.ProductVariationFlexBox;
+            tbQuantityTextbox_product.Text = element.ProductPage.QuantityCheckbox;
+            tbCurrentPriceLabel_product.Text = element.ProductPage.CurrentPriceLabel;
+            tbSaleBanner_product.Text = element.ProductPage.SaleBanner;
 
-            tbPLaceOrderButton_placeOrder.Text = Properties.Settings.Default.checkout_strPlaceOrder;
-            tbCSelectShopeeVcButton_placeOrder.Text = Properties.Settings.Default.chekcout_strClaimShopeeVcButton;
-            tbShopeeVcContainer_placeOrder.Text = Properties.Settings.Default.checkout_strShopeeVcContainer;
-            tbClaimShopeeVcOkButton_placeOrder.Text = Properties.Settings.Default.checkout_strShopeeVcOkButton;
-            tbRedeemCoinCheckbox_placeOrder.Text = Properties.Settings.Default.checkout_strRedeemCoinCheckbox;
-            tbCHangePaymentButton_placeOrder.Text = Properties.Settings.Default.checkout_strChangePaymentButton;
+            tbCheckoutButton_cart.Text = element.CartPage.CheckOutButton;
+            tbSelectAllCheckbox_cart.Text = element.CartPage.SelectAllCheckbox;
+            tbProductPrice_cart.Text = element.CartPage.ProductPriceLabel;
+            tbClaimShopVC_cart.Text = element.CartPage.ClaimShopVoucherButton;
+            tbCartEmptyLabel_cart.Text = element.CartPage.CartEmptyLabel;
+
+            tbPLaceOrderButton_placeOrder.Text = element.CheckoutPage.PlaceOrderButton;
+            tbSelectShopeeVcButton_placeOrder.Text = element.CheckoutPage.SelectShopeeVoucherButton;
+            tbShopeeVcContainer_placeOrder.Text = element.CheckoutPage.ShopeeVoucherContainer;
+            tbClaimShopeeVcOkButton_placeOrder.Text = element.CheckoutPage.ShopeeVoucherOkButton;
+            tbRedeemCoinCheckbox_placeOrder.Text = element.CheckoutPage.RedeemCoinCheckbox;
+            tbCHangePaymentButton_placeOrder.Text = element.CheckoutPage.ChangePaymentButton;
         }
 
         private void saveChangesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,25 +74,58 @@ namespace Shopee_Autobuy_Bot
 
         private void saveElementChanges()
         {
-            Properties.Settings.Default.product_strBuyNowButton = tbBuyNowButton_product.Text;
-            Properties.Settings.Default.product_strProductVariationFlexBox = tbVariationFlexBox_product.Text;
-            Properties.Settings.Default.product_strQuantityTextBox = tbQuantityTextbox_product.Text;
-            Properties.Settings.Default.product_strCurrentProductPrice = tbCurrentPriceLabel_product.Text;
-            Properties.Settings.Default.product_strSaleBanner = tbSaleBanner_product.Text;
 
-            Properties.Settings.Default.cart_strCheckOut = tbCheckoutButton_cart.Text;
-            Properties.Settings.Default.cart_strSelectAllCheckbox = tbSelectAllCheckbox_cart.Text;
-            Properties.Settings.Default.cart_strProductPriceLabel = tbProductPrice_cart.Text;
-            Properties.Settings.Default.cart_strClaimShopVC = tbClaimShopVC_cart.Text;
-            Properties.Settings.Default.cart_strCartEmptyLabel = tbCartEmptyLabel_cart.Text;
+            var productPage = new ElementInfo.ProductPage()
+            {
+                BuyNowButton= tbBuyNowButton_product.Text,
+                ProductVariationFlexBox= tbVariationFlexBox_product.Text,
+                QuantityCheckbox= tbQuantityTextbox_product.Text,
+                CurrentPriceLabel= tbCurrentPriceLabel_product.Text,
+                SaleBanner= tbSaleBanner_product.Text
+            };
 
-            Properties.Settings.Default.checkout_strPlaceOrder = tbPLaceOrderButton_placeOrder.Text;
-            Properties.Settings.Default.chekcout_strClaimShopeeVcButton = tbCSelectShopeeVcButton_placeOrder.Text;
-            Properties.Settings.Default.checkout_strShopeeVcContainer = tbShopeeVcContainer_placeOrder.Text;
-            Properties.Settings.Default.checkout_strShopeeVcOkButton = tbClaimShopeeVcOkButton_placeOrder.Text;
-            Properties.Settings.Default.checkout_strRedeemCoinCheckbox = tbRedeemCoinCheckbox_placeOrder.Text;
-            Properties.Settings.Default.checkout_strChangePaymentButton = tbCHangePaymentButton_placeOrder.Text;
-            Properties.Settings.Default.Save();
+            var cartPage = new ElementInfo.CartPage()
+            {
+
+                CheckOutButton= tbCheckoutButton_cart.Text,
+                SelectAllCheckbox= tbSelectAllCheckbox_cart.Text,
+                ProductPriceLabel= tbProductPrice_cart.Text,
+                ClaimShopVoucherButton= tbClaimShopVC_cart.Text,
+                CartEmptyLabel= tbCartEmptyLabel_cart.Text
+            };
+
+            var checkoutPage = new ElementInfo.CheckoutPage()
+            {
+
+                PlaceOrderButton= tbPLaceOrderButton_placeOrder.Text,
+                SelectShopeeVoucherButton= tbSelectShopeeVcButton_placeOrder.Text,
+                ShopeeVoucherContainer= tbShopeeVcContainer_placeOrder.Text,
+                ShopeeVoucherOkButton= tbClaimShopeeVcOkButton_placeOrder.Text,
+                RedeemCoinCheckbox= tbRedeemCoinCheckbox_placeOrder.Text,
+                ChangePaymentButton= tbCHangePaymentButton_placeOrder.Text
+            };
+
+            var rootElement = new ElementInfo.Root()
+            {
+                ProductPage = productPage,
+                CartPage = cartPage,
+                CheckoutPage = checkoutPage
+            };
+
+            string jsonString = JsonConvert.SerializeObject(rootElement, Formatting.Indented);
+            var elementPath = DirectoryProvider.ElementSettingsPath;
+            var elementExists = File.Exists(elementPath);
+
+            if (!elementExists || (elementExists && File.ReadAllText(elementPath) == ""))
+                File.WriteAllText(elementPath, "[\n" + jsonString + "\n]");
+            else
+            {
+                var elements = File.ReadAllText(elementPath);
+                File.WriteAllText(elementPath, elements);
+            }
+
+            SettingsHelper.Element.Elements = rootElement;
+            MessageBox.Show("Elements settings saved", "Elements saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void tbCartEmptyLabel_cart_TextChanged(object sender, EventArgs e)
@@ -111,31 +147,10 @@ namespace Shopee_Autobuy_Bot
         {
             try
             {
-                //get delay config 
+                //get delay config
 
                 string elementResponse = GetWithResponse($"{HostProvider.Host}api/element/");
-                var elementinfo = JsonConvert.DeserializeObject<ElementInfo.Root>(elementResponse); // -> to escape string
-
-                Properties.Settings.Default.product_strBuyNowButton = tbBuyNowButton_product.Text = elementinfo.ProductPage.BuyNowButton.ToString();
-                Properties.Settings.Default.product_strProductVariationFlexBox = tbVariationFlexBox_product.Text = elementinfo.ProductPage.ProductVariationFlexBox.ToString();
-                Properties.Settings.Default.product_strQuantityTextBox = tbQuantityTextbox_product.Text = elementinfo.ProductPage.QuantityCheckbox.ToString();
-                Properties.Settings.Default.product_strCurrentProductPrice = tbCurrentPriceLabel_product.Text = elementinfo.ProductPage.CurrentPriceLabel.ToString();
-                Properties.Settings.Default.product_strSaleBanner = tbSaleBanner_product.Text = elementinfo.ProductPage.SaleBanner.ToString();
-
-                Properties.Settings.Default.cart_strCheckOut = tbCheckoutButton_cart.Text = elementinfo.CartPage.CheckOutButton.ToString();
-                Properties.Settings.Default.cart_strSelectAllCheckbox = tbSelectAllCheckbox_cart.Text = elementinfo.CartPage.SelectAllCheckbox.ToString();
-                Properties.Settings.Default.cart_strProductPriceLabel = tbProductPrice_cart.Text = elementinfo.CartPage.ProductPriceLabel.ToString();
-                Properties.Settings.Default.cart_strClaimShopVC = tbClaimShopVC_cart.Text = elementinfo.CartPage.ClaimShopVoucherButton.ToString();
-                Properties.Settings.Default.cart_strCartEmptyLabel = tbCartEmptyLabel_cart.Text = elementinfo.CartPage.CartEmptyLabel.ToString();
-
-                Properties.Settings.Default.checkout_strPlaceOrder = tbPLaceOrderButton_placeOrder.Text = elementinfo.CheckoutPage.PlaceOrderButton.ToString();
-                Properties.Settings.Default.chekcout_strClaimShopeeVcButton = tbCSelectShopeeVcButton_placeOrder.Text = elementinfo.CheckoutPage.SelectShopeeVoucherButton.ToString();
-                Properties.Settings.Default.checkout_strShopeeVcContainer = tbShopeeVcContainer_placeOrder.Text = elementinfo.CheckoutPage.ShopeeVoucherContainer.ToString();
-                Properties.Settings.Default.checkout_strShopeeVcOkButton = tbClaimShopeeVcOkButton_placeOrder.Text = elementinfo.CheckoutPage.ShopeeVoucherOkButton.ToString();
-                Properties.Settings.Default.checkout_strRedeemCoinCheckbox = tbRedeemCoinCheckbox_placeOrder.Text = elementinfo.CheckoutPage.RedeemCoinCheckbox.ToString();
-                Properties.Settings.Default.checkout_strChangePaymentButton = tbCHangePaymentButton_placeOrder.Text = elementinfo.CheckoutPage.ChangePaymentButton.ToString();
-                Properties.Settings.Default.Save();
-
+                SettingsHelper.Element.Elements = JsonConvert.DeserializeObject<ElementInfo.Root>(elementResponse); // -> to escape string
             }
             catch (Exception ex) { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
             MessageBox.Show("Element updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

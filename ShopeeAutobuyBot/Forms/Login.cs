@@ -22,11 +22,11 @@ using static Shopee_Autobuy_Bot.Utililties.Helper;
 
 namespace Shopee_Autobuy_Bot
 {
-    public partial class Form2 : DarkUI.Forms.DarkForm
+    public partial class Login : DarkUI.Forms.DarkForm
     {
         private List<ChromeDriverHelper> chromeDriverHelpersList = new List<ChromeDriverHelper>();
 
-        public Form2()
+        public Login()
         {
             InitializeComponent();
             ServicePointManager.Expect100Continue = true;
@@ -252,7 +252,6 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
             MaintenanceCheck();
             CheckNewVersion();
             CheckChromeDriverUpdate();
-            Properties.Settings.Default.ShopeeRegion = "Malaysia";
             //if (Properties.Settings.Default.ShopeeRegion == "Malaysia")
             //    darkComboBox1.Text = "Malaysia";
             //if (Properties.Settings.Default.ShopeeRegion == "Singapore")
@@ -262,7 +261,7 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
             //}
             //catch (Exception ex)
             //{
-            //    MessageBox.Show(ex.Message, "Error Login");
+            //    MessageBox.Show(ex.Message, "Error LoginUser");
             //}
         }
 
@@ -579,11 +578,11 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
             {
                 Thread.CurrentThread.IsBackground = true;
                 //LoginOriginal();
-                Login();
+                LoginUser();
             }).Start();
         }
 
-        private void Login()
+        private void LoginUser()
         {
             string hashedId = EncryptionHelper.Encrypt(tbId.Text.Replace("-", "").Replace(" ", ""));
 
@@ -658,7 +657,7 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 // open main form
                 tbId.Enabled = true;
                 chromeDriverHelpersList.Add(chromeDriverHelper_);
-                Form1 form = new Form1(tbId.Text, chromeDriverHelper_);
+                Main form = new Main(tbId.Text, chromeDriverHelper_);
                 form.ShowDialog();
             }
             catch (Exception ex)
@@ -685,7 +684,7 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 chromeDriverHelper.options.AddArgument("headless");
             }
             chromeDriverHelper.options.AddArgument("--disable-blink-features=AutomationControlled");
-            chromeDriverHelper.options.AddArgument("user-data-dir=" + Environment.CurrentDirectory + $"\\Shopee Account\\{chromeProfile}");
+            chromeDriverHelper.options.AddArgument("user-data-dir=" + DirectoryProvider.ShopeeAccountDirectory + $"{chromeProfile}");
             chromeDriverHelper.options.AddArgument($"--profile-directory=Default");
             chromeDriverHelper.options.PageLoadStrategy = PageLoadStrategy.Eager;
             chromeDriverHelper.options.AddExcludedArgument("enable-automation");
@@ -865,6 +864,8 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 return;
             }
             darkListBox1.Items.Add(tbNewChromeProfile.Text);
+            if (!Directory.Exists(DirectoryProvider.ShopeeAccountDirectory + tbNewChromeProfile.Text))
+                Directory.CreateDirectory(DirectoryProvider.ShopeeAccountDirectory + tbNewChromeProfile.Text);
         }
 
         private void btnDeleteProfile_Click(object sender, EventArgs e)
@@ -874,7 +875,7 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 return;
             try
             {
-                Directory.Delete(Environment.CurrentDirectory + "\\Shopee Account\\" +darkListBox1.SelectedItem, true);
+                Directory.Delete(DirectoryProvider.ShopeeAccountDirectory +darkListBox1.SelectedItem, true);
             }
             catch { }
             darkListBox1.Items.Remove(darkListBox1.SelectedItem);

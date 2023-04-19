@@ -1,26 +1,26 @@
-﻿using Shopee_Autobuy_Bot.Utililties;
+﻿using Shopee_Autobuy_Bot.Constants;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using static Shopee_Autobuy_Bot.Utililties.BotProfileHelper;
+using static Shopee_Autobuy_Bot.Utililties.SettingsHelper.Profile;
 
 
 namespace Shopee_Autobuy_Bot
 {
-    public partial class Profile : DarkUI.Forms.DarkForm
+    public partial class LoadProfile : DarkUI.Forms.DarkForm
     {
-        private List<BotProfileModel.Root> profileList = new List<BotProfileModel.Root>();
-        public Profile()
+        private List<Utililties.Profile.Root> profileList = new List<Utililties.Profile.Root>();
+        public LoadProfile()
         {
             InitializeComponent();
         }
 
         private void Profile_Load_1(object sender, EventArgs e)
         {
-            if (!File.Exists("profile.setting"))
-                File.Create("profile.setting");
+            if (!File.Exists(DirectoryProvider.ProfileSettingsPath))
+                File.Create(DirectoryProvider.ProfileSettingsPath);
             profileList = ReadProfileToList();
             if (profileList == null)
             {
@@ -32,7 +32,7 @@ namespace Shopee_Autobuy_Bot
             {
                 darkComboBoxProfile.Items.Add(profile.profile_name);
             }
-            LoadProfile = false;
+            Utililties.SettingsHelper.Profile.LoadProfile = false;
         }
 
         private void btnDeleteProfile_Click(object sender, EventArgs e)
@@ -59,13 +59,13 @@ namespace Shopee_Autobuy_Bot
                 MessageBox.Show("Select profile to load", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            LoadProfile = true;
+            Utililties.SettingsHelper.Profile.LoadProfile = true;
             this.Close();
         }
 
         private void darkComboBoxProfile_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SelectedProfile = new BotProfileModel.Root();
+            SelectedProfile = new Utililties.Profile.Root();
             foreach (var profile in profileList)
             {
                 if (profile.profile_name == darkComboBoxProfile.Text)
@@ -77,7 +77,7 @@ namespace Shopee_Autobuy_Bot
 
             if (SelectedProfile == null)
             {
-                MessageBox.Show("Failed to loaad profile", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Failed to load profile", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try
@@ -87,7 +87,7 @@ namespace Shopee_Autobuy_Bot
                 {
                     try
                     {
-                        if (SelectedProfile.BuyingMode.mode != string.Empty)
+                        if (SelectedProfile.BuyingMode.mode != string.Empty&& SelectedProfile.BuyingMode.mode != null)
                         {
                             if (SelectedProfile.BuyingMode.mode == c.Name)
                                 c.Checked = true;

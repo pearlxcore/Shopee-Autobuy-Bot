@@ -21,18 +21,18 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Timers;
 using System.Windows.Forms;
-using static Shopee_Autobuy_Bot.Utililties.BotProfileHelper;
 using static Shopee_Autobuy_Bot.Utililties.Helper;
 using static Shopee_Autobuy_Bot.Utililties.Helper.Shopee;
-
+using static Shopee_Autobuy_Bot.Utililties.SettingsHelper.Element;
+using static Shopee_Autobuy_Bot.Utililties.SettingsHelper.Profile;
 
 namespace Shopee_Autobuy_Bot
 {
-    public partial class Form1 : DarkUI.Forms.DarkForm
+    public partial class Main : DarkUI.Forms.DarkForm
     {
         private ConfigInfo ConfigInfo = new ConfigInfo();
         private UserInfo UserInfo = new UserInfo();
-        private BotProfileModel BotProfile;
+        private Utililties.Profile BotProfile;
         private ChromeDriverHelper ChromeDriverHelper = new ChromeDriverHelper();
         private string userId { get; set; }
 
@@ -80,7 +80,7 @@ namespace Shopee_Autobuy_Bot
         private Mp3FileReader mp3FileReader;
         private string currentElement;
 
-        public Form1(string userid, ChromeDriverHelper chromeDriverHelper)
+        public Main(string userid, ChromeDriverHelper chromeDriverHelper)
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
@@ -586,7 +586,7 @@ namespace Shopee_Autobuy_Bot
             //alternative method
             if (strQuantity != "1")
             {
-                string QuantitiyTextBox = Properties.Settings.Default.product_strQuantityTextBox;
+                string QuantitiyTextBox = Elements.ProductPage.QuantityCheckbox;
                 currentElement = QuantitiyTextBox;
                 try { WaitElementExists(QuantitiyTextBox); } catch { }
                 try { WaitElementVisible(QuantitiyTextBox); } catch { }
@@ -695,7 +695,7 @@ namespace Shopee_Autobuy_Bot
 
                 Logger("Cart page loaded.", new Color?(Color.LawnGreen), true, true, true, isLogging);
                 Thread.Sleep(ConfigInfo.delay_step_94);
-                if (IsElementPresent(By.XPath(Properties.Settings.Default.cart_strCartEmptyLabel)) == true)
+                if (IsElementPresent(By.XPath(Elements.CartPage.CartEmptyLabel)) == true)
                 {
                     Logger("Your shopping cart is empty", new Color?(Color.IndianRed), true, true, true, isLogging);
                     return;
@@ -709,7 +709,7 @@ namespace Shopee_Autobuy_Bot
 
                     ShopeeAutobuy(Try, 94, Helper.isLogging);
                 }
-                else if (!IsElementPresent(By.XPath(Properties.Settings.Default.cart_strProductPriceLabel)))
+                else if (!IsElementPresent(By.XPath(Elements.CartPage.ProductPriceLabel)))
                 {
                     if (darkCheckBoxRefresh.Checked == true)
                     {
@@ -726,7 +726,7 @@ namespace Shopee_Autobuy_Bot
                 {
                     string strCurrentPrice = "";
                     string strUserPrice = tbBelowSpecificPriceCARTCHECKOUTPrice.Text;
-                    strCurrentPrice = NewElementByXpath(Properties.Settings.Default.cart_strProductPriceLabel).Text.Replace(",", "").Replace("RM", "").Replace("$", "");
+                    strCurrentPrice = NewElementByXpath(Elements.CartPage.ProductPriceLabel).Text.Replace(",", "").Replace("RM", "").Replace("$", "");
 
                     //if (IsElementPresent(By.XPath(strNotCartCheckoutCurrentPrice)) || IsElementPresent(By.XPath(strCartCheckoutCurrentPrice)))
                     //    strCurrentPrice = NewElementByXpath(strCartCheckoutCurrentPrice).Text.Replace(",", "").Replace("RM", "");
@@ -754,13 +754,13 @@ namespace Shopee_Autobuy_Bot
                     {
                         Logger("Current product price : " + CurrentPrice, new Color?(Color.LawnGreen), true, true, true, isLogging);
                         CheckoutTime = DateTime.Now;
-                        string CartCheckBoxAllItem = Properties.Settings.Default.cart_strSelectAllCheckbox;
+                        string CartCheckBoxAllItem = Elements.CartPage.SelectAllCheckbox;
                         WaitElementExists(CartCheckBoxAllItem);
                         currentElement = CartCheckBoxAllItem;
                         var CheckBoxSelectItem = NewElementByXpath(CartCheckBoxAllItem);
                         ClickElement(CheckBoxSelectItem);
                         Logger("Item selected.", new Color?(Color.LawnGreen), true, true, true, isLogging);
-                        string strCheckOutButton = Properties.Settings.Default.cart_strCheckOut;
+                        string strCheckOutButton = Elements.CartPage.CheckOutButton;
                         currentElement = strCheckOutButton;
                         var CheckOutButton = NewElementByXpath(strCheckOutButton);
 
@@ -768,10 +768,10 @@ namespace Shopee_Autobuy_Bot
                         if (darkCheckBoxClaimShopVoucher.Checked == true)
                         {
                             Thread.Sleep(ConfigInfo.delay_claim_shop_voucher);
-                            if (IsElementPresent(By.XPath(Properties.Settings.Default.cart_strClaimShopVC)))
+                            if (IsElementPresent(By.XPath(Elements.CartPage.ClaimShopVoucherButton)))
                             {
                                 ReadOnlyCollection<IWebElement> claimVcs;
-                                claimVcs = ChromeDriverHelper.driver.FindElements(By.XPath(Properties.Settings.Default.cart_strClaimShopVC));
+                                claimVcs = ChromeDriverHelper.driver.FindElements(By.XPath(Elements.CartPage.ClaimShopVoucherButton));
                                 int num = 0;
                                 foreach (IWebElement element in claimVcs)
                                 {
@@ -842,7 +842,7 @@ namespace Shopee_Autobuy_Bot
                 Thread.Sleep(ConfigInfo.delay_step_95);
                 Logger("Product page loaded.", new Color?(Color.LawnGreen), true, true, true, isLogging);
 
-                string strButtonBuyNow = Properties.Settings.Default.product_strBuyNowButton;
+                string strButtonBuyNow = Elements.ProductPage.BuyNowButton;
                 currentElement = strButtonBuyNow;
                 IWebElement BuyNowButton;
                 try
@@ -881,7 +881,7 @@ namespace Shopee_Autobuy_Bot
                 {
                     Logger("Product is available.", new Color?(Color.LawnGreen), true, true, true, isLogging);
 
-                    if (IsElementPresent(By.XPath(Properties.Settings.Default.product_strProductVariationFlexBox)))
+                    if (IsElementPresent(By.XPath(Elements.ProductPage.ProductVariationFlexBox)))
                     {
                         //select random variant
                         if (cbRandom.Checked)
@@ -972,7 +972,7 @@ namespace Shopee_Autobuy_Bot
                         }
                     }
                     Thread.Sleep(ConfigInfo.delay_step_95);
-                    string currentProductPrice = Properties.Settings.Default.product_strCurrentProductPrice;
+                    string currentProductPrice = Elements.ProductPage.CurrentPriceLabel;
                     currentElement = currentProductPrice;
                     string strCurrentPrice = NewElementByXpath(currentProductPrice).Text.Replace(",", "").Replace("RM", "").Replace("$", "");
                     string strUserPrice = tbPriceSpecific.Text;
@@ -1033,7 +1033,7 @@ namespace Shopee_Autobuy_Bot
 
                 Logger("Cart page loaded.", new Color?(Color.LawnGreen), true, true, true, isLogging);
                 Thread.Sleep(ConfigInfo.delay_step_96);
-                if (IsElementPresent(By.XPath(Properties.Settings.Default.cart_strCartEmptyLabel)) == true)
+                if (IsElementPresent(By.XPath(Elements.CartPage.CartEmptyLabel)) == true)
                 {
                     Logger("Your shopping cart is empty", new Color?(Color.IndianRed), true, true, true, isLogging);
                     return;
@@ -1047,7 +1047,7 @@ namespace Shopee_Autobuy_Bot
 
                     ShopeeAutobuy(Try, 96, Helper.isLogging);
                 }
-                else if (!IsElementPresent(By.XPath(Properties.Settings.Default.cart_strProductPriceLabel)))
+                else if (!IsElementPresent(By.XPath(Elements.CartPage.ProductPriceLabel)))
                 {
                     if (darkCheckBoxRefresh.Checked == true)
                     {
@@ -1060,10 +1060,10 @@ namespace Shopee_Autobuy_Bot
                     else
                         return;
                 }
-                else if (IsElementPresent(By.XPath(Properties.Settings.Default.cart_strProductPriceLabel)))
+                else if (IsElementPresent(By.XPath(Elements.CartPage.ProductPriceLabel)))
                 {
                     CheckoutTime = DateTime.Now;
-                    string CartCheckBoxAllItem = Properties.Settings.Default.cart_strSelectAllCheckbox;
+                    string CartCheckBoxAllItem = Elements.CartPage.SelectAllCheckbox;
                     currentElement = CartCheckBoxAllItem;
                     WaitElementExists(CartCheckBoxAllItem);
                     var CheckBoxSelectItem = NewElementByXpath(CartCheckBoxAllItem);
@@ -1074,10 +1074,10 @@ namespace Shopee_Autobuy_Bot
                     if (darkCheckBoxClaimShopVoucher.Checked == true)
                     {
                         Thread.Sleep(ConfigInfo.delay_claim_shop_voucher);
-                        if (IsElementPresent(By.XPath(Properties.Settings.Default.cart_strClaimShopVC)))
+                        if (IsElementPresent(By.XPath(Elements.CartPage.ClaimShopVoucherButton)))
                         {
                             ReadOnlyCollection<IWebElement> claimVcs;
-                            claimVcs = ChromeDriverHelper.driver.FindElements(By.XPath(Properties.Settings.Default.cart_strClaimShopVC));
+                            claimVcs = ChromeDriverHelper.driver.FindElements(By.XPath(Elements.CartPage.ClaimShopVoucherButton));
                             int num = 0;
                             foreach (IWebElement element in claimVcs)
                             {
@@ -1085,7 +1085,7 @@ namespace Shopee_Autobuy_Bot
                             }
                         }
                     }
-                    string strCheckOutButton = Properties.Settings.Default.cart_strCheckOut;
+                    string strCheckOutButton = Elements.CartPage.CheckOutButton;
                     currentElement = strCheckOutButton;
                     var CheckOutButton = NewElementByXpath(strCheckOutButton);
                     ClickElement(CheckOutButton);
@@ -1139,7 +1139,7 @@ namespace Shopee_Autobuy_Bot
             {
                 WaitUrlContain(darkTextBoxProductLink.Text);
 
-                string strFlashShockingSaleBanner = Properties.Settings.Default.product_strSaleBanner;
+                string strFlashShockingSaleBanner = Elements.ProductPage.SaleBanner;
                 try
                 {
                     WaitElementExists(strFlashShockingSaleBanner);
@@ -1190,7 +1190,7 @@ namespace Shopee_Autobuy_Bot
                 Thread.Sleep(ConfigInfo.delay_step_1);
                 Logger("Product page loaded.", new Color?(Color.LawnGreen), true, true, true, isLogging);
 
-                string strButtonBuyNow = Properties.Settings.Default.product_strBuyNowButton;
+                string strButtonBuyNow = Elements.ProductPage.BuyNowButton;
                 IWebElement BuyNowButton;
                 try
                 {
@@ -1229,7 +1229,7 @@ namespace Shopee_Autobuy_Bot
                 {
                     Logger("Product is available.", new Color?(Color.LawnGreen), true, true, true, isLogging);
 
-                    if (IsElementPresent(By.XPath(Properties.Settings.Default.product_strProductVariationFlexBox)))
+                    if (IsElementPresent(By.XPath(Elements.ProductPage.ProductVariationFlexBox)))
                     {
                         //select random variant
                         if (cbRandom.Checked)
@@ -1360,9 +1360,9 @@ namespace Shopee_Autobuy_Bot
                         Thread.Sleep(ConfigInfo.delay_claim_shop_voucher);
                         //try { WaitElementExists(strClaimShopeVoucher); } catch { }
 
-                        if (IsElementPresent(By.XPath(Properties.Settings.Default.cart_strClaimShopVC)))
+                        if (IsElementPresent(By.XPath(Elements.CartPage.ClaimShopVoucherButton)))
                         {
-                            string strClaimShopeVoucher = Properties.Settings.Default.cart_strClaimShopVC;
+                            string strClaimShopeVoucher = Elements.CartPage.ClaimShopVoucherButton;
                             WaitElementClickable(strClaimShopeVoucher);
                             WaitElementVisible(strClaimShopeVoucher);
                             currentElement = strClaimShopeVoucher;
@@ -1377,7 +1377,7 @@ namespace Shopee_Autobuy_Bot
                     Thread.Sleep(ConfigInfo.delay_step_2); //general. default 0
 
                     //WaitElementExists(strCheckOutButton);
-                    string strCheckOutButton = Properties.Settings.Default.cart_strCheckOut;
+                    string strCheckOutButton = Elements.CartPage.CheckOutButton;
                     currentElement = strCheckOutButton;
                     var CheckOutButton = NewElementByXpath(strCheckOutButton);
                     ClickElement(CheckOutButton);
@@ -1427,10 +1427,10 @@ namespace Shopee_Autobuy_Bot
                     WaitUrlContain("checkout");
 
                     //Thread.Sleep(300);
-                    if (IsElementPresent(By.XPath(Properties.Settings.Default.checkout_strChangePaymentButton)))
+                    if (IsElementPresent(By.XPath(Elements.CheckoutPage.ChangePaymentButton)))
                     {
-                        WaitElementExists(Properties.Settings.Default.checkout_strChangePaymentButton);
-                        var ChangePaymentMethodDiv = NewElementByXpath(Properties.Settings.Default.checkout_strChangePaymentButton);
+                        WaitElementExists(Elements.CheckoutPage.ChangePaymentButton);
+                        var ChangePaymentMethodDiv = NewElementByXpath(Elements.CheckoutPage.ChangePaymentButton);
                         ClickElement(ChangePaymentMethodDiv);
                         Logger("Click 'Change Payment Method'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
                     }
@@ -1770,7 +1770,7 @@ namespace Shopee_Autobuy_Bot
                 {
                     Thread.Sleep(ConfigInfo.delay_redeem_coin);
 
-                    string strRedeemCoin = Properties.Settings.Default.checkout_strRedeemCoinCheckbox;
+                    string strRedeemCoin = Elements.CheckoutPage.RedeemCoinCheckbox;
                     currentElement = strRedeemCoin;
                     WaitElementClickable(strRedeemCoin);
                     WaitElementVisible(strRedeemCoin);
@@ -1787,15 +1787,15 @@ namespace Shopee_Autobuy_Bot
                 //redeem any shopee voucher
                 if (darkCheckBoxRedeemShopeeVoucher.Checked == true)
                 {
-                    string strSelectVoucher = Properties.Settings.Default.chekcout_strClaimShopeeVcButton;
+                    string strSelectVoucher = Elements.CheckoutPage.SelectShopeeVoucherButton;
                     currentElement = strSelectVoucher;
                     var EnterVoucherCode = NewElementByXpath(strSelectVoucher);
                     ClickElement(EnterVoucherCode);
                     Logger("Click 'Select Voucher'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
                     Thread.Sleep(ConfigInfo.delay_any_shopee_voucher);
-                    WaitElementClickable(Properties.Settings.Default.checkout_strShopeeVcContainer);
-                    WaitElementVisible(Properties.Settings.Default.checkout_strShopeeVcContainer);
-                    string strEnterVoucherCodeOKButton = Properties.Settings.Default.checkout_strShopeeVcOkButton;
+                    WaitElementClickable(Elements.CheckoutPage.ShopeeVoucherContainer);
+                    WaitElementVisible(Elements.CheckoutPage.ShopeeVoucherContainer);
+                    string strEnterVoucherCodeOKButton = Elements.CheckoutPage.ShopeeVoucherOkButton;
                     WaitElementClickable(strEnterVoucherCodeOKButton);
                     WaitElementVisible(strEnterVoucherCodeOKButton);
                     currentElement = strEnterVoucherCodeOKButton;
@@ -1811,7 +1811,7 @@ namespace Shopee_Autobuy_Bot
                     currentElement = OrderPrice;
                     WaitElementVisible(OrderPrice);
                     Helper.OrderPrice = NewElementByXpath(OrderPrice).Text;
-                    string strPlaceOrder = Properties.Settings.Default.checkout_strPlaceOrder;
+                    string strPlaceOrder = Elements.CheckoutPage.PlaceOrderButton;
                     currentElement = strPlaceOrder;
                     WaitElementVisible(strPlaceOrder);
                     var PlaceOrderButton = NewElementByXpath(strPlaceOrder);
@@ -2118,7 +2118,7 @@ namespace Shopee_Autobuy_Bot
         {
             try
             {
-                //check if google chrome installed
+                // verify google chrome installation
                 string chromeDir = (Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData).ToString() + @"\Google\Chrome\User Data\");
                 if (!Directory.Exists(chromeDir))
                 {
@@ -2127,9 +2127,13 @@ namespace Shopee_Autobuy_Bot
                     return;
                 }
 
+                // verify log and shopee acc directory
                 if (!Directory.Exists(DirectoryProvider.LogDirectory))
                     Directory.CreateDirectory(DirectoryProvider.LogDirectory);
+                if (!Directory.Exists(DirectoryProvider.ShopeeAccountDirectory))
+                    Directory.CreateDirectory(DirectoryProvider.ShopeeAccountDirectory);
 
+                // configure sab temp directory and magic tool executer.exe
                 try
                 {
                     if (!Directory.Exists(DirectoryProvider.SabTempDirectory + "Executer.exe"))
@@ -2140,64 +2144,25 @@ namespace Shopee_Autobuy_Bot
 
                     if (!File.Exists(DirectoryProvider.SabTempDirectory + "Executer.exe"))
                         File.WriteAllBytes(DirectoryProvider.SabTempDirectory + "Executer.exe", Properties.Resources.cashing);
-                    waveOut = new WaveOut(); // or new WaveOutEvent() if you are not using WinForms/WPF
-                    mp3FileReader = new Mp3FileReader(DirectoryProvider.SabTempDirectory + "Executer.exe");
-                    waveOut.Init(mp3FileReader);
                 }
                 catch { }
 
-                //Load value from settings
-                foreach (RadioButton c in darkSectionPanelBuyingMode.Controls.OfType<RadioButton>())
+                // configure mp3 player
+                waveOut = new WaveOut(); // or new WaveOutEvent() if you are not using WinForms/WPF
+                mp3FileReader = new Mp3FileReader(DirectoryProvider.SabTempDirectory + "Cashing.mp3");
+                waveOut.Init(mp3FileReader);
+
+                // load element value from element.settings
+                try
                 {
-                    try
-                    {
-                        if (Properties.Settings.Default.BuyMode != string.Empty)
-                        {
-                            if (Properties.Settings.Default.BuyMode == c.Name)
-                                c.Checked = true;
-                        }
-                    }
-                    catch
-                    {
-                    }
+                    LoadElementSettings();
                 }
+                catch (Exception ex) { MessageBox.Show("Fail to load element settings from element.settings", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
 
-                darkCheckBoxTomorrow.Checked = Properties.Settings.Default.ScheduleBotTomorrow;
-                darkCheckBoxScheduleBot.Checked = Properties.Settings.Default.ScheduleBot;
-                tbPriceSpecific.Text = Properties.Settings.Default.BelowSpecificPrice;
-                tbBelowSpecificPriceCARTCHECKOUTPrice.Text = Properties.Settings.Default.BelowSpecificPriceCheckout;
-                darkCheckBoxPlaySound.Checked = Properties.Settings.Default.PlaySound;
-                darkCheckBoxDisableImageExtension.Checked = Properties.Settings.Default.DisableImageExtension;
-
-                darkNumericUpDownCountdownHour.Value = Properties.Settings.Default.CountdownHour;
-                darkNumericUpDownCountdownMinutes.Value = Properties.Settings.Default.CountdownMinutes;
-                darkNumericUpDownCountDownSecond.Value = Properties.Settings.Default.CountdownSeconds;
-                if (Properties.Settings.Default.PaymentMethod != "")
-                    darkComboBoxPaymentMethod.Text = Properties.Settings.Default.PaymentMethod;
-                darkTextBoxShopeePayPin.Text = Properties.Settings.Default.ShopeePayPin;
-                darkComboBoxCourier.Text = Properties.Settings.Default.Courier;
-
-                darkTextBoxProductLink.Text = Properties.Settings.Default.ProductLinkMalaysia;
-
-                darkTextBoxVariationString.Text = Properties.Settings.Default.VariationString;
-                darkNumericUpDownProductQuantity.Value = Properties.Settings.Default.ProductQuantity;
-                darkCheckBoxHeadless.Checked = Properties.Settings.Default.Headless;
-                darkCheckBoxLogging.Checked = Properties.Settings.Default.Logging;
-                darkCheckBoxRefresh.Checked = Properties.Settings.Default.Refresh;
-                darkCheckBoxRedeemCoin.Checked = Properties.Settings.Default.RedeemCoin;
-                darkNumericUpDownRefreshSeconds.Value = Properties.Settings.Default.RefreshSeconds;
-                darkNumericUpDownTimeOut.Value = Properties.Settings.Default.TimeOut;
-                darkCheckBoxTestMode.Checked = Properties.Settings.Default.TestMode;
-                tbLast4Digit.Text = Properties.Settings.Default.CardLast4Digit;
-                if (Properties.Settings.Default.BankType != "")
-                    darkComboBoxBankType.Text = Properties.Settings.Default.BankType;
-                darkCheckBoxClaimShopVoucher.Checked = Properties.Settings.Default.ClaimShopVoucher;
-                darkCheckBoxRedeemShopeeVoucher.Checked = Properties.Settings.Default.RedeemShopeeVoucher;
-
-                //if (darkComboBoxPaymentMethod.Text == "ShopeePay")
-                //    darkCheckBoxRedeemShopeeVoucher.Enabled = true;
+                // enable this event to prevent error while initializing bot
                 darkComboBoxPaymentMethod.SelectedIndexChanged += darkComboBoxPaymentMethod_SelectedIndexChanged;
 
+                // navigate chrome to shopee website
                 try
                 {
                     ChromeDriverHelper.driver.Navigate().GoToUrl("https://shopee.com.my/");
@@ -2224,18 +2189,14 @@ namespace Shopee_Autobuy_Bot
                     }
                 }
 
-                Logger("Ready.", new Color?(), true, true, true);
-
-                //display title+ current version
-                //get user info n pass to UserInfo
+                // get UserInfo and display username and program version and display profile name
                 string userResponse = GetWithResponse($"{HostProvider.Host}api/user/{userId}");
                 UserInfo = JsonConvert.DeserializeObject<UserInfo>(userResponse);
-
                 var currentVersion = new Version(Assembly.GetExecutingAssembly().GetName().Version.ToString());
                 this.Text = "Shopee Autobuy Bot " + currentVersion + " | " + UserInfo.name;
                 labelShopeeAcc.Text = chromeProfile;
 
-                //check subscription
+                // checking subscription
                 if (UserInfo.expiry_date != null)
                 {
                     this.Text += " | Subscription ends " + UserInfo.expiry_date;
@@ -2243,19 +2204,14 @@ namespace Shopee_Autobuy_Bot
                 }
                 else
                     this.Text += " | Lifetime";
-
                 this.Text += " | " + chromeProfile;
 
-                //update configuration
-                try
-                {
-                    GetConfig();
-                }
-                catch (Exception ex) { MessageBox.Show("Fail to update configuration from server.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-
+                // add payment type into combobox
                 AddPaymentToComboBox();
                 darkComboBoxPaymentMethod.Text = "Default";
                 EnableDisableControlOnPaymentMethod();
+
+                Logger("Ready.", new Color?(), true, true, true);
             }
             catch (Exception ex)
             {
@@ -2270,6 +2226,11 @@ namespace Shopee_Autobuy_Bot
                 Application.Exit();
                 return;
             }
+        }
+
+        private void LoadElementSettings()
+        {
+            Elements = SettingsHelper.Element.ParseElementSettingsFromFile();
         }
 
         private void AddPaymentToComboBox()
@@ -2421,14 +2382,6 @@ namespace Shopee_Autobuy_Bot
                             File.Delete(tempPath + @"\Executer.exe");
                         File.WriteAllBytes(tempPath + @"\Executer.exe", Properties.Resources.Executer);
 
-                        //Process process = new Process();
-                        //process.StartInfo.FileName = tempPath + @"\Executer.exe";
-                        //process.StartInfo.Arguments = "\"" + currentFile + "\" \"" + tempFile + "\"";
-                        //process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
-                        //process.StartInfo.CreateNoWindow = false;
-                        //MessageBox.Show(tempPath + @"\Executer.exe" + " \"" + currentFile + "\" \"" + tempFile + "\"");
-                        //process.Start();
-
                         ProcessStartInfo startInfo = new ProcessStartInfo();
                         startInfo.FileName = tempPath + @"\Executer.exe";
                         startInfo.CreateNoWindow = true;
@@ -2438,54 +2391,10 @@ namespace Shopee_Autobuy_Bot
                     }
                     else
                     {
-                        //driver.Close();
                         ChromeDriverHelper.driver.Quit();
                         ChromeDriverHelper.driver = null;
-                        //Save settings
-                        foreach (RadioButton c in darkSectionPanelBuyingMode.Controls.OfType<RadioButton>())
-                        {
-                            if (c.Checked == true)
-                                Properties.Settings.Default.BuyMode = c.Name;
-                        }
-                        Properties.Settings.Default.BelowSpecificPrice = tbPriceSpecific.Text;
-                        Properties.Settings.Default.BelowSpecificPriceCheckout = tbBelowSpecificPriceCARTCHECKOUTPrice.Text;
-                        Properties.Settings.Default.PlaySound = darkCheckBoxPlaySound.Checked;
-                        Properties.Settings.Default.Refresh = darkCheckBoxRefresh.Checked;
-                        Properties.Settings.Default.RedeemCoin = darkCheckBoxRedeemCoin.Checked;
-                        Properties.Settings.Default.Headless = darkCheckBoxHeadless.Checked;
-                        Properties.Settings.Default.Logging = darkCheckBoxLogging.Checked;
-                        Properties.Settings.Default.DisableImageExtension = darkCheckBoxDisableImageExtension.Checked;
-                        Properties.Settings.Default.RedeemCoin = darkCheckBoxRedeemCoin.Checked;
-                        Properties.Settings.Default.TestMode = darkCheckBoxTestMode.Checked;
-                        Properties.Settings.Default.ClaimShopVoucher = darkCheckBoxClaimShopVoucher.Checked;
-                        Properties.Settings.Default.RedeemShopeeVoucher = darkCheckBoxRedeemShopeeVoucher.Checked;
-
-                        Properties.Settings.Default.ScheduleBot = darkCheckBoxScheduleBot.Checked;
-                        Properties.Settings.Default.ScheduleBotTomorrow = darkCheckBoxTomorrow.Checked;
-                        Properties.Settings.Default.CountdownHour = Convert.ToInt32(darkNumericUpDownCountdownHour.Value);
-                        Properties.Settings.Default.CountdownMinutes = Convert.ToInt32(darkNumericUpDownCountdownMinutes.Value);
-                        Properties.Settings.Default.CountdownSeconds = Convert.ToInt32(darkNumericUpDownCountDownSecond.Value);
-                        Properties.Settings.Default.Courier = string.Empty;
-                        Properties.Settings.Default.CardLast4Digit = tbLast4Digit.Text;
-                        Properties.Settings.Default.ShopeePayPin = darkTextBoxShopeePayPin.Text;
-                        Properties.Settings.Default.PaymentMethod = darkComboBoxPaymentMethod.Text;
-                        Properties.Settings.Default.BankType = darkComboBoxBankType.Text;
-                        Properties.Settings.Default.Courier = darkComboBoxCourier.Text;
-
-                        Properties.Settings.Default.ProductLinkMalaysia = darkTextBoxProductLink.Text;
-
-                        Properties.Settings.Default.ProductQuantity = Convert.ToInt32(darkNumericUpDownProductQuantity.Value);
-                        Properties.Settings.Default.VariationString = darkTextBoxVariationString.Text;
-                        Properties.Settings.Default.ShopeePayPin = darkTextBoxShopeePayPin.Text;
-                        Properties.Settings.Default.TimeOut = Convert.ToInt32(darkNumericUpDownTimeOut.Value);
-                        Properties.Settings.Default.RefreshSeconds = Convert.ToInt32(darkNumericUpDownRefreshSeconds.Value);
-                        Properties.Settings.Default.Save();
                     }
-                    //Environment.Exit(0);
                 }
-
-                //if (File.Exists(System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\cashing.mp3"))
-                //    File.Delete(System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\cashing.mp3");
             }
             catch { }
         }
@@ -2633,8 +2542,6 @@ namespace Shopee_Autobuy_Bot
         private void darkCheckBoxDisableImageExtension_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Restart program for the changes to take effect.", "Restart required", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Properties.Settings.Default.DisableImageExtension = darkCheckBoxDisableImageExtension.Checked;
-            Properties.Settings.Default.Save();
         }
 
         private void darkRadioButtonFlashSale_CheckedChanged(object sender, EventArgs e)
@@ -2645,8 +2552,6 @@ namespace Shopee_Autobuy_Bot
         private void darkCheckBoxHeadless_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Restart program for the changes to take effect.", "Restart required", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Properties.Settings.Default.Headless = darkCheckBoxHeadless.Checked;
-            Properties.Settings.Default.Save();
         }
 
         private void visitFacebookPageToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2882,7 +2787,7 @@ namespace Shopee_Autobuy_Bot
 
         private void changelogHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 form = new Form3();
+            ChangelogHistory form = new ChangelogHistory();
             form.ShowDialog();
         }
 
@@ -2931,7 +2836,7 @@ namespace Shopee_Autobuy_Bot
 
         private void changeHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 form = new Form3();
+            ChangelogHistory form = new ChangelogHistory();
             form.ShowDialog();
         }
 
@@ -3036,7 +2941,7 @@ namespace Shopee_Autobuy_Bot
         private void paydaySaleTipToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.ShowTipsPromptDontShowThisAgain = false;
-            Form4 f = new Form4();
+            MessagesTips f = new MessagesTips();
             f.ShowDialog();
         }
 
@@ -3130,98 +3035,81 @@ namespace Shopee_Autobuy_Bot
 
         private void loadProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!File.Exists("profile.setting"))
+            if (!File.Exists(DirectoryProvider.ProfileSettingsPath))
             {
-                MessageBox.Show("'profile.setting' not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("profile.settings not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
 
         private void SaveBotProfile()
         {
-            var botSettings = new BotProfileModel.BotSettings()
+            try
             {
-                play_sound = darkCheckBoxPlaySound.Checked,
-                hide_browser = darkCheckBoxHeadless.Checked,
-                disable_image = darkCheckBoxDisableImageExtension.Checked,
-                autorefresh_webpage = darkCheckBoxRefresh.Checked,
-                autorefresh_interval = Convert.ToInt32(darkNumericUpDownRefreshSeconds.Value),
-                disable_logging = darkCheckBoxLogging.Checked,
-                test_mode = darkCheckBoxTestMode.Checked,
-                timeout = Convert.ToInt32(darkNumericUpDownTimeOut.Value)
-            };
-
-            var productInfo = new BotProfileModel.ProductDetail()
-            {
-                product_link = darkTextBoxProductLink.Text,
-                variant = darkTextBoxVariationString.Text,
-                quantity = Convert.ToInt32(darkNumericUpDownProductQuantity.Value)
-            };
-
-            var voucherInfo = new BotProfileModel.Voucher_Coin()
-            {
-                claim_shop_vc = darkCheckBoxClaimShopVoucher.Checked,
-                redeeem_shopee_vc = darkCheckBoxRedeemShopeeVoucher.Checked,
-                redeem_coin = darkCheckBoxRedeemCoin.Checked
-            };
-
-            var scheduleInfo = new BotProfileModel.ScheduleBot()
-            {
-                schedule = darkCheckBoxScheduleBot.Checked,
-                hour = Convert.ToInt32(darkNumericUpDownCountdownHour.Value),
-                minute = Convert.ToInt32(darkNumericUpDownCountdownMinutes.Value),
-                second = Convert.ToInt32(darkNumericUpDownCountDownSecond.Value),
-                tomorrow = darkCheckBoxTomorrow.Checked
-            };
-
-            var buyMode = "";
-            foreach (RadioButton c in darkSectionPanelBuyingMode.Controls.OfType<RadioButton>())
-            {
-                if (c.Checked == true)
-                    buyMode = c.Name;
+                var botSettings = new Utililties.Profile.BotSettings()
+                {
+                    play_sound = darkCheckBoxPlaySound.Checked,
+                    hide_browser = darkCheckBoxHeadless.Checked,
+                    disable_image = darkCheckBoxDisableImageExtension.Checked,
+                    autorefresh_webpage = darkCheckBoxRefresh.Checked,
+                    autorefresh_interval = Convert.ToInt32(darkNumericUpDownRefreshSeconds.Value),
+                    disable_logging = darkCheckBoxLogging.Checked,
+                    test_mode = darkCheckBoxTestMode.Checked,
+                    timeout = Convert.ToInt32(darkNumericUpDownTimeOut.Value)
+                };
+                var productInfo = new Utililties.Profile.ProductDetail()
+                {
+                    product_link = darkTextBoxProductLink.Text,
+                    variant = darkTextBoxVariationString.Text,
+                    quantity = Convert.ToInt32(darkNumericUpDownProductQuantity.Value)
+                };
+                var voucherInfo = new Utililties.Profile.Voucher_Coin()
+                {
+                    claim_shop_vc = darkCheckBoxClaimShopVoucher.Checked,
+                    redeeem_shopee_vc = darkCheckBoxRedeemShopeeVoucher.Checked,
+                    redeem_coin = darkCheckBoxRedeemCoin.Checked
+                };
+                var scheduleInfo = new Utililties.Profile.ScheduleBot()
+                {
+                    schedule = darkCheckBoxScheduleBot.Checked,
+                    hour = Convert.ToInt32(darkNumericUpDownCountdownHour.Value),
+                    minute = Convert.ToInt32(darkNumericUpDownCountdownMinutes.Value),
+                    second = Convert.ToInt32(darkNumericUpDownCountDownSecond.Value),
+                    tomorrow = darkCheckBoxTomorrow.Checked
+                };
+                var buyMode = "";
+                foreach (RadioButton c in darkSectionPanelBuyingMode.Controls.OfType<RadioButton>())
+                {
+                    if (c.Checked == true)
+                        buyMode = c.Name;
+                }
+                var buyingMode = new Utililties.Profile.BuyingMode()
+                {
+                    mode = buyMode,
+                    below_specific_price = tbPriceSpecific.Text,
+                    cart_below_specific_price = tbBelowSpecificPriceCARTCHECKOUTPrice.Text
+                };
+                var paymentInfo = new Utililties.Profile.PaymentDetail()
+                {
+                    payment_type = darkComboBoxPaymentMethod.Text,
+                    bank_type = darkComboBoxBankType.Text,
+                    last_4_digit_card = tbLast4Digit.Text,
+                    shopeepay_pin = darkTextBoxShopeePayPin.Text
+                };
+                var root = new Utililties.Profile.Root()
+                {
+                    profile_name = SettingsHelper.Profile.Name,
+                    BotSettings = botSettings,
+                    ProductDetail = productInfo,
+                    Voucher_Coin = voucherInfo,
+                    ScheduleBot = scheduleInfo,
+                    BuyingMode = buyingMode,
+                    PaymentDetail = paymentInfo
+                };
+                SaveNewProfile(root);
+                MessageBox.Show("New profile (" + SettingsHelper.Profile.Name + ") successfully saved into profile.settings", "Profile saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            var buyingMode = new BotProfileModel.BuyingMode()
-            {
-                mode = buyMode,
-                below_specific_price = tbPriceSpecific.Text,
-                cart_below_specific_price = tbBelowSpecificPriceCARTCHECKOUTPrice.Text
-            };
-
-            var paymentInfo = new BotProfileModel.PaymentDetail()
-            {
-                payment_type = darkComboBoxPaymentMethod.Text,
-                bank_type = darkComboBoxBankType.Text,
-                last_4_digit_card = tbLast4Digit.Text,
-                shopeepay_pin = darkTextBoxShopeePayPin.Text
-            };
-
-            var root = new BotProfileModel.Root()
-            {
-                profile_name = BotProfileHelper.Name,
-                BotSettings = botSettings,
-                ProductDetail = productInfo,
-                Voucher_Coin = voucherInfo,
-                ScheduleBot = scheduleInfo,
-                BuyingMode = buyingMode,
-                PaymentDetail = paymentInfo
-            };
-
-            string jsonString = JsonConvert.SerializeObject(root, Formatting.Indented);
-            var profilePath = Environment.CurrentDirectory + @"\profile.setting";
-            var profileIsExists = File.Exists(profilePath);
-
-            if (!profileIsExists || (profileIsExists && File.ReadAllText(profilePath) == ""))
-                File.WriteAllText(profilePath, "[\n" + jsonString + "\n]");
-            else
-            {
-                var profiles = File.ReadAllText(profilePath);
-                var list = JsonConvert.DeserializeObject<List<BotProfileModel.Root>>(profiles);
-                list.Add(root);
-                var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
-                File.WriteAllText(profilePath, convertedJson);
-            }
-            MessageBox.Show("New profile (" + BotProfileHelper.Name + ") successfully saved into 'profile.setting'", "Profile saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            catch (Exception ex) { MessageBox.Show("An error occured while saving profile", "Error"); }
         }
 
         private void testCookieToolStripMenuItem_Click(object sender, EventArgs e)
@@ -3265,18 +3153,18 @@ namespace Shopee_Autobuy_Bot
 
         private void saveProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ProfileName profileName = new ProfileName();
+            SaveProfile profileName = new SaveProfile();
             profileName.ShowDialog();
-            if (SaveProfile)
+            if (SettingsHelper.Profile.SaveProfile)
                 SaveBotProfile();
         }
 
         private void loadProfileSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Profile profile = new Profile();
+            LoadProfile profile = new LoadProfile();
             profile.ShowDialog();
 
-            if (LoadProfile == true)
+            if (SettingsHelper.Profile.LoadProfile == true)
             {
                 //Load value from settings
                 foreach (RadioButton c in darkSectionPanelBuyingMode.Controls.OfType<RadioButton>())
