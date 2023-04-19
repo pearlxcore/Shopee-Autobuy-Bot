@@ -2938,12 +2938,6 @@ namespace Shopee_Autobuy_Bot
             }
         }
 
-        private void paydaySaleTipToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.ShowTipsPromptDontShowThisAgain = false;
-            MessagesTips f = new MessagesTips();
-            f.ShowDialog();
-        }
 
         private void saveCookiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -3132,23 +3126,6 @@ namespace Shopee_Autobuy_Bot
         {
             var fontSize = this.Font.Size;
             this.Font = new Font("Arial", 24, FontStyle.Bold);
-        }
-
-        private void setNewFontToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FontDialog fd = new FontDialog();
-            if (fd.ShowDialog() == DialogResult.OK)
-            {
-                this.Font = fd.Font;
-                Properties.Settings.Default.windowsFont = this.Font;
-                Properties.Settings.Default.Save();
-            }
-        }
-
-        private void resetFontToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.windowsFont = this.Font = new Font("Segoe UI", 8, FontStyle.Regular);
-            Properties.Settings.Default.Save();
         }
 
         private void saveProfileToolStripMenuItem_Click(object sender, EventArgs e)
