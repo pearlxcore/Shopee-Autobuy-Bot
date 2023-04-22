@@ -11,7 +11,7 @@ namespace Shopee_Autobuy_Bot
 {
     public partial class LoadProfile : DarkUI.Forms.DarkForm
     {
-        private List<Utililties.ProfileModel.Root> profileList = new List<Utililties.ProfileModel.Root>();
+        private List<Utililties.Profile.Root> profileList = new List<Utililties.Profile.Root>();
         public LoadProfile()
         {
             InitializeComponent();
@@ -19,9 +19,9 @@ namespace Shopee_Autobuy_Bot
 
         private void Profile_Load_1(object sender, EventArgs e)
         {
-            if (!File.Exists(DirectoryPaths.ProfileSettingsPath))
-                File.Create(DirectoryPaths.ProfileSettingsPath);
-            profileList = LoadProfilesFromFile();
+            if (!File.Exists(DirectoryProvider.ProfileSettingsPath))
+                File.Create(DirectoryProvider.ProfileSettingsPath);
+            profileList = ReadProfileToList();
             if (profileList == null)
             {
                 MessageBox.Show("No profile found", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -40,7 +40,7 @@ namespace Shopee_Autobuy_Bot
             if (profileList.Count == 0)
                 return;
 
-            var deleteProfile = DeleteProfileFromFile(darkComboBoxProfile.Text);
+            var deleteProfile = DeleteProfile(darkComboBoxProfile.Text);
             if (!deleteProfile)
             {
                 MessageBox.Show("Error occured when deleting profile.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -48,7 +48,7 @@ namespace Shopee_Autobuy_Bot
             }
             darkComboBoxProfile.Items.Remove(darkComboBoxProfile.Text);
             profileList.Clear();
-            profileList = LoadProfilesFromFile();
+            profileList = ReadProfileToList();
             MessageBox.Show("Profile deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -65,7 +65,7 @@ namespace Shopee_Autobuy_Bot
 
         private void darkComboBoxProfile_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SelectedProfile = new Utililties.ProfileModel.Root();
+            SelectedProfile = new Utililties.Profile.Root();
             foreach (var profile in profileList)
             {
                 if (profile.profile_name == darkComboBoxProfile.Text)

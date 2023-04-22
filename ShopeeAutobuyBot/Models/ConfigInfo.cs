@@ -1,6 +1,6 @@
 ﻿namespace Shopee_Autobuy_Bot.Models
 {
-    public class DelayModel
+    public class ConfigInfo
     {
         public int delay_step_94 { get; set; }
         public int delay_step_95 { get; set; }

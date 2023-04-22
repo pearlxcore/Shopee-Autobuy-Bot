@@ -1,4 +1,4 @@
-﻿namespace Shopee_Autobuy_Bot.Constants
+﻿namespace Shopee_Autobuy_Bot.Utililties
 {
     public class ResponseStatus
     {
