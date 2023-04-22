@@ -2,7 +2,7 @@
 
 namespace Shopee_Autobuy_Bot.Constants
 {
-    public static class DirectoryProvider
+    public static class DirectoryPaths
     {
         public static readonly string SabTempDirectory = System.IO.Path.GetTempPath() + @"86dg5fd86g5d9f86b8d6\";
         public static readonly string UserTempDirectory = System.IO.Path.GetTempPath();

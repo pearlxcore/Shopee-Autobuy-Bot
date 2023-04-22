@@ -1,6 +1,6 @@
 ﻿namespace Shopee_Autobuy_Bot.Models
 {
-    public class UpdateInfo
+    public class ProgramInfoModel
     {
         public string version { get; set; }
         public string date { get; set; }

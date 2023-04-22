@@ -11,14 +11,22 @@ namespace Shopee_Autobuy_Bot.Utililties
     {
         public class Element
         {
-            public static ElementInfo.Root Elements { get; set; }
-            public static ElementInfo.Root ParseElementSettingsFromFile()
+            public static ElementModel.Root ConstantElements { get; set; }
+            public static ElementModel.Root LoadElementsFromFile()
             {
-                if (!File.Exists(DirectoryProvider.ElementSettingsPath))
+                if (!File.Exists(DirectoryPaths.ElementSettingsPath))
                     return null;
-                var text = File.ReadAllText(DirectoryProvider.ElementSettingsPath, Encoding.UTF8);
-                var deserialized = JsonConvert.DeserializeObject<ElementInfo.Root>(text);
+                var text = File.ReadAllText(DirectoryPaths.ElementSettingsPath, Encoding.UTF8);
+                var deserialized = JsonConvert.DeserializeObject<ElementModel.Root>(text);
                 return deserialized;
+            }
+
+            public static void SaveElementsToFile(ElementModel.Root rootElement)
+            {
+                string jsonString = JsonConvert.SerializeObject(rootElement, Formatting.Indented);
+                var elementPath = DirectoryPaths.ElementSettingsPath;
+                File.WriteAllText(elementPath, jsonString);
+                SettingsHelper.Element.ConstantElements = rootElement;
             }
         }
 
@@ -28,32 +36,32 @@ namespace Shopee_Autobuy_Bot.Utililties
             public static bool SaveProfile { get; set; } = false;
             public static bool LoadProfile { get; set; } = false;
 
-            public static Utililties.Profile.Root SelectedProfile { get; set; }
+            public static Utililties.ProfileModel.Root SelectedProfile { get; set; }
 
-            public static List<Utililties.Profile.Root> ReadProfileToList()
+            public static List<Utililties.ProfileModel.Root> LoadProfilesFromFile()
             {
-                if (!File.Exists(DirectoryProvider.ProfileSettingsPath)) return null;
-                return JsonConvert.DeserializeObject<List<Utililties.Profile.Root>>(File.ReadAllText(DirectoryProvider.ProfileSettingsPath, Encoding.UTF8));
+                if (!File.Exists(DirectoryPaths.ProfileSettingsPath)) return null;
+                return JsonConvert.DeserializeObject<List<Utililties.ProfileModel.Root>>(File.ReadAllText(DirectoryPaths.ProfileSettingsPath, Encoding.UTF8));
             }
 
-            public static bool DeleteProfile(string profileName)
+            public static bool DeleteProfileFromFile(string profileName)
             {
                 try
                 {
-                    var profileList = JsonConvert.DeserializeObject<List<Utililties.Profile.Root>>(File.ReadAllText(DirectoryProvider.ProfileSettingsPath, Encoding.UTF8));
+                    var profileList = JsonConvert.DeserializeObject<List<Utililties.ProfileModel.Root>>(File.ReadAllText(DirectoryPaths.ProfileSettingsPath, Encoding.UTF8));
                     profileList.RemoveAll(p => p.profile_name==profileName);
                     var json = JsonConvert.SerializeObject(profileList, Formatting.Indented);
-                    File.WriteAllText(DirectoryProvider.ProfileSettingsPath, json);
+                    File.WriteAllText(DirectoryPaths.ProfileSettingsPath, json);
                 }
                 catch { return false; }
 
                 return true;
             }
 
-            public static void SaveNewProfile(Utililties.Profile.Root root)
+            public static void SaveNewProfileToFile(Utililties.ProfileModel.Root root)
             {
                 string jsonString = JsonConvert.SerializeObject(root, Formatting.Indented);
-                var profilePath = DirectoryProvider.ProfileSettingsPath;
+                var profilePath = DirectoryPaths.ProfileSettingsPath;
                 var profileIsExists = File.Exists(profilePath);
 
                 if (!profileIsExists || (profileIsExists && File.ReadAllText(profilePath) == ""))
@@ -61,7 +69,7 @@ namespace Shopee_Autobuy_Bot.Utililties
                 else
                 {
                     var profiles = File.ReadAllText(profilePath);
-                    var list = JsonConvert.DeserializeObject<List<Utililties.Profile.Root>>(profiles);
+                    var list = JsonConvert.DeserializeObject<List<Utililties.ProfileModel.Root>>(profiles);
                     list.Add(root);
                     var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
                     File.WriteAllText(profilePath, convertedJson);
