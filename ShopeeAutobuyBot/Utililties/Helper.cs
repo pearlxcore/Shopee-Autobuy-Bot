@@ -63,8 +63,8 @@ namespace Shopee_Autobuy_Bot.Utililties
 
 
 
-            tempFile = DirectoryPaths.SabTempDirectory + "Shopee Autobuy Bot.exe";
-            currentFile = DirectoryPaths.CurrentDirectory + "Shopee Autobuy Bot.exe";
+            tempFile = DirectoryProvider.SabTempDirectory + "Shopee Autobuy Bot.exe";
+            currentFile = DirectoryProvider.CurrentDirectory + "Shopee Autobuy Bot.exe";
             var all_byte = File.ReadAllBytes(currentProgram);
             Stream S = new MemoryStream(all_byte);
 
@@ -79,8 +79,8 @@ namespace Shopee_Autobuy_Bot.Utililties
 
                 byte[] bytes = S.ReadAllBytesss();
 
-                if (!Directory.Exists(DirectoryPaths.SabTempDirectory))
-                    Directory.CreateDirectory(DirectoryPaths.SabTempDirectory);
+                if (!Directory.Exists(DirectoryProvider.SabTempDirectory))
+                    Directory.CreateDirectory(DirectoryProvider.SabTempDirectory);
 
                 File.WriteAllBytes(tempFile, bytes);
                 if (File.Exists(tempFile))
@@ -170,7 +170,7 @@ namespace Shopee_Autobuy_Bot.Utililties
             try
             {
                 Ping myPing = new Ping();
-                string host = $"{ServerInfos.PingHost}";
+                string host = $"{HostProvider.PingHost}";
                 byte[] buffer = new byte[32];
                 int timeout = 1000;
                 PingOptions pingOptions = new PingOptions();

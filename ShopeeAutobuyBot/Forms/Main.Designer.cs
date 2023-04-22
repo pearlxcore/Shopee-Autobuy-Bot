@@ -734,6 +734,7 @@ namespace Shopee_Autobuy_Bot
             this.darkButtonDeleteAllOrder.TabIndex = 28;
             this.darkButtonDeleteAllOrder.Text = "Delete all order (To pay)";
             this.darkButtonDeleteAllOrder.Visible = false;
+            this.darkButtonDeleteAllOrder.Click += new System.EventHandler(this.darkButton5_Click);
             // 
             // richTextBoxLogs
             // 

@@ -63,11 +63,10 @@
             // tbId
             // 
             this.tbId.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbId.Location = new System.Drawing.Point(154, 71);
+            this.tbId.Location = new System.Drawing.Point(182, 71);
             this.tbId.Name = "tbId";
-            this.tbId.Size = new System.Drawing.Size(142, 22);
+            this.tbId.Size = new System.Drawing.Size(114, 22);
             this.tbId.TabIndex = 1;
-            this.tbId.Text = "PXCB525";
             this.tbId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbId.TextChanged += new System.EventHandler(this.tbId_TextChanged);
             // 
@@ -78,9 +77,9 @@
             this.darkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.darkLabel1.Location = new System.Drawing.Point(96, 76);
             this.darkLabel1.Name = "darkLabel1";
-            this.darkLabel1.Size = new System.Drawing.Size(52, 13);
+            this.darkLabel1.Size = new System.Drawing.Size(80, 13);
             this.darkLabel1.TabIndex = 2;
-            this.darkLabel1.Text = "User Id : ";
+            this.darkLabel1.Text = "SAB LoginUser Id : ";
             // 
             // darkLabel2
             // 
@@ -202,7 +201,7 @@
             this.groupBox2.TabIndex = 51;
             this.groupBox2.TabStop = false;
             // 
-            // Login
+            // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -215,7 +214,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Login";
+            this.Name = "Form2";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Shopee Autobuy Bot";

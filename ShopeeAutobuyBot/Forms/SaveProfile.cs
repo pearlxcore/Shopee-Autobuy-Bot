@@ -24,7 +24,7 @@ namespace Shopee_Autobuy_Bot
                 return;
             }
             //check if profile name exist
-            var profileList = LoadProfilesFromFile();
+            var profileList = ReadProfileToList();
             if (profileList != null)
             {
                 var profileNameAlreadyExist = profileList.Any(x => x.profile_name==tbProfileName.Text);
@@ -47,8 +47,8 @@ namespace Shopee_Autobuy_Bot
 
         private void ProfileName_Load(object sender, EventArgs e)
         {
-            if (!File.Exists(DirectoryPaths.ProfileSettingsPath))
-                File.Create(DirectoryPaths.ProfileSettingsPath).Dispose();
+            if (!File.Exists(DirectoryProvider.ProfileSettingsPath))
+                File.Create(DirectoryProvider.ProfileSettingsPath).Dispose();
             SettingsHelper.Profile.SaveProfile = false;
         }
     }
