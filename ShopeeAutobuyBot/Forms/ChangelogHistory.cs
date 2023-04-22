@@ -14,7 +14,7 @@ namespace Shopee_Autobuy_Bot
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            string changlogHistoryUrl = $"{HostProvider.Host}api/ChangelogHistory";
+            string changlogHistoryUrl = $"{ServerInfos.Host}api/ChangelogHistory";
             string changelog = GetWithResponse(changlogHistoryUrl).Replace("\n", Environment.NewLine);
             darkTextBox1.Text = changelog;
         }

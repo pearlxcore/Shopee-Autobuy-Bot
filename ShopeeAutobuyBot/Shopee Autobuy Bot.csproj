@@ -318,16 +318,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\ConfigInfo.cs" />
-    <Compile Include="Models\ElementInfo.cs" />
-    <Compile Include="Models\MaintenanceInfo.cs" />
-    <Compile Include="Models\UpdateInfo.cs" />
-    <Compile Include="Models\UserInfo.cs" />
-    <Compile Include="Models\Profile.cs" />
-    <Compile Include="Utililties\ChromeDriver.cs" />
-    <Compile Include="Utililties\ResponseStatus.cs" />
-    <Compile Include="Constants\HostProvider.cs" />
-    <Compile Include="Constants\DirectoryProvider.cs" />
+    <Compile Include="Models\DelayModel.cs" />
+    <Compile Include="Models\ElementModel.cs" />
+    <Compile Include="Models\MaintenanceModel.cs" />
+    <Compile Include="Models\ProgramInfoModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\ProfileModel.cs" />
+    <Compile Include="Utililties\Chromedriver.cs" />
+    <Compile Include="Constants\ResponseStatus.cs" />
+    <Compile Include="Constants\ServerInfos.cs" />
+    <Compile Include="Constants\DirectoryPaths.cs" />
     <Compile Include="Forms\Element Editor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -368,7 +368,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utililties\RichTextBoxExtensions.cs" />
+    <Compile Include="Extensions\RichTextBoxExtensions.cs" />
     <Compile Include="Forms\Scan payday sale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,7 +381,6 @@
     <Compile Include="Forms\Warning.Designer.cs">
       <DependentUpon>Warning.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utililties\ElementHelper.cs" />
     <Compile Include="Utililties\SettingsHelper.cs" />
     <EmbeddedResource Include="Forms\Element Editor.resx">
       <DependentUpon>Element Editor.cs</DependentUpon>

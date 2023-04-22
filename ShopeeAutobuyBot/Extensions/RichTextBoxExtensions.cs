@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace Shopee_Autobuy_Bot.Utililties
+namespace Shopee_Autobuy_Bot.Extensions
 {
     public static class RichTextBoxExtensions
     {

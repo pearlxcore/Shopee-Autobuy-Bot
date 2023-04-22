@@ -53,6 +53,8 @@
             this.darkLabel6 = new DarkUI.Controls.DarkLabel();
             this.tbClaimShopVC_cart = new DarkUI.Controls.DarkTextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.darkLabel17 = new DarkUI.Controls.DarkLabel();
+            this.tbOrderPrice_placeOrder = new DarkUI.Controls.DarkTextBox();
             this.darkLabel16 = new DarkUI.Controls.DarkLabel();
             this.tbClaimShopeeVcOkButton_placeOrder = new DarkUI.Controls.DarkTextBox();
             this.darkLabel15 = new DarkUI.Controls.DarkLabel();
@@ -67,8 +69,10 @@
             this.tbPLaceOrderButton_placeOrder = new DarkUI.Controls.DarkTextBox();
             this.darkMenuStrip1 = new DarkUI.Controls.DarkMenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateElementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadElementsFromLocalSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveChangesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateElementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.darkDockPanel1 = new DarkUI.Docking.DarkDockPanel();
             this.tabControl1.SuspendLayout();
@@ -82,7 +86,7 @@
             // 
             this.darkLabel14.AutoSize = true;
             this.darkLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel14.Location = new System.Drawing.Point(22, 54);
+            this.darkLabel14.Location = new System.Drawing.Point(22, 75);
             this.darkLabel14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel14.Name = "darkLabel14";
             this.darkLabel14.Size = new System.Drawing.Size(97, 13);
@@ -91,7 +95,7 @@
             // 
             // tbBuyNowButton_product
             // 
-            this.tbBuyNowButton_product.Location = new System.Drawing.Point(212, 42);
+            this.tbBuyNowButton_product.Location = new System.Drawing.Point(212, 63);
             this.tbBuyNowButton_product.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbBuyNowButton_product.MaxLength = 100;
             this.tbBuyNowButton_product.Multiline = true;
@@ -110,7 +114,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 40);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(692, 322);
+            this.tabControl1.Size = new System.Drawing.Size(692, 365);
             this.tabControl1.TabIndex = 54;
             // 
             // tabPage1
@@ -129,7 +133,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(684, 296);
+            this.tabPage1.Size = new System.Drawing.Size(684, 339);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Product Page";
             // 
@@ -137,7 +141,7 @@
             // 
             this.darkLabel4.AutoSize = true;
             this.darkLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel4.Location = new System.Drawing.Point(22, 230);
+            this.darkLabel4.Location = new System.Drawing.Point(22, 251);
             this.darkLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel4.Name = "darkLabel4";
             this.darkLabel4.Size = new System.Drawing.Size(74, 13);
@@ -146,7 +150,7 @@
             // 
             // tbSaleBanner_product
             // 
-            this.tbSaleBanner_product.Location = new System.Drawing.Point(212, 218);
+            this.tbSaleBanner_product.Location = new System.Drawing.Point(212, 239);
             this.tbSaleBanner_product.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbSaleBanner_product.MaxLength = 100;
             this.tbSaleBanner_product.Multiline = true;
@@ -158,7 +162,7 @@
             // 
             this.darkLabel3.AutoSize = true;
             this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel3.Location = new System.Drawing.Point(22, 186);
+            this.darkLabel3.Location = new System.Drawing.Point(22, 207);
             this.darkLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel3.Name = "darkLabel3";
             this.darkLabel3.Size = new System.Drawing.Size(108, 13);
@@ -167,7 +171,7 @@
             // 
             // tbCurrentPriceLabel_product
             // 
-            this.tbCurrentPriceLabel_product.Location = new System.Drawing.Point(212, 174);
+            this.tbCurrentPriceLabel_product.Location = new System.Drawing.Point(212, 195);
             this.tbCurrentPriceLabel_product.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbCurrentPriceLabel_product.MaxLength = 100;
             this.tbCurrentPriceLabel_product.Multiline = true;
@@ -179,7 +183,7 @@
             // 
             this.darkLabel2.AutoSize = true;
             this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel2.Location = new System.Drawing.Point(22, 142);
+            this.darkLabel2.Location = new System.Drawing.Point(22, 163);
             this.darkLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel2.Name = "darkLabel2";
             this.darkLabel2.Size = new System.Drawing.Size(98, 13);
@@ -188,7 +192,7 @@
             // 
             // tbQuantityTextbox_product
             // 
-            this.tbQuantityTextbox_product.Location = new System.Drawing.Point(212, 130);
+            this.tbQuantityTextbox_product.Location = new System.Drawing.Point(212, 151);
             this.tbQuantityTextbox_product.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbQuantityTextbox_product.MaxLength = 100;
             this.tbQuantityTextbox_product.Multiline = true;
@@ -200,7 +204,7 @@
             // 
             this.darkLabel1.AutoSize = true;
             this.darkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel1.Location = new System.Drawing.Point(22, 98);
+            this.darkLabel1.Location = new System.Drawing.Point(22, 119);
             this.darkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel1.Name = "darkLabel1";
             this.darkLabel1.Size = new System.Drawing.Size(144, 13);
@@ -209,7 +213,7 @@
             // 
             // tbVariationFlexBox_product
             // 
-            this.tbVariationFlexBox_product.Location = new System.Drawing.Point(212, 86);
+            this.tbVariationFlexBox_product.Location = new System.Drawing.Point(212, 107);
             this.tbVariationFlexBox_product.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbVariationFlexBox_product.MaxLength = 100;
             this.tbVariationFlexBox_product.Multiline = true;
@@ -233,7 +237,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(684, 296);
+            this.tabPage2.Size = new System.Drawing.Size(684, 339);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cart Page";
             // 
@@ -241,7 +245,7 @@
             // 
             this.darkLabel7.AutoSize = true;
             this.darkLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel7.Location = new System.Drawing.Point(22, 54);
+            this.darkLabel7.Location = new System.Drawing.Point(22, 75);
             this.darkLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel7.Name = "darkLabel7";
             this.darkLabel7.Size = new System.Drawing.Size(106, 13);
@@ -250,7 +254,7 @@
             // 
             // tbCheckoutButton_cart
             // 
-            this.tbCheckoutButton_cart.Location = new System.Drawing.Point(212, 42);
+            this.tbCheckoutButton_cart.Location = new System.Drawing.Point(212, 63);
             this.tbCheckoutButton_cart.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbCheckoutButton_cart.MaxLength = 100;
             this.tbCheckoutButton_cart.Multiline = true;
@@ -262,30 +266,28 @@
             // 
             this.darkLabel13.AutoSize = true;
             this.darkLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel13.Location = new System.Drawing.Point(22, 230);
+            this.darkLabel13.Location = new System.Drawing.Point(22, 251);
             this.darkLabel13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel13.Name = "darkLabel13";
             this.darkLabel13.Size = new System.Drawing.Size(96, 13);
             this.darkLabel13.TabIndex = 67;
             this.darkLabel13.Text = "Cart empty label :";
-            this.darkLabel13.Click += new System.EventHandler(this.darkLabel13_Click);
             // 
             // tbCartEmptyLabel_cart
             // 
-            this.tbCartEmptyLabel_cart.Location = new System.Drawing.Point(212, 218);
+            this.tbCartEmptyLabel_cart.Location = new System.Drawing.Point(212, 239);
             this.tbCartEmptyLabel_cart.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbCartEmptyLabel_cart.MaxLength = 100;
             this.tbCartEmptyLabel_cart.Multiline = true;
             this.tbCartEmptyLabel_cart.Name = "tbCartEmptyLabel_cart";
             this.tbCartEmptyLabel_cart.Size = new System.Drawing.Size(450, 36);
             this.tbCartEmptyLabel_cart.TabIndex = 66;
-            this.tbCartEmptyLabel_cart.TextChanged += new System.EventHandler(this.tbCartEmptyLabel_cart_TextChanged);
             // 
             // darkLabel8
             // 
             this.darkLabel8.AutoSize = true;
             this.darkLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel8.Location = new System.Drawing.Point(22, 186);
+            this.darkLabel8.Location = new System.Drawing.Point(22, 207);
             this.darkLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel8.Name = "darkLabel8";
             this.darkLabel8.Size = new System.Drawing.Size(153, 13);
@@ -294,7 +296,7 @@
             // 
             // tbProductPrice_cart
             // 
-            this.tbProductPrice_cart.Location = new System.Drawing.Point(212, 130);
+            this.tbProductPrice_cart.Location = new System.Drawing.Point(212, 151);
             this.tbProductPrice_cart.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbProductPrice_cart.MaxLength = 100;
             this.tbProductPrice_cart.Multiline = true;
@@ -306,7 +308,7 @@
             // 
             this.darkLabel5.AutoSize = true;
             this.darkLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel5.Location = new System.Drawing.Point(22, 142);
+            this.darkLabel5.Location = new System.Drawing.Point(22, 163);
             this.darkLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel5.Name = "darkLabel5";
             this.darkLabel5.Size = new System.Drawing.Size(176, 13);
@@ -315,7 +317,7 @@
             // 
             // tbSelectAllCheckbox_cart
             // 
-            this.tbSelectAllCheckbox_cart.Location = new System.Drawing.Point(212, 86);
+            this.tbSelectAllCheckbox_cart.Location = new System.Drawing.Point(212, 107);
             this.tbSelectAllCheckbox_cart.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbSelectAllCheckbox_cart.MaxLength = 100;
             this.tbSelectAllCheckbox_cart.Multiline = true;
@@ -327,7 +329,7 @@
             // 
             this.darkLabel6.AutoSize = true;
             this.darkLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel6.Location = new System.Drawing.Point(22, 98);
+            this.darkLabel6.Location = new System.Drawing.Point(22, 119);
             this.darkLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel6.Name = "darkLabel6";
             this.darkLabel6.Size = new System.Drawing.Size(109, 13);
@@ -336,7 +338,7 @@
             // 
             // tbClaimShopVC_cart
             // 
-            this.tbClaimShopVC_cart.Location = new System.Drawing.Point(212, 174);
+            this.tbClaimShopVC_cart.Location = new System.Drawing.Point(212, 195);
             this.tbClaimShopVC_cart.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbClaimShopVC_cart.MaxLength = 100;
             this.tbClaimShopVC_cart.Multiline = true;
@@ -347,6 +349,8 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.tabPage3.Controls.Add(this.darkLabel17);
+            this.tabPage3.Controls.Add(this.tbOrderPrice_placeOrder);
             this.tabPage3.Controls.Add(this.darkLabel16);
             this.tabPage3.Controls.Add(this.tbClaimShopeeVcOkButton_placeOrder);
             this.tabPage3.Controls.Add(this.darkLabel15);
@@ -362,15 +366,36 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(684, 296);
+            this.tabPage3.Size = new System.Drawing.Size(684, 339);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Checkout Page";
+            // 
+            // darkLabel17
+            // 
+            this.darkLabel17.AutoSize = true;
+            this.darkLabel17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel17.Location = new System.Drawing.Point(23, 295);
+            this.darkLabel17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.darkLabel17.Name = "darkLabel17";
+            this.darkLabel17.Size = new System.Drawing.Size(71, 13);
+            this.darkLabel17.TabIndex = 81;
+            this.darkLabel17.Text = "Order price :";
+            // 
+            // tbOrderPrice_placeOrder
+            // 
+            this.tbOrderPrice_placeOrder.Location = new System.Drawing.Point(212, 283);
+            this.tbOrderPrice_placeOrder.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbOrderPrice_placeOrder.MaxLength = 100;
+            this.tbOrderPrice_placeOrder.Multiline = true;
+            this.tbOrderPrice_placeOrder.Name = "tbOrderPrice_placeOrder";
+            this.tbOrderPrice_placeOrder.Size = new System.Drawing.Size(450, 36);
+            this.tbOrderPrice_placeOrder.TabIndex = 80;
             // 
             // darkLabel16
             // 
             this.darkLabel16.AutoSize = true;
             this.darkLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel16.Location = new System.Drawing.Point(23, 164);
+            this.darkLabel16.Location = new System.Drawing.Point(23, 163);
             this.darkLabel16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel16.Name = "darkLabel16";
             this.darkLabel16.Size = new System.Drawing.Size(153, 13);
@@ -379,7 +404,7 @@
             // 
             // tbClaimShopeeVcOkButton_placeOrder
             // 
-            this.tbClaimShopeeVcOkButton_placeOrder.Location = new System.Drawing.Point(212, 152);
+            this.tbClaimShopeeVcOkButton_placeOrder.Location = new System.Drawing.Point(212, 151);
             this.tbClaimShopeeVcOkButton_placeOrder.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbClaimShopeeVcOkButton_placeOrder.MaxLength = 100;
             this.tbClaimShopeeVcOkButton_placeOrder.Multiline = true;
@@ -391,7 +416,7 @@
             // 
             this.darkLabel15.AutoSize = true;
             this.darkLabel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel15.Location = new System.Drawing.Point(23, 120);
+            this.darkLabel15.Location = new System.Drawing.Point(23, 119);
             this.darkLabel15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel15.Name = "darkLabel15";
             this.darkLabel15.Size = new System.Drawing.Size(142, 13);
@@ -400,7 +425,7 @@
             // 
             // tbShopeeVcContainer_placeOrder
             // 
-            this.tbShopeeVcContainer_placeOrder.Location = new System.Drawing.Point(212, 108);
+            this.tbShopeeVcContainer_placeOrder.Location = new System.Drawing.Point(212, 107);
             this.tbShopeeVcContainer_placeOrder.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbShopeeVcContainer_placeOrder.MaxLength = 100;
             this.tbShopeeVcContainer_placeOrder.Multiline = true;
@@ -412,7 +437,7 @@
             // 
             this.darkLabel10.AutoSize = true;
             this.darkLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel10.Location = new System.Drawing.Point(23, 252);
+            this.darkLabel10.Location = new System.Drawing.Point(23, 251);
             this.darkLabel10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel10.Name = "darkLabel10";
             this.darkLabel10.Size = new System.Drawing.Size(139, 13);
@@ -421,7 +446,7 @@
             // 
             // tbCHangePaymentButton_placeOrder
             // 
-            this.tbCHangePaymentButton_placeOrder.Location = new System.Drawing.Point(212, 240);
+            this.tbCHangePaymentButton_placeOrder.Location = new System.Drawing.Point(212, 239);
             this.tbCHangePaymentButton_placeOrder.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbCHangePaymentButton_placeOrder.MaxLength = 100;
             this.tbCHangePaymentButton_placeOrder.Multiline = true;
@@ -433,7 +458,7 @@
             // 
             this.darkLabel9.AutoSize = true;
             this.darkLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel9.Location = new System.Drawing.Point(23, 76);
+            this.darkLabel9.Location = new System.Drawing.Point(23, 75);
             this.darkLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel9.Name = "darkLabel9";
             this.darkLabel9.Size = new System.Drawing.Size(168, 13);
@@ -442,7 +467,7 @@
             // 
             // tbSelectShopeeVcButton_placeOrder
             // 
-            this.tbSelectShopeeVcButton_placeOrder.Location = new System.Drawing.Point(212, 64);
+            this.tbSelectShopeeVcButton_placeOrder.Location = new System.Drawing.Point(212, 63);
             this.tbSelectShopeeVcButton_placeOrder.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbSelectShopeeVcButton_placeOrder.MaxLength = 100;
             this.tbSelectShopeeVcButton_placeOrder.Multiline = true;
@@ -454,7 +479,7 @@
             // 
             this.darkLabel11.AutoSize = true;
             this.darkLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel11.Location = new System.Drawing.Point(22, 208);
+            this.darkLabel11.Location = new System.Drawing.Point(22, 207);
             this.darkLabel11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel11.Name = "darkLabel11";
             this.darkLabel11.Size = new System.Drawing.Size(130, 13);
@@ -463,7 +488,7 @@
             // 
             // tbRedeemCoinCheckbox_placeOrder
             // 
-            this.tbRedeemCoinCheckbox_placeOrder.Location = new System.Drawing.Point(212, 196);
+            this.tbRedeemCoinCheckbox_placeOrder.Location = new System.Drawing.Point(212, 195);
             this.tbRedeemCoinCheckbox_placeOrder.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbRedeemCoinCheckbox_placeOrder.MaxLength = 100;
             this.tbRedeemCoinCheckbox_placeOrder.Multiline = true;
@@ -475,7 +500,7 @@
             // 
             this.darkLabel12.AutoSize = true;
             this.darkLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel12.Location = new System.Drawing.Point(23, 32);
+            this.darkLabel12.Location = new System.Drawing.Point(23, 31);
             this.darkLabel12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel12.Name = "darkLabel12";
             this.darkLabel12.Size = new System.Drawing.Size(111, 13);
@@ -484,7 +509,7 @@
             // 
             // tbPLaceOrderButton_placeOrder
             // 
-            this.tbPLaceOrderButton_placeOrder.Location = new System.Drawing.Point(212, 20);
+            this.tbPLaceOrderButton_placeOrder.Location = new System.Drawing.Point(212, 19);
             this.tbPLaceOrderButton_placeOrder.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbPLaceOrderButton_placeOrder.MaxLength = 100;
             this.tbPLaceOrderButton_placeOrder.Multiline = true;
@@ -510,38 +535,57 @@
             // 
             this.fileToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateElementToolStripMenuItem,
+            this.loadElementsFromLocalSettingsToolStripMenuItem,
             this.saveChangesToolStripMenuItem,
+            this.updateElementToolStripMenuItem,
+            this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // updateElementToolStripMenuItem
+            // loadElementsFromLocalSettingsToolStripMenuItem
             // 
-            this.updateElementToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.updateElementToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.updateElementToolStripMenuItem.Name = "updateElementToolStripMenuItem";
-            this.updateElementToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.updateElementToolStripMenuItem.Text = "Update element";
-            this.updateElementToolStripMenuItem.Click += new System.EventHandler(this.updateElementToolStripMenuItem_Click);
+            this.loadElementsFromLocalSettingsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.loadElementsFromLocalSettingsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.loadElementsFromLocalSettingsToolStripMenuItem.Name = "loadElementsFromLocalSettingsToolStripMenuItem";
+            this.loadElementsFromLocalSettingsToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
+            this.loadElementsFromLocalSettingsToolStripMenuItem.Text = "Load elements from local settings";
+            this.loadElementsFromLocalSettingsToolStripMenuItem.Click += new System.EventHandler(this.loadElementsFromLocalSettingsToolStripMenuItem_Click);
             // 
             // saveChangesToolStripMenuItem
             // 
             this.saveChangesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.saveChangesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.saveChangesToolStripMenuItem.Name = "saveChangesToolStripMenuItem";
-            this.saveChangesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveChangesToolStripMenuItem.Text = "Save";
+            this.saveChangesToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
+            this.saveChangesToolStripMenuItem.Text = "Save elements";
             this.saveChangesToolStripMenuItem.Click += new System.EventHandler(this.saveChangesToolStripMenuItem_Click);
+            // 
+            // updateElementToolStripMenuItem
+            // 
+            this.updateElementToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.updateElementToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.updateElementToolStripMenuItem.Name = "updateElementToolStripMenuItem";
+            this.updateElementToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
+            this.updateElementToolStripMenuItem.Text = "Update elements from repository";
+            this.updateElementToolStripMenuItem.Click += new System.EventHandler(this.updateElementToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.toolStripSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(249, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Visible = false;
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
@@ -554,14 +598,14 @@
             this.darkDockPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.darkDockPanel1.Location = new System.Drawing.Point(0, 27);
             this.darkDockPanel1.Name = "darkDockPanel1";
-            this.darkDockPanel1.Size = new System.Drawing.Size(736, 363);
+            this.darkDockPanel1.Size = new System.Drawing.Size(736, 406);
             this.darkDockPanel1.TabIndex = 103;
             // 
             // Element_Editor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(716, 374);
+            this.ClientSize = new System.Drawing.Size(716, 417);
             this.Controls.Add(this.darkMenuStrip1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.darkDockPanel1);
@@ -571,8 +615,7 @@
             this.MaximizeBox = false;
             this.Name = "Element_Editor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Element Editor";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Element_Editor_FormClosing);
+            this.Text = "ConstantElements Editor";
             this.Load += new System.EventHandler(this.Element_Editor_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -632,5 +675,9 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private DarkUI.Docking.DarkDockPanel darkDockPanel1;
         private System.Windows.Forms.ToolStripMenuItem updateElementToolStripMenuItem;
+        private DarkUI.Controls.DarkLabel darkLabel17;
+        private DarkUI.Controls.DarkTextBox tbOrderPrice_placeOrder;
+        private System.Windows.Forms.ToolStripMenuItem loadElementsFromLocalSettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

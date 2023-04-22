@@ -1,6 +1,6 @@
 ﻿namespace Shopee_Autobuy_Bot.Models
 {
-    public class ElementInfo
+    public class ElementModel
     {
         public class Root
         {
@@ -34,6 +34,7 @@
             public string ShopeeVoucherOkButton { get; set; }
             public string RedeemCoinCheckbox { get; set; }
             public string ChangePaymentButton { get; set; }
+            public string OrderPrice { get; set; }
         }
     }
 }
