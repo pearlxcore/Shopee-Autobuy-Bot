@@ -1,9 +1,22 @@
-## ShopeeAutobuyBot
+### ShopeeAutobuyBot
 Shopee Autobuy Bot is an automation program designed to assist users with purchasing products on the Shopee website, utilizing the [Selenium Framework](https://www.selenium.dev/) for the automation process. Initially a subscription-based program, I have now decided to make this project open source. The program will use an external API for configuration and program updates. You can download the compiled program from [here](https://github.com/pearlxcore/ShopeeAutobuyBot/releases). Please report any bugs [here](https://github.com/pearlxcore/ShopeeAutobuyBot/issues).
 
 **Use at your own risk.**
 
-## Recommended setup:
+### Features
+- Automates the purchasing process on the Shopee website.
+- Uses the Selenium Framework for efficient and reliable automation.
+- Allows users to set specific buying modes, such as "below specific price" mode.
+- Can schedule the bot to run at a specific time, 5-10 seconds before the sale starts.
+- Plays a sound notification on successful checkout.
+- Enables auto-refreshing of the webpage.
+- Allows users to disable website images and extensions.
+- Supports various payment methods and can set a default payment on the browser.
+- Allows users to specify the correct product link and quantity.
+- Handles products with more than one variation, using the '|' character to separate each variation.
+- Provides an option to enable coin/voucher redemption, although this may increase checkout time.
+
+### Recommended setup:
 
 * Bot settings
   - Play sound on successful checkout.
@@ -27,12 +40,12 @@ Shopee Autobuy Bot is an automation program designed to assist users with purcha
 
 ** **Aim for less popular products for better chances.**
 
-## Support my work
+### Support my work
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R524N7X)  
 
 [![paypal](https://user-images.githubusercontent.com/36906814/102657760-39d1ce00-41b1-11eb-96fe-c10e2d9b3f39.png)](https://www.paypal.com/paypalme/pearlxcoree)  
 
-## Screenshot
+### Screenshot
 ![image](https://user-images.githubusercontent.com/36906814/232447531-2310f352-3886-45c7-ab45-3ebf0a7288e3.png)
 
 ![image](https://user-images.githubusercontent.com/36906814/232447726-d1d52c84-ce17-4446-a58c-721fc5bb0036.png)
