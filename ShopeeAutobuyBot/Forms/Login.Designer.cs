@@ -62,12 +62,12 @@
             // 
             // tbId
             // 
+            this.tbId.Enabled = false;
             this.tbId.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbId.Location = new System.Drawing.Point(154, 71);
             this.tbId.Name = "tbId";
             this.tbId.Size = new System.Drawing.Size(142, 22);
             this.tbId.TabIndex = 1;
-            this.tbId.Text = "PXCB525";
             this.tbId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbId.TextChanged += new System.EventHandler(this.tbId_TextChanged);
             // 

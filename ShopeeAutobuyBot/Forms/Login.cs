@@ -604,11 +604,11 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 return;
             }
 
-            if (tbId.Text == string.Empty)
-            {
-                MessageBox.Show("Specify user Id.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            //if (tbId.Text == string.Empty)
+            //{
+            //    MessageBox.Show("Specify user Id.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
 
             Helper.chromeProfile = chromeProfile;
 
@@ -628,75 +628,74 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
             try
             {
                 //check auth status
-
                 #region checkAuthStatus
 
-                string userResponse = GetWithResponse($"{ServerInfos.Host}api/user/{tbId.Text}");
-                var userInfo = JsonConvert.DeserializeObject<UserModel>(userResponse);
+                //string userResponse = GetWithResponse($"{ServerInfos.Host}api/user/{tbId.Text}");
+                //var userInfo = JsonConvert.DeserializeObject<UserModel>(userResponse);
 
-                if (userInfo.status == "ok")
-                {
-                    List<string> fingerprintList = new List<string>();
-                    fingerprintList.Add(userInfo.device_fingerprint1);
-                    fingerprintList.Add(userInfo.device_fingerprint2);
-                    fingerprintList.Add(userInfo.device_fingerprint3);
+                //if (userInfo.status == "ok")
+                //{
+                //    List<string> fingerprintList = new List<string>();
+                //    fingerprintList.Add(userInfo.device_fingerprint1);
+                //    fingerprintList.Add(userInfo.device_fingerprint2);
+                //    fingerprintList.Add(userInfo.device_fingerprint3);
 
-                    //check if local pc fp is match any 3 fp in server
-                    var registeredFingerprint = fingerprintList.FirstOrDefault(x => x == getFingerPrint());
+                //    //check if local pc fp is match any 3 fp in server
+                //    var registeredFingerprint = fingerprintList.FirstOrDefault(x => x == getFingerPrint());
 
-                    //if this match "", got empty fp
-                    var emptyFingerprint = fingerprintList.FirstOrDefault(x => x == "");
+                //    //if this match "", got empty fp
+                //    var emptyFingerprint = fingerprintList.FirstOrDefault(x => x == "");
 
-                    //not registered && got empty fp slot
-                    if (registeredFingerprint == null && emptyFingerprint != null)
-                    {
-                        //string jsonBody = "{\"id\":\"" + tbId.Text + "\",\"fingerprint\":\"" + getFingerPrint().ToLower() + "\"}";
-                        ////jsonBody = JsonConvert.SerializeObject(jsonBody, Formatting.Indented);
+                //    //not registered && got empty fp slot
+                //    if (registeredFingerprint == null && emptyFingerprint != null)
+                //    {
+                //        //string jsonBody = "{\"id\":\"" + tbId.Text + "\",\"fingerprint\":\"" + getFingerPrint().ToLower() + "\"}";
+                //        ////jsonBody = JsonConvert.SerializeObject(jsonBody, Formatting.Indented);
 
-                        var data = "{ \"id\": \"" + tbId.Text + "\", \"fingerprint\": \"" + getFingerPrint().ToLower() + "\" }";
-                        var setFingerprintResponse = PostWithResponse($"{ServerInfos.Host}api/fingerprint", data);
+                //        var data = "{ \"id\": \"" + tbId.Text + "\", \"fingerprint\": \"" + getFingerPrint().ToLower() + "\" }";
+                //        var setFingerprintResponse = PostWithResponse($"{ServerInfos.Host}api/fingerprint", data);
 
-                        if (!setFingerprintResponse.Equals("\"ok\""))
-                        {
-                            MessageBox.Show("There was problem registering fingerprint", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            tbId.Enabled = true;
-                            return;
-                        }
-                    }
-                    else if (registeredFingerprint == null && emptyFingerprint == null) //if not registered an fp are full //isEmptyFpdetected == null , means not empty fp, not authorized
-                    {
-                        MessageBox.Show("You are not authorized to use this program. To buy this software, contact @ShopeeAutobuyBot at facebook.", "Unauthorized access", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        tbId.Enabled = true;
-                        return;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("You are not authorized to use this program. To buy this software, contact @ShopeeAutobuyBot at facebook.", "Unauthorized access", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    tbId.Enabled = true;
-                    return;
-                }
+                //        if (!setFingerprintResponse.Equals("\"ok\""))
+                //        {
+                //            MessageBox.Show("There was problem registering fingerprint", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //            tbId.Enabled = true;
+                //            return;
+                //        }
+                //    }
+                //    else if (registeredFingerprint == null && emptyFingerprint == null) //if not registered an fp are full //isEmptyFpdetected == null , means not empty fp, not authorized
+                //    {
+                //        MessageBox.Show("You are not authorized to use this program. To buy this software, contact @ShopeeAutobuyBot at facebook.", "Unauthorized access", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //        tbId.Enabled = true;
+                //        return;
+                //    }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("You are not authorized to use this program. To buy this software, contact @ShopeeAutobuyBot at facebook.", "Unauthorized access", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    tbId.Enabled = true;
+                //    return;
+                //}
 
-                if (userInfo.expiry_date != null) // 30/7/2021 1:15:55 AM
-                {
-                    DateTime expiryDate = DateTime.ParseExact(userInfo.expiry_date, "dd/MM/yyyy h:mm tt", System.Globalization.CultureInfo.InvariantCulture);
+                //if (userInfo.expiry_date != null) // 30/7/2021 1:15:55 AM
+                //{
+                //    DateTime expiryDate = DateTime.ParseExact(userInfo.expiry_date, "dd/MM/yyyy h:mm tt", System.Globalization.CultureInfo.InvariantCulture);
 
-                    if (DateTime.Now > expiryDate) // subscription ended
-                    {
-                        MessageBox.Show("Your subscription has ended. Contact admin to renew subscription.", "Subscription ended", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        tbId.Enabled = true;
-                        return;
-                    }
-                }
+                //    if (DateTime.Now > expiryDate) // subscription ended
+                //    {
+                //        MessageBox.Show("Your subscription has ended. Contact admin to renew subscription.", "Subscription ended", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //        tbId.Enabled = true;
+                //        return;
+                //    }
+                //}
 
                 #endregion checkAuthStatus
 
                 ChromeDriverHelper chromeDriverHelper = new ChromeDriverHelper();
                 var chromeDriverHelper_ = firstStart(chromeDriverHelper);
                 // open main form
-                tbId.Enabled = true;
+                //tbId.Enabled = true;
                 chromeDriverHelpersList.Add(chromeDriverHelper_);
-                Main form = new Main(tbId.Text, chromeDriverHelper_);
+                Main form = new Main(chromeDriverHelper_);
                 form.ShowDialog();
             }
             catch (Exception ex)
@@ -909,6 +908,11 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
 
         private void btnDeleteProfile_Click(object sender, EventArgs e)
         {
+            if (darkListBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Select Shopee account to be deleted", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var dialog = MessageBox.Show($"This will delete all user data for {darkListBox1.SelectedItem}. Are you sure?", "Delete profile", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dialog != DialogResult.OK)
                 return;

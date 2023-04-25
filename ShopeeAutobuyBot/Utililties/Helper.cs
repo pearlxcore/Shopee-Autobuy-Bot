@@ -197,15 +197,6 @@ namespace Shopee_Autobuy_Bot.Utililties
             set { OrderPrice_ = value; }
         }
 
-        private static bool isLogging_;
-        public static bool isLogging
-        {
-            get { return isLogging_; }
-            set { isLogging_ = value; }
-        }
-
-
-
 
         private static int delaySeconds_;
         public static int delaySeconds

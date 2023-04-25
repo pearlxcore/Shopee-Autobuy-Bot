@@ -72,7 +72,7 @@
             this.darkLabel6 = new DarkUI.Controls.DarkLabel();
             this.tbSelectAllCheckbox_cart = new DarkUI.Controls.DarkTextBox();
             this.darkLabel5 = new DarkUI.Controls.DarkLabel();
-            this.tbProductPrice_cart = new DarkUI.Controls.DarkTextBox();
+            this.tbCartTotalPrice = new DarkUI.Controls.DarkTextBox();
             this.darkLabel8 = new DarkUI.Controls.DarkLabel();
             this.tbCartEmptyLabel_cart = new DarkUI.Controls.DarkTextBox();
             this.darkLabel13 = new DarkUI.Controls.DarkLabel();
@@ -112,6 +112,8 @@
             this.tbConvStoreType_SevenEleven = new DarkUI.Controls.DarkTextBox();
             this.darkLabel38 = new DarkUI.Controls.DarkLabel();
             this.darkLabel40 = new DarkUI.Controls.DarkLabel();
+            this.tbSelectAllLabel = new DarkUI.Controls.DarkTextBox();
+            this.darkLabel33 = new DarkUI.Controls.DarkLabel();
             this.darkMenuStrip1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -551,10 +553,12 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.tabPage2.Controls.Add(this.tbSelectAllLabel);
+            this.tabPage2.Controls.Add(this.darkLabel33);
             this.tabPage2.Controls.Add(this.darkLabel7);
             this.tabPage2.Controls.Add(this.tbCheckoutButton_cart);
             this.tabPage2.Controls.Add(this.tbCartEmptyLabel_cart);
-            this.tabPage2.Controls.Add(this.tbProductPrice_cart);
+            this.tabPage2.Controls.Add(this.tbCartTotalPrice);
             this.tabPage2.Controls.Add(this.tbSelectAllCheckbox_cart);
             this.tabPage2.Controls.Add(this.tbClaimShopVC_cart);
             this.tabPage2.Controls.Add(this.darkLabel13);
@@ -570,7 +574,7 @@
             // 
             // tbClaimShopVC_cart
             // 
-            this.tbClaimShopVC_cart.Location = new System.Drawing.Point(224, 193);
+            this.tbClaimShopVC_cart.Location = new System.Drawing.Point(224, 175);
             this.tbClaimShopVC_cart.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbClaimShopVC_cart.MaxLength = 100;
             this.tbClaimShopVC_cart.Multiline = true;
@@ -582,7 +586,7 @@
             // 
             this.darkLabel6.AutoSize = true;
             this.darkLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel6.Location = new System.Drawing.Point(34, 127);
+            this.darkLabel6.Location = new System.Drawing.Point(34, 109);
             this.darkLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel6.Name = "darkLabel6";
             this.darkLabel6.Size = new System.Drawing.Size(109, 13);
@@ -591,7 +595,7 @@
             // 
             // tbSelectAllCheckbox_cart
             // 
-            this.tbSelectAllCheckbox_cart.Location = new System.Drawing.Point(224, 121);
+            this.tbSelectAllCheckbox_cart.Location = new System.Drawing.Point(224, 103);
             this.tbSelectAllCheckbox_cart.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbSelectAllCheckbox_cart.MaxLength = 100;
             this.tbSelectAllCheckbox_cart.Multiline = true;
@@ -603,28 +607,28 @@
             // 
             this.darkLabel5.AutoSize = true;
             this.darkLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel5.Location = new System.Drawing.Point(34, 163);
+            this.darkLabel5.Location = new System.Drawing.Point(34, 145);
             this.darkLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel5.Name = "darkLabel5";
             this.darkLabel5.Size = new System.Drawing.Size(117, 13);
             this.darkLabel5.TabIndex = 63;
             this.darkLabel5.Text = "Cart total price label :\r\n";
             // 
-            // tbProductPrice_cart
+            // tbCartTotalPrice
             // 
-            this.tbProductPrice_cart.Location = new System.Drawing.Point(224, 157);
-            this.tbProductPrice_cart.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbProductPrice_cart.MaxLength = 100;
-            this.tbProductPrice_cart.Multiline = true;
-            this.tbProductPrice_cart.Name = "tbProductPrice_cart";
-            this.tbProductPrice_cart.Size = new System.Drawing.Size(557, 25);
-            this.tbProductPrice_cart.TabIndex = 64;
+            this.tbCartTotalPrice.Location = new System.Drawing.Point(224, 139);
+            this.tbCartTotalPrice.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbCartTotalPrice.MaxLength = 100;
+            this.tbCartTotalPrice.Multiline = true;
+            this.tbCartTotalPrice.Name = "tbCartTotalPrice";
+            this.tbCartTotalPrice.Size = new System.Drawing.Size(557, 25);
+            this.tbCartTotalPrice.TabIndex = 64;
             // 
             // darkLabel8
             // 
             this.darkLabel8.AutoSize = true;
             this.darkLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel8.Location = new System.Drawing.Point(34, 199);
+            this.darkLabel8.Location = new System.Drawing.Point(34, 181);
             this.darkLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel8.Name = "darkLabel8";
             this.darkLabel8.Size = new System.Drawing.Size(153, 13);
@@ -633,7 +637,7 @@
             // 
             // tbCartEmptyLabel_cart
             // 
-            this.tbCartEmptyLabel_cart.Location = new System.Drawing.Point(224, 229);
+            this.tbCartEmptyLabel_cart.Location = new System.Drawing.Point(224, 211);
             this.tbCartEmptyLabel_cart.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbCartEmptyLabel_cart.MaxLength = 100;
             this.tbCartEmptyLabel_cart.Multiline = true;
@@ -645,7 +649,7 @@
             // 
             this.darkLabel13.AutoSize = true;
             this.darkLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel13.Location = new System.Drawing.Point(34, 235);
+            this.darkLabel13.Location = new System.Drawing.Point(34, 217);
             this.darkLabel13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel13.Name = "darkLabel13";
             this.darkLabel13.Size = new System.Drawing.Size(96, 13);
@@ -654,7 +658,7 @@
             // 
             // tbCheckoutButton_cart
             // 
-            this.tbCheckoutButton_cart.Location = new System.Drawing.Point(224, 85);
+            this.tbCheckoutButton_cart.Location = new System.Drawing.Point(224, 67);
             this.tbCheckoutButton_cart.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbCheckoutButton_cart.MaxLength = 100;
             this.tbCheckoutButton_cart.Multiline = true;
@@ -666,7 +670,7 @@
             // 
             this.darkLabel7.AutoSize = true;
             this.darkLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel7.Location = new System.Drawing.Point(34, 91);
+            this.darkLabel7.Location = new System.Drawing.Point(34, 73);
             this.darkLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel7.Name = "darkLabel7";
             this.darkLabel7.Size = new System.Drawing.Size(106, 13);
@@ -1077,6 +1081,27 @@
             this.darkLabel40.TabIndex = 67;
             this.darkLabel40.Text = "Seven Eleven :";
             // 
+            // tbSelectAllLabel
+            // 
+            this.tbSelectAllLabel.Location = new System.Drawing.Point(224, 246);
+            this.tbSelectAllLabel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbSelectAllLabel.MaxLength = 100;
+            this.tbSelectAllLabel.Multiline = true;
+            this.tbSelectAllLabel.Name = "tbSelectAllLabel";
+            this.tbSelectAllLabel.Size = new System.Drawing.Size(557, 25);
+            this.tbSelectAllLabel.TabIndex = 84;
+            // 
+            // darkLabel33
+            // 
+            this.darkLabel33.AutoSize = true;
+            this.darkLabel33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel33.Location = new System.Drawing.Point(34, 252);
+            this.darkLabel33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.darkLabel33.Name = "darkLabel33";
+            this.darkLabel33.Size = new System.Drawing.Size(86, 13);
+            this.darkLabel33.TabIndex = 85;
+            this.darkLabel33.Text = "Select all label :";
+            // 
             // Element_Editor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1156,7 +1181,7 @@
         private DarkUI.Controls.DarkLabel darkLabel7;
         private DarkUI.Controls.DarkTextBox tbCheckoutButton_cart;
         private DarkUI.Controls.DarkTextBox tbCartEmptyLabel_cart;
-        private DarkUI.Controls.DarkTextBox tbProductPrice_cart;
+        private DarkUI.Controls.DarkTextBox tbCartTotalPrice;
         private DarkUI.Controls.DarkTextBox tbSelectAllCheckbox_cart;
         private DarkUI.Controls.DarkTextBox tbClaimShopVC_cart;
         private DarkUI.Controls.DarkLabel darkLabel13;
@@ -1197,5 +1222,7 @@
         private DarkUI.Controls.DarkTextBox tbConvStoreType_SevenEleven;
         private DarkUI.Controls.DarkLabel darkLabel38;
         private DarkUI.Controls.DarkLabel darkLabel40;
+        private DarkUI.Controls.DarkTextBox tbSelectAllLabel;
+        private DarkUI.Controls.DarkLabel darkLabel33;
     }
 }

@@ -61,12 +61,12 @@ namespace Shopee_Autobuy_Bot
 
         private string currentElement;
 
-        public Main(string userid, ChromeDriverHelper chromeDriverHelper)
+        public Main(ChromeDriverHelper chromeDriverHelper)
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
             darkComboBoxPaymentMethod.SelectedIndexChanged -= darkComboBoxPaymentMethod_SelectedIndexChanged;
-            userId = userid;
+            //userId = userid;
             ChromedriverHelper = chromeDriverHelper;
         }
 
@@ -117,10 +117,7 @@ namespace Shopee_Autobuy_Bot
                 if (darkButtonStart.Text.Equals("Start"))
                 {
                     timerlabel1.Text = "00:00:00:00";
-                    if (darkCheckBoxLogging.Checked)
-                        Helper.isLogging = false;
-                    else
-                        Helper.isLogging = true;
+
                     if (radioButtonBuyNormal.Checked && darkTextBoxProductLink.Text == "")
                     {
                         MessageBox.Show("Specify product link", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -172,7 +169,12 @@ namespace Shopee_Autobuy_Bot
                         return;
                     }
 
-                    if (!darkTextBoxProductLink.Text.Contains("https://shopee.com.my/")) { MessageBox.Show("Link not valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+                    if ((!radioButtonCheckOutCart.Checked && !radioButtonPriceSpecificCARTCHECKOUT.Checked)
+                    && !darkTextBoxProductLink.Text.Contains("https://shopee.com.my/"))
+                    {
+                        MessageBox.Show("Link not valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
 
                     if (darkCheckBoxScheduleBot.Checked)
                     {
@@ -323,29 +325,29 @@ namespace Shopee_Autobuy_Bot
                     if (radioButtonShockingSale.Checked == true) //shocking sale
                     {
                         ChromedriverHelper.driver.Navigate().GoToUrl(darkTextBoxProductLink.Text);
-                        ShopeeAutobuy(0, 0, Helper.isLogging);
+                        ShopeeAutobuy(0, 0);
                     }
                     else if (radioButtonPriceSpecific.Checked == true) //price specific
                     {
                         ChromedriverHelper.driver.Navigate().GoToUrl(darkTextBoxProductLink.Text);
-                        ShopeeAutobuy(0, 95, Helper.isLogging);
+                        ShopeeAutobuy(0, 95);
                     }
                     else if (radioButtonCheckOutCart.Checked == true) //checkout form cart
                     {
                         ChromedriverHelper.driver.Navigate().GoToUrl("https://shopee.com.my/cart");
 
-                        ShopeeAutobuy(0, 96, Helper.isLogging);
+                        ShopeeAutobuy(0, 96);
                     }
                     else if (radioButtonBuyNormal.Checked == true) //normal
                     {
                         ChromedriverHelper.driver.Navigate().GoToUrl(darkTextBoxProductLink.Text);
-                        ShopeeAutobuy(0, 1, Helper.isLogging);
+                        ShopeeAutobuy(0, 1);
                     }
                     else if (radioButtonPriceSpecificCARTCHECKOUT.Checked == true) // price specific CART CHECKOUT
                     {
                         ChromedriverHelper.driver.Navigate().GoToUrl("https://shopee.com.my/cart");
 
-                        ShopeeAutobuy(0, 94, Helper.isLogging);
+                        ShopeeAutobuy(0, 94);
                     }
                     darkButtonStart.Text = "Start";
                     darkButtonStart.Enabled = true;
@@ -677,7 +679,7 @@ namespace Shopee_Autobuy_Bot
                 else
                     return;
             }
-            ShopeeAutobuy(Try, step, Helper.isLogging);
+            ShopeeAutobuy(Try, step);
         }
 
         private void RefreshPageAndLoopAutobuy(string navigateLink, int Try, int step, bool loopAutobuy)
@@ -687,7 +689,7 @@ namespace Shopee_Autobuy_Bot
                 Thread.Sleep(Convert.ToInt32(darkNumericUpDownRefreshSeconds.Value) * 1000);
                 ChromedriverHelper.driver.Navigate().GoToUrl(navigateLink);
                 if (loopAutobuy)
-                    ShopeeAutobuy(Try, step, Helper.isLogging);
+                    ShopeeAutobuy(Try, step);
             }
             else
                 return;
@@ -697,58 +699,64 @@ namespace Shopee_Autobuy_Bot
         private void step94(int Try)
         {
             string pageUrl = "https://shopee.com.my/cart";
-            try
+            //try
+            //{
+            WaitUrlContain(pageUrl);
+            Logger("Cart page loaded.", new Color?(Color.LawnGreen), true, true, true);
+            Thread.Sleep(ConfigInfo.delay_step_94);
+            if (IsElementPresent(By.XPath(ConstantElements.CartPage.CartEmptyLabel)) == true)
             {
-                WaitUrlContain(pageUrl);
-                Logger("Cart page loaded.", new Color?(Color.LawnGreen), true, true, true, isLogging);
-                Thread.Sleep(ConfigInfo.delay_step_94);
-                if (IsElementPresent(By.XPath(ConstantElements.CartPage.CartEmptyLabel)) == true)
+                Logger("Your shopping cart is empty", new Color?(Color.IndianRed), true, true, true);
+                return;
+            }
+            if (IsElementPresent(By.XPath(ConstantElements.Payment.PaymentErrorMessage.InactiveProducts)) == true)
+            {
+                Logger("Warning! Some of cart item is inactive.", new Color?(Color.Yellow), true, true, true);
+            }
+            WaitElementExists(ConstantElements.CartPage.SelectAllLabel);
+            if (NewElementByXpath(ConstantElements.CartPage.SelectAllLabel).Text == "Select All (0)")
+            {
+                Logger("No item available to checkout.", new Color?(Color.IndianRed), true, true, true);
+                RefreshPageAndLoopAutobuy(pageUrl, Try, 94, true);
+            }
+            else
+            {
+                // check select all checkbox
+                CartCheckout_SelectAllCheckBox();
+                Logger("All item selected.", new Color?(Color.LawnGreen), true, true, true);
+                Thread.Sleep(ConfigInfo.delay_step_2);
+                (decimal userPrice, decimal cartTotalPrice) priceTuple = CartCheckout_GetPrice();
+                decimal userPrice = priceTuple.userPrice;
+                decimal cartTotalPrice = priceTuple.cartTotalPrice;
+                Logger("User price : " + userPrice, new Color?(Color.White), true, true, true);
+                if (cartTotalPrice > userPrice || cartTotalPrice == userPrice)
                 {
-                    Logger("Your shopping cart is empty", new Color?(Color.IndianRed), true, true, true, isLogging);
-                    return;
-                }
-                else if (IsElementPresent(By.XPath(ConstantElements.Payment.PaymentErrorMessage.InactiveProducts)) == true)
-                {
-                    Logger("Warning! Some of cart item is inactive.", new Color?(Color.Yellow), true, true, true, isLogging);
+                    Logger("Cart total price : " + cartTotalPrice, new Color?(Color.IndianRed), true, true, true);
+                    RefreshPageAndLoopAutobuy(pageUrl, Try, 94, true);
                 }
                 else
                 {
-                    Thread.Sleep(ConfigInfo.delay_step_94);
-                    // check select all checkbox
-                    CartCheckout_SelectAllCheckBox();
-                    Logger("All item selected.", new Color?(Color.LawnGreen), true, true, true, isLogging);
-                    (decimal userPrice, decimal cartTotalPrice) priceTuple = CartCheckout_GetPrice();
-                    decimal userPrice = priceTuple.userPrice;
-                    decimal cartTotalPrice = priceTuple.cartTotalPrice;
-                    Logger("User price : " + userPrice, new Color?(Color.White), true, true, true, isLogging);
-                    if (cartTotalPrice > userPrice || cartTotalPrice == userPrice)
+                    Logger("Cart total price : " + cartTotalPrice, new Color?(Color.LawnGreen), true, true, true);
+                    CheckoutTime = DateTime.Now;
+                    // claim multiple shop voucher
+                    CartCheckout_ClaimShopVoucher();
+                    // click checkout button
+                    CartCheckout_ClickCheckoutButton();
+                    Logger("Click 'Check Out'.", new Color?(Color.LawnGreen), true, true, true);
+                    if (IsElementPresent(By.XPath(ItemNotSelected)) == true)
                     {
-                        Logger("Cart total price : " + cartTotalPrice, new Color?(Color.IndianRed), true, true, true, isLogging);
+                        Logger("No item available to checkout.", new Color?(Color.IndianRed), true, true, true);
                         RefreshPageAndLoopAutobuy(pageUrl, Try, 94, true);
                     }
                     else
-                    {
-                        Logger("Cart total price : " + cartTotalPrice, new Color?(Color.LawnGreen), true, true, true, isLogging);
-                        CheckoutTime = DateTime.Now;
-                        // claim multiple shop voucher
-                        CartCheckout_ClaimShopVoucher();
-                        // click checkout button
-                        CartCheckout_ClickCheckoutButton();
-                        Logger("Click 'Check Out'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
-                        if (IsElementPresent(By.XPath(ItemNotSelected)) == true)
-                        {
-                            Logger("No item available to checkout.", new Color?(Color.IndianRed), true, true, true, isLogging);
-                            RefreshPageAndLoopAutobuy(pageUrl, Try, 94, true);
-                        }
-                        else
-                            ShopeeAutobuy(Try, 3, Helper.isLogging);
-                    }
+                        ShopeeAutobuy(Try, 3);
                 }
             }
-            catch (Exception ex)
-            {
-                AutobuyErrorHandle(Try, 94, ex, pageUrl, false, false);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    AutobuyErrorHandle(Try, 94, ex, pageUrl, false, false);
+            //}
         }
 
         private (decimal userPrice, decimal productPrice) GetPrice()
@@ -779,7 +787,7 @@ namespace Shopee_Autobuy_Bot
                 WaitUrlContain(pageUrl);
                 CheckoutTime = DateTime.Now;
                 Thread.Sleep(ConfigInfo.delay_step_95);
-                Logger("Product page loaded.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                Logger("Product page loaded.", new Color?(Color.LawnGreen), true, true, true);
                 string strButtonBuyNow = ConstantElements.ProductPage.BuyNowButton;
                 currentElement = strButtonBuyNow;
                 IWebElement BuyNowButton;
@@ -794,12 +802,12 @@ namespace Shopee_Autobuy_Bot
 
                 if (!IsElementPresent(By.XPath(strButtonBuyNow)))
                 {
-                    Logger("Product is not available.", new Color?(Color.IndianRed), true, true, true, isLogging);
+                    Logger("Product is not available.", new Color?(Color.IndianRed), true, true, true);
                     RefreshPageAndLoopAutobuy(pageUrl, Try, 95, true);
                 }
                 else if (BuyNowButton.GetAttribute("aria-disabled").Equals("true"))
                 {
-                    Logger("Product is not available.", new Color?(Color.IndianRed), true, true, true, isLogging);
+                    Logger("Product is not available.", new Color?(Color.IndianRed), true, true, true);
                     RefreshPageAndLoopAutobuy(pageUrl, Try, 95, true);
                 }
                 else if (BuyNowButton.GetAttribute("aria-disabled").Equals("false"))
@@ -807,7 +815,7 @@ namespace Shopee_Autobuy_Bot
                     var errorMessage = SelectVariant();
                     if (errorMessage.Length> 0)
                     {
-                        Logger(errorMessage, new Color?(Color.IndianRed), true, true, true, isLogging);
+                        Logger(errorMessage, new Color?(Color.IndianRed), true, true, true);
                         if (errorMessage.Contains("Product only need") || errorMessage.Contains("Product need 2"))
                             return;
                         RefreshPageAndLoopAutobuy(pageUrl, Try, 95, true);
@@ -818,20 +826,20 @@ namespace Shopee_Autobuy_Bot
                         (decimal userPrice, decimal productPrice) priceTuple = GetPrice();
                         decimal userPrice = priceTuple.userPrice;
                         decimal productPrice = priceTuple.productPrice;
-                        Logger("User price : " + userPrice, new Color?(Color.White), true, true, true, isLogging);
+                        Logger("User price : " + userPrice, new Color?(Color.White), true, true, true);
 
                         // if user price is below that product price then proceed
                         if (productPrice < userPrice)
                         {
-                            Logger("Current product price : " + productPrice, new Color?(Color.LawnGreen), true, true, true, isLogging);
+                            Logger("Current product price : " + productPrice, new Color?(Color.LawnGreen), true, true, true);
                             IncreaseQuantity();
                             ClickElement(BuyNowButton);
-                            Logger("Click 'Buy Now'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
-                            ShopeeAutobuy(Try, 2, Helper.isLogging);
+                            Logger("Click 'Buy Now'.", new Color?(Color.LawnGreen), true, true, true);
+                            ShopeeAutobuy(Try, 2);
                         }
                         else if (productPrice > userPrice || productPrice == userPrice)
                         {
-                            Logger("Current product price : " + productPrice, new Color?(Color.IndianRed), true, true, true, isLogging);
+                            Logger("Current product price : " + productPrice, new Color?(Color.IndianRed), true, true, true);
                             RefreshPageAndLoopAutobuy(pageUrl, Try, 95, true);
                         }
                     }
@@ -850,37 +858,42 @@ namespace Shopee_Autobuy_Bot
             {
                 string pageUrl = "https://shopee.com.my/cart";
                 WaitUrlContain(pageUrl);
-                Logger("Cart page loaded.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                Logger("Cart page loaded.", new Color?(Color.LawnGreen), true, true, true);
                 Thread.Sleep(ConfigInfo.delay_step_96);
                 if (IsElementPresent(By.XPath(ConstantElements.CartPage.CartEmptyLabel)) == true)
                 {
-                    Logger("Your shopping cart is empty", new Color?(Color.IndianRed), true, true, true, isLogging);
+                    Logger("Your shopping cart is empty", new Color?(Color.IndianRed), true, true, true);
                     return;
                 }
-                else if (IsElementPresent(By.XPath(ConstantElements.Payment.PaymentErrorMessage.InactiveProducts)) == true)
+                if (IsElementPresent(By.XPath(ConstantElements.Payment.PaymentErrorMessage.InactiveProducts)) == true)
                 {
-                    Logger("One of the product is inactive.", new Color?(Color.IndianRed), true, true, true, isLogging);
-                    RefreshPageAndLoopAutobuy(pageUrl, Try, 96, true);
+                    Logger("Warning! Some of cart item is inactive.", new Color?(Color.Yellow), true, true, true);
+                }
+                WaitElementExists(ConstantElements.CartPage.SelectAllLabel);
+                if (NewElementByXpath(ConstantElements.CartPage.SelectAllLabel).Text == "Select All (0)")
+                {
+                    Logger("No item available to checkout.", new Color?(Color.IndianRed), true, true, true);
+                    RefreshPageAndLoopAutobuy(pageUrl, Try, 94, true);
                 }
                 else
                 {
                     CheckoutTime = DateTime.Now;
                     // check select all checkbox
                     CartCheckout_SelectAllCheckBox();
-                    Logger("Item selected.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                    Logger("Item selected.", new Color?(Color.LawnGreen), true, true, true);
                     // claim multiple shop voucher
                     CartCheckout_ClaimShopVoucher();
                     // click checkout button
                     CartCheckout_ClickCheckoutButton();
-                    Logger("Click 'Check Out'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                    Logger("Click 'Check Out'.", new Color?(Color.LawnGreen), true, true, true);
 
                     if (IsElementPresent(By.XPath(ItemNotSelected)) == true)
                     {
-                        Logger("No item available to checkout.", new Color?(Color.IndianRed), true, true, true, isLogging);
+                        Logger("No item available to checkout.", new Color?(Color.IndianRed), true, true, true);
                         RefreshPageAndLoopAutobuy(pageUrl, Try, 96, true);
                     }
                     else
-                        ShopeeAutobuy(Try, 3, Helper.isLogging);
+                        ShopeeAutobuy(Try, 3);
                 }
             }
             catch (Exception ex)
@@ -941,13 +954,13 @@ namespace Shopee_Autobuy_Bot
                 Thread.Sleep(ConfigInfo.delay_step_0);
                 if (IsElementPresent(By.XPath(strFlashShockingSaleBanner)) == false)
                 {
-                    Logger("Product is not in Flash/Shocking Sale.", new Color?(Color.IndianRed), true, true, true, isLogging);
+                    Logger("Product is not in Flash/Shocking Sale.", new Color?(Color.IndianRed), true, true, true);
                     RefreshPageAndLoopAutobuy(pageUrl, Try, 0, true);
                 }
                 else
                 {
-                    Logger("Product is in Flash/Shocking Sale.", new Color?(Color.LawnGreen), true, true, true, isLogging);
-                    ShopeeAutobuy(Try, 1, Helper.isLogging);
+                    Logger("Product is in Flash/Shocking Sale.", new Color?(Color.LawnGreen), true, true, true);
+                    ShopeeAutobuy(Try, 1);
                 }
             }
             catch (Exception ex)
@@ -964,7 +977,7 @@ namespace Shopee_Autobuy_Bot
                 WaitUrlContain(pageUrl);
                 CheckoutTime = DateTime.Now;
                 Thread.Sleep(ConfigInfo.delay_step_1);
-                Logger("Product page loaded.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                Logger("Product page loaded.", new Color?(Color.LawnGreen), true, true, true);
 
                 string strButtonBuyNow = ConstantElements.ProductPage.BuyNowButton;
                 IWebElement BuyNowButton;
@@ -979,12 +992,12 @@ namespace Shopee_Autobuy_Bot
 
                 if (!IsElementPresent(By.XPath(strButtonBuyNow)))
                 {
-                    Logger("Product is not available.", new Color?(Color.IndianRed), true, true, true, isLogging);
+                    Logger("Product is not available.", new Color?(Color.IndianRed), true, true, true);
                     RefreshPageAndLoopAutobuy(pageUrl, Try, 1, true);
                 }
                 else if (BuyNowButton.GetAttribute("aria-disabled").Equals("true"))
                 {
-                    Logger("Product is not available.", new Color?(Color.IndianRed), true, true, true, isLogging);
+                    Logger("Product is not available.", new Color?(Color.IndianRed), true, true, true);
                     RefreshPageAndLoopAutobuy(pageUrl, Try, 1, true);
                 }
                 else if (BuyNowButton.GetAttribute("aria-disabled").Equals("false"))
@@ -992,7 +1005,7 @@ namespace Shopee_Autobuy_Bot
                     var errorMessage = SelectVariant();
                     if (errorMessage.Length> 0)
                     {
-                        Logger(errorMessage, new Color?(Color.IndianRed), true, true, true, isLogging);
+                        Logger(errorMessage, new Color?(Color.IndianRed), true, true, true);
                         if (errorMessage.Contains("Product only need") || errorMessage.Contains("Product need 2"))
                             return;
                         RefreshPageAndLoopAutobuy(pageUrl, Try, 1, true);
@@ -1001,8 +1014,8 @@ namespace Shopee_Autobuy_Bot
                     {
                         IncreaseQuantity();
                         ClickElement(BuyNowButton);
-                        Logger("Click 'Buy Now'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
-                        ShopeeAutobuy(Try, 2, Helper.isLogging);
+                        Logger("Click 'Buy Now'.", new Color?(Color.LawnGreen), true, true, true);
+                        ShopeeAutobuy(Try, 2);
                     }
                 }
             }
@@ -1028,7 +1041,7 @@ namespace Shopee_Autobuy_Bot
                             if (!variant.GetAttribute("class").Equals("product-variation product-variation--disabled"))
                             {
                                 ClickElement(variant);
-                                Logger("Click " + variant.Text + ".", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                                Logger("Click " + variant.Text + ".", new Color?(Color.LawnGreen), true, true, true);
                                 break;
                             }
                         }
@@ -1067,7 +1080,7 @@ namespace Shopee_Autobuy_Bot
                         if (!variationElement.GetAttribute("class").Equals("product-variation product-variation--selected"))
                         {
                             ClickElement(variationElement);
-                            Logger("Click " + variationElement.Text + ".", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                            Logger("Click " + variationElement.Text + ".", new Color?(Color.LawnGreen), true, true, true);
                         }
                     }
                     // all variations are available, continue with other logic here
@@ -1083,7 +1096,7 @@ namespace Shopee_Autobuy_Bot
                 WaitUrlContain("/cart");
                 if (ChromedriverHelper.driver.Url.Contains("/cart"))
                 {
-                    Logger("Cart page loaded.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                    Logger("Cart page loaded.", new Color?(Color.LawnGreen), true, true, true);
 
                     // claim shop voucher
                     if (darkCheckBoxClaimShopVoucher.Checked == true)
@@ -1098,7 +1111,7 @@ namespace Shopee_Autobuy_Bot
                             currentElement = strClaimShopeVoucher;
                             var ClaimShopeVoucher = NewElementByXpath(strClaimShopeVoucher);
                             ClickElement(ClaimShopeVoucher);
-                            Logger("Click 'Claim shop voucher'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                            Logger("Click 'Claim shop voucher'.", new Color?(Color.LawnGreen), true, true, true);
                         }
                         Thread.Sleep(ConfigInfo.delay_claim_shop_voucher);
                     }
@@ -1107,19 +1120,19 @@ namespace Shopee_Autobuy_Bot
                     currentElement = strCheckOutButton;
                     var CheckOutButton = NewElementByXpath(strCheckOutButton);
                     ClickElement(CheckOutButton);
-                    Logger("Click 'Check Out'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
-                    Logger("Checkout page loaded.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                    Logger("Click 'Check Out'.", new Color?(Color.LawnGreen), true, true, true);
+                    Logger("Checkout page loaded.", new Color?(Color.LawnGreen), true, true, true);
 
                     if (radioButtonCheckOutCart.Checked == true)
                         Thread.Sleep(300);
 
                     if (PaymentMethod != "Default")
                     {
-                        ShopeeAutobuy(Try, 3, Helper.isLogging); // to payment
+                        ShopeeAutobuy(Try, 3); // to payment
                     }
                     else
                     {
-                        ShopeeAutobuy(Try, 5, Helper.isLogging); // skip payment & courier
+                        ShopeeAutobuy(Try, 5); // skip payment & courier
                     }
                 }
             }
@@ -1146,7 +1159,7 @@ namespace Shopee_Autobuy_Bot
                         WaitElementExists(ConstantElements.CheckoutPage.ChangePaymentButton);
                         var ChangePaymentMethodDiv = NewElementByXpath(ConstantElements.CheckoutPage.ChangePaymentButton);
                         ClickElement(ChangePaymentMethodDiv);
-                        Logger("Click 'Change Payment Method'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                        Logger("Click 'Change Payment Method'.", new Color?(Color.LawnGreen), true, true, true);
                     }
                     bool exists_5 = true;
                     bool exists_4 = true;
@@ -1181,7 +1194,7 @@ namespace Shopee_Autobuy_Bot
                                 }
                                 var DebitCreditVariation = NewElementByXpath(strDebitCreditVariation);
                                 ClickElement(DebitCreditVariation);
-                                Logger("Select 'Credit / Debit card (" + tbLast4Digit.Text + ")'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                                Logger("Select 'Credit / Debit card (" + tbLast4Digit.Text + ")'.", new Color?(Color.LawnGreen), true, true, true);
                             }
                             break;
                         case "ATM / Cash Deposit":
@@ -1202,7 +1215,7 @@ namespace Shopee_Autobuy_Bot
                             if (CashDepoButton.Text.Contains("ATM / Cash Deposit"))
                             {
                                 ClickElement(CashDepoButton);
-                                Logger("Select 'ATM / Cash Deposit'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                                Logger("Select 'ATM / Cash Deposit'.", new Color?(Color.LawnGreen), true, true, true);
                             }
                             break;
                         case "Cash on Delivery":
@@ -1223,7 +1236,7 @@ namespace Shopee_Autobuy_Bot
                             if (CODButton.Text.Contains("Cash on Delivery"))
                             {
                                 ClickElement(CODButton);
-                                Logger("Select 'Cash on Delivery'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                                Logger("Select 'Cash on Delivery'.", new Color?(Color.LawnGreen), true, true, true);
                             }
                             break;
                         case "KK Mart":
@@ -1244,7 +1257,7 @@ namespace Shopee_Autobuy_Bot
                             if (RetailStoreButton.Text.Contains("Cash Payment at Convenience Stores"))
                             {
                                 ClickElement(RetailStoreButton);
-                                Logger("Select 'Cash Payment at Convenience Stores'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                                Logger("Select 'Cash Payment at Convenience Stores'.", new Color?(Color.LawnGreen), true, true, true);
                                 if (IsElementPresent(By.XPath(ConstantElements.Payment.PaymentErrorMessage.TransactionExceeded)))
                                 {
                                     Logger("You have exceeded the transaction limit. Aborting..", new Color?(Color.IndianRed), true, true, true);
@@ -1254,7 +1267,7 @@ namespace Shopee_Autobuy_Bot
                                 WaitElementClickable(ConstantElements.Payment.PaymentConvenienceStoresType.KKMart);
                                 var KkMartButton = NewElementByXpath(ConstantElements.Payment.PaymentConvenienceStoresType.KKMart);
                                 ClickElement(KkMartButton);
-                                Logger("Select '" + darkComboBoxPaymentMethod.Text + "'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                                Logger("Select '" + darkComboBoxPaymentMethod.Text + "'.", new Color?(Color.LawnGreen), true, true, true);
                             }
                             break;
                         case "7-Eleven":
@@ -1275,7 +1288,7 @@ namespace Shopee_Autobuy_Bot
                             if (RetailStoreButton_.Text.Contains("Cash Payment at Convenience Stores"))
                             {
                                 ClickElement(RetailStoreButton_);
-                                Logger("Select 'Cash Payment at Convenience Stores'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                                Logger("Select 'Cash Payment at Convenience Stores'.", new Color?(Color.LawnGreen), true, true, true);
                                 if (IsElementPresent(By.XPath(ConstantElements.Payment.PaymentErrorMessage.TransactionExceeded)))
                                 {
                                     Logger("You have exceeded the transaction limit. Aborting..", new Color?(Color.IndianRed), true, true, true);
@@ -1285,7 +1298,7 @@ namespace Shopee_Autobuy_Bot
                                 WaitElementClickable(ConstantElements.Payment.PaymentConvenienceStoresType.SevenEleven);
                                 var SevenElevenButton = NewElementByXpath(ConstantElements.Payment.PaymentConvenienceStoresType.SevenEleven);
                                 ClickElement(SevenElevenButton);
-                                Logger("Select '" + darkComboBoxPaymentMethod.Text + "'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                                Logger("Select '" + darkComboBoxPaymentMethod.Text + "'.", new Color?(Color.LawnGreen), true, true, true);
                             }
                             break;
                         case "Online Banking":
@@ -1306,12 +1319,12 @@ namespace Shopee_Autobuy_Bot
                             if (OnlinebankingButton.Text.Contains("Online Banking"))
                             {
                                 ClickElement(OnlinebankingButton);
-                                Logger("Select 'Online Banking'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                                Logger("Select 'Online Banking'.", new Color?(Color.LawnGreen), true, true, true);
                                 WaitElementVisible(strBankType);
                                 WaitElementClickable(strBankType);
                                 var BankTypebutton = NewElementByXpath(strBankType);
                                 ClickElement(BankTypebutton);
-                                Logger("Select '" + BankType + "'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                                Logger("Select '" + BankType + "'.", new Color?(Color.LawnGreen), true, true, true);
                             }
                             break;
                         case "ShopeePay":
@@ -1333,7 +1346,7 @@ namespace Shopee_Autobuy_Bot
                                 }
                                 var ShopeePayButton = NewElementByXpath(strShopeePay_5);
                                 ClickElement(ShopeePayButton);
-                                Logger("Select 'ShopeePay'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                                Logger("Select 'ShopeePay'.", new Color?(Color.LawnGreen), true, true, true);
                             }
                             if (exists_4 == true)
                             {
@@ -1345,7 +1358,7 @@ namespace Shopee_Autobuy_Bot
                                 }
                                 var ShopeePayButton = NewElementByXpath(strShopeePay_4);
                                 ClickElement(ShopeePayButton);
-                                Logger("Select 'ShopeePay'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                                Logger("Select 'ShopeePay'.", new Color?(Color.LawnGreen), true, true, true);
                             }
                             break;
                     }
@@ -1370,11 +1383,11 @@ namespace Shopee_Autobuy_Bot
                         Logger("Payment channel is disabled for maintenance. Aborting..", new Color?(Color.IndianRed), true, true, true);
                         return;
                     }
-                    ShopeeAutobuy(Try, 5, Helper.isLogging); // skip courier
+                    ShopeeAutobuy(Try, 5); // skip courier
                 }
                 else
                 {
-                    ShopeeAutobuy(Try, 5, Helper.isLogging); // skip courier
+                    ShopeeAutobuy(Try, 5); // skip courier
                 }
             }
             catch (Exception ex)
@@ -1392,7 +1405,7 @@ namespace Shopee_Autobuy_Bot
                 WaitElementExists(strChangeCourier);
                 var ChangeCourierButton = NewElementByXpath(strChangeCourier);
                 ClickElement(ChangeCourierButton);
-                Logger("Click 'Change Courier'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                Logger("Click 'Change Courier'.", new Color?(Color.LawnGreen), true, true, true);
 
                 // click courier type
                 Thread.Sleep(ConfigInfo.delay_step_4);
@@ -1402,7 +1415,7 @@ namespace Shopee_Autobuy_Bot
                 WaitElementExists(strCourierType);
                 var CourierTypeButton = NewElementByXpath(strCourierType);
                 ClickElement(CourierTypeButton);
-                Logger("Click '" + Courier + "'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                Logger("Click '" + Courier + "'.", new Color?(Color.LawnGreen), true, true, true);
 
                 // click deliver anytime
                 Thread.Sleep(ConfigInfo.delay_step_4);
@@ -1415,12 +1428,12 @@ namespace Shopee_Autobuy_Bot
                         ClickElement(DeliverAnytimeElement);
                     }
                 }
-                Logger("Click 'Deliver any time'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                Logger("Click 'Deliver any time'.", new Color?(Color.LawnGreen), true, true, true);
 
                 // click submit button
                 var SubmitButton = NewElementByXpath(strSubmitCourier);
                 ClickElement(SubmitButton);
-                Logger("Click 'Submit'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                Logger("Click 'Submit'.", new Color?(Color.LawnGreen), true, true, true);
                 ShopeeAutobuy(Try, 5);
             }
             catch (Exception ex)
@@ -1450,7 +1463,7 @@ namespace Shopee_Autobuy_Bot
                     //IWebElement checkBox = driver.FindElement(By.XPath(strRedeemCoin));
                     //IJavaScriptExecutor jse = (IJavaScriptExecutor)driver;
                     //jse.ExecuteScript("arguments[0].click();", checkBox);
-                    Logger("Click 'Redeem Shopee Coin'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                    Logger("Click 'Redeem Shopee Coin'.", new Color?(Color.LawnGreen), true, true, true);
                     Thread.Sleep(ConfigInfo.delay_redeem_coin);
                 }
                 // redeem any shopee voucher
@@ -1460,7 +1473,7 @@ namespace Shopee_Autobuy_Bot
                     currentElement = strSelectVoucher;
                     var EnterVoucherCode = NewElementByXpath(strSelectVoucher);
                     ClickElement(EnterVoucherCode);
-                    Logger("Click 'Select Voucher'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                    Logger("Click 'Select Voucher'.", new Color?(Color.LawnGreen), true, true, true);
                     Thread.Sleep(ConfigInfo.delay_any_shopee_voucher);
                     WaitElementClickable(ConstantElements.CheckoutPage.ShopeeVoucherContainer);
                     WaitElementVisible(ConstantElements.CheckoutPage.ShopeeVoucherContainer);
@@ -1483,7 +1496,7 @@ namespace Shopee_Autobuy_Bot
                     WaitElementVisible(strPlaceOrder);
                     var PlaceOrderButton = NewElementByXpath(strPlaceOrder);
                     ClickElement(PlaceOrderButton);
-                    Logger("Click 'Place Order'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                    Logger("Click 'Place Order'.", new Color?(Color.LawnGreen), true, true, true);
                     timeSpan = workTime - DateTime.Now;
                     CheckoutTimeFinal = CheckoutTime - DateTime.Now;
                     Thread.Sleep(300);
@@ -1492,7 +1505,7 @@ namespace Shopee_Autobuy_Bot
                         var strInformationUpdatedOkButton_ = NewElementByXpath(strInformationUpdatedOkButton);
                         ClickElement(strInformationUpdatedOkButton_);
                         ClickElement(PlaceOrderButton);
-                        Logger("Click 'Place Order'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                        Logger("Click 'Place Order'.", new Color?(Color.LawnGreen), true, true, true);
                         timeSpan = workTime - DateTime.Now;
                         CheckoutTimeFinal = CheckoutTime - DateTime.Now;
                     }
@@ -1500,9 +1513,9 @@ namespace Shopee_Autobuy_Bot
                         Cashing();
                     Thread.Sleep(800);
                     if (PaymentMethod == "ShopeePay")
-                        ShopeeAutobuy(Try, 6, Helper.isLogging);
+                        ShopeeAutobuy(Try, 6);
                     else
-                        ShopeeAutobuy(Try, 8, Helper.isLogging);
+                        ShopeeAutobuy(Try, 8);
                 }
                 else
                 {
@@ -1522,14 +1535,14 @@ namespace Shopee_Autobuy_Bot
             {
                 string pageUrl = "https://wallet.airpay.com.my/";
                 WaitUrlContain(pageUrl);
-                ShopeeAutobuy(Try, 7, Helper.isLogging);
+                ShopeeAutobuy(Try, 7);
                 if (ChromedriverHelper.driver.Url.Contains(pageUrl))
                 {
                     Thread.Sleep(ConfigInfo.delay_shopee_pay);
                     var ButtonPay = NewElementByXpath(strPayButtonID);
                     ButtonPay.Click();
                     ClickElement(ButtonPay);
-                    Logger("Click 'Pay'.", new Color?(Color.LawnGreen), true, true, true, isLogging);
+                    Logger("Click 'Pay'.", new Color?(Color.LawnGreen), true, true, true);
                     WaitElementExists(strShopeePayPin);
                     WaitElementClickable(strShopeePayPin);
                     if (IsElementPresent(By.XPath(strShopeePayPin)))
@@ -1565,7 +1578,7 @@ namespace Shopee_Autobuy_Bot
             if (ChromedriverHelper.driver.Url.Contains("/checkout"))
             {
                 timeSpan = new TimeSpan(0, 0, 0);
-                ShopeeAutobuy(Try, 5, Helper.isLogging);
+                ShopeeAutobuy(Try, 5);
             }
         }
 
@@ -1573,14 +1586,14 @@ namespace Shopee_Autobuy_Bot
         {
             string pageUrl = "https://wallet.airpay.com.my/";
             if (ChromedriverHelper.driver.Url.Contains(pageUrl))
-                ShopeeAutobuy(Try, 6, Helper.isLogging);
+                ShopeeAutobuy(Try, 6);
             try
             {
                 WaitUrlContain("/payment");
             }
             catch
             {
-                ShopeeAutobuy(Try, 7, Helper.isLogging);
+                ShopeeAutobuy(Try, 7);
             }
             Logger("Checkout time : " + CheckoutTimeFinal.ToString("hh\\:mm\\:ss\\:ff"), new Color?(), true, true, true);
             Logger("Total time : " + timeSpan.ToString("hh\\:mm\\:ss\\:ff"), new Color?(), true, true, true);
@@ -1750,7 +1763,8 @@ namespace Shopee_Autobuy_Bot
         {
             try
             {
-                // load element value from element.settings
+                var currentVersion = new Version(Assembly.GetExecutingAssembly().GetName().Version.ToString());
+                this.Text = "Shopee Autobuy Bot " + currentVersion;        // load element value from element.settings
                 try
                 {
                     LoadElementSettings();
@@ -1788,21 +1802,10 @@ namespace Shopee_Autobuy_Bot
                 }
 
                 // get UserInfo and display username and program version and display profile name
-                string userResponse = GetWithResponse($"{ServerInfos.Host}api/user/{userId}");
-                UserInfo = JsonConvert.DeserializeObject<UserModel>(userResponse);
-                var currentVersion = new Version(Assembly.GetExecutingAssembly().GetName().Version.ToString());
-                this.Text = "Shopee Autobuy Bot " + currentVersion + " | " + UserInfo.name;
-                labelShopeeAcc.Text = chromeProfile;
+                //GetUserInfo(userId);
 
                 // checking subscription
-                if (UserInfo.expiry_date != null)
-                {
-                    this.Text += " | Subscription ends " + UserInfo.expiry_date;
-                    CheckSubscription();
-                }
-                else
-                    this.Text += " | Lifetime";
-                this.Text += " | " + chromeProfile;
+                //SubscriptionCheck(UserInfo);
 
                 // add payment type into combobox
                 AddPaymentToComboBox();
@@ -1824,6 +1827,27 @@ namespace Shopee_Autobuy_Bot
                 Application.Exit();
                 return;
             }
+        }
+
+        private void GetUserInfo(string userId)
+        {
+            string userResponse = GetWithResponse($"{ServerInfos.Host}api/user/{userId}");
+            UserInfo = JsonConvert.DeserializeObject<UserModel>(userResponse);
+            var currentVersion = new Version(Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            this.Text = "Shopee Autobuy Bot " + currentVersion + " | " + UserInfo.name;
+            labelShopeeAcc.Text = chromeProfile;
+        }
+
+        private void SubscriptionCheck(UserModel userInfo)
+        {
+            if (UserInfo.expiry_date != null)
+            {
+                this.Text += " | Subscription ends " + UserInfo.expiry_date;
+                //ExpiryCheck();
+            }
+            else
+                this.Text += " | Lifetime";
+            this.Text += " | " + chromeProfile;
         }
 
         private void LoadElementSettings()
@@ -1850,7 +1874,7 @@ namespace Shopee_Autobuy_Bot
             }
         }
 
-        private void CheckSubscription()
+        private void ExpiryCheck()
         {
             new Thread(() =>
             {

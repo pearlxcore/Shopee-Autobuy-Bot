@@ -25,6 +25,7 @@
             public string CartTotalPriceLabel { get; set; }
             public string ClaimShopVoucherButton { get; set; }
             public string CartEmptyLabel { get; set; }
+            public string SelectAllLabel { get; set; }
         }
 
         public class CheckoutPage

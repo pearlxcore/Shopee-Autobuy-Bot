@@ -34,9 +34,10 @@ namespace Shopee_Autobuy_Bot
 
             tbCheckoutButton_cart.Text = element.CartPage.CheckOutButton;
             tbSelectAllCheckbox_cart.Text = element.CartPage.SelectAllCheckbox;
-            tbProductPrice_cart.Text = element.CartPage.CartTotalPriceLabel;
+            tbCartTotalPrice.Text = element.CartPage.CartTotalPriceLabel;
             tbClaimShopVC_cart.Text = element.CartPage.ClaimShopVoucherButton;
             tbCartEmptyLabel_cart.Text = element.CartPage.CartEmptyLabel;
+            tbSelectAllLabel.Text = element.CartPage.SelectAllLabel;
 
             tbPLaceOrderButton_placeOrder.Text = element.CheckoutPage.PlaceOrderButton;
             tbSelectShopeeVcButton_placeOrder.Text = element.CheckoutPage.SelectShopeeVoucherButton;
@@ -91,9 +92,10 @@ namespace Shopee_Autobuy_Bot
                 {
                     CheckOutButton= tbCheckoutButton_cart.Text,
                     SelectAllCheckbox= tbSelectAllCheckbox_cart.Text,
-                    CartTotalPriceLabel= tbProductPrice_cart.Text,
+                    CartTotalPriceLabel= tbCartTotalPrice.Text,
                     ClaimShopVoucherButton= tbClaimShopVC_cart.Text,
-                    CartEmptyLabel= tbCartEmptyLabel_cart.Text
+                    CartEmptyLabel= tbCartEmptyLabel_cart.Text,
+                    SelectAllLabel = tbSelectAllLabel.Text
                 };
                 var checkoutPage = new ElementModel.CheckoutPage()
                 {
