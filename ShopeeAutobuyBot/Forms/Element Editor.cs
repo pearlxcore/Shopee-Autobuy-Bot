@@ -11,9 +11,6 @@ namespace Shopee_Autobuy_Bot
 {
     public partial class Element_Editor : DarkUI.Forms.DarkForm
     {
-        private bool isSaved;
-        private bool forceExit;
-
         public Element_Editor()
         {
             InitializeComponent();
@@ -21,7 +18,6 @@ namespace Shopee_Autobuy_Bot
 
         private void Element_Editor_Load(object sender, EventArgs e)
         {
-            isSaved = false;
             if (SettingsHelper.Element.ConstantElements is null)
             { MessageBox.Show("No elements settings found. Create new settings by saving new one or choose option 'Update element from repository'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
             else
@@ -31,14 +27,14 @@ namespace Shopee_Autobuy_Bot
         private void LoadElementsToControls(ElementModel.Root element)
         {
             tbBuyNowButton_product.Text = element.ProductPage.BuyNowButton;
-            tbVariationFlexBox_product.Text = element.ProductPage.ProductVariationFlexBox;
+            tbVariationFlexBox_product.Text = element.ProductPage.ProductVariationContainer;
             tbQuantityTextbox_product.Text = element.ProductPage.QuantityCheckbox;
             tbCurrentPriceLabel_product.Text = element.ProductPage.CurrentPriceLabel;
             tbSaleBanner_product.Text = element.ProductPage.SaleBanner;
 
             tbCheckoutButton_cart.Text = element.CartPage.CheckOutButton;
             tbSelectAllCheckbox_cart.Text = element.CartPage.SelectAllCheckbox;
-            tbProductPrice_cart.Text = element.CartPage.ProductPriceLabel;
+            tbProductPrice_cart.Text = element.CartPage.CartTotalPriceLabel;
             tbClaimShopVC_cart.Text = element.CartPage.ClaimShopVoucherButton;
             tbCartEmptyLabel_cart.Text = element.CartPage.CartEmptyLabel;
 
@@ -49,6 +45,29 @@ namespace Shopee_Autobuy_Bot
             tbRedeemCoinCheckbox_placeOrder.Text = element.CheckoutPage.RedeemCoinCheckbox;
             tbCHangePaymentButton_placeOrder.Text = element.CheckoutPage.ChangePaymentButton;
             tbOrderPrice_placeOrder.Text = element.CheckoutPage.OrderPrice;
+
+            // payment type
+            tbPayment_OnlineBanking.Text = element.Payment.PaymentMethod.OnlineBanking;
+            tbPayment_ATM_CashDeposit.Text = element.Payment.PaymentMethod.ATM_CashDeposit;
+            tbPayment_COD.Text = element.Payment.PaymentMethod.CashOnDelivery;
+            tbPayment_ConvenienceStore.Text = element.Payment.PaymentMethod.ConvenienceStores;
+            tbPayment_Debit_CreditCard.Text = element.Payment.PaymentMethod.DebitCreditCard;
+            tbPayment_CreditCardInstallment.Text = element.Payment.PaymentMethod.CreditCardInstallment;
+            tbPayment_GooglePay.Text = element.Payment.PaymentMethod.GooglePay;
+
+            // payment error message
+            tbErrMess_ActivateShopeePay.Text = element.Payment.PaymentErrorMessage.ActivateShopeePay;
+            tbErrMess_BankMaintenance.Text = element.Payment.PaymentErrorMessage.BankMaintenance;
+            tbErrMess_CartOutOfStock.Text = element.Payment.PaymentErrorMessage.CartItemOutOfStock;
+            tbErrMess_InactiveProduct.Text = element.Payment.PaymentErrorMessage.InactiveProducts;
+            tbErrMess_InsuffShopeePay.Text = element.Payment.PaymentErrorMessage.ShopeePayInsufficientFund;
+            tbErrMess_InvalidShopeePayPin.Text = element.Payment.PaymentErrorMessage.InvalidShopeePayPin;
+            tbErrMess_TransExceeded.Text = element.Payment.PaymentErrorMessage.TransactionExceeded;
+            tbErrMess_PayNowMaintenance.Text = element.Payment.PaymentErrorMessage.PayNowMaintenance;
+
+            // convenience store type
+            tbConvStoreType_SevenEleven.Text = element.Payment.PaymentConvenienceStoresType.SevenEleven;
+            tbConvStoreType_KKMart.Text = element.Payment.PaymentConvenienceStoresType.KKMart;
         }
 
         private void saveChangesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,7 +82,7 @@ namespace Shopee_Autobuy_Bot
                 var productPage = new ElementModel.ProductPage()
                 {
                     BuyNowButton= tbBuyNowButton_product.Text,
-                    ProductVariationFlexBox= tbVariationFlexBox_product.Text,
+                    ProductVariationContainer= tbVariationFlexBox_product.Text,
                     QuantityCheckbox= tbQuantityTextbox_product.Text,
                     CurrentPriceLabel= tbCurrentPriceLabel_product.Text,
                     SaleBanner= tbSaleBanner_product.Text
@@ -72,7 +91,7 @@ namespace Shopee_Autobuy_Bot
                 {
                     CheckOutButton= tbCheckoutButton_cart.Text,
                     SelectAllCheckbox= tbSelectAllCheckbox_cart.Text,
-                    ProductPriceLabel= tbProductPrice_cart.Text,
+                    CartTotalPriceLabel= tbProductPrice_cart.Text,
                     ClaimShopVoucherButton= tbClaimShopVC_cart.Text,
                     CartEmptyLabel= tbCartEmptyLabel_cart.Text
                 };
@@ -86,11 +105,44 @@ namespace Shopee_Autobuy_Bot
                     ChangePaymentButton= tbCHangePaymentButton_placeOrder.Text,
                     OrderPrice = tbOrderPrice_placeOrder.Text
                 };
+                var paymentMethod = new ElementModel.PaymentMethod()
+                {
+                    ATM_CashDeposit = tbPayment_ATM_CashDeposit.Text,
+                    OnlineBanking = tbPayment_OnlineBanking.Text,
+                    CashOnDelivery = tbPayment_ATM_CashDeposit.Text,
+                    DebitCreditCard = tbPayment_Debit_CreditCard.Text,
+                    ConvenienceStores = tbPayment_ConvenienceStore.Text,
+                    CreditCardInstallment = tbPayment_CreditCardInstallment.Text,
+                    GooglePay = tbPayment_GooglePay.Text
+                };
+                var storeType = new ElementModel.PaymentConvenienceStoresType()
+                {
+                    KKMart = tbConvStoreType_KKMart.Text,
+                    SevenEleven = tbConvStoreType_SevenEleven.Text
+                };
+                var paymentErrorMessage = new ElementModel.PaymentErrorMessage()
+                {
+                    InvalidShopeePayPin = tbErrMess_InvalidShopeePayPin.Text,
+                    ActivateShopeePay = tbErrMess_ActivateShopeePay.Text,
+                    BankMaintenance = tbErrMess_BankMaintenance.Text,
+                    ShopeePayInsufficientFund = tbErrMess_InsuffShopeePay.Text,
+                    PayNowMaintenance = tbErrMess_PayNowMaintenance.Text,
+                    TransactionExceeded = tbErrMess_TransExceeded.Text,
+                    CartItemOutOfStock = tbErrMess_CartOutOfStock.Text,
+                    InactiveProducts = tbErrMess_InactiveProduct.Text
+                };
+                var payment = new ElementModel.Payment()
+                {
+                    PaymentConvenienceStoresType= storeType,
+                    PaymentMethod= paymentMethod,
+                    PaymentErrorMessage = paymentErrorMessage
+                };
                 var rootElement = new ElementModel.Root()
                 {
                     ProductPage = productPage,
                     CartPage = cartPage,
-                    CheckoutPage = checkoutPage
+                    CheckoutPage = checkoutPage,
+                    Payment = payment
                 };
                 SettingsHelper.Element.SaveElementsToFile(rootElement);
                 MessageBox.Show("Elements settings saved", "Elements saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -148,6 +200,16 @@ namespace Shopee_Autobuy_Bot
                 SettingsHelper.Element.ConstantElements = SettingsHelper.Element.LoadElementsFromFile();
                 LoadElementsToControls(SettingsHelper.Element.ConstantElements);
             }
+        }
+
+        private void darkLabel32_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void darkTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

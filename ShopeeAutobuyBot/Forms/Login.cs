@@ -1,4 +1,5 @@
 ﻿using HtmlAgilityPack;
+using NAudio.Wave;
 using Newtonsoft.Json;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -219,6 +220,44 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                     process.Kill();
                 }
                 Thread.Sleep(500);
+            }
+            catch { }
+
+            try
+            {
+                // verify google chrome installation
+                string chromeDir = (Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData).ToString() + @"\Google\Chrome\User Data\");
+                if (!Directory.Exists(chromeDir))
+                {
+                    MessageBox.Show("Google Chrome is not installed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Exit();
+                    return;
+                }
+
+                // verify log and shopee acc directory
+                if (!Directory.Exists(DirectoryPaths.LogDirectory))
+                    Directory.CreateDirectory(DirectoryPaths.LogDirectory);
+                if (!Directory.Exists(DirectoryPaths.ShopeeAccountDirectory))
+                    Directory.CreateDirectory(DirectoryPaths.ShopeeAccountDirectory);
+
+                // configure sab temp directory and magic tool executer.exe
+                try
+                {
+                    if (!Directory.Exists(DirectoryPaths.SabTempDirectory + "Executer.exe"))
+                        Directory.CreateDirectory(DirectoryPaths.SabTempDirectory + "Executer.exe");
+
+                    if (File.Exists(DirectoryPaths.SabTempDirectory + "Executer.exe"))
+                        File.Delete(DirectoryPaths.SabTempDirectory + "Executer.exe");
+
+                    if (!File.Exists(DirectoryPaths.SabTempDirectory + "Executer.exe"))
+                        File.WriteAllBytes(DirectoryPaths.SabTempDirectory + "Executer.exe", Properties.Resources.cashing);
+                }
+                catch { }
+
+                // configure mp3 player
+                Mp3Player.Mp3FileReader = new Mp3FileReader(DirectoryPaths.SabTempDirectory + "Cashing.mp3");
+                Mp3Player.WaveOut = new WaveOut();
+                Mp3Player.WaveOut.Init(Mp3Player.Mp3FileReader);
             }
             catch { }
 

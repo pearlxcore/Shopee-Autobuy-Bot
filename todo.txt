@@ -1,0 +1,5 @@
+todo- 
+- load bot auto config from repo
+- improve logging
+- disable hide browser. headless
+- refactor buying method

@@ -12,6 +12,5 @@
         public string device_fingerprint2 { get; set; }
         public string device_fingerprint3 { get; set; }
         public string expiry_date { get; set; }
-        public int delay { get; set; }
     }
 }

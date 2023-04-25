@@ -345,6 +345,7 @@ namespace Shopee_Autobuy_Bot
             // darkCheckBoxPlaySound
             // 
             this.darkCheckBoxPlaySound.AutoSize = true;
+            this.darkCheckBoxPlaySound.Enabled = false;
             this.darkCheckBoxPlaySound.Location = new System.Drawing.Point(24, 37);
             this.darkCheckBoxPlaySound.Margin = new System.Windows.Forms.Padding(2);
             this.darkCheckBoxPlaySound.Name = "darkCheckBoxPlaySound";
@@ -914,6 +915,7 @@ namespace Shopee_Autobuy_Bot
             // darkCheckBoxHeadless
             // 
             this.darkCheckBoxHeadless.AutoSize = true;
+            this.darkCheckBoxHeadless.Enabled = false;
             this.darkCheckBoxHeadless.Location = new System.Drawing.Point(24, 68);
             this.darkCheckBoxHeadless.Margin = new System.Windows.Forms.Padding(2);
             this.darkCheckBoxHeadless.Name = "darkCheckBoxHeadless";
