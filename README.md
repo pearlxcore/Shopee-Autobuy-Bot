@@ -7,7 +7,7 @@ Shopee Autobuy Bot is an automation program designed to assist users with purcha
 - Automates the purchasing process on the Shopee website.
 - Uses the Selenium Framework for efficient and reliable automation.
 - Allows users to set specific buying modes, such as "below specific price" mode.
-- Can schedule the bot to run at a specific time, 5-10 seconds before the sale starts.
+- Schedule bot to run at a specific time, 5-10 seconds before the sale starts.
 - Plays a sound notification on successful checkout.
 - Enables auto-refreshing of the webpage.
 - Allows users to disable website images and extensions.
