@@ -322,7 +322,6 @@
     <Compile Include="Models\DelayModel.cs" />
     <Compile Include="Models\ElementModel.cs" />
     <Compile Include="Models\MaintenanceModel.cs" />
-    <Compile Include="Models\PaymentModel.cs" />
     <Compile Include="Models\ProgramInfoModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\ProfileModel.cs" />

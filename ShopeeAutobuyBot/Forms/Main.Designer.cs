@@ -345,7 +345,6 @@ namespace Shopee_Autobuy_Bot
             // darkCheckBoxPlaySound
             // 
             this.darkCheckBoxPlaySound.AutoSize = true;
-            this.darkCheckBoxPlaySound.Enabled = false;
             this.darkCheckBoxPlaySound.Location = new System.Drawing.Point(24, 37);
             this.darkCheckBoxPlaySound.Margin = new System.Windows.Forms.Padding(2);
             this.darkCheckBoxPlaySound.Name = "darkCheckBoxPlaySound";
@@ -357,6 +356,7 @@ namespace Shopee_Autobuy_Bot
             // darkCheckBoxDisableImageExtension
             // 
             this.darkCheckBoxDisableImageExtension.AutoSize = true;
+            this.darkCheckBoxDisableImageExtension.Enabled = false;
             this.darkCheckBoxDisableImageExtension.Location = new System.Drawing.Point(24, 99);
             this.darkCheckBoxDisableImageExtension.Margin = new System.Windows.Forms.Padding(2);
             this.darkCheckBoxDisableImageExtension.Name = "darkCheckBoxDisableImageExtension";
