@@ -18,10 +18,10 @@ namespace Shopee_Autobuy_Bot
 
         private void Element_Editor_Load(object sender, EventArgs e)
         {
-            if (SettingsHelper.Element.ConstantElements is null)
+            if (AutoBuyInfo.ConstantElements is null)
             { MessageBox.Show("No elements settings found. Create new settings by saving new one or choose option 'Update element from repository'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
             else
-                LoadElementsToControls(SettingsHelper.Element.ConstantElements);
+                LoadElementsToControls(AutoBuyInfo.ConstantElements);
         }
 
         private void LoadElementsToControls(ElementModel.Root element)
@@ -147,9 +147,9 @@ namespace Shopee_Autobuy_Bot
                     Payment = payment
                 };
                 SettingsHelper.Element.SaveElementsToFile(rootElement);
-                MessageBox.Show("Elements settings saved", "Elements saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Elements settings saved.", "Elements saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex) { MessageBox.Show("An error occured while saving elements", "Error"); }
+            catch (Exception ex) { MessageBox.Show("An error occured while saving elements.", "Error"); }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -162,16 +162,15 @@ namespace Shopee_Autobuy_Bot
             try
             {
                 //get delay config
-                string elementResponse = GetWithResponse($"{ServerInfos.Host}api/element/");
-                SettingsHelper.Element.ConstantElements = JsonConvert.DeserializeObject<ElementModel.Root>(elementResponse); // -> to escape string
-                LoadElementsToControls(SettingsHelper.Element.ConstantElements);
-                var dialog = MessageBox.Show("Save elements settings?", "Save settings", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                string elementResponse = GetWithResponse($"{Urls.SabSettings.Element}");
+                AutoBuyInfo.ConstantElements = JsonConvert.DeserializeObject<ElementModel.Root>(elementResponse); // -> to escape string
+                LoadElementsToControls(AutoBuyInfo.ConstantElements);
+                var dialog = MessageBox.Show("Elements successfully updated from repository. Save elements settings?", "Save settings", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.No)
                     return;
                 SaveElementsSettings();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
-            MessageBox.Show("Element updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private string GetWithResponse(string url)
@@ -195,12 +194,12 @@ namespace Shopee_Autobuy_Bot
 
         private void loadElementsFromLocalSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (SettingsHelper.Element.ConstantElements is null)
+            if (AutoBuyInfo.ConstantElements is null)
             { MessageBox.Show("No elements settings found. Create new settings by saving new one or choose option 'Update element from repository'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
             else
             {
-                SettingsHelper.Element.ConstantElements = SettingsHelper.Element.LoadElementsFromFile();
-                LoadElementsToControls(SettingsHelper.Element.ConstantElements);
+                AutoBuyInfo.ConstantElements = SettingsHelper.Element.LoadElementsFromFile();
+                LoadElementsToControls(AutoBuyInfo.ConstantElements);
             }
         }
 

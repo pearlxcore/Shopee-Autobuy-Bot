@@ -11,7 +11,6 @@ using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 using static Shopee_Autobuy_Bot.Utililties.Helper;
-using static Shopee_Autobuy_Bot.Utililties.Helper.QuickBuyMode;
 
 namespace Shopee_Autobuy_Bot
 {
@@ -31,24 +30,22 @@ namespace Shopee_Autobuy_Bot
         }
 
         private void Logger(
+            RichTextBox richTextBox,
       string text,
       Color? color = null,
       bool NewLine = true,
       bool Production = true,
-      bool WithDateTime = true, bool isLogging = true)
+      bool WithDateTime = true)
         {
-            if (isLogging == true)
+            if (tbLog.InvokeRequired)
             {
-                if (tbLog.InvokeRequired)
-                {
-                    Invoke((Delegate)new SetTextCallbackl(Logger), text, color, NewLine, Production, WithDateTime, isLogging);
-                }
-                else
-                {
-                    if (WithDateTime)
-                        tbLog.AppendText("[" + DateTime.Now.ToString("HH:mm:ss") + "] ", Color.LightBlue, false);
-                    tbLog.AppendText(text, color ?? Color.White, NewLine);
-                }
+                Invoke((Delegate)new SetTextCallbackl(Logger), richTextBox, text, color, NewLine, Production, WithDateTime);
+            }
+            else
+            {
+                if (WithDateTime)
+                    tbLog.AppendText("[" + DateTime.Now.ToString("HH:mm:ss") + "] ", Color.LightBlue, false);
+                tbLog.AppendText(text, color ?? Color.White, NewLine);
             }
         }
 
@@ -209,6 +206,7 @@ namespace Shopee_Autobuy_Bot
                         string priceFinal_min = "";
                         string priceFinal_max = "";
                         string priceStr = "";
+                        string promotionId = "";
 
                         name = itemInfo["data"]["name"].ToString();
                         price_min = itemInfo["data"]["price_min"].ToString();

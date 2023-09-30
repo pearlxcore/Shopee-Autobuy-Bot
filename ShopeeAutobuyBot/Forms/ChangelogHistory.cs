@@ -1,5 +1,4 @@
-﻿using Shopee_Autobuy_Bot.Constants;
-using System;
+﻿using System;
 using System.IO;
 using System.Net;
 
@@ -14,9 +13,9 @@ namespace Shopee_Autobuy_Bot
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            string changlogHistoryUrl = $"{ServerInfos.Host}api/ChangelogHistory";
-            string changelog = GetWithResponse(changlogHistoryUrl).Replace("\n", Environment.NewLine);
-            darkTextBox1.Text = changelog;
+            //string changlogHistoryUrl = $"{Urls.Host}api/ChangelogHistory";
+            //string changelog = GetWithResponse(changlogHistoryUrl).Replace("\n", Environment.NewLine);
+            //darkTextBox1.Text = changelog;
         }
 
         private string GetWithResponse(string url)

@@ -11,5 +11,8 @@ namespace Shopee_Autobuy_Bot.Constants
         public static readonly string CurrentDirectory = Environment.CurrentDirectory + "\\";
         public static readonly string ElementSettingsPath = Environment.CurrentDirectory + @"\Configuration\element.settings";
         public static readonly string ProfileSettingsPath = Environment.CurrentDirectory + @"\Configuration\profile.settings";
+        public static readonly string ChromedriverPath = DirectoryPaths.CurrentDirectory + "chromedriver.exe";
+        public static readonly string ChromedriverZipPath = SabTempDirectory + "chromedriver.exe";
+
     }
 }

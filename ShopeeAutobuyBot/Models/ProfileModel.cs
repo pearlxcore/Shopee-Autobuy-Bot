@@ -19,6 +19,7 @@
             public string product_link { get; set; }
             public string variant { get; set; }
             public int quantity { get; set; }
+            public bool random_variant { get; set; }
         }
 
         public class Voucher_Coin
@@ -47,7 +48,7 @@
 
         public class PaymentDetail
         {
-            public string payment_type { get; set; }
+            public string payment_method { get; set; }
             public string bank_type { get; set; }
             public string last_4_digit_card { get; set; }
             public string shopeepay_pin { get; set; }

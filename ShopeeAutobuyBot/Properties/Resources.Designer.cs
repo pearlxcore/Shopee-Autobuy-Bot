@@ -73,16 +73,6 @@ namespace Shopee_Autobuy_Bot.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Executer {
-            get {
-                object obj = ResourceManager.GetObject("Executer", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] htuachecker {
             get {
                 object obj = ResourceManager.GetObject("htuachecker", resourceCulture);

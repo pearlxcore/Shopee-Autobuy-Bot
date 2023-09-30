@@ -82,6 +82,8 @@
             this.darkLabel3 = new DarkUI.Controls.DarkLabel();
             this.darkLabel2 = new DarkUI.Controls.DarkLabel();
             this.darkLabel12 = new DarkUI.Controls.DarkLabel();
+            this.darkButton1 = new DarkUI.Controls.DarkButton();
+            this.cbRandom = new DarkUI.Controls.DarkCheckBox();
             this.darkSectionPanel1.SuspendLayout();
             this.darkSectionPanelPaymentDetails.SuspendLayout();
             this.darkSectionPanelBuyingMode.SuspendLayout();
@@ -93,7 +95,7 @@
             // btnLoadProfile
             // 
             this.btnLoadProfile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadProfile.Location = new System.Drawing.Point(532, 13);
+            this.btnLoadProfile.Location = new System.Drawing.Point(465, 13);
             this.btnLoadProfile.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoadProfile.Name = "btnLoadProfile";
             this.btnLoadProfile.Size = new System.Drawing.Size(123, 24);
@@ -104,7 +106,7 @@
             // btnDeleteProfile
             // 
             this.btnDeleteProfile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteProfile.Location = new System.Drawing.Point(665, 13);
+            this.btnDeleteProfile.Location = new System.Drawing.Point(592, 13);
             this.btnDeleteProfile.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteProfile.Name = "btnDeleteProfile";
             this.btnDeleteProfile.Size = new System.Drawing.Size(123, 24);
@@ -116,7 +118,7 @@
             // 
             this.darkLabel1.AutoSize = true;
             this.darkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel1.Location = new System.Drawing.Point(185, 18);
+            this.darkLabel1.Location = new System.Drawing.Point(130, 18);
             this.darkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.darkLabel1.Name = "darkLabel1";
             this.darkLabel1.Size = new System.Drawing.Size(78, 15);
@@ -126,7 +128,7 @@
             // darkComboBoxProfile
             // 
             this.darkComboBoxProfile.FormattingEnabled = true;
-            this.darkComboBoxProfile.Location = new System.Drawing.Point(273, 13);
+            this.darkComboBoxProfile.Location = new System.Drawing.Point(212, 13);
             this.darkComboBoxProfile.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.darkComboBoxProfile.Name = "darkComboBoxProfile";
             this.darkComboBoxProfile.Size = new System.Drawing.Size(249, 24);
@@ -526,6 +528,7 @@
             // darkSectionPanelProductDetails
             // 
             this.darkSectionPanelProductDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.darkSectionPanelProductDetails.Controls.Add(this.cbRandom);
             this.darkSectionPanelProductDetails.Controls.Add(this.tbQuality);
             this.darkSectionPanelProductDetails.Controls.Add(this.darkLabel11);
             this.darkSectionPanelProductDetails.Controls.Add(this.darkTextBoxProductLink);
@@ -545,7 +548,7 @@
             this.tbQuality.Location = new System.Drawing.Point(98, 160);
             this.tbQuality.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbQuality.Name = "tbQuality";
-            this.tbQuality.Size = new System.Drawing.Size(37, 23);
+            this.tbQuality.Size = new System.Drawing.Size(68, 23);
             this.tbQuality.TabIndex = 54;
             this.tbQuality.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -709,11 +712,33 @@
             this.darkLabel12.TabIndex = 4;
             this.darkLabel12.Text = "Hour";
             // 
-            // Profile
+            // darkButton1
+            // 
+            this.darkButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.darkButton1.Location = new System.Drawing.Point(719, 13);
+            this.darkButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.darkButton1.Name = "darkButton1";
+            this.darkButton1.Size = new System.Drawing.Size(123, 24);
+            this.darkButton1.TabIndex = 115;
+            this.darkButton1.Text = "Save profile";
+            // 
+            // cbRandom
+            // 
+            this.cbRandom.AutoSize = true;
+            this.cbRandom.Enabled = false;
+            this.cbRandom.Location = new System.Drawing.Point(271, 162);
+            this.cbRandom.Margin = new System.Windows.Forms.Padding(2);
+            this.cbRandom.Name = "cbRandom";
+            this.cbRandom.Size = new System.Drawing.Size(71, 19);
+            this.cbRandom.TabIndex = 55;
+            this.cbRandom.Text = "Random";
+            // 
+            // LoadProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(972, 515);
+            this.Controls.Add(this.darkButton1);
             this.Controls.Add(this.darkSectionPanel1);
             this.Controls.Add(this.darkSectionPanelPaymentDetails);
             this.Controls.Add(this.darkSectionPanelBuyingMode);
@@ -728,7 +753,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Profile";
+            this.Name = "LoadProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Load Profile";
             this.Load += new System.EventHandler(this.Profile_Load_1);
@@ -803,5 +828,7 @@
         private DarkUI.Controls.DarkLabel darkLabel3;
         private DarkUI.Controls.DarkLabel darkLabel2;
         private DarkUI.Controls.DarkLabel darkLabel12;
+        private DarkUI.Controls.DarkButton darkButton1;
+        private DarkUI.Controls.DarkCheckBox cbRandom;
     }
 }

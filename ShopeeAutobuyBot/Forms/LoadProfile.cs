@@ -1,10 +1,9 @@
 ﻿using Shopee_Autobuy_Bot.Constants;
+using Shopee_Autobuy_Bot.Services.Profile;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
-using static Shopee_Autobuy_Bot.Utililties.SettingsHelper.Profile;
 
 
 namespace Shopee_Autobuy_Bot
@@ -12,19 +11,22 @@ namespace Shopee_Autobuy_Bot
     public partial class LoadProfile : DarkUI.Forms.DarkForm
     {
         private List<Utililties.ProfileModel.Root> profileList = new List<Utililties.ProfileModel.Root>();
-        public LoadProfile()
+        private readonly IProfileService _profileService;
+
+        public LoadProfile(IProfileService profileService)
         {
             InitializeComponent();
+            _profileService=profileService;
         }
 
         private void Profile_Load_1(object sender, EventArgs e)
         {
             if (!File.Exists(DirectoryPaths.ProfileSettingsPath))
                 File.Create(DirectoryPaths.ProfileSettingsPath);
-            profileList = LoadProfilesFromFile();
+            profileList = _profileService.LoadProfiles();
             if (profileList == null)
             {
-                MessageBox.Show("No profile found", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No profile found", "LogInfo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
                 return;
             }
@@ -32,7 +34,7 @@ namespace Shopee_Autobuy_Bot
             {
                 darkComboBoxProfile.Items.Add(profile.profile_name);
             }
-            Utililties.SettingsHelper.Profile.LoadProfile = false;
+            _profileService.LoadProfile = false;
         }
 
         private void btnDeleteProfile_Click(object sender, EventArgs e)
@@ -40,7 +42,7 @@ namespace Shopee_Autobuy_Bot
             if (profileList.Count == 0)
                 return;
 
-            var deleteProfile = DeleteProfileFromFile(darkComboBoxProfile.Text);
+            var deleteProfile = _profileService.DeleteProfile(darkComboBoxProfile.Text);
             if (!deleteProfile)
             {
                 MessageBox.Show("Error occured when deleting profile.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -48,7 +50,7 @@ namespace Shopee_Autobuy_Bot
             }
             darkComboBoxProfile.Items.Remove(darkComboBoxProfile.Text);
             profileList.Clear();
-            profileList = LoadProfilesFromFile();
+            profileList = _profileService.LoadProfiles();
             MessageBox.Show("Profile deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -59,79 +61,70 @@ namespace Shopee_Autobuy_Bot
                 MessageBox.Show("Select profile to load", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            Utililties.SettingsHelper.Profile.LoadProfile = true;
+            _profileService.LoadProfile = true;
             this.Close();
         }
 
         private void darkComboBoxProfile_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SelectedProfile = new Utililties.ProfileModel.Root();
             foreach (var profile in profileList)
             {
                 if (profile.profile_name == darkComboBoxProfile.Text)
                 {
-                    SelectedProfile = profile;
+                    _profileService.SelectedProfile = profile;
                     break;
                 }
             }
 
-            if (SelectedProfile == null)
+            if (_profileService.SelectedProfile == null)
             {
                 MessageBox.Show("Failed to load profile", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try
             {
-                //Load value from settings
-                foreach (RadioButton c in darkSectionPanelBuyingMode.Controls.OfType<RadioButton>())
-                {
-                    try
-                    {
-                        if (SelectedProfile.BuyingMode.mode != string.Empty&& SelectedProfile.BuyingMode.mode != null)
-                        {
-                            if (SelectedProfile.BuyingMode.mode == c.Name)
-                                c.Checked = true;
-                        }
-                    }
-                    catch
-                    {
+                if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Normal")
+                    radioButtonBuyNormal.Checked = true;
+                if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Flash_Shocking")
+                    radioButtonShockingSale.Checked = true;
+                if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Below_Price")
+                    radioButtonPriceSpecific.Checked = true;
+                if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Below_Price_Cart")
+                    radioButtonPriceSpecificCARTCHECKOUT.Checked = true;
+                if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Cart")
+                    radioButtonCheckOutCart.Checked = true;
 
-                    }
+                darkCheckBoxTomorrow.Checked = _profileService.SelectedProfile.ScheduleBot.tomorrow;
+                darkCheckBoxScheduleBot.Checked = _profileService.SelectedProfile.ScheduleBot.schedule;
+                tbPriceSpecific.Text = _profileService.SelectedProfile.BuyingMode.below_specific_price;
+                tbBelowSpecificPriceCARTCHECKOUTPrice.Text = _profileService.SelectedProfile.BuyingMode.cart_below_specific_price;
+                darkCheckBoxPlaySound.Checked = _profileService.SelectedProfile.BotSettings.play_sound;
+                darkCheckBoxDisableImageExtension.Checked = _profileService.SelectedProfile.BotSettings.disable_image;
 
+                tbCountdownHour.Text = _profileService.SelectedProfile.ScheduleBot.hour.ToString();
+                tbCountdownMinutes.Text = _profileService.SelectedProfile.ScheduleBot.minute.ToString();
+                tbCountdownSeconds.Text = _profileService.SelectedProfile.ScheduleBot.second.ToString();
 
-                }
+                tbPaymentMethod.Text = _profileService.SelectedProfile.PaymentDetail.payment_method;
+                darkTextBoxShopeePayPin.Text = _profileService.SelectedProfile.PaymentDetail.shopeepay_pin;
 
-                darkCheckBoxTomorrow.Checked = SelectedProfile.ScheduleBot.tomorrow;
-                darkCheckBoxScheduleBot.Checked = SelectedProfile.ScheduleBot.schedule;
-                tbPriceSpecific.Text = SelectedProfile.BuyingMode.below_specific_price;
-                tbBelowSpecificPriceCARTCHECKOUTPrice.Text = SelectedProfile.BuyingMode.cart_below_specific_price;
-                darkCheckBoxPlaySound.Checked = SelectedProfile.BotSettings.play_sound;
-                darkCheckBoxDisableImageExtension.Checked = SelectedProfile.BotSettings.disable_image;
+                darkTextBoxProductLink.Text = _profileService.SelectedProfile.ProductDetail.product_link;
+                cbRandom.Checked = _profileService.SelectedProfile.ProductDetail.random_variant;
+                darkTextBoxVariationString.Text = _profileService.SelectedProfile.ProductDetail.variant;
+                tbQuality.Text = _profileService.SelectedProfile.ProductDetail.quantity.ToString();
 
-                tbCountdownHour.Text = SelectedProfile.ScheduleBot.hour.ToString();
-                tbCountdownMinutes.Text = SelectedProfile.ScheduleBot.minute.ToString();
-                tbCountdownSeconds.Text = SelectedProfile.ScheduleBot.second.ToString();
+                darkCheckBoxHeadless.Checked = _profileService.SelectedProfile.BotSettings.hide_browser;
 
-                tbPaymentMethod.Text = SelectedProfile.PaymentDetail.payment_type;
-                darkTextBoxShopeePayPin.Text = SelectedProfile.PaymentDetail.shopeepay_pin;
-
-                darkTextBoxProductLink.Text = SelectedProfile.ProductDetail.product_link;
-
-                darkTextBoxVariationString.Text = SelectedProfile.ProductDetail.variant;
-                tbQuality.Text = SelectedProfile.ProductDetail.quantity.ToString();
-
-                darkCheckBoxHeadless.Checked = SelectedProfile.BotSettings.hide_browser;
-
-                darkCheckBoxLogging.Checked = SelectedProfile.BotSettings.disable_logging;
-                darkCheckBoxRefresh.Checked = SelectedProfile.BotSettings.autorefresh_webpage;
-                darkCheckBoxRedeemCoin.Checked = SelectedProfile.Voucher_Coin.redeem_coin;
-                tbRefreshSecond.Text = SelectedProfile.BotSettings.autorefresh_interval.ToString();
-                tbTimeOut.Text = SelectedProfile.BotSettings.timeout.ToString();
-                darkCheckBoxTestMode.Checked = SelectedProfile.BotSettings.test_mode;
-                tbLast4Digit.Text = SelectedProfile.PaymentDetail.last_4_digit_card;
-                tbBankType.Text = SelectedProfile.PaymentDetail.bank_type;
-                darkCheckBoxClaimShopVoucher.Checked = SelectedProfile.Voucher_Coin.claim_shop_vc;
-                darkCheckBoxRedeemShopeeVoucher.Checked = SelectedProfile.Voucher_Coin.redeeem_shopee_vc;
+                darkCheckBoxLogging.Checked = _profileService.SelectedProfile.BotSettings.disable_logging;
+                darkCheckBoxRefresh.Checked = _profileService.SelectedProfile.BotSettings.autorefresh_webpage;
+                darkCheckBoxRedeemCoin.Checked = _profileService.SelectedProfile.Voucher_Coin.redeem_coin;
+                tbRefreshSecond.Text = _profileService.SelectedProfile.BotSettings.autorefresh_interval.ToString();
+                tbTimeOut.Text = _profileService.SelectedProfile.BotSettings.timeout.ToString();
+                darkCheckBoxTestMode.Checked = _profileService.SelectedProfile.BotSettings.test_mode;
+                tbLast4Digit.Text = _profileService.SelectedProfile.PaymentDetail.last_4_digit_card;
+                tbBankType.Text = _profileService.SelectedProfile.PaymentDetail.bank_type;
+                darkCheckBoxClaimShopVoucher.Checked = _profileService.SelectedProfile.Voucher_Coin.claim_shop_vc;
+                darkCheckBoxRedeemShopeeVoucher.Checked = _profileService.SelectedProfile.Voucher_Coin.redeeem_shopee_vc;
             }
             catch { }
 

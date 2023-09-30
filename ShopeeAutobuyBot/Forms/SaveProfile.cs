@@ -1,19 +1,20 @@
 ﻿using Shopee_Autobuy_Bot.Constants;
-using Shopee_Autobuy_Bot.Utililties;
+using Shopee_Autobuy_Bot.Services.Profile;
 using System;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using static Shopee_Autobuy_Bot.Utililties.SettingsHelper.Profile;
 
 namespace Shopee_Autobuy_Bot
 {
     public partial class SaveProfile : DarkUI.Forms.DarkForm
     {
+        private readonly IProfileService _profileService;
 
-        public SaveProfile()
+        public SaveProfile(IProfileService profileService)
         {
             InitializeComponent();
+            _profileService=profileService;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -24,7 +25,7 @@ namespace Shopee_Autobuy_Bot
                 return;
             }
             //check if profile name exist
-            var profileList = LoadProfilesFromFile();
+            var profileList = _profileService.LoadProfiles();
             if (profileList != null)
             {
                 var profileNameAlreadyExist = profileList.Any(x => x.profile_name==tbProfileName.Text);
@@ -35,8 +36,8 @@ namespace Shopee_Autobuy_Bot
                 }
             }
 
-            SettingsHelper.Profile.Name = tbProfileName.Text;
-            SettingsHelper.Profile.SaveProfile = true;
+            _profileService.Name = tbProfileName.Text;
+            _profileService.SaveProfile = true;
             this.Close();
         }
 
@@ -49,7 +50,7 @@ namespace Shopee_Autobuy_Bot
         {
             if (!File.Exists(DirectoryPaths.ProfileSettingsPath))
                 File.Create(DirectoryPaths.ProfileSettingsPath).Dispose();
-            SettingsHelper.Profile.SaveProfile = false;
+            _profileService.SaveProfile = false;
         }
     }
 }

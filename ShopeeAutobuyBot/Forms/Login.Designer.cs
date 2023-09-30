@@ -35,7 +35,7 @@
             this.darkLabel1 = new DarkUI.Controls.DarkLabel();
             this.darkLabel2 = new DarkUI.Controls.DarkLabel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.darkListBox1 = new DarkUI.Controls.DarkListBox(this.components);
+            this.listBoxChromeProfile = new DarkUI.Controls.DarkListBox(this.components);
             this.darkSectionPanel1 = new DarkUI.Controls.DarkSectionPanel();
             this.btnAddChromeProfile = new DarkUI.Controls.DarkButton();
             this.btnDeleteProfile = new DarkUI.Controls.DarkButton();
@@ -96,24 +96,24 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
-            // darkListBox1
+            // listBoxChromeProfile
             // 
-            this.darkListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.darkListBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.darkListBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.darkListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.darkListBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.darkListBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkListBox1.FormattingEnabled = true;
-            this.darkListBox1.ItemHeight = 18;
-            this.darkListBox1.Location = new System.Drawing.Point(1, 25);
-            this.darkListBox1.Name = "darkListBox1";
-            this.darkListBox1.Size = new System.Drawing.Size(215, 94);
-            this.darkListBox1.TabIndex = 14;
+            this.listBoxChromeProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.listBoxChromeProfile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBoxChromeProfile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxChromeProfile.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.listBoxChromeProfile.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxChromeProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.listBoxChromeProfile.FormattingEnabled = true;
+            this.listBoxChromeProfile.ItemHeight = 18;
+            this.listBoxChromeProfile.Location = new System.Drawing.Point(1, 25);
+            this.listBoxChromeProfile.Name = "listBoxChromeProfile";
+            this.listBoxChromeProfile.Size = new System.Drawing.Size(215, 94);
+            this.listBoxChromeProfile.TabIndex = 14;
             // 
             // darkSectionPanel1
             // 
-            this.darkSectionPanel1.Controls.Add(this.darkListBox1);
+            this.darkSectionPanel1.Controls.Add(this.listBoxChromeProfile);
             this.darkSectionPanel1.Location = new System.Drawing.Point(14, 23);
             this.darkSectionPanel1.Name = "darkSectionPanel1";
             this.darkSectionPanel1.SectionHeader = "Shopee Account";
@@ -238,7 +238,7 @@
         private DarkUI.Controls.DarkLabel darkLabel1;
         private DarkUI.Controls.DarkLabel darkLabel2;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private DarkUI.Controls.DarkListBox darkListBox1;
+        private DarkUI.Controls.DarkListBox listBoxChromeProfile;
         private DarkUI.Controls.DarkSectionPanel darkSectionPanel1;
         private DarkUI.Controls.DarkButton btnAddChromeProfile;
         private DarkUI.Controls.DarkButton btnDeleteProfile;

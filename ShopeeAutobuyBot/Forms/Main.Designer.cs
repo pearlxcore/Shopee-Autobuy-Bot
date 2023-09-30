@@ -81,9 +81,9 @@ namespace Shopee_Autobuy_Bot
             this.darkButton2 = new DarkUI.Controls.DarkButton();
             this.darkButton6 = new DarkUI.Controls.DarkButton();
             this.tbBelowSpecificPriceCARTCHECKOUTPrice = new DarkUI.Controls.DarkTextBox();
-            this.radioButtonPriceSpecificCARTCHECKOUT = new System.Windows.Forms.RadioButton();
+            this.radioButtonPriceSpecificCartCheckout = new System.Windows.Forms.RadioButton();
             this.darkButtonStart = new DarkUI.Controls.DarkButton();
-            this.timerlabel1 = new System.Windows.Forms.Label();
+            this.timerlabelBig = new System.Windows.Forms.Label();
             this.darkSectionPanelBotSettings = new DarkUI.Controls.DarkSectionPanel();
             this.darkCheckBoxLogging = new DarkUI.Controls.DarkCheckBox();
             this.darkButton5 = new DarkUI.Controls.DarkButton();
@@ -94,8 +94,6 @@ namespace Shopee_Autobuy_Bot
             this.gfrgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elementEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scanSaleItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadProfileSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.testCookieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -135,6 +133,14 @@ namespace Shopee_Autobuy_Bot
             this.panel1 = new System.Windows.Forms.Panel();
             this.darkLabel15 = new DarkUI.Controls.DarkLabel();
             this.labelShopeeAcc = new DarkUI.Controls.DarkLabel();
+            this.sessionCookieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadCookiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveCookieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemLoadProfile = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveCurrentProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.darkSectionPanelTimerMode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDownCountDownSecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDownCountdownMinutes)).BeginInit();
@@ -815,19 +821,19 @@ namespace Shopee_Autobuy_Bot
             this.tbBelowSpecificPriceCARTCHECKOUTPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCheckoutLinkPrice_KeyPress);
             this.tbBelowSpecificPriceCARTCHECKOUTPrice.Leave += new System.EventHandler(this.tbCheckoutLinkPrice_Leave);
             // 
-            // radioButtonPriceSpecificCARTCHECKOUT
+            // radioButtonPriceSpecificCartCheckout
             // 
-            this.radioButtonPriceSpecificCARTCHECKOUT.AutoSize = true;
-            this.radioButtonPriceSpecificCARTCHECKOUT.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioButtonPriceSpecificCARTCHECKOUT.Location = new System.Drawing.Point(26, 96);
-            this.radioButtonPriceSpecificCARTCHECKOUT.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.radioButtonPriceSpecificCARTCHECKOUT.Name = "radioButtonPriceSpecificCARTCHECKOUT";
-            this.radioButtonPriceSpecificCARTCHECKOUT.Size = new System.Drawing.Size(211, 17);
-            this.radioButtonPriceSpecificCARTCHECKOUT.TabIndex = 53;
-            this.radioButtonPriceSpecificCARTCHECKOUT.Text = "Below specific price (Cart checkout) :";
-            this.toolTip1.SetToolTip(this.radioButtonPriceSpecificCARTCHECKOUT, "This option require user to get the unique checkout link and paste it in product " +
+            this.radioButtonPriceSpecificCartCheckout.AutoSize = true;
+            this.radioButtonPriceSpecificCartCheckout.ForeColor = System.Drawing.Color.Gainsboro;
+            this.radioButtonPriceSpecificCartCheckout.Location = new System.Drawing.Point(26, 96);
+            this.radioButtonPriceSpecificCartCheckout.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.radioButtonPriceSpecificCartCheckout.Name = "radioButtonPriceSpecificCartCheckout";
+            this.radioButtonPriceSpecificCartCheckout.Size = new System.Drawing.Size(211, 17);
+            this.radioButtonPriceSpecificCartCheckout.TabIndex = 53;
+            this.radioButtonPriceSpecificCartCheckout.Text = "Below specific price (Cart checkout) :";
+            this.toolTip1.SetToolTip(this.radioButtonPriceSpecificCartCheckout, "This option require user to get the unique checkout link and paste it in product " +
         "link text box.");
-            this.radioButtonPriceSpecificCARTCHECKOUT.CheckedChanged += new System.EventHandler(this.radioButtonPriceSpecificCheckoutLink_CheckedChanged);
+            this.radioButtonPriceSpecificCartCheckout.CheckedChanged += new System.EventHandler(this.radioButtonPriceSpecificCheckoutLink_CheckedChanged);
             // 
             // darkButtonStart
             // 
@@ -841,19 +847,19 @@ namespace Shopee_Autobuy_Bot
             this.toolTip1.SetToolTip(this.darkButtonStart, "Start checkout.");
             this.darkButtonStart.Click += new System.EventHandler(this.darkButtonStart_Click);
             // 
-            // timerlabel1
+            // timerlabelBig
             // 
-            this.timerlabel1.AutoSize = true;
-            this.timerlabel1.BackColor = System.Drawing.Color.Transparent;
-            this.timerlabel1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timerlabel1.ForeColor = System.Drawing.Color.Gold;
-            this.timerlabel1.Location = new System.Drawing.Point(0, 0);
-            this.timerlabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.timerlabel1.Name = "timerlabel1";
-            this.timerlabel1.Size = new System.Drawing.Size(177, 40);
-            this.timerlabel1.TabIndex = 27;
-            this.timerlabel1.Text = "00:00:00:00";
-            this.timerlabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.timerlabelBig.AutoSize = true;
+            this.timerlabelBig.BackColor = System.Drawing.Color.Transparent;
+            this.timerlabelBig.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timerlabelBig.ForeColor = System.Drawing.Color.Gold;
+            this.timerlabelBig.Location = new System.Drawing.Point(0, 0);
+            this.timerlabelBig.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.timerlabelBig.Name = "timerlabelBig";
+            this.timerlabelBig.Size = new System.Drawing.Size(177, 40);
+            this.timerlabelBig.TabIndex = 27;
+            this.timerlabelBig.Text = "00:00:00:00";
+            this.timerlabelBig.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // darkSectionPanelBotSettings
             // 
@@ -897,7 +903,7 @@ namespace Shopee_Autobuy_Bot
             this.darkButton5.Name = "darkButton5";
             this.darkButton5.Size = new System.Drawing.Size(146, 23);
             this.darkButton5.TabIndex = 49;
-            this.darkButton5.Text = "Clear cache";
+            this.darkButton5.Text = "ClearKeys cache";
             this.darkButton5.Visible = false;
             this.darkButton5.Click += new System.EventHandler(this.darkButton5_Click_1);
             // 
@@ -957,8 +963,8 @@ namespace Shopee_Autobuy_Bot
             this.gfrgToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.elementEditorToolStripMenuItem,
             this.scanSaleItemsToolStripMenuItem,
-            this.loadProfileSettingsToolStripMenuItem,
-            this.saveProfileToolStripMenuItem,
+            this.profileToolStripMenuItem,
+            this.sessionCookieToolStripMenuItem,
             this.toolStripSeparator2,
             this.exitToolStripMenuItem1,
             this.testCookieToolStripMenuItem});
@@ -972,7 +978,7 @@ namespace Shopee_Autobuy_Bot
             this.elementEditorToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.elementEditorToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.elementEditorToolStripMenuItem.Name = "elementEditorToolStripMenuItem";
-            this.elementEditorToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.elementEditorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.elementEditorToolStripMenuItem.Text = "Element editor";
             this.elementEditorToolStripMenuItem.Click += new System.EventHandler(this.elementEditorToolStripMenuItem_Click);
             // 
@@ -981,28 +987,10 @@ namespace Shopee_Autobuy_Bot
             this.scanSaleItemsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.scanSaleItemsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.scanSaleItemsToolStripMenuItem.Name = "scanSaleItemsToolStripMenuItem";
-            this.scanSaleItemsToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.scanSaleItemsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.scanSaleItemsToolStripMenuItem.Text = "Scan sale item";
             this.scanSaleItemsToolStripMenuItem.Visible = false;
             this.scanSaleItemsToolStripMenuItem.Click += new System.EventHandler(this.scanSaleItemsToolStripMenuItem_Click);
-            // 
-            // loadProfileSettingsToolStripMenuItem
-            // 
-            this.loadProfileSettingsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.loadProfileSettingsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.loadProfileSettingsToolStripMenuItem.Name = "loadProfileSettingsToolStripMenuItem";
-            this.loadProfileSettingsToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.loadProfileSettingsToolStripMenuItem.Text = "Load profile settings";
-            this.loadProfileSettingsToolStripMenuItem.Click += new System.EventHandler(this.loadProfileSettingsToolStripMenuItem_Click);
-            // 
-            // saveProfileToolStripMenuItem
-            // 
-            this.saveProfileToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.saveProfileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.saveProfileToolStripMenuItem.Name = "saveProfileToolStripMenuItem";
-            this.saveProfileToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.saveProfileToolStripMenuItem.Text = "Save current profile settings";
-            this.saveProfileToolStripMenuItem.Click += new System.EventHandler(this.saveProfileToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -1010,14 +998,14 @@ namespace Shopee_Autobuy_Bot
             this.toolStripSeparator2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.toolStripSeparator2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(217, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.exitToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(220, 22);
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
             // 
@@ -1026,7 +1014,7 @@ namespace Shopee_Autobuy_Bot
             this.testCookieToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.testCookieToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.testCookieToolStripMenuItem.Name = "testCookieToolStripMenuItem";
-            this.testCookieToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.testCookieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.testCookieToolStripMenuItem.Text = "test cookie";
             this.testCookieToolStripMenuItem.Visible = false;
             this.testCookieToolStripMenuItem.Click += new System.EventHandler(this.testCookieToolStripMenuItem_Click);
@@ -1197,7 +1185,7 @@ namespace Shopee_Autobuy_Bot
             this.darkSectionPanelBuyingMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.darkSectionPanelBuyingMode.Controls.Add(this.tbBelowSpecificPriceCARTCHECKOUTPrice);
             this.darkSectionPanelBuyingMode.Controls.Add(this.tbPriceSpecific);
-            this.darkSectionPanelBuyingMode.Controls.Add(this.radioButtonPriceSpecificCARTCHECKOUT);
+            this.darkSectionPanelBuyingMode.Controls.Add(this.radioButtonPriceSpecificCartCheckout);
             this.darkSectionPanelBuyingMode.Controls.Add(this.radioButtonCheckOutCart);
             this.darkSectionPanelBuyingMode.Controls.Add(this.radioButtonShockingSale);
             this.darkSectionPanelBuyingMode.Controls.Add(this.radioButtonBuyNormal);
@@ -1394,7 +1382,7 @@ namespace Shopee_Autobuy_Bot
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.timerlabel1);
+            this.panel1.Controls.Add(this.timerlabelBig);
             this.panel1.Location = new System.Drawing.Point(558, 518);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(177, 40);
@@ -1423,6 +1411,85 @@ namespace Shopee_Autobuy_Bot
             this.labelShopeeAcc.TabIndex = 59;
             this.labelShopeeAcc.Text = "...";
             this.labelShopeeAcc.Visible = false;
+            // 
+            // sessionCookieToolStripMenuItem
+            // 
+            this.sessionCookieToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.sessionCookieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadCookiesToolStripMenuItem,
+            this.saveCookieToolStripMenuItem,
+            this.cleToolStripMenuItem,
+            this.testToolStripMenuItem1});
+            this.sessionCookieToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.sessionCookieToolStripMenuItem.Name = "sessionCookieToolStripMenuItem";
+            this.sessionCookieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sessionCookieToolStripMenuItem.Text = "Session cookie";
+            this.sessionCookieToolStripMenuItem.Visible = false;
+            // 
+            // loadCookiesToolStripMenuItem
+            // 
+            this.loadCookiesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.loadCookiesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.loadCookiesToolStripMenuItem.Name = "loadCookiesToolStripMenuItem";
+            this.loadCookiesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadCookiesToolStripMenuItem.Text = "Load cookie";
+            this.loadCookiesToolStripMenuItem.Click += new System.EventHandler(this.loadCookiesToolStripMenuItem_Click);
+            // 
+            // saveCookieToolStripMenuItem
+            // 
+            this.saveCookieToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.saveCookieToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.saveCookieToolStripMenuItem.Name = "saveCookieToolStripMenuItem";
+            this.saveCookieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveCookieToolStripMenuItem.Text = "Save cookie";
+            this.saveCookieToolStripMenuItem.Click += new System.EventHandler(this.saveCookieToolStripMenuItem_Click);
+            // 
+            // cleToolStripMenuItem
+            // 
+            this.cleToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.cleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.cleToolStripMenuItem.Name = "cleToolStripMenuItem";
+            this.cleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cleToolStripMenuItem.Text = "Clear cookie";
+            this.cleToolStripMenuItem.Click += new System.EventHandler(this.cleToolStripMenuItem_Click);
+            // 
+            // testToolStripMenuItem1
+            // 
+            this.testToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.testToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.testToolStripMenuItem1.Name = "testToolStripMenuItem1";
+            this.testToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.testToolStripMenuItem1.Text = "Test";
+            this.testToolStripMenuItem1.Click += new System.EventHandler(this.testToolStripMenuItem1_Click);
+            // 
+            // profileToolStripMenuItem
+            // 
+            this.profileToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.profileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemLoadProfile,
+            this.saveCurrentProfileToolStripMenuItem});
+            this.profileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.profileToolStripMenuItem.Text = "Profile";
+            // 
+            // toolStripMenuItemLoadProfile
+            // 
+            this.toolStripMenuItemLoadProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.toolStripMenuItemLoadProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.toolStripMenuItemLoadProfile.Name = "toolStripMenuItemLoadProfile";
+            this.toolStripMenuItemLoadProfile.Size = new System.Drawing.Size(181, 22);
+            this.toolStripMenuItemLoadProfile.Text = "Load profile settings";
+            this.toolStripMenuItemLoadProfile.Click += new System.EventHandler(this.toolStripMenuItemLoadProfile_Click);
+            // 
+            // saveCurrentProfileToolStripMenuItem
+            // 
+            this.saveCurrentProfileToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.saveCurrentProfileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.saveCurrentProfileToolStripMenuItem.Name = "saveCurrentProfileToolStripMenuItem";
+            this.saveCurrentProfileToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.saveCurrentProfileToolStripMenuItem.Text = "Save current profile";
+            this.saveCurrentProfileToolStripMenuItem.Click += new System.EventHandler(this.saveCurrentProfileToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -1519,7 +1586,7 @@ namespace Shopee_Autobuy_Bot
         private DarkUI.Controls.DarkLabel darkLabel1;
         private DarkUI.Controls.DarkNumericUpDown darkNumericUpDownCountdownMinutes;
         private DarkUI.Controls.DarkNumericUpDown darkNumericUpDownCountdownHour;
-        private System.Windows.Forms.Label timerlabel1;
+        private System.Windows.Forms.Label timerlabelBig;
         private DarkUI.Controls.DarkSectionPanel darkSectionPanelTimerMode;
         private DarkUI.Controls.DarkComboBox darkComboBoxBankType;
         private DarkUI.Controls.DarkLabel darkLabel8;
@@ -1572,12 +1639,11 @@ namespace Shopee_Autobuy_Bot
         private DarkUI.Controls.DarkCheckBox darkCheckBoxClaimShopVoucher;
         private System.Windows.Forms.ToolTip toolTip1;
         private DarkUI.Controls.DarkTextBox tbBelowSpecificPriceCARTCHECKOUTPrice;
-        private System.Windows.Forms.RadioButton radioButtonPriceSpecificCARTCHECKOUT;
+        private System.Windows.Forms.RadioButton radioButtonPriceSpecificCartCheckout;
         private DarkUI.Controls.DarkButton darkButton7;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveCookiesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem scanSaleItemsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveProfileToolStripMenuItem;
         private DarkUI.Controls.DarkSectionPanel darkSectionPanel1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ToolStripMenuItem testCookieToolStripMenuItem;
@@ -1586,10 +1652,17 @@ namespace Shopee_Autobuy_Bot
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem fontTestToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ToolStripMenuItem loadProfileSettingsToolStripMenuItem;
         private DarkUI.Controls.DarkCheckBox cbRandom;
         private DarkUI.Controls.DarkLabel darkLabel15;
         private DarkUI.Controls.DarkLabel labelShopeeAcc;
+        private System.Windows.Forms.ToolStripMenuItem sessionCookieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadCookiesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveCookieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemLoadProfile;
+        private System.Windows.Forms.ToolStripMenuItem saveCurrentProfileToolStripMenuItem;
     }
 }
 
