@@ -33,1526 +33,1408 @@ namespace Shopee_Autobuy_Bot
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components=new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.darkSectionPanelTimerMode = new DarkUI.Controls.DarkSectionPanel();
-            this.darkCheckBoxTomorrow = new DarkUI.Controls.DarkCheckBox();
-            this.darkCheckBoxScheduleBot = new DarkUI.Controls.DarkCheckBox();
-            this.darkLabel3 = new DarkUI.Controls.DarkLabel();
-            this.darkNumericUpDownCountDownSecond = new DarkUI.Controls.DarkNumericUpDown();
-            this.darkLabel2 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel1 = new DarkUI.Controls.DarkLabel();
-            this.darkNumericUpDownCountdownMinutes = new DarkUI.Controls.DarkNumericUpDown();
-            this.darkNumericUpDownCountdownHour = new DarkUI.Controls.DarkNumericUpDown();
-            this.darkNumericUpDownTimeOut = new DarkUI.Controls.DarkNumericUpDown();
-            this.darkLabel13 = new DarkUI.Controls.DarkLabel();
-            this.darkCheckBoxPlaySound = new DarkUI.Controls.DarkCheckBox();
-            this.darkCheckBoxDisableImageExtension = new DarkUI.Controls.DarkCheckBox();
-            this.darkLabel5 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel4 = new DarkUI.Controls.DarkLabel();
-            this.darkNumericUpDownRefreshSeconds = new DarkUI.Controls.DarkNumericUpDown();
-            this.darkComboBoxPaymentMethod = new DarkUI.Controls.DarkComboBox();
-            this.darkTextBoxShopeePayPin = new DarkUI.Controls.DarkTextBox();
-            this.darkLabel6 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel7 = new DarkUI.Controls.DarkLabel();
-            this.darkComboBoxCourier = new DarkUI.Controls.DarkComboBox();
-            this.darkLabel9 = new DarkUI.Controls.DarkLabel();
-            this.darkTextBoxVariationString = new DarkUI.Controls.DarkTextBox();
-            this.darkLabel10 = new DarkUI.Controls.DarkLabel();
-            this.darkNumericUpDownProductQuantity = new DarkUI.Controls.DarkNumericUpDown();
-            this.darkSectionPanelProductDetails = new DarkUI.Controls.DarkSectionPanel();
-            this.cbRandom = new DarkUI.Controls.DarkCheckBox();
-            this.darkLabel11 = new DarkUI.Controls.DarkLabel();
-            this.darkTextBoxProductLink = new DarkUI.Controls.DarkTextBox();
-            this.darkCheckBoxClaimShopVoucher = new DarkUI.Controls.DarkCheckBox();
-            this.darkCheckBoxTestMode = new DarkUI.Controls.DarkCheckBox();
-            this.darkLabel14 = new DarkUI.Controls.DarkLabel();
-            this.tbLast4Digit = new DarkUI.Controls.DarkTextBox();
-            this.darkCheckBoxRedeemCoin = new DarkUI.Controls.DarkCheckBox();
-            this.darkComboBoxBankType = new DarkUI.Controls.DarkComboBox();
-            this.darkLabel8 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel12 = new DarkUI.Controls.DarkLabel();
-            this.darkSectionPanelLogs = new DarkUI.Controls.DarkSectionPanel();
-            this.darkButtonDeleteAllOrder = new DarkUI.Controls.DarkButton();
-            this.richTextBoxLogs = new System.Windows.Forms.RichTextBox();
-            this.darkButton1 = new DarkUI.Controls.DarkButton();
-            this.darkButton4 = new DarkUI.Controls.DarkButton();
-            this.darkButton3 = new DarkUI.Controls.DarkButton();
-            this.darkButton2 = new DarkUI.Controls.DarkButton();
-            this.darkButton6 = new DarkUI.Controls.DarkButton();
-            this.tbBelowSpecificPriceCARTCHECKOUTPrice = new DarkUI.Controls.DarkTextBox();
-            this.radioButtonPriceSpecificCartCheckout = new System.Windows.Forms.RadioButton();
-            this.darkButtonStart = new DarkUI.Controls.DarkButton();
-            this.timerlabelBig = new System.Windows.Forms.Label();
-            this.darkSectionPanelBotSettings = new DarkUI.Controls.DarkSectionPanel();
-            this.darkCheckBoxLogging = new DarkUI.Controls.DarkCheckBox();
-            this.darkButton5 = new DarkUI.Controls.DarkButton();
-            this.darkCheckBoxRefresh = new DarkUI.Controls.DarkCheckBox();
-            this.darkCheckBoxHeadless = new DarkUI.Controls.DarkCheckBox();
-            this.darkDockPanel1 = new DarkUI.Docking.DarkDockPanel();
-            this.darkMenuStrip1 = new DarkUI.Controls.DarkMenuStrip();
-            this.gfrgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.elementEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.scanSaleItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.testCookieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateConfigurationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveCookiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fontTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.UpgradeProToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.changelogHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.disclaimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.howToUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.darkSectionPanelBuyingMode = new DarkUI.Controls.DarkSectionPanel();
-            this.tbPriceSpecific = new DarkUI.Controls.DarkTextBox();
-            this.radioButtonCheckOutCart = new System.Windows.Forms.RadioButton();
-            this.radioButtonShockingSale = new System.Windows.Forms.RadioButton();
-            this.radioButtonBuyNormal = new System.Windows.Forms.RadioButton();
-            this.radioButtonPriceSpecific = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.darkSectionPanelPaymentDetails = new DarkUI.Controls.DarkSectionPanel();
-            this.darkCheckBoxRedeemShopeeVoucher = new DarkUI.Controls.DarkCheckBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.darkButton7 = new DarkUI.Controls.DarkButton();
-            this.darkSectionPanel1 = new DarkUI.Controls.DarkSectionPanel();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.darkLabel15 = new DarkUI.Controls.DarkLabel();
-            this.labelShopeeAcc = new DarkUI.Controls.DarkLabel();
-            this.sessionCookieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadCookiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveCookieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemLoadProfile = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveCurrentProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.darkSectionPanelTimerMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDownCountDownSecond)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDownCountdownMinutes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDownCountdownHour)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDownTimeOut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDownRefreshSeconds)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDownProductQuantity)).BeginInit();
-            this.darkSectionPanelProductDetails.SuspendLayout();
-            this.darkSectionPanelLogs.SuspendLayout();
-            this.darkSectionPanelBotSettings.SuspendLayout();
-            this.darkMenuStrip1.SuspendLayout();
-            this.darkSectionPanelBuyingMode.SuspendLayout();
-            this.darkSectionPanelPaymentDetails.SuspendLayout();
-            this.darkSectionPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            darkSectionPanelTimerMode=new DarkUI.Controls.DarkSectionPanel();
+            darkCheckBoxTomorrow=new DarkUI.Controls.DarkCheckBox();
+            darkCheckBoxScheduleBot=new DarkUI.Controls.DarkCheckBox();
+            darkLabel3=new DarkUI.Controls.DarkLabel();
+            darkNumericUpDownCountDownSecond=new DarkUI.Controls.DarkNumericUpDown();
+            darkLabel2=new DarkUI.Controls.DarkLabel();
+            darkLabel1=new DarkUI.Controls.DarkLabel();
+            darkNumericUpDownCountdownMinutes=new DarkUI.Controls.DarkNumericUpDown();
+            darkNumericUpDownCountdownHour=new DarkUI.Controls.DarkNumericUpDown();
+            darkNumericUpDownTimeOut=new DarkUI.Controls.DarkNumericUpDown();
+            darkLabel13=new DarkUI.Controls.DarkLabel();
+            darkCheckBoxPlaySound=new DarkUI.Controls.DarkCheckBox();
+            darkCheckBoxDisableImageExtension=new DarkUI.Controls.DarkCheckBox();
+            darkLabel5=new DarkUI.Controls.DarkLabel();
+            darkLabel4=new DarkUI.Controls.DarkLabel();
+            darkNumericUpDownRefreshSeconds=new DarkUI.Controls.DarkNumericUpDown();
+            darkComboBoxPaymentMethod=new DarkUI.Controls.DarkComboBox();
+            darkTextBoxShopeePayPin=new DarkUI.Controls.DarkTextBox();
+            darkLabel6=new DarkUI.Controls.DarkLabel();
+            darkLabel7=new DarkUI.Controls.DarkLabel();
+            darkComboBoxCourier=new DarkUI.Controls.DarkComboBox();
+            darkLabel9=new DarkUI.Controls.DarkLabel();
+            darkTextBoxVariationString=new DarkUI.Controls.DarkTextBox();
+            darkLabel10=new DarkUI.Controls.DarkLabel();
+            darkNumericUpDownProductQuantity=new DarkUI.Controls.DarkNumericUpDown();
+            darkSectionPanelProductDetails=new DarkUI.Controls.DarkSectionPanel();
+            cbVariantPreSelected=new DarkUI.Controls.DarkCheckBox();
+            cbRandom=new DarkUI.Controls.DarkCheckBox();
+            darkLabel11=new DarkUI.Controls.DarkLabel();
+            darkTextBoxProductLink=new DarkUI.Controls.DarkTextBox();
+            darkCheckBoxClaimShopVoucher=new DarkUI.Controls.DarkCheckBox();
+            darkCheckBoxTestMode=new DarkUI.Controls.DarkCheckBox();
+            darkLabel14=new DarkUI.Controls.DarkLabel();
+            tbLast4Digit=new DarkUI.Controls.DarkTextBox();
+            darkCheckBoxRedeemCoin=new DarkUI.Controls.DarkCheckBox();
+            darkComboBoxBankType=new DarkUI.Controls.DarkComboBox();
+            darkLabel8=new DarkUI.Controls.DarkLabel();
+            darkLabel12=new DarkUI.Controls.DarkLabel();
+            darkSectionPanelLogs=new DarkUI.Controls.DarkSectionPanel();
+            darkButtonDeleteAllOrder=new DarkUI.Controls.DarkButton();
+            richTextBoxLogs=new System.Windows.Forms.RichTextBox();
+            darkButton1=new DarkUI.Controls.DarkButton();
+            darkButton4=new DarkUI.Controls.DarkButton();
+            darkButton3=new DarkUI.Controls.DarkButton();
+            darkButton2=new DarkUI.Controls.DarkButton();
+            darkButton6=new DarkUI.Controls.DarkButton();
+            tbBelowSpecificPriceCARTCHECKOUTPrice=new DarkUI.Controls.DarkTextBox();
+            radioButtonPriceSpecificCartCheckout=new System.Windows.Forms.RadioButton();
+            darkButtonStart=new DarkUI.Controls.DarkButton();
+            timerlabelBig=new System.Windows.Forms.Label();
+            darkSectionPanelBotSettings=new DarkUI.Controls.DarkSectionPanel();
+            darkCheckBoxLogging=new DarkUI.Controls.DarkCheckBox();
+            darkButton5=new DarkUI.Controls.DarkButton();
+            darkCheckBoxRefresh=new DarkUI.Controls.DarkCheckBox();
+            darkCheckBoxHeadless=new DarkUI.Controls.DarkCheckBox();
+            darkDockPanel1=new DarkUI.Docking.DarkDockPanel();
+            darkMenuStrip1=new DarkUI.Controls.DarkMenuStrip();
+            gfrgToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            elementEditorToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            scanSaleItemsToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            profileToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            toolStripMenuItemLoadProfile=new System.Windows.Forms.ToolStripMenuItem();
+            saveCurrentProfileToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            sessionCookieToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            loadCookiesToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            saveCookieToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            cleToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            testToolStripMenuItem1=new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator2=new System.Windows.Forms.ToolStripSeparator();
+            exitToolStripMenuItem1=new System.Windows.Forms.ToolStripMenuItem();
+            testCookieToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            helpToolStripMenuItem1=new System.Windows.Forms.ToolStripMenuItem();
+            updateConfigurationToolStripMenuItem1=new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator1=new System.Windows.Forms.ToolStripSeparator();
+            aboutToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            changeHistoryToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            testToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            saveCookiesToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            fontTestToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            fileToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            UpgradeProToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            exitToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            helpToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            aboutToolStripMenuItem1=new System.Windows.Forms.ToolStripMenuItem();
+            changelogHistoryToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            disclaimerToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            howToUseToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            updateConfigurationToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            darkSectionPanelBuyingMode=new DarkUI.Controls.DarkSectionPanel();
+            tbPriceSpecific=new DarkUI.Controls.DarkTextBox();
+            radioButtonCheckOutCart=new System.Windows.Forms.RadioButton();
+            radioButtonShockingSale=new System.Windows.Forms.RadioButton();
+            radioButtonBuyNormal=new System.Windows.Forms.RadioButton();
+            radioButtonPriceSpecific=new System.Windows.Forms.RadioButton();
+            label1=new System.Windows.Forms.Label();
+            label2=new System.Windows.Forms.Label();
+            label3=new System.Windows.Forms.Label();
+            label4=new System.Windows.Forms.Label();
+            darkSectionPanelPaymentDetails=new DarkUI.Controls.DarkSectionPanel();
+            darkCheckBoxRedeemShopeeVoucher=new DarkUI.Controls.DarkCheckBox();
+            toolTip1=new System.Windows.Forms.ToolTip(components);
+            darkButton7=new DarkUI.Controls.DarkButton();
+            darkSectionPanel1=new DarkUI.Controls.DarkSectionPanel();
+            notifyIcon1=new System.Windows.Forms.NotifyIcon(components);
+            panel1=new System.Windows.Forms.Panel();
+            darkLabel15=new DarkUI.Controls.DarkLabel();
+            labelShopeeAcc=new DarkUI.Controls.DarkLabel();
+            darkSectionPanelTimerMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)darkNumericUpDownCountDownSecond).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)darkNumericUpDownCountdownMinutes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)darkNumericUpDownCountdownHour).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)darkNumericUpDownTimeOut).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)darkNumericUpDownRefreshSeconds).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)darkNumericUpDownProductQuantity).BeginInit();
+            darkSectionPanelProductDetails.SuspendLayout();
+            darkSectionPanelLogs.SuspendLayout();
+            darkSectionPanelBotSettings.SuspendLayout();
+            darkMenuStrip1.SuspendLayout();
+            darkSectionPanelBuyingMode.SuspendLayout();
+            darkSectionPanelPaymentDetails.SuspendLayout();
+            darkSectionPanel1.SuspendLayout();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // darkSectionPanelTimerMode
             // 
-            this.darkSectionPanelTimerMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.darkSectionPanelTimerMode.Controls.Add(this.darkCheckBoxTomorrow);
-            this.darkSectionPanelTimerMode.Controls.Add(this.darkCheckBoxScheduleBot);
-            this.darkSectionPanelTimerMode.Controls.Add(this.darkLabel3);
-            this.darkSectionPanelTimerMode.Controls.Add(this.darkNumericUpDownCountDownSecond);
-            this.darkSectionPanelTimerMode.Controls.Add(this.darkLabel2);
-            this.darkSectionPanelTimerMode.Controls.Add(this.darkLabel1);
-            this.darkSectionPanelTimerMode.Controls.Add(this.darkNumericUpDownCountdownMinutes);
-            this.darkSectionPanelTimerMode.Controls.Add(this.darkNumericUpDownCountdownHour);
-            this.darkSectionPanelTimerMode.Location = new System.Drawing.Point(384, 43);
-            this.darkSectionPanelTimerMode.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkSectionPanelTimerMode.Name = "darkSectionPanelTimerMode";
-            this.darkSectionPanelTimerMode.SectionHeader = "Schedule Bot";
-            this.darkSectionPanelTimerMode.Size = new System.Drawing.Size(376, 121);
-            this.darkSectionPanelTimerMode.TabIndex = 0;
+            darkSectionPanelTimerMode.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
+            darkSectionPanelTimerMode.Controls.Add(darkCheckBoxTomorrow);
+            darkSectionPanelTimerMode.Controls.Add(darkCheckBoxScheduleBot);
+            darkSectionPanelTimerMode.Controls.Add(darkLabel3);
+            darkSectionPanelTimerMode.Controls.Add(darkNumericUpDownCountDownSecond);
+            darkSectionPanelTimerMode.Controls.Add(darkLabel2);
+            darkSectionPanelTimerMode.Controls.Add(darkLabel1);
+            darkSectionPanelTimerMode.Controls.Add(darkNumericUpDownCountdownMinutes);
+            darkSectionPanelTimerMode.Controls.Add(darkNumericUpDownCountdownHour);
+            darkSectionPanelTimerMode.Location=new Point(384, 43);
+            darkSectionPanelTimerMode.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkSectionPanelTimerMode.Name="darkSectionPanelTimerMode";
+            darkSectionPanelTimerMode.SectionHeader="Schedule Bot";
+            darkSectionPanelTimerMode.Size=new Size(376, 121);
+            darkSectionPanelTimerMode.TabIndex=0;
             // 
             // darkCheckBoxTomorrow
             // 
-            this.darkCheckBoxTomorrow.AutoSize = true;
-            this.darkCheckBoxTomorrow.Enabled = false;
-            this.darkCheckBoxTomorrow.Location = new System.Drawing.Point(38, 89);
-            this.darkCheckBoxTomorrow.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkCheckBoxTomorrow.Name = "darkCheckBoxTomorrow";
-            this.darkCheckBoxTomorrow.Size = new System.Drawing.Size(78, 17);
-            this.darkCheckBoxTomorrow.TabIndex = 16;
-            this.darkCheckBoxTomorrow.Text = "Tomorrow";
-            this.toolTip1.SetToolTip(this.darkCheckBoxTomorrow, "Enable this if the time set is for tomorrow.");
+            darkCheckBoxTomorrow.AutoSize=true;
+            darkCheckBoxTomorrow.Enabled=false;
+            darkCheckBoxTomorrow.Location=new Point(38, 89);
+            darkCheckBoxTomorrow.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkCheckBoxTomorrow.Name="darkCheckBoxTomorrow";
+            darkCheckBoxTomorrow.Size=new Size(78, 17);
+            darkCheckBoxTomorrow.TabIndex=16;
+            darkCheckBoxTomorrow.Text="Tomorrow";
+            toolTip1.SetToolTip(darkCheckBoxTomorrow, "Enable this if the time set is for tomorrow.");
             // 
             // darkCheckBoxScheduleBot
             // 
-            this.darkCheckBoxScheduleBot.AutoSize = true;
-            this.darkCheckBoxScheduleBot.Location = new System.Drawing.Point(38, 38);
-            this.darkCheckBoxScheduleBot.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkCheckBoxScheduleBot.Name = "darkCheckBoxScheduleBot";
-            this.darkCheckBoxScheduleBot.Size = new System.Drawing.Size(300, 17);
-            this.darkCheckBoxScheduleBot.TabIndex = 15;
-            this.darkCheckBoxScheduleBot.Text = "Schedule bot to run at specific time (24-hours format)";
-            this.toolTip1.SetToolTip(this.darkCheckBoxScheduleBot, "Enabling this will let the bot to run at specific time set by user in 24 hour for" +
-        "mat.");
-            this.darkCheckBoxScheduleBot.CheckedChanged += new System.EventHandler(this.darkCheckBoxCountDownMode_CheckedChanged);
+            darkCheckBoxScheduleBot.AutoSize=true;
+            darkCheckBoxScheduleBot.Location=new Point(38, 38);
+            darkCheckBoxScheduleBot.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkCheckBoxScheduleBot.Name="darkCheckBoxScheduleBot";
+            darkCheckBoxScheduleBot.Size=new Size(300, 17);
+            darkCheckBoxScheduleBot.TabIndex=15;
+            darkCheckBoxScheduleBot.Text="Schedule bot to run at specific time (24-hours format)";
+            toolTip1.SetToolTip(darkCheckBoxScheduleBot, "Enabling this will let the bot to run at specific time set by user in 24 hour format.");
+            darkCheckBoxScheduleBot.CheckedChanged+=darkCheckBoxCountDownMode_CheckedChanged;
             // 
             // darkLabel3
             // 
-            this.darkLabel3.AutoSize = true;
-            this.darkLabel3.Enabled = false;
-            this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel3.Location = new System.Drawing.Point(210, 65);
-            this.darkLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel3.Name = "darkLabel3";
-            this.darkLabel3.Size = new System.Drawing.Size(50, 13);
-            this.darkLabel3.TabIndex = 14;
-            this.darkLabel3.Text = "Seconds";
+            darkLabel3.AutoSize=true;
+            darkLabel3.Enabled=false;
+            darkLabel3.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel3.Location=new Point(210, 65);
+            darkLabel3.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel3.Name="darkLabel3";
+            darkLabel3.Size=new Size(50, 13);
+            darkLabel3.TabIndex=14;
+            darkLabel3.Text="Seconds";
             // 
             // darkNumericUpDownCountDownSecond
             // 
-            this.darkNumericUpDownCountDownSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.darkNumericUpDownCountDownSecond.Enabled = false;
-            this.darkNumericUpDownCountDownSecond.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkNumericUpDownCountDownSecond.IncrementAlternate = new decimal(new int[] {
-            10,
-            0,
-            0,
-            65536});
-            this.darkNumericUpDownCountDownSecond.Location = new System.Drawing.Point(263, 61);
-            this.darkNumericUpDownCountDownSecond.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkNumericUpDownCountDownSecond.Maximum = new decimal(new int[] {
-            59,
-            0,
-            0,
-            0});
-            this.darkNumericUpDownCountDownSecond.MousewheelSingleIncrement = true;
-            this.darkNumericUpDownCountDownSecond.Name = "darkNumericUpDownCountDownSecond";
-            this.darkNumericUpDownCountDownSecond.Size = new System.Drawing.Size(38, 22);
-            this.darkNumericUpDownCountDownSecond.TabIndex = 13;
+            darkNumericUpDownCountDownSecond.BackColor=Color.FromArgb(69, 73, 74);
+            darkNumericUpDownCountDownSecond.Enabled=false;
+            darkNumericUpDownCountDownSecond.ForeColor=Color.FromArgb(220, 220, 220);
+            darkNumericUpDownCountDownSecond.IncrementAlternate=new decimal(new int[] { 10, 0, 0, 65536 });
+            darkNumericUpDownCountDownSecond.Location=new Point(263, 61);
+            darkNumericUpDownCountDownSecond.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkNumericUpDownCountDownSecond.Maximum=new decimal(new int[] { 59, 0, 0, 0 });
+            darkNumericUpDownCountDownSecond.MousewheelSingleIncrement=true;
+            darkNumericUpDownCountDownSecond.Name="darkNumericUpDownCountDownSecond";
+            darkNumericUpDownCountDownSecond.Size=new Size(38, 22);
+            darkNumericUpDownCountDownSecond.TabIndex=13;
             // 
             // darkLabel2
             // 
-            this.darkLabel2.AutoSize = true;
-            this.darkLabel2.Enabled = false;
-            this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel2.Location = new System.Drawing.Point(115, 65);
-            this.darkLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel2.Name = "darkLabel2";
-            this.darkLabel2.Size = new System.Drawing.Size(49, 13);
-            this.darkLabel2.TabIndex = 5;
-            this.darkLabel2.Text = "Minutes";
+            darkLabel2.AutoSize=true;
+            darkLabel2.Enabled=false;
+            darkLabel2.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel2.Location=new Point(115, 65);
+            darkLabel2.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel2.Name="darkLabel2";
+            darkLabel2.Size=new Size(49, 13);
+            darkLabel2.TabIndex=5;
+            darkLabel2.Text="Minutes";
             // 
             // darkLabel1
             // 
-            this.darkLabel1.AutoSize = true;
-            this.darkLabel1.Enabled = false;
-            this.darkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel1.Location = new System.Drawing.Point(36, 65);
-            this.darkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel1.Name = "darkLabel1";
-            this.darkLabel1.Size = new System.Drawing.Size(33, 13);
-            this.darkLabel1.TabIndex = 4;
-            this.darkLabel1.Text = "Hour";
+            darkLabel1.AutoSize=true;
+            darkLabel1.Enabled=false;
+            darkLabel1.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel1.Location=new Point(36, 65);
+            darkLabel1.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel1.Name="darkLabel1";
+            darkLabel1.Size=new Size(33, 13);
+            darkLabel1.TabIndex=4;
+            darkLabel1.Text="Hour";
             // 
             // darkNumericUpDownCountdownMinutes
             // 
-            this.darkNumericUpDownCountdownMinutes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.darkNumericUpDownCountdownMinutes.Enabled = false;
-            this.darkNumericUpDownCountdownMinutes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkNumericUpDownCountdownMinutes.IncrementAlternate = new decimal(new int[] {
-            10,
-            0,
-            0,
-            65536});
-            this.darkNumericUpDownCountdownMinutes.Location = new System.Drawing.Point(168, 61);
-            this.darkNumericUpDownCountdownMinutes.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkNumericUpDownCountdownMinutes.Maximum = new decimal(new int[] {
-            59,
-            0,
-            0,
-            0});
-            this.darkNumericUpDownCountdownMinutes.MousewheelSingleIncrement = true;
-            this.darkNumericUpDownCountdownMinutes.Name = "darkNumericUpDownCountdownMinutes";
-            this.darkNumericUpDownCountdownMinutes.Size = new System.Drawing.Size(38, 22);
-            this.darkNumericUpDownCountdownMinutes.TabIndex = 3;
+            darkNumericUpDownCountdownMinutes.BackColor=Color.FromArgb(69, 73, 74);
+            darkNumericUpDownCountdownMinutes.Enabled=false;
+            darkNumericUpDownCountdownMinutes.ForeColor=Color.FromArgb(220, 220, 220);
+            darkNumericUpDownCountdownMinutes.IncrementAlternate=new decimal(new int[] { 10, 0, 0, 65536 });
+            darkNumericUpDownCountdownMinutes.Location=new Point(168, 61);
+            darkNumericUpDownCountdownMinutes.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkNumericUpDownCountdownMinutes.Maximum=new decimal(new int[] { 59, 0, 0, 0 });
+            darkNumericUpDownCountdownMinutes.MousewheelSingleIncrement=true;
+            darkNumericUpDownCountdownMinutes.Name="darkNumericUpDownCountdownMinutes";
+            darkNumericUpDownCountdownMinutes.Size=new Size(38, 22);
+            darkNumericUpDownCountdownMinutes.TabIndex=3;
             // 
             // darkNumericUpDownCountdownHour
             // 
-            this.darkNumericUpDownCountdownHour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.darkNumericUpDownCountdownHour.Enabled = false;
-            this.darkNumericUpDownCountdownHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkNumericUpDownCountdownHour.IncrementAlternate = new decimal(new int[] {
-            10,
-            0,
-            0,
-            65536});
-            this.darkNumericUpDownCountdownHour.Location = new System.Drawing.Point(73, 61);
-            this.darkNumericUpDownCountdownHour.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkNumericUpDownCountdownHour.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.darkNumericUpDownCountdownHour.MousewheelSingleIncrement = true;
-            this.darkNumericUpDownCountdownHour.Name = "darkNumericUpDownCountdownHour";
-            this.darkNumericUpDownCountdownHour.Size = new System.Drawing.Size(38, 22);
-            this.darkNumericUpDownCountdownHour.TabIndex = 2;
-            this.darkNumericUpDownCountdownHour.ValueChanged += new System.EventHandler(this.darkNumericUpDownCountdownHour_ValueChanged);
+            darkNumericUpDownCountdownHour.BackColor=Color.FromArgb(69, 73, 74);
+            darkNumericUpDownCountdownHour.Enabled=false;
+            darkNumericUpDownCountdownHour.ForeColor=Color.FromArgb(220, 220, 220);
+            darkNumericUpDownCountdownHour.IncrementAlternate=new decimal(new int[] { 10, 0, 0, 65536 });
+            darkNumericUpDownCountdownHour.Location=new Point(73, 61);
+            darkNumericUpDownCountdownHour.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkNumericUpDownCountdownHour.Maximum=new decimal(new int[] { 23, 0, 0, 0 });
+            darkNumericUpDownCountdownHour.MousewheelSingleIncrement=true;
+            darkNumericUpDownCountdownHour.Name="darkNumericUpDownCountdownHour";
+            darkNumericUpDownCountdownHour.Size=new Size(38, 22);
+            darkNumericUpDownCountdownHour.TabIndex=2;
+            darkNumericUpDownCountdownHour.ValueChanged+=darkNumericUpDownCountdownHour_ValueChanged;
             // 
             // darkNumericUpDownTimeOut
             // 
-            this.darkNumericUpDownTimeOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.darkNumericUpDownTimeOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkNumericUpDownTimeOut.IncrementAlternate = new decimal(new int[] {
-            10,
-            0,
-            0,
-            65536});
-            this.darkNumericUpDownTimeOut.Location = new System.Drawing.Point(138, 218);
-            this.darkNumericUpDownTimeOut.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkNumericUpDownTimeOut.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.darkNumericUpDownTimeOut.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.darkNumericUpDownTimeOut.MousewheelSingleIncrement = true;
-            this.darkNumericUpDownTimeOut.Name = "darkNumericUpDownTimeOut";
-            this.darkNumericUpDownTimeOut.Size = new System.Drawing.Size(38, 22);
-            this.darkNumericUpDownTimeOut.TabIndex = 46;
-            this.darkNumericUpDownTimeOut.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.darkNumericUpDownTimeOut.ValueChanged += new System.EventHandler(this.darkNumericUpDownTimeOut_ValueChanged);
+            darkNumericUpDownTimeOut.BackColor=Color.FromArgb(69, 73, 74);
+            darkNumericUpDownTimeOut.ForeColor=Color.FromArgb(220, 220, 220);
+            darkNumericUpDownTimeOut.IncrementAlternate=new decimal(new int[] { 10, 0, 0, 65536 });
+            darkNumericUpDownTimeOut.Location=new Point(138, 218);
+            darkNumericUpDownTimeOut.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkNumericUpDownTimeOut.Maximum=new decimal(new int[] { 20, 0, 0, 0 });
+            darkNumericUpDownTimeOut.Minimum=new decimal(new int[] { 1, 0, 0, 0 });
+            darkNumericUpDownTimeOut.MousewheelSingleIncrement=true;
+            darkNumericUpDownTimeOut.Name="darkNumericUpDownTimeOut";
+            darkNumericUpDownTimeOut.Size=new Size(38, 22);
+            darkNumericUpDownTimeOut.TabIndex=46;
+            darkNumericUpDownTimeOut.Value=new decimal(new int[] { 5, 0, 0, 0 });
+            darkNumericUpDownTimeOut.ValueChanged+=darkNumericUpDownTimeOut_ValueChanged;
             // 
             // darkLabel13
             // 
-            this.darkLabel13.AutoSize = true;
-            this.darkLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel13.Location = new System.Drawing.Point(20, 223);
-            this.darkLabel13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel13.Name = "darkLabel13";
-            this.darkLabel13.Size = new System.Drawing.Size(104, 13);
-            this.darkLabel13.TabIndex = 45;
-            this.darkLabel13.Text = "Time out (second) :";
-            this.toolTip1.SetToolTip(this.darkLabel13, "Timeout in second when bot does not receive response from the webpage element.");
+            darkLabel13.AutoSize=true;
+            darkLabel13.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel13.Location=new Point(20, 223);
+            darkLabel13.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel13.Name="darkLabel13";
+            darkLabel13.Size=new Size(104, 13);
+            darkLabel13.TabIndex=45;
+            darkLabel13.Text="Time out (second) :";
+            toolTip1.SetToolTip(darkLabel13, "Timeout in second when bot does not receive response from the webpage element.");
             // 
             // darkCheckBoxPlaySound
             // 
-            this.darkCheckBoxPlaySound.AutoSize = true;
-            this.darkCheckBoxPlaySound.Location = new System.Drawing.Point(24, 37);
-            this.darkCheckBoxPlaySound.Margin = new System.Windows.Forms.Padding(2);
-            this.darkCheckBoxPlaySound.Name = "darkCheckBoxPlaySound";
-            this.darkCheckBoxPlaySound.Size = new System.Drawing.Size(204, 17);
-            this.darkCheckBoxPlaySound.TabIndex = 28;
-            this.darkCheckBoxPlaySound.Text = "Play sound on successful checkout";
-            this.toolTip1.SetToolTip(this.darkCheckBoxPlaySound, "Enabling this option will play a sound on successful checkout.");
+            darkCheckBoxPlaySound.AutoSize=true;
+            darkCheckBoxPlaySound.Location=new Point(24, 37);
+            darkCheckBoxPlaySound.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxPlaySound.Name="darkCheckBoxPlaySound";
+            darkCheckBoxPlaySound.Size=new Size(204, 17);
+            darkCheckBoxPlaySound.TabIndex=28;
+            darkCheckBoxPlaySound.Text="Play sound on successful checkout";
+            toolTip1.SetToolTip(darkCheckBoxPlaySound, "Enabling this option will play a sound on successful checkout.");
             // 
             // darkCheckBoxDisableImageExtension
             // 
-            this.darkCheckBoxDisableImageExtension.AutoSize = true;
-            this.darkCheckBoxDisableImageExtension.Enabled = false;
-            this.darkCheckBoxDisableImageExtension.Location = new System.Drawing.Point(24, 99);
-            this.darkCheckBoxDisableImageExtension.Margin = new System.Windows.Forms.Padding(2);
-            this.darkCheckBoxDisableImageExtension.Name = "darkCheckBoxDisableImageExtension";
-            this.darkCheckBoxDisableImageExtension.Size = new System.Drawing.Size(197, 17);
-            this.darkCheckBoxDisableImageExtension.TabIndex = 25;
-            this.darkCheckBoxDisableImageExtension.Text = "Disable website Image & Extension";
-            this.toolTip1.SetToolTip(this.darkCheckBoxDisableImageExtension, "Enabling this option will disable images in webpage and browser extension on the " +
-        "next restart. It may help improve the checkout time.");
-            this.darkCheckBoxDisableImageExtension.Click += new System.EventHandler(this.darkCheckBoxDisableImageExtension_Click);
+            darkCheckBoxDisableImageExtension.AutoSize=true;
+            darkCheckBoxDisableImageExtension.Enabled=false;
+            darkCheckBoxDisableImageExtension.Location=new Point(24, 99);
+            darkCheckBoxDisableImageExtension.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxDisableImageExtension.Name="darkCheckBoxDisableImageExtension";
+            darkCheckBoxDisableImageExtension.Size=new Size(197, 17);
+            darkCheckBoxDisableImageExtension.TabIndex=25;
+            darkCheckBoxDisableImageExtension.Text="Disable website Image & Extension";
+            toolTip1.SetToolTip(darkCheckBoxDisableImageExtension, "Enabling this option will disable images in webpage and browser extension on the next restart. It may help improve the checkout time.");
+            darkCheckBoxDisableImageExtension.Click+=darkCheckBoxDisableImageExtension_Click;
             // 
             // darkLabel5
             // 
-            this.darkLabel5.AutoSize = true;
-            this.darkLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel5.Location = new System.Drawing.Point(292, 132);
-            this.darkLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel5.Name = "darkLabel5";
-            this.darkLabel5.Size = new System.Drawing.Size(49, 13);
-            this.darkLabel5.TabIndex = 11;
-            this.darkLabel5.Text = "seconds";
+            darkLabel5.AutoSize=true;
+            darkLabel5.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel5.Location=new Point(292, 132);
+            darkLabel5.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel5.Name="darkLabel5";
+            darkLabel5.Size=new Size(49, 13);
+            darkLabel5.TabIndex=11;
+            darkLabel5.Text="seconds";
             // 
             // darkLabel4
             // 
-            this.darkLabel4.AutoSize = true;
-            this.darkLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel4.Location = new System.Drawing.Point(176, 132);
-            this.darkLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel4.Name = "darkLabel4";
-            this.darkLabel4.Size = new System.Drawing.Size(75, 13);
-            this.darkLabel4.TabIndex = 10;
-            this.darkLabel4.Text = "Refresh every";
+            darkLabel4.AutoSize=true;
+            darkLabel4.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel4.Location=new Point(176, 132);
+            darkLabel4.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel4.Name="darkLabel4";
+            darkLabel4.Size=new Size(75, 13);
+            darkLabel4.TabIndex=10;
+            darkLabel4.Text="Refresh every";
             // 
             // darkNumericUpDownRefreshSeconds
             // 
-            this.darkNumericUpDownRefreshSeconds.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.darkNumericUpDownRefreshSeconds.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkNumericUpDownRefreshSeconds.IncrementAlternate = new decimal(new int[] {
-            10,
-            0,
-            0,
-            65536});
-            this.darkNumericUpDownRefreshSeconds.Location = new System.Drawing.Point(253, 127);
-            this.darkNumericUpDownRefreshSeconds.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkNumericUpDownRefreshSeconds.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.darkNumericUpDownRefreshSeconds.MousewheelSingleIncrement = true;
-            this.darkNumericUpDownRefreshSeconds.Name = "darkNumericUpDownRefreshSeconds";
-            this.darkNumericUpDownRefreshSeconds.Size = new System.Drawing.Size(38, 22);
-            this.darkNumericUpDownRefreshSeconds.TabIndex = 9;
-            this.darkNumericUpDownRefreshSeconds.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
+            darkNumericUpDownRefreshSeconds.BackColor=Color.FromArgb(69, 73, 74);
+            darkNumericUpDownRefreshSeconds.ForeColor=Color.FromArgb(220, 220, 220);
+            darkNumericUpDownRefreshSeconds.IncrementAlternate=new decimal(new int[] { 10, 0, 0, 65536 });
+            darkNumericUpDownRefreshSeconds.Location=new Point(253, 127);
+            darkNumericUpDownRefreshSeconds.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkNumericUpDownRefreshSeconds.Maximum=new decimal(new int[] { 10, 0, 0, 0 });
+            darkNumericUpDownRefreshSeconds.MousewheelSingleIncrement=true;
+            darkNumericUpDownRefreshSeconds.Name="darkNumericUpDownRefreshSeconds";
+            darkNumericUpDownRefreshSeconds.Size=new Size(38, 22);
+            darkNumericUpDownRefreshSeconds.TabIndex=9;
+            darkNumericUpDownRefreshSeconds.Value=new decimal(new int[] { 5, 0, 0, 0 });
             // 
             // darkComboBoxPaymentMethod
             // 
-            this.darkComboBoxPaymentMethod.FormattingEnabled = true;
-            this.darkComboBoxPaymentMethod.Items.AddRange(new object[] {
-            "Default",
-            "Credit / Debit Card",
-            "ATM / Cash Deposit",
-            "Online Banking",
-            "ShopeePay",
-            "Cash on Delivery",
-            "7-Eleven",
-            "KK Mart"});
-            this.darkComboBoxPaymentMethod.Location = new System.Drawing.Point(154, 33);
-            this.darkComboBoxPaymentMethod.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkComboBoxPaymentMethod.Name = "darkComboBoxPaymentMethod";
-            this.darkComboBoxPaymentMethod.Size = new System.Drawing.Size(194, 23);
-            this.darkComboBoxPaymentMethod.TabIndex = 12;
-            this.toolTip1.SetToolTip(this.darkComboBoxPaymentMethod, "Payment method.");
-            this.darkComboBoxPaymentMethod.SelectedIndexChanged += new System.EventHandler(this.darkComboBoxPaymentMethod_SelectedIndexChanged);
+            darkComboBoxPaymentMethod.FormattingEnabled=true;
+            darkComboBoxPaymentMethod.Items.AddRange(new object[] { "Default", "Credit / Debit Card", "ATM / Cash Deposit", "Online Banking", "ShopeePay", "Cash on Delivery", "7-Eleven", "KK Mart" });
+            darkComboBoxPaymentMethod.Location=new Point(154, 33);
+            darkComboBoxPaymentMethod.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkComboBoxPaymentMethod.Name="darkComboBoxPaymentMethod";
+            darkComboBoxPaymentMethod.Size=new Size(194, 23);
+            darkComboBoxPaymentMethod.TabIndex=12;
+            toolTip1.SetToolTip(darkComboBoxPaymentMethod, "Payment method.");
+            darkComboBoxPaymentMethod.SelectedIndexChanged+=darkComboBoxPaymentMethod_SelectedIndexChanged;
             // 
             // darkTextBoxShopeePayPin
             // 
-            this.darkTextBoxShopeePayPin.Location = new System.Drawing.Point(223, 131);
-            this.darkTextBoxShopeePayPin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkTextBoxShopeePayPin.MaxLength = 6;
-            this.darkTextBoxShopeePayPin.Name = "darkTextBoxShopeePayPin";
-            this.darkTextBoxShopeePayPin.Size = new System.Drawing.Size(124, 22);
-            this.darkTextBoxShopeePayPin.TabIndex = 13;
-            this.darkTextBoxShopeePayPin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.darkTextBoxShopeePayPin, "ShopeePay PIN.");
-            this.darkTextBoxShopeePayPin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.darkTextBoxWalletPin_KeyPress);
+            darkTextBoxShopeePayPin.Location=new Point(223, 131);
+            darkTextBoxShopeePayPin.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkTextBoxShopeePayPin.MaxLength=6;
+            darkTextBoxShopeePayPin.Name="darkTextBoxShopeePayPin";
+            darkTextBoxShopeePayPin.Size=new Size(124, 22);
+            darkTextBoxShopeePayPin.TabIndex=13;
+            darkTextBoxShopeePayPin.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            toolTip1.SetToolTip(darkTextBoxShopeePayPin, "ShopeePay PIN.");
+            darkTextBoxShopeePayPin.KeyPress+=darkTextBoxWalletPin_KeyPress;
             // 
             // darkLabel6
             // 
-            this.darkLabel6.AutoSize = true;
-            this.darkLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel6.Location = new System.Drawing.Point(17, 38);
-            this.darkLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel6.Name = "darkLabel6";
-            this.darkLabel6.Size = new System.Drawing.Size(100, 13);
-            this.darkLabel6.TabIndex = 14;
-            this.darkLabel6.Text = "Payment Method :";
+            darkLabel6.AutoSize=true;
+            darkLabel6.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel6.Location=new Point(17, 38);
+            darkLabel6.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel6.Name="darkLabel6";
+            darkLabel6.Size=new Size(100, 13);
+            darkLabel6.TabIndex=14;
+            darkLabel6.Text="Payment Method :";
             // 
             // darkLabel7
             // 
-            this.darkLabel7.AutoSize = true;
-            this.darkLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel7.Location = new System.Drawing.Point(17, 137);
-            this.darkLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel7.Name = "darkLabel7";
-            this.darkLabel7.Size = new System.Drawing.Size(89, 13);
-            this.darkLabel7.TabIndex = 15;
-            this.darkLabel7.Text = "ShopeePay PIN :";
+            darkLabel7.AutoSize=true;
+            darkLabel7.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel7.Location=new Point(17, 137);
+            darkLabel7.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel7.Name="darkLabel7";
+            darkLabel7.Size=new Size(89, 13);
+            darkLabel7.TabIndex=15;
+            darkLabel7.Text="ShopeePay PIN :";
             // 
             // darkComboBoxCourier
             // 
-            this.darkComboBoxCourier.FormattingEnabled = true;
-            this.darkComboBoxCourier.Items.AddRange(new object[] {
-            "Default"});
-            this.darkComboBoxCourier.Location = new System.Drawing.Point(149, 35);
-            this.darkComboBoxCourier.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkComboBoxCourier.Name = "darkComboBoxCourier";
-            this.darkComboBoxCourier.Size = new System.Drawing.Size(126, 23);
-            this.darkComboBoxCourier.TabIndex = 16;
+            darkComboBoxCourier.FormattingEnabled=true;
+            darkComboBoxCourier.Items.AddRange(new object[] { "Default" });
+            darkComboBoxCourier.Location=new Point(149, 35);
+            darkComboBoxCourier.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkComboBoxCourier.Name="darkComboBoxCourier";
+            darkComboBoxCourier.Size=new Size(126, 23);
+            darkComboBoxCourier.TabIndex=16;
             // 
             // darkLabel9
             // 
-            this.darkLabel9.AutoSize = true;
-            this.darkLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel9.Location = new System.Drawing.Point(17, 134);
-            this.darkLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel9.Name = "darkLabel9";
-            this.darkLabel9.Size = new System.Drawing.Size(59, 13);
-            this.darkLabel9.TabIndex = 19;
-            this.darkLabel9.Text = "Variation :";
+            darkLabel9.AutoSize=true;
+            darkLabel9.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel9.Location=new Point(17, 139);
+            darkLabel9.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel9.Name="darkLabel9";
+            darkLabel9.Size=new Size(59, 13);
+            darkLabel9.TabIndex=19;
+            darkLabel9.Text="Variation :";
             // 
             // darkTextBoxVariationString
             // 
-            this.darkTextBoxVariationString.Location = new System.Drawing.Point(98, 129);
-            this.darkTextBoxVariationString.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkTextBoxVariationString.Name = "darkTextBoxVariationString";
-            this.darkTextBoxVariationString.Size = new System.Drawing.Size(171, 22);
-            this.darkTextBoxVariationString.TabIndex = 18;
-            this.darkTextBoxVariationString.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.darkTextBoxVariationString, "Product variant (if required). If the product have more than 1 variant (eg : Colo" +
-        "ur and Size), separate the variant with \'|\' character without space. For example" +
-        " : RED|XXL");
+            darkTextBoxVariationString.Location=new Point(98, 134);
+            darkTextBoxVariationString.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkTextBoxVariationString.Name="darkTextBoxVariationString";
+            darkTextBoxVariationString.Size=new Size(244, 22);
+            darkTextBoxVariationString.TabIndex=18;
+            darkTextBoxVariationString.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            toolTip1.SetToolTip(darkTextBoxVariationString, "Product variant (if required). If the product have more than 1 variant (eg : Colour and Size), separate the variant with '|' character without space. For example : RED|XXL");
             // 
             // darkLabel10
             // 
-            this.darkLabel10.AutoSize = true;
-            this.darkLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel10.Location = new System.Drawing.Point(17, 164);
-            this.darkLabel10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel10.Name = "darkLabel10";
-            this.darkLabel10.Size = new System.Drawing.Size(57, 13);
-            this.darkLabel10.TabIndex = 21;
-            this.darkLabel10.Text = "Quantity :";
+            darkLabel10.AutoSize=true;
+            darkLabel10.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel10.Location=new Point(17, 111);
+            darkLabel10.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel10.Name="darkLabel10";
+            darkLabel10.Size=new Size(57, 13);
+            darkLabel10.TabIndex=21;
+            darkLabel10.Text="Quantity :";
             // 
             // darkNumericUpDownProductQuantity
             // 
-            this.darkNumericUpDownProductQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.darkNumericUpDownProductQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkNumericUpDownProductQuantity.IncrementAlternate = new decimal(new int[] {
-            10,
-            0,
-            0,
-            65536});
-            this.darkNumericUpDownProductQuantity.Location = new System.Drawing.Point(98, 159);
-            this.darkNumericUpDownProductQuantity.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkNumericUpDownProductQuantity.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-            this.darkNumericUpDownProductQuantity.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.darkNumericUpDownProductQuantity.MousewheelSingleIncrement = true;
-            this.darkNumericUpDownProductQuantity.Name = "darkNumericUpDownProductQuantity";
-            this.darkNumericUpDownProductQuantity.ReadOnly = true;
-            this.darkNumericUpDownProductQuantity.Size = new System.Drawing.Size(47, 22);
-            this.darkNumericUpDownProductQuantity.TabIndex = 20;
-            this.toolTip1.SetToolTip(this.darkNumericUpDownProductQuantity, "Product quantity.");
-            this.darkNumericUpDownProductQuantity.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            darkNumericUpDownProductQuantity.BackColor=Color.FromArgb(69, 73, 74);
+            darkNumericUpDownProductQuantity.ForeColor=Color.FromArgb(220, 220, 220);
+            darkNumericUpDownProductQuantity.IncrementAlternate=new decimal(new int[] { 10, 0, 0, 65536 });
+            darkNumericUpDownProductQuantity.Location=new Point(98, 106);
+            darkNumericUpDownProductQuantity.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkNumericUpDownProductQuantity.Maximum=new decimal(new int[] { 1000000000, 0, 0, 0 });
+            darkNumericUpDownProductQuantity.Minimum=new decimal(new int[] { 1, 0, 0, 0 });
+            darkNumericUpDownProductQuantity.MousewheelSingleIncrement=true;
+            darkNumericUpDownProductQuantity.Name="darkNumericUpDownProductQuantity";
+            darkNumericUpDownProductQuantity.ReadOnly=true;
+            darkNumericUpDownProductQuantity.Size=new Size(47, 22);
+            darkNumericUpDownProductQuantity.TabIndex=20;
+            toolTip1.SetToolTip(darkNumericUpDownProductQuantity, "Product quantity.");
+            darkNumericUpDownProductQuantity.Value=new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // darkSectionPanelProductDetails
             // 
-            this.darkSectionPanelProductDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.darkSectionPanelProductDetails.Controls.Add(this.cbRandom);
-            this.darkSectionPanelProductDetails.Controls.Add(this.darkLabel11);
-            this.darkSectionPanelProductDetails.Controls.Add(this.darkTextBoxProductLink);
-            this.darkSectionPanelProductDetails.Controls.Add(this.darkLabel10);
-            this.darkSectionPanelProductDetails.Controls.Add(this.darkTextBoxVariationString);
-            this.darkSectionPanelProductDetails.Controls.Add(this.darkNumericUpDownProductQuantity);
-            this.darkSectionPanelProductDetails.Controls.Add(this.darkLabel9);
-            this.darkSectionPanelProductDetails.Location = new System.Drawing.Point(14, 301);
-            this.darkSectionPanelProductDetails.Margin = new System.Windows.Forms.Padding(2);
-            this.darkSectionPanelProductDetails.Name = "darkSectionPanelProductDetails";
-            this.darkSectionPanelProductDetails.SectionHeader = "Product Details";
-            this.darkSectionPanelProductDetails.Size = new System.Drawing.Size(364, 195);
-            this.darkSectionPanelProductDetails.TabIndex = 23;
+            darkSectionPanelProductDetails.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
+            darkSectionPanelProductDetails.Controls.Add(cbVariantPreSelected);
+            darkSectionPanelProductDetails.Controls.Add(cbRandom);
+            darkSectionPanelProductDetails.Controls.Add(darkLabel11);
+            darkSectionPanelProductDetails.Controls.Add(darkTextBoxProductLink);
+            darkSectionPanelProductDetails.Controls.Add(darkLabel10);
+            darkSectionPanelProductDetails.Controls.Add(darkTextBoxVariationString);
+            darkSectionPanelProductDetails.Controls.Add(darkNumericUpDownProductQuantity);
+            darkSectionPanelProductDetails.Controls.Add(darkLabel9);
+            darkSectionPanelProductDetails.Location=new Point(14, 301);
+            darkSectionPanelProductDetails.Margin=new System.Windows.Forms.Padding(2);
+            darkSectionPanelProductDetails.Name="darkSectionPanelProductDetails";
+            darkSectionPanelProductDetails.SectionHeader="Product Details";
+            darkSectionPanelProductDetails.Size=new Size(364, 195);
+            darkSectionPanelProductDetails.TabIndex=23;
+            // 
+            // cbVariantPreSelected
+            // 
+            cbVariantPreSelected.AutoSize=true;
+            cbVariantPreSelected.Location=new Point(209, 162);
+            cbVariantPreSelected.Margin=new System.Windows.Forms.Padding(2);
+            cbVariantPreSelected.Name="cbVariantPreSelected";
+            cbVariantPreSelected.Size=new Size(127, 17);
+            cbVariantPreSelected.TabIndex=52;
+            cbVariantPreSelected.Text="Variant pre selected";
+            toolTip1.SetToolTip(cbVariantPreSelected, "Variant is pre selected when there are only 1 option left to choose. Tick this option to set the variant is pre selected.");
+            cbVariantPreSelected.CheckedChanged+=cbVariantPreSelected_CheckedChanged;
             // 
             // cbRandom
             // 
-            this.cbRandom.AutoSize = true;
-            this.cbRandom.Location = new System.Drawing.Point(278, 132);
-            this.cbRandom.Margin = new System.Windows.Forms.Padding(2);
-            this.cbRandom.Name = "cbRandom";
-            this.cbRandom.Size = new System.Drawing.Size(69, 17);
-            this.cbRandom.TabIndex = 51;
-            this.cbRandom.Text = "Random";
-            this.toolTip1.SetToolTip(this.cbRandom, "Enabling this option will stop the autobuy process right before placing order. Us" +
-        "er may use this option to \'warm up\' the bot.");
-            this.cbRandom.CheckedChanged += new System.EventHandler(this.cbRandom_CheckedChanged);
+            cbRandom.AutoSize=true;
+            cbRandom.Location=new Point(98, 162);
+            cbRandom.Margin=new System.Windows.Forms.Padding(2);
+            cbRandom.Name="cbRandom";
+            cbRandom.Size=new Size(107, 17);
+            cbRandom.TabIndex=51;
+            cbRandom.Text="Random variant";
+            toolTip1.SetToolTip(cbRandom, "Enabling this option will let the progam to choose 1st variant available.");
+            cbRandom.CheckedChanged+=cbRandom_CheckedChanged;
             // 
             // darkLabel11
             // 
-            this.darkLabel11.AutoSize = true;
-            this.darkLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel11.Location = new System.Drawing.Point(17, 37);
-            this.darkLabel11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel11.Name = "darkLabel11";
-            this.darkLabel11.Size = new System.Drawing.Size(77, 13);
-            this.darkLabel11.TabIndex = 24;
-            this.darkLabel11.Text = "Product Link :";
+            darkLabel11.AutoSize=true;
+            darkLabel11.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel11.Location=new Point(17, 37);
+            darkLabel11.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel11.Name="darkLabel11";
+            darkLabel11.Size=new Size(77, 13);
+            darkLabel11.TabIndex=24;
+            darkLabel11.Text="Product Link :";
             // 
             // darkTextBoxProductLink
             // 
-            this.darkTextBoxProductLink.Location = new System.Drawing.Point(98, 37);
-            this.darkTextBoxProductLink.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkTextBoxProductLink.Multiline = true;
-            this.darkTextBoxProductLink.Name = "darkTextBoxProductLink";
-            this.darkTextBoxProductLink.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.darkTextBoxProductLink.Size = new System.Drawing.Size(244, 84);
-            this.darkTextBoxProductLink.TabIndex = 23;
-            this.toolTip1.SetToolTip(this.darkTextBoxProductLink, "Product link.");
+            darkTextBoxProductLink.Location=new Point(98, 37);
+            darkTextBoxProductLink.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkTextBoxProductLink.Multiline=true;
+            darkTextBoxProductLink.Name="darkTextBoxProductLink";
+            darkTextBoxProductLink.ScrollBars=System.Windows.Forms.ScrollBars.Vertical;
+            darkTextBoxProductLink.Size=new Size(244, 62);
+            darkTextBoxProductLink.TabIndex=23;
+            toolTip1.SetToolTip(darkTextBoxProductLink, "Product link.");
             // 
             // darkCheckBoxClaimShopVoucher
             // 
-            this.darkCheckBoxClaimShopVoucher.AutoSize = true;
-            this.darkCheckBoxClaimShopVoucher.Location = new System.Drawing.Point(11, 44);
-            this.darkCheckBoxClaimShopVoucher.Margin = new System.Windows.Forms.Padding(2);
-            this.darkCheckBoxClaimShopVoucher.Name = "darkCheckBoxClaimShopVoucher";
-            this.darkCheckBoxClaimShopVoucher.Size = new System.Drawing.Size(148, 17);
-            this.darkCheckBoxClaimShopVoucher.TabIndex = 50;
-            this.darkCheckBoxClaimShopVoucher.Text = "Claim any shop voucher";
-            this.toolTip1.SetToolTip(this.darkCheckBoxClaimShopVoucher, "Enabling this will let bot claim any available shop voucher.");
+            darkCheckBoxClaimShopVoucher.AutoSize=true;
+            darkCheckBoxClaimShopVoucher.Location=new Point(11, 44);
+            darkCheckBoxClaimShopVoucher.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxClaimShopVoucher.Name="darkCheckBoxClaimShopVoucher";
+            darkCheckBoxClaimShopVoucher.Size=new Size(148, 17);
+            darkCheckBoxClaimShopVoucher.TabIndex=50;
+            darkCheckBoxClaimShopVoucher.Text="Claim any shop voucher";
+            toolTip1.SetToolTip(darkCheckBoxClaimShopVoucher, "Enabling this will let bot claim any available shop voucher.");
             // 
             // darkCheckBoxTestMode
             // 
-            this.darkCheckBoxTestMode.AutoSize = true;
-            this.darkCheckBoxTestMode.Location = new System.Drawing.Point(24, 192);
-            this.darkCheckBoxTestMode.Margin = new System.Windows.Forms.Padding(2);
-            this.darkCheckBoxTestMode.Name = "darkCheckBoxTestMode";
-            this.darkCheckBoxTestMode.Size = new System.Drawing.Size(79, 17);
-            this.darkCheckBoxTestMode.TabIndex = 49;
-            this.darkCheckBoxTestMode.Text = "Test Mode";
-            this.toolTip1.SetToolTip(this.darkCheckBoxTestMode, "Enabling this option will stop the autobuy process right before placing order. Us" +
-        "er may use this option to \'warm up\' the bot.");
+            darkCheckBoxTestMode.AutoSize=true;
+            darkCheckBoxTestMode.Location=new Point(24, 192);
+            darkCheckBoxTestMode.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxTestMode.Name="darkCheckBoxTestMode";
+            darkCheckBoxTestMode.Size=new Size(79, 17);
+            darkCheckBoxTestMode.TabIndex=49;
+            darkCheckBoxTestMode.Text="Test Mode";
+            toolTip1.SetToolTip(darkCheckBoxTestMode, "Enabling this option will stop the autobuy process right before placing order. User may use this option to 'warm up' the bot.");
             // 
             // darkLabel14
             // 
-            this.darkLabel14.AutoSize = true;
-            this.darkLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel14.Location = new System.Drawing.Point(17, 104);
-            this.darkLabel14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel14.Name = "darkLabel14";
-            this.darkLabel14.Size = new System.Drawing.Size(171, 13);
-            this.darkLabel14.TabIndex = 51;
-            this.darkLabel14.Text = "Last 4 digit of debit/credit card :";
+            darkLabel14.AutoSize=true;
+            darkLabel14.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel14.Location=new Point(17, 104);
+            darkLabel14.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel14.Name="darkLabel14";
+            darkLabel14.Size=new Size(171, 13);
+            darkLabel14.TabIndex=51;
+            darkLabel14.Text="Last 4 digit of debit/credit card :";
             // 
             // tbLast4Digit
             // 
-            this.tbLast4Digit.Location = new System.Drawing.Point(223, 99);
-            this.tbLast4Digit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbLast4Digit.MaxLength = 4;
-            this.tbLast4Digit.Name = "tbLast4Digit";
-            this.tbLast4Digit.Size = new System.Drawing.Size(124, 22);
-            this.tbLast4Digit.TabIndex = 50;
-            this.tbLast4Digit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.tbLast4Digit, "Last 4 digit of debit/credit card to be used.");
-            this.tbLast4Digit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbLast4Digit_KeyPress);
+            tbLast4Digit.Location=new Point(223, 99);
+            tbLast4Digit.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbLast4Digit.MaxLength=4;
+            tbLast4Digit.Name="tbLast4Digit";
+            tbLast4Digit.Size=new Size(124, 22);
+            tbLast4Digit.TabIndex=50;
+            tbLast4Digit.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            toolTip1.SetToolTip(tbLast4Digit, "Last 4 digit of debit/credit card to be used.");
+            tbLast4Digit.KeyPress+=tbLast4Digit_KeyPress;
             // 
             // darkCheckBoxRedeemCoin
             // 
-            this.darkCheckBoxRedeemCoin.AutoSize = true;
-            this.darkCheckBoxRedeemCoin.Location = new System.Drawing.Point(11, 110);
-            this.darkCheckBoxRedeemCoin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkCheckBoxRedeemCoin.Name = "darkCheckBoxRedeemCoin";
-            this.darkCheckBoxRedeemCoin.Size = new System.Drawing.Size(92, 17);
-            this.darkCheckBoxRedeemCoin.TabIndex = 42;
-            this.darkCheckBoxRedeemCoin.Text = "Redeem coin";
-            this.toolTip1.SetToolTip(this.darkCheckBoxRedeemCoin, "Enabling this let the bot redeem any available coin.");
+            darkCheckBoxRedeemCoin.AutoSize=true;
+            darkCheckBoxRedeemCoin.Location=new Point(11, 110);
+            darkCheckBoxRedeemCoin.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkCheckBoxRedeemCoin.Name="darkCheckBoxRedeemCoin";
+            darkCheckBoxRedeemCoin.Size=new Size(92, 17);
+            darkCheckBoxRedeemCoin.TabIndex=42;
+            darkCheckBoxRedeemCoin.Text="Redeem coin";
+            toolTip1.SetToolTip(darkCheckBoxRedeemCoin, "Enabling this let the bot redeem any available coin.");
             // 
             // darkComboBoxBankType
             // 
-            this.darkComboBoxBankType.FormattingEnabled = true;
-            this.darkComboBoxBankType.Items.AddRange(new object[] {
-            "Maybank2u",
-            "CIMB Clicks",
-            "Public Bank",
-            "RHB Now",
-            "Ambank",
-            "MyBSN",
-            "Bank Rakyat",
-            "UOB",
-            "Affin Bank",
-            "Bank Islam",
-            "HSBC Online",
-            "Standard Chartered Bank",
-            "Kuwait Finance House",
-            "Bank Muamalat",
-            "OCBC Online",
-            "Alliance Bank (Personal)",
-            "Hong Leong Connect"});
-            this.darkComboBoxBankType.Location = new System.Drawing.Point(154, 66);
-            this.darkComboBoxBankType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkComboBoxBankType.Name = "darkComboBoxBankType";
-            this.darkComboBoxBankType.Size = new System.Drawing.Size(194, 23);
-            this.darkComboBoxBankType.TabIndex = 30;
-            this.toolTip1.SetToolTip(this.darkComboBoxBankType, "Bank type.");
+            darkComboBoxBankType.FormattingEnabled=true;
+            darkComboBoxBankType.Items.AddRange(new object[] { "Maybank2u", "CIMB Clicks", "Public Bank", "RHB Now", "Ambank", "MyBSN", "Bank Rakyat", "UOB", "Affin Bank", "Bank Islam", "HSBC Online", "Standard Chartered Bank", "Kuwait Finance House", "Bank Muamalat", "OCBC Online", "Alliance Bank (Personal)", "Hong Leong Connect" });
+            darkComboBoxBankType.Location=new Point(154, 66);
+            darkComboBoxBankType.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkComboBoxBankType.Name="darkComboBoxBankType";
+            darkComboBoxBankType.Size=new Size(194, 23);
+            darkComboBoxBankType.TabIndex=30;
+            toolTip1.SetToolTip(darkComboBoxBankType, "Bank type.");
             // 
             // darkLabel8
             // 
-            this.darkLabel8.AutoSize = true;
-            this.darkLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel8.Location = new System.Drawing.Point(17, 72);
-            this.darkLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel8.Name = "darkLabel8";
-            this.darkLabel8.Size = new System.Drawing.Size(63, 13);
-            this.darkLabel8.TabIndex = 31;
-            this.darkLabel8.Text = "Bank type :";
+            darkLabel8.AutoSize=true;
+            darkLabel8.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel8.Location=new Point(17, 72);
+            darkLabel8.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel8.Name="darkLabel8";
+            darkLabel8.Size=new Size(63, 13);
+            darkLabel8.TabIndex=31;
+            darkLabel8.Text="Bank type :";
             // 
             // darkLabel12
             // 
-            this.darkLabel12.AutoSize = true;
-            this.darkLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel12.Location = new System.Drawing.Point(49, 40);
-            this.darkLabel12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel12.Name = "darkLabel12";
-            this.darkLabel12.Size = new System.Drawing.Size(51, 13);
-            this.darkLabel12.TabIndex = 28;
-            this.darkLabel12.Text = "Courier :";
+            darkLabel12.AutoSize=true;
+            darkLabel12.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel12.Location=new Point(49, 40);
+            darkLabel12.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel12.Name="darkLabel12";
+            darkLabel12.Size=new Size(51, 13);
+            darkLabel12.TabIndex=28;
+            darkLabel12.Text="Courier :";
             // 
             // darkSectionPanelLogs
             // 
-            this.darkSectionPanelLogs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.darkSectionPanelLogs.Controls.Add(this.darkButtonDeleteAllOrder);
-            this.darkSectionPanelLogs.Controls.Add(this.richTextBoxLogs);
-            this.darkSectionPanelLogs.Controls.Add(this.darkLabel12);
-            this.darkSectionPanelLogs.Controls.Add(this.darkButton1);
-            this.darkSectionPanelLogs.Controls.Add(this.darkButton4);
-            this.darkSectionPanelLogs.Controls.Add(this.darkButton3);
-            this.darkSectionPanelLogs.Controls.Add(this.darkComboBoxCourier);
-            this.darkSectionPanelLogs.Controls.Add(this.darkButton2);
-            this.darkSectionPanelLogs.Controls.Add(this.darkButton6);
-            this.darkSectionPanelLogs.Location = new System.Drawing.Point(14, 501);
-            this.darkSectionPanelLogs.Margin = new System.Windows.Forms.Padding(2);
-            this.darkSectionPanelLogs.Name = "darkSectionPanelLogs";
-            this.darkSectionPanelLogs.SectionHeader = "Logs";
-            this.darkSectionPanelLogs.Size = new System.Drawing.Size(312, 151);
-            this.darkSectionPanelLogs.TabIndex = 24;
+            darkSectionPanelLogs.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
+            darkSectionPanelLogs.Controls.Add(darkButtonDeleteAllOrder);
+            darkSectionPanelLogs.Controls.Add(richTextBoxLogs);
+            darkSectionPanelLogs.Controls.Add(darkLabel12);
+            darkSectionPanelLogs.Controls.Add(darkButton1);
+            darkSectionPanelLogs.Controls.Add(darkButton4);
+            darkSectionPanelLogs.Controls.Add(darkButton3);
+            darkSectionPanelLogs.Controls.Add(darkComboBoxCourier);
+            darkSectionPanelLogs.Controls.Add(darkButton2);
+            darkSectionPanelLogs.Controls.Add(darkButton6);
+            darkSectionPanelLogs.Location=new Point(14, 501);
+            darkSectionPanelLogs.Margin=new System.Windows.Forms.Padding(2);
+            darkSectionPanelLogs.Name="darkSectionPanelLogs";
+            darkSectionPanelLogs.SectionHeader="Logs";
+            darkSectionPanelLogs.Size=new Size(312, 151);
+            darkSectionPanelLogs.TabIndex=24;
             // 
             // darkButtonDeleteAllOrder
             // 
-            this.darkButtonDeleteAllOrder.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.darkButtonDeleteAllOrder.Location = new System.Drawing.Point(39, 85);
-            this.darkButtonDeleteAllOrder.Margin = new System.Windows.Forms.Padding(2);
-            this.darkButtonDeleteAllOrder.Name = "darkButtonDeleteAllOrder";
-            this.darkButtonDeleteAllOrder.Size = new System.Drawing.Size(236, 42);
-            this.darkButtonDeleteAllOrder.TabIndex = 28;
-            this.darkButtonDeleteAllOrder.Text = "Delete all order (To pay)";
-            this.darkButtonDeleteAllOrder.Visible = false;
+            darkButtonDeleteAllOrder.Font=new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            darkButtonDeleteAllOrder.Location=new Point(39, 85);
+            darkButtonDeleteAllOrder.Margin=new System.Windows.Forms.Padding(2);
+            darkButtonDeleteAllOrder.Name="darkButtonDeleteAllOrder";
+            darkButtonDeleteAllOrder.Size=new Size(236, 42);
+            darkButtonDeleteAllOrder.TabIndex=28;
+            darkButtonDeleteAllOrder.Text="Delete all order (To pay)";
+            darkButtonDeleteAllOrder.Visible=false;
             // 
             // richTextBoxLogs
             // 
-            this.richTextBoxLogs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.richTextBoxLogs.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxLogs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBoxLogs.Location = new System.Drawing.Point(1, 25);
-            this.richTextBoxLogs.Margin = new System.Windows.Forms.Padding(2);
-            this.richTextBoxLogs.Name = "richTextBoxLogs";
-            this.richTextBoxLogs.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.richTextBoxLogs.Size = new System.Drawing.Size(308, 123);
-            this.richTextBoxLogs.TabIndex = 0;
-            this.richTextBoxLogs.Text = "";
-            this.toolTip1.SetToolTip(this.richTextBoxLogs, "Current running process will be displayed here.");
-            this.richTextBoxLogs.TextChanged += new System.EventHandler(this.richTextBoxLogs_TextChanged);
+            richTextBoxLogs.BackColor=Color.FromArgb(60, 63, 65);
+            richTextBoxLogs.BorderStyle=System.Windows.Forms.BorderStyle.None;
+            richTextBoxLogs.Dock=System.Windows.Forms.DockStyle.Fill;
+            richTextBoxLogs.Location=new Point(1, 25);
+            richTextBoxLogs.Margin=new System.Windows.Forms.Padding(2);
+            richTextBoxLogs.Name="richTextBoxLogs";
+            richTextBoxLogs.ScrollBars=System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            richTextBoxLogs.Size=new Size(308, 123);
+            richTextBoxLogs.TabIndex=0;
+            richTextBoxLogs.Text="";
+            toolTip1.SetToolTip(richTextBoxLogs, "Current running process will be displayed here.");
+            richTextBoxLogs.TextChanged+=richTextBoxLogs_TextChanged;
             // 
             // darkButton1
             // 
-            this.darkButton1.Location = new System.Drawing.Point(170, 259);
-            this.darkButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.darkButton1.Name = "darkButton1";
-            this.darkButton1.Size = new System.Drawing.Size(104, 15);
-            this.darkButton1.TabIndex = 28;
-            this.darkButton1.Text = "Cancel All Order";
-            this.darkButton1.Visible = false;
-            this.darkButton1.Click += new System.EventHandler(this.darkButton1_Click);
+            darkButton1.Location=new Point(170, 259);
+            darkButton1.Margin=new System.Windows.Forms.Padding(2);
+            darkButton1.Name="darkButton1";
+            darkButton1.Size=new Size(104, 15);
+            darkButton1.TabIndex=28;
+            darkButton1.Text="Cancel All Order";
+            darkButton1.Visible=false;
+            darkButton1.Click+=darkButton1_Click;
             // 
             // darkButton4
             // 
-            this.darkButton4.Location = new System.Drawing.Point(50, 57);
-            this.darkButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkButton4.Name = "darkButton4";
-            this.darkButton4.Size = new System.Drawing.Size(94, 23);
-            this.darkButton4.TabIndex = 29;
-            this.darkButton4.Text = "deliver anytime";
-            this.darkButton4.Click += new System.EventHandler(this.darkButton4_Click);
+            darkButton4.Location=new Point(50, 57);
+            darkButton4.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkButton4.Name="darkButton4";
+            darkButton4.Size=new Size(94, 23);
+            darkButton4.TabIndex=29;
+            darkButton4.Text="deliver anytime";
+            darkButton4.Click+=darkButton4_Click;
             // 
             // darkButton3
             // 
-            this.darkButton3.Location = new System.Drawing.Point(292, 122);
-            this.darkButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkButton3.Name = "darkButton3";
-            this.darkButton3.Size = new System.Drawing.Size(94, 23);
-            this.darkButton3.TabIndex = 28;
-            this.darkButton3.Text = "select poslaju";
-            this.darkButton3.Click += new System.EventHandler(this.darkButton3_Click);
+            darkButton3.Location=new Point(292, 122);
+            darkButton3.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkButton3.Name="darkButton3";
+            darkButton3.Size=new Size(94, 23);
+            darkButton3.TabIndex=28;
+            darkButton3.Text="select poslaju";
+            darkButton3.Click+=darkButton3_Click;
             // 
             // darkButton2
             // 
-            this.darkButton2.Location = new System.Drawing.Point(272, 61);
-            this.darkButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkButton2.Name = "darkButton2";
-            this.darkButton2.Size = new System.Drawing.Size(94, 23);
-            this.darkButton2.TabIndex = 12;
-            this.darkButton2.Text = "change courier";
-            this.darkButton2.Click += new System.EventHandler(this.darkButton2_Click);
+            darkButton2.Location=new Point(272, 61);
+            darkButton2.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkButton2.Name="darkButton2";
+            darkButton2.Size=new Size(94, 23);
+            darkButton2.TabIndex=12;
+            darkButton2.Text="change courier";
+            darkButton2.Click+=darkButton2_Click;
             // 
             // darkButton6
             // 
-            this.darkButton6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.darkButton6.Location = new System.Drawing.Point(205, 35);
-            this.darkButton6.Margin = new System.Windows.Forms.Padding(2);
-            this.darkButton6.Name = "darkButton6";
-            this.darkButton6.Size = new System.Drawing.Size(101, 51);
-            this.darkButton6.TabIndex = 56;
-            this.darkButton6.Text = "Order Price";
-            this.darkButton6.Click += new System.EventHandler(this.darkButton6_Click);
+            darkButton6.Font=new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            darkButton6.Location=new Point(205, 35);
+            darkButton6.Margin=new System.Windows.Forms.Padding(2);
+            darkButton6.Name="darkButton6";
+            darkButton6.Size=new Size(101, 51);
+            darkButton6.TabIndex=56;
+            darkButton6.Text="Order Price";
+            darkButton6.Click+=darkButton6_Click;
             // 
             // tbBelowSpecificPriceCARTCHECKOUTPrice
             // 
-            this.tbBelowSpecificPriceCARTCHECKOUTPrice.Enabled = false;
-            this.tbBelowSpecificPriceCARTCHECKOUTPrice.Location = new System.Drawing.Point(280, 93);
-            this.tbBelowSpecificPriceCARTCHECKOUTPrice.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbBelowSpecificPriceCARTCHECKOUTPrice.Name = "tbBelowSpecificPriceCARTCHECKOUTPrice";
-            this.tbBelowSpecificPriceCARTCHECKOUTPrice.Size = new System.Drawing.Size(67, 22);
-            this.tbBelowSpecificPriceCARTCHECKOUTPrice.TabIndex = 54;
-            this.tbBelowSpecificPriceCARTCHECKOUTPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbBelowSpecificPriceCARTCHECKOUTPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCheckoutLinkPrice_KeyPress);
-            this.tbBelowSpecificPriceCARTCHECKOUTPrice.Leave += new System.EventHandler(this.tbCheckoutLinkPrice_Leave);
+            tbBelowSpecificPriceCARTCHECKOUTPrice.Enabled=false;
+            tbBelowSpecificPriceCARTCHECKOUTPrice.Location=new Point(280, 93);
+            tbBelowSpecificPriceCARTCHECKOUTPrice.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbBelowSpecificPriceCARTCHECKOUTPrice.Name="tbBelowSpecificPriceCARTCHECKOUTPrice";
+            tbBelowSpecificPriceCARTCHECKOUTPrice.Size=new Size(67, 22);
+            tbBelowSpecificPriceCARTCHECKOUTPrice.TabIndex=54;
+            tbBelowSpecificPriceCARTCHECKOUTPrice.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            tbBelowSpecificPriceCARTCHECKOUTPrice.KeyPress+=tbCheckoutLinkPrice_KeyPress;
+            tbBelowSpecificPriceCARTCHECKOUTPrice.Leave+=tbCheckoutLinkPrice_Leave;
             // 
             // radioButtonPriceSpecificCartCheckout
             // 
-            this.radioButtonPriceSpecificCartCheckout.AutoSize = true;
-            this.radioButtonPriceSpecificCartCheckout.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioButtonPriceSpecificCartCheckout.Location = new System.Drawing.Point(26, 96);
-            this.radioButtonPriceSpecificCartCheckout.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.radioButtonPriceSpecificCartCheckout.Name = "radioButtonPriceSpecificCartCheckout";
-            this.radioButtonPriceSpecificCartCheckout.Size = new System.Drawing.Size(211, 17);
-            this.radioButtonPriceSpecificCartCheckout.TabIndex = 53;
-            this.radioButtonPriceSpecificCartCheckout.Text = "Below specific price (Cart checkout) :";
-            this.toolTip1.SetToolTip(this.radioButtonPriceSpecificCartCheckout, "This option require user to get the unique checkout link and paste it in product " +
-        "link text box.");
-            this.radioButtonPriceSpecificCartCheckout.CheckedChanged += new System.EventHandler(this.radioButtonPriceSpecificCheckoutLink_CheckedChanged);
+            radioButtonPriceSpecificCartCheckout.AutoSize=true;
+            radioButtonPriceSpecificCartCheckout.ForeColor=Color.Gainsboro;
+            radioButtonPriceSpecificCartCheckout.Location=new Point(26, 96);
+            radioButtonPriceSpecificCartCheckout.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            radioButtonPriceSpecificCartCheckout.Name="radioButtonPriceSpecificCartCheckout";
+            radioButtonPriceSpecificCartCheckout.Size=new Size(211, 17);
+            radioButtonPriceSpecificCartCheckout.TabIndex=53;
+            radioButtonPriceSpecificCartCheckout.Text="Below specific price (Cart checkout) :";
+            toolTip1.SetToolTip(radioButtonPriceSpecificCartCheckout, "This option require user to get the unique checkout link and paste it in product link text box.");
+            radioButtonPriceSpecificCartCheckout.CheckedChanged+=radioButtonPriceSpecificCheckoutLink_CheckedChanged;
             // 
             // darkButtonStart
             // 
-            this.darkButtonStart.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.darkButtonStart.Location = new System.Drawing.Point(528, 562);
-            this.darkButtonStart.Margin = new System.Windows.Forms.Padding(2);
-            this.darkButtonStart.Name = "darkButtonStart";
-            this.darkButtonStart.Size = new System.Drawing.Size(233, 90);
-            this.darkButtonStart.TabIndex = 25;
-            this.darkButtonStart.Text = "Start";
-            this.toolTip1.SetToolTip(this.darkButtonStart, "Start checkout.");
-            this.darkButtonStart.Click += new System.EventHandler(this.darkButtonStart_Click);
+            darkButtonStart.Font=new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            darkButtonStart.Location=new Point(528, 562);
+            darkButtonStart.Margin=new System.Windows.Forms.Padding(2);
+            darkButtonStart.Name="darkButtonStart";
+            darkButtonStart.Size=new Size(233, 90);
+            darkButtonStart.TabIndex=25;
+            darkButtonStart.Text="Start";
+            toolTip1.SetToolTip(darkButtonStart, "Start checkout.");
+            darkButtonStart.Click+=darkButtonStart_Click;
             // 
             // timerlabelBig
             // 
-            this.timerlabelBig.AutoSize = true;
-            this.timerlabelBig.BackColor = System.Drawing.Color.Transparent;
-            this.timerlabelBig.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timerlabelBig.ForeColor = System.Drawing.Color.Gold;
-            this.timerlabelBig.Location = new System.Drawing.Point(0, 0);
-            this.timerlabelBig.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.timerlabelBig.Name = "timerlabelBig";
-            this.timerlabelBig.Size = new System.Drawing.Size(177, 40);
-            this.timerlabelBig.TabIndex = 27;
-            this.timerlabelBig.Text = "00:00:00:00";
-            this.timerlabelBig.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            timerlabelBig.AutoSize=true;
+            timerlabelBig.BackColor=Color.Transparent;
+            timerlabelBig.Font=new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            timerlabelBig.ForeColor=Color.Gold;
+            timerlabelBig.Location=new Point(0, 0);
+            timerlabelBig.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            timerlabelBig.Name="timerlabelBig";
+            timerlabelBig.Size=new Size(177, 40);
+            timerlabelBig.TabIndex=27;
+            timerlabelBig.Text="00:00:00:00";
+            timerlabelBig.TextAlign=ContentAlignment.MiddleCenter;
             // 
             // darkSectionPanelBotSettings
             // 
-            this.darkSectionPanelBotSettings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkCheckBoxTestMode);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkCheckBoxLogging);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkButton5);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkCheckBoxRefresh);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkCheckBoxHeadless);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkLabel5);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkNumericUpDownTimeOut);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkLabel4);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkCheckBoxPlaySound);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkNumericUpDownRefreshSeconds);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkLabel13);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkCheckBoxDisableImageExtension);
-            this.darkSectionPanelBotSettings.Location = new System.Drawing.Point(14, 43);
-            this.darkSectionPanelBotSettings.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkSectionPanelBotSettings.Name = "darkSectionPanelBotSettings";
-            this.darkSectionPanelBotSettings.SectionHeader = "Bot Settings";
-            this.darkSectionPanelBotSettings.Size = new System.Drawing.Size(364, 253);
-            this.darkSectionPanelBotSettings.TabIndex = 29;
+            darkSectionPanelBotSettings.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
+            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxTestMode);
+            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxLogging);
+            darkSectionPanelBotSettings.Controls.Add(darkButton5);
+            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxRefresh);
+            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxHeadless);
+            darkSectionPanelBotSettings.Controls.Add(darkLabel5);
+            darkSectionPanelBotSettings.Controls.Add(darkNumericUpDownTimeOut);
+            darkSectionPanelBotSettings.Controls.Add(darkLabel4);
+            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxPlaySound);
+            darkSectionPanelBotSettings.Controls.Add(darkNumericUpDownRefreshSeconds);
+            darkSectionPanelBotSettings.Controls.Add(darkLabel13);
+            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxDisableImageExtension);
+            darkSectionPanelBotSettings.Location=new Point(14, 43);
+            darkSectionPanelBotSettings.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkSectionPanelBotSettings.Name="darkSectionPanelBotSettings";
+            darkSectionPanelBotSettings.SectionHeader="Bot Settings";
+            darkSectionPanelBotSettings.Size=new Size(364, 253);
+            darkSectionPanelBotSettings.TabIndex=29;
             // 
             // darkCheckBoxLogging
             // 
-            this.darkCheckBoxLogging.AutoSize = true;
-            this.darkCheckBoxLogging.Location = new System.Drawing.Point(24, 161);
-            this.darkCheckBoxLogging.Margin = new System.Windows.Forms.Padding(2);
-            this.darkCheckBoxLogging.Name = "darkCheckBoxLogging";
-            this.darkCheckBoxLogging.Size = new System.Drawing.Size(108, 17);
-            this.darkCheckBoxLogging.TabIndex = 50;
-            this.darkCheckBoxLogging.Text = "Disable logging";
-            this.toolTip1.SetToolTip(this.darkCheckBoxLogging, "Enabling this option will disable the current running process log in \'Logs\' secti" +
-        "on.");
+            darkCheckBoxLogging.AutoSize=true;
+            darkCheckBoxLogging.Location=new Point(24, 161);
+            darkCheckBoxLogging.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxLogging.Name="darkCheckBoxLogging";
+            darkCheckBoxLogging.Size=new Size(108, 17);
+            darkCheckBoxLogging.TabIndex=50;
+            darkCheckBoxLogging.Text="Disable logging";
+            toolTip1.SetToolTip(darkCheckBoxLogging, "Enabling this option will disable the current running process log in 'Logs' section.");
             // 
             // darkButton5
             // 
-            this.darkButton5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.darkButton5.Location = new System.Drawing.Point(218, 55);
-            this.darkButton5.Margin = new System.Windows.Forms.Padding(2);
-            this.darkButton5.Name = "darkButton5";
-            this.darkButton5.Size = new System.Drawing.Size(146, 23);
-            this.darkButton5.TabIndex = 49;
-            this.darkButton5.Text = "ClearKeys cache";
-            this.darkButton5.Visible = false;
-            this.darkButton5.Click += new System.EventHandler(this.darkButton5_Click_1);
+            darkButton5.Font=new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            darkButton5.Location=new Point(218, 55);
+            darkButton5.Margin=new System.Windows.Forms.Padding(2);
+            darkButton5.Name="darkButton5";
+            darkButton5.Size=new Size(146, 23);
+            darkButton5.TabIndex=49;
+            darkButton5.Text="ClearKeys cache";
+            darkButton5.Visible=false;
+            darkButton5.Click+=darkButton5_Click_1;
             // 
             // darkCheckBoxRefresh
             // 
-            this.darkCheckBoxRefresh.AutoSize = true;
-            this.darkCheckBoxRefresh.Location = new System.Drawing.Point(24, 130);
-            this.darkCheckBoxRefresh.Margin = new System.Windows.Forms.Padding(2);
-            this.darkCheckBoxRefresh.Name = "darkCheckBoxRefresh";
-            this.darkCheckBoxRefresh.Size = new System.Drawing.Size(141, 17);
-            this.darkCheckBoxRefresh.TabIndex = 48;
-            this.darkCheckBoxRefresh.Text = "Auto refresh webpage";
-            this.toolTip1.SetToolTip(this.darkCheckBoxRefresh, "Enabling this will automatically refresh webpage. ");
+            darkCheckBoxRefresh.AutoSize=true;
+            darkCheckBoxRefresh.Location=new Point(24, 130);
+            darkCheckBoxRefresh.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxRefresh.Name="darkCheckBoxRefresh";
+            darkCheckBoxRefresh.Size=new Size(141, 17);
+            darkCheckBoxRefresh.TabIndex=48;
+            darkCheckBoxRefresh.Text="Auto refresh webpage";
+            toolTip1.SetToolTip(darkCheckBoxRefresh, "Enabling this will automatically refresh webpage. ");
             // 
             // darkCheckBoxHeadless
             // 
-            this.darkCheckBoxHeadless.AutoSize = true;
-            this.darkCheckBoxHeadless.Enabled = false;
-            this.darkCheckBoxHeadless.Location = new System.Drawing.Point(24, 68);
-            this.darkCheckBoxHeadless.Margin = new System.Windows.Forms.Padding(2);
-            this.darkCheckBoxHeadless.Name = "darkCheckBoxHeadless";
-            this.darkCheckBoxHeadless.Size = new System.Drawing.Size(137, 17);
-            this.darkCheckBoxHeadless.TabIndex = 47;
-            this.darkCheckBoxHeadless.Text = "Hide Chrome Browser";
-            this.toolTip1.SetToolTip(this.darkCheckBoxHeadless, "Enabling this option will hide chrome browser on  the next restart. It may help i" +
-        "mprove the checkout time.");
-            this.darkCheckBoxHeadless.Click += new System.EventHandler(this.darkCheckBoxHeadless_Click);
+            darkCheckBoxHeadless.AutoSize=true;
+            darkCheckBoxHeadless.Enabled=false;
+            darkCheckBoxHeadless.Location=new Point(24, 68);
+            darkCheckBoxHeadless.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxHeadless.Name="darkCheckBoxHeadless";
+            darkCheckBoxHeadless.Size=new Size(137, 17);
+            darkCheckBoxHeadless.TabIndex=47;
+            darkCheckBoxHeadless.Text="Hide Chrome Browser";
+            toolTip1.SetToolTip(darkCheckBoxHeadless, "Enabling this option will hide chrome browser on  the next restart. It may help improve the checkout time.");
+            darkCheckBoxHeadless.Click+=darkCheckBoxHeadless_Click;
             // 
             // darkDockPanel1
             // 
-            this.darkDockPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.darkDockPanel1.Location = new System.Drawing.Point(-10, 27);
-            this.darkDockPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkDockPanel1.Name = "darkDockPanel1";
-            this.darkDockPanel1.Size = new System.Drawing.Size(805, 650);
-            this.darkDockPanel1.TabIndex = 30;
+            darkDockPanel1.BackColor=Color.FromArgb(60, 63, 65);
+            darkDockPanel1.Location=new Point(-10, 27);
+            darkDockPanel1.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkDockPanel1.Name="darkDockPanel1";
+            darkDockPanel1.Size=new Size(805, 650);
+            darkDockPanel1.TabIndex=30;
             // 
             // darkMenuStrip1
             // 
-            this.darkMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.darkMenuStrip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.darkMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gfrgToolStripMenuItem,
-            this.helpToolStripMenuItem1,
-            this.testToolStripMenuItem});
-            this.darkMenuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.darkMenuStrip1.Name = "darkMenuStrip1";
-            this.darkMenuStrip1.Padding = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.darkMenuStrip1.Size = new System.Drawing.Size(776, 24);
-            this.darkMenuStrip1.TabIndex = 34;
-            this.darkMenuStrip1.Text = "darkMenuStrip1";
+            darkMenuStrip1.BackColor=Color.FromArgb(60, 63, 65);
+            darkMenuStrip1.ForeColor=Color.FromArgb(220, 220, 220);
+            darkMenuStrip1.ImageScalingSize=new Size(24, 24);
+            darkMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { gfrgToolStripMenuItem, helpToolStripMenuItem1, testToolStripMenuItem });
+            darkMenuStrip1.Location=new Point(0, 0);
+            darkMenuStrip1.Name="darkMenuStrip1";
+            darkMenuStrip1.Padding=new System.Windows.Forms.Padding(2, 2, 0, 2);
+            darkMenuStrip1.Size=new Size(776, 24);
+            darkMenuStrip1.TabIndex=34;
+            darkMenuStrip1.Text="darkMenuStrip1";
             // 
             // gfrgToolStripMenuItem
             // 
-            this.gfrgToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.gfrgToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.elementEditorToolStripMenuItem,
-            this.scanSaleItemsToolStripMenuItem,
-            this.profileToolStripMenuItem,
-            this.sessionCookieToolStripMenuItem,
-            this.toolStripSeparator2,
-            this.exitToolStripMenuItem1,
-            this.testCookieToolStripMenuItem});
-            this.gfrgToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.gfrgToolStripMenuItem.Name = "gfrgToolStripMenuItem";
-            this.gfrgToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.gfrgToolStripMenuItem.Text = "File";
+            gfrgToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            gfrgToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { elementEditorToolStripMenuItem, scanSaleItemsToolStripMenuItem, profileToolStripMenuItem, sessionCookieToolStripMenuItem, toolStripSeparator2, exitToolStripMenuItem1, testCookieToolStripMenuItem });
+            gfrgToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            gfrgToolStripMenuItem.Name="gfrgToolStripMenuItem";
+            gfrgToolStripMenuItem.Size=new Size(37, 20);
+            gfrgToolStripMenuItem.Text="File";
             // 
             // elementEditorToolStripMenuItem
             // 
-            this.elementEditorToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.elementEditorToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.elementEditorToolStripMenuItem.Name = "elementEditorToolStripMenuItem";
-            this.elementEditorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.elementEditorToolStripMenuItem.Text = "Element editor";
-            this.elementEditorToolStripMenuItem.Click += new System.EventHandler(this.elementEditorToolStripMenuItem_Click);
+            elementEditorToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            elementEditorToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            elementEditorToolStripMenuItem.Name="elementEditorToolStripMenuItem";
+            elementEditorToolStripMenuItem.Size=new Size(151, 22);
+            elementEditorToolStripMenuItem.Text="Element editor";
+            elementEditorToolStripMenuItem.Click+=elementEditorToolStripMenuItem_Click;
             // 
             // scanSaleItemsToolStripMenuItem
             // 
-            this.scanSaleItemsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.scanSaleItemsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.scanSaleItemsToolStripMenuItem.Name = "scanSaleItemsToolStripMenuItem";
-            this.scanSaleItemsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.scanSaleItemsToolStripMenuItem.Text = "Scan sale item";
-            this.scanSaleItemsToolStripMenuItem.Visible = false;
-            this.scanSaleItemsToolStripMenuItem.Click += new System.EventHandler(this.scanSaleItemsToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.toolStripSeparator2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.toolStripSeparator2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
-            // 
-            // exitToolStripMenuItem1
-            // 
-            this.exitToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.exitToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem1.Text = "Exit";
-            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
-            // 
-            // testCookieToolStripMenuItem
-            // 
-            this.testCookieToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.testCookieToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.testCookieToolStripMenuItem.Name = "testCookieToolStripMenuItem";
-            this.testCookieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.testCookieToolStripMenuItem.Text = "test cookie";
-            this.testCookieToolStripMenuItem.Visible = false;
-            this.testCookieToolStripMenuItem.Click += new System.EventHandler(this.testCookieToolStripMenuItem_Click);
-            // 
-            // helpToolStripMenuItem1
-            // 
-            this.helpToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.helpToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateConfigurationToolStripMenuItem1,
-            this.toolStripSeparator1,
-            this.aboutToolStripMenuItem,
-            this.changeHistoryToolStripMenuItem});
-            this.helpToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem1.Text = "Help";
-            // 
-            // updateConfigurationToolStripMenuItem1
-            // 
-            this.updateConfigurationToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.updateConfigurationToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.updateConfigurationToolStripMenuItem1.Name = "updateConfigurationToolStripMenuItem1";
-            this.updateConfigurationToolStripMenuItem1.Size = new System.Drawing.Size(219, 22);
-            this.updateConfigurationToolStripMenuItem1.Text = "Update configuration";
-            this.updateConfigurationToolStripMenuItem1.Click += new System.EventHandler(this.updateConfigurationToolStripMenuItem1_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.toolStripSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(216, 6);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.aboutToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-            this.aboutToolStripMenuItem.Text = "About Shopee Autobuy Bot";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // changeHistoryToolStripMenuItem
-            // 
-            this.changeHistoryToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.changeHistoryToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.changeHistoryToolStripMenuItem.Name = "changeHistoryToolStripMenuItem";
-            this.changeHistoryToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-            this.changeHistoryToolStripMenuItem.Text = "Changelog history";
-            this.changeHistoryToolStripMenuItem.Click += new System.EventHandler(this.changeHistoryToolStripMenuItem_Click);
-            // 
-            // testToolStripMenuItem
-            // 
-            this.testToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveCookiesToolStripMenuItem,
-            this.fontTestToolStripMenuItem});
-            this.testToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.testToolStripMenuItem.Text = "Test";
-            this.testToolStripMenuItem.Visible = false;
-            // 
-            // saveCookiesToolStripMenuItem
-            // 
-            this.saveCookiesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.saveCookiesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.saveCookiesToolStripMenuItem.Name = "saveCookiesToolStripMenuItem";
-            this.saveCookiesToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.saveCookiesToolStripMenuItem.Text = "save cookies";
-            this.saveCookiesToolStripMenuItem.Click += new System.EventHandler(this.saveCookiesToolStripMenuItem_Click);
-            // 
-            // fontTestToolStripMenuItem
-            // 
-            this.fontTestToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.fontTestToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.fontTestToolStripMenuItem.Name = "fontTestToolStripMenuItem";
-            this.fontTestToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.fontTestToolStripMenuItem.Text = "font test";
-            this.fontTestToolStripMenuItem.Click += new System.EventHandler(this.fontTestToolStripMenuItem_Click);
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.UpgradeProToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // UpgradeProToolStripMenuItem
-            // 
-            this.UpgradeProToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.UpgradeProToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.UpgradeProToolStripMenuItem.Name = "UpgradeProToolStripMenuItem";
-            this.UpgradeProToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.UpgradeProToolStripMenuItem.Text = "Upgrade to Pro";
-            this.UpgradeProToolStripMenuItem.Visible = false;
-            this.UpgradeProToolStripMenuItem.Click += new System.EventHandler(this.visitFacebookPageToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // aboutToolStripMenuItem1
-            // 
-            this.aboutToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.aboutToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(187, 22);
-            this.aboutToolStripMenuItem1.Text = "About";
-            this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
-            // 
-            // changelogHistoryToolStripMenuItem
-            // 
-            this.changelogHistoryToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.changelogHistoryToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.changelogHistoryToolStripMenuItem.Name = "changelogHistoryToolStripMenuItem";
-            this.changelogHistoryToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.changelogHistoryToolStripMenuItem.Text = "Change history";
-            this.changelogHistoryToolStripMenuItem.Click += new System.EventHandler(this.changelogHistoryToolStripMenuItem_Click);
-            // 
-            // disclaimerToolStripMenuItem
-            // 
-            this.disclaimerToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.disclaimerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.disclaimerToolStripMenuItem.Name = "disclaimerToolStripMenuItem";
-            this.disclaimerToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.disclaimerToolStripMenuItem.Text = "Disclaimer";
-            this.disclaimerToolStripMenuItem.Visible = false;
-            this.disclaimerToolStripMenuItem.Click += new System.EventHandler(this.disclaimerToolStripMenuItem_Click);
-            // 
-            // howToUseToolStripMenuItem
-            // 
-            this.howToUseToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.howToUseToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.howToUseToolStripMenuItem.Name = "howToUseToolStripMenuItem";
-            this.howToUseToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.howToUseToolStripMenuItem.Text = "How to use";
-            // 
-            // updateConfigurationToolStripMenuItem
-            // 
-            this.updateConfigurationToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.updateConfigurationToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.updateConfigurationToolStripMenuItem.Name = "updateConfigurationToolStripMenuItem";
-            this.updateConfigurationToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.updateConfigurationToolStripMenuItem.Text = "Update configuration";
-            this.updateConfigurationToolStripMenuItem.Click += new System.EventHandler(this.updateConfigurationToolStripMenuItem_Click);
-            // 
-            // darkSectionPanelBuyingMode
-            // 
-            this.darkSectionPanelBuyingMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.darkSectionPanelBuyingMode.Controls.Add(this.tbBelowSpecificPriceCARTCHECKOUTPrice);
-            this.darkSectionPanelBuyingMode.Controls.Add(this.tbPriceSpecific);
-            this.darkSectionPanelBuyingMode.Controls.Add(this.radioButtonPriceSpecificCartCheckout);
-            this.darkSectionPanelBuyingMode.Controls.Add(this.radioButtonCheckOutCart);
-            this.darkSectionPanelBuyingMode.Controls.Add(this.radioButtonShockingSale);
-            this.darkSectionPanelBuyingMode.Controls.Add(this.radioButtonBuyNormal);
-            this.darkSectionPanelBuyingMode.Controls.Add(this.radioButtonPriceSpecific);
-            this.darkSectionPanelBuyingMode.Location = new System.Drawing.Point(384, 170);
-            this.darkSectionPanelBuyingMode.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkSectionPanelBuyingMode.Name = "darkSectionPanelBuyingMode";
-            this.darkSectionPanelBuyingMode.SectionHeader = "Buying Mode";
-            this.darkSectionPanelBuyingMode.Size = new System.Drawing.Size(376, 126);
-            this.darkSectionPanelBuyingMode.TabIndex = 50;
-            this.darkSectionPanelBuyingMode.Click += new System.EventHandler(this.darkSectionPanelBuyingMode_Click);
-            // 
-            // tbPriceSpecific
-            // 
-            this.tbPriceSpecific.Enabled = false;
-            this.tbPriceSpecific.Location = new System.Drawing.Point(280, 63);
-            this.tbPriceSpecific.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbPriceSpecific.Name = "tbPriceSpecific";
-            this.tbPriceSpecific.Size = new System.Drawing.Size(67, 22);
-            this.tbPriceSpecific.TabIndex = 50;
-            this.tbPriceSpecific.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbPriceSpecific.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.darkTextBox1_KeyPress);
-            this.tbPriceSpecific.Leave += new System.EventHandler(this.tbPriceSpecific_Leave);
-            // 
-            // radioButtonCheckOutCart
-            // 
-            this.radioButtonCheckOutCart.AutoSize = true;
-            this.radioButtonCheckOutCart.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioButtonCheckOutCart.Location = new System.Drawing.Point(26, 66);
-            this.radioButtonCheckOutCart.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.radioButtonCheckOutCart.Name = "radioButtonCheckOutCart";
-            this.radioButtonCheckOutCart.Size = new System.Drawing.Size(96, 17);
-            this.radioButtonCheckOutCart.TabIndex = 52;
-            this.radioButtonCheckOutCart.Text = "Cart checkout";
-            this.toolTip1.SetToolTip(this.radioButtonCheckOutCart, "To use this option, user need to manually add items into cart. When Start button " +
-        "clicked, the checkout process is start from cart page thus lower checkout time.");
-            this.radioButtonCheckOutCart.CheckedChanged += new System.EventHandler(this.radioButtonCheckOutCart_CheckedChanged);
-            // 
-            // radioButtonShockingSale
-            // 
-            this.radioButtonShockingSale.AutoSize = true;
-            this.radioButtonShockingSale.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioButtonShockingSale.Location = new System.Drawing.Point(145, 36);
-            this.radioButtonShockingSale.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.radioButtonShockingSale.Name = "radioButtonShockingSale";
-            this.radioButtonShockingSale.Size = new System.Drawing.Size(159, 17);
-            this.radioButtonShockingSale.TabIndex = 51;
-            this.radioButtonShockingSale.Text = "Flash/Shocking sale mode";
-            this.toolTip1.SetToolTip(this.radioButtonShockingSale, "For this option, bot will only start checkout process if the item is in the shock" +
-        "ing/flash sale period.");
-            // 
-            // radioButtonBuyNormal
-            // 
-            this.radioButtonBuyNormal.AutoSize = true;
-            this.radioButtonBuyNormal.Checked = true;
-            this.radioButtonBuyNormal.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioButtonBuyNormal.Location = new System.Drawing.Point(26, 36);
-            this.radioButtonBuyNormal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.radioButtonBuyNormal.Name = "radioButtonBuyNormal";
-            this.radioButtonBuyNormal.Size = new System.Drawing.Size(94, 17);
-            this.radioButtonBuyNormal.TabIndex = 50;
-            this.radioButtonBuyNormal.TabStop = true;
-            this.radioButtonBuyNormal.Text = "Normal mode";
-            this.toolTip1.SetToolTip(this.radioButtonBuyNormal, "Normal Mode.");
-            // 
-            // radioButtonPriceSpecific
-            // 
-            this.radioButtonPriceSpecific.AutoSize = true;
-            this.radioButtonPriceSpecific.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioButtonPriceSpecific.Location = new System.Drawing.Point(146, 66);
-            this.radioButtonPriceSpecific.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.radioButtonPriceSpecific.Name = "radioButtonPriceSpecific";
-            this.radioButtonPriceSpecific.Size = new System.Drawing.Size(131, 17);
-            this.radioButtonPriceSpecific.TabIndex = 15;
-            this.radioButtonPriceSpecific.Text = "Below specific price :";
-            this.toolTip1.SetToolTip(this.radioButtonPriceSpecific, "This option let the user choose which price they want bot to start checkout. Bot " +
-        "will only start checkout process once product\'s price is lower than the price se" +
-        "t by user.");
-            this.radioButtonPriceSpecific.CheckedChanged += new System.EventHandler(this.radioButtonPriceSpecific_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gold;
-            this.label1.Location = new System.Drawing.Point(545, 506);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
-            this.label1.TabIndex = 51;
-            this.label1.Text = "Days";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gold;
-            this.label2.Location = new System.Drawing.Point(599, 506);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
-            this.label2.TabIndex = 52;
-            this.label2.Text = "Hour";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gold;
-            this.label3.Location = new System.Drawing.Point(647, 506);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
-            this.label3.TabIndex = 53;
-            this.label3.Text = "Minute";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gold;
-            this.label4.Location = new System.Drawing.Point(701, 506);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
-            this.label4.TabIndex = 54;
-            this.label4.Text = "Second";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // darkSectionPanelPaymentDetails
-            // 
-            this.darkSectionPanelPaymentDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.darkSectionPanelPaymentDetails.Controls.Add(this.darkLabel14);
-            this.darkSectionPanelPaymentDetails.Controls.Add(this.tbLast4Digit);
-            this.darkSectionPanelPaymentDetails.Controls.Add(this.darkLabel6);
-            this.darkSectionPanelPaymentDetails.Controls.Add(this.darkComboBoxPaymentMethod);
-            this.darkSectionPanelPaymentDetails.Controls.Add(this.darkLabel8);
-            this.darkSectionPanelPaymentDetails.Controls.Add(this.darkComboBoxBankType);
-            this.darkSectionPanelPaymentDetails.Controls.Add(this.darkTextBoxShopeePayPin);
-            this.darkSectionPanelPaymentDetails.Controls.Add(this.darkLabel7);
-            this.darkSectionPanelPaymentDetails.Location = new System.Drawing.Point(384, 301);
-            this.darkSectionPanelPaymentDetails.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkSectionPanelPaymentDetails.Name = "darkSectionPanelPaymentDetails";
-            this.darkSectionPanelPaymentDetails.SectionHeader = "Payment Details";
-            this.darkSectionPanelPaymentDetails.Size = new System.Drawing.Size(376, 195);
-            this.darkSectionPanelPaymentDetails.TabIndex = 55;
-            // 
-            // darkCheckBoxRedeemShopeeVoucher
-            // 
-            this.darkCheckBoxRedeemShopeeVoucher.AutoSize = true;
-            this.darkCheckBoxRedeemShopeeVoucher.Location = new System.Drawing.Point(11, 77);
-            this.darkCheckBoxRedeemShopeeVoucher.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkCheckBoxRedeemShopeeVoucher.Name = "darkCheckBoxRedeemShopeeVoucher";
-            this.darkCheckBoxRedeemShopeeVoucher.Size = new System.Drawing.Size(174, 17);
-            this.darkCheckBoxRedeemShopeeVoucher.TabIndex = 52;
-            this.darkCheckBoxRedeemShopeeVoucher.Text = "Redeem any Shopee voucher";
-            this.toolTip1.SetToolTip(this.darkCheckBoxRedeemShopeeVoucher, "Enabling this will let bot claim any available Shopee voucher.");
-            // 
-            // darkButton7
-            // 
-            this.darkButton7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.darkButton7.Location = new System.Drawing.Point(502, 626);
-            this.darkButton7.Margin = new System.Windows.Forms.Padding(2);
-            this.darkButton7.Name = "darkButton7";
-            this.darkButton7.Size = new System.Drawing.Size(259, 26);
-            this.darkButton7.TabIndex = 56;
-            this.darkButton7.Text = "Copy logs to clipboard";
-            this.toolTip1.SetToolTip(this.darkButton7, "Copy logs to clipboard");
-            this.darkButton7.Click += new System.EventHandler(this.darkButton7_Click);
-            // 
-            // darkSectionPanel1
-            // 
-            this.darkSectionPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.darkSectionPanel1.Controls.Add(this.darkCheckBoxRedeemShopeeVoucher);
-            this.darkSectionPanel1.Controls.Add(this.darkCheckBoxClaimShopVoucher);
-            this.darkSectionPanel1.Controls.Add(this.darkCheckBoxRedeemCoin);
-            this.darkSectionPanel1.Location = new System.Drawing.Point(331, 501);
-            this.darkSectionPanel1.Name = "darkSectionPanel1";
-            this.darkSectionPanel1.SectionHeader = "Voucher & coin";
-            this.darkSectionPanel1.Size = new System.Drawing.Size(192, 151);
-            this.darkSectionPanel1.TabIndex = 57;
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.timerlabelBig);
-            this.panel1.Location = new System.Drawing.Point(558, 518);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(177, 40);
-            this.panel1.TabIndex = 53;
-            // 
-            // darkLabel15
-            // 
-            this.darkLabel15.AutoSize = true;
-            this.darkLabel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel15.Location = new System.Drawing.Point(547, 7);
-            this.darkLabel15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel15.Name = "darkLabel15";
-            this.darkLabel15.Size = new System.Drawing.Size(94, 13);
-            this.darkLabel15.TabIndex = 58;
-            this.darkLabel15.Text = "Shopee Account:";
-            this.darkLabel15.Visible = false;
-            // 
-            // labelShopeeAcc
-            // 
-            this.labelShopeeAcc.AutoSize = true;
-            this.labelShopeeAcc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.labelShopeeAcc.Location = new System.Drawing.Point(641, 7);
-            this.labelShopeeAcc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelShopeeAcc.Name = "labelShopeeAcc";
-            this.labelShopeeAcc.Size = new System.Drawing.Size(16, 13);
-            this.labelShopeeAcc.TabIndex = 59;
-            this.labelShopeeAcc.Text = "...";
-            this.labelShopeeAcc.Visible = false;
-            // 
-            // sessionCookieToolStripMenuItem
-            // 
-            this.sessionCookieToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.sessionCookieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loadCookiesToolStripMenuItem,
-            this.saveCookieToolStripMenuItem,
-            this.cleToolStripMenuItem,
-            this.testToolStripMenuItem1});
-            this.sessionCookieToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.sessionCookieToolStripMenuItem.Name = "sessionCookieToolStripMenuItem";
-            this.sessionCookieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.sessionCookieToolStripMenuItem.Text = "Session cookie";
-            this.sessionCookieToolStripMenuItem.Visible = false;
-            // 
-            // loadCookiesToolStripMenuItem
-            // 
-            this.loadCookiesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.loadCookiesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.loadCookiesToolStripMenuItem.Name = "loadCookiesToolStripMenuItem";
-            this.loadCookiesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.loadCookiesToolStripMenuItem.Text = "Load cookie";
-            this.loadCookiesToolStripMenuItem.Click += new System.EventHandler(this.loadCookiesToolStripMenuItem_Click);
-            // 
-            // saveCookieToolStripMenuItem
-            // 
-            this.saveCookieToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.saveCookieToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.saveCookieToolStripMenuItem.Name = "saveCookieToolStripMenuItem";
-            this.saveCookieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveCookieToolStripMenuItem.Text = "Save cookie";
-            this.saveCookieToolStripMenuItem.Click += new System.EventHandler(this.saveCookieToolStripMenuItem_Click);
-            // 
-            // cleToolStripMenuItem
-            // 
-            this.cleToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.cleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.cleToolStripMenuItem.Name = "cleToolStripMenuItem";
-            this.cleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cleToolStripMenuItem.Text = "Clear cookie";
-            this.cleToolStripMenuItem.Click += new System.EventHandler(this.cleToolStripMenuItem_Click);
-            // 
-            // testToolStripMenuItem1
-            // 
-            this.testToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.testToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.testToolStripMenuItem1.Name = "testToolStripMenuItem1";
-            this.testToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.testToolStripMenuItem1.Text = "Test";
-            this.testToolStripMenuItem1.Click += new System.EventHandler(this.testToolStripMenuItem1_Click);
+            scanSaleItemsToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            scanSaleItemsToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            scanSaleItemsToolStripMenuItem.Name="scanSaleItemsToolStripMenuItem";
+            scanSaleItemsToolStripMenuItem.Size=new Size(151, 22);
+            scanSaleItemsToolStripMenuItem.Text="Scan sale item";
+            scanSaleItemsToolStripMenuItem.Visible=false;
+            scanSaleItemsToolStripMenuItem.Click+=scanSaleItemsToolStripMenuItem_Click;
             // 
             // profileToolStripMenuItem
             // 
-            this.profileToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.profileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemLoadProfile,
-            this.saveCurrentProfileToolStripMenuItem});
-            this.profileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.profileToolStripMenuItem.Text = "Profile";
+            profileToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            profileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { toolStripMenuItemLoadProfile, saveCurrentProfileToolStripMenuItem });
+            profileToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            profileToolStripMenuItem.Name="profileToolStripMenuItem";
+            profileToolStripMenuItem.Size=new Size(151, 22);
+            profileToolStripMenuItem.Text="Profile";
             // 
             // toolStripMenuItemLoadProfile
             // 
-            this.toolStripMenuItemLoadProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.toolStripMenuItemLoadProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.toolStripMenuItemLoadProfile.Name = "toolStripMenuItemLoadProfile";
-            this.toolStripMenuItemLoadProfile.Size = new System.Drawing.Size(181, 22);
-            this.toolStripMenuItemLoadProfile.Text = "Load profile settings";
-            this.toolStripMenuItemLoadProfile.Click += new System.EventHandler(this.toolStripMenuItemLoadProfile_Click);
+            toolStripMenuItemLoadProfile.BackColor=Color.FromArgb(60, 63, 65);
+            toolStripMenuItemLoadProfile.ForeColor=Color.FromArgb(220, 220, 220);
+            toolStripMenuItemLoadProfile.Name="toolStripMenuItemLoadProfile";
+            toolStripMenuItemLoadProfile.Size=new Size(181, 22);
+            toolStripMenuItemLoadProfile.Text="Load profile settings";
+            toolStripMenuItemLoadProfile.Click+=toolStripMenuItemLoadProfile_Click;
             // 
             // saveCurrentProfileToolStripMenuItem
             // 
-            this.saveCurrentProfileToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.saveCurrentProfileToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.saveCurrentProfileToolStripMenuItem.Name = "saveCurrentProfileToolStripMenuItem";
-            this.saveCurrentProfileToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.saveCurrentProfileToolStripMenuItem.Text = "Save current profile";
-            this.saveCurrentProfileToolStripMenuItem.Click += new System.EventHandler(this.saveCurrentProfileToolStripMenuItem_Click);
+            saveCurrentProfileToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            saveCurrentProfileToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            saveCurrentProfileToolStripMenuItem.Name="saveCurrentProfileToolStripMenuItem";
+            saveCurrentProfileToolStripMenuItem.Size=new Size(181, 22);
+            saveCurrentProfileToolStripMenuItem.Text="Save current profile";
+            saveCurrentProfileToolStripMenuItem.Click+=saveCurrentProfileToolStripMenuItem_Click;
+            // 
+            // sessionCookieToolStripMenuItem
+            // 
+            sessionCookieToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            sessionCookieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { loadCookiesToolStripMenuItem, saveCookieToolStripMenuItem, cleToolStripMenuItem, testToolStripMenuItem1 });
+            sessionCookieToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            sessionCookieToolStripMenuItem.Name="sessionCookieToolStripMenuItem";
+            sessionCookieToolStripMenuItem.Size=new Size(151, 22);
+            sessionCookieToolStripMenuItem.Text="Session cookie";
+            sessionCookieToolStripMenuItem.Visible=false;
+            // 
+            // loadCookiesToolStripMenuItem
+            // 
+            loadCookiesToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            loadCookiesToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            loadCookiesToolStripMenuItem.Name="loadCookiesToolStripMenuItem";
+            loadCookiesToolStripMenuItem.Size=new Size(139, 22);
+            loadCookiesToolStripMenuItem.Text="Load cookie";
+            loadCookiesToolStripMenuItem.Click+=loadCookiesToolStripMenuItem_Click;
+            // 
+            // saveCookieToolStripMenuItem
+            // 
+            saveCookieToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            saveCookieToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            saveCookieToolStripMenuItem.Name="saveCookieToolStripMenuItem";
+            saveCookieToolStripMenuItem.Size=new Size(139, 22);
+            saveCookieToolStripMenuItem.Text="Save cookie";
+            saveCookieToolStripMenuItem.Click+=saveCookieToolStripMenuItem_Click;
+            // 
+            // cleToolStripMenuItem
+            // 
+            cleToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            cleToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            cleToolStripMenuItem.Name="cleToolStripMenuItem";
+            cleToolStripMenuItem.Size=new Size(139, 22);
+            cleToolStripMenuItem.Text="Clear cookie";
+            cleToolStripMenuItem.Click+=cleToolStripMenuItem_Click;
+            // 
+            // testToolStripMenuItem1
+            // 
+            testToolStripMenuItem1.BackColor=Color.FromArgb(60, 63, 65);
+            testToolStripMenuItem1.ForeColor=Color.FromArgb(220, 220, 220);
+            testToolStripMenuItem1.Name="testToolStripMenuItem1";
+            testToolStripMenuItem1.Size=new Size(139, 22);
+            testToolStripMenuItem1.Text="Test";
+            testToolStripMenuItem1.Click+=testToolStripMenuItem1_Click;
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.BackColor=Color.FromArgb(60, 63, 65);
+            toolStripSeparator2.ForeColor=Color.FromArgb(220, 220, 220);
+            toolStripSeparator2.Margin=new System.Windows.Forms.Padding(0, 0, 0, 1);
+            toolStripSeparator2.Name="toolStripSeparator2";
+            toolStripSeparator2.Size=new Size(148, 6);
+            // 
+            // exitToolStripMenuItem1
+            // 
+            exitToolStripMenuItem1.BackColor=Color.FromArgb(60, 63, 65);
+            exitToolStripMenuItem1.ForeColor=Color.FromArgb(220, 220, 220);
+            exitToolStripMenuItem1.Name="exitToolStripMenuItem1";
+            exitToolStripMenuItem1.Size=new Size(151, 22);
+            exitToolStripMenuItem1.Text="Exit";
+            exitToolStripMenuItem1.Click+=exitToolStripMenuItem1_Click;
+            // 
+            // testCookieToolStripMenuItem
+            // 
+            testCookieToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            testCookieToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            testCookieToolStripMenuItem.Name="testCookieToolStripMenuItem";
+            testCookieToolStripMenuItem.Size=new Size(151, 22);
+            testCookieToolStripMenuItem.Text="test cookie";
+            testCookieToolStripMenuItem.Visible=false;
+            testCookieToolStripMenuItem.Click+=testCookieToolStripMenuItem_Click;
+            // 
+            // helpToolStripMenuItem1
+            // 
+            helpToolStripMenuItem1.BackColor=Color.FromArgb(60, 63, 65);
+            helpToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { updateConfigurationToolStripMenuItem1, toolStripSeparator1, aboutToolStripMenuItem, changeHistoryToolStripMenuItem });
+            helpToolStripMenuItem1.ForeColor=Color.FromArgb(220, 220, 220);
+            helpToolStripMenuItem1.Name="helpToolStripMenuItem1";
+            helpToolStripMenuItem1.Size=new Size(44, 20);
+            helpToolStripMenuItem1.Text="Help";
+            // 
+            // updateConfigurationToolStripMenuItem1
+            // 
+            updateConfigurationToolStripMenuItem1.BackColor=Color.FromArgb(60, 63, 65);
+            updateConfigurationToolStripMenuItem1.ForeColor=Color.FromArgb(220, 220, 220);
+            updateConfigurationToolStripMenuItem1.Name="updateConfigurationToolStripMenuItem1";
+            updateConfigurationToolStripMenuItem1.Size=new Size(219, 22);
+            updateConfigurationToolStripMenuItem1.Text="Update configuration";
+            updateConfigurationToolStripMenuItem1.Click+=updateConfigurationToolStripMenuItem1_Click;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.BackColor=Color.FromArgb(60, 63, 65);
+            toolStripSeparator1.ForeColor=Color.FromArgb(220, 220, 220);
+            toolStripSeparator1.Margin=new System.Windows.Forms.Padding(0, 0, 0, 1);
+            toolStripSeparator1.Name="toolStripSeparator1";
+            toolStripSeparator1.Size=new Size(216, 6);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            aboutToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            aboutToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            aboutToolStripMenuItem.Name="aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Size=new Size(219, 22);
+            aboutToolStripMenuItem.Text="About Shopee Autobuy Bot";
+            aboutToolStripMenuItem.Click+=aboutToolStripMenuItem_Click;
+            // 
+            // changeHistoryToolStripMenuItem
+            // 
+            changeHistoryToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            changeHistoryToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            changeHistoryToolStripMenuItem.Name="changeHistoryToolStripMenuItem";
+            changeHistoryToolStripMenuItem.Size=new Size(219, 22);
+            changeHistoryToolStripMenuItem.Text="Changelog history";
+            changeHistoryToolStripMenuItem.Click+=changeHistoryToolStripMenuItem_Click;
+            // 
+            // testToolStripMenuItem
+            // 
+            testToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { saveCookiesToolStripMenuItem, fontTestToolStripMenuItem });
+            testToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            testToolStripMenuItem.Name="testToolStripMenuItem";
+            testToolStripMenuItem.Size=new Size(39, 20);
+            testToolStripMenuItem.Text="Test";
+            testToolStripMenuItem.Visible=false;
+            // 
+            // saveCookiesToolStripMenuItem
+            // 
+            saveCookiesToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            saveCookiesToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            saveCookiesToolStripMenuItem.Name="saveCookiesToolStripMenuItem";
+            saveCookiesToolStripMenuItem.Size=new Size(140, 22);
+            saveCookiesToolStripMenuItem.Text="save cookies";
+            saveCookiesToolStripMenuItem.Click+=saveCookiesToolStripMenuItem_Click;
+            // 
+            // fontTestToolStripMenuItem
+            // 
+            fontTestToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            fontTestToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            fontTestToolStripMenuItem.Name="fontTestToolStripMenuItem";
+            fontTestToolStripMenuItem.Size=new Size(140, 22);
+            fontTestToolStripMenuItem.Text="font test";
+            fontTestToolStripMenuItem.Click+=fontTestToolStripMenuItem_Click;
+            // 
+            // fileToolStripMenuItem
+            // 
+            fileToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { UpgradeProToolStripMenuItem, exitToolStripMenuItem });
+            fileToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            fileToolStripMenuItem.Name="fileToolStripMenuItem";
+            fileToolStripMenuItem.Size=new Size(37, 20);
+            fileToolStripMenuItem.Text="File";
+            // 
+            // UpgradeProToolStripMenuItem
+            // 
+            UpgradeProToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            UpgradeProToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            UpgradeProToolStripMenuItem.Name="UpgradeProToolStripMenuItem";
+            UpgradeProToolStripMenuItem.Size=new Size(154, 22);
+            UpgradeProToolStripMenuItem.Text="Upgrade to Pro";
+            UpgradeProToolStripMenuItem.Visible=false;
+            UpgradeProToolStripMenuItem.Click+=visitFacebookPageToolStripMenuItem_Click;
+            // 
+            // exitToolStripMenuItem
+            // 
+            exitToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            exitToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            exitToolStripMenuItem.Name="exitToolStripMenuItem";
+            exitToolStripMenuItem.Size=new Size(154, 22);
+            exitToolStripMenuItem.Text="Exit";
+            exitToolStripMenuItem.Click+=exitToolStripMenuItem_Click;
+            // 
+            // helpToolStripMenuItem
+            // 
+            helpToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            helpToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            helpToolStripMenuItem.Name="helpToolStripMenuItem";
+            helpToolStripMenuItem.Size=new Size(44, 20);
+            helpToolStripMenuItem.Text="Help";
+            // 
+            // aboutToolStripMenuItem1
+            // 
+            aboutToolStripMenuItem1.BackColor=Color.FromArgb(60, 63, 65);
+            aboutToolStripMenuItem1.ForeColor=Color.FromArgb(220, 220, 220);
+            aboutToolStripMenuItem1.Name="aboutToolStripMenuItem1";
+            aboutToolStripMenuItem1.Size=new Size(187, 22);
+            aboutToolStripMenuItem1.Text="About";
+            aboutToolStripMenuItem1.Click+=aboutToolStripMenuItem1_Click;
+            // 
+            // changelogHistoryToolStripMenuItem
+            // 
+            changelogHistoryToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            changelogHistoryToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            changelogHistoryToolStripMenuItem.Name="changelogHistoryToolStripMenuItem";
+            changelogHistoryToolStripMenuItem.Size=new Size(187, 22);
+            changelogHistoryToolStripMenuItem.Text="Change history";
+            changelogHistoryToolStripMenuItem.Click+=changelogHistoryToolStripMenuItem_Click;
+            // 
+            // disclaimerToolStripMenuItem
+            // 
+            disclaimerToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            disclaimerToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            disclaimerToolStripMenuItem.Name="disclaimerToolStripMenuItem";
+            disclaimerToolStripMenuItem.Size=new Size(187, 22);
+            disclaimerToolStripMenuItem.Text="Disclaimer";
+            disclaimerToolStripMenuItem.Visible=false;
+            disclaimerToolStripMenuItem.Click+=disclaimerToolStripMenuItem_Click;
+            // 
+            // howToUseToolStripMenuItem
+            // 
+            howToUseToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            howToUseToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            howToUseToolStripMenuItem.Name="howToUseToolStripMenuItem";
+            howToUseToolStripMenuItem.Size=new Size(187, 22);
+            howToUseToolStripMenuItem.Text="How to use";
+            // 
+            // updateConfigurationToolStripMenuItem
+            // 
+            updateConfigurationToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            updateConfigurationToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            updateConfigurationToolStripMenuItem.Name="updateConfigurationToolStripMenuItem";
+            updateConfigurationToolStripMenuItem.Size=new Size(187, 22);
+            updateConfigurationToolStripMenuItem.Text="Update configuration";
+            updateConfigurationToolStripMenuItem.Click+=updateConfigurationToolStripMenuItem_Click;
+            // 
+            // darkSectionPanelBuyingMode
+            // 
+            darkSectionPanelBuyingMode.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
+            darkSectionPanelBuyingMode.Controls.Add(tbBelowSpecificPriceCARTCHECKOUTPrice);
+            darkSectionPanelBuyingMode.Controls.Add(tbPriceSpecific);
+            darkSectionPanelBuyingMode.Controls.Add(radioButtonPriceSpecificCartCheckout);
+            darkSectionPanelBuyingMode.Controls.Add(radioButtonCheckOutCart);
+            darkSectionPanelBuyingMode.Controls.Add(radioButtonShockingSale);
+            darkSectionPanelBuyingMode.Controls.Add(radioButtonBuyNormal);
+            darkSectionPanelBuyingMode.Controls.Add(radioButtonPriceSpecific);
+            darkSectionPanelBuyingMode.Location=new Point(384, 170);
+            darkSectionPanelBuyingMode.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkSectionPanelBuyingMode.Name="darkSectionPanelBuyingMode";
+            darkSectionPanelBuyingMode.SectionHeader="Buying Mode";
+            darkSectionPanelBuyingMode.Size=new Size(376, 126);
+            darkSectionPanelBuyingMode.TabIndex=50;
+            darkSectionPanelBuyingMode.Click+=darkSectionPanelBuyingMode_Click;
+            // 
+            // tbPriceSpecific
+            // 
+            tbPriceSpecific.Enabled=false;
+            tbPriceSpecific.Location=new Point(280, 63);
+            tbPriceSpecific.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbPriceSpecific.Name="tbPriceSpecific";
+            tbPriceSpecific.Size=new Size(67, 22);
+            tbPriceSpecific.TabIndex=50;
+            tbPriceSpecific.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            tbPriceSpecific.KeyPress+=darkTextBox1_KeyPress;
+            tbPriceSpecific.Leave+=tbPriceSpecific_Leave;
+            // 
+            // radioButtonCheckOutCart
+            // 
+            radioButtonCheckOutCart.AutoSize=true;
+            radioButtonCheckOutCart.ForeColor=Color.Gainsboro;
+            radioButtonCheckOutCart.Location=new Point(26, 66);
+            radioButtonCheckOutCart.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            radioButtonCheckOutCart.Name="radioButtonCheckOutCart";
+            radioButtonCheckOutCart.Size=new Size(96, 17);
+            radioButtonCheckOutCart.TabIndex=52;
+            radioButtonCheckOutCart.Text="Cart checkout";
+            toolTip1.SetToolTip(radioButtonCheckOutCart, "To use this option, user need to manually add items into cart. When Start button clicked, the checkout process is start from cart page thus lower checkout time.");
+            radioButtonCheckOutCart.CheckedChanged+=radioButtonCheckOutCart_CheckedChanged;
+            // 
+            // radioButtonShockingSale
+            // 
+            radioButtonShockingSale.AutoSize=true;
+            radioButtonShockingSale.ForeColor=Color.Gainsboro;
+            radioButtonShockingSale.Location=new Point(145, 36);
+            radioButtonShockingSale.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            radioButtonShockingSale.Name="radioButtonShockingSale";
+            radioButtonShockingSale.Size=new Size(159, 17);
+            radioButtonShockingSale.TabIndex=51;
+            radioButtonShockingSale.Text="Flash/Shocking sale mode";
+            toolTip1.SetToolTip(radioButtonShockingSale, "For this option, bot will only start checkout process if the item is in the shocking/flash sale period.");
+            // 
+            // radioButtonBuyNormal
+            // 
+            radioButtonBuyNormal.AutoSize=true;
+            radioButtonBuyNormal.Checked=true;
+            radioButtonBuyNormal.ForeColor=Color.Gainsboro;
+            radioButtonBuyNormal.Location=new Point(26, 36);
+            radioButtonBuyNormal.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            radioButtonBuyNormal.Name="radioButtonBuyNormal";
+            radioButtonBuyNormal.Size=new Size(94, 17);
+            radioButtonBuyNormal.TabIndex=50;
+            radioButtonBuyNormal.TabStop=true;
+            radioButtonBuyNormal.Text="Normal mode";
+            toolTip1.SetToolTip(radioButtonBuyNormal, "Normal Mode.");
+            // 
+            // radioButtonPriceSpecific
+            // 
+            radioButtonPriceSpecific.AutoSize=true;
+            radioButtonPriceSpecific.ForeColor=Color.Gainsboro;
+            radioButtonPriceSpecific.Location=new Point(146, 66);
+            radioButtonPriceSpecific.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            radioButtonPriceSpecific.Name="radioButtonPriceSpecific";
+            radioButtonPriceSpecific.Size=new Size(131, 17);
+            radioButtonPriceSpecific.TabIndex=15;
+            radioButtonPriceSpecific.Text="Below specific price :";
+            toolTip1.SetToolTip(radioButtonPriceSpecific, "This option let the user choose which price they want bot to start checkout. Bot will only start checkout process once product's price is lower than the price set by user.");
+            radioButtonPriceSpecific.CheckedChanged+=radioButtonPriceSpecific_CheckedChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize=true;
+            label1.BackColor=Color.Transparent;
+            label1.Font=new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor=Color.Gold;
+            label1.Location=new Point(545, 506);
+            label1.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label1.Name="label1";
+            label1.Size=new Size(31, 13);
+            label1.TabIndex=51;
+            label1.Text="Days";
+            label1.TextAlign=ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            label2.AutoSize=true;
+            label2.BackColor=Color.Transparent;
+            label2.Font=new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor=Color.Gold;
+            label2.Location=new Point(599, 506);
+            label2.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label2.Name="label2";
+            label2.Size=new Size(33, 13);
+            label2.TabIndex=52;
+            label2.Text="Hour";
+            label2.TextAlign=ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            label3.AutoSize=true;
+            label3.BackColor=Color.Transparent;
+            label3.Font=new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor=Color.Gold;
+            label3.Location=new Point(647, 506);
+            label3.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label3.Name="label3";
+            label3.Size=new Size(44, 13);
+            label3.TabIndex=53;
+            label3.Text="Minute";
+            label3.TextAlign=ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            label4.AutoSize=true;
+            label4.BackColor=Color.Transparent;
+            label4.Font=new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor=Color.Gold;
+            label4.Location=new Point(701, 506);
+            label4.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label4.Name="label4";
+            label4.Size=new Size(45, 13);
+            label4.TabIndex=54;
+            label4.Text="Second";
+            label4.TextAlign=ContentAlignment.MiddleCenter;
+            // 
+            // darkSectionPanelPaymentDetails
+            // 
+            darkSectionPanelPaymentDetails.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
+            darkSectionPanelPaymentDetails.Controls.Add(darkLabel14);
+            darkSectionPanelPaymentDetails.Controls.Add(tbLast4Digit);
+            darkSectionPanelPaymentDetails.Controls.Add(darkLabel6);
+            darkSectionPanelPaymentDetails.Controls.Add(darkComboBoxPaymentMethod);
+            darkSectionPanelPaymentDetails.Controls.Add(darkLabel8);
+            darkSectionPanelPaymentDetails.Controls.Add(darkComboBoxBankType);
+            darkSectionPanelPaymentDetails.Controls.Add(darkTextBoxShopeePayPin);
+            darkSectionPanelPaymentDetails.Controls.Add(darkLabel7);
+            darkSectionPanelPaymentDetails.Location=new Point(384, 301);
+            darkSectionPanelPaymentDetails.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkSectionPanelPaymentDetails.Name="darkSectionPanelPaymentDetails";
+            darkSectionPanelPaymentDetails.SectionHeader="Payment Details";
+            darkSectionPanelPaymentDetails.Size=new Size(376, 195);
+            darkSectionPanelPaymentDetails.TabIndex=55;
+            // 
+            // darkCheckBoxRedeemShopeeVoucher
+            // 
+            darkCheckBoxRedeemShopeeVoucher.AutoSize=true;
+            darkCheckBoxRedeemShopeeVoucher.Location=new Point(11, 77);
+            darkCheckBoxRedeemShopeeVoucher.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkCheckBoxRedeemShopeeVoucher.Name="darkCheckBoxRedeemShopeeVoucher";
+            darkCheckBoxRedeemShopeeVoucher.Size=new Size(174, 17);
+            darkCheckBoxRedeemShopeeVoucher.TabIndex=52;
+            darkCheckBoxRedeemShopeeVoucher.Text="Redeem any Shopee voucher";
+            toolTip1.SetToolTip(darkCheckBoxRedeemShopeeVoucher, "Enabling this will let bot claim any available Shopee voucher.");
+            // 
+            // darkButton7
+            // 
+            darkButton7.Font=new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            darkButton7.Location=new Point(502, 626);
+            darkButton7.Margin=new System.Windows.Forms.Padding(2);
+            darkButton7.Name="darkButton7";
+            darkButton7.Size=new Size(259, 26);
+            darkButton7.TabIndex=56;
+            darkButton7.Text="Copy logs to clipboard";
+            toolTip1.SetToolTip(darkButton7, "Copy logs to clipboard");
+            darkButton7.Click+=darkButton7_Click;
+            // 
+            // darkSectionPanel1
+            // 
+            darkSectionPanel1.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
+            darkSectionPanel1.Controls.Add(darkCheckBoxRedeemShopeeVoucher);
+            darkSectionPanel1.Controls.Add(darkCheckBoxClaimShopVoucher);
+            darkSectionPanel1.Controls.Add(darkCheckBoxRedeemCoin);
+            darkSectionPanel1.Location=new Point(331, 501);
+            darkSectionPanel1.Name="darkSectionPanel1";
+            darkSectionPanel1.SectionHeader="Voucher & coin";
+            darkSectionPanel1.Size=new Size(192, 151);
+            darkSectionPanel1.TabIndex=57;
+            // 
+            // notifyIcon1
+            // 
+            notifyIcon1.Text="notifyIcon1";
+            notifyIcon1.Visible=true;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(timerlabelBig);
+            panel1.Location=new Point(558, 518);
+            panel1.Name="panel1";
+            panel1.Size=new Size(177, 40);
+            panel1.TabIndex=53;
+            // 
+            // darkLabel15
+            // 
+            darkLabel15.AutoSize=true;
+            darkLabel15.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel15.Location=new Point(547, 7);
+            darkLabel15.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel15.Name="darkLabel15";
+            darkLabel15.Size=new Size(94, 13);
+            darkLabel15.TabIndex=58;
+            darkLabel15.Text="Shopee Account:";
+            darkLabel15.Visible=false;
+            // 
+            // labelShopeeAcc
+            // 
+            labelShopeeAcc.AutoSize=true;
+            labelShopeeAcc.ForeColor=Color.FromArgb(220, 220, 220);
+            labelShopeeAcc.Location=new Point(641, 7);
+            labelShopeeAcc.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            labelShopeeAcc.Name="labelShopeeAcc";
+            labelShopeeAcc.Size=new Size(16, 13);
+            labelShopeeAcc.TabIndex=59;
+            labelShopeeAcc.Text="...";
+            labelShopeeAcc.Visible=false;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 666);
-            this.Controls.Add(this.labelShopeeAcc);
-            this.Controls.Add(this.darkLabel15);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.darkSectionPanel1);
-            this.Controls.Add(this.darkSectionPanelPaymentDetails);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.darkSectionPanelBuyingMode);
-            this.Controls.Add(this.darkMenuStrip1);
-            this.Controls.Add(this.darkSectionPanelBotSettings);
-            this.Controls.Add(this.darkButtonStart);
-            this.Controls.Add(this.darkSectionPanelLogs);
-            this.Controls.Add(this.darkSectionPanelProductDetails);
-            this.Controls.Add(this.darkSectionPanelTimerMode);
-            this.Controls.Add(this.darkDockPanel1);
-            this.Controls.Add(this.darkButton7);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(570, 56);
-            this.Name = "Main";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Shopee Autobuy Bot";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.darkSectionPanelTimerMode.ResumeLayout(false);
-            this.darkSectionPanelTimerMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDownCountDownSecond)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDownCountdownMinutes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDownCountdownHour)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDownTimeOut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDownRefreshSeconds)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDownProductQuantity)).EndInit();
-            this.darkSectionPanelProductDetails.ResumeLayout(false);
-            this.darkSectionPanelProductDetails.PerformLayout();
-            this.darkSectionPanelLogs.ResumeLayout(false);
-            this.darkSectionPanelLogs.PerformLayout();
-            this.darkSectionPanelBotSettings.ResumeLayout(false);
-            this.darkSectionPanelBotSettings.PerformLayout();
-            this.darkMenuStrip1.ResumeLayout(false);
-            this.darkMenuStrip1.PerformLayout();
-            this.darkSectionPanelBuyingMode.ResumeLayout(false);
-            this.darkSectionPanelBuyingMode.PerformLayout();
-            this.darkSectionPanelPaymentDetails.ResumeLayout(false);
-            this.darkSectionPanelPaymentDetails.PerformLayout();
-            this.darkSectionPanel1.ResumeLayout(false);
-            this.darkSectionPanel1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions=new SizeF(6F, 13F);
+            AutoScaleMode=System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize=new Size(776, 666);
+            Controls.Add(labelShopeeAcc);
+            Controls.Add(darkLabel15);
+            Controls.Add(panel1);
+            Controls.Add(darkSectionPanel1);
+            Controls.Add(darkSectionPanelPaymentDetails);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(darkSectionPanelBuyingMode);
+            Controls.Add(darkMenuStrip1);
+            Controls.Add(darkSectionPanelBotSettings);
+            Controls.Add(darkButtonStart);
+            Controls.Add(darkSectionPanelLogs);
+            Controls.Add(darkSectionPanelProductDetails);
+            Controls.Add(darkSectionPanelTimerMode);
+            Controls.Add(darkDockPanel1);
+            Controls.Add(darkButton7);
+            Font=new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            FormBorderStyle=System.Windows.Forms.FormBorderStyle.FixedSingle;
+            Icon=(Icon)resources.GetObject("$this.Icon");
+            Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            MaximizeBox=false;
+            MinimumSize=new Size(570, 56);
+            Name="Main";
+            SizeGripStyle=System.Windows.Forms.SizeGripStyle.Hide;
+            StartPosition=System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text="Shopee Autobuy Bot";
+            FormClosing+=Form1_FormClosing;
+            Load+=Form1_Load;
+            darkSectionPanelTimerMode.ResumeLayout(false);
+            darkSectionPanelTimerMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)darkNumericUpDownCountDownSecond).EndInit();
+            ((System.ComponentModel.ISupportInitialize)darkNumericUpDownCountdownMinutes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)darkNumericUpDownCountdownHour).EndInit();
+            ((System.ComponentModel.ISupportInitialize)darkNumericUpDownTimeOut).EndInit();
+            ((System.ComponentModel.ISupportInitialize)darkNumericUpDownRefreshSeconds).EndInit();
+            ((System.ComponentModel.ISupportInitialize)darkNumericUpDownProductQuantity).EndInit();
+            darkSectionPanelProductDetails.ResumeLayout(false);
+            darkSectionPanelProductDetails.PerformLayout();
+            darkSectionPanelLogs.ResumeLayout(false);
+            darkSectionPanelLogs.PerformLayout();
+            darkSectionPanelBotSettings.ResumeLayout(false);
+            darkSectionPanelBotSettings.PerformLayout();
+            darkMenuStrip1.ResumeLayout(false);
+            darkMenuStrip1.PerformLayout();
+            darkSectionPanelBuyingMode.ResumeLayout(false);
+            darkSectionPanelBuyingMode.PerformLayout();
+            darkSectionPanelPaymentDetails.ResumeLayout(false);
+            darkSectionPanelPaymentDetails.PerformLayout();
+            darkSectionPanel1.ResumeLayout(false);
+            darkSectionPanel1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
 
@@ -1663,6 +1545,7 @@ namespace Shopee_Autobuy_Bot
         private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemLoadProfile;
         private System.Windows.Forms.ToolStripMenuItem saveCurrentProfileToolStripMenuItem;
+        private DarkUI.Controls.DarkCheckBox cbVariantPreSelected;
     }
 }
 

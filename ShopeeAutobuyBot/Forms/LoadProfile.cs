@@ -110,6 +110,8 @@ namespace Shopee_Autobuy_Bot
 
                 darkTextBoxProductLink.Text = _profileService.SelectedProfile.ProductDetail.product_link;
                 cbRandom.Checked = _profileService.SelectedProfile.ProductDetail.random_variant;
+                cbVariantPreSelected.Checked = _profileService.SelectedProfile.ProductDetail.variant_preSelected;
+
                 darkTextBoxVariationString.Text = _profileService.SelectedProfile.ProductDetail.variant;
                 tbQuality.Text = _profileService.SelectedProfile.ProductDetail.quantity.ToString();
 

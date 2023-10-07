@@ -535,60 +535,65 @@ namespace Shopee_Autobuy_Bot.Services
             // if variant container is exists.
             if (_seleniumService.ElementExists(By.XPath(ConstantElements.ProductPage.ProductVariationContainer)))
             {
-                // select random variant
-                if (_profileService.SelectedProfile.ProductDetail.random_variant)
+                // variant pre check, ignore this method
+                if (!_profileService.SelectedProfile.ProductDetail.variant_preSelected)
                 {
-                    IReadOnlyCollection<IWebElement> variantElements = _seleniumService._driver.FindElements(By.XPath("//div[contains(@class, 'flex items-center bR6mEk')]"));
-                    foreach (IWebElement variantElement in variantElements)
+                    // select random variant
+                    if (_profileService.SelectedProfile.ProductDetail.random_variant)
                     {
-                        foreach (IWebElement variant in variantElement.FindElements(By.XPath(".//*")))
+                        IReadOnlyCollection<IWebElement> variantElements = _seleniumService._driver.FindElements(By.XPath("//div[contains(@class, 'flex items-center bR6mEk')]"));
+                        foreach (IWebElement variantElement in variantElements)
                         {
-                            if (!variant.GetAttribute("class").Equals("product-variation product-variation--disabled"))
+                            foreach (IWebElement variant in variantElement.FindElements(By.XPath(".//*")))
                             {
-                                _seleniumService.ClickElement(variant);
-                                _autoBuyLoggerService.AutoBuyProcessLog("Click " + variant.Text + ".", Color.LawnGreen, true, true, true);
-                                break;
+                                if (!variant.GetAttribute("class").Equals("product-variation product-variation--disabled"))
+                                {
+                                    _seleniumService.ClickElement(variant);
+                                    _autoBuyLoggerService.AutoBuyProcessLog("Click " + variant.Text + ".", Color.LawnGreen, true, true, true);
+                                    break;
+                                }
                             }
                         }
                     }
-                }
-                else
-                {
-                    // variant type eg Size, Color
-                    var variantElements = _seleniumService._driver.FindElements(By.XPath("//div[contains(@class, 'flex items-center bR6mEk')]"));
-                    var variantTypeCount = variantElements.Count;
-
-                    if (_profileService.SelectedProfile.ProductDetail.variant == string.Empty)
+                    else
                     {
-                        return "Specify product variation.";
-                    }
+                        // variant type eg Size, Color
+                        var variantElements = _seleniumService._driver.FindElements(By.XPath("//div[contains(@class, 'flex items-center bR6mEk')]"));
+                        var variantTypeCount = variantElements.Count;
 
-                    // split the variation input into an array of variant names
-                    string[] variantNames = _profileService.SelectedProfile.ProductDetail.variant.Split('|');
-
-                    if (variantNames.Length != variantTypeCount)
-                    {
-                        return $"Product needs {variantTypeCount} variant types.";
-                    }
-
-                    foreach (string variantName in variantNames)
-                    {
-                        Thread.Sleep(100);
-                        string template = "//button[contains(@class, 'product-variation') and contains(text(), '" + variantName + "')]";
-
-                        if (!_seleniumService.ElementExists(By.XPath(template)) || _seleniumService.ElementExists(By.XPath($"{template}[contains(@class, '--disabled')]")))
+                        if (_profileService.SelectedProfile.ProductDetail.variant == string.Empty)
                         {
-                            return $"'{variantName}' not available.";
+                            return "Specify product variation.";
                         }
 
-                        var variationElement = _seleniumService.GetElement(By.XPath(template));
-                        if (!variationElement.GetAttribute("class").Equals("product-variation product-variation--selected"))
+                        // split the variation input into an array of variant names
+                        string[] variantNames = _profileService.SelectedProfile.ProductDetail.variant.Split('|');
+
+                        if (variantNames.Length != variantTypeCount)
                         {
-                            _seleniumService.ClickElement(variationElement);
-                            _autoBuyLoggerService.AutoBuyProcessLog("Click " + variationElement.Text + ".", Color.LawnGreen, true, true, true);
+                            return $"Product needs {variantTypeCount} variant types.";
                         }
+
+                        foreach (string variantName in variantNames)
+                        {
+                            Thread.Sleep(100);
+                            string template = "//button[contains(@class, 'product-variation') and contains(text(), '" + variantName + "')]";
+
+                            if (!_seleniumService.ElementExists(By.XPath(template)) || _seleniumService.ElementExists(By.XPath($"{template}[contains(@class, '--disabled')]")))
+                            {
+                                return $"'{variantName}' not available.";
+                            }
+
+                            var variationElement = _seleniumService.GetElement(By.XPath(template));
+                            if (!variationElement.GetAttribute("class").Equals("product-variation product-variation--selected"))
+                            {
+                                _seleniumService.ClickElement(variationElement);
+                                _autoBuyLoggerService.AutoBuyProcessLog("Click " + variationElement.Text + ".", Color.LawnGreen, true, true, true);
+                            }
+                        }
+
+                        // all variations are available, continue with other logic here
                     }
-                    // all variations are available, continue with other logic here
                 }
             }
             return "";

@@ -20,6 +20,8 @@
             public string variant { get; set; }
             public int quantity { get; set; }
             public bool random_variant { get; set; }
+            public bool variant_preSelected { get; set; }
+
         }
 
         public class Voucher_Coin

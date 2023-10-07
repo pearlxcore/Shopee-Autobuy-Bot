@@ -71,7 +71,6 @@ namespace Shopee_Autobuy_Bot
         private void MapControlsToSelectedProfile()
         {
 
-            ///
             if (radioButtonBuyNormal.Checked)
                 _profileService.SelectedProfile.BuyingMode.mode = BuyingMode.Normal;
             if (radioButtonShockingSale.Checked)
@@ -98,6 +97,9 @@ namespace Shopee_Autobuy_Bot
             _profileService.SelectedProfile.PaymentDetail.shopeepay_pin = darkTextBoxShopeePayPin.Text;
 
             _profileService.SelectedProfile.ProductDetail.product_link = darkTextBoxProductLink.Text;
+
+            _profileService.SelectedProfile.ProductDetail.random_variant = cbRandom.Checked;
+            _profileService.SelectedProfile.ProductDetail.variant_preSelected = cbVariantPreSelected.Checked;
 
             _profileService.SelectedProfile.ProductDetail.variant = darkTextBoxVariationString.Text;
             _profileService.SelectedProfile.ProductDetail.quantity = Convert.ToInt32(darkNumericUpDownProductQuantity.Value);
@@ -140,6 +142,7 @@ namespace Shopee_Autobuy_Bot
                 /* run your code here */
                 if (darkButtonStart.Text.Equals("Start"))
                 {
+                    MapControlsToSelectedProfile();
                     if (!IsProfileValid(_profileService.SelectedProfile))
                     {
                         MessageBox.Show("Missing some product details", "Logged out", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -152,7 +155,6 @@ namespace Shopee_Autobuy_Bot
                     //    return;
                     //}
 
-                    MapControlsToSelectedProfile();
                     timerlabelBig.Text = "00:00:00:00";
                     darkButtonDeleteAllOrder.Enabled = false;
                     darkSectionPanelProductDetails.Enabled = false;
@@ -1141,7 +1143,8 @@ namespace Shopee_Autobuy_Bot
                     product_link = darkTextBoxProductLink.Text,
                     variant = darkTextBoxVariationString.Text,
                     quantity = Convert.ToInt32(darkNumericUpDownProductQuantity.Value),
-                    random_variant = cbRandom.Checked
+                    random_variant = cbRandom.Checked,
+                    variant_preSelected = cbVariantPreSelected.Checked
                 };
                 var voucherInfo = new Utililties.ProfileModel.Voucher_Coin()
                 {
@@ -1319,6 +1322,20 @@ namespace Shopee_Autobuy_Bot
             profileName.ShowDialog();
             if (_profileService.SaveProfile)
                 SaveBotProfile();
+        }
+
+        private void cbVariantPreSelected_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbVariantPreSelected.Checked)
+            {
+                cbRandom.Enabled = false;
+                darkTextBoxVariationString.Enabled = false;
+            }
+            else
+            {
+                cbRandom.Enabled = true;
+                darkTextBoxVariationString.Enabled = true;
+            }
         }
     }
 }

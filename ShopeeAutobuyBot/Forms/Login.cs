@@ -19,6 +19,8 @@ using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using static Shopee_Autobuy_Bot.Utililties.Helper;
+using Application = System.Windows.Forms.Application;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace Shopee_Autobuy_Bot
 {
@@ -215,21 +217,36 @@ namespace Shopee_Autobuy_Bot
             return Helper.Utilities.PingServer() ? true : false;
         }
 
+        public static string GetApplicationVersion()
+        {
+            // Get the entry assembly (usually represents the current application)
+            Assembly entryAssembly = Assembly.GetEntryAssembly();
+
+            // Get the custom attribute for the AssemblyInformationalVersionAttribute
+            // This attribute should be set in the project's Properties/AssemblyInfo.cs file
+            AssemblyInformationalVersionAttribute versionAttribute =
+                entryAssembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>();
+
+            // Retrieve and return the version string
+            return versionAttribute?.InformationalVersion ?? "Version information not available";
+        }
+
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            var assembly = Assembly.GetEntryAssembly().GetName().Version.ToString();
+            this.Text += $" {assembly}";
             try
             {
                 if (!File.Exists(DirectoryPaths.ChromedriverPath))
                 {
-                    DialogResult dialog = MessageBox.Show("chromedriver.exe not found. Download ChromeDriver from download page. Choose version that compatible with Chrome browser version. Make sure to download the correct filename (chromedriver_win32.zip). Place chromedriver.exe into application folder then restart this program. Open ChromeDriver download page?", "ChromDriver not found", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    DialogResult dialog = System.Windows.Forms.MessageBox.Show("chromedriver.exe not found. Download ChromeDriver from download page. Choose version that compatible with Chrome browser version. Make sure to download the correct filename (chromedriver_win32.zip). Place chromedriver.exe into application folder then restart this program. Open ChromeDriver download page?", "ChromDriver not found", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (dialog == DialogResult.OK)
                     {
                         Process.Start("https://chromedriver.chromium.org/downloads");
                     }
                     else
                     {
-                        Application.Exit();
+                        System.Windows.Forms.Application.Exit();
                         return;
                     }
                 }

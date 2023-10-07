@@ -29,749 +29,761 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadProfile));
-            this.btnLoadProfile = new DarkUI.Controls.DarkButton();
-            this.btnDeleteProfile = new DarkUI.Controls.DarkButton();
-            this.darkLabel1 = new DarkUI.Controls.DarkLabel();
-            this.darkComboBoxProfile = new DarkUI.Controls.DarkComboBox();
-            this.darkSectionPanel1 = new DarkUI.Controls.DarkSectionPanel();
-            this.darkCheckBoxRedeemShopeeVoucher = new DarkUI.Controls.DarkCheckBox();
-            this.darkCheckBoxClaimShopVoucher = new DarkUI.Controls.DarkCheckBox();
-            this.darkCheckBoxRedeemCoin = new DarkUI.Controls.DarkCheckBox();
-            this.darkSectionPanelPaymentDetails = new DarkUI.Controls.DarkSectionPanel();
-            this.tbPaymentMethod = new DarkUI.Controls.DarkTextBox();
-            this.tbBankType = new DarkUI.Controls.DarkTextBox();
-            this.darkLabel14 = new DarkUI.Controls.DarkLabel();
-            this.tbLast4Digit = new DarkUI.Controls.DarkTextBox();
-            this.darkLabel6 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel8 = new DarkUI.Controls.DarkLabel();
-            this.darkTextBoxShopeePayPin = new DarkUI.Controls.DarkTextBox();
-            this.darkLabel7 = new DarkUI.Controls.DarkLabel();
-            this.darkSectionPanelBuyingMode = new DarkUI.Controls.DarkSectionPanel();
-            this.tbBelowSpecificPriceCARTCHECKOUTPrice = new DarkUI.Controls.DarkTextBox();
-            this.tbPriceSpecific = new DarkUI.Controls.DarkTextBox();
-            this.radioButtonPriceSpecificCARTCHECKOUT = new System.Windows.Forms.RadioButton();
-            this.radioButtonCheckOutCart = new System.Windows.Forms.RadioButton();
-            this.radioButtonShockingSale = new System.Windows.Forms.RadioButton();
-            this.radioButtonBuyNormal = new System.Windows.Forms.RadioButton();
-            this.radioButtonPriceSpecific = new System.Windows.Forms.RadioButton();
-            this.darkSectionPanelBotSettings = new DarkUI.Controls.DarkSectionPanel();
-            this.tbTimeOut = new DarkUI.Controls.DarkTextBox();
-            this.tbRefreshSecond = new DarkUI.Controls.DarkTextBox();
-            this.darkCheckBoxTestMode = new DarkUI.Controls.DarkCheckBox();
-            this.darkCheckBoxLogging = new DarkUI.Controls.DarkCheckBox();
-            this.darkCheckBoxRefresh = new DarkUI.Controls.DarkCheckBox();
-            this.darkCheckBoxHeadless = new DarkUI.Controls.DarkCheckBox();
-            this.darkLabel5 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel4 = new DarkUI.Controls.DarkLabel();
-            this.darkCheckBoxPlaySound = new DarkUI.Controls.DarkCheckBox();
-            this.darkLabel13 = new DarkUI.Controls.DarkLabel();
-            this.darkCheckBoxDisableImageExtension = new DarkUI.Controls.DarkCheckBox();
-            this.darkSectionPanelProductDetails = new DarkUI.Controls.DarkSectionPanel();
-            this.tbQuality = new DarkUI.Controls.DarkTextBox();
-            this.darkLabel11 = new DarkUI.Controls.DarkLabel();
-            this.darkTextBoxProductLink = new DarkUI.Controls.DarkTextBox();
-            this.darkLabel10 = new DarkUI.Controls.DarkLabel();
-            this.darkTextBoxVariationString = new DarkUI.Controls.DarkTextBox();
-            this.darkLabel9 = new DarkUI.Controls.DarkLabel();
-            this.darkSectionPanelTimerMode = new DarkUI.Controls.DarkSectionPanel();
-            this.tbCountdownSeconds = new DarkUI.Controls.DarkTextBox();
-            this.tbCountdownMinutes = new DarkUI.Controls.DarkTextBox();
-            this.tbCountdownHour = new DarkUI.Controls.DarkTextBox();
-            this.darkCheckBoxTomorrow = new DarkUI.Controls.DarkCheckBox();
-            this.darkCheckBoxScheduleBot = new DarkUI.Controls.DarkCheckBox();
-            this.darkLabel3 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel2 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel12 = new DarkUI.Controls.DarkLabel();
-            this.darkButton1 = new DarkUI.Controls.DarkButton();
-            this.cbRandom = new DarkUI.Controls.DarkCheckBox();
-            this.darkSectionPanel1.SuspendLayout();
-            this.darkSectionPanelPaymentDetails.SuspendLayout();
-            this.darkSectionPanelBuyingMode.SuspendLayout();
-            this.darkSectionPanelBotSettings.SuspendLayout();
-            this.darkSectionPanelProductDetails.SuspendLayout();
-            this.darkSectionPanelTimerMode.SuspendLayout();
-            this.SuspendLayout();
+            btnLoadProfile=new DarkUI.Controls.DarkButton();
+            btnDeleteProfile=new DarkUI.Controls.DarkButton();
+            darkLabel1=new DarkUI.Controls.DarkLabel();
+            darkComboBoxProfile=new DarkUI.Controls.DarkComboBox();
+            darkSectionPanel1=new DarkUI.Controls.DarkSectionPanel();
+            darkCheckBoxRedeemShopeeVoucher=new DarkUI.Controls.DarkCheckBox();
+            darkCheckBoxClaimShopVoucher=new DarkUI.Controls.DarkCheckBox();
+            darkCheckBoxRedeemCoin=new DarkUI.Controls.DarkCheckBox();
+            darkSectionPanelPaymentDetails=new DarkUI.Controls.DarkSectionPanel();
+            tbPaymentMethod=new DarkUI.Controls.DarkTextBox();
+            tbBankType=new DarkUI.Controls.DarkTextBox();
+            darkLabel14=new DarkUI.Controls.DarkLabel();
+            tbLast4Digit=new DarkUI.Controls.DarkTextBox();
+            darkLabel6=new DarkUI.Controls.DarkLabel();
+            darkLabel8=new DarkUI.Controls.DarkLabel();
+            darkTextBoxShopeePayPin=new DarkUI.Controls.DarkTextBox();
+            darkLabel7=new DarkUI.Controls.DarkLabel();
+            darkSectionPanelBuyingMode=new DarkUI.Controls.DarkSectionPanel();
+            tbBelowSpecificPriceCARTCHECKOUTPrice=new DarkUI.Controls.DarkTextBox();
+            tbPriceSpecific=new DarkUI.Controls.DarkTextBox();
+            radioButtonPriceSpecificCARTCHECKOUT=new System.Windows.Forms.RadioButton();
+            radioButtonCheckOutCart=new System.Windows.Forms.RadioButton();
+            radioButtonShockingSale=new System.Windows.Forms.RadioButton();
+            radioButtonBuyNormal=new System.Windows.Forms.RadioButton();
+            radioButtonPriceSpecific=new System.Windows.Forms.RadioButton();
+            darkSectionPanelBotSettings=new DarkUI.Controls.DarkSectionPanel();
+            tbTimeOut=new DarkUI.Controls.DarkTextBox();
+            tbRefreshSecond=new DarkUI.Controls.DarkTextBox();
+            darkCheckBoxTestMode=new DarkUI.Controls.DarkCheckBox();
+            darkCheckBoxLogging=new DarkUI.Controls.DarkCheckBox();
+            darkCheckBoxRefresh=new DarkUI.Controls.DarkCheckBox();
+            darkCheckBoxHeadless=new DarkUI.Controls.DarkCheckBox();
+            darkLabel5=new DarkUI.Controls.DarkLabel();
+            darkLabel4=new DarkUI.Controls.DarkLabel();
+            darkCheckBoxPlaySound=new DarkUI.Controls.DarkCheckBox();
+            darkLabel13=new DarkUI.Controls.DarkLabel();
+            darkCheckBoxDisableImageExtension=new DarkUI.Controls.DarkCheckBox();
+            darkSectionPanelProductDetails=new DarkUI.Controls.DarkSectionPanel();
+            cbRandom=new DarkUI.Controls.DarkCheckBox();
+            tbQuality=new DarkUI.Controls.DarkTextBox();
+            darkLabel11=new DarkUI.Controls.DarkLabel();
+            darkTextBoxProductLink=new DarkUI.Controls.DarkTextBox();
+            darkLabel10=new DarkUI.Controls.DarkLabel();
+            darkTextBoxVariationString=new DarkUI.Controls.DarkTextBox();
+            darkLabel9=new DarkUI.Controls.DarkLabel();
+            darkSectionPanelTimerMode=new DarkUI.Controls.DarkSectionPanel();
+            tbCountdownSeconds=new DarkUI.Controls.DarkTextBox();
+            tbCountdownMinutes=new DarkUI.Controls.DarkTextBox();
+            tbCountdownHour=new DarkUI.Controls.DarkTextBox();
+            darkCheckBoxTomorrow=new DarkUI.Controls.DarkCheckBox();
+            darkCheckBoxScheduleBot=new DarkUI.Controls.DarkCheckBox();
+            darkLabel3=new DarkUI.Controls.DarkLabel();
+            darkLabel2=new DarkUI.Controls.DarkLabel();
+            darkLabel12=new DarkUI.Controls.DarkLabel();
+            darkButton1=new DarkUI.Controls.DarkButton();
+            cbVariantPreSelected=new DarkUI.Controls.DarkCheckBox();
+            darkSectionPanel1.SuspendLayout();
+            darkSectionPanelPaymentDetails.SuspendLayout();
+            darkSectionPanelBuyingMode.SuspendLayout();
+            darkSectionPanelBotSettings.SuspendLayout();
+            darkSectionPanelProductDetails.SuspendLayout();
+            darkSectionPanelTimerMode.SuspendLayout();
+            SuspendLayout();
             // 
             // btnLoadProfile
             // 
-            this.btnLoadProfile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadProfile.Location = new System.Drawing.Point(465, 13);
-            this.btnLoadProfile.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLoadProfile.Name = "btnLoadProfile";
-            this.btnLoadProfile.Size = new System.Drawing.Size(123, 24);
-            this.btnLoadProfile.TabIndex = 103;
-            this.btnLoadProfile.Text = "Load profile";
-            this.btnLoadProfile.Click += new System.EventHandler(this.btnLoadProfile_Click);
+            btnLoadProfile.Font=new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnLoadProfile.Location=new System.Drawing.Point(529, 13);
+            btnLoadProfile.Margin=new System.Windows.Forms.Padding(2);
+            btnLoadProfile.Name="btnLoadProfile";
+            btnLoadProfile.Size=new System.Drawing.Size(123, 24);
+            btnLoadProfile.TabIndex=103;
+            btnLoadProfile.Text="Load profile";
+            btnLoadProfile.Click+=btnLoadProfile_Click;
             // 
             // btnDeleteProfile
             // 
-            this.btnDeleteProfile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteProfile.Location = new System.Drawing.Point(592, 13);
-            this.btnDeleteProfile.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDeleteProfile.Name = "btnDeleteProfile";
-            this.btnDeleteProfile.Size = new System.Drawing.Size(123, 24);
-            this.btnDeleteProfile.TabIndex = 104;
-            this.btnDeleteProfile.Text = "Delete profile";
-            this.btnDeleteProfile.Click += new System.EventHandler(this.btnDeleteProfile_Click);
+            btnDeleteProfile.Font=new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnDeleteProfile.Location=new System.Drawing.Point(656, 13);
+            btnDeleteProfile.Margin=new System.Windows.Forms.Padding(2);
+            btnDeleteProfile.Name="btnDeleteProfile";
+            btnDeleteProfile.Size=new System.Drawing.Size(123, 24);
+            btnDeleteProfile.TabIndex=104;
+            btnDeleteProfile.Text="Delete profile";
+            btnDeleteProfile.Click+=btnDeleteProfile_Click;
             // 
             // darkLabel1
             // 
-            this.darkLabel1.AutoSize = true;
-            this.darkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel1.Location = new System.Drawing.Point(130, 18);
-            this.darkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel1.Name = "darkLabel1";
-            this.darkLabel1.Size = new System.Drawing.Size(78, 15);
-            this.darkLabel1.TabIndex = 108;
-            this.darkLabel1.Text = "Select profile:";
+            darkLabel1.AutoSize=true;
+            darkLabel1.ForeColor=System.Drawing.Color.FromArgb(220, 220, 220);
+            darkLabel1.Location=new System.Drawing.Point(194, 18);
+            darkLabel1.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel1.Name="darkLabel1";
+            darkLabel1.Size=new System.Drawing.Size(78, 15);
+            darkLabel1.TabIndex=108;
+            darkLabel1.Text="Select profile:";
             // 
             // darkComboBoxProfile
             // 
-            this.darkComboBoxProfile.FormattingEnabled = true;
-            this.darkComboBoxProfile.Location = new System.Drawing.Point(212, 13);
-            this.darkComboBoxProfile.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkComboBoxProfile.Name = "darkComboBoxProfile";
-            this.darkComboBoxProfile.Size = new System.Drawing.Size(249, 24);
-            this.darkComboBoxProfile.TabIndex = 107;
-            this.darkComboBoxProfile.SelectedIndexChanged += new System.EventHandler(this.darkComboBoxProfile_SelectedIndexChanged);
+            darkComboBoxProfile.FormattingEnabled=true;
+            darkComboBoxProfile.Location=new System.Drawing.Point(276, 13);
+            darkComboBoxProfile.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkComboBoxProfile.Name="darkComboBoxProfile";
+            darkComboBoxProfile.Size=new System.Drawing.Size(249, 24);
+            darkComboBoxProfile.TabIndex=107;
+            darkComboBoxProfile.SelectedIndexChanged+=darkComboBoxProfile_SelectedIndexChanged;
             // 
             // darkSectionPanel1
             // 
-            this.darkSectionPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.darkSectionPanel1.Controls.Add(this.darkCheckBoxRedeemShopeeVoucher);
-            this.darkSectionPanel1.Controls.Add(this.darkCheckBoxClaimShopVoucher);
-            this.darkSectionPanel1.Controls.Add(this.darkCheckBoxRedeemCoin);
-            this.darkSectionPanel1.Location = new System.Drawing.Point(765, 50);
-            this.darkSectionPanel1.Name = "darkSectionPanel1";
-            this.darkSectionPanel1.SectionHeader = "Voucher & coin";
-            this.darkSectionPanel1.Size = new System.Drawing.Size(192, 151);
-            this.darkSectionPanel1.TabIndex = 114;
+            darkSectionPanel1.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
+            darkSectionPanel1.Controls.Add(darkCheckBoxRedeemShopeeVoucher);
+            darkSectionPanel1.Controls.Add(darkCheckBoxClaimShopVoucher);
+            darkSectionPanel1.Controls.Add(darkCheckBoxRedeemCoin);
+            darkSectionPanel1.Location=new System.Drawing.Point(765, 50);
+            darkSectionPanel1.Name="darkSectionPanel1";
+            darkSectionPanel1.SectionHeader="Voucher & coin";
+            darkSectionPanel1.Size=new System.Drawing.Size(192, 151);
+            darkSectionPanel1.TabIndex=114;
             // 
             // darkCheckBoxRedeemShopeeVoucher
             // 
-            this.darkCheckBoxRedeemShopeeVoucher.AutoSize = true;
-            this.darkCheckBoxRedeemShopeeVoucher.Enabled = false;
-            this.darkCheckBoxRedeemShopeeVoucher.Location = new System.Drawing.Point(11, 77);
-            this.darkCheckBoxRedeemShopeeVoucher.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkCheckBoxRedeemShopeeVoucher.Name = "darkCheckBoxRedeemShopeeVoucher";
-            this.darkCheckBoxRedeemShopeeVoucher.Size = new System.Drawing.Size(179, 19);
-            this.darkCheckBoxRedeemShopeeVoucher.TabIndex = 52;
-            this.darkCheckBoxRedeemShopeeVoucher.Text = "Redeem any Shopee voucher";
+            darkCheckBoxRedeemShopeeVoucher.AutoSize=true;
+            darkCheckBoxRedeemShopeeVoucher.Enabled=false;
+            darkCheckBoxRedeemShopeeVoucher.Location=new System.Drawing.Point(11, 77);
+            darkCheckBoxRedeemShopeeVoucher.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkCheckBoxRedeemShopeeVoucher.Name="darkCheckBoxRedeemShopeeVoucher";
+            darkCheckBoxRedeemShopeeVoucher.Size=new System.Drawing.Size(179, 19);
+            darkCheckBoxRedeemShopeeVoucher.TabIndex=52;
+            darkCheckBoxRedeemShopeeVoucher.Text="Redeem any Shopee voucher";
             // 
             // darkCheckBoxClaimShopVoucher
             // 
-            this.darkCheckBoxClaimShopVoucher.AutoSize = true;
-            this.darkCheckBoxClaimShopVoucher.Enabled = false;
-            this.darkCheckBoxClaimShopVoucher.Location = new System.Drawing.Point(11, 44);
-            this.darkCheckBoxClaimShopVoucher.Margin = new System.Windows.Forms.Padding(2);
-            this.darkCheckBoxClaimShopVoucher.Name = "darkCheckBoxClaimShopVoucher";
-            this.darkCheckBoxClaimShopVoucher.Size = new System.Drawing.Size(154, 19);
-            this.darkCheckBoxClaimShopVoucher.TabIndex = 50;
-            this.darkCheckBoxClaimShopVoucher.Text = "Claim any shop voucher";
+            darkCheckBoxClaimShopVoucher.AutoSize=true;
+            darkCheckBoxClaimShopVoucher.Enabled=false;
+            darkCheckBoxClaimShopVoucher.Location=new System.Drawing.Point(11, 44);
+            darkCheckBoxClaimShopVoucher.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxClaimShopVoucher.Name="darkCheckBoxClaimShopVoucher";
+            darkCheckBoxClaimShopVoucher.Size=new System.Drawing.Size(154, 19);
+            darkCheckBoxClaimShopVoucher.TabIndex=50;
+            darkCheckBoxClaimShopVoucher.Text="Claim any shop voucher";
             // 
             // darkCheckBoxRedeemCoin
             // 
-            this.darkCheckBoxRedeemCoin.AutoSize = true;
-            this.darkCheckBoxRedeemCoin.Enabled = false;
-            this.darkCheckBoxRedeemCoin.Location = new System.Drawing.Point(11, 110);
-            this.darkCheckBoxRedeemCoin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkCheckBoxRedeemCoin.Name = "darkCheckBoxRedeemCoin";
-            this.darkCheckBoxRedeemCoin.Size = new System.Drawing.Size(95, 19);
-            this.darkCheckBoxRedeemCoin.TabIndex = 42;
-            this.darkCheckBoxRedeemCoin.Text = "Redeem coin";
+            darkCheckBoxRedeemCoin.AutoSize=true;
+            darkCheckBoxRedeemCoin.Enabled=false;
+            darkCheckBoxRedeemCoin.Location=new System.Drawing.Point(11, 110);
+            darkCheckBoxRedeemCoin.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkCheckBoxRedeemCoin.Name="darkCheckBoxRedeemCoin";
+            darkCheckBoxRedeemCoin.Size=new System.Drawing.Size(95, 19);
+            darkCheckBoxRedeemCoin.TabIndex=42;
+            darkCheckBoxRedeemCoin.Text="Redeem coin";
             // 
             // darkSectionPanelPaymentDetails
             // 
-            this.darkSectionPanelPaymentDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.darkSectionPanelPaymentDetails.Controls.Add(this.tbPaymentMethod);
-            this.darkSectionPanelPaymentDetails.Controls.Add(this.tbBankType);
-            this.darkSectionPanelPaymentDetails.Controls.Add(this.darkLabel14);
-            this.darkSectionPanelPaymentDetails.Controls.Add(this.tbLast4Digit);
-            this.darkSectionPanelPaymentDetails.Controls.Add(this.darkLabel6);
-            this.darkSectionPanelPaymentDetails.Controls.Add(this.darkLabel8);
-            this.darkSectionPanelPaymentDetails.Controls.Add(this.darkTextBoxShopeePayPin);
-            this.darkSectionPanelPaymentDetails.Controls.Add(this.darkLabel7);
-            this.darkSectionPanelPaymentDetails.Location = new System.Drawing.Point(384, 308);
-            this.darkSectionPanelPaymentDetails.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkSectionPanelPaymentDetails.Name = "darkSectionPanelPaymentDetails";
-            this.darkSectionPanelPaymentDetails.SectionHeader = "Payment Details";
-            this.darkSectionPanelPaymentDetails.Size = new System.Drawing.Size(376, 195);
-            this.darkSectionPanelPaymentDetails.TabIndex = 113;
+            darkSectionPanelPaymentDetails.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
+            darkSectionPanelPaymentDetails.Controls.Add(tbPaymentMethod);
+            darkSectionPanelPaymentDetails.Controls.Add(tbBankType);
+            darkSectionPanelPaymentDetails.Controls.Add(darkLabel14);
+            darkSectionPanelPaymentDetails.Controls.Add(tbLast4Digit);
+            darkSectionPanelPaymentDetails.Controls.Add(darkLabel6);
+            darkSectionPanelPaymentDetails.Controls.Add(darkLabel8);
+            darkSectionPanelPaymentDetails.Controls.Add(darkTextBoxShopeePayPin);
+            darkSectionPanelPaymentDetails.Controls.Add(darkLabel7);
+            darkSectionPanelPaymentDetails.Location=new System.Drawing.Point(384, 308);
+            darkSectionPanelPaymentDetails.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkSectionPanelPaymentDetails.Name="darkSectionPanelPaymentDetails";
+            darkSectionPanelPaymentDetails.SectionHeader="Payment Details";
+            darkSectionPanelPaymentDetails.Size=new System.Drawing.Size(376, 195);
+            darkSectionPanelPaymentDetails.TabIndex=113;
             // 
             // tbPaymentMethod
             // 
-            this.tbPaymentMethod.Enabled = false;
-            this.tbPaymentMethod.Location = new System.Drawing.Point(145, 44);
-            this.tbPaymentMethod.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbPaymentMethod.MaxLength = 4;
-            this.tbPaymentMethod.Name = "tbPaymentMethod";
-            this.tbPaymentMethod.Size = new System.Drawing.Size(202, 23);
-            this.tbPaymentMethod.TabIndex = 53;
-            this.tbPaymentMethod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            tbPaymentMethod.Enabled=false;
+            tbPaymentMethod.Location=new System.Drawing.Point(145, 44);
+            tbPaymentMethod.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbPaymentMethod.MaxLength=4;
+            tbPaymentMethod.Name="tbPaymentMethod";
+            tbPaymentMethod.Size=new System.Drawing.Size(202, 23);
+            tbPaymentMethod.TabIndex=53;
+            tbPaymentMethod.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbBankType
             // 
-            this.tbBankType.Enabled = false;
-            this.tbBankType.Location = new System.Drawing.Point(145, 78);
-            this.tbBankType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbBankType.MaxLength = 4;
-            this.tbBankType.Name = "tbBankType";
-            this.tbBankType.Size = new System.Drawing.Size(202, 23);
-            this.tbBankType.TabIndex = 52;
-            this.tbBankType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            tbBankType.Enabled=false;
+            tbBankType.Location=new System.Drawing.Point(145, 78);
+            tbBankType.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbBankType.MaxLength=4;
+            tbBankType.Name="tbBankType";
+            tbBankType.Size=new System.Drawing.Size(202, 23);
+            tbBankType.TabIndex=52;
+            tbBankType.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // darkLabel14
             // 
-            this.darkLabel14.AutoSize = true;
-            this.darkLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel14.Location = new System.Drawing.Point(17, 114);
-            this.darkLabel14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel14.Name = "darkLabel14";
-            this.darkLabel14.Size = new System.Drawing.Size(175, 15);
-            this.darkLabel14.TabIndex = 51;
-            this.darkLabel14.Text = "Last 4 digit of debit/credit card :";
+            darkLabel14.AutoSize=true;
+            darkLabel14.ForeColor=System.Drawing.Color.FromArgb(220, 220, 220);
+            darkLabel14.Location=new System.Drawing.Point(17, 114);
+            darkLabel14.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel14.Name="darkLabel14";
+            darkLabel14.Size=new System.Drawing.Size(175, 15);
+            darkLabel14.TabIndex=51;
+            darkLabel14.Text="Last 4 digit of debit/credit card :";
             // 
             // tbLast4Digit
             // 
-            this.tbLast4Digit.Enabled = false;
-            this.tbLast4Digit.Location = new System.Drawing.Point(223, 109);
-            this.tbLast4Digit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbLast4Digit.MaxLength = 4;
-            this.tbLast4Digit.Name = "tbLast4Digit";
-            this.tbLast4Digit.Size = new System.Drawing.Size(124, 23);
-            this.tbLast4Digit.TabIndex = 50;
-            this.tbLast4Digit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            tbLast4Digit.Enabled=false;
+            tbLast4Digit.Location=new System.Drawing.Point(223, 109);
+            tbLast4Digit.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbLast4Digit.MaxLength=4;
+            tbLast4Digit.Name="tbLast4Digit";
+            tbLast4Digit.Size=new System.Drawing.Size(124, 23);
+            tbLast4Digit.TabIndex=50;
+            tbLast4Digit.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // darkLabel6
             // 
-            this.darkLabel6.AutoSize = true;
-            this.darkLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel6.Location = new System.Drawing.Point(17, 48);
-            this.darkLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel6.Name = "darkLabel6";
-            this.darkLabel6.Size = new System.Drawing.Size(105, 15);
-            this.darkLabel6.TabIndex = 14;
-            this.darkLabel6.Text = "Payment Method :";
+            darkLabel6.AutoSize=true;
+            darkLabel6.ForeColor=System.Drawing.Color.FromArgb(220, 220, 220);
+            darkLabel6.Location=new System.Drawing.Point(17, 48);
+            darkLabel6.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel6.Name="darkLabel6";
+            darkLabel6.Size=new System.Drawing.Size(105, 15);
+            darkLabel6.TabIndex=14;
+            darkLabel6.Text="Payment Method :";
             // 
             // darkLabel8
             // 
-            this.darkLabel8.AutoSize = true;
-            this.darkLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel8.Location = new System.Drawing.Point(17, 82);
-            this.darkLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel8.Name = "darkLabel8";
-            this.darkLabel8.Size = new System.Drawing.Size(65, 15);
-            this.darkLabel8.TabIndex = 31;
-            this.darkLabel8.Text = "Bank type :";
+            darkLabel8.AutoSize=true;
+            darkLabel8.ForeColor=System.Drawing.Color.FromArgb(220, 220, 220);
+            darkLabel8.Location=new System.Drawing.Point(17, 82);
+            darkLabel8.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel8.Name="darkLabel8";
+            darkLabel8.Size=new System.Drawing.Size(65, 15);
+            darkLabel8.TabIndex=31;
+            darkLabel8.Text="Bank type :";
             // 
             // darkTextBoxShopeePayPin
             // 
-            this.darkTextBoxShopeePayPin.Enabled = false;
-            this.darkTextBoxShopeePayPin.Location = new System.Drawing.Point(223, 141);
-            this.darkTextBoxShopeePayPin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkTextBoxShopeePayPin.MaxLength = 6;
-            this.darkTextBoxShopeePayPin.Name = "darkTextBoxShopeePayPin";
-            this.darkTextBoxShopeePayPin.Size = new System.Drawing.Size(124, 23);
-            this.darkTextBoxShopeePayPin.TabIndex = 13;
-            this.darkTextBoxShopeePayPin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            darkTextBoxShopeePayPin.Enabled=false;
+            darkTextBoxShopeePayPin.Location=new System.Drawing.Point(223, 141);
+            darkTextBoxShopeePayPin.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkTextBoxShopeePayPin.MaxLength=6;
+            darkTextBoxShopeePayPin.Name="darkTextBoxShopeePayPin";
+            darkTextBoxShopeePayPin.Size=new System.Drawing.Size(124, 23);
+            darkTextBoxShopeePayPin.TabIndex=13;
+            darkTextBoxShopeePayPin.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // darkLabel7
             // 
-            this.darkLabel7.AutoSize = true;
-            this.darkLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel7.Location = new System.Drawing.Point(17, 147);
-            this.darkLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel7.Name = "darkLabel7";
-            this.darkLabel7.Size = new System.Drawing.Size(93, 15);
-            this.darkLabel7.TabIndex = 15;
-            this.darkLabel7.Text = "ShopeePay PIN :";
+            darkLabel7.AutoSize=true;
+            darkLabel7.ForeColor=System.Drawing.Color.FromArgb(220, 220, 220);
+            darkLabel7.Location=new System.Drawing.Point(17, 147);
+            darkLabel7.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel7.Name="darkLabel7";
+            darkLabel7.Size=new System.Drawing.Size(93, 15);
+            darkLabel7.TabIndex=15;
+            darkLabel7.Text="ShopeePay PIN :";
             // 
             // darkSectionPanelBuyingMode
             // 
-            this.darkSectionPanelBuyingMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.darkSectionPanelBuyingMode.Controls.Add(this.tbBelowSpecificPriceCARTCHECKOUTPrice);
-            this.darkSectionPanelBuyingMode.Controls.Add(this.tbPriceSpecific);
-            this.darkSectionPanelBuyingMode.Controls.Add(this.radioButtonPriceSpecificCARTCHECKOUT);
-            this.darkSectionPanelBuyingMode.Controls.Add(this.radioButtonCheckOutCart);
-            this.darkSectionPanelBuyingMode.Controls.Add(this.radioButtonShockingSale);
-            this.darkSectionPanelBuyingMode.Controls.Add(this.radioButtonBuyNormal);
-            this.darkSectionPanelBuyingMode.Controls.Add(this.radioButtonPriceSpecific);
-            this.darkSectionPanelBuyingMode.Location = new System.Drawing.Point(384, 177);
-            this.darkSectionPanelBuyingMode.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkSectionPanelBuyingMode.Name = "darkSectionPanelBuyingMode";
-            this.darkSectionPanelBuyingMode.SectionHeader = "Buying Mode";
-            this.darkSectionPanelBuyingMode.Size = new System.Drawing.Size(376, 126);
-            this.darkSectionPanelBuyingMode.TabIndex = 112;
+            darkSectionPanelBuyingMode.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
+            darkSectionPanelBuyingMode.Controls.Add(tbBelowSpecificPriceCARTCHECKOUTPrice);
+            darkSectionPanelBuyingMode.Controls.Add(tbPriceSpecific);
+            darkSectionPanelBuyingMode.Controls.Add(radioButtonPriceSpecificCARTCHECKOUT);
+            darkSectionPanelBuyingMode.Controls.Add(radioButtonCheckOutCart);
+            darkSectionPanelBuyingMode.Controls.Add(radioButtonShockingSale);
+            darkSectionPanelBuyingMode.Controls.Add(radioButtonBuyNormal);
+            darkSectionPanelBuyingMode.Controls.Add(radioButtonPriceSpecific);
+            darkSectionPanelBuyingMode.Location=new System.Drawing.Point(384, 177);
+            darkSectionPanelBuyingMode.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkSectionPanelBuyingMode.Name="darkSectionPanelBuyingMode";
+            darkSectionPanelBuyingMode.SectionHeader="Buying Mode";
+            darkSectionPanelBuyingMode.Size=new System.Drawing.Size(376, 126);
+            darkSectionPanelBuyingMode.TabIndex=112;
             // 
             // tbBelowSpecificPriceCARTCHECKOUTPrice
             // 
-            this.tbBelowSpecificPriceCARTCHECKOUTPrice.Enabled = false;
-            this.tbBelowSpecificPriceCARTCHECKOUTPrice.Location = new System.Drawing.Point(280, 93);
-            this.tbBelowSpecificPriceCARTCHECKOUTPrice.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbBelowSpecificPriceCARTCHECKOUTPrice.Name = "tbBelowSpecificPriceCARTCHECKOUTPrice";
-            this.tbBelowSpecificPriceCARTCHECKOUTPrice.Size = new System.Drawing.Size(67, 23);
-            this.tbBelowSpecificPriceCARTCHECKOUTPrice.TabIndex = 54;
-            this.tbBelowSpecificPriceCARTCHECKOUTPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            tbBelowSpecificPriceCARTCHECKOUTPrice.Enabled=false;
+            tbBelowSpecificPriceCARTCHECKOUTPrice.Location=new System.Drawing.Point(280, 93);
+            tbBelowSpecificPriceCARTCHECKOUTPrice.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbBelowSpecificPriceCARTCHECKOUTPrice.Name="tbBelowSpecificPriceCARTCHECKOUTPrice";
+            tbBelowSpecificPriceCARTCHECKOUTPrice.Size=new System.Drawing.Size(67, 23);
+            tbBelowSpecificPriceCARTCHECKOUTPrice.TabIndex=54;
+            tbBelowSpecificPriceCARTCHECKOUTPrice.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbPriceSpecific
             // 
-            this.tbPriceSpecific.Enabled = false;
-            this.tbPriceSpecific.Location = new System.Drawing.Point(280, 63);
-            this.tbPriceSpecific.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbPriceSpecific.Name = "tbPriceSpecific";
-            this.tbPriceSpecific.Size = new System.Drawing.Size(67, 23);
-            this.tbPriceSpecific.TabIndex = 50;
-            this.tbPriceSpecific.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            tbPriceSpecific.Enabled=false;
+            tbPriceSpecific.Location=new System.Drawing.Point(280, 63);
+            tbPriceSpecific.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbPriceSpecific.Name="tbPriceSpecific";
+            tbPriceSpecific.Size=new System.Drawing.Size(67, 23);
+            tbPriceSpecific.TabIndex=50;
+            tbPriceSpecific.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // radioButtonPriceSpecificCARTCHECKOUT
             // 
-            this.radioButtonPriceSpecificCARTCHECKOUT.AutoSize = true;
-            this.radioButtonPriceSpecificCARTCHECKOUT.Enabled = false;
-            this.radioButtonPriceSpecificCARTCHECKOUT.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioButtonPriceSpecificCARTCHECKOUT.Location = new System.Drawing.Point(26, 96);
-            this.radioButtonPriceSpecificCARTCHECKOUT.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.radioButtonPriceSpecificCARTCHECKOUT.Name = "radioButtonPriceSpecificCARTCHECKOUT";
-            this.radioButtonPriceSpecificCARTCHECKOUT.Size = new System.Drawing.Size(220, 19);
-            this.radioButtonPriceSpecificCARTCHECKOUT.TabIndex = 53;
-            this.radioButtonPriceSpecificCARTCHECKOUT.Text = "Below specific price (Cart checkout) :";
+            radioButtonPriceSpecificCARTCHECKOUT.AutoSize=true;
+            radioButtonPriceSpecificCARTCHECKOUT.Enabled=false;
+            radioButtonPriceSpecificCARTCHECKOUT.ForeColor=System.Drawing.Color.Gainsboro;
+            radioButtonPriceSpecificCARTCHECKOUT.Location=new System.Drawing.Point(26, 96);
+            radioButtonPriceSpecificCARTCHECKOUT.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            radioButtonPriceSpecificCARTCHECKOUT.Name="radioButtonPriceSpecificCARTCHECKOUT";
+            radioButtonPriceSpecificCARTCHECKOUT.Size=new System.Drawing.Size(220, 19);
+            radioButtonPriceSpecificCARTCHECKOUT.TabIndex=53;
+            radioButtonPriceSpecificCARTCHECKOUT.Text="Below specific price (Cart checkout) :";
             // 
             // radioButtonCheckOutCart
             // 
-            this.radioButtonCheckOutCart.AutoSize = true;
-            this.radioButtonCheckOutCart.Enabled = false;
-            this.radioButtonCheckOutCart.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioButtonCheckOutCart.Location = new System.Drawing.Point(26, 66);
-            this.radioButtonCheckOutCart.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.radioButtonCheckOutCart.Name = "radioButtonCheckOutCart";
-            this.radioButtonCheckOutCart.Size = new System.Drawing.Size(99, 19);
-            this.radioButtonCheckOutCart.TabIndex = 52;
-            this.radioButtonCheckOutCart.Text = "Cart checkout";
+            radioButtonCheckOutCart.AutoSize=true;
+            radioButtonCheckOutCart.Enabled=false;
+            radioButtonCheckOutCart.ForeColor=System.Drawing.Color.Gainsboro;
+            radioButtonCheckOutCart.Location=new System.Drawing.Point(26, 66);
+            radioButtonCheckOutCart.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            radioButtonCheckOutCart.Name="radioButtonCheckOutCart";
+            radioButtonCheckOutCart.Size=new System.Drawing.Size(99, 19);
+            radioButtonCheckOutCart.TabIndex=52;
+            radioButtonCheckOutCart.Text="Cart checkout";
             // 
             // radioButtonShockingSale
             // 
-            this.radioButtonShockingSale.AutoSize = true;
-            this.radioButtonShockingSale.Enabled = false;
-            this.radioButtonShockingSale.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioButtonShockingSale.Location = new System.Drawing.Point(145, 36);
-            this.radioButtonShockingSale.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.radioButtonShockingSale.Name = "radioButtonShockingSale";
-            this.radioButtonShockingSale.Size = new System.Drawing.Size(163, 19);
-            this.radioButtonShockingSale.TabIndex = 51;
-            this.radioButtonShockingSale.Text = "Flash/Shocking sale mode";
+            radioButtonShockingSale.AutoSize=true;
+            radioButtonShockingSale.Enabled=false;
+            radioButtonShockingSale.ForeColor=System.Drawing.Color.Gainsboro;
+            radioButtonShockingSale.Location=new System.Drawing.Point(145, 36);
+            radioButtonShockingSale.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            radioButtonShockingSale.Name="radioButtonShockingSale";
+            radioButtonShockingSale.Size=new System.Drawing.Size(163, 19);
+            radioButtonShockingSale.TabIndex=51;
+            radioButtonShockingSale.Text="Flash/Shocking sale mode";
             // 
             // radioButtonBuyNormal
             // 
-            this.radioButtonBuyNormal.AutoSize = true;
-            this.radioButtonBuyNormal.Checked = true;
-            this.radioButtonBuyNormal.Enabled = false;
-            this.radioButtonBuyNormal.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioButtonBuyNormal.Location = new System.Drawing.Point(26, 36);
-            this.radioButtonBuyNormal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.radioButtonBuyNormal.Name = "radioButtonBuyNormal";
-            this.radioButtonBuyNormal.Size = new System.Drawing.Size(99, 19);
-            this.radioButtonBuyNormal.TabIndex = 50;
-            this.radioButtonBuyNormal.TabStop = true;
-            this.radioButtonBuyNormal.Text = "Normal mode";
+            radioButtonBuyNormal.AutoSize=true;
+            radioButtonBuyNormal.Checked=true;
+            radioButtonBuyNormal.Enabled=false;
+            radioButtonBuyNormal.ForeColor=System.Drawing.Color.Gainsboro;
+            radioButtonBuyNormal.Location=new System.Drawing.Point(26, 36);
+            radioButtonBuyNormal.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            radioButtonBuyNormal.Name="radioButtonBuyNormal";
+            radioButtonBuyNormal.Size=new System.Drawing.Size(99, 19);
+            radioButtonBuyNormal.TabIndex=50;
+            radioButtonBuyNormal.TabStop=true;
+            radioButtonBuyNormal.Text="Normal mode";
             // 
             // radioButtonPriceSpecific
             // 
-            this.radioButtonPriceSpecific.AutoSize = true;
-            this.radioButtonPriceSpecific.Enabled = false;
-            this.radioButtonPriceSpecific.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioButtonPriceSpecific.Location = new System.Drawing.Point(146, 66);
-            this.radioButtonPriceSpecific.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.radioButtonPriceSpecific.Name = "radioButtonPriceSpecific";
-            this.radioButtonPriceSpecific.Size = new System.Drawing.Size(135, 19);
-            this.radioButtonPriceSpecific.TabIndex = 15;
-            this.radioButtonPriceSpecific.Text = "Below specific price :";
+            radioButtonPriceSpecific.AutoSize=true;
+            radioButtonPriceSpecific.Enabled=false;
+            radioButtonPriceSpecific.ForeColor=System.Drawing.Color.Gainsboro;
+            radioButtonPriceSpecific.Location=new System.Drawing.Point(146, 66);
+            radioButtonPriceSpecific.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            radioButtonPriceSpecific.Name="radioButtonPriceSpecific";
+            radioButtonPriceSpecific.Size=new System.Drawing.Size(135, 19);
+            radioButtonPriceSpecific.TabIndex=15;
+            radioButtonPriceSpecific.Text="Below specific price :";
             // 
             // darkSectionPanelBotSettings
             // 
-            this.darkSectionPanelBotSettings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.darkSectionPanelBotSettings.Controls.Add(this.tbTimeOut);
-            this.darkSectionPanelBotSettings.Controls.Add(this.tbRefreshSecond);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkCheckBoxTestMode);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkCheckBoxLogging);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkCheckBoxRefresh);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkCheckBoxHeadless);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkLabel5);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkLabel4);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkCheckBoxPlaySound);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkLabel13);
-            this.darkSectionPanelBotSettings.Controls.Add(this.darkCheckBoxDisableImageExtension);
-            this.darkSectionPanelBotSettings.Location = new System.Drawing.Point(14, 50);
-            this.darkSectionPanelBotSettings.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkSectionPanelBotSettings.Name = "darkSectionPanelBotSettings";
-            this.darkSectionPanelBotSettings.SectionHeader = "Bot Settings";
-            this.darkSectionPanelBotSettings.Size = new System.Drawing.Size(364, 253);
-            this.darkSectionPanelBotSettings.TabIndex = 111;
+            darkSectionPanelBotSettings.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
+            darkSectionPanelBotSettings.Controls.Add(tbTimeOut);
+            darkSectionPanelBotSettings.Controls.Add(tbRefreshSecond);
+            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxTestMode);
+            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxLogging);
+            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxRefresh);
+            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxHeadless);
+            darkSectionPanelBotSettings.Controls.Add(darkLabel5);
+            darkSectionPanelBotSettings.Controls.Add(darkLabel4);
+            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxPlaySound);
+            darkSectionPanelBotSettings.Controls.Add(darkLabel13);
+            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxDisableImageExtension);
+            darkSectionPanelBotSettings.Location=new System.Drawing.Point(14, 50);
+            darkSectionPanelBotSettings.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkSectionPanelBotSettings.Name="darkSectionPanelBotSettings";
+            darkSectionPanelBotSettings.SectionHeader="Bot Settings";
+            darkSectionPanelBotSettings.Size=new System.Drawing.Size(364, 253);
+            darkSectionPanelBotSettings.TabIndex=111;
             // 
             // tbTimeOut
             // 
-            this.tbTimeOut.Enabled = false;
-            this.tbTimeOut.Location = new System.Drawing.Point(133, 219);
-            this.tbTimeOut.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbTimeOut.Name = "tbTimeOut";
-            this.tbTimeOut.Size = new System.Drawing.Size(31, 23);
-            this.tbTimeOut.TabIndex = 52;
-            this.tbTimeOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            tbTimeOut.Enabled=false;
+            tbTimeOut.Location=new System.Drawing.Point(133, 219);
+            tbTimeOut.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbTimeOut.Name="tbTimeOut";
+            tbTimeOut.Size=new System.Drawing.Size(31, 23);
+            tbTimeOut.TabIndex=52;
+            tbTimeOut.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbRefreshSecond
             // 
-            this.tbRefreshSecond.Enabled = false;
-            this.tbRefreshSecond.Location = new System.Drawing.Point(257, 128);
-            this.tbRefreshSecond.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbRefreshSecond.Name = "tbRefreshSecond";
-            this.tbRefreshSecond.Size = new System.Drawing.Size(31, 23);
-            this.tbRefreshSecond.TabIndex = 51;
-            this.tbRefreshSecond.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            tbRefreshSecond.Enabled=false;
+            tbRefreshSecond.Location=new System.Drawing.Point(257, 128);
+            tbRefreshSecond.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbRefreshSecond.Name="tbRefreshSecond";
+            tbRefreshSecond.Size=new System.Drawing.Size(31, 23);
+            tbRefreshSecond.TabIndex=51;
+            tbRefreshSecond.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // darkCheckBoxTestMode
             // 
-            this.darkCheckBoxTestMode.AutoSize = true;
-            this.darkCheckBoxTestMode.Enabled = false;
-            this.darkCheckBoxTestMode.Location = new System.Drawing.Point(24, 192);
-            this.darkCheckBoxTestMode.Margin = new System.Windows.Forms.Padding(2);
-            this.darkCheckBoxTestMode.Name = "darkCheckBoxTestMode";
-            this.darkCheckBoxTestMode.Size = new System.Drawing.Size(80, 19);
-            this.darkCheckBoxTestMode.TabIndex = 49;
-            this.darkCheckBoxTestMode.Text = "Test Mode";
+            darkCheckBoxTestMode.AutoSize=true;
+            darkCheckBoxTestMode.Enabled=false;
+            darkCheckBoxTestMode.Location=new System.Drawing.Point(24, 192);
+            darkCheckBoxTestMode.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxTestMode.Name="darkCheckBoxTestMode";
+            darkCheckBoxTestMode.Size=new System.Drawing.Size(80, 19);
+            darkCheckBoxTestMode.TabIndex=49;
+            darkCheckBoxTestMode.Text="Test Mode";
             // 
             // darkCheckBoxLogging
             // 
-            this.darkCheckBoxLogging.AutoSize = true;
-            this.darkCheckBoxLogging.Enabled = false;
-            this.darkCheckBoxLogging.Location = new System.Drawing.Point(24, 161);
-            this.darkCheckBoxLogging.Margin = new System.Windows.Forms.Padding(2);
-            this.darkCheckBoxLogging.Name = "darkCheckBoxLogging";
-            this.darkCheckBoxLogging.Size = new System.Drawing.Size(108, 19);
-            this.darkCheckBoxLogging.TabIndex = 50;
-            this.darkCheckBoxLogging.Text = "Disable logging";
+            darkCheckBoxLogging.AutoSize=true;
+            darkCheckBoxLogging.Enabled=false;
+            darkCheckBoxLogging.Location=new System.Drawing.Point(24, 161);
+            darkCheckBoxLogging.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxLogging.Name="darkCheckBoxLogging";
+            darkCheckBoxLogging.Size=new System.Drawing.Size(108, 19);
+            darkCheckBoxLogging.TabIndex=50;
+            darkCheckBoxLogging.Text="Disable logging";
             // 
             // darkCheckBoxRefresh
             // 
-            this.darkCheckBoxRefresh.AutoSize = true;
-            this.darkCheckBoxRefresh.Enabled = false;
-            this.darkCheckBoxRefresh.Location = new System.Drawing.Point(24, 130);
-            this.darkCheckBoxRefresh.Margin = new System.Windows.Forms.Padding(2);
-            this.darkCheckBoxRefresh.Name = "darkCheckBoxRefresh";
-            this.darkCheckBoxRefresh.Size = new System.Drawing.Size(142, 19);
-            this.darkCheckBoxRefresh.TabIndex = 48;
-            this.darkCheckBoxRefresh.Text = "Auto refresh webpage";
+            darkCheckBoxRefresh.AutoSize=true;
+            darkCheckBoxRefresh.Enabled=false;
+            darkCheckBoxRefresh.Location=new System.Drawing.Point(24, 130);
+            darkCheckBoxRefresh.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxRefresh.Name="darkCheckBoxRefresh";
+            darkCheckBoxRefresh.Size=new System.Drawing.Size(142, 19);
+            darkCheckBoxRefresh.TabIndex=48;
+            darkCheckBoxRefresh.Text="Auto refresh webpage";
             // 
             // darkCheckBoxHeadless
             // 
-            this.darkCheckBoxHeadless.AutoSize = true;
-            this.darkCheckBoxHeadless.Enabled = false;
-            this.darkCheckBoxHeadless.Location = new System.Drawing.Point(24, 68);
-            this.darkCheckBoxHeadless.Margin = new System.Windows.Forms.Padding(2);
-            this.darkCheckBoxHeadless.Name = "darkCheckBoxHeadless";
-            this.darkCheckBoxHeadless.Size = new System.Drawing.Size(142, 19);
-            this.darkCheckBoxHeadless.TabIndex = 47;
-            this.darkCheckBoxHeadless.Text = "Hide Chrome Browser";
+            darkCheckBoxHeadless.AutoSize=true;
+            darkCheckBoxHeadless.Enabled=false;
+            darkCheckBoxHeadless.Location=new System.Drawing.Point(24, 68);
+            darkCheckBoxHeadless.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxHeadless.Name="darkCheckBoxHeadless";
+            darkCheckBoxHeadless.Size=new System.Drawing.Size(142, 19);
+            darkCheckBoxHeadless.TabIndex=47;
+            darkCheckBoxHeadless.Text="Hide Chrome Browser";
             // 
             // darkLabel5
             // 
-            this.darkLabel5.AutoSize = true;
-            this.darkLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel5.Location = new System.Drawing.Point(292, 132);
-            this.darkLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel5.Name = "darkLabel5";
-            this.darkLabel5.Size = new System.Drawing.Size(50, 15);
-            this.darkLabel5.TabIndex = 11;
-            this.darkLabel5.Text = "seconds";
+            darkLabel5.AutoSize=true;
+            darkLabel5.ForeColor=System.Drawing.Color.FromArgb(220, 220, 220);
+            darkLabel5.Location=new System.Drawing.Point(292, 132);
+            darkLabel5.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel5.Name="darkLabel5";
+            darkLabel5.Size=new System.Drawing.Size(50, 15);
+            darkLabel5.TabIndex=11;
+            darkLabel5.Text="seconds";
             // 
             // darkLabel4
             // 
-            this.darkLabel4.AutoSize = true;
-            this.darkLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel4.Location = new System.Drawing.Point(176, 132);
-            this.darkLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel4.Name = "darkLabel4";
-            this.darkLabel4.Size = new System.Drawing.Size(77, 15);
-            this.darkLabel4.TabIndex = 10;
-            this.darkLabel4.Text = "Refresh every";
+            darkLabel4.AutoSize=true;
+            darkLabel4.ForeColor=System.Drawing.Color.FromArgb(220, 220, 220);
+            darkLabel4.Location=new System.Drawing.Point(176, 132);
+            darkLabel4.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel4.Name="darkLabel4";
+            darkLabel4.Size=new System.Drawing.Size(77, 15);
+            darkLabel4.TabIndex=10;
+            darkLabel4.Text="Refresh every";
             // 
             // darkCheckBoxPlaySound
             // 
-            this.darkCheckBoxPlaySound.AutoSize = true;
-            this.darkCheckBoxPlaySound.Enabled = false;
-            this.darkCheckBoxPlaySound.Location = new System.Drawing.Point(24, 37);
-            this.darkCheckBoxPlaySound.Margin = new System.Windows.Forms.Padding(2);
-            this.darkCheckBoxPlaySound.Name = "darkCheckBoxPlaySound";
-            this.darkCheckBoxPlaySound.Size = new System.Drawing.Size(210, 19);
-            this.darkCheckBoxPlaySound.TabIndex = 28;
-            this.darkCheckBoxPlaySound.Text = "Play sound on successful checkout";
+            darkCheckBoxPlaySound.AutoSize=true;
+            darkCheckBoxPlaySound.Enabled=false;
+            darkCheckBoxPlaySound.Location=new System.Drawing.Point(24, 37);
+            darkCheckBoxPlaySound.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxPlaySound.Name="darkCheckBoxPlaySound";
+            darkCheckBoxPlaySound.Size=new System.Drawing.Size(210, 19);
+            darkCheckBoxPlaySound.TabIndex=28;
+            darkCheckBoxPlaySound.Text="Play sound on successful checkout";
             // 
             // darkLabel13
             // 
-            this.darkLabel13.AutoSize = true;
-            this.darkLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel13.Location = new System.Drawing.Point(20, 223);
-            this.darkLabel13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel13.Name = "darkLabel13";
-            this.darkLabel13.Size = new System.Drawing.Size(109, 15);
-            this.darkLabel13.TabIndex = 45;
-            this.darkLabel13.Text = "Time out (second) :";
+            darkLabel13.AutoSize=true;
+            darkLabel13.ForeColor=System.Drawing.Color.FromArgb(220, 220, 220);
+            darkLabel13.Location=new System.Drawing.Point(20, 223);
+            darkLabel13.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel13.Name="darkLabel13";
+            darkLabel13.Size=new System.Drawing.Size(109, 15);
+            darkLabel13.TabIndex=45;
+            darkLabel13.Text="Time out (second) :";
             // 
             // darkCheckBoxDisableImageExtension
             // 
-            this.darkCheckBoxDisableImageExtension.AutoSize = true;
-            this.darkCheckBoxDisableImageExtension.Enabled = false;
-            this.darkCheckBoxDisableImageExtension.Location = new System.Drawing.Point(24, 99);
-            this.darkCheckBoxDisableImageExtension.Margin = new System.Windows.Forms.Padding(2);
-            this.darkCheckBoxDisableImageExtension.Name = "darkCheckBoxDisableImageExtension";
-            this.darkCheckBoxDisableImageExtension.Size = new System.Drawing.Size(200, 19);
-            this.darkCheckBoxDisableImageExtension.TabIndex = 25;
-            this.darkCheckBoxDisableImageExtension.Text = "Disable website Image & Extension";
+            darkCheckBoxDisableImageExtension.AutoSize=true;
+            darkCheckBoxDisableImageExtension.Enabled=false;
+            darkCheckBoxDisableImageExtension.Location=new System.Drawing.Point(24, 99);
+            darkCheckBoxDisableImageExtension.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxDisableImageExtension.Name="darkCheckBoxDisableImageExtension";
+            darkCheckBoxDisableImageExtension.Size=new System.Drawing.Size(200, 19);
+            darkCheckBoxDisableImageExtension.TabIndex=25;
+            darkCheckBoxDisableImageExtension.Text="Disable website Image & Extension";
             // 
             // darkSectionPanelProductDetails
             // 
-            this.darkSectionPanelProductDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.darkSectionPanelProductDetails.Controls.Add(this.cbRandom);
-            this.darkSectionPanelProductDetails.Controls.Add(this.tbQuality);
-            this.darkSectionPanelProductDetails.Controls.Add(this.darkLabel11);
-            this.darkSectionPanelProductDetails.Controls.Add(this.darkTextBoxProductLink);
-            this.darkSectionPanelProductDetails.Controls.Add(this.darkLabel10);
-            this.darkSectionPanelProductDetails.Controls.Add(this.darkTextBoxVariationString);
-            this.darkSectionPanelProductDetails.Controls.Add(this.darkLabel9);
-            this.darkSectionPanelProductDetails.Location = new System.Drawing.Point(14, 308);
-            this.darkSectionPanelProductDetails.Margin = new System.Windows.Forms.Padding(2);
-            this.darkSectionPanelProductDetails.Name = "darkSectionPanelProductDetails";
-            this.darkSectionPanelProductDetails.SectionHeader = "Product Details";
-            this.darkSectionPanelProductDetails.Size = new System.Drawing.Size(364, 195);
-            this.darkSectionPanelProductDetails.TabIndex = 110;
-            // 
-            // tbQuality
-            // 
-            this.tbQuality.Enabled = false;
-            this.tbQuality.Location = new System.Drawing.Point(98, 160);
-            this.tbQuality.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbQuality.Name = "tbQuality";
-            this.tbQuality.Size = new System.Drawing.Size(68, 23);
-            this.tbQuality.TabIndex = 54;
-            this.tbQuality.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // darkLabel11
-            // 
-            this.darkLabel11.AutoSize = true;
-            this.darkLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel11.Location = new System.Drawing.Point(17, 37);
-            this.darkLabel11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel11.Name = "darkLabel11";
-            this.darkLabel11.Size = new System.Drawing.Size(80, 15);
-            this.darkLabel11.TabIndex = 24;
-            this.darkLabel11.Text = "Product Link :";
-            // 
-            // darkTextBoxProductLink
-            // 
-            this.darkTextBoxProductLink.Enabled = false;
-            this.darkTextBoxProductLink.Location = new System.Drawing.Point(98, 37);
-            this.darkTextBoxProductLink.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkTextBoxProductLink.Multiline = true;
-            this.darkTextBoxProductLink.Name = "darkTextBoxProductLink";
-            this.darkTextBoxProductLink.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.darkTextBoxProductLink.Size = new System.Drawing.Size(244, 84);
-            this.darkTextBoxProductLink.TabIndex = 23;
-            // 
-            // darkLabel10
-            // 
-            this.darkLabel10.AutoSize = true;
-            this.darkLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel10.Location = new System.Drawing.Point(17, 164);
-            this.darkLabel10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel10.Name = "darkLabel10";
-            this.darkLabel10.Size = new System.Drawing.Size(59, 15);
-            this.darkLabel10.TabIndex = 21;
-            this.darkLabel10.Text = "Quantity :";
-            // 
-            // darkTextBoxVariationString
-            // 
-            this.darkTextBoxVariationString.Enabled = false;
-            this.darkTextBoxVariationString.Location = new System.Drawing.Point(98, 129);
-            this.darkTextBoxVariationString.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkTextBoxVariationString.Name = "darkTextBoxVariationString";
-            this.darkTextBoxVariationString.Size = new System.Drawing.Size(244, 23);
-            this.darkTextBoxVariationString.TabIndex = 18;
-            this.darkTextBoxVariationString.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // darkLabel9
-            // 
-            this.darkLabel9.AutoSize = true;
-            this.darkLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel9.Location = new System.Drawing.Point(17, 134);
-            this.darkLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel9.Name = "darkLabel9";
-            this.darkLabel9.Size = new System.Drawing.Size(59, 15);
-            this.darkLabel9.TabIndex = 19;
-            this.darkLabel9.Text = "Variation :";
-            // 
-            // darkSectionPanelTimerMode
-            // 
-            this.darkSectionPanelTimerMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.darkSectionPanelTimerMode.Controls.Add(this.tbCountdownSeconds);
-            this.darkSectionPanelTimerMode.Controls.Add(this.tbCountdownMinutes);
-            this.darkSectionPanelTimerMode.Controls.Add(this.tbCountdownHour);
-            this.darkSectionPanelTimerMode.Controls.Add(this.darkCheckBoxTomorrow);
-            this.darkSectionPanelTimerMode.Controls.Add(this.darkCheckBoxScheduleBot);
-            this.darkSectionPanelTimerMode.Controls.Add(this.darkLabel3);
-            this.darkSectionPanelTimerMode.Controls.Add(this.darkLabel2);
-            this.darkSectionPanelTimerMode.Controls.Add(this.darkLabel12);
-            this.darkSectionPanelTimerMode.Location = new System.Drawing.Point(384, 50);
-            this.darkSectionPanelTimerMode.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkSectionPanelTimerMode.Name = "darkSectionPanelTimerMode";
-            this.darkSectionPanelTimerMode.SectionHeader = "Schedule Bot";
-            this.darkSectionPanelTimerMode.Size = new System.Drawing.Size(376, 121);
-            this.darkSectionPanelTimerMode.TabIndex = 109;
-            // 
-            // tbCountdownSeconds
-            // 
-            this.tbCountdownSeconds.Enabled = false;
-            this.tbCountdownSeconds.Location = new System.Drawing.Point(264, 61);
-            this.tbCountdownSeconds.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbCountdownSeconds.Name = "tbCountdownSeconds";
-            this.tbCountdownSeconds.Size = new System.Drawing.Size(31, 23);
-            this.tbCountdownSeconds.TabIndex = 55;
-            this.tbCountdownSeconds.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbCountdownMinutes
-            // 
-            this.tbCountdownMinutes.Enabled = false;
-            this.tbCountdownMinutes.Location = new System.Drawing.Point(172, 61);
-            this.tbCountdownMinutes.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbCountdownMinutes.Name = "tbCountdownMinutes";
-            this.tbCountdownMinutes.Size = new System.Drawing.Size(31, 23);
-            this.tbCountdownMinutes.TabIndex = 54;
-            this.tbCountdownMinutes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbCountdownHour
-            // 
-            this.tbCountdownHour.Enabled = false;
-            this.tbCountdownHour.Location = new System.Drawing.Point(75, 61);
-            this.tbCountdownHour.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbCountdownHour.Name = "tbCountdownHour";
-            this.tbCountdownHour.Size = new System.Drawing.Size(37, 23);
-            this.tbCountdownHour.TabIndex = 53;
-            this.tbCountdownHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // darkCheckBoxTomorrow
-            // 
-            this.darkCheckBoxTomorrow.AutoSize = true;
-            this.darkCheckBoxTomorrow.Enabled = false;
-            this.darkCheckBoxTomorrow.Location = new System.Drawing.Point(38, 89);
-            this.darkCheckBoxTomorrow.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkCheckBoxTomorrow.Name = "darkCheckBoxTomorrow";
-            this.darkCheckBoxTomorrow.Size = new System.Drawing.Size(80, 19);
-            this.darkCheckBoxTomorrow.TabIndex = 16;
-            this.darkCheckBoxTomorrow.Text = "Tomorrow";
-            // 
-            // darkCheckBoxScheduleBot
-            // 
-            this.darkCheckBoxScheduleBot.AutoSize = true;
-            this.darkCheckBoxScheduleBot.Enabled = false;
-            this.darkCheckBoxScheduleBot.Location = new System.Drawing.Point(38, 38);
-            this.darkCheckBoxScheduleBot.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.darkCheckBoxScheduleBot.Name = "darkCheckBoxScheduleBot";
-            this.darkCheckBoxScheduleBot.Size = new System.Drawing.Size(310, 19);
-            this.darkCheckBoxScheduleBot.TabIndex = 15;
-            this.darkCheckBoxScheduleBot.Text = "Schedule bot to run at specific time (24-hours format)";
-            // 
-            // darkLabel3
-            // 
-            this.darkLabel3.AutoSize = true;
-            this.darkLabel3.Enabled = false;
-            this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel3.Location = new System.Drawing.Point(208, 65);
-            this.darkLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel3.Name = "darkLabel3";
-            this.darkLabel3.Size = new System.Drawing.Size(51, 15);
-            this.darkLabel3.TabIndex = 14;
-            this.darkLabel3.Text = "Seconds";
-            // 
-            // darkLabel2
-            // 
-            this.darkLabel2.AutoSize = true;
-            this.darkLabel2.Enabled = false;
-            this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel2.Location = new System.Drawing.Point(117, 65);
-            this.darkLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel2.Name = "darkLabel2";
-            this.darkLabel2.Size = new System.Drawing.Size(50, 15);
-            this.darkLabel2.TabIndex = 5;
-            this.darkLabel2.Text = "Minutes";
-            // 
-            // darkLabel12
-            // 
-            this.darkLabel12.AutoSize = true;
-            this.darkLabel12.Enabled = false;
-            this.darkLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel12.Location = new System.Drawing.Point(36, 65);
-            this.darkLabel12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel12.Name = "darkLabel12";
-            this.darkLabel12.Size = new System.Drawing.Size(34, 15);
-            this.darkLabel12.TabIndex = 4;
-            this.darkLabel12.Text = "Hour";
-            // 
-            // darkButton1
-            // 
-            this.darkButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.darkButton1.Location = new System.Drawing.Point(719, 13);
-            this.darkButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.darkButton1.Name = "darkButton1";
-            this.darkButton1.Size = new System.Drawing.Size(123, 24);
-            this.darkButton1.TabIndex = 115;
-            this.darkButton1.Text = "Save profile";
+            darkSectionPanelProductDetails.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
+            darkSectionPanelProductDetails.Controls.Add(cbVariantPreSelected);
+            darkSectionPanelProductDetails.Controls.Add(cbRandom);
+            darkSectionPanelProductDetails.Controls.Add(tbQuality);
+            darkSectionPanelProductDetails.Controls.Add(darkLabel11);
+            darkSectionPanelProductDetails.Controls.Add(darkTextBoxProductLink);
+            darkSectionPanelProductDetails.Controls.Add(darkLabel10);
+            darkSectionPanelProductDetails.Controls.Add(darkTextBoxVariationString);
+            darkSectionPanelProductDetails.Controls.Add(darkLabel9);
+            darkSectionPanelProductDetails.Location=new System.Drawing.Point(14, 308);
+            darkSectionPanelProductDetails.Margin=new System.Windows.Forms.Padding(2);
+            darkSectionPanelProductDetails.Name="darkSectionPanelProductDetails";
+            darkSectionPanelProductDetails.SectionHeader="Product Details";
+            darkSectionPanelProductDetails.Size=new System.Drawing.Size(364, 195);
+            darkSectionPanelProductDetails.TabIndex=110;
             // 
             // cbRandom
             // 
-            this.cbRandom.AutoSize = true;
-            this.cbRandom.Enabled = false;
-            this.cbRandom.Location = new System.Drawing.Point(271, 162);
-            this.cbRandom.Margin = new System.Windows.Forms.Padding(2);
-            this.cbRandom.Name = "cbRandom";
-            this.cbRandom.Size = new System.Drawing.Size(71, 19);
-            this.cbRandom.TabIndex = 55;
-            this.cbRandom.Text = "Random";
+            cbRandom.AutoSize=true;
+            cbRandom.Enabled=false;
+            cbRandom.Location=new System.Drawing.Point(98, 163);
+            cbRandom.Margin=new System.Windows.Forms.Padding(2);
+            cbRandom.Name="cbRandom";
+            cbRandom.Size=new System.Drawing.Size(110, 19);
+            cbRandom.TabIndex=55;
+            cbRandom.Text="Random variant";
+            // 
+            // tbQuality
+            // 
+            tbQuality.Enabled=false;
+            tbQuality.Location=new System.Drawing.Point(98, 103);
+            tbQuality.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbQuality.Name="tbQuality";
+            tbQuality.Size=new System.Drawing.Size(68, 23);
+            tbQuality.TabIndex=54;
+            tbQuality.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // darkLabel11
+            // 
+            darkLabel11.AutoSize=true;
+            darkLabel11.ForeColor=System.Drawing.Color.FromArgb(220, 220, 220);
+            darkLabel11.Location=new System.Drawing.Point(17, 37);
+            darkLabel11.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel11.Name="darkLabel11";
+            darkLabel11.Size=new System.Drawing.Size(80, 15);
+            darkLabel11.TabIndex=24;
+            darkLabel11.Text="Product Link :";
+            // 
+            // darkTextBoxProductLink
+            // 
+            darkTextBoxProductLink.Enabled=false;
+            darkTextBoxProductLink.Location=new System.Drawing.Point(98, 37);
+            darkTextBoxProductLink.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkTextBoxProductLink.Multiline=true;
+            darkTextBoxProductLink.Name="darkTextBoxProductLink";
+            darkTextBoxProductLink.ScrollBars=System.Windows.Forms.ScrollBars.Vertical;
+            darkTextBoxProductLink.Size=new System.Drawing.Size(244, 60);
+            darkTextBoxProductLink.TabIndex=23;
+            // 
+            // darkLabel10
+            // 
+            darkLabel10.AutoSize=true;
+            darkLabel10.ForeColor=System.Drawing.Color.FromArgb(220, 220, 220);
+            darkLabel10.Location=new System.Drawing.Point(17, 107);
+            darkLabel10.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel10.Name="darkLabel10";
+            darkLabel10.Size=new System.Drawing.Size(59, 15);
+            darkLabel10.TabIndex=21;
+            darkLabel10.Text="Quantity :";
+            // 
+            // darkTextBoxVariationString
+            // 
+            darkTextBoxVariationString.Enabled=false;
+            darkTextBoxVariationString.Location=new System.Drawing.Point(98, 132);
+            darkTextBoxVariationString.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkTextBoxVariationString.Name="darkTextBoxVariationString";
+            darkTextBoxVariationString.Size=new System.Drawing.Size(244, 23);
+            darkTextBoxVariationString.TabIndex=18;
+            darkTextBoxVariationString.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // darkLabel9
+            // 
+            darkLabel9.AutoSize=true;
+            darkLabel9.ForeColor=System.Drawing.Color.FromArgb(220, 220, 220);
+            darkLabel9.Location=new System.Drawing.Point(17, 137);
+            darkLabel9.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel9.Name="darkLabel9";
+            darkLabel9.Size=new System.Drawing.Size(59, 15);
+            darkLabel9.TabIndex=19;
+            darkLabel9.Text="Variation :";
+            // 
+            // darkSectionPanelTimerMode
+            // 
+            darkSectionPanelTimerMode.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
+            darkSectionPanelTimerMode.Controls.Add(tbCountdownSeconds);
+            darkSectionPanelTimerMode.Controls.Add(tbCountdownMinutes);
+            darkSectionPanelTimerMode.Controls.Add(tbCountdownHour);
+            darkSectionPanelTimerMode.Controls.Add(darkCheckBoxTomorrow);
+            darkSectionPanelTimerMode.Controls.Add(darkCheckBoxScheduleBot);
+            darkSectionPanelTimerMode.Controls.Add(darkLabel3);
+            darkSectionPanelTimerMode.Controls.Add(darkLabel2);
+            darkSectionPanelTimerMode.Controls.Add(darkLabel12);
+            darkSectionPanelTimerMode.Location=new System.Drawing.Point(384, 50);
+            darkSectionPanelTimerMode.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkSectionPanelTimerMode.Name="darkSectionPanelTimerMode";
+            darkSectionPanelTimerMode.SectionHeader="Schedule Bot";
+            darkSectionPanelTimerMode.Size=new System.Drawing.Size(376, 121);
+            darkSectionPanelTimerMode.TabIndex=109;
+            // 
+            // tbCountdownSeconds
+            // 
+            tbCountdownSeconds.Enabled=false;
+            tbCountdownSeconds.Location=new System.Drawing.Point(264, 61);
+            tbCountdownSeconds.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbCountdownSeconds.Name="tbCountdownSeconds";
+            tbCountdownSeconds.Size=new System.Drawing.Size(31, 23);
+            tbCountdownSeconds.TabIndex=55;
+            tbCountdownSeconds.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbCountdownMinutes
+            // 
+            tbCountdownMinutes.Enabled=false;
+            tbCountdownMinutes.Location=new System.Drawing.Point(172, 61);
+            tbCountdownMinutes.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbCountdownMinutes.Name="tbCountdownMinutes";
+            tbCountdownMinutes.Size=new System.Drawing.Size(31, 23);
+            tbCountdownMinutes.TabIndex=54;
+            tbCountdownMinutes.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbCountdownHour
+            // 
+            tbCountdownHour.Enabled=false;
+            tbCountdownHour.Location=new System.Drawing.Point(75, 61);
+            tbCountdownHour.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbCountdownHour.Name="tbCountdownHour";
+            tbCountdownHour.Size=new System.Drawing.Size(37, 23);
+            tbCountdownHour.TabIndex=53;
+            tbCountdownHour.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // darkCheckBoxTomorrow
+            // 
+            darkCheckBoxTomorrow.AutoSize=true;
+            darkCheckBoxTomorrow.Enabled=false;
+            darkCheckBoxTomorrow.Location=new System.Drawing.Point(38, 89);
+            darkCheckBoxTomorrow.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkCheckBoxTomorrow.Name="darkCheckBoxTomorrow";
+            darkCheckBoxTomorrow.Size=new System.Drawing.Size(80, 19);
+            darkCheckBoxTomorrow.TabIndex=16;
+            darkCheckBoxTomorrow.Text="Tomorrow";
+            // 
+            // darkCheckBoxScheduleBot
+            // 
+            darkCheckBoxScheduleBot.AutoSize=true;
+            darkCheckBoxScheduleBot.Enabled=false;
+            darkCheckBoxScheduleBot.Location=new System.Drawing.Point(38, 38);
+            darkCheckBoxScheduleBot.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkCheckBoxScheduleBot.Name="darkCheckBoxScheduleBot";
+            darkCheckBoxScheduleBot.Size=new System.Drawing.Size(310, 19);
+            darkCheckBoxScheduleBot.TabIndex=15;
+            darkCheckBoxScheduleBot.Text="Schedule bot to run at specific time (24-hours format)";
+            // 
+            // darkLabel3
+            // 
+            darkLabel3.AutoSize=true;
+            darkLabel3.Enabled=false;
+            darkLabel3.ForeColor=System.Drawing.Color.FromArgb(220, 220, 220);
+            darkLabel3.Location=new System.Drawing.Point(208, 65);
+            darkLabel3.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel3.Name="darkLabel3";
+            darkLabel3.Size=new System.Drawing.Size(51, 15);
+            darkLabel3.TabIndex=14;
+            darkLabel3.Text="Seconds";
+            // 
+            // darkLabel2
+            // 
+            darkLabel2.AutoSize=true;
+            darkLabel2.Enabled=false;
+            darkLabel2.ForeColor=System.Drawing.Color.FromArgb(220, 220, 220);
+            darkLabel2.Location=new System.Drawing.Point(117, 65);
+            darkLabel2.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel2.Name="darkLabel2";
+            darkLabel2.Size=new System.Drawing.Size(50, 15);
+            darkLabel2.TabIndex=5;
+            darkLabel2.Text="Minutes";
+            // 
+            // darkLabel12
+            // 
+            darkLabel12.AutoSize=true;
+            darkLabel12.Enabled=false;
+            darkLabel12.ForeColor=System.Drawing.Color.FromArgb(220, 220, 220);
+            darkLabel12.Location=new System.Drawing.Point(36, 65);
+            darkLabel12.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel12.Name="darkLabel12";
+            darkLabel12.Size=new System.Drawing.Size(34, 15);
+            darkLabel12.TabIndex=4;
+            darkLabel12.Text="Hour";
+            // 
+            // darkButton1
+            // 
+            darkButton1.Font=new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            darkButton1.Location=new System.Drawing.Point(719, 13);
+            darkButton1.Margin=new System.Windows.Forms.Padding(2);
+            darkButton1.Name="darkButton1";
+            darkButton1.Size=new System.Drawing.Size(123, 24);
+            darkButton1.TabIndex=115;
+            darkButton1.Text="Save profile";
+            darkButton1.Visible=false;
+            // 
+            // cbVariantPreSelected
+            // 
+            cbVariantPreSelected.AutoSize=true;
+            cbVariantPreSelected.Location=new System.Drawing.Point(214, 163);
+            cbVariantPreSelected.Margin=new System.Windows.Forms.Padding(2);
+            cbVariantPreSelected.Name="cbVariantPreSelected";
+            cbVariantPreSelected.Size=new System.Drawing.Size(128, 19);
+            cbVariantPreSelected.TabIndex=116;
+            cbVariantPreSelected.Text="Variant pre selected";
             // 
             // LoadProfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(972, 515);
-            this.Controls.Add(this.darkButton1);
-            this.Controls.Add(this.darkSectionPanel1);
-            this.Controls.Add(this.darkSectionPanelPaymentDetails);
-            this.Controls.Add(this.darkSectionPanelBuyingMode);
-            this.Controls.Add(this.darkSectionPanelBotSettings);
-            this.Controls.Add(this.darkSectionPanelProductDetails);
-            this.Controls.Add(this.darkSectionPanelTimerMode);
-            this.Controls.Add(this.darkLabel1);
-            this.Controls.Add(this.darkComboBoxProfile);
-            this.Controls.Add(this.btnDeleteProfile);
-            this.Controls.Add(this.btnLoadProfile);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.Name = "LoadProfile";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Load Profile";
-            this.Load += new System.EventHandler(this.Profile_Load_1);
-            this.darkSectionPanel1.ResumeLayout(false);
-            this.darkSectionPanel1.PerformLayout();
-            this.darkSectionPanelPaymentDetails.ResumeLayout(false);
-            this.darkSectionPanelPaymentDetails.PerformLayout();
-            this.darkSectionPanelBuyingMode.ResumeLayout(false);
-            this.darkSectionPanelBuyingMode.PerformLayout();
-            this.darkSectionPanelBotSettings.ResumeLayout(false);
-            this.darkSectionPanelBotSettings.PerformLayout();
-            this.darkSectionPanelProductDetails.ResumeLayout(false);
-            this.darkSectionPanelProductDetails.PerformLayout();
-            this.darkSectionPanelTimerMode.ResumeLayout(false);
-            this.darkSectionPanelTimerMode.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions=new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode=System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize=new System.Drawing.Size(972, 515);
+            Controls.Add(darkButton1);
+            Controls.Add(darkSectionPanel1);
+            Controls.Add(darkSectionPanelPaymentDetails);
+            Controls.Add(darkSectionPanelBuyingMode);
+            Controls.Add(darkSectionPanelBotSettings);
+            Controls.Add(darkSectionPanelProductDetails);
+            Controls.Add(darkSectionPanelTimerMode);
+            Controls.Add(darkLabel1);
+            Controls.Add(darkComboBoxProfile);
+            Controls.Add(btnDeleteProfile);
+            Controls.Add(btnLoadProfile);
+            Font=new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            FormBorderStyle=System.Windows.Forms.FormBorderStyle.FixedDialog;
+            Icon=(System.Drawing.Icon)resources.GetObject("$this.Icon");
+            MaximizeBox=false;
+            Name="LoadProfile";
+            StartPosition=System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text="Load Profile";
+            Load+=Profile_Load_1;
+            darkSectionPanel1.ResumeLayout(false);
+            darkSectionPanel1.PerformLayout();
+            darkSectionPanelPaymentDetails.ResumeLayout(false);
+            darkSectionPanelPaymentDetails.PerformLayout();
+            darkSectionPanelBuyingMode.ResumeLayout(false);
+            darkSectionPanelBuyingMode.PerformLayout();
+            darkSectionPanelBotSettings.ResumeLayout(false);
+            darkSectionPanelBotSettings.PerformLayout();
+            darkSectionPanelProductDetails.ResumeLayout(false);
+            darkSectionPanelProductDetails.PerformLayout();
+            darkSectionPanelTimerMode.ResumeLayout(false);
+            darkSectionPanelTimerMode.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -830,5 +842,6 @@
         private DarkUI.Controls.DarkLabel darkLabel12;
         private DarkUI.Controls.DarkButton darkButton1;
         private DarkUI.Controls.DarkCheckBox cbRandom;
+        private DarkUI.Controls.DarkCheckBox cbVariantPreSelected;
     }
 }
