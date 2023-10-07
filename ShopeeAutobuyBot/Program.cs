@@ -1,5 +1,4 @@
-﻿using DarkUI.Controls;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Shopee_Autobuy_Bot.Services;
 using Shopee_Autobuy_Bot.Services.Logger;
@@ -48,7 +47,7 @@ namespace Shopee_Autobuy_Bot
                     services.AddTransient<IMp3PlayerService, Mp3PlayerService>();
                     services.AddTransient<IProfileService, ProfileService>();
                     services.AddSingleton<RichTextBox>();
-                    services.AddSingleton<DarkButton>();
+                    services.AddSingleton<Button>();
                     services.AddTransient<Login>();
                 });
         }

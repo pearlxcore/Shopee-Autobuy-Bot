@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Scan_payday_sale));
-            this.darkMenuStrip1 = new DarkUI.Controls.DarkMenuStrip();
+            this.darkMenuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gfrgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeThisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.darkLabel1 = new DarkUI.Controls.DarkLabel();
-            this.darkDockPanel1 = new DarkUI.Docking.DarkDockPanel();
-            this.darkButtonScan = new DarkUI.Controls.DarkButton();
-            this.darkLabel2 = new DarkUI.Controls.DarkLabel();
-            this.darkLabelCollectionName = new DarkUI.Controls.DarkLabel();
+            this.darkLabel1 = new System.Windows.Forms.Label();
+            this.darkDockPanel1 = new System.Windows.Forms.Panel();
+            this.darkButtonScan = new System.Windows.Forms.Button();
+            this.darkLabel2 = new System.Windows.Forms.Label();
+            this.darkLabelCollectionName = new System.Windows.Forms.Label();
             this.tbLog = new System.Windows.Forms.RichTextBox();
-            this.darkButton1 = new DarkUI.Controls.DarkButton();
-            this.darkLabelStatus = new DarkUI.Controls.DarkLabel();
-            this.darkDataGridView1 = new DarkUI.Controls.DarkDataGridView();
-            this.darkContextMenu1 = new DarkUI.Controls.DarkContextMenu();
+            this.darkButton1 = new System.Windows.Forms.Button();
+            this.darkLabelStatus = new System.Windows.Forms.Label();
+            this.darkDataGridView1 = new System.Windows.Forms.DataGridView();
+            this.darkContextMenu1 = new System.Windows.Forms.ContextMenuStrip();
             this.copyProductLinkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openProductLinkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbCollectionId = new DarkUI.Controls.DarkTextBox();
+            this.tbCollectionId = new System.Windows.Forms.TextBox();
             this.darkMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.darkDataGridView1)).BeginInit();
             this.darkContextMenu1.SuspendLayout();
@@ -94,8 +94,8 @@
             // 
             // darkDockPanel1
             // 
-            this.darkDockPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.darkDockPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.darkDockPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.darkDockPanel1.Location = new System.Drawing.Point(-14, 27);
@@ -134,7 +134,7 @@
             // 
             // tbLog
             // 
-            this.tbLog.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.tbLog.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbLog.Location = new System.Drawing.Point(81, 202);
             this.tbLog.Name = "tbLog";
@@ -155,7 +155,7 @@
             // 
             // darkLabelStatus
             // 
-            this.darkLabelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.darkLabelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.darkLabelStatus.AutoSize = true;
             this.darkLabelStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
@@ -169,10 +169,8 @@
             // 
             this.darkDataGridView1.AllowUserToAddRows = false;
             this.darkDataGridView1.AllowUserToDeleteRows = false;
-            this.darkDataGridView1.AllowUserToDragDropRows = false;
-            this.darkDataGridView1.AllowUserToPasteCells = false;
-            this.darkDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.darkDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.darkDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.darkDataGridView1.ColumnHeadersHeight = 4;
@@ -257,21 +255,21 @@
         }
 
         #endregion
-        private DarkUI.Controls.DarkMenuStrip darkMenuStrip1;
+        private System.Windows.Forms.MenuStrip darkMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem gfrgToolStripMenuItem;
-        private DarkUI.Controls.DarkLabel darkLabel1;
+        private System.Windows.Forms.Label darkLabel1;
         private System.Windows.Forms.ToolStripMenuItem closeThisToolStripMenuItem;
-        private DarkUI.Docking.DarkDockPanel darkDockPanel1;
-        private DarkUI.Controls.DarkButton darkButtonScan;
-        private DarkUI.Controls.DarkLabel darkLabel2;
-        private DarkUI.Controls.DarkLabel darkLabelCollectionName;
+        private System.Windows.Forms.Panel darkDockPanel1;
+        private System.Windows.Forms.Button darkButtonScan;
+        private System.Windows.Forms.Label darkLabel2;
+        private System.Windows.Forms.Label darkLabelCollectionName;
         private System.Windows.Forms.RichTextBox tbLog;
-        private DarkUI.Controls.DarkButton darkButton1;
-        private DarkUI.Controls.DarkLabel darkLabelStatus;
-        private DarkUI.Controls.DarkDataGridView darkDataGridView1;
-        private DarkUI.Controls.DarkContextMenu darkContextMenu1;
+        private System.Windows.Forms.Button darkButton1;
+        private System.Windows.Forms.Label darkLabelStatus;
+        private System.Windows.Forms.DataGridView darkDataGridView1;
+        private System.Windows.Forms.ContextMenuStrip darkContextMenu1;
         private System.Windows.Forms.ToolStripMenuItem copyProductLinkToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openProductLinkToolStripMenuItem;
-        private DarkUI.Controls.DarkTextBox tbCollectionId;
+        private System.Windows.Forms.TextBox tbCollectionId;
     }
 }

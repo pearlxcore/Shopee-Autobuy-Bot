@@ -35,63 +35,63 @@ namespace Shopee_Autobuy_Bot
         {
             components=new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            darkSectionPanelTimerMode=new DarkUI.Controls.DarkSectionPanel();
-            darkCheckBoxTomorrow=new DarkUI.Controls.DarkCheckBox();
-            darkCheckBoxScheduleBot=new DarkUI.Controls.DarkCheckBox();
-            darkLabel3=new DarkUI.Controls.DarkLabel();
-            darkNumericUpDownCountDownSecond=new DarkUI.Controls.DarkNumericUpDown();
-            darkLabel2=new DarkUI.Controls.DarkLabel();
-            darkLabel1=new DarkUI.Controls.DarkLabel();
-            darkNumericUpDownCountdownMinutes=new DarkUI.Controls.DarkNumericUpDown();
-            darkNumericUpDownCountdownHour=new DarkUI.Controls.DarkNumericUpDown();
-            darkNumericUpDownTimeOut=new DarkUI.Controls.DarkNumericUpDown();
-            darkLabel13=new DarkUI.Controls.DarkLabel();
-            darkCheckBoxPlaySound=new DarkUI.Controls.DarkCheckBox();
-            darkCheckBoxDisableImageExtension=new DarkUI.Controls.DarkCheckBox();
-            darkLabel5=new DarkUI.Controls.DarkLabel();
-            darkLabel4=new DarkUI.Controls.DarkLabel();
-            darkNumericUpDownRefreshSeconds=new DarkUI.Controls.DarkNumericUpDown();
-            darkComboBoxPaymentMethod=new DarkUI.Controls.DarkComboBox();
-            darkTextBoxShopeePayPin=new DarkUI.Controls.DarkTextBox();
-            darkLabel6=new DarkUI.Controls.DarkLabel();
-            darkLabel7=new DarkUI.Controls.DarkLabel();
-            darkComboBoxCourier=new DarkUI.Controls.DarkComboBox();
-            darkLabel9=new DarkUI.Controls.DarkLabel();
-            darkTextBoxVariationString=new DarkUI.Controls.DarkTextBox();
-            darkLabel10=new DarkUI.Controls.DarkLabel();
-            darkNumericUpDownProductQuantity=new DarkUI.Controls.DarkNumericUpDown();
-            darkSectionPanelProductDetails=new DarkUI.Controls.DarkSectionPanel();
-            cbVariantPreSelected=new DarkUI.Controls.DarkCheckBox();
-            cbRandom=new DarkUI.Controls.DarkCheckBox();
-            darkLabel11=new DarkUI.Controls.DarkLabel();
-            darkTextBoxProductLink=new DarkUI.Controls.DarkTextBox();
-            darkCheckBoxClaimShopVoucher=new DarkUI.Controls.DarkCheckBox();
-            darkCheckBoxTestMode=new DarkUI.Controls.DarkCheckBox();
-            darkLabel14=new DarkUI.Controls.DarkLabel();
-            tbLast4Digit=new DarkUI.Controls.DarkTextBox();
-            darkCheckBoxRedeemCoin=new DarkUI.Controls.DarkCheckBox();
-            darkComboBoxBankType=new DarkUI.Controls.DarkComboBox();
-            darkLabel8=new DarkUI.Controls.DarkLabel();
-            darkLabel12=new DarkUI.Controls.DarkLabel();
-            darkSectionPanelLogs=new DarkUI.Controls.DarkSectionPanel();
-            darkButtonDeleteAllOrder=new DarkUI.Controls.DarkButton();
+            darkSectionPanelTimerMode=new System.Windows.Forms.GroupBox();
+            darkCheckBoxTomorrow=new System.Windows.Forms.CheckBox();
+            darkCheckBoxScheduleBot=new System.Windows.Forms.CheckBox();
+            darkLabel3=new System.Windows.Forms.Label();
+            darkNumericUpDownCountDownSecond=new System.Windows.Forms.NumericUpDown();
+            darkLabel2=new System.Windows.Forms.Label();
+            darkLabel1=new System.Windows.Forms.Label();
+            darkNumericUpDownCountdownMinutes=new System.Windows.Forms.NumericUpDown();
+            darkNumericUpDownCountdownHour=new System.Windows.Forms.NumericUpDown();
+            darkNumericUpDownTimeOut=new System.Windows.Forms.NumericUpDown();
+            darkLabel13=new System.Windows.Forms.Label();
+            darkCheckBoxPlaySound=new System.Windows.Forms.CheckBox();
+            darkCheckBoxDisableImageExtension=new System.Windows.Forms.CheckBox();
+            darkLabel5=new System.Windows.Forms.Label();
+            darkLabel4=new System.Windows.Forms.Label();
+            darkNumericUpDownRefreshSeconds=new System.Windows.Forms.NumericUpDown();
+            darkComboBoxPaymentMethod=new System.Windows.Forms.ComboBox();
+            darkTextBoxShopeePayPin=new System.Windows.Forms.TextBox();
+            darkLabel6=new System.Windows.Forms.Label();
+            darkLabel7=new System.Windows.Forms.Label();
+            darkComboBoxCourier=new System.Windows.Forms.ComboBox();
+            darkLabel9=new System.Windows.Forms.Label();
+            darkTextBoxVariationString=new System.Windows.Forms.TextBox();
+            darkLabel10=new System.Windows.Forms.Label();
+            darkNumericUpDownProductQuantity=new System.Windows.Forms.NumericUpDown();
+            darkSectionPanelProductDetails=new System.Windows.Forms.GroupBox();
+            cbVariantPreSelected=new System.Windows.Forms.CheckBox();
+            cbRandom=new System.Windows.Forms.CheckBox();
+            darkLabel11=new System.Windows.Forms.Label();
+            darkTextBoxProductLink=new System.Windows.Forms.TextBox();
+            darkCheckBoxClaimShopVoucher=new System.Windows.Forms.CheckBox();
+            darkCheckBoxTestMode=new System.Windows.Forms.CheckBox();
+            darkLabel14=new System.Windows.Forms.Label();
+            tbLast4Digit=new System.Windows.Forms.TextBox();
+            darkCheckBoxRedeemCoin=new System.Windows.Forms.CheckBox();
+            darkComboBoxBankType=new System.Windows.Forms.ComboBox();
+            darkLabel8=new System.Windows.Forms.Label();
+            darkLabel12=new System.Windows.Forms.Label();
+            darkSectionPanelLogs=new System.Windows.Forms.GroupBox();
+            darkButtonDeleteAllOrder=new System.Windows.Forms.Button();
             richTextBoxLogs=new System.Windows.Forms.RichTextBox();
-            darkButton1=new DarkUI.Controls.DarkButton();
-            darkButton4=new DarkUI.Controls.DarkButton();
-            darkButton3=new DarkUI.Controls.DarkButton();
-            darkButton2=new DarkUI.Controls.DarkButton();
-            darkButton6=new DarkUI.Controls.DarkButton();
-            tbBelowSpecificPriceCARTCHECKOUTPrice=new DarkUI.Controls.DarkTextBox();
+            darkButton1=new System.Windows.Forms.Button();
+            darkButton4=new System.Windows.Forms.Button();
+            darkButton3=new System.Windows.Forms.Button();
+            darkButton2=new System.Windows.Forms.Button();
+            darkButton6=new System.Windows.Forms.Button();
+            tbBelowSpecificPriceCARTCHECKOUTPrice=new System.Windows.Forms.TextBox();
             radioButtonPriceSpecificCartCheckout=new System.Windows.Forms.RadioButton();
-            darkButtonStart=new DarkUI.Controls.DarkButton();
+            darkButtonStart=new System.Windows.Forms.Button();
             timerlabelBig=new System.Windows.Forms.Label();
-            darkSectionPanelBotSettings=new DarkUI.Controls.DarkSectionPanel();
-            darkCheckBoxLogging=new DarkUI.Controls.DarkCheckBox();
-            darkButton5=new DarkUI.Controls.DarkButton();
-            darkCheckBoxRefresh=new DarkUI.Controls.DarkCheckBox();
-            darkCheckBoxHeadless=new DarkUI.Controls.DarkCheckBox();
-            darkDockPanel1=new DarkUI.Docking.DarkDockPanel();
-            darkMenuStrip1=new DarkUI.Controls.DarkMenuStrip();
+            darkSectionPanelBotSettings=new System.Windows.Forms.GroupBox();
+            darkCheckBoxLogging=new System.Windows.Forms.CheckBox();
+            darkButton5=new System.Windows.Forms.Button();
+            darkCheckBoxRefresh=new System.Windows.Forms.CheckBox();
+            darkCheckBoxHeadless=new System.Windows.Forms.CheckBox();
+            darkDockPanel1=new System.Windows.Forms.Panel();
+            darkMenuStrip1=new System.Windows.Forms.MenuStrip();
             gfrgToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
             elementEditorToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
             scanSaleItemsToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
@@ -123,8 +123,8 @@ namespace Shopee_Autobuy_Bot
             disclaimerToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
             howToUseToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
             updateConfigurationToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
-            darkSectionPanelBuyingMode=new DarkUI.Controls.DarkSectionPanel();
-            tbPriceSpecific=new DarkUI.Controls.DarkTextBox();
+            darkSectionPanelBuyingMode=new System.Windows.Forms.GroupBox();
+            tbPriceSpecific=new System.Windows.Forms.TextBox();
             radioButtonCheckOutCart=new System.Windows.Forms.RadioButton();
             radioButtonShockingSale=new System.Windows.Forms.RadioButton();
             radioButtonBuyNormal=new System.Windows.Forms.RadioButton();
@@ -133,15 +133,15 @@ namespace Shopee_Autobuy_Bot
             label2=new System.Windows.Forms.Label();
             label3=new System.Windows.Forms.Label();
             label4=new System.Windows.Forms.Label();
-            darkSectionPanelPaymentDetails=new DarkUI.Controls.DarkSectionPanel();
-            darkCheckBoxRedeemShopeeVoucher=new DarkUI.Controls.DarkCheckBox();
+            darkSectionPanelPaymentDetails=new System.Windows.Forms.GroupBox();
+            darkCheckBoxRedeemShopeeVoucher=new System.Windows.Forms.CheckBox();
             toolTip1=new System.Windows.Forms.ToolTip(components);
-            darkButton7=new DarkUI.Controls.DarkButton();
-            darkSectionPanel1=new DarkUI.Controls.DarkSectionPanel();
+            darkButton7=new System.Windows.Forms.Button();
+            darkSectionPanel1=new System.Windows.Forms.GroupBox();
             notifyIcon1=new System.Windows.Forms.NotifyIcon(components);
             panel1=new System.Windows.Forms.Panel();
-            darkLabel15=new DarkUI.Controls.DarkLabel();
-            labelShopeeAcc=new DarkUI.Controls.DarkLabel();
+            darkLabel15=new System.Windows.Forms.Label();
+            labelShopeeAcc=new System.Windows.Forms.Label();
             darkSectionPanelTimerMode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)darkNumericUpDownCountDownSecond).BeginInit();
             ((System.ComponentModel.ISupportInitialize)darkNumericUpDownCountdownMinutes).BeginInit();
@@ -161,7 +161,6 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkSectionPanelTimerMode
             // 
-            darkSectionPanelTimerMode.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
             darkSectionPanelTimerMode.Controls.Add(darkCheckBoxTomorrow);
             darkSectionPanelTimerMode.Controls.Add(darkCheckBoxScheduleBot);
             darkSectionPanelTimerMode.Controls.Add(darkLabel3);
@@ -173,9 +172,10 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanelTimerMode.Location=new Point(384, 43);
             darkSectionPanelTimerMode.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkSectionPanelTimerMode.Name="darkSectionPanelTimerMode";
-            darkSectionPanelTimerMode.SectionHeader="Schedule Bot";
             darkSectionPanelTimerMode.Size=new Size(376, 121);
             darkSectionPanelTimerMode.TabIndex=0;
+            darkSectionPanelTimerMode.TabStop=false;
+            darkSectionPanelTimerMode.Text="Schedule Bot";
             // 
             // darkCheckBoxTomorrow
             // 
@@ -205,7 +205,7 @@ namespace Shopee_Autobuy_Bot
             // 
             darkLabel3.AutoSize=true;
             darkLabel3.Enabled=false;
-            darkLabel3.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel3.ForeColor=SystemColors.ControlText;
             darkLabel3.Location=new Point(210, 65);
             darkLabel3.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel3.Name="darkLabel3";
@@ -215,14 +215,12 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkNumericUpDownCountDownSecond
             // 
-            darkNumericUpDownCountDownSecond.BackColor=Color.FromArgb(69, 73, 74);
+            darkNumericUpDownCountDownSecond.BackColor=SystemColors.Window;
             darkNumericUpDownCountDownSecond.Enabled=false;
-            darkNumericUpDownCountDownSecond.ForeColor=Color.FromArgb(220, 220, 220);
-            darkNumericUpDownCountDownSecond.IncrementAlternate=new decimal(new int[] { 10, 0, 0, 65536 });
+            darkNumericUpDownCountDownSecond.ForeColor=SystemColors.ControlText;
             darkNumericUpDownCountDownSecond.Location=new Point(263, 61);
             darkNumericUpDownCountDownSecond.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkNumericUpDownCountDownSecond.Maximum=new decimal(new int[] { 59, 0, 0, 0 });
-            darkNumericUpDownCountDownSecond.MousewheelSingleIncrement=true;
             darkNumericUpDownCountDownSecond.Name="darkNumericUpDownCountDownSecond";
             darkNumericUpDownCountDownSecond.Size=new Size(38, 22);
             darkNumericUpDownCountDownSecond.TabIndex=13;
@@ -231,7 +229,7 @@ namespace Shopee_Autobuy_Bot
             // 
             darkLabel2.AutoSize=true;
             darkLabel2.Enabled=false;
-            darkLabel2.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel2.ForeColor=SystemColors.ControlText;
             darkLabel2.Location=new Point(115, 65);
             darkLabel2.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel2.Name="darkLabel2";
@@ -243,7 +241,7 @@ namespace Shopee_Autobuy_Bot
             // 
             darkLabel1.AutoSize=true;
             darkLabel1.Enabled=false;
-            darkLabel1.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel1.ForeColor=SystemColors.ControlText;
             darkLabel1.Location=new Point(36, 65);
             darkLabel1.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel1.Name="darkLabel1";
@@ -253,28 +251,24 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkNumericUpDownCountdownMinutes
             // 
-            darkNumericUpDownCountdownMinutes.BackColor=Color.FromArgb(69, 73, 74);
+            darkNumericUpDownCountdownMinutes.BackColor=SystemColors.Window;
             darkNumericUpDownCountdownMinutes.Enabled=false;
-            darkNumericUpDownCountdownMinutes.ForeColor=Color.FromArgb(220, 220, 220);
-            darkNumericUpDownCountdownMinutes.IncrementAlternate=new decimal(new int[] { 10, 0, 0, 65536 });
+            darkNumericUpDownCountdownMinutes.ForeColor=SystemColors.ControlText;
             darkNumericUpDownCountdownMinutes.Location=new Point(168, 61);
             darkNumericUpDownCountdownMinutes.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkNumericUpDownCountdownMinutes.Maximum=new decimal(new int[] { 59, 0, 0, 0 });
-            darkNumericUpDownCountdownMinutes.MousewheelSingleIncrement=true;
             darkNumericUpDownCountdownMinutes.Name="darkNumericUpDownCountdownMinutes";
             darkNumericUpDownCountdownMinutes.Size=new Size(38, 22);
             darkNumericUpDownCountdownMinutes.TabIndex=3;
             // 
             // darkNumericUpDownCountdownHour
             // 
-            darkNumericUpDownCountdownHour.BackColor=Color.FromArgb(69, 73, 74);
+            darkNumericUpDownCountdownHour.BackColor=SystemColors.Window;
             darkNumericUpDownCountdownHour.Enabled=false;
-            darkNumericUpDownCountdownHour.ForeColor=Color.FromArgb(220, 220, 220);
-            darkNumericUpDownCountdownHour.IncrementAlternate=new decimal(new int[] { 10, 0, 0, 65536 });
+            darkNumericUpDownCountdownHour.ForeColor=SystemColors.ControlText;
             darkNumericUpDownCountdownHour.Location=new Point(73, 61);
             darkNumericUpDownCountdownHour.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkNumericUpDownCountdownHour.Maximum=new decimal(new int[] { 23, 0, 0, 0 });
-            darkNumericUpDownCountdownHour.MousewheelSingleIncrement=true;
             darkNumericUpDownCountdownHour.Name="darkNumericUpDownCountdownHour";
             darkNumericUpDownCountdownHour.Size=new Size(38, 22);
             darkNumericUpDownCountdownHour.TabIndex=2;
@@ -282,14 +276,12 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkNumericUpDownTimeOut
             // 
-            darkNumericUpDownTimeOut.BackColor=Color.FromArgb(69, 73, 74);
-            darkNumericUpDownTimeOut.ForeColor=Color.FromArgb(220, 220, 220);
-            darkNumericUpDownTimeOut.IncrementAlternate=new decimal(new int[] { 10, 0, 0, 65536 });
+            darkNumericUpDownTimeOut.BackColor=SystemColors.Window;
+            darkNumericUpDownTimeOut.ForeColor=SystemColors.ControlText;
             darkNumericUpDownTimeOut.Location=new Point(138, 218);
             darkNumericUpDownTimeOut.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkNumericUpDownTimeOut.Maximum=new decimal(new int[] { 20, 0, 0, 0 });
             darkNumericUpDownTimeOut.Minimum=new decimal(new int[] { 1, 0, 0, 0 });
-            darkNumericUpDownTimeOut.MousewheelSingleIncrement=true;
             darkNumericUpDownTimeOut.Name="darkNumericUpDownTimeOut";
             darkNumericUpDownTimeOut.Size=new Size(38, 22);
             darkNumericUpDownTimeOut.TabIndex=46;
@@ -299,7 +291,7 @@ namespace Shopee_Autobuy_Bot
             // darkLabel13
             // 
             darkLabel13.AutoSize=true;
-            darkLabel13.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel13.ForeColor=SystemColors.ControlText;
             darkLabel13.Location=new Point(20, 223);
             darkLabel13.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel13.Name="darkLabel13";
@@ -335,7 +327,7 @@ namespace Shopee_Autobuy_Bot
             // darkLabel5
             // 
             darkLabel5.AutoSize=true;
-            darkLabel5.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel5.ForeColor=SystemColors.ControlText;
             darkLabel5.Location=new Point(292, 132);
             darkLabel5.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel5.Name="darkLabel5";
@@ -346,7 +338,7 @@ namespace Shopee_Autobuy_Bot
             // darkLabel4
             // 
             darkLabel4.AutoSize=true;
-            darkLabel4.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel4.ForeColor=SystemColors.ControlText;
             darkLabel4.Location=new Point(176, 132);
             darkLabel4.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel4.Name="darkLabel4";
@@ -356,13 +348,11 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkNumericUpDownRefreshSeconds
             // 
-            darkNumericUpDownRefreshSeconds.BackColor=Color.FromArgb(69, 73, 74);
-            darkNumericUpDownRefreshSeconds.ForeColor=Color.FromArgb(220, 220, 220);
-            darkNumericUpDownRefreshSeconds.IncrementAlternate=new decimal(new int[] { 10, 0, 0, 65536 });
+            darkNumericUpDownRefreshSeconds.BackColor=SystemColors.Window;
+            darkNumericUpDownRefreshSeconds.ForeColor=SystemColors.ControlText;
             darkNumericUpDownRefreshSeconds.Location=new Point(253, 127);
             darkNumericUpDownRefreshSeconds.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkNumericUpDownRefreshSeconds.Maximum=new decimal(new int[] { 10, 0, 0, 0 });
-            darkNumericUpDownRefreshSeconds.MousewheelSingleIncrement=true;
             darkNumericUpDownRefreshSeconds.Name="darkNumericUpDownRefreshSeconds";
             darkNumericUpDownRefreshSeconds.Size=new Size(38, 22);
             darkNumericUpDownRefreshSeconds.TabIndex=9;
@@ -370,12 +360,13 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkComboBoxPaymentMethod
             // 
+            darkComboBoxPaymentMethod.DropDownStyle=System.Windows.Forms.ComboBoxStyle.DropDownList;
             darkComboBoxPaymentMethod.FormattingEnabled=true;
             darkComboBoxPaymentMethod.Items.AddRange(new object[] { "Default", "Credit / Debit Card", "ATM / Cash Deposit", "Online Banking", "ShopeePay", "Cash on Delivery", "7-Eleven", "KK Mart" });
             darkComboBoxPaymentMethod.Location=new Point(154, 33);
             darkComboBoxPaymentMethod.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkComboBoxPaymentMethod.Name="darkComboBoxPaymentMethod";
-            darkComboBoxPaymentMethod.Size=new Size(194, 23);
+            darkComboBoxPaymentMethod.Size=new Size(194, 21);
             darkComboBoxPaymentMethod.TabIndex=12;
             toolTip1.SetToolTip(darkComboBoxPaymentMethod, "Payment method.");
             darkComboBoxPaymentMethod.SelectedIndexChanged+=darkComboBoxPaymentMethod_SelectedIndexChanged;
@@ -395,7 +386,7 @@ namespace Shopee_Autobuy_Bot
             // darkLabel6
             // 
             darkLabel6.AutoSize=true;
-            darkLabel6.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel6.ForeColor=SystemColors.ControlText;
             darkLabel6.Location=new Point(17, 38);
             darkLabel6.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel6.Name="darkLabel6";
@@ -406,7 +397,7 @@ namespace Shopee_Autobuy_Bot
             // darkLabel7
             // 
             darkLabel7.AutoSize=true;
-            darkLabel7.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel7.ForeColor=SystemColors.ControlText;
             darkLabel7.Location=new Point(17, 137);
             darkLabel7.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel7.Name="darkLabel7";
@@ -421,13 +412,13 @@ namespace Shopee_Autobuy_Bot
             darkComboBoxCourier.Location=new Point(149, 35);
             darkComboBoxCourier.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkComboBoxCourier.Name="darkComboBoxCourier";
-            darkComboBoxCourier.Size=new Size(126, 23);
+            darkComboBoxCourier.Size=new Size(126, 21);
             darkComboBoxCourier.TabIndex=16;
             // 
             // darkLabel9
             // 
             darkLabel9.AutoSize=true;
-            darkLabel9.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel9.ForeColor=SystemColors.ControlText;
             darkLabel9.Location=new Point(17, 139);
             darkLabel9.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel9.Name="darkLabel9";
@@ -448,7 +439,7 @@ namespace Shopee_Autobuy_Bot
             // darkLabel10
             // 
             darkLabel10.AutoSize=true;
-            darkLabel10.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel10.ForeColor=SystemColors.ControlText;
             darkLabel10.Location=new Point(17, 111);
             darkLabel10.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel10.Name="darkLabel10";
@@ -458,14 +449,12 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkNumericUpDownProductQuantity
             // 
-            darkNumericUpDownProductQuantity.BackColor=Color.FromArgb(69, 73, 74);
-            darkNumericUpDownProductQuantity.ForeColor=Color.FromArgb(220, 220, 220);
-            darkNumericUpDownProductQuantity.IncrementAlternate=new decimal(new int[] { 10, 0, 0, 65536 });
+            darkNumericUpDownProductQuantity.BackColor=SystemColors.Window;
+            darkNumericUpDownProductQuantity.ForeColor=SystemColors.ControlText;
             darkNumericUpDownProductQuantity.Location=new Point(98, 106);
             darkNumericUpDownProductQuantity.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkNumericUpDownProductQuantity.Maximum=new decimal(new int[] { 1000000000, 0, 0, 0 });
             darkNumericUpDownProductQuantity.Minimum=new decimal(new int[] { 1, 0, 0, 0 });
-            darkNumericUpDownProductQuantity.MousewheelSingleIncrement=true;
             darkNumericUpDownProductQuantity.Name="darkNumericUpDownProductQuantity";
             darkNumericUpDownProductQuantity.ReadOnly=true;
             darkNumericUpDownProductQuantity.Size=new Size(47, 22);
@@ -475,7 +464,6 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkSectionPanelProductDetails
             // 
-            darkSectionPanelProductDetails.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
             darkSectionPanelProductDetails.Controls.Add(cbVariantPreSelected);
             darkSectionPanelProductDetails.Controls.Add(cbRandom);
             darkSectionPanelProductDetails.Controls.Add(darkLabel11);
@@ -487,9 +475,10 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanelProductDetails.Location=new Point(14, 301);
             darkSectionPanelProductDetails.Margin=new System.Windows.Forms.Padding(2);
             darkSectionPanelProductDetails.Name="darkSectionPanelProductDetails";
-            darkSectionPanelProductDetails.SectionHeader="Product Details";
             darkSectionPanelProductDetails.Size=new Size(364, 195);
             darkSectionPanelProductDetails.TabIndex=23;
+            darkSectionPanelProductDetails.TabStop=false;
+            darkSectionPanelProductDetails.Text="Product Details";
             // 
             // cbVariantPreSelected
             // 
@@ -518,7 +507,7 @@ namespace Shopee_Autobuy_Bot
             // darkLabel11
             // 
             darkLabel11.AutoSize=true;
-            darkLabel11.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel11.ForeColor=SystemColors.ControlText;
             darkLabel11.Location=new Point(17, 37);
             darkLabel11.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel11.Name="darkLabel11";
@@ -562,7 +551,7 @@ namespace Shopee_Autobuy_Bot
             // darkLabel14
             // 
             darkLabel14.AutoSize=true;
-            darkLabel14.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel14.ForeColor=SystemColors.ControlText;
             darkLabel14.Location=new Point(17, 104);
             darkLabel14.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel14.Name="darkLabel14";
@@ -595,19 +584,20 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkComboBoxBankType
             // 
+            darkComboBoxBankType.DropDownStyle=System.Windows.Forms.ComboBoxStyle.DropDownList;
             darkComboBoxBankType.FormattingEnabled=true;
             darkComboBoxBankType.Items.AddRange(new object[] { "Maybank2u", "CIMB Clicks", "Public Bank", "RHB Now", "Ambank", "MyBSN", "Bank Rakyat", "UOB", "Affin Bank", "Bank Islam", "HSBC Online", "Standard Chartered Bank", "Kuwait Finance House", "Bank Muamalat", "OCBC Online", "Alliance Bank (Personal)", "Hong Leong Connect" });
             darkComboBoxBankType.Location=new Point(154, 66);
             darkComboBoxBankType.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkComboBoxBankType.Name="darkComboBoxBankType";
-            darkComboBoxBankType.Size=new Size(194, 23);
+            darkComboBoxBankType.Size=new Size(194, 21);
             darkComboBoxBankType.TabIndex=30;
             toolTip1.SetToolTip(darkComboBoxBankType, "Bank type.");
             // 
             // darkLabel8
             // 
             darkLabel8.AutoSize=true;
-            darkLabel8.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel8.ForeColor=SystemColors.ControlText;
             darkLabel8.Location=new Point(17, 72);
             darkLabel8.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel8.Name="darkLabel8";
@@ -618,7 +608,7 @@ namespace Shopee_Autobuy_Bot
             // darkLabel12
             // 
             darkLabel12.AutoSize=true;
-            darkLabel12.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel12.ForeColor=SystemColors.ControlText;
             darkLabel12.Location=new Point(49, 40);
             darkLabel12.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel12.Name="darkLabel12";
@@ -628,7 +618,6 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkSectionPanelLogs
             // 
-            darkSectionPanelLogs.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
             darkSectionPanelLogs.Controls.Add(darkButtonDeleteAllOrder);
             darkSectionPanelLogs.Controls.Add(richTextBoxLogs);
             darkSectionPanelLogs.Controls.Add(darkLabel12);
@@ -641,9 +630,10 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanelLogs.Location=new Point(14, 501);
             darkSectionPanelLogs.Margin=new System.Windows.Forms.Padding(2);
             darkSectionPanelLogs.Name="darkSectionPanelLogs";
-            darkSectionPanelLogs.SectionHeader="Logs";
             darkSectionPanelLogs.Size=new Size(312, 151);
             darkSectionPanelLogs.TabIndex=24;
+            darkSectionPanelLogs.TabStop=false;
+            darkSectionPanelLogs.Text="Logs";
             // 
             // darkButtonDeleteAllOrder
             // 
@@ -658,14 +648,15 @@ namespace Shopee_Autobuy_Bot
             // 
             // richTextBoxLogs
             // 
-            richTextBoxLogs.BackColor=Color.FromArgb(60, 63, 65);
+            richTextBoxLogs.BackColor=SystemColors.Window;
             richTextBoxLogs.BorderStyle=System.Windows.Forms.BorderStyle.None;
             richTextBoxLogs.Dock=System.Windows.Forms.DockStyle.Fill;
-            richTextBoxLogs.Location=new Point(1, 25);
+            richTextBoxLogs.Location=new Point(3, 18);
             richTextBoxLogs.Margin=new System.Windows.Forms.Padding(2);
             richTextBoxLogs.Name="richTextBoxLogs";
+            richTextBoxLogs.ReadOnly=true;
             richTextBoxLogs.ScrollBars=System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            richTextBoxLogs.Size=new Size(308, 123);
+            richTextBoxLogs.Size=new Size(306, 130);
             richTextBoxLogs.TabIndex=0;
             richTextBoxLogs.Text="";
             toolTip1.SetToolTip(richTextBoxLogs, "Current running process will be displayed here.");
@@ -694,7 +685,7 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkButton3
             // 
-            darkButton3.Location=new Point(292, 122);
+            darkButton3.Location=new Point(181, 122);
             darkButton3.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkButton3.Name="darkButton3";
             darkButton3.Size=new Size(94, 23);
@@ -704,7 +695,7 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkButton2
             // 
-            darkButton2.Location=new Point(272, 61);
+            darkButton2.Location=new Point(127, 35);
             darkButton2.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkButton2.Name="darkButton2";
             darkButton2.Size=new Size(94, 23);
@@ -738,7 +729,7 @@ namespace Shopee_Autobuy_Bot
             // radioButtonPriceSpecificCartCheckout
             // 
             radioButtonPriceSpecificCartCheckout.AutoSize=true;
-            radioButtonPriceSpecificCartCheckout.ForeColor=Color.Gainsboro;
+            radioButtonPriceSpecificCartCheckout.ForeColor=SystemColors.ControlText;
             radioButtonPriceSpecificCartCheckout.Location=new Point(26, 96);
             radioButtonPriceSpecificCartCheckout.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             radioButtonPriceSpecificCartCheckout.Name="radioButtonPriceSpecificCartCheckout";
@@ -765,7 +756,7 @@ namespace Shopee_Autobuy_Bot
             timerlabelBig.AutoSize=true;
             timerlabelBig.BackColor=Color.Transparent;
             timerlabelBig.Font=new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            timerlabelBig.ForeColor=Color.Gold;
+            timerlabelBig.ForeColor=Color.DarkGoldenrod;
             timerlabelBig.Location=new Point(0, 0);
             timerlabelBig.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             timerlabelBig.Name="timerlabelBig";
@@ -776,7 +767,6 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkSectionPanelBotSettings
             // 
-            darkSectionPanelBotSettings.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
             darkSectionPanelBotSettings.Controls.Add(darkCheckBoxTestMode);
             darkSectionPanelBotSettings.Controls.Add(darkCheckBoxLogging);
             darkSectionPanelBotSettings.Controls.Add(darkButton5);
@@ -792,9 +782,10 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanelBotSettings.Location=new Point(14, 43);
             darkSectionPanelBotSettings.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkSectionPanelBotSettings.Name="darkSectionPanelBotSettings";
-            darkSectionPanelBotSettings.SectionHeader="Bot Settings";
             darkSectionPanelBotSettings.Size=new Size(364, 253);
             darkSectionPanelBotSettings.TabIndex=29;
+            darkSectionPanelBotSettings.TabStop=false;
+            darkSectionPanelBotSettings.Text="Bot Settings";
             // 
             // darkCheckBoxLogging
             // 
@@ -845,7 +836,7 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkDockPanel1
             // 
-            darkDockPanel1.BackColor=Color.FromArgb(60, 63, 65);
+            darkDockPanel1.BackColor=SystemColors.Control;
             darkDockPanel1.Location=new Point(-10, 27);
             darkDockPanel1.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkDockPanel1.Name="darkDockPanel1";
@@ -854,8 +845,8 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkMenuStrip1
             // 
-            darkMenuStrip1.BackColor=Color.FromArgb(60, 63, 65);
-            darkMenuStrip1.ForeColor=Color.FromArgb(220, 220, 220);
+            darkMenuStrip1.BackColor=SystemColors.Control;
+            darkMenuStrip1.ForeColor=SystemColors.ControlText;
             darkMenuStrip1.ImageScalingSize=new Size(24, 24);
             darkMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { gfrgToolStripMenuItem, helpToolStripMenuItem1, testToolStripMenuItem });
             darkMenuStrip1.Location=new Point(0, 0);
@@ -867,17 +858,17 @@ namespace Shopee_Autobuy_Bot
             // 
             // gfrgToolStripMenuItem
             // 
-            gfrgToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            gfrgToolStripMenuItem.BackColor=SystemColors.Control;
             gfrgToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { elementEditorToolStripMenuItem, scanSaleItemsToolStripMenuItem, profileToolStripMenuItem, sessionCookieToolStripMenuItem, toolStripSeparator2, exitToolStripMenuItem1, testCookieToolStripMenuItem });
-            gfrgToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            gfrgToolStripMenuItem.ForeColor=SystemColors.ControlText;
             gfrgToolStripMenuItem.Name="gfrgToolStripMenuItem";
             gfrgToolStripMenuItem.Size=new Size(37, 20);
             gfrgToolStripMenuItem.Text="File";
             // 
             // elementEditorToolStripMenuItem
             // 
-            elementEditorToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
-            elementEditorToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            elementEditorToolStripMenuItem.BackColor=SystemColors.Control;
+            elementEditorToolStripMenuItem.ForeColor=SystemColors.ControlText;
             elementEditorToolStripMenuItem.Name="elementEditorToolStripMenuItem";
             elementEditorToolStripMenuItem.Size=new Size(151, 22);
             elementEditorToolStripMenuItem.Text="Element editor";
@@ -885,8 +876,8 @@ namespace Shopee_Autobuy_Bot
             // 
             // scanSaleItemsToolStripMenuItem
             // 
-            scanSaleItemsToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
-            scanSaleItemsToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            scanSaleItemsToolStripMenuItem.BackColor=SystemColors.Control;
+            scanSaleItemsToolStripMenuItem.ForeColor=SystemColors.ControlText;
             scanSaleItemsToolStripMenuItem.Name="scanSaleItemsToolStripMenuItem";
             scanSaleItemsToolStripMenuItem.Size=new Size(151, 22);
             scanSaleItemsToolStripMenuItem.Text="Scan sale item";
@@ -895,17 +886,17 @@ namespace Shopee_Autobuy_Bot
             // 
             // profileToolStripMenuItem
             // 
-            profileToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            profileToolStripMenuItem.BackColor=SystemColors.Control;
             profileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { toolStripMenuItemLoadProfile, saveCurrentProfileToolStripMenuItem });
-            profileToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            profileToolStripMenuItem.ForeColor=SystemColors.ControlText;
             profileToolStripMenuItem.Name="profileToolStripMenuItem";
             profileToolStripMenuItem.Size=new Size(151, 22);
             profileToolStripMenuItem.Text="Profile";
             // 
             // toolStripMenuItemLoadProfile
             // 
-            toolStripMenuItemLoadProfile.BackColor=Color.FromArgb(60, 63, 65);
-            toolStripMenuItemLoadProfile.ForeColor=Color.FromArgb(220, 220, 220);
+            toolStripMenuItemLoadProfile.BackColor=SystemColors.Control;
+            toolStripMenuItemLoadProfile.ForeColor=SystemColors.ControlText;
             toolStripMenuItemLoadProfile.Name="toolStripMenuItemLoadProfile";
             toolStripMenuItemLoadProfile.Size=new Size(181, 22);
             toolStripMenuItemLoadProfile.Text="Load profile settings";
@@ -913,8 +904,8 @@ namespace Shopee_Autobuy_Bot
             // 
             // saveCurrentProfileToolStripMenuItem
             // 
-            saveCurrentProfileToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
-            saveCurrentProfileToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            saveCurrentProfileToolStripMenuItem.BackColor=SystemColors.Control;
+            saveCurrentProfileToolStripMenuItem.ForeColor=SystemColors.ControlText;
             saveCurrentProfileToolStripMenuItem.Name="saveCurrentProfileToolStripMenuItem";
             saveCurrentProfileToolStripMenuItem.Size=new Size(181, 22);
             saveCurrentProfileToolStripMenuItem.Text="Save current profile";
@@ -922,9 +913,9 @@ namespace Shopee_Autobuy_Bot
             // 
             // sessionCookieToolStripMenuItem
             // 
-            sessionCookieToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            sessionCookieToolStripMenuItem.BackColor=SystemColors.Control;
             sessionCookieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { loadCookiesToolStripMenuItem, saveCookieToolStripMenuItem, cleToolStripMenuItem, testToolStripMenuItem1 });
-            sessionCookieToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            sessionCookieToolStripMenuItem.ForeColor=SystemColors.ControlText;
             sessionCookieToolStripMenuItem.Name="sessionCookieToolStripMenuItem";
             sessionCookieToolStripMenuItem.Size=new Size(151, 22);
             sessionCookieToolStripMenuItem.Text="Session cookie";
@@ -932,8 +923,8 @@ namespace Shopee_Autobuy_Bot
             // 
             // loadCookiesToolStripMenuItem
             // 
-            loadCookiesToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
-            loadCookiesToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            loadCookiesToolStripMenuItem.BackColor=Color.Gainsboro;
+            loadCookiesToolStripMenuItem.ForeColor=SystemColors.ControlText;
             loadCookiesToolStripMenuItem.Name="loadCookiesToolStripMenuItem";
             loadCookiesToolStripMenuItem.Size=new Size(139, 22);
             loadCookiesToolStripMenuItem.Text="Load cookie";
@@ -941,8 +932,8 @@ namespace Shopee_Autobuy_Bot
             // 
             // saveCookieToolStripMenuItem
             // 
-            saveCookieToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
-            saveCookieToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            saveCookieToolStripMenuItem.BackColor=Color.Gainsboro;
+            saveCookieToolStripMenuItem.ForeColor=SystemColors.ControlText;
             saveCookieToolStripMenuItem.Name="saveCookieToolStripMenuItem";
             saveCookieToolStripMenuItem.Size=new Size(139, 22);
             saveCookieToolStripMenuItem.Text="Save cookie";
@@ -950,8 +941,8 @@ namespace Shopee_Autobuy_Bot
             // 
             // cleToolStripMenuItem
             // 
-            cleToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
-            cleToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            cleToolStripMenuItem.BackColor=Color.Gainsboro;
+            cleToolStripMenuItem.ForeColor=SystemColors.ControlText;
             cleToolStripMenuItem.Name="cleToolStripMenuItem";
             cleToolStripMenuItem.Size=new Size(139, 22);
             cleToolStripMenuItem.Text="Clear cookie";
@@ -959,8 +950,8 @@ namespace Shopee_Autobuy_Bot
             // 
             // testToolStripMenuItem1
             // 
-            testToolStripMenuItem1.BackColor=Color.FromArgb(60, 63, 65);
-            testToolStripMenuItem1.ForeColor=Color.FromArgb(220, 220, 220);
+            testToolStripMenuItem1.BackColor=Color.Gainsboro;
+            testToolStripMenuItem1.ForeColor=SystemColors.ControlText;
             testToolStripMenuItem1.Name="testToolStripMenuItem1";
             testToolStripMenuItem1.Size=new Size(139, 22);
             testToolStripMenuItem1.Text="Test";
@@ -968,16 +959,16 @@ namespace Shopee_Autobuy_Bot
             // 
             // toolStripSeparator2
             // 
-            toolStripSeparator2.BackColor=Color.FromArgb(60, 63, 65);
-            toolStripSeparator2.ForeColor=Color.FromArgb(220, 220, 220);
+            toolStripSeparator2.BackColor=SystemColors.Control;
+            toolStripSeparator2.ForeColor=SystemColors.ControlText;
             toolStripSeparator2.Margin=new System.Windows.Forms.Padding(0, 0, 0, 1);
             toolStripSeparator2.Name="toolStripSeparator2";
             toolStripSeparator2.Size=new Size(148, 6);
             // 
             // exitToolStripMenuItem1
             // 
-            exitToolStripMenuItem1.BackColor=Color.FromArgb(60, 63, 65);
-            exitToolStripMenuItem1.ForeColor=Color.FromArgb(220, 220, 220);
+            exitToolStripMenuItem1.BackColor=SystemColors.Control;
+            exitToolStripMenuItem1.ForeColor=SystemColors.ControlText;
             exitToolStripMenuItem1.Name="exitToolStripMenuItem1";
             exitToolStripMenuItem1.Size=new Size(151, 22);
             exitToolStripMenuItem1.Text="Exit";
@@ -985,8 +976,8 @@ namespace Shopee_Autobuy_Bot
             // 
             // testCookieToolStripMenuItem
             // 
-            testCookieToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
-            testCookieToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            testCookieToolStripMenuItem.BackColor=SystemColors.Control;
+            testCookieToolStripMenuItem.ForeColor=SystemColors.ControlText;
             testCookieToolStripMenuItem.Name="testCookieToolStripMenuItem";
             testCookieToolStripMenuItem.Size=new Size(151, 22);
             testCookieToolStripMenuItem.Text="test cookie";
@@ -995,17 +986,17 @@ namespace Shopee_Autobuy_Bot
             // 
             // helpToolStripMenuItem1
             // 
-            helpToolStripMenuItem1.BackColor=Color.FromArgb(60, 63, 65);
+            helpToolStripMenuItem1.BackColor=SystemColors.Control;
             helpToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { updateConfigurationToolStripMenuItem1, toolStripSeparator1, aboutToolStripMenuItem, changeHistoryToolStripMenuItem });
-            helpToolStripMenuItem1.ForeColor=Color.FromArgb(220, 220, 220);
+            helpToolStripMenuItem1.ForeColor=SystemColors.ControlText;
             helpToolStripMenuItem1.Name="helpToolStripMenuItem1";
             helpToolStripMenuItem1.Size=new Size(44, 20);
             helpToolStripMenuItem1.Text="Help";
             // 
             // updateConfigurationToolStripMenuItem1
             // 
-            updateConfigurationToolStripMenuItem1.BackColor=Color.FromArgb(60, 63, 65);
-            updateConfigurationToolStripMenuItem1.ForeColor=Color.FromArgb(220, 220, 220);
+            updateConfigurationToolStripMenuItem1.BackColor=SystemColors.Control;
+            updateConfigurationToolStripMenuItem1.ForeColor=SystemColors.ControlText;
             updateConfigurationToolStripMenuItem1.Name="updateConfigurationToolStripMenuItem1";
             updateConfigurationToolStripMenuItem1.Size=new Size(219, 22);
             updateConfigurationToolStripMenuItem1.Text="Update configuration";
@@ -1013,16 +1004,16 @@ namespace Shopee_Autobuy_Bot
             // 
             // toolStripSeparator1
             // 
-            toolStripSeparator1.BackColor=Color.FromArgb(60, 63, 65);
-            toolStripSeparator1.ForeColor=Color.FromArgb(220, 220, 220);
+            toolStripSeparator1.BackColor=SystemColors.Control;
+            toolStripSeparator1.ForeColor=SystemColors.ControlText;
             toolStripSeparator1.Margin=new System.Windows.Forms.Padding(0, 0, 0, 1);
             toolStripSeparator1.Name="toolStripSeparator1";
             toolStripSeparator1.Size=new Size(216, 6);
             // 
             // aboutToolStripMenuItem
             // 
-            aboutToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
-            aboutToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            aboutToolStripMenuItem.BackColor=SystemColors.Control;
+            aboutToolStripMenuItem.ForeColor=SystemColors.ControlText;
             aboutToolStripMenuItem.Name="aboutToolStripMenuItem";
             aboutToolStripMenuItem.Size=new Size(219, 22);
             aboutToolStripMenuItem.Text="About Shopee Autobuy Bot";
@@ -1030,8 +1021,8 @@ namespace Shopee_Autobuy_Bot
             // 
             // changeHistoryToolStripMenuItem
             // 
-            changeHistoryToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
-            changeHistoryToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            changeHistoryToolStripMenuItem.BackColor=SystemColors.Control;
+            changeHistoryToolStripMenuItem.ForeColor=SystemColors.ControlText;
             changeHistoryToolStripMenuItem.Name="changeHistoryToolStripMenuItem";
             changeHistoryToolStripMenuItem.Size=new Size(219, 22);
             changeHistoryToolStripMenuItem.Text="Changelog history";
@@ -1039,9 +1030,9 @@ namespace Shopee_Autobuy_Bot
             // 
             // testToolStripMenuItem
             // 
-            testToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            testToolStripMenuItem.BackColor=SystemColors.Control;
             testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { saveCookiesToolStripMenuItem, fontTestToolStripMenuItem });
-            testToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            testToolStripMenuItem.ForeColor=SystemColors.ControlText;
             testToolStripMenuItem.Name="testToolStripMenuItem";
             testToolStripMenuItem.Size=new Size(39, 20);
             testToolStripMenuItem.Text="Test";
@@ -1049,8 +1040,8 @@ namespace Shopee_Autobuy_Bot
             // 
             // saveCookiesToolStripMenuItem
             // 
-            saveCookiesToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
-            saveCookiesToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            saveCookiesToolStripMenuItem.BackColor=SystemColors.Control;
+            saveCookiesToolStripMenuItem.ForeColor=SystemColors.ControlText;
             saveCookiesToolStripMenuItem.Name="saveCookiesToolStripMenuItem";
             saveCookiesToolStripMenuItem.Size=new Size(140, 22);
             saveCookiesToolStripMenuItem.Text="save cookies";
@@ -1058,8 +1049,8 @@ namespace Shopee_Autobuy_Bot
             // 
             // fontTestToolStripMenuItem
             // 
-            fontTestToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
-            fontTestToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            fontTestToolStripMenuItem.BackColor=SystemColors.Control;
+            fontTestToolStripMenuItem.ForeColor=SystemColors.ControlText;
             fontTestToolStripMenuItem.Name="fontTestToolStripMenuItem";
             fontTestToolStripMenuItem.Size=new Size(140, 22);
             fontTestToolStripMenuItem.Text="font test";
@@ -1067,17 +1058,17 @@ namespace Shopee_Autobuy_Bot
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
+            fileToolStripMenuItem.BackColor=Color.Gainsboro;
             fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { UpgradeProToolStripMenuItem, exitToolStripMenuItem });
-            fileToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            fileToolStripMenuItem.ForeColor=SystemColors.ControlText;
             fileToolStripMenuItem.Name="fileToolStripMenuItem";
             fileToolStripMenuItem.Size=new Size(37, 20);
             fileToolStripMenuItem.Text="File";
             // 
             // UpgradeProToolStripMenuItem
             // 
-            UpgradeProToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
-            UpgradeProToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            UpgradeProToolStripMenuItem.BackColor=Color.Gainsboro;
+            UpgradeProToolStripMenuItem.ForeColor=SystemColors.ControlText;
             UpgradeProToolStripMenuItem.Name="UpgradeProToolStripMenuItem";
             UpgradeProToolStripMenuItem.Size=new Size(154, 22);
             UpgradeProToolStripMenuItem.Text="Upgrade to Pro";
@@ -1086,8 +1077,8 @@ namespace Shopee_Autobuy_Bot
             // 
             // exitToolStripMenuItem
             // 
-            exitToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
-            exitToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            exitToolStripMenuItem.BackColor=Color.Gainsboro;
+            exitToolStripMenuItem.ForeColor=SystemColors.ControlText;
             exitToolStripMenuItem.Name="exitToolStripMenuItem";
             exitToolStripMenuItem.Size=new Size(154, 22);
             exitToolStripMenuItem.Text="Exit";
@@ -1095,16 +1086,16 @@ namespace Shopee_Autobuy_Bot
             // 
             // helpToolStripMenuItem
             // 
-            helpToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
-            helpToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            helpToolStripMenuItem.BackColor=Color.Gainsboro;
+            helpToolStripMenuItem.ForeColor=SystemColors.ControlText;
             helpToolStripMenuItem.Name="helpToolStripMenuItem";
             helpToolStripMenuItem.Size=new Size(44, 20);
             helpToolStripMenuItem.Text="Help";
             // 
             // aboutToolStripMenuItem1
             // 
-            aboutToolStripMenuItem1.BackColor=Color.FromArgb(60, 63, 65);
-            aboutToolStripMenuItem1.ForeColor=Color.FromArgb(220, 220, 220);
+            aboutToolStripMenuItem1.BackColor=Color.Gainsboro;
+            aboutToolStripMenuItem1.ForeColor=SystemColors.ControlText;
             aboutToolStripMenuItem1.Name="aboutToolStripMenuItem1";
             aboutToolStripMenuItem1.Size=new Size(187, 22);
             aboutToolStripMenuItem1.Text="About";
@@ -1112,8 +1103,8 @@ namespace Shopee_Autobuy_Bot
             // 
             // changelogHistoryToolStripMenuItem
             // 
-            changelogHistoryToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
-            changelogHistoryToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            changelogHistoryToolStripMenuItem.BackColor=Color.Gainsboro;
+            changelogHistoryToolStripMenuItem.ForeColor=SystemColors.ControlText;
             changelogHistoryToolStripMenuItem.Name="changelogHistoryToolStripMenuItem";
             changelogHistoryToolStripMenuItem.Size=new Size(187, 22);
             changelogHistoryToolStripMenuItem.Text="Change history";
@@ -1121,8 +1112,8 @@ namespace Shopee_Autobuy_Bot
             // 
             // disclaimerToolStripMenuItem
             // 
-            disclaimerToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
-            disclaimerToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            disclaimerToolStripMenuItem.BackColor=Color.Gainsboro;
+            disclaimerToolStripMenuItem.ForeColor=SystemColors.ControlText;
             disclaimerToolStripMenuItem.Name="disclaimerToolStripMenuItem";
             disclaimerToolStripMenuItem.Size=new Size(187, 22);
             disclaimerToolStripMenuItem.Text="Disclaimer";
@@ -1131,16 +1122,16 @@ namespace Shopee_Autobuy_Bot
             // 
             // howToUseToolStripMenuItem
             // 
-            howToUseToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
-            howToUseToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            howToUseToolStripMenuItem.BackColor=Color.Gainsboro;
+            howToUseToolStripMenuItem.ForeColor=SystemColors.ControlText;
             howToUseToolStripMenuItem.Name="howToUseToolStripMenuItem";
             howToUseToolStripMenuItem.Size=new Size(187, 22);
             howToUseToolStripMenuItem.Text="How to use";
             // 
             // updateConfigurationToolStripMenuItem
             // 
-            updateConfigurationToolStripMenuItem.BackColor=Color.FromArgb(60, 63, 65);
-            updateConfigurationToolStripMenuItem.ForeColor=Color.FromArgb(220, 220, 220);
+            updateConfigurationToolStripMenuItem.BackColor=Color.Gainsboro;
+            updateConfigurationToolStripMenuItem.ForeColor=SystemColors.ControlText;
             updateConfigurationToolStripMenuItem.Name="updateConfigurationToolStripMenuItem";
             updateConfigurationToolStripMenuItem.Size=new Size(187, 22);
             updateConfigurationToolStripMenuItem.Text="Update configuration";
@@ -1148,7 +1139,6 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkSectionPanelBuyingMode
             // 
-            darkSectionPanelBuyingMode.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
             darkSectionPanelBuyingMode.Controls.Add(tbBelowSpecificPriceCARTCHECKOUTPrice);
             darkSectionPanelBuyingMode.Controls.Add(tbPriceSpecific);
             darkSectionPanelBuyingMode.Controls.Add(radioButtonPriceSpecificCartCheckout);
@@ -1159,9 +1149,10 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanelBuyingMode.Location=new Point(384, 170);
             darkSectionPanelBuyingMode.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkSectionPanelBuyingMode.Name="darkSectionPanelBuyingMode";
-            darkSectionPanelBuyingMode.SectionHeader="Buying Mode";
             darkSectionPanelBuyingMode.Size=new Size(376, 126);
             darkSectionPanelBuyingMode.TabIndex=50;
+            darkSectionPanelBuyingMode.TabStop=false;
+            darkSectionPanelBuyingMode.Text="Buying Mode";
             darkSectionPanelBuyingMode.Click+=darkSectionPanelBuyingMode_Click;
             // 
             // tbPriceSpecific
@@ -1179,7 +1170,7 @@ namespace Shopee_Autobuy_Bot
             // radioButtonCheckOutCart
             // 
             radioButtonCheckOutCart.AutoSize=true;
-            radioButtonCheckOutCart.ForeColor=Color.Gainsboro;
+            radioButtonCheckOutCart.ForeColor=SystemColors.ControlText;
             radioButtonCheckOutCart.Location=new Point(26, 66);
             radioButtonCheckOutCart.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             radioButtonCheckOutCart.Name="radioButtonCheckOutCart";
@@ -1192,7 +1183,7 @@ namespace Shopee_Autobuy_Bot
             // radioButtonShockingSale
             // 
             radioButtonShockingSale.AutoSize=true;
-            radioButtonShockingSale.ForeColor=Color.Gainsboro;
+            radioButtonShockingSale.ForeColor=SystemColors.ControlText;
             radioButtonShockingSale.Location=new Point(145, 36);
             radioButtonShockingSale.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             radioButtonShockingSale.Name="radioButtonShockingSale";
@@ -1205,7 +1196,7 @@ namespace Shopee_Autobuy_Bot
             // 
             radioButtonBuyNormal.AutoSize=true;
             radioButtonBuyNormal.Checked=true;
-            radioButtonBuyNormal.ForeColor=Color.Gainsboro;
+            radioButtonBuyNormal.ForeColor=SystemColors.ControlText;
             radioButtonBuyNormal.Location=new Point(26, 36);
             radioButtonBuyNormal.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             radioButtonBuyNormal.Name="radioButtonBuyNormal";
@@ -1218,7 +1209,7 @@ namespace Shopee_Autobuy_Bot
             // radioButtonPriceSpecific
             // 
             radioButtonPriceSpecific.AutoSize=true;
-            radioButtonPriceSpecific.ForeColor=Color.Gainsboro;
+            radioButtonPriceSpecific.ForeColor=SystemColors.ControlText;
             radioButtonPriceSpecific.Location=new Point(146, 66);
             radioButtonPriceSpecific.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             radioButtonPriceSpecific.Name="radioButtonPriceSpecific";
@@ -1233,7 +1224,7 @@ namespace Shopee_Autobuy_Bot
             label1.AutoSize=true;
             label1.BackColor=Color.Transparent;
             label1.Font=new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor=Color.Gold;
+            label1.ForeColor=Color.DarkGoldenrod;
             label1.Location=new Point(545, 506);
             label1.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             label1.Name="label1";
@@ -1247,7 +1238,7 @@ namespace Shopee_Autobuy_Bot
             label2.AutoSize=true;
             label2.BackColor=Color.Transparent;
             label2.Font=new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor=Color.Gold;
+            label2.ForeColor=Color.DarkGoldenrod;
             label2.Location=new Point(599, 506);
             label2.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             label2.Name="label2";
@@ -1261,7 +1252,7 @@ namespace Shopee_Autobuy_Bot
             label3.AutoSize=true;
             label3.BackColor=Color.Transparent;
             label3.Font=new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor=Color.Gold;
+            label3.ForeColor=Color.DarkGoldenrod;
             label3.Location=new Point(647, 506);
             label3.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             label3.Name="label3";
@@ -1275,7 +1266,7 @@ namespace Shopee_Autobuy_Bot
             label4.AutoSize=true;
             label4.BackColor=Color.Transparent;
             label4.Font=new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor=Color.Gold;
+            label4.ForeColor=Color.DarkGoldenrod;
             label4.Location=new Point(701, 506);
             label4.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             label4.Name="label4";
@@ -1286,7 +1277,6 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkSectionPanelPaymentDetails
             // 
-            darkSectionPanelPaymentDetails.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
             darkSectionPanelPaymentDetails.Controls.Add(darkLabel14);
             darkSectionPanelPaymentDetails.Controls.Add(tbLast4Digit);
             darkSectionPanelPaymentDetails.Controls.Add(darkLabel6);
@@ -1298,9 +1288,10 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanelPaymentDetails.Location=new Point(384, 301);
             darkSectionPanelPaymentDetails.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkSectionPanelPaymentDetails.Name="darkSectionPanelPaymentDetails";
-            darkSectionPanelPaymentDetails.SectionHeader="Payment Details";
             darkSectionPanelPaymentDetails.Size=new Size(376, 195);
             darkSectionPanelPaymentDetails.TabIndex=55;
+            darkSectionPanelPaymentDetails.TabStop=false;
+            darkSectionPanelPaymentDetails.Text="Payment Details";
             // 
             // darkCheckBoxRedeemShopeeVoucher
             // 
@@ -1327,15 +1318,15 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkSectionPanel1
             // 
-            darkSectionPanel1.BorderStyle=System.Windows.Forms.BorderStyle.FixedSingle;
             darkSectionPanel1.Controls.Add(darkCheckBoxRedeemShopeeVoucher);
             darkSectionPanel1.Controls.Add(darkCheckBoxClaimShopVoucher);
             darkSectionPanel1.Controls.Add(darkCheckBoxRedeemCoin);
             darkSectionPanel1.Location=new Point(331, 501);
             darkSectionPanel1.Name="darkSectionPanel1";
-            darkSectionPanel1.SectionHeader="Voucher & coin";
             darkSectionPanel1.Size=new Size(192, 151);
             darkSectionPanel1.TabIndex=57;
+            darkSectionPanel1.TabStop=false;
+            darkSectionPanel1.Text="Voucher & coin";
             // 
             // notifyIcon1
             // 
@@ -1353,7 +1344,7 @@ namespace Shopee_Autobuy_Bot
             // darkLabel15
             // 
             darkLabel15.AutoSize=true;
-            darkLabel15.ForeColor=Color.FromArgb(220, 220, 220);
+            darkLabel15.ForeColor=SystemColors.ControlText;
             darkLabel15.Location=new Point(547, 7);
             darkLabel15.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel15.Name="darkLabel15";
@@ -1365,7 +1356,7 @@ namespace Shopee_Autobuy_Bot
             // labelShopeeAcc
             // 
             labelShopeeAcc.AutoSize=true;
-            labelShopeeAcc.ForeColor=Color.FromArgb(220, 220, 220);
+            labelShopeeAcc.ForeColor=SystemColors.ControlText;
             labelShopeeAcc.Location=new Point(641, 7);
             labelShopeeAcc.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             labelShopeeAcc.Name="labelShopeeAcc";
@@ -1439,94 +1430,94 @@ namespace Shopee_Autobuy_Bot
 
 
         #endregion
-        private DarkUI.Controls.DarkComboBox darkComboBoxPaymentMethod;
-        private DarkUI.Controls.DarkComboBox darkComboBoxCourier;
-        private DarkUI.Controls.DarkLabel darkLabel7;
-        private DarkUI.Controls.DarkTextBox darkTextBoxVariationString;
-        private DarkUI.Controls.DarkSectionPanel darkSectionPanelProductDetails;
-        private DarkUI.Controls.DarkLabel darkLabel12;
-        private DarkUI.Controls.DarkLabel darkLabel11;
-        private DarkUI.Controls.DarkTextBox darkTextBoxProductLink;
-        private DarkUI.Controls.DarkLabel darkLabel10;
-        private DarkUI.Controls.DarkNumericUpDown darkNumericUpDownProductQuantity;
-        private DarkUI.Controls.DarkLabel darkLabel6;
-        private DarkUI.Controls.DarkTextBox darkTextBoxShopeePayPin;
-        private DarkUI.Controls.DarkLabel darkLabel9;
+        private System.Windows.Forms.ComboBox darkComboBoxPaymentMethod;
+        private System.Windows.Forms.ComboBox darkComboBoxCourier;
+        private System.Windows.Forms.Label darkLabel7;
+        private System.Windows.Forms.TextBox darkTextBoxVariationString;
+        private System.Windows.Forms.GroupBox darkSectionPanelProductDetails;
+        private System.Windows.Forms.Label darkLabel12;
+        private System.Windows.Forms.Label darkLabel11;
+        private System.Windows.Forms.TextBox darkTextBoxProductLink;
+        private System.Windows.Forms.Label darkLabel10;
+        private System.Windows.Forms.NumericUpDown darkNumericUpDownProductQuantity;
+        private System.Windows.Forms.Label darkLabel6;
+        private System.Windows.Forms.TextBox darkTextBoxShopeePayPin;
+        private System.Windows.Forms.Label darkLabel9;
         private System.Windows.Forms.RichTextBox richTextBoxLogs;
-        private DarkUI.Controls.DarkButton darkButton1;
-        private DarkUI.Controls.DarkButton darkButton4;
-        private DarkUI.Controls.DarkButton darkButton3;
-        private DarkUI.Controls.DarkButton darkButton2;
-        private DarkUI.Controls.DarkButton darkButtonStart;
-        private DarkUI.Controls.DarkSectionPanel darkSectionPanelLogs;
-        private DarkUI.Controls.DarkCheckBox darkCheckBoxPlaySound;
-        private DarkUI.Controls.DarkCheckBox darkCheckBoxDisableImageExtension;
-        private DarkUI.Controls.DarkLabel darkLabel5;
-        private DarkUI.Controls.DarkLabel darkLabel4;
-        private DarkUI.Controls.DarkNumericUpDown darkNumericUpDownRefreshSeconds;
-        private DarkUI.Controls.DarkLabel darkLabel2;
-        private DarkUI.Controls.DarkLabel darkLabel1;
-        private DarkUI.Controls.DarkNumericUpDown darkNumericUpDownCountdownMinutes;
-        private DarkUI.Controls.DarkNumericUpDown darkNumericUpDownCountdownHour;
+        private System.Windows.Forms.Button darkButton1;
+        private System.Windows.Forms.Button darkButton4;
+        private System.Windows.Forms.Button darkButton3;
+        private System.Windows.Forms.Button darkButton2;
+        private System.Windows.Forms.Button darkButtonStart;
+        private System.Windows.Forms.GroupBox darkSectionPanelLogs;
+        private System.Windows.Forms.CheckBox darkCheckBoxPlaySound;
+        private System.Windows.Forms.CheckBox darkCheckBoxDisableImageExtension;
+        private System.Windows.Forms.Label darkLabel5;
+        private System.Windows.Forms.Label darkLabel4;
+        private System.Windows.Forms.NumericUpDown darkNumericUpDownRefreshSeconds;
+        private System.Windows.Forms.Label darkLabel2;
+        private System.Windows.Forms.Label darkLabel1;
+        private System.Windows.Forms.NumericUpDown darkNumericUpDownCountdownMinutes;
+        private System.Windows.Forms.NumericUpDown darkNumericUpDownCountdownHour;
         private System.Windows.Forms.Label timerlabelBig;
-        private DarkUI.Controls.DarkSectionPanel darkSectionPanelTimerMode;
-        private DarkUI.Controls.DarkComboBox darkComboBoxBankType;
-        private DarkUI.Controls.DarkLabel darkLabel8;
-        private DarkUI.Controls.DarkNumericUpDown darkNumericUpDownTimeOut;
-        private DarkUI.Controls.DarkLabel darkLabel13;
-        private DarkUI.Controls.DarkCheckBox darkCheckBoxRedeemCoin;
-        private DarkUI.Controls.DarkButton darkButtonDeleteAllOrder;
-        private DarkUI.Controls.DarkSectionPanel darkSectionPanelBotSettings;
-        private DarkUI.Controls.DarkCheckBox darkCheckBoxHeadless;
-        private DarkUI.Controls.DarkCheckBox darkCheckBoxRefresh;
-        private DarkUI.Docking.DarkDockPanel darkDockPanel1;
-        private DarkUI.Controls.DarkMenuStrip darkMenuStrip1;
+        private System.Windows.Forms.GroupBox darkSectionPanelTimerMode;
+        private System.Windows.Forms.ComboBox darkComboBoxBankType;
+        private System.Windows.Forms.Label darkLabel8;
+        private System.Windows.Forms.NumericUpDown darkNumericUpDownTimeOut;
+        private System.Windows.Forms.Label darkLabel13;
+        private System.Windows.Forms.CheckBox darkCheckBoxRedeemCoin;
+        private System.Windows.Forms.Button darkButtonDeleteAllOrder;
+        private System.Windows.Forms.GroupBox darkSectionPanelBotSettings;
+        private System.Windows.Forms.CheckBox darkCheckBoxHeadless;
+        private System.Windows.Forms.CheckBox darkCheckBoxRefresh;
+        private System.Windows.Forms.Panel darkDockPanel1;
+        private System.Windows.Forms.MenuStrip darkMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem UpgradeProToolStripMenuItem;
-        private DarkUI.Controls.DarkLabel darkLabel3;
-        private DarkUI.Controls.DarkNumericUpDown darkNumericUpDownCountDownSecond;
-        private DarkUI.Controls.DarkCheckBox darkCheckBoxTestMode;
-        private DarkUI.Controls.DarkSectionPanel darkSectionPanelBuyingMode;
+        private System.Windows.Forms.Label darkLabel3;
+        private System.Windows.Forms.NumericUpDown darkNumericUpDownCountDownSecond;
+        private System.Windows.Forms.CheckBox darkCheckBoxTestMode;
+        private System.Windows.Forms.GroupBox darkSectionPanelBuyingMode;
         private System.Windows.Forms.RadioButton radioButtonBuyNormal;
         private System.Windows.Forms.RadioButton radioButtonPriceSpecific;
         private System.Windows.Forms.RadioButton radioButtonShockingSale;
         private System.Windows.Forms.RadioButton radioButtonCheckOutCart;
-        private DarkUI.Controls.DarkTextBox tbPriceSpecific;
-        private DarkUI.Controls.DarkCheckBox darkCheckBoxScheduleBot;
+        private System.Windows.Forms.TextBox tbPriceSpecific;
+        private System.Windows.Forms.CheckBox darkCheckBoxScheduleBot;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem disclaimerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changelogHistoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem howToUseToolStripMenuItem;
-        private DarkUI.Controls.DarkCheckBox darkCheckBoxTomorrow;
+        private System.Windows.Forms.CheckBox darkCheckBoxTomorrow;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripMenuItem updateConfigurationToolStripMenuItem;
-        private DarkUI.Controls.DarkLabel darkLabel14;
-        private DarkUI.Controls.DarkTextBox tbLast4Digit;
-        private DarkUI.Controls.DarkButton darkButton5;
-        private DarkUI.Controls.DarkCheckBox darkCheckBoxLogging;
+        private System.Windows.Forms.Label darkLabel14;
+        private System.Windows.Forms.TextBox tbLast4Digit;
+        private System.Windows.Forms.Button darkButton5;
+        private System.Windows.Forms.CheckBox darkCheckBoxLogging;
         private System.Windows.Forms.ToolStripMenuItem gfrgToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeHistoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateConfigurationToolStripMenuItem1;
-        private DarkUI.Controls.DarkSectionPanel darkSectionPanelPaymentDetails;
-        private DarkUI.Controls.DarkButton darkButton6;
-        private DarkUI.Controls.DarkCheckBox darkCheckBoxRedeemShopeeVoucher;
-        private DarkUI.Controls.DarkCheckBox darkCheckBoxClaimShopVoucher;
+        private System.Windows.Forms.GroupBox darkSectionPanelPaymentDetails;
+        private System.Windows.Forms.Button darkButton6;
+        private System.Windows.Forms.CheckBox darkCheckBoxRedeemShopeeVoucher;
+        private System.Windows.Forms.CheckBox darkCheckBoxClaimShopVoucher;
         private System.Windows.Forms.ToolTip toolTip1;
-        private DarkUI.Controls.DarkTextBox tbBelowSpecificPriceCARTCHECKOUTPrice;
+        private System.Windows.Forms.TextBox tbBelowSpecificPriceCARTCHECKOUTPrice;
         private System.Windows.Forms.RadioButton radioButtonPriceSpecificCartCheckout;
-        private DarkUI.Controls.DarkButton darkButton7;
+        private System.Windows.Forms.Button darkButton7;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveCookiesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem scanSaleItemsToolStripMenuItem;
-        private DarkUI.Controls.DarkSectionPanel darkSectionPanel1;
+        private System.Windows.Forms.GroupBox darkSectionPanel1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ToolStripMenuItem testCookieToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem elementEditorToolStripMenuItem;
@@ -1534,9 +1525,9 @@ namespace Shopee_Autobuy_Bot
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem fontTestToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private DarkUI.Controls.DarkCheckBox cbRandom;
-        private DarkUI.Controls.DarkLabel darkLabel15;
-        private DarkUI.Controls.DarkLabel labelShopeeAcc;
+        private System.Windows.Forms.CheckBox cbRandom;
+        private System.Windows.Forms.Label darkLabel15;
+        private System.Windows.Forms.Label labelShopeeAcc;
         private System.Windows.Forms.ToolStripMenuItem sessionCookieToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadCookiesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveCookieToolStripMenuItem;
@@ -1545,7 +1536,7 @@ namespace Shopee_Autobuy_Bot
         private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemLoadProfile;
         private System.Windows.Forms.ToolStripMenuItem saveCurrentProfileToolStripMenuItem;
-        private DarkUI.Controls.DarkCheckBox cbVariantPreSelected;
+        private System.Windows.Forms.CheckBox cbVariantPreSelected;
     }
 }
 

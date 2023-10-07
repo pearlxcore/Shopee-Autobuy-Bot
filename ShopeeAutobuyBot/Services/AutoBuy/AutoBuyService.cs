@@ -1,5 +1,4 @@
-﻿using DarkUI.Controls;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using Shopee_Autobuy_Bot.Constants;
 using Shopee_Autobuy_Bot.Services.Logger;
@@ -12,6 +11,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Threading;
+using System.Windows.Forms;
 using static Shopee_Autobuy_Bot.Constants.AutoBuyInfo;
 
 namespace Shopee_Autobuy_Bot.Services
@@ -23,7 +23,7 @@ namespace Shopee_Autobuy_Bot.Services
         private readonly ITelegramService _telegramService;
         private readonly IAutoBuyLoggerService _autoBuyLoggerService;
         private readonly ISeleniumService _seleniumService;
-        private readonly DarkButton _startButton;
+        private readonly Button _startButton;
         public DateTime WorkTime; // Read-only property
         public TimeSpan TimeSpan { get; private set; }
         public TimeSpan CheckoutTimeFinal { get; private set; }
@@ -32,7 +32,7 @@ namespace Shopee_Autobuy_Bot.Services
 
         private readonly bool _aborted = false;
 
-        public AutoBuyService(IAutoBuyLoggerService autoBuyLoggerService, ISeleniumService seleniumService, DarkButton startButton, IProfileService profileService)
+        public AutoBuyService(IAutoBuyLoggerService autoBuyLoggerService, ISeleniumService seleniumService, Button startButton, IProfileService profileService)
         {
 
             _autoBuyLoggerService = autoBuyLoggerService;
@@ -202,7 +202,7 @@ namespace Shopee_Autobuy_Bot.Services
             try
             {
                 _seleniumService.WaitForUrlToMatch(pageUrl);
-                _autoBuyLoggerService.AutoBuyProcessLog("Cart page loaded.", Color.LawnGreen, true, true, true);
+                _autoBuyLoggerService.AutoBuyProcessLog("Cart page loaded.", Color.DarkGreen, true, true, true);
                 Thread.Sleep(ConfigInfo.delay_step_94);
                 if (_seleniumService.ElementExists(By.XPath(ConstantElements.CartPage.CartEmptyLabel)))
                 {
@@ -211,7 +211,7 @@ namespace Shopee_Autobuy_Bot.Services
                 }
                 if (_seleniumService.ElementExists(By.XPath(ConstantElements.Payment.PaymentErrorMessage.InactiveProducts)))
                 {
-                    _autoBuyLoggerService.AutoBuyProcessLog("Warning! Some of cart item is inactive.", Color.Yellow, true, true, true);
+                    _autoBuyLoggerService.AutoBuyProcessLog("Warning! Some of cart item is inactive.", Color.OrangeRed, true, true, true);
                 }
                 _seleniumService.WaitElementExists(By.XPath(ConstantElements.CartPage.SelectAllLabel));
                 if (_seleniumService.GetElement(By.XPath(ConstantElements.CartPage.SelectAllLabel)).Text == "Select All (0)")
@@ -223,12 +223,12 @@ namespace Shopee_Autobuy_Bot.Services
                 {
                     // check select all checkbox
                     CartCheckout_SelectAllCheckBox();
-                    _autoBuyLoggerService.AutoBuyProcessLog("All item selected.", Color.LawnGreen, true, true, true);
+                    _autoBuyLoggerService.AutoBuyProcessLog("All item selected.", Color.DarkGreen, true, true, true);
                     Thread.Sleep(ConfigInfo.delay_step_2);
                     (decimal userPrice, decimal cartTotalPrice) priceTuple = CartCheckout_GetPrice();
                     decimal userPrice = priceTuple.userPrice;
                     decimal cartTotalPrice = priceTuple.cartTotalPrice;
-                    _autoBuyLoggerService.AutoBuyProcessLog("User price : " + userPrice, Color.White, true, true, true);
+                    _autoBuyLoggerService.AutoBuyProcessLog("User price : " + userPrice, SystemColors.ControlText, true, true, true);
                     if (cartTotalPrice > userPrice || cartTotalPrice == userPrice)
                     {
                         _autoBuyLoggerService.AutoBuyProcessLog("Cart total price : " + cartTotalPrice, Color.IndianRed, true, true, true);
@@ -236,13 +236,13 @@ namespace Shopee_Autobuy_Bot.Services
                     }
                     else
                     {
-                        _autoBuyLoggerService.AutoBuyProcessLog("Cart total price : " + cartTotalPrice, Color.LawnGreen, true, true, true);
+                        _autoBuyLoggerService.AutoBuyProcessLog("Cart total price : " + cartTotalPrice, Color.DarkGreen, true, true, true);
                         CheckoutTime = DateTime.Now;
                         // claim multiple shop voucher
                         CartCheckout_ClaimShopVoucher();
                         // click checkout button
                         CartCheckout_ClickCheckoutButton();
-                        _autoBuyLoggerService.AutoBuyProcessLog("Click 'Check Out'.", Color.LawnGreen, true, true, true);
+                        _autoBuyLoggerService.AutoBuyProcessLog("Click 'Check Out'.", Color.DarkGreen, true, true, true);
                         if (_seleniumService.ElementExists(By.XPath(ElementXpath.ItemNotSelected)))
                         {
                             _autoBuyLoggerService.AutoBuyProcessLog("No item available to checkout.", Color.IndianRed, true, true, true);
@@ -289,7 +289,7 @@ namespace Shopee_Autobuy_Bot.Services
                 _seleniumService.WaitUrlContainString(pageUrl);
                 CheckoutTime = DateTime.Now;
                 Thread.Sleep(ConfigInfo.delay_step_95);
-                _autoBuyLoggerService.AutoBuyProcessLog("Product page loaded.", Color.LawnGreen, true, true, true);
+                _autoBuyLoggerService.AutoBuyProcessLog("Product page loaded.", Color.DarkGreen, true, true, true);
                 SetCurrentElement(nameof(ConstantElements.ProductPage.BuyNowButton), ConstantElements.ProductPage.BuyNowButton);
 
                 try
@@ -326,16 +326,16 @@ namespace Shopee_Autobuy_Bot.Services
                         (decimal userPrice, decimal productPrice) priceTuple = GetPrice();
                         decimal userPrice = priceTuple.userPrice;
                         decimal productPrice = priceTuple.productPrice;
-                        _autoBuyLoggerService.AutoBuyProcessLog("User price : " + userPrice, Color.White, true, true, true);
+                        _autoBuyLoggerService.AutoBuyProcessLog("User price : " + userPrice, SystemColors.ControlText, true, true, true);
 
                         // if user price is below that product price then proceed
                         if (productPrice < userPrice)
                         {
-                            _autoBuyLoggerService.AutoBuyProcessLog("Current product price : " + productPrice, Color.LawnGreen, true, true, true);
+                            _autoBuyLoggerService.AutoBuyProcessLog("Current product price : " + productPrice, Color.DarkGreen, true, true, true);
                             IncreaseQuantity();
                             _seleniumService.SelectElement(By.XPath(strButtonBuyNow))
                                 .ClickElement();
-                            _autoBuyLoggerService.AutoBuyProcessLog("Click 'Buy Now'.", Color.LawnGreen, true, true, true);
+                            _autoBuyLoggerService.AutoBuyProcessLog("Click 'Buy Now'.", Color.DarkGreen, true, true, true);
                             ShopeeAutobuy(Try, 2);
                         }
                         else if (productPrice > userPrice || productPrice == userPrice)
@@ -365,7 +365,7 @@ namespace Shopee_Autobuy_Bot.Services
             {
                 string pageUrl = "https://shopee.com.my/cart";
                 _seleniumService.WaitUrlContainString(pageUrl);
-                _autoBuyLoggerService.AutoBuyProcessLog("Cart page loaded.", Color.LawnGreen, true, true, true);
+                _autoBuyLoggerService.AutoBuyProcessLog("Cart page loaded.", Color.DarkGreen, true, true, true);
                 Thread.Sleep(ConfigInfo.delay_step_96);
                 if (_seleniumService.ElementExists(By.XPath(ConstantElements.CartPage.CartEmptyLabel)))
                 {
@@ -374,7 +374,7 @@ namespace Shopee_Autobuy_Bot.Services
                 }
                 if (_seleniumService.ElementExists(By.XPath(ConstantElements.Payment.PaymentErrorMessage.InactiveProducts)))
                 {
-                    _autoBuyLoggerService.AutoBuyProcessLog("Warning! Some of cart item is inactive.", Color.Yellow, true, true, true);
+                    _autoBuyLoggerService.AutoBuyProcessLog("Warning! Some of cart item is inactive.", Color.OrangeRed, true, true, true);
                 }
                 if (_seleniumService.WaitElementExists(By.XPath(ConstantElements.CartPage.SelectAllLabel))
                         .GetElement(By.XPath(ConstantElements.CartPage.SelectAllLabel)).Text == "Select All (0)")
@@ -387,12 +387,12 @@ namespace Shopee_Autobuy_Bot.Services
                     CheckoutTime = DateTime.Now;
                     // check select all checkbox
                     CartCheckout_SelectAllCheckBox();
-                    _autoBuyLoggerService.AutoBuyProcessLog("Item selected.", Color.LawnGreen, true, true, true);
+                    _autoBuyLoggerService.AutoBuyProcessLog("Item selected.", Color.DarkGreen, true, true, true);
                     // claim multiple shop voucher
                     CartCheckout_ClaimShopVoucher();
                     // click checkout button
                     CartCheckout_ClickCheckoutButton();
-                    _autoBuyLoggerService.AutoBuyProcessLog("Click 'Check Out'.", Color.LawnGreen, true, true, true);
+                    _autoBuyLoggerService.AutoBuyProcessLog("Click 'Check Out'.", Color.DarkGreen, true, true, true);
 
                     if (_seleniumService.ElementExists(By.XPath(ElementXpath.ItemNotSelected)))
                     {
@@ -464,7 +464,7 @@ namespace Shopee_Autobuy_Bot.Services
                 }
                 else
                 {
-                    _autoBuyLoggerService.AutoBuyProcessLog("Product is in Flash/Shocking Sale.", Color.LawnGreen, true, true, true);
+                    _autoBuyLoggerService.AutoBuyProcessLog("Product is in Flash/Shocking Sale.", Color.DarkGreen, true, true, true);
                     ShopeeAutobuy(Try, 1);
                 }
             }
@@ -484,7 +484,7 @@ namespace Shopee_Autobuy_Bot.Services
                 _seleniumService.WaitUrlContainString(pageUrl);
                 CheckoutTime = DateTime.Now;
                 Thread.Sleep(ConfigInfo.delay_step_1);
-                _autoBuyLoggerService.AutoBuyProcessLog("Product page loaded.", Color.LawnGreen, true, true, true);
+                _autoBuyLoggerService.AutoBuyProcessLog("Product page loaded.", Color.DarkGreen, true, true, true);
 
                 try
                 {
@@ -519,7 +519,7 @@ namespace Shopee_Autobuy_Bot.Services
                     {
                         IncreaseQuantity();
                         _seleniumService.ClickElement(BuyNowButton);
-                        _autoBuyLoggerService.AutoBuyProcessLog("Click 'Buy Now'.", Color.LawnGreen, true, true, true);
+                        _autoBuyLoggerService.AutoBuyProcessLog("Click 'Buy Now'.", Color.DarkGreen, true, true, true);
                         ShopeeAutobuy(Try, 2);
                     }
                 }
@@ -549,7 +549,7 @@ namespace Shopee_Autobuy_Bot.Services
                                 if (!variant.GetAttribute("class").Equals("product-variation product-variation--disabled"))
                                 {
                                     _seleniumService.ClickElement(variant);
-                                    _autoBuyLoggerService.AutoBuyProcessLog("Click " + variant.Text + ".", Color.LawnGreen, true, true, true);
+                                    _autoBuyLoggerService.AutoBuyProcessLog("Click " + variant.Text + ".", Color.DarkGreen, true, true, true);
                                     break;
                                 }
                             }
@@ -588,7 +588,7 @@ namespace Shopee_Autobuy_Bot.Services
                             if (!variationElement.GetAttribute("class").Equals("product-variation product-variation--selected"))
                             {
                                 _seleniumService.ClickElement(variationElement);
-                                _autoBuyLoggerService.AutoBuyProcessLog("Click " + variationElement.Text + ".", Color.LawnGreen, true, true, true);
+                                _autoBuyLoggerService.AutoBuyProcessLog("Click " + variationElement.Text + ".", Color.DarkGreen, true, true, true);
                             }
                         }
 
@@ -611,7 +611,7 @@ namespace Shopee_Autobuy_Bot.Services
                 }
                 else if (_seleniumService.UrlContainString("cart"))
                 {
-                    _autoBuyLoggerService.AutoBuyProcessLog("Cart page loaded.", Color.LawnGreen, true, true, true);
+                    _autoBuyLoggerService.AutoBuyProcessLog("Cart page loaded.", Color.DarkGreen, true, true, true);
 
                     // claim shop voucher
                     if (_profileService.SelectedProfile.Voucher_Coin.claim_shop_vc)
@@ -626,7 +626,7 @@ namespace Shopee_Autobuy_Bot.Services
                             SetCurrentElement(nameof(ConstantElements.CartPage.ClaimShopVoucherButton), ConstantElements.CartPage.ClaimShopVoucherButton);
                             _seleniumService.SelectElement(By.XPath(strClaimShopeVoucher))
                                 .ClickElement();
-                            _autoBuyLoggerService.AutoBuyProcessLog("Click 'Claim shop voucher'.", Color.LawnGreen, true, true, true);
+                            _autoBuyLoggerService.AutoBuyProcessLog("Click 'Claim shop voucher'.", Color.DarkGreen, true, true, true);
                         }
                         Thread.Sleep(ConfigInfo.delay_claim_shop_voucher);
                     }
@@ -636,8 +636,8 @@ namespace Shopee_Autobuy_Bot.Services
                     SetCurrentElement(nameof(ConstantElements.CartPage.CheckOutButton), ConstantElements.CartPage.CheckOutButton);
                     _seleniumService.SelectElement(By.XPath(strCheckOutButton))
                                 .ClickElement();
-                    _autoBuyLoggerService.AutoBuyProcessLog("Click 'Check Out'.", Color.LawnGreen, true, true, true);
-                    _autoBuyLoggerService.AutoBuyProcessLog("Checkout page loaded.", Color.LawnGreen, true, true, true);
+                    _autoBuyLoggerService.AutoBuyProcessLog("Click 'Check Out'.", Color.DarkGreen, true, true, true);
+                    _autoBuyLoggerService.AutoBuyProcessLog("Checkout page loaded.", Color.DarkGreen, true, true, true);
 
                     if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Cart")
                         Thread.Sleep(300);
@@ -674,7 +674,7 @@ namespace Shopee_Autobuy_Bot.Services
                     {
                         _seleniumService.SelectElement(By.XPath(ConstantElements.CheckoutPage.ChangePaymentButton))
                             .ClickElement();
-                        _autoBuyLoggerService.AutoBuyProcessLog("Click 'Change Payment Method'.", Color.LawnGreen, true, true, true);
+                        _autoBuyLoggerService.AutoBuyProcessLog("Click 'Change Payment Method'.", Color.DarkGreen, true, true, true);
                     }
                     bool exists_5 = true;
                     bool exists_4 = true;
@@ -707,7 +707,7 @@ namespace Shopee_Autobuy_Bot.Services
                                 }
                                 _seleniumService.SelectElement(By.XPath(strDebitCreditVariation))
                                     .ClickElement();
-                                _autoBuyLoggerService.AutoBuyProcessLog("Select 'Credit / Debit card (" + _profileService.SelectedProfile.PaymentDetail.last_4_digit_card + ")'.", Color.LawnGreen, true, true, true);
+                                _autoBuyLoggerService.AutoBuyProcessLog("Select 'Credit / Debit card (" + _profileService.SelectedProfile.PaymentDetail.last_4_digit_card + ")'.", Color.DarkGreen, true, true, true);
                             }
                             break;
 
@@ -728,7 +728,7 @@ namespace Shopee_Autobuy_Bot.Services
                                 .Text.Contains("ATM / Cash Deposit"))
                             {
                                 _seleniumService.ClickElement();
-                                _autoBuyLoggerService.AutoBuyProcessLog("Select 'ATM / Cash Deposit'.", Color.LawnGreen, true, true, true);
+                                _autoBuyLoggerService.AutoBuyProcessLog("Select 'ATM / Cash Deposit'.", Color.DarkGreen, true, true, true);
                             }
                             break;
 
@@ -747,7 +747,7 @@ namespace Shopee_Autobuy_Bot.Services
                             }
                             _seleniumService.SelectElement(By.XPath(ConstantElements.Payment.PaymentMethod.CashOnDelivery))
                                     .ClickElement();
-                            _autoBuyLoggerService.AutoBuyProcessLog("Select 'Cash on Delivery'.", Color.LawnGreen, true, true, true);
+                            _autoBuyLoggerService.AutoBuyProcessLog("Select 'Cash on Delivery'.", Color.DarkGreen, true, true, true);
                             break;
 
                         case "KK Mart":
@@ -764,7 +764,7 @@ namespace Shopee_Autobuy_Bot.Services
                             }
                             _seleniumService.SelectElement(By.XPath(ConstantElements.Payment.PaymentMethod.ConvenienceStores))
                                     .ClickElement();
-                            _autoBuyLoggerService.AutoBuyProcessLog("Select 'Cash Payment at Convenience Stores'.", Color.LawnGreen, true, true, true);
+                            _autoBuyLoggerService.AutoBuyProcessLog("Select 'Cash Payment at Convenience Stores'.", Color.DarkGreen, true, true, true);
                             if (_seleniumService.ElementExists(By.XPath(ConstantElements.Payment.PaymentErrorMessage.TransactionExceeded)))
                             {
                                 _autoBuyLoggerService.AutoBuyProcessLog("You have exceeded the transaction limit. Aborting..", Color.IndianRed, true, true, true);
@@ -772,7 +772,7 @@ namespace Shopee_Autobuy_Bot.Services
                             }
                             _seleniumService.SelectElement(By.XPath(ConstantElements.Payment.PaymentConvenienceStoresType.KKMart))
                                 .ClickElement();
-                            _autoBuyLoggerService.AutoBuyProcessLog("Select '" + _profileService.SelectedProfile.PaymentDetail.payment_method + "'.", Color.LawnGreen, true, true, true);
+                            _autoBuyLoggerService.AutoBuyProcessLog("Select '" + _profileService.SelectedProfile.PaymentDetail.payment_method + "'.", Color.DarkGreen, true, true, true);
                             break;
 
                         case "7-Eleven":
@@ -790,7 +790,7 @@ namespace Shopee_Autobuy_Bot.Services
                             }
                             _seleniumService.SelectElement(By.XPath(ConstantElements.Payment.PaymentMethod.ConvenienceStores))
                                      .ClickElement();
-                            _autoBuyLoggerService.AutoBuyProcessLog("Select 'Cash Payment at Convenience Stores'.", Color.LawnGreen, true, true, true);
+                            _autoBuyLoggerService.AutoBuyProcessLog("Select 'Cash Payment at Convenience Stores'.", Color.DarkGreen, true, true, true);
                             if (_seleniumService.ElementExists(By.XPath(ConstantElements.Payment.PaymentErrorMessage.TransactionExceeded)))
                             {
                                 _autoBuyLoggerService.AutoBuyProcessLog("You have exceeded the transaction limit. Aborting..", Color.IndianRed, true, true, true);
@@ -798,7 +798,7 @@ namespace Shopee_Autobuy_Bot.Services
                             }
                             _seleniumService.SelectElement(By.XPath(ConstantElements.Payment.PaymentConvenienceStoresType.SevenEleven))
                                 .ClickElement();
-                            _autoBuyLoggerService.AutoBuyProcessLog("Select '" + _profileService.SelectedProfile.PaymentDetail.payment_method + "'.", Color.LawnGreen, true, true, true);
+                            _autoBuyLoggerService.AutoBuyProcessLog("Select '" + _profileService.SelectedProfile.PaymentDetail.payment_method + "'.", Color.DarkGreen, true, true, true);
                             break;
 
                         case "Online Banking":
@@ -816,10 +816,10 @@ namespace Shopee_Autobuy_Bot.Services
 
                             _seleniumService.SelectElement(By.XPath(ConstantElements.Payment.PaymentMethod.OnlineBanking))
                                 .ClickElement();
-                            _autoBuyLoggerService.AutoBuyProcessLog("Select 'Online Banking'.", Color.LawnGreen, true, true, true);
+                            _autoBuyLoggerService.AutoBuyProcessLog("Select 'Online Banking'.", Color.DarkGreen, true, true, true);
                             _seleniumService.SelectElement(By.XPath(strBankType))
                                 .ClickElement();
-                            _autoBuyLoggerService.AutoBuyProcessLog("Select '" + _profileService.SelectedProfile.PaymentDetail.bank_type + "'.", Color.LawnGreen, true, true, true);
+                            _autoBuyLoggerService.AutoBuyProcessLog("Select '" + _profileService.SelectedProfile.PaymentDetail.bank_type + "'.", Color.DarkGreen, true, true, true);
                             break;
 
                         case "ShopeePay":
@@ -840,7 +840,7 @@ namespace Shopee_Autobuy_Bot.Services
                                 }
                                 _seleniumService.SelectElement(By.XPath(ElementXpath.strShopeePay_5))
                                     .ClickElement();
-                                _autoBuyLoggerService.AutoBuyProcessLog("Select 'ShopeePay'.", Color.LawnGreen, true, true, true);
+                                _autoBuyLoggerService.AutoBuyProcessLog("Select 'ShopeePay'.", Color.DarkGreen, true, true, true);
                             }
                             if (exists_4)
                             {
@@ -851,7 +851,7 @@ namespace Shopee_Autobuy_Bot.Services
                                 }
                                 _seleniumService.SelectElement(By.XPath(ElementXpath.strShopeePay_4))
                                      .ClickElement();
-                                _autoBuyLoggerService.AutoBuyProcessLog("Select 'ShopeePay'.", Color.LawnGreen, true, true, true);
+                                _autoBuyLoggerService.AutoBuyProcessLog("Select 'ShopeePay'.", Color.DarkGreen, true, true, true);
                             }
                             break;
                     }
@@ -897,7 +897,7 @@ namespace Shopee_Autobuy_Bot.Services
                 Thread.Sleep(ConfigInfo.delay_step_4);
                 _seleniumService.SelectElement(By.XPath(ElementXpath.strChangeCourier))
                      .ClickElement();
-                _autoBuyLoggerService.AutoBuyProcessLog("Click 'Change Courier'.", Color.LawnGreen, true, true, true);
+                _autoBuyLoggerService.AutoBuyProcessLog("Click 'Change Courier'.", Color.DarkGreen, true, true, true);
 
                 // click courier type
                 Thread.Sleep(ConfigInfo.delay_step_4);
@@ -909,7 +909,7 @@ namespace Shopee_Autobuy_Bot.Services
                     .WaitElementExists(By.XPath(ElementXpath.strChangeCourier))
                 .SelectElement(By.XPath(ElementXpath.strChangeCourier))
                     .ClickElement();
-                _autoBuyLoggerService.AutoBuyProcessLog("Click '" + Helper.Shopee.Courier + "'.", Color.LawnGreen, true, true, true);
+                _autoBuyLoggerService.AutoBuyProcessLog("Click '" + Helper.Shopee.Courier + "'.", Color.DarkGreen, true, true, true);
 
                 // click deliver anytime
                 Thread.Sleep(ConfigInfo.delay_step_4);
@@ -922,12 +922,12 @@ namespace Shopee_Autobuy_Bot.Services
                         _seleniumService.ClickElement(DeliverAnytimeElement);
                     }
                 }
-                _autoBuyLoggerService.AutoBuyProcessLog("Click 'Deliver any time'.", Color.LawnGreen, true, true, true);
+                _autoBuyLoggerService.AutoBuyProcessLog("Click 'Deliver any time'.", Color.DarkGreen, true, true, true);
 
                 // click submit button
                 _seleniumService.SelectElement(By.XPath(ElementXpath.strSubmitCourier))
                     .ClickElement();
-                _autoBuyLoggerService.AutoBuyProcessLog("Click 'Submit'.", Color.LawnGreen, true, true, true);
+                _autoBuyLoggerService.AutoBuyProcessLog("Click 'Submit'.", Color.DarkGreen, true, true, true);
                 ShopeeAutobuy(Try, 5);
             }
             catch (Exception ex)
@@ -956,7 +956,7 @@ namespace Shopee_Autobuy_Bot.Services
                     //IWebElement checkBox = driver.FindElement(By.XPath(strRedeemCoin));
                     //IJavaScriptExecutor jse = (IJavaScriptExecutor)driver;
                     //jse.ExecuteScript("arguments[0].click();", checkBox);
-                    _autoBuyLoggerService.AutoBuyProcessLog("Click 'Redeem Shopee Coin'.", Color.LawnGreen, true, true, true);
+                    _autoBuyLoggerService.AutoBuyProcessLog("Click 'Redeem Shopee Coin'.", Color.DarkGreen, true, true, true);
                     Thread.Sleep(ConfigInfo.delay_redeem_coin);
                 }
                 // redeem any shopee voucher
@@ -966,7 +966,7 @@ namespace Shopee_Autobuy_Bot.Services
                     SetCurrentElement(nameof(ConstantElements.CheckoutPage.SelectShopeeVoucherButton), ConstantElements.CheckoutPage.SelectShopeeVoucherButton);
                     _seleniumService.SelectElement(By.XPath(strSelectVoucher))
                         .ClickElement();
-                    _autoBuyLoggerService.AutoBuyProcessLog("Click 'Select Voucher'.", Color.LawnGreen, true, true, true);
+                    _autoBuyLoggerService.AutoBuyProcessLog("Click 'Select Voucher'.", Color.DarkGreen, true, true, true);
                     Thread.Sleep(ConfigInfo.delay_any_shopee_voucher);
                     _seleniumService.WaitElementClickable(By.XPath(ConstantElements.CheckoutPage.ShopeeVoucherContainer));
                     _seleniumService.WaitElementVisible(By.XPath(ConstantElements.CheckoutPage.ShopeeVoucherContainer));
@@ -990,7 +990,7 @@ namespace Shopee_Autobuy_Bot.Services
                     _seleniumService.WaitElementVisible(By.XPath(ConstantElements.CheckoutPage.PlaceOrderButton))
                         .SelectElement(By.XPath(ConstantElements.CheckoutPage.PlaceOrderButton))
                         .ClickElement();
-                    _autoBuyLoggerService.AutoBuyProcessLog("Click 'Place Order'.", Color.LawnGreen, true, true, true);
+                    _autoBuyLoggerService.AutoBuyProcessLog("Click 'Place Order'.", Color.DarkGreen, true, true, true);
                     TimeSpan = WorkTime - DateTime.Now;
                     CheckoutTimeFinal = CheckoutTime - DateTime.Now;
                     Thread.Sleep(300);
@@ -1001,7 +1001,7 @@ namespace Shopee_Autobuy_Bot.Services
                         .ClickElement()
                             .SelectElement(By.XPath(ConstantElements.CheckoutPage.PlaceOrderButton))
                             .ClickElement();
-                        _autoBuyLoggerService.AutoBuyProcessLog("Click 'Place Order'.", Color.LawnGreen, true, true, true);
+                        _autoBuyLoggerService.AutoBuyProcessLog("Click 'Place Order'.", Color.DarkGreen, true, true, true);
                         TimeSpan = WorkTime - DateTime.Now;
                         CheckoutTimeFinal = CheckoutTime - DateTime.Now;
                     }
@@ -1016,7 +1016,7 @@ namespace Shopee_Autobuy_Bot.Services
                 else
                 {
                     TimeSpan = WorkTime - DateTime.Now;
-                    _autoBuyLoggerService.AutoBuyProcessLog("Finish test mode in " + TimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.White, true, true, true);
+                    _autoBuyLoggerService.AutoBuyProcessLog("Finish test mode in " + TimeSpan.ToString("hh\\:mm\\:ss\\:ff"), SystemColors.ControlText, true, true, true);
                 }
             }
             catch (Exception ex)
@@ -1037,7 +1037,7 @@ namespace Shopee_Autobuy_Bot.Services
                     Thread.Sleep(ConfigInfo.delay_shopee_pay);
                     _seleniumService.SelectElement(By.XPath(ElementXpath.strPayButtonID))
                         .ClickElement();
-                    _autoBuyLoggerService.AutoBuyProcessLog("Click 'Pay'.", Color.LawnGreen, true, true, true);
+                    _autoBuyLoggerService.AutoBuyProcessLog("Click 'Pay'.", Color.DarkGreen, true, true, true);
                     _seleniumService.WaitElementExists(By.XPath(ElementXpath.strShopeePayPin));
                     _seleniumService.WaitElementClickable(By.XPath(ElementXpath.strShopeePayPin));
                     if (_seleniumService.ElementExists(By.XPath(ElementXpath.strShopeePayPin)))
@@ -1056,8 +1056,8 @@ namespace Shopee_Autobuy_Bot.Services
                             _autoBuyLoggerService.AutoBuyProcessLog("Wrong PIN entered. Please key in ShopeePay PIN manually.", Color.IndianRed, true, true, true);
                             return;
                         }
-                        _autoBuyLoggerService.AutoBuyProcessLog("Checkout time : " + CheckoutTimeFinal.ToString("hh\\:mm\\:ss\\:ff"), Color.LawnGreen, true, true, true);
-                        _autoBuyLoggerService.AutoBuyProcessLog("Total time : " + TimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.LawnGreen, true, true, true);
+                        _autoBuyLoggerService.AutoBuyProcessLog("Checkout time : " + CheckoutTimeFinal.ToString("hh\\:mm\\:ss\\:ff"), Color.DarkGreen, true, true, true);
+                        _autoBuyLoggerService.AutoBuyProcessLog("Total time : " + TimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.DarkGreen, true, true, true);
                         _telegramService.SendNotification(_profileService.SelectedProfile.ScheduleBot.schedule,
                             _profileService.SelectedProfile.BuyingMode.ToString(),
                             Helper.Shopee.OrderPrice,
@@ -1093,8 +1093,8 @@ namespace Shopee_Autobuy_Bot.Services
             {
                 ShopeeAutobuy(Try, 7);
             }
-            _autoBuyLoggerService.AutoBuyProcessLog("Checkout time : " + CheckoutTimeFinal.ToString("hh\\:mm\\:ss\\:ff"), Color.LawnGreen, true, true, true);
-            _autoBuyLoggerService.AutoBuyProcessLog("Total time : " + TimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.LawnGreen, true, true, true);
+            _autoBuyLoggerService.AutoBuyProcessLog("Checkout time : " + CheckoutTimeFinal.ToString("hh\\:mm\\:ss\\:ff"), Color.DarkGreen, true, true, true);
+            _autoBuyLoggerService.AutoBuyProcessLog("Total time : " + TimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.DarkGreen, true, true, true);
             _telegramService.SendNotification(_profileService.SelectedProfile.ScheduleBot.schedule,
                             _profileService.SelectedProfile.BuyingMode.ToString(),
                             Helper.Shopee.OrderPrice,

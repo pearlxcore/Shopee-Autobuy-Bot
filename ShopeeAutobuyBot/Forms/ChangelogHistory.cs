@@ -1,10 +1,11 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Windows.Forms;
 
 namespace Shopee_Autobuy_Bot
 {
-    public partial class ChangelogHistory : DarkUI.Forms.DarkForm
+    public partial class ChangelogHistory : Form
     {
         public ChangelogHistory()
         {

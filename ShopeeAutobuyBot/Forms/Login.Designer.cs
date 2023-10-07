@@ -28,225 +28,219 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components=new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.btnLogin = new DarkUI.Controls.DarkButton();
-            this.tbId = new DarkUI.Controls.DarkTextBox();
-            this.darkLabel1 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel2 = new DarkUI.Controls.DarkLabel();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.listBoxChromeProfile = new DarkUI.Controls.DarkListBox(this.components);
-            this.darkSectionPanel1 = new DarkUI.Controls.DarkSectionPanel();
-            this.btnAddChromeProfile = new DarkUI.Controls.DarkButton();
-            this.btnDeleteProfile = new DarkUI.Controls.DarkButton();
-            this.tbNewChromeProfile = new DarkUI.Controls.DarkTextBox();
-            this.darkLabel3 = new DarkUI.Controls.DarkLabel();
-            this.darkCheckBoxHeadless = new DarkUI.Controls.DarkCheckBox();
-            this.darkCheckBoxDisableImageExtension = new DarkUI.Controls.DarkCheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.darkSectionPanel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.SuspendLayout();
+            btnLogin=new System.Windows.Forms.Button();
+            tbId=new System.Windows.Forms.TextBox();
+            darkLabel1=new System.Windows.Forms.Label();
+            darkLabel2=new System.Windows.Forms.Label();
+            notifyIcon1=new System.Windows.Forms.NotifyIcon(components);
+            darkSectionPanel1=new System.Windows.Forms.GroupBox();
+            listBoxChromeProfile=new System.Windows.Forms.ListBox();
+            btnAddChromeProfile=new System.Windows.Forms.Button();
+            btnDeleteProfile=new System.Windows.Forms.Button();
+            tbNewChromeProfile=new System.Windows.Forms.TextBox();
+            darkLabel3=new System.Windows.Forms.Label();
+            darkCheckBoxHeadless=new System.Windows.Forms.CheckBox();
+            darkCheckBoxDisableImageExtension=new System.Windows.Forms.CheckBox();
+            groupBox1=new System.Windows.Forms.GroupBox();
+            groupBox2=new System.Windows.Forms.GroupBox();
+            darkSectionPanel1.SuspendLayout();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            SuspendLayout();
             // 
             // btnLogin
             // 
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(12, 284);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(393, 28);
-            this.btnLogin.TabIndex = 0;
-            this.btnLogin.Text = "Launch SAB";
-            this.btnLogin.Click += new System.EventHandler(this.darkButton1_Click);
+            btnLogin.Font=new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnLogin.Location=new System.Drawing.Point(12, 284);
+            btnLogin.Name="btnLogin";
+            btnLogin.Size=new System.Drawing.Size(393, 28);
+            btnLogin.TabIndex=0;
+            btnLogin.Text="Launch SAB";
+            btnLogin.Click+=darkButton1_Click;
             // 
             // tbId
             // 
-            this.tbId.Enabled = false;
-            this.tbId.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbId.Location = new System.Drawing.Point(154, 71);
-            this.tbId.Name = "tbId";
-            this.tbId.Size = new System.Drawing.Size(142, 22);
-            this.tbId.TabIndex = 1;
-            this.tbId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbId.TextChanged += new System.EventHandler(this.tbId_TextChanged);
+            tbId.Enabled=false;
+            tbId.Font=new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbId.Location=new System.Drawing.Point(154, 71);
+            tbId.Name="tbId";
+            tbId.Size=new System.Drawing.Size(142, 22);
+            tbId.TabIndex=1;
+            tbId.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            tbId.TextChanged+=tbId_TextChanged;
             // 
             // darkLabel1
             // 
-            this.darkLabel1.AutoSize = true;
-            this.darkLabel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.darkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel1.Location = new System.Drawing.Point(96, 76);
-            this.darkLabel1.Name = "darkLabel1";
-            this.darkLabel1.Size = new System.Drawing.Size(52, 13);
-            this.darkLabel1.TabIndex = 2;
-            this.darkLabel1.Text = "User Id : ";
+            darkLabel1.AutoSize=true;
+            darkLabel1.Font=new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            darkLabel1.ForeColor=System.Drawing.SystemColors.ControlText;
+            darkLabel1.Location=new System.Drawing.Point(96, 76);
+            darkLabel1.Name="darkLabel1";
+            darkLabel1.Size=new System.Drawing.Size(52, 13);
+            darkLabel1.TabIndex=2;
+            darkLabel1.Text="User Id : ";
             // 
             // darkLabel2
             // 
-            this.darkLabel2.AutoSize = true;
-            this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel2.Location = new System.Drawing.Point(11, 180);
-            this.darkLabel2.Name = "darkLabel2";
-            this.darkLabel2.Size = new System.Drawing.Size(0, 13);
-            this.darkLabel2.TabIndex = 3;
+            darkLabel2.AutoSize=true;
+            darkLabel2.ForeColor=System.Drawing.Color.FromArgb(220, 220, 220);
+            darkLabel2.Location=new System.Drawing.Point(11, 180);
+            darkLabel2.Name="darkLabel2";
+            darkLabel2.Size=new System.Drawing.Size(0, 13);
+            darkLabel2.TabIndex=3;
             // 
             // notifyIcon1
             // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
-            // listBoxChromeProfile
-            // 
-            this.listBoxChromeProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.listBoxChromeProfile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBoxChromeProfile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxChromeProfile.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.listBoxChromeProfile.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBoxChromeProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.listBoxChromeProfile.FormattingEnabled = true;
-            this.listBoxChromeProfile.ItemHeight = 18;
-            this.listBoxChromeProfile.Location = new System.Drawing.Point(1, 25);
-            this.listBoxChromeProfile.Name = "listBoxChromeProfile";
-            this.listBoxChromeProfile.Size = new System.Drawing.Size(215, 94);
-            this.listBoxChromeProfile.TabIndex = 14;
+            notifyIcon1.Text="notifyIcon1";
+            notifyIcon1.Visible=true;
             // 
             // darkSectionPanel1
             // 
-            this.darkSectionPanel1.Controls.Add(this.listBoxChromeProfile);
-            this.darkSectionPanel1.Location = new System.Drawing.Point(14, 23);
-            this.darkSectionPanel1.Name = "darkSectionPanel1";
-            this.darkSectionPanel1.SectionHeader = "Shopee Account";
-            this.darkSectionPanel1.Size = new System.Drawing.Size(217, 120);
-            this.darkSectionPanel1.TabIndex = 15;
+            darkSectionPanel1.Controls.Add(listBoxChromeProfile);
+            darkSectionPanel1.Location=new System.Drawing.Point(14, 23);
+            darkSectionPanel1.Name="darkSectionPanel1";
+            darkSectionPanel1.Size=new System.Drawing.Size(217, 120);
+            darkSectionPanel1.TabIndex=15;
+            darkSectionPanel1.TabStop=false;
+            darkSectionPanel1.Text="Shopee Account";
+            // 
+            // listBoxChromeProfile
+            // 
+            listBoxChromeProfile.Dock=System.Windows.Forms.DockStyle.Fill;
+            listBoxChromeProfile.FormattingEnabled=true;
+            listBoxChromeProfile.Location=new System.Drawing.Point(3, 18);
+            listBoxChromeProfile.Name="listBoxChromeProfile";
+            listBoxChromeProfile.Size=new System.Drawing.Size(211, 99);
+            listBoxChromeProfile.TabIndex=0;
             // 
             // btnAddChromeProfile
             // 
-            this.btnAddChromeProfile.Location = new System.Drawing.Point(237, 67);
-            this.btnAddChromeProfile.Name = "btnAddChromeProfile";
-            this.btnAddChromeProfile.Size = new System.Drawing.Size(141, 20);
-            this.btnAddChromeProfile.TabIndex = 16;
-            this.btnAddChromeProfile.Text = "Add Shopee account";
-            this.btnAddChromeProfile.Click += new System.EventHandler(this.darkButton1_Click_2);
+            btnAddChromeProfile.Location=new System.Drawing.Point(237, 67);
+            btnAddChromeProfile.Name="btnAddChromeProfile";
+            btnAddChromeProfile.Size=new System.Drawing.Size(141, 20);
+            btnAddChromeProfile.TabIndex=16;
+            btnAddChromeProfile.Text="Add Shopee account";
+            btnAddChromeProfile.Click+=darkButton1_Click_2;
             // 
             // btnDeleteProfile
             // 
-            this.btnDeleteProfile.Location = new System.Drawing.Point(238, 123);
-            this.btnDeleteProfile.Name = "btnDeleteProfile";
-            this.btnDeleteProfile.Size = new System.Drawing.Size(141, 20);
-            this.btnDeleteProfile.TabIndex = 17;
-            this.btnDeleteProfile.Text = "Delete selected account";
-            this.btnDeleteProfile.Click += new System.EventHandler(this.btnDeleteProfile_Click);
+            btnDeleteProfile.Location=new System.Drawing.Point(238, 123);
+            btnDeleteProfile.Name="btnDeleteProfile";
+            btnDeleteProfile.Size=new System.Drawing.Size(141, 20);
+            btnDeleteProfile.TabIndex=17;
+            btnDeleteProfile.Text="Delete selected account";
+            btnDeleteProfile.Click+=btnDeleteProfile_Click;
             // 
             // tbNewChromeProfile
             // 
-            this.tbNewChromeProfile.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNewChromeProfile.Location = new System.Drawing.Point(237, 39);
-            this.tbNewChromeProfile.Name = "tbNewChromeProfile";
-            this.tbNewChromeProfile.Size = new System.Drawing.Size(142, 22);
-            this.tbNewChromeProfile.TabIndex = 18;
-            this.tbNewChromeProfile.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            tbNewChromeProfile.Font=new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbNewChromeProfile.Location=new System.Drawing.Point(237, 39);
+            tbNewChromeProfile.Name="tbNewChromeProfile";
+            tbNewChromeProfile.Size=new System.Drawing.Size(142, 22);
+            tbNewChromeProfile.TabIndex=18;
+            tbNewChromeProfile.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // darkLabel3
             // 
-            this.darkLabel3.AutoSize = true;
-            this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel3.Location = new System.Drawing.Point(237, 23);
-            this.darkLabel3.Name = "darkLabel3";
-            this.darkLabel3.Size = new System.Drawing.Size(119, 13);
-            this.darkLabel3.TabIndex = 19;
-            this.darkLabel3.Text = "New Shopee account:";
+            darkLabel3.AutoSize=true;
+            darkLabel3.ForeColor=System.Drawing.SystemColors.ControlText;
+            darkLabel3.Location=new System.Drawing.Point(237, 23);
+            darkLabel3.Name="darkLabel3";
+            darkLabel3.Size=new System.Drawing.Size(119, 13);
+            darkLabel3.TabIndex=19;
+            darkLabel3.Text="New Shopee account:";
             // 
             // darkCheckBoxHeadless
             // 
-            this.darkCheckBoxHeadless.AutoSize = true;
-            this.darkCheckBoxHeadless.Location = new System.Drawing.Point(99, 18);
-            this.darkCheckBoxHeadless.Margin = new System.Windows.Forms.Padding(2);
-            this.darkCheckBoxHeadless.Name = "darkCheckBoxHeadless";
-            this.darkCheckBoxHeadless.Size = new System.Drawing.Size(137, 17);
-            this.darkCheckBoxHeadless.TabIndex = 49;
-            this.darkCheckBoxHeadless.Text = "Hide Chrome Browser";
+            darkCheckBoxHeadless.AutoSize=true;
+            darkCheckBoxHeadless.Location=new System.Drawing.Point(99, 18);
+            darkCheckBoxHeadless.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxHeadless.Name="darkCheckBoxHeadless";
+            darkCheckBoxHeadless.Size=new System.Drawing.Size(137, 17);
+            darkCheckBoxHeadless.TabIndex=49;
+            darkCheckBoxHeadless.Text="Hide Chrome Browser";
             // 
             // darkCheckBoxDisableImageExtension
             // 
-            this.darkCheckBoxDisableImageExtension.AutoSize = true;
-            this.darkCheckBoxDisableImageExtension.Location = new System.Drawing.Point(99, 47);
-            this.darkCheckBoxDisableImageExtension.Margin = new System.Windows.Forms.Padding(2);
-            this.darkCheckBoxDisableImageExtension.Name = "darkCheckBoxDisableImageExtension";
-            this.darkCheckBoxDisableImageExtension.Size = new System.Drawing.Size(197, 17);
-            this.darkCheckBoxDisableImageExtension.TabIndex = 48;
-            this.darkCheckBoxDisableImageExtension.Text = "Disable website Image & Extension";
+            darkCheckBoxDisableImageExtension.AutoSize=true;
+            darkCheckBoxDisableImageExtension.Location=new System.Drawing.Point(99, 47);
+            darkCheckBoxDisableImageExtension.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxDisableImageExtension.Name="darkCheckBoxDisableImageExtension";
+            darkCheckBoxDisableImageExtension.Size=new System.Drawing.Size(197, 17);
+            darkCheckBoxDisableImageExtension.TabIndex=48;
+            darkCheckBoxDisableImageExtension.Text="Disable website Image & Extension";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.darkCheckBoxHeadless);
-            this.groupBox1.Controls.Add(this.darkCheckBoxDisableImageExtension);
-            this.groupBox1.Controls.Add(this.tbId);
-            this.groupBox1.Controls.Add(this.darkLabel1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 171);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(393, 105);
-            this.groupBox1.TabIndex = 50;
-            this.groupBox1.TabStop = false;
+            groupBox1.Controls.Add(darkCheckBoxHeadless);
+            groupBox1.Controls.Add(darkCheckBoxDisableImageExtension);
+            groupBox1.Controls.Add(tbId);
+            groupBox1.Controls.Add(darkLabel1);
+            groupBox1.Location=new System.Drawing.Point(12, 171);
+            groupBox1.Name="groupBox1";
+            groupBox1.Size=new System.Drawing.Size(393, 105);
+            groupBox1.TabIndex=50;
+            groupBox1.TabStop=false;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.darkSectionPanel1);
-            this.groupBox2.Controls.Add(this.tbNewChromeProfile);
-            this.groupBox2.Controls.Add(this.btnDeleteProfile);
-            this.groupBox2.Controls.Add(this.darkLabel3);
-            this.groupBox2.Controls.Add(this.btnAddChromeProfile);
-            this.groupBox2.Location = new System.Drawing.Point(12, 8);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(393, 162);
-            this.groupBox2.TabIndex = 51;
-            this.groupBox2.TabStop = false;
+            groupBox2.Controls.Add(darkSectionPanel1);
+            groupBox2.Controls.Add(tbNewChromeProfile);
+            groupBox2.Controls.Add(btnDeleteProfile);
+            groupBox2.Controls.Add(darkLabel3);
+            groupBox2.Controls.Add(btnAddChromeProfile);
+            groupBox2.Location=new System.Drawing.Point(12, 8);
+            groupBox2.Name="groupBox2";
+            groupBox2.Size=new System.Drawing.Size(393, 162);
+            groupBox2.TabIndex=51;
+            groupBox2.TabStop=false;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 321);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.darkLabel2);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.Name = "Login";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Shopee Autobuy Bot";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
-            this.Load += new System.EventHandler(this.Form2_Load);
-            this.darkSectionPanel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions=new System.Drawing.SizeF(6F, 13F);
+            AutoScaleMode=System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize=new System.Drawing.Size(417, 321);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
+            Controls.Add(btnLogin);
+            Controls.Add(darkLabel2);
+            Font=new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            FormBorderStyle=System.Windows.Forms.FormBorderStyle.FixedDialog;
+            Icon=(System.Drawing.Icon)resources.GetObject("$this.Icon");
+            MaximizeBox=false;
+            Name="Login";
+            SizeGripStyle=System.Windows.Forms.SizeGripStyle.Hide;
+            StartPosition=System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text="Shopee Autobuy Bot";
+            FormClosing+=Form2_FormClosing;
+            Load+=Form2_Load;
+            darkSectionPanel1.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private DarkUI.Controls.DarkButton btnLogin;
-        private DarkUI.Controls.DarkTextBox tbId;
-        private DarkUI.Controls.DarkLabel darkLabel1;
-        private DarkUI.Controls.DarkLabel darkLabel2;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.TextBox tbId;
+        private System.Windows.Forms.Label darkLabel1;
+        private System.Windows.Forms.Label darkLabel2;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private DarkUI.Controls.DarkListBox listBoxChromeProfile;
-        private DarkUI.Controls.DarkSectionPanel darkSectionPanel1;
-        private DarkUI.Controls.DarkButton btnAddChromeProfile;
-        private DarkUI.Controls.DarkButton btnDeleteProfile;
-        private DarkUI.Controls.DarkTextBox tbNewChromeProfile;
-        private DarkUI.Controls.DarkLabel darkLabel3;
-        private DarkUI.Controls.DarkCheckBox darkCheckBoxHeadless;
-        private DarkUI.Controls.DarkCheckBox darkCheckBoxDisableImageExtension;
+        private System.Windows.Forms.GroupBox darkSectionPanel1;
+        private System.Windows.Forms.Button btnAddChromeProfile;
+        private System.Windows.Forms.Button btnDeleteProfile;
+        private System.Windows.Forms.TextBox tbNewChromeProfile;
+        private System.Windows.Forms.Label darkLabel3;
+        private System.Windows.Forms.CheckBox darkCheckBoxHeadless;
+        private System.Windows.Forms.CheckBox darkCheckBoxDisableImageExtension;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ListBox listBoxChromeProfile;
     }
 }

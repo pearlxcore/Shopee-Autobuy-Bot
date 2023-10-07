@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Shopee_Autobuy_Bot
 {
-    public partial class LoadProfile : DarkUI.Forms.DarkForm
+    public partial class LoadProfile : Form
     {
         private List<Utililties.ProfileModel.Root> profileList = new List<Utililties.ProfileModel.Root>();
         private readonly IProfileService _profileService;

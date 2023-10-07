@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Shopee_Autobuy_Bot
 {
-    public partial class SaveProfile : DarkUI.Forms.DarkForm
+    public partial class SaveProfile : Form
     {
         private readonly IProfileService _profileService;
 

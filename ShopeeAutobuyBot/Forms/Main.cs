@@ -23,7 +23,7 @@ using System.Windows.Forms;
 
 namespace Shopee_Autobuy_Bot
 {
-    public partial class Main : DarkUI.Forms.DarkForm
+    public partial class Main : Form
     {
         private UserModel UserInfo = new UserModel();
         private ChromeDriverHelper ChromedriverHelper = new ChromeDriverHelper();
@@ -70,7 +70,8 @@ namespace Shopee_Autobuy_Bot
 
         private void MapControlsToSelectedProfile()
         {
-
+            if (_profileService.SelectedProfile is null)
+                _profileService.SelectedProfile = new ProfileModel.Root();
             if (radioButtonBuyNormal.Checked)
                 _profileService.SelectedProfile.BuyingMode.mode = BuyingMode.Normal;
             if (radioButtonShockingSale.Checked)
@@ -264,7 +265,7 @@ namespace Shopee_Autobuy_Bot
                     Helper.Shopee.BankType = (_profileService.SelectedProfile.PaymentDetail.payment_method == "Online Banking") ? _profileService.SelectedProfile.PaymentDetail.bank_type : "";
                     Helper.Shopee.Status = "Fail";
                     _seleniumService.timeOut = _profileService.SelectedProfile.BotSettings.timeout;
-                    _autoBuyLoggerService.AutoBuyProcessLog("Autobuy starts at : " + AutoBuyInfo.AutoBuyStartTime.ToString(), Color.White, true, true, true);
+                    _autoBuyLoggerService.AutoBuyProcessLog("Autobuy starts at : " + AutoBuyInfo.AutoBuyStartTime.ToString(), SystemColors.ControlText, true, true, true);
                     startWorkThreadAsync();
                 }
                 else
@@ -349,6 +350,7 @@ namespace Shopee_Autobuy_Bot
                         _seleniumService.GoToUrl("https://shopee.com.my/cart");
                         stepType = 94;
                     }
+                    _autoBuyLoggerService.AutoBuyProcessLog($"Job started at {GetCurrentTime()}", Color.IndianRed, true, true, true);
                     _autoBuyService.ShopeeAutobuy(0, stepType, DateTime.Now);
 
                     darkButtonStart.Text = "Start";
@@ -368,7 +370,7 @@ namespace Shopee_Autobuy_Bot
 
                     timerlabelBig.Text = _autoBuyService.TimeSpan.ToString("dd\\:hh\\:mm\\:ss");
                     if (Helper.Shopee.Aborted)
-                        _autoBuyLoggerService.AutoBuyProcessLog("Job aborted.", Color.Yellow, true, true, true);
+                        _autoBuyLoggerService.AutoBuyProcessLog("Job aborted.", Color.OrangeRed, true, true, true);
 
                     _autoBuyLoggerService.SaveAutoBuyProcessLogToLogFile(richTextBoxLogs);
                 }
@@ -439,7 +441,12 @@ namespace Shopee_Autobuy_Bot
             timer.Start();
         }
 
-
+        static string GetCurrentTime()
+        {
+            DateTime now = DateTime.Now;
+            string currentTime = now.ToString("HH:mm:ss");
+            return currentTime;
+        }
 
         private void richTextBoxLogs_TextChanged(object sender, EventArgs e)
         {
@@ -538,7 +545,7 @@ namespace Shopee_Autobuy_Bot
                 darkComboBoxPaymentMethod.Text = "Default";
                 EnableDisableControlOnPaymentMethod();
                 GetConfigAsync();
-                _autoBuyLoggerService.AutoBuyProcessLog("Ready.", Color.White, true, true, true);
+                _autoBuyLoggerService.AutoBuyProcessLog("Ready.", SystemColors.ControlText, true, true, true);
             }
             catch (Exception ex)
             {

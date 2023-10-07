@@ -14,7 +14,7 @@ using static Shopee_Autobuy_Bot.Utililties.Helper;
 
 namespace Shopee_Autobuy_Bot
 {
-    public partial class Scan_payday_sale : DarkUI.Forms.DarkForm
+    public partial class Scan_payday_sale : Form
     {
         private ChromeDriverHelper _chromeDriverHelper;
         private string cookiePaths = "";

@@ -40,9 +40,9 @@ namespace Shopee_Autobuy_Bot.Services.Telegram
                         sb.Append(line);
                 }
                 string response = sb.ToString();
-                _autoBuyLoggerService.AutoBuyProcessLog("Notification sent to telegram", Color.LawnGreen, true, true, true);
+                _autoBuyLoggerService.AutoBuyProcessLog("Notification sent to telegram", Color.DarkGreen, true, true, true);
             }
-            catch (Exception ex) { _autoBuyLoggerService.AutoBuyProcessLog("Failed to send notification to telegram. " + ex.Message, Color.LawnGreen, true, true, true); }
+            catch (Exception ex) { _autoBuyLoggerService.AutoBuyProcessLog("Failed to send notification to telegram. " + ex.Message, Color.DarkGreen, true, true, true); }
         }
     }
 }

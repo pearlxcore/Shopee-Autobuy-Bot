@@ -24,7 +24,7 @@ using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace Shopee_Autobuy_Bot
 {
-    public partial class Login : DarkUI.Forms.DarkForm
+    public partial class Login : Form
     {
         private List<ISeleniumService> seleniumServiceList = new List<ISeleniumService>();
 

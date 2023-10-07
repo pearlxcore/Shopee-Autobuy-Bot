@@ -29,71 +29,70 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaveProfile));
-            this.btnSave = new DarkUI.Controls.DarkButton();
-            this.darkLabel14 = new DarkUI.Controls.DarkLabel();
-            this.tbProfileName = new DarkUI.Controls.DarkTextBox();
-            this.SuspendLayout();
+            btnSave=new System.Windows.Forms.Button();
+            darkLabel14=new System.Windows.Forms.Label();
+            tbProfileName=new System.Windows.Forms.TextBox();
+            SuspendLayout();
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(88, 59);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(95, 27);
-            this.btnSave.TabIndex = 52;
-            this.btnSave.Text = "Save profile";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            btnSave.Font=new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnSave.Location=new System.Drawing.Point(88, 59);
+            btnSave.Margin=new System.Windows.Forms.Padding(2);
+            btnSave.Name="btnSave";
+            btnSave.Size=new System.Drawing.Size(95, 27);
+            btnSave.TabIndex=52;
+            btnSave.Text="Save profile";
+            btnSave.Click+=btnSave_Click;
             // 
             // darkLabel14
             // 
-            this.darkLabel14.AutoSize = true;
-            this.darkLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel14.Location = new System.Drawing.Point(15, 11);
-            this.darkLabel14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.darkLabel14.Name = "darkLabel14";
-            this.darkLabel14.Size = new System.Drawing.Size(105, 13);
-            this.darkLabel14.TabIndex = 54;
-            this.darkLabel14.Text = "Enter profile name:";
+            darkLabel14.AutoSize=true;
+            darkLabel14.ForeColor=System.Drawing.SystemColors.ControlText;
+            darkLabel14.Location=new System.Drawing.Point(15, 11);
+            darkLabel14.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel14.Name="darkLabel14";
+            darkLabel14.Size=new System.Drawing.Size(105, 13);
+            darkLabel14.TabIndex=54;
+            darkLabel14.Text="Enter profile name:";
             // 
             // tbProfileName
             // 
-            this.tbProfileName.Location = new System.Drawing.Point(18, 27);
-            this.tbProfileName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbProfileName.MaxLength = 50;
-            this.tbProfileName.Name = "tbProfileName";
-            this.tbProfileName.Size = new System.Drawing.Size(237, 22);
-            this.tbProfileName.TabIndex = 53;
-            this.tbProfileName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            tbProfileName.Location=new System.Drawing.Point(18, 27);
+            tbProfileName.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbProfileName.MaxLength=50;
+            tbProfileName.Name="tbProfileName";
+            tbProfileName.Size=new System.Drawing.Size(237, 22);
+            tbProfileName.TabIndex=53;
+            tbProfileName.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // ProfileName
+            // SaveProfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 96);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.darkLabel14);
-            this.Controls.Add(this.tbProfileName);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "ProfileName";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "New Profile";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProfileName_FormClosing);
-            this.Load += new System.EventHandler(this.ProfileName_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions=new System.Drawing.SizeF(6F, 13F);
+            AutoScaleMode=System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize=new System.Drawing.Size(271, 96);
+            Controls.Add(btnSave);
+            Controls.Add(darkLabel14);
+            Controls.Add(tbProfileName);
+            Font=new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            FormBorderStyle=System.Windows.Forms.FormBorderStyle.FixedDialog;
+            Icon=(System.Drawing.Icon)resources.GetObject("$this.Icon");
+            MaximizeBox=false;
+            MinimizeBox=false;
+            Name="SaveProfile";
+            SizeGripStyle=System.Windows.Forms.SizeGripStyle.Hide;
+            StartPosition=System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text="New Profile";
+            FormClosing+=ProfileName_FormClosing;
+            Load+=ProfileName_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private DarkUI.Controls.DarkButton btnSave;
-        private DarkUI.Controls.DarkLabel darkLabel14;
-        private DarkUI.Controls.DarkTextBox tbProfileName;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label darkLabel14;
+        private System.Windows.Forms.TextBox tbProfileName;
     }
 }

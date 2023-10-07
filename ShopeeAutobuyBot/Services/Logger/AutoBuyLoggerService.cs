@@ -33,7 +33,7 @@ namespace Shopee_Autobuy_Bot.Services.Logger
             else
             {
                 if (WithDateTime)
-                    _richTextBox.AppendText("[" + DateTime.Now.ToString("HH:mm:ss") + "] ", Color.LightBlue, false);
+                    _richTextBox.AppendText("[" + DateTime.Now.ToString("HH:mm:ss") + "] ", Color.Gray, false);
                 _richTextBox.AppendText(text, color ?? Color.White, NewLine);
             }
         }

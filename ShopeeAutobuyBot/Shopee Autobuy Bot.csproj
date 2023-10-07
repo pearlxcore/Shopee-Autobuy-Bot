@@ -4,7 +4,7 @@
 	  <AssemblyVersion>2.4.5.0</AssemblyVersion>
 	  <FileVersion>2.4.5.0</FileVersion>
 	  <Copyright>pearlxcore 2023</Copyright>
-    <TargetFramework>net7.0-windows7.0</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>

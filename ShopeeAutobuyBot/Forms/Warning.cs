@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace Shopee_Autobuy_Bot
 {
-    public partial class Warning : DarkUI.Forms.DarkForm
+    public partial class Warning : Form
     {
         public Warning()
         {

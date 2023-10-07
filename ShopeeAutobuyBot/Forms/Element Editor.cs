@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Shopee_Autobuy_Bot
 {
-    public partial class Element_Editor : DarkUI.Forms.DarkForm
+    public partial class Element_Editor : Form
     {
         public Element_Editor()
         {

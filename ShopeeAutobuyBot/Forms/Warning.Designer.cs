@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.darkButton5 = new DarkUI.Controls.DarkButton();
-            this.darkCheckBoxTomorrow = new DarkUI.Controls.DarkCheckBox();
+            this.darkButton5 = new System.Windows.Forms.Button();
+            this.darkCheckBoxTomorrow = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -92,7 +92,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private DarkUI.Controls.DarkButton darkButton5;
-        private DarkUI.Controls.DarkCheckBox darkCheckBoxTomorrow;
+        private System.Windows.Forms.Button darkButton5;
+        private System.Windows.Forms.CheckBox darkCheckBoxTomorrow;
     }
 }

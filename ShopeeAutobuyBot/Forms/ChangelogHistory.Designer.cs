@@ -29,41 +29,41 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangelogHistory));
-            this.darkTextBox1 = new DarkUI.Controls.DarkTextBox();
-            this.SuspendLayout();
+            darkTextBox1=new System.Windows.Forms.TextBox();
+            SuspendLayout();
             // 
             // darkTextBox1
             // 
-            this.darkTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.darkTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.darkTextBox1.Multiline = true;
-            this.darkTextBox1.Name = "darkTextBox1";
-            this.darkTextBox1.ReadOnly = true;
-            this.darkTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.darkTextBox1.Size = new System.Drawing.Size(933, 519);
-            this.darkTextBox1.TabIndex = 0;
-            this.darkTextBox1.TabStop = false;
+            darkTextBox1.BackColor=System.Drawing.SystemColors.Window;
+            darkTextBox1.Dock=System.Windows.Forms.DockStyle.Fill;
+            darkTextBox1.Location=new System.Drawing.Point(0, 0);
+            darkTextBox1.Multiline=true;
+            darkTextBox1.Name="darkTextBox1";
+            darkTextBox1.ReadOnly=true;
+            darkTextBox1.ScrollBars=System.Windows.Forms.ScrollBars.Vertical;
+            darkTextBox1.Size=new System.Drawing.Size(933, 519);
+            darkTextBox1.TabIndex=0;
+            darkTextBox1.TabStop=false;
             // 
-            // Form3
+            // ChangelogHistory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 519);
-            this.Controls.Add(this.darkTextBox1);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form3";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Change History";
-            this.Load += new System.EventHandler(this.Form3_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions=new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode=System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize=new System.Drawing.Size(933, 519);
+            Controls.Add(darkTextBox1);
+            Font=new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            FormBorderStyle=System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            Icon=(System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Name="ChangelogHistory";
+            StartPosition=System.Windows.Forms.FormStartPosition.CenterParent;
+            Text="Change History";
+            Load+=Form3_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private DarkUI.Controls.DarkTextBox darkTextBox1;
+        private System.Windows.Forms.TextBox darkTextBox1;
     }
 }
