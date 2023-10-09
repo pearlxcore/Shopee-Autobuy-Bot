@@ -890,8 +890,8 @@ namespace Shopee_Autobuy_Bot.Services
                 TotalTimeSpan = JobStartTime - DateTime.Now;
                 CheckoutTimeSpan = CheckOutStartTime - DateTime.Now;
 
-                _autoBuyLoggerService.AutoBuyProcessLog("Finish test mode in " + TotalTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.Black, true, true, true);
-                _autoBuyLoggerService.AutoBuyProcessLog("Checkout time :" + CheckoutTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.Black, true, true, true);
+                _autoBuyLoggerService.AutoBuyProcessLog("Total time (Test mode) : " + TotalTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.Black, true, true, true);
+                _autoBuyLoggerService.AutoBuyProcessLog("Checkout time : " + CheckoutTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.Black, true, true, true);
 
             }
         }
@@ -959,8 +959,8 @@ namespace Shopee_Autobuy_Bot.Services
                     if (_seleniumService.UrlContainString("/payment"))
                     {
                         // If the code reaches here, it means the checkout was successful
-                        _autoBuyLoggerService.AutoBuyProcessLog("Checkout time : " + CheckoutTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.DarkGreen, true, true, true);
-                        _autoBuyLoggerService.AutoBuyProcessLog("Total time : " + TotalTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.DarkGreen, true, true, true);
+                        _autoBuyLoggerService.AutoBuyProcessLog("Total time : " + TotalTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.Black, true, true, true);
+                        _autoBuyLoggerService.AutoBuyProcessLog("Checkout time : " + CheckoutTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.Black, true, true, true);
                         _telegramService.SendNotification(_profileService.SelectedProfile.ScheduleBot.schedule,
                             _profileService.SelectedProfile.BuyingMode.ToString(),
                             Helper.Shopee.OrderPrice,
@@ -1005,8 +1005,8 @@ namespace Shopee_Autobuy_Bot.Services
                             _autoBuyLoggerService.AutoBuyProcessLog("Wrong PIN entered. Please key in ShopeePay PIN manually.", Color.IndianRed, true, true, true);
                             return;
                         }
-                        _autoBuyLoggerService.AutoBuyProcessLog("Checkout time : " + CheckoutTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.DarkGreen, true, true, true);
-                        _autoBuyLoggerService.AutoBuyProcessLog("Total time : " + TotalTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.DarkGreen, true, true, true);
+                        _autoBuyLoggerService.AutoBuyProcessLog("Total time : " + TotalTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.Black, true, true, true);
+                        _autoBuyLoggerService.AutoBuyProcessLog("Checkout time : " + CheckoutTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.Black, true, true, true);
                         _telegramService.SendNotification(_profileService.SelectedProfile.ScheduleBot.schedule,
                             _profileService.SelectedProfile.BuyingMode.ToString(),
                             Helper.Shopee.OrderPrice,
