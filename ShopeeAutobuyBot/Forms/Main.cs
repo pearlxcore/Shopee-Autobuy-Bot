@@ -165,27 +165,27 @@ namespace Shopee_Autobuy_Bot
                     richTextBoxLogs.Text = string.Empty;
                     darkButtonStart.Text = "Stop";
 
-                    if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Normal" && _profileService.SelectedProfile.ProductDetail.product_link == "")
+                    if (_profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Normal && _profileService.SelectedProfile.ProductDetail.product_link == "")
                     {
                         MessageBox.Show("Specify product link", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Flash_Shocking" && _profileService.SelectedProfile.ProductDetail.product_link == "")
+                    if (_profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Flash_Shocking && _profileService.SelectedProfile.ProductDetail.product_link == "")
                     {
                         MessageBox.Show("Specify product link", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Below_Price" && _profileService.SelectedProfile.ProductDetail.product_link == "")
+                    if (_profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Below_Price && _profileService.SelectedProfile.ProductDetail.product_link == "")
                     {
                         MessageBox.Show("Specify product link", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Below_Price" && _profileService.SelectedProfile.BuyingMode.below_specific_price == string.Empty)
+                    if (_profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Below_Price && _profileService.SelectedProfile.BuyingMode.below_specific_price == string.Empty)
                     {
                         MessageBox.Show("Invalid price format. E.g. 1.00/10.00/100.00", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Below_Price_Cart" && _profileService.SelectedProfile.BuyingMode.cart_below_specific_price == string.Empty)
+                    if (_profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Below_Price_Cart && _profileService.SelectedProfile.BuyingMode.cart_below_specific_price == string.Empty)
                     {
                         MessageBox.Show("Invalid price format. E.g. 1.00/10.00/100.00", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -243,12 +243,11 @@ namespace Shopee_Autobuy_Bot
                         AutoBuyInfo.AutoBuyStartTime = DateTime.Now/*.AddSeconds(Convert.ToDouble(darkNumericUpDownRefreshSeconds.Value))*/;
                     }
 
-                    Helper.Shopee.Aborted = false;
                     Helper.Shopee.TimeOut = _profileService.SelectedProfile.BotSettings.timeout;
                     try
                     {
-                        if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Cart"
-                        || _profileService.SelectedProfile.BuyingMode.mode.ToString() == "Below_Price_Cart")
+                        if (_profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Cart
+                        || _profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Below_Price_Cart)
                             _seleniumService.GoToUrl("https://shopee.com.my/cart");
                         else
                             _seleniumService.GoToUrl(_profileService.SelectedProfile.ProductDetail.product_link);
@@ -264,13 +263,14 @@ namespace Shopee_Autobuy_Bot
 
                     Helper.Shopee.BankType = (_profileService.SelectedProfile.PaymentDetail.payment_method == "Online Banking") ? _profileService.SelectedProfile.PaymentDetail.bank_type : "";
                     Helper.Shopee.Status = "Fail";
+                    _autoBuyService.Abort = false;
                     _seleniumService.timeOut = _profileService.SelectedProfile.BotSettings.timeout;
-                    _autoBuyLoggerService.AutoBuyProcessLog("Autobuy starts at : " + AutoBuyInfo.AutoBuyStartTime.ToString(), SystemColors.ControlText, true, true, true);
+                    _autoBuyLoggerService.AutoBuyProcessLog("Autobuy starts at : " + AutoBuyInfo.AutoBuyStartTime.ToString(), Color.Black, true, true, true);
                     startWorkThreadAsync();
                 }
                 else
                 {
-                    Helper.Shopee.Aborted = true;
+                    _autoBuyService.Abort = true;
                     darkButtonStart.Text = "Stopping...";
                     darkButtonStart.Enabled = false;
                     darkButtonDeleteAllOrder.Enabled = false;
@@ -350,8 +350,7 @@ namespace Shopee_Autobuy_Bot
                         _seleniumService.GoToUrl("https://shopee.com.my/cart");
                         stepType = 94;
                     }
-                    _autoBuyLoggerService.AutoBuyProcessLog($"Job started at {GetCurrentTime()}", Color.IndianRed, true, true, true);
-                    _autoBuyService.ShopeeAutobuy(0, stepType, DateTime.Now);
+                    _autoBuyService.ShopeeAutobuy(DateTime.Now);
 
                     darkButtonStart.Text = "Start";
                     darkButtonStart.Enabled = true;
@@ -368,8 +367,8 @@ namespace Shopee_Autobuy_Bot
                     if (radioButtonCheckOutCart.Checked)
                         darkSectionPanelProductDetails.Enabled = false;
 
-                    timerlabelBig.Text = _autoBuyService.TimeSpan.ToString("dd\\:hh\\:mm\\:ss");
-                    if (Helper.Shopee.Aborted)
+                    timerlabelBig.Text = _autoBuyService.TotalTimeSpan.ToString("dd\\:hh\\:mm\\:ss");
+                    if (_autoBuyService.Abort)
                         _autoBuyLoggerService.AutoBuyProcessLog("Job aborted.", Color.OrangeRed, true, true, true);
 
                     _autoBuyLoggerService.SaveAutoBuyProcessLogToLogFile(richTextBoxLogs);
@@ -545,7 +544,7 @@ namespace Shopee_Autobuy_Bot
                 darkComboBoxPaymentMethod.Text = "Default";
                 EnableDisableControlOnPaymentMethod();
                 GetConfigAsync();
-                _autoBuyLoggerService.AutoBuyProcessLog("Ready.", SystemColors.ControlText, true, true, true);
+                _autoBuyLoggerService.AutoBuyProcessLog("Ready.", Color.Black, true, true, true);
             }
             catch (Exception ex)
             {
@@ -979,7 +978,7 @@ namespace Shopee_Autobuy_Bot
         {
             var currentVersion = new Version(Assembly.GetExecutingAssembly().GetName().Version.ToString());
 
-            MessageBox.Show("Shopee Autobuy Bot\nVersion : " + currentVersion + "\nCopyright © " + DateTime.Now.Year + " Shopee Autobuy Bot Team\n\nShopee Autobuy Bot is an automation tool that help customers buying exclusive items without having to wait by their screens.\n\nDisclaimer : We are not responsible for any damage or harm to your Shopee account and your PC. Please know what you are doing. While this bot helps in buying item from Shopee, however" +
+            MessageBox.Show("Shopee Autobuy Bot\nVersion : " + currentVersion + "\nCopyright © " + DateTime.Now.Year + " pearlxcore\n\nShopee Autobuy Bot is an automation tool that help customers buying exclusive items without having to wait by their screens.\n\nDisclaimer : We are not responsible for any damage or harm to your Shopee account and your PC. Please know what you are doing. While this bot helps in buying item from Shopee, however" +
                 " it doesn't 100% guarantee successful order due to circumstances such as limited promotional item, underperformed PC and internet speed and also intervention and competition with other buyers who are using bot as well.", "About Shopee Autobuy Bot", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -1067,8 +1066,7 @@ namespace Shopee_Autobuy_Bot
         {
             if (!Properties.Settings.Default.DontShowThisAgain)
             {
-                Warning w = new Warning();
-                w.ShowDialog();
+
             }
         }
 
@@ -1276,15 +1274,15 @@ namespace Shopee_Autobuy_Bot
 
             if (_profileService.LoadProfile)
             {
-                if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Normal")
+                if (_profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Normal)
                     radioButtonBuyNormal.Checked = true;
-                if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Flash_Shocking")
+                if (_profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Flash_Shocking)
                     radioButtonShockingSale.Checked = true;
-                if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Below_Price")
+                if (_profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Below_Price)
                     radioButtonPriceSpecific.Checked = true;
-                if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Below_Price_Cart")
+                if (_profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Below_Price_Cart)
                     radioButtonPriceSpecificCartCheckout.Checked = true;
-                if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Cart")
+                if (_profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Cart)
                     radioButtonCheckOutCart.Checked = true;
 
                 darkCheckBoxTomorrow.Checked = _profileService.SelectedProfile.ScheduleBot.tomorrow;

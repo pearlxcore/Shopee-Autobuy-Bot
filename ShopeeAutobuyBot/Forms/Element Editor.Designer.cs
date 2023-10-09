@@ -38,7 +38,6 @@ namespace Shopee_Autobuy_Bot
             updateElementToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
             toolStripSeparator1=new System.Windows.Forms.ToolStripSeparator();
             exitToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
-            darkDockPanel1=new System.Windows.Forms.Panel();
             tabPage5=new System.Windows.Forms.TabPage();
             darkLabel18=new System.Windows.Forms.Label();
             tbPayment_GooglePay=new System.Windows.Forms.TextBox();
@@ -193,18 +192,9 @@ namespace Shopee_Autobuy_Bot
             exitToolStripMenuItem.Visible=false;
             exitToolStripMenuItem.Click+=exitToolStripMenuItem_Click;
             // 
-            // darkDockPanel1
-            // 
-            darkDockPanel1.Anchor=System.Windows.Forms.AnchorStyles.Top|System.Windows.Forms.AnchorStyles.Bottom|System.Windows.Forms.AnchorStyles.Left|System.Windows.Forms.AnchorStyles.Right;
-            darkDockPanel1.BackColor=SystemColors.Control;
-            darkDockPanel1.Location=new Point(0, 27);
-            darkDockPanel1.Name="darkDockPanel1";
-            darkDockPanel1.Size=new Size(860, 406);
-            darkDockPanel1.TabIndex=103;
-            // 
             // tabPage5
             // 
-            tabPage5.BackColor=SystemColors.Control;
+            tabPage5.BackColor=SystemColors.ActiveCaption;
             tabPage5.Controls.Add(darkLabel18);
             tabPage5.Controls.Add(tbPayment_GooglePay);
             tabPage5.Controls.Add(tbPayment_Debit_CreditCard);
@@ -219,12 +209,12 @@ namespace Shopee_Autobuy_Bot
             tabPage5.Controls.Add(darkLabel22);
             tabPage5.Controls.Add(darkLabel23);
             tabPage5.Controls.Add(darkLabel24);
-            tabPage5.Location=new Point(4, 22);
+            tabPage5.Location=new Point(4, 24);
             tabPage5.Name="tabPage5";
             tabPage5.Padding=new System.Windows.Forms.Padding(3);
-            tabPage5.Size=new Size(814, 339);
+            tabPage5.Size=new Size(814, 337);
             tabPage5.TabIndex=4;
-            tabPage5.Text="Payment Method (Checkout Page)";
+            tabPage5.Text="Payment Method (Cart Page)";
             // 
             // darkLabel18
             // 
@@ -375,7 +365,7 @@ namespace Shopee_Autobuy_Bot
             // 
             // tabPage3
             // 
-            tabPage3.BackColor=SystemColors.Control;
+            tabPage3.BackColor=SystemColors.ActiveCaption;
             tabPage3.Controls.Add(darkLabel17);
             tabPage3.Controls.Add(tbOrderPrice_placeOrder);
             tabPage3.Controls.Add(tbClaimShopeeVcOkButton_placeOrder);
@@ -390,12 +380,12 @@ namespace Shopee_Autobuy_Bot
             tabPage3.Controls.Add(darkLabel9);
             tabPage3.Controls.Add(darkLabel11);
             tabPage3.Controls.Add(darkLabel12);
-            tabPage3.Location=new Point(4, 22);
+            tabPage3.Location=new Point(4, 24);
             tabPage3.Name="tabPage3";
             tabPage3.Padding=new System.Windows.Forms.Padding(3);
-            tabPage3.Size=new Size(814, 339);
+            tabPage3.Size=new Size(814, 337);
             tabPage3.TabIndex=2;
-            tabPage3.Text="Checkout Page";
+            tabPage3.Text="Cart Page";
             // 
             // darkLabel17
             // 
@@ -546,7 +536,7 @@ namespace Shopee_Autobuy_Bot
             // 
             // tabPage2
             // 
-            tabPage2.BackColor=SystemColors.Control;
+            tabPage2.BackColor=SystemColors.ActiveCaption;
             tabPage2.Controls.Add(tbSelectAllLabel);
             tabPage2.Controls.Add(darkLabel33);
             tabPage2.Controls.Add(darkLabel7);
@@ -559,10 +549,10 @@ namespace Shopee_Autobuy_Bot
             tabPage2.Controls.Add(darkLabel8);
             tabPage2.Controls.Add(darkLabel5);
             tabPage2.Controls.Add(darkLabel6);
-            tabPage2.Location=new Point(4, 22);
+            tabPage2.Location=new Point(4, 24);
             tabPage2.Name="tabPage2";
             tabPage2.Padding=new System.Windows.Forms.Padding(3);
-            tabPage2.Size=new Size(814, 339);
+            tabPage2.Size=new Size(814, 337);
             tabPage2.TabIndex=1;
             tabPage2.Text="Cart Page";
             // 
@@ -694,7 +684,7 @@ namespace Shopee_Autobuy_Bot
             // 
             // tabPage1
             // 
-            tabPage1.BackColor=SystemColors.Control;
+            tabPage1.BackColor=SystemColors.ActiveCaption;
             tabPage1.Controls.Add(darkLabel4);
             tabPage1.Controls.Add(tbSaleBanner_product);
             tabPage1.Controls.Add(tbCurrentPriceLabel_product);
@@ -834,7 +824,7 @@ namespace Shopee_Autobuy_Bot
             // 
             // tabPage6
             // 
-            tabPage6.BackColor=SystemColors.Control;
+            tabPage6.BackColor=SystemColors.ActiveCaption;
             tabPage6.Controls.Add(darkLabel32);
             tabPage6.Controls.Add(tbErrMess_PayNowMaintenance);
             tabPage6.Controls.Add(darkLabel25);
@@ -851,12 +841,12 @@ namespace Shopee_Autobuy_Bot
             tabPage6.Controls.Add(darkLabel29);
             tabPage6.Controls.Add(darkLabel30);
             tabPage6.Controls.Add(darkLabel31);
-            tabPage6.Location=new Point(4, 22);
+            tabPage6.Location=new Point(4, 24);
             tabPage6.Name="tabPage6";
             tabPage6.Padding=new System.Windows.Forms.Padding(3);
-            tabPage6.Size=new Size(814, 339);
+            tabPage6.Size=new Size(814, 337);
             tabPage6.TabIndex=6;
-            tabPage6.Text="Payment Error Message (Checkout Page)";
+            tabPage6.Text="Payment Error Message (Cart Page)";
             // 
             // darkLabel32
             // 
@@ -1038,17 +1028,17 @@ namespace Shopee_Autobuy_Bot
             // 
             // tabPage4
             // 
-            tabPage4.BackColor=SystemColors.Control;
+            tabPage4.BackColor=SystemColors.ActiveCaption;
             tabPage4.Controls.Add(tbConvStoreType_KKMart);
             tabPage4.Controls.Add(tbConvStoreType_SevenEleven);
             tabPage4.Controls.Add(darkLabel38);
             tabPage4.Controls.Add(darkLabel40);
-            tabPage4.Location=new Point(4, 22);
+            tabPage4.Location=new Point(4, 24);
             tabPage4.Name="tabPage4";
             tabPage4.Padding=new System.Windows.Forms.Padding(3);
-            tabPage4.Size=new Size(814, 339);
+            tabPage4.Size=new Size(814, 337);
             tabPage4.TabIndex=7;
-            tabPage4.Text="Convenience Store Type (Checkout Page)";
+            tabPage4.Text="Convenience Store Type (Cart Page)";
             // 
             // tbConvStoreType_KKMart
             // 
@@ -1098,10 +1088,10 @@ namespace Shopee_Autobuy_Bot
             // 
             AutoScaleDimensions=new SizeF(6F, 13F);
             AutoScaleMode=System.Windows.Forms.AutoScaleMode.Font;
+            BackColor=SystemColors.ActiveCaption;
             ClientSize=new Size(840, 417);
             Controls.Add(darkMenuStrip1);
             Controls.Add(tabControl1);
-            Controls.Add(darkDockPanel1);
             Font=new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle=System.Windows.Forms.FormBorderStyle.FixedDialog;
             Icon=(Icon)resources.GetObject("$this.Icon");
@@ -1134,7 +1124,6 @@ namespace Shopee_Autobuy_Bot
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveChangesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.Panel darkDockPanel1;
         private System.Windows.Forms.ToolStripMenuItem updateElementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadElementsFromLocalSettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

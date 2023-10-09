@@ -90,7 +90,6 @@ namespace Shopee_Autobuy_Bot
             darkButton5=new System.Windows.Forms.Button();
             darkCheckBoxRefresh=new System.Windows.Forms.CheckBox();
             darkCheckBoxHeadless=new System.Windows.Forms.CheckBox();
-            darkDockPanel1=new System.Windows.Forms.Panel();
             darkMenuStrip1=new System.Windows.Forms.MenuStrip();
             gfrgToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
             elementEditorToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
@@ -318,9 +317,9 @@ namespace Shopee_Autobuy_Bot
             darkCheckBoxDisableImageExtension.Location=new Point(24, 99);
             darkCheckBoxDisableImageExtension.Margin=new System.Windows.Forms.Padding(2);
             darkCheckBoxDisableImageExtension.Name="darkCheckBoxDisableImageExtension";
-            darkCheckBoxDisableImageExtension.Size=new Size(197, 17);
+            darkCheckBoxDisableImageExtension.Size=new Size(206, 17);
             darkCheckBoxDisableImageExtension.TabIndex=25;
-            darkCheckBoxDisableImageExtension.Text="Disable website Image & Extension";
+            darkCheckBoxDisableImageExtension.Text="Disable website image && extension";
             toolTip1.SetToolTip(darkCheckBoxDisableImageExtension, "Enabling this option will disable images in webpage and browser extension on the next restart. It may help improve the checkout time.");
             darkCheckBoxDisableImageExtension.Click+=darkCheckBoxDisableImageExtension_Click;
             // 
@@ -390,9 +389,9 @@ namespace Shopee_Autobuy_Bot
             darkLabel6.Location=new Point(17, 38);
             darkLabel6.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel6.Name="darkLabel6";
-            darkLabel6.Size=new Size(100, 13);
+            darkLabel6.Size=new Size(99, 13);
             darkLabel6.TabIndex=14;
-            darkLabel6.Text="Payment Method :";
+            darkLabel6.Text="Payment method :";
             // 
             // darkLabel7
             // 
@@ -511,9 +510,9 @@ namespace Shopee_Autobuy_Bot
             darkLabel11.Location=new Point(17, 37);
             darkLabel11.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel11.Name="darkLabel11";
-            darkLabel11.Size=new Size(77, 13);
+            darkLabel11.Size=new Size(75, 13);
             darkLabel11.TabIndex=24;
-            darkLabel11.Text="Product Link :";
+            darkLabel11.Text="Product link :";
             // 
             // darkTextBoxProductLink
             // 
@@ -543,9 +542,9 @@ namespace Shopee_Autobuy_Bot
             darkCheckBoxTestMode.Location=new Point(24, 192);
             darkCheckBoxTestMode.Margin=new System.Windows.Forms.Padding(2);
             darkCheckBoxTestMode.Name="darkCheckBoxTestMode";
-            darkCheckBoxTestMode.Size=new Size(79, 17);
+            darkCheckBoxTestMode.Size=new Size(78, 17);
             darkCheckBoxTestMode.TabIndex=49;
-            darkCheckBoxTestMode.Text="Test Mode";
+            darkCheckBoxTestMode.Text="Test mode";
             toolTip1.SetToolTip(darkCheckBoxTestMode, "Enabling this option will stop the autobuy process right before placing order. User may use this option to 'warm up' the bot.");
             // 
             // darkLabel14
@@ -756,7 +755,7 @@ namespace Shopee_Autobuy_Bot
             timerlabelBig.AutoSize=true;
             timerlabelBig.BackColor=Color.Transparent;
             timerlabelBig.Font=new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            timerlabelBig.ForeColor=Color.DarkGoldenrod;
+            timerlabelBig.ForeColor=Color.DimGray;
             timerlabelBig.Location=new Point(0, 0);
             timerlabelBig.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             timerlabelBig.Name="timerlabelBig";
@@ -828,20 +827,11 @@ namespace Shopee_Autobuy_Bot
             darkCheckBoxHeadless.Location=new Point(24, 68);
             darkCheckBoxHeadless.Margin=new System.Windows.Forms.Padding(2);
             darkCheckBoxHeadless.Name="darkCheckBoxHeadless";
-            darkCheckBoxHeadless.Size=new Size(137, 17);
+            darkCheckBoxHeadless.Size=new Size(136, 17);
             darkCheckBoxHeadless.TabIndex=47;
-            darkCheckBoxHeadless.Text="Hide Chrome Browser";
+            darkCheckBoxHeadless.Text="Hide chrome browser";
             toolTip1.SetToolTip(darkCheckBoxHeadless, "Enabling this option will hide chrome browser on  the next restart. It may help improve the checkout time.");
             darkCheckBoxHeadless.Click+=darkCheckBoxHeadless_Click;
-            // 
-            // darkDockPanel1
-            // 
-            darkDockPanel1.BackColor=SystemColors.Control;
-            darkDockPanel1.Location=new Point(-10, 27);
-            darkDockPanel1.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            darkDockPanel1.Name="darkDockPanel1";
-            darkDockPanel1.Size=new Size(805, 650);
-            darkDockPanel1.TabIndex=30;
             // 
             // darkMenuStrip1
             // 
@@ -1152,7 +1142,7 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanelBuyingMode.Size=new Size(376, 126);
             darkSectionPanelBuyingMode.TabIndex=50;
             darkSectionPanelBuyingMode.TabStop=false;
-            darkSectionPanelBuyingMode.Text="Buying Mode";
+            darkSectionPanelBuyingMode.Text="Buy Mode";
             darkSectionPanelBuyingMode.Click+=darkSectionPanelBuyingMode_Click;
             // 
             // tbPriceSpecific
@@ -1224,7 +1214,7 @@ namespace Shopee_Autobuy_Bot
             label1.AutoSize=true;
             label1.BackColor=Color.Transparent;
             label1.Font=new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor=Color.DarkGoldenrod;
+            label1.ForeColor=Color.DimGray;
             label1.Location=new Point(545, 506);
             label1.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             label1.Name="label1";
@@ -1238,7 +1228,7 @@ namespace Shopee_Autobuy_Bot
             label2.AutoSize=true;
             label2.BackColor=Color.Transparent;
             label2.Font=new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor=Color.DarkGoldenrod;
+            label2.ForeColor=Color.DimGray;
             label2.Location=new Point(599, 506);
             label2.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             label2.Name="label2";
@@ -1252,7 +1242,7 @@ namespace Shopee_Autobuy_Bot
             label3.AutoSize=true;
             label3.BackColor=Color.Transparent;
             label3.Font=new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor=Color.DarkGoldenrod;
+            label3.ForeColor=Color.DimGray;
             label3.Location=new Point(647, 506);
             label3.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             label3.Name="label3";
@@ -1266,7 +1256,7 @@ namespace Shopee_Autobuy_Bot
             label4.AutoSize=true;
             label4.BackColor=Color.Transparent;
             label4.Font=new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor=Color.DarkGoldenrod;
+            label4.ForeColor=Color.DimGray;
             label4.Location=new Point(701, 506);
             label4.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             label4.Name="label4";
@@ -1314,6 +1304,7 @@ namespace Shopee_Autobuy_Bot
             darkButton7.TabIndex=56;
             darkButton7.Text="Copy logs to clipboard";
             toolTip1.SetToolTip(darkButton7, "Copy logs to clipboard");
+            darkButton7.Visible=false;
             darkButton7.Click+=darkButton7_Click;
             // 
             // darkSectionPanel1
@@ -1326,7 +1317,7 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanel1.Size=new Size(192, 151);
             darkSectionPanel1.TabIndex=57;
             darkSectionPanel1.TabStop=false;
-            darkSectionPanel1.Text="Voucher & coin";
+            darkSectionPanel1.Text="Voucher && coin";
             // 
             // notifyIcon1
             // 
@@ -1336,6 +1327,7 @@ namespace Shopee_Autobuy_Bot
             // panel1
             // 
             panel1.Controls.Add(timerlabelBig);
+            panel1.ForeColor=Color.DimGray;
             panel1.Location=new Point(558, 518);
             panel1.Name="panel1";
             panel1.Size=new Size(177, 40);
@@ -1369,6 +1361,7 @@ namespace Shopee_Autobuy_Bot
             // 
             AutoScaleDimensions=new SizeF(6F, 13F);
             AutoScaleMode=System.Windows.Forms.AutoScaleMode.Font;
+            BackColor=SystemColors.ActiveCaption;
             ClientSize=new Size(776, 666);
             Controls.Add(labelShopeeAcc);
             Controls.Add(darkLabel15);
@@ -1386,7 +1379,6 @@ namespace Shopee_Autobuy_Bot
             Controls.Add(darkSectionPanelLogs);
             Controls.Add(darkSectionPanelProductDetails);
             Controls.Add(darkSectionPanelTimerMode);
-            Controls.Add(darkDockPanel1);
             Controls.Add(darkButton7);
             Font=new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle=System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1470,7 +1462,6 @@ namespace Shopee_Autobuy_Bot
         private System.Windows.Forms.GroupBox darkSectionPanelBotSettings;
         private System.Windows.Forms.CheckBox darkCheckBoxHeadless;
         private System.Windows.Forms.CheckBox darkCheckBoxRefresh;
-        private System.Windows.Forms.Panel darkDockPanel1;
         private System.Windows.Forms.MenuStrip darkMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;

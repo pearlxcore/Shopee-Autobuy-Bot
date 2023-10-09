@@ -59,12 +59,12 @@
         public class Root
         {
             public string profile_name { get; set; }
-            public BotSettings BotSettings { get; set; }
-            public ProductDetail ProductDetail { get; set; }
-            public Voucher_Coin Voucher_Coin { get; set; }
-            public ScheduleBot ScheduleBot { get; set; }
-            public BuyingMode BuyingMode { get; set; }
-            public PaymentDetail PaymentDetail { get; set; }
+            public BotSettings BotSettings = new BotSettings();
+            public ProductDetail ProductDetail = new ProductDetail();
+            public Voucher_Coin Voucher_Coin = new Voucher_Coin();
+            public ScheduleBot ScheduleBot = new ScheduleBot();
+            public BuyingMode BuyingMode = new BuyingMode();
+            public PaymentDetail PaymentDetail = new PaymentDetail();
         }
     }
 }

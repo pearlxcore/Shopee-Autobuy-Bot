@@ -235,7 +235,7 @@ namespace Shopee_Autobuy_Bot
             if (_headless)
                 chromeOptions.AddArgument("headless");
             chromeOptions.AddArgument("--disable-blink-features=AutomationControlled");
-            chromeOptions.AddArgument($"user-data-dir={DirectoryPaths.ShopeeAccountDirectory}{_chromeProfile}");
+            chromeOptions.AddArgument($"user-data-dir={DirectoryPaths.SabProfileDirectory}{_chromeProfile}");
             chromeOptions.AddArgument($"--profile-directory=Default");
             chromeOptions.PageLoadStrategy = PageLoadStrategy.Eager;
             chromeOptions.AddExcludedArgument("enable-automation");

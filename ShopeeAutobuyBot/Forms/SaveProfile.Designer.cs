@@ -70,6 +70,7 @@
             // 
             AutoScaleDimensions=new System.Drawing.SizeF(6F, 13F);
             AutoScaleMode=System.Windows.Forms.AutoScaleMode.Font;
+            BackColor=System.Drawing.SystemColors.ActiveCaption;
             ClientSize=new System.Drawing.Size(271, 96);
             Controls.Add(btnSave);
             Controls.Add(darkLabel14);

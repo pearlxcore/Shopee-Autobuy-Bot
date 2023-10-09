@@ -149,7 +149,7 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanel1.Size=new Size(192, 151);
             darkSectionPanel1.TabIndex=114;
             darkSectionPanel1.TabStop=false;
-            darkSectionPanel1.Text="Voucher & coin";
+            darkSectionPanel1.Text="Voucher && coin";
             // 
             // darkCheckBoxRedeemShopeeVoucher
             // 
@@ -255,7 +255,7 @@ namespace Shopee_Autobuy_Bot
             darkLabel6.Name="darkLabel6";
             darkLabel6.Size=new Size(105, 15);
             darkLabel6.TabIndex=14;
-            darkLabel6.Text="Payment Method :";
+            darkLabel6.Text="Payment method :";
             // 
             // darkLabel8
             // 
@@ -305,7 +305,7 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanelBuyingMode.Size=new Size(376, 126);
             darkSectionPanelBuyingMode.TabIndex=112;
             darkSectionPanelBuyingMode.TabStop=false;
-            darkSectionPanelBuyingMode.Text="Buying Mode";
+            darkSectionPanelBuyingMode.Text="Buy Mode";
             // 
             // tbBelowSpecificPriceCARTCHECKOUTPrice
             // 
@@ -439,7 +439,7 @@ namespace Shopee_Autobuy_Bot
             darkCheckBoxTestMode.Name="darkCheckBoxTestMode";
             darkCheckBoxTestMode.Size=new Size(80, 19);
             darkCheckBoxTestMode.TabIndex=49;
-            darkCheckBoxTestMode.Text="Test Mode";
+            darkCheckBoxTestMode.Text="Test mode";
             // 
             // darkCheckBoxLogging
             // 
@@ -470,9 +470,9 @@ namespace Shopee_Autobuy_Bot
             darkCheckBoxHeadless.Location=new Point(24, 68);
             darkCheckBoxHeadless.Margin=new System.Windows.Forms.Padding(2);
             darkCheckBoxHeadless.Name="darkCheckBoxHeadless";
-            darkCheckBoxHeadless.Size=new Size(142, 19);
+            darkCheckBoxHeadless.Size=new Size(140, 19);
             darkCheckBoxHeadless.TabIndex=47;
-            darkCheckBoxHeadless.Text="Hide Chrome Browser";
+            darkCheckBoxHeadless.Text="Hide chrome browser";
             // 
             // darkLabel5
             // 
@@ -525,9 +525,9 @@ namespace Shopee_Autobuy_Bot
             darkCheckBoxDisableImageExtension.Location=new Point(24, 99);
             darkCheckBoxDisableImageExtension.Margin=new System.Windows.Forms.Padding(2);
             darkCheckBoxDisableImageExtension.Name="darkCheckBoxDisableImageExtension";
-            darkCheckBoxDisableImageExtension.Size=new Size(200, 19);
+            darkCheckBoxDisableImageExtension.Size=new Size(210, 19);
             darkCheckBoxDisableImageExtension.TabIndex=25;
-            darkCheckBoxDisableImageExtension.Text="Disable website Image & Extension";
+            darkCheckBoxDisableImageExtension.Text="Disable website image && extension";
             // 
             // darkSectionPanelProductDetails
             // 
@@ -586,9 +586,9 @@ namespace Shopee_Autobuy_Bot
             darkLabel11.Location=new Point(17, 37);
             darkLabel11.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel11.Name="darkLabel11";
-            darkLabel11.Size=new Size(80, 15);
+            darkLabel11.Size=new Size(77, 15);
             darkLabel11.TabIndex=24;
-            darkLabel11.Text="Product Link :";
+            darkLabel11.Text="Product link :";
             // 
             // darkTextBoxProductLink
             // 
@@ -754,6 +754,7 @@ namespace Shopee_Autobuy_Bot
             // 
             AutoScaleDimensions=new SizeF(7F, 15F);
             AutoScaleMode=System.Windows.Forms.AutoScaleMode.Font;
+            BackColor=SystemColors.ActiveCaption;
             ClientSize=new Size(972, 515);
             Controls.Add(darkButton1);
             Controls.Add(darkSectionPanel1);

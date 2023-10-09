@@ -73,7 +73,7 @@ namespace Shopee_Autobuy_Bot.Services.Logger
             string paymentdetail = "Payment method : " + _profileService.SelectedProfile.PaymentDetail.payment_method + "\n";
 
             string detail = "";
-            if (buyMode == "Cart"|| buyMode == "Below_Price_Cart")
+            if (buyMode == BuyingMode.Cart|| buyMode == BuyingMode.Below_Price_Cart)
                 detail = testMode + quantity + paymentdetail + buyingMode;
             else
                 detail = testMode + productLink + quantity + paymentdetail + buyingMode;

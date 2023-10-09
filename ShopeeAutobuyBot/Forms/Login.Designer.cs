@@ -55,7 +55,7 @@
             btnLogin.Font=new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btnLogin.Location=new System.Drawing.Point(12, 284);
             btnLogin.Name="btnLogin";
-            btnLogin.Size=new System.Drawing.Size(393, 28);
+            btnLogin.Size=new System.Drawing.Size(393, 26);
             btnLogin.TabIndex=0;
             btnLogin.Text="Launch SAB";
             btnLogin.Click+=darkButton1_Click;
@@ -104,7 +104,7 @@
             darkSectionPanel1.Size=new System.Drawing.Size(217, 120);
             darkSectionPanel1.TabIndex=15;
             darkSectionPanel1.TabStop=false;
-            darkSectionPanel1.Text="Shopee Account";
+            darkSectionPanel1.Text="SAB profile";
             // 
             // listBoxChromeProfile
             // 
@@ -119,18 +119,18 @@
             // 
             btnAddChromeProfile.Location=new System.Drawing.Point(237, 67);
             btnAddChromeProfile.Name="btnAddChromeProfile";
-            btnAddChromeProfile.Size=new System.Drawing.Size(141, 20);
+            btnAddChromeProfile.Size=new System.Drawing.Size(141, 26);
             btnAddChromeProfile.TabIndex=16;
-            btnAddChromeProfile.Text="Add Shopee account";
+            btnAddChromeProfile.Text="Add profile";
             btnAddChromeProfile.Click+=darkButton1_Click_2;
             // 
             // btnDeleteProfile
             // 
-            btnDeleteProfile.Location=new System.Drawing.Point(238, 123);
+            btnDeleteProfile.Location=new System.Drawing.Point(238, 117);
             btnDeleteProfile.Name="btnDeleteProfile";
-            btnDeleteProfile.Size=new System.Drawing.Size(141, 20);
+            btnDeleteProfile.Size=new System.Drawing.Size(141, 26);
             btnDeleteProfile.TabIndex=17;
-            btnDeleteProfile.Text="Delete selected account";
+            btnDeleteProfile.Text="Delete profile";
             btnDeleteProfile.Click+=btnDeleteProfile_Click;
             // 
             // tbNewChromeProfile
@@ -148,29 +148,29 @@
             darkLabel3.ForeColor=System.Drawing.SystemColors.ControlText;
             darkLabel3.Location=new System.Drawing.Point(237, 23);
             darkLabel3.Name="darkLabel3";
-            darkLabel3.Size=new System.Drawing.Size(119, 13);
+            darkLabel3.Size=new System.Drawing.Size(92, 13);
             darkLabel3.TabIndex=19;
-            darkLabel3.Text="New Shopee account:";
+            darkLabel3.Text="New SAB profile:";
             // 
             // darkCheckBoxHeadless
             // 
             darkCheckBoxHeadless.AutoSize=true;
-            darkCheckBoxHeadless.Location=new System.Drawing.Point(99, 18);
+            darkCheckBoxHeadless.Location=new System.Drawing.Point(99, 29);
             darkCheckBoxHeadless.Margin=new System.Windows.Forms.Padding(2);
             darkCheckBoxHeadless.Name="darkCheckBoxHeadless";
-            darkCheckBoxHeadless.Size=new System.Drawing.Size(137, 17);
+            darkCheckBoxHeadless.Size=new System.Drawing.Size(136, 17);
             darkCheckBoxHeadless.TabIndex=49;
-            darkCheckBoxHeadless.Text="Hide Chrome Browser";
+            darkCheckBoxHeadless.Text="Hide chrome browser";
             // 
             // darkCheckBoxDisableImageExtension
             // 
             darkCheckBoxDisableImageExtension.AutoSize=true;
-            darkCheckBoxDisableImageExtension.Location=new System.Drawing.Point(99, 47);
+            darkCheckBoxDisableImageExtension.Location=new System.Drawing.Point(99, 58);
             darkCheckBoxDisableImageExtension.Margin=new System.Windows.Forms.Padding(2);
             darkCheckBoxDisableImageExtension.Name="darkCheckBoxDisableImageExtension";
-            darkCheckBoxDisableImageExtension.Size=new System.Drawing.Size(197, 17);
+            darkCheckBoxDisableImageExtension.Size=new System.Drawing.Size(206, 17);
             darkCheckBoxDisableImageExtension.TabIndex=48;
-            darkCheckBoxDisableImageExtension.Text="Disable website Image & Extension";
+            darkCheckBoxDisableImageExtension.Text="Disable website image && extension";
             // 
             // groupBox1
             // 
@@ -201,6 +201,7 @@
             // 
             AutoScaleDimensions=new System.Drawing.SizeF(6F, 13F);
             AutoScaleMode=System.Windows.Forms.AutoScaleMode.Font;
+            BackColor=System.Drawing.SystemColors.ActiveCaption;
             ClientSize=new System.Drawing.Size(417, 321);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);

@@ -391,13 +391,6 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 set { BankType_ = value; }
             }
 
-            private static bool Aborted_;
-            public static bool Aborted
-            {
-                get { return Aborted_; }
-                set { Aborted_ = value; }
-            }
-
             private static string ShopeePayPin_;
             public static string ShopeePayPin
             {

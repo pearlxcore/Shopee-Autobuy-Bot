@@ -91,7 +91,7 @@ namespace Shopee_Autobuy_Bot
                     radioButtonPriceSpecific.Checked = true;
                 if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Below_Price_Cart")
                     radioButtonPriceSpecificCARTCHECKOUT.Checked = true;
-                if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "Cart")
+                if (_profileService.SelectedProfile.BuyingMode.mode.ToString() == "CartPage")
                     radioButtonCheckOutCart.Checked = true;
 
                 darkCheckBoxTomorrow.Checked = _profileService.SelectedProfile.ScheduleBot.tomorrow;

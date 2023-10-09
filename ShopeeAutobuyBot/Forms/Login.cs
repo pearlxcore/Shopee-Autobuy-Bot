@@ -276,8 +276,8 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 // verify log and shopee acc directory
                 if (!Directory.Exists(DirectoryPaths.LogDirectory))
                     Directory.CreateDirectory(DirectoryPaths.LogDirectory);
-                if (!Directory.Exists(DirectoryPaths.ShopeeAccountDirectory))
-                    Directory.CreateDirectory(DirectoryPaths.ShopeeAccountDirectory);
+                if (!Directory.Exists(DirectoryPaths.SabProfileDirectory))
+                    Directory.CreateDirectory(DirectoryPaths.SabProfileDirectory);
 
                 // configure sab temp directory and magic tool executer.exe
                 try
@@ -302,7 +302,7 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
 
             try
             {
-                var directories = Directory.GetDirectories(DirectoryPaths.ShopeeAccountDirectory);
+                var directories = Directory.GetDirectories(DirectoryPaths.SabProfileDirectory);
                 if (directories.Count() > 0)
                 {
                     foreach (var profile in directories)
@@ -498,7 +498,7 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
         {
             if (listBoxChromeProfile.Items.Count == 0)
             {
-                MessageBox.Show("Shopee account is empty. Create and select Shopee account to login", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("SAB profile is empty. Create and select SAB profile to login", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             string chromeProfile = "";
@@ -506,7 +506,7 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 chromeProfile = listBoxChromeProfile.SelectedItem.ToString();
             else
             {
-                MessageBox.Show("Select Shopee account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Select SAB profile.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -631,7 +631,7 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 chromeDriverHelper.options.AddArgument("headless");
             }
             chromeDriverHelper.options.AddArgument("--disable-blink-features=AutomationControlled");
-            chromeDriverHelper.options.AddArgument("user-data-dir=" + DirectoryPaths.ShopeeAccountDirectory + $"{Helper.Shopee.chromeProfile}");
+            chromeDriverHelper.options.AddArgument("user-data-dir=" + DirectoryPaths.SabProfileDirectory + $"{Helper.Shopee.chromeProfile}");
             chromeDriverHelper.options.AddArgument($"--profile-directory=Default");
             chromeDriverHelper.options.PageLoadStrategy = PageLoadStrategy.Eager;
             chromeDriverHelper.options.AddExcludedArgument("enable-automation");
@@ -783,19 +783,19 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
         {
             if (tbNewChromeProfile.Text == String.Empty)
             {
-                MessageBox.Show("Specify Shopee account name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Specify SAB profile name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             listBoxChromeProfile.Items.Add(tbNewChromeProfile.Text);
-            if (!Directory.Exists(DirectoryPaths.ShopeeAccountDirectory + tbNewChromeProfile.Text))
-                Directory.CreateDirectory(DirectoryPaths.ShopeeAccountDirectory + tbNewChromeProfile.Text);
+            if (!Directory.Exists(DirectoryPaths.SabProfileDirectory + tbNewChromeProfile.Text))
+                Directory.CreateDirectory(DirectoryPaths.SabProfileDirectory + tbNewChromeProfile.Text);
         }
 
         private void btnDeleteProfile_Click(object sender, EventArgs e)
         {
             if (listBoxChromeProfile.SelectedItem == null)
             {
-                MessageBox.Show("Select Shopee account to be deleted", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Select SAB profile to be deleted", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             var dialog = MessageBox.Show($"This will delete all user data for {listBoxChromeProfile.SelectedItem}. Are you sure?", "Delete profile", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -803,7 +803,7 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 return;
             try
             {
-                Directory.Delete(DirectoryPaths.ShopeeAccountDirectory +listBoxChromeProfile.SelectedItem, true);
+                Directory.Delete(DirectoryPaths.SabProfileDirectory +listBoxChromeProfile.SelectedItem, true);
             }
             catch { }
             listBoxChromeProfile.Items.Remove(listBoxChromeProfile.SelectedItem);
