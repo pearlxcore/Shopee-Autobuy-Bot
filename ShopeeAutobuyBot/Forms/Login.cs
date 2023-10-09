@@ -293,10 +293,6 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 }
                 catch { }
 
-                // configure mp3 player
-                Mp3Player.Mp3FileReader = new Mp3FileReader(DirectoryPaths.SabTempDirectory + "Cashing.mp3");
-                Mp3Player.WaveOut = new WaveOut();
-                Mp3Player.WaveOut.Init(Mp3Player.Mp3FileReader);
             }
             catch { }
 

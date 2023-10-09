@@ -302,6 +302,7 @@ namespace Shopee_Autobuy_Bot
             // darkCheckBoxPlaySound
             // 
             darkCheckBoxPlaySound.AutoSize=true;
+            darkCheckBoxPlaySound.Enabled=false;
             darkCheckBoxPlaySound.Location=new Point(24, 37);
             darkCheckBoxPlaySound.Margin=new System.Windows.Forms.Padding(2);
             darkCheckBoxPlaySound.Name="darkCheckBoxPlaySound";

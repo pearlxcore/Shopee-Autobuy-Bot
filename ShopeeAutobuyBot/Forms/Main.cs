@@ -3,7 +3,6 @@ using Shopee_Autobuy_Bot.Constants;
 using Shopee_Autobuy_Bot.Models;
 using Shopee_Autobuy_Bot.Services;
 using Shopee_Autobuy_Bot.Services.Logger;
-using Shopee_Autobuy_Bot.Services.Mp3Player;
 using Shopee_Autobuy_Bot.Services.Profile;
 using Shopee_Autobuy_Bot.Services.Telegram;
 using Shopee_Autobuy_Bot.Utililties;
@@ -38,6 +37,7 @@ namespace Shopee_Autobuy_Bot
         private readonly ISeleniumService _seleniumService;
         private readonly IProfileService _profileService;
         private readonly IAutoBuyService _autoBuyService;
+
         IAutoBuyLoggerService _autoBuyLoggerService;
         public Main(ISeleniumService seleniumService, IProfileService profileService)
         {
@@ -47,8 +47,6 @@ namespace Shopee_Autobuy_Bot
             _seleniumService=seleniumService;
             _profileService=profileService;
             _autoBuyLoggerService = new AutoBuyLoggerService(richTextBoxLogs, _profileService);
-            IMp3PlayerService mp3PlayerService = new Mp3PlayerService();
-            ITelegramService telegramService = new TelegramService(_autoBuyLoggerService);
             _autoBuyService = new AutoBuyService(_autoBuyLoggerService, seleniumService, darkButtonStart, _profileService);
         }
 

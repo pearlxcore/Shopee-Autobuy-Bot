@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Hosting;
 using Shopee_Autobuy_Bot.Services;
 using Shopee_Autobuy_Bot.Services.Logger;
-using Shopee_Autobuy_Bot.Services.Mp3Player;
 using Shopee_Autobuy_Bot.Services.Profile;
 using Shopee_Autobuy_Bot.Services.Telegram;
 using System;
@@ -44,7 +43,6 @@ namespace Shopee_Autobuy_Bot
                     services.AddTransient<IAutoBuyLoggerService, AutoBuyLoggerService>();
                     services.AddTransient<IAutoBuyService, AutoBuyService>();
                     services.AddTransient<ITelegramService, TelegramService>();
-                    services.AddTransient<IMp3PlayerService, Mp3PlayerService>();
                     services.AddTransient<IProfileService, ProfileService>();
                     services.AddSingleton<RichTextBox>();
                     services.AddSingleton<Button>();

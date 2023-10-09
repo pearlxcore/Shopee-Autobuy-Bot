@@ -2,7 +2,6 @@
 using OpenQA.Selenium.Interactions;
 using Shopee_Autobuy_Bot.Constants;
 using Shopee_Autobuy_Bot.Services.Logger;
-using Shopee_Autobuy_Bot.Services.Mp3Player;
 using Shopee_Autobuy_Bot.Services.Profile;
 using Shopee_Autobuy_Bot.Services.Telegram;
 using Shopee_Autobuy_Bot.Utililties;
@@ -22,7 +21,6 @@ namespace Shopee_Autobuy_Bot.Services
     public class AutoBuyService : IAutoBuyService
     {
         private readonly IProfileService _profileService;
-        private readonly IMp3PlayerService _mp3PlayerService;
         private readonly ITelegramService _telegramService;
         private readonly IAutoBuyLoggerService _autoBuyLoggerService;
         private readonly ISeleniumService _seleniumService;
@@ -40,6 +38,7 @@ namespace Shopee_Autobuy_Bot.Services
             _seleniumService = seleniumService;
             _startButton = startButton;
             _profileService=profileService;
+            _telegramService = new TelegramService(_autoBuyLoggerService);
         }
 
         public void IncreaseQuantity()
@@ -879,8 +878,8 @@ namespace Shopee_Autobuy_Bot.Services
                     CheckoutTimeSpan = CheckOutStartTime - DateTime.Now;
                 }
 
-                if (_profileService.SelectedProfile.BotSettings.play_sound)
-                    _mp3PlayerService.PlaySound();
+                //if (_profileService.SelectedProfile.BotSettings.play_sound)
+
 
                 Thread.Sleep(800);
 
