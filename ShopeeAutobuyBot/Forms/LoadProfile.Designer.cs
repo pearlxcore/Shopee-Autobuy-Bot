@@ -444,7 +444,7 @@ namespace Shopee_Autobuy_Bot
             // tbRefreshSecond
             // 
             tbRefreshSecond.Enabled=false;
-            tbRefreshSecond.Location=new Point(257, 128);
+            tbRefreshSecond.Location=new Point(257, 109);
             tbRefreshSecond.Margin=new Padding(2, 3, 2, 3);
             tbRefreshSecond.Name="tbRefreshSecond";
             tbRefreshSecond.Size=new Size(31, 23);
@@ -488,7 +488,7 @@ namespace Shopee_Autobuy_Bot
             // 
             darkLabel5.AutoSize=true;
             darkLabel5.ForeColor=SystemColors.ControlText;
-            darkLabel5.Location=new Point(292, 132);
+            darkLabel5.Location=new Point(292, 113);
             darkLabel5.Margin=new Padding(2, 0, 2, 0);
             darkLabel5.Name="darkLabel5";
             darkLabel5.Size=new Size(50, 15);
@@ -499,7 +499,7 @@ namespace Shopee_Autobuy_Bot
             // 
             darkLabel4.AutoSize=true;
             darkLabel4.ForeColor=SystemColors.ControlText;
-            darkLabel4.Location=new Point(176, 132);
+            darkLabel4.Location=new Point(176, 113);
             darkLabel4.Margin=new Padding(2, 0, 2, 0);
             darkLabel4.Name="darkLabel4";
             darkLabel4.Size=new Size(77, 15);

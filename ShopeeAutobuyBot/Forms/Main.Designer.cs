@@ -314,7 +314,7 @@ namespace Shopee_Autobuy_Bot
             // 
             darkLabel5.AutoSize=true;
             darkLabel5.ForeColor=SystemColors.ControlText;
-            darkLabel5.Location=new Point(292, 132);
+            darkLabel5.Location=new Point(292, 113);
             darkLabel5.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel5.Name="darkLabel5";
             darkLabel5.Size=new Size(49, 13);
@@ -325,7 +325,7 @@ namespace Shopee_Autobuy_Bot
             // 
             darkLabel4.AutoSize=true;
             darkLabel4.ForeColor=SystemColors.ControlText;
-            darkLabel4.Location=new Point(176, 132);
+            darkLabel4.Location=new Point(176, 113);
             darkLabel4.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel4.Name="darkLabel4";
             darkLabel4.Size=new Size(75, 13);
@@ -336,7 +336,7 @@ namespace Shopee_Autobuy_Bot
             // 
             darkNumericUpDownRefreshSeconds.BackColor=SystemColors.Window;
             darkNumericUpDownRefreshSeconds.ForeColor=SystemColors.ControlText;
-            darkNumericUpDownRefreshSeconds.Location=new Point(253, 127);
+            darkNumericUpDownRefreshSeconds.Location=new Point(253, 108);
             darkNumericUpDownRefreshSeconds.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkNumericUpDownRefreshSeconds.Maximum=new decimal(new int[] { 10, 0, 0, 0 });
             darkNumericUpDownRefreshSeconds.Name="darkNumericUpDownRefreshSeconds";
@@ -1016,7 +1016,7 @@ namespace Shopee_Autobuy_Bot
             saveCookiesToolStripMenuItem.BackColor=SystemColors.Control;
             saveCookiesToolStripMenuItem.ForeColor=SystemColors.ControlText;
             saveCookiesToolStripMenuItem.Name="saveCookiesToolStripMenuItem";
-            saveCookiesToolStripMenuItem.Size=new Size(180, 22);
+            saveCookiesToolStripMenuItem.Size=new Size(140, 22);
             saveCookiesToolStripMenuItem.Text="save cookies";
             saveCookiesToolStripMenuItem.Click+=saveCookiesToolStripMenuItem_Click;
             // 
@@ -1025,14 +1025,14 @@ namespace Shopee_Autobuy_Bot
             fontTestToolStripMenuItem.BackColor=SystemColors.Control;
             fontTestToolStripMenuItem.ForeColor=SystemColors.ControlText;
             fontTestToolStripMenuItem.Name="fontTestToolStripMenuItem";
-            fontTestToolStripMenuItem.Size=new Size(180, 22);
+            fontTestToolStripMenuItem.Size=new Size(140, 22);
             fontTestToolStripMenuItem.Text="font test";
             fontTestToolStripMenuItem.Click+=fontTestToolStripMenuItem_Click;
             // 
             // telegramToolStripMenuItem
             // 
             telegramToolStripMenuItem.Name="telegramToolStripMenuItem";
-            telegramToolStripMenuItem.Size=new Size(180, 22);
+            telegramToolStripMenuItem.Size=new Size(140, 22);
             telegramToolStripMenuItem.Text="telegram";
             telegramToolStripMenuItem.Click+=telegramToolStripMenuItem_Click;
             // 
