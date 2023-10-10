@@ -30,7 +30,7 @@ namespace Shopee_Autobuy_Bot.Services.Notification
                 notifyIcon.Icon = appIcon;
                 notifyIcon.Visible = true;
                 notifyIcon.BalloonTipTitle = "Order placed";
-                notifyIcon.BalloonTipText = $"Account : {sabAccount}\nOrder Price : RM300.03\n" +
+                notifyIcon.BalloonTipText = $"Account : {sabAccount}\nOrder Price : {orderPrice}\n" +
                     $"Checkout time : {checkoutTime}";
                 notifyIcon.ShowBalloonTip(10000000);
             }
@@ -68,7 +68,7 @@ Chekout Time : {checkoutTime}";
                     }
                     string response = sb.ToString();
 
-                    _autoBuyLoggerService.AutoBuyProcessLog("Notification sent to telegram", Color.DarkGreen, true, true, true);
+                    _autoBuyLoggerService.AutoBuyProcessLog("Notification sent to telegram", Color.Black, true, true, true);
                 }
                 catch (Exception ex) { _autoBuyLoggerService.AutoBuyProcessLog("Failed to send notification to telegram. " + ex.Message, Color.DarkGreen, true, true, true); }
             }
