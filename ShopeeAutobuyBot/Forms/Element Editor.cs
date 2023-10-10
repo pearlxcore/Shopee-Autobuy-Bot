@@ -31,6 +31,7 @@ namespace Shopee_Autobuy_Bot
             tbQuantityTextbox_product.Text = element.ProductPage.QuantityCheckbox;
             tbCurrentPriceLabel_product.Text = element.ProductPage.CurrentPriceLabel;
             tbSaleBanner_product.Text = element.ProductPage.SaleBanner;
+            tbUnlisted_product.Text = element.ProductPage.UnlistedError;
 
             tbCheckoutButton_cart.Text = element.CartPage.CheckOutButton;
             tbSelectAllCheckbox_cart.Text = element.CartPage.SelectAllCheckbox;
@@ -86,7 +87,8 @@ namespace Shopee_Autobuy_Bot
                     ProductVariationContainer= tbVariationFlexBox_product.Text,
                     QuantityCheckbox= tbQuantityTextbox_product.Text,
                     CurrentPriceLabel= tbCurrentPriceLabel_product.Text,
-                    SaleBanner= tbSaleBanner_product.Text
+                    SaleBanner= tbSaleBanner_product.Text,
+                    UnlistedError = tbUnlisted_product.Text
                 };
                 var cartPage = new ElementModel.CartPage()
                 {

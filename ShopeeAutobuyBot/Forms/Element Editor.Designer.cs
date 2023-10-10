@@ -115,6 +115,8 @@ namespace Shopee_Autobuy_Bot
             tbConvStoreType_SevenEleven=new System.Windows.Forms.TextBox();
             darkLabel38=new System.Windows.Forms.Label();
             darkLabel40=new System.Windows.Forms.Label();
+            label1=new System.Windows.Forms.Label();
+            tbUnlisted_product=new System.Windows.Forms.TextBox();
             darkMenuStrip1.SuspendLayout();
             tabPage5.SuspendLayout();
             tabPage3.SuspendLayout();
@@ -685,6 +687,8 @@ namespace Shopee_Autobuy_Bot
             // tabPage1
             // 
             tabPage1.BackColor=SystemColors.ActiveCaption;
+            tabPage1.Controls.Add(label1);
+            tabPage1.Controls.Add(tbUnlisted_product);
             tabPage1.Controls.Add(darkLabel4);
             tabPage1.Controls.Add(tbSaleBanner_product);
             tabPage1.Controls.Add(tbCurrentPriceLabel_product);
@@ -1084,6 +1088,27 @@ namespace Shopee_Autobuy_Bot
             darkLabel40.TabIndex=67;
             darkLabel40.Text="Seven Eleven :";
             // 
+            // label1
+            // 
+            label1.AutoSize=true;
+            label1.ForeColor=SystemColors.ControlText;
+            label1.Location=new Point(34, 269);
+            label1.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label1.Name="label1";
+            label1.Size=new Size(84, 13);
+            label1.TabIndex=63;
+            label1.Text="Unlisted Error :";
+            // 
+            // tbUnlisted_product
+            // 
+            tbUnlisted_product.Location=new Point(224, 263);
+            tbUnlisted_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbUnlisted_product.MaxLength=100;
+            tbUnlisted_product.Multiline=true;
+            tbUnlisted_product.Name="tbUnlisted_product";
+            tbUnlisted_product.Size=new Size(557, 25);
+            tbUnlisted_product.TabIndex=62;
+            // 
             // Element_Editor
             // 
             AutoScaleDimensions=new SizeF(6F, 13F);
@@ -1204,5 +1229,7 @@ namespace Shopee_Autobuy_Bot
         private System.Windows.Forms.Label darkLabel40;
         private System.Windows.Forms.TextBox tbSelectAllLabel;
         private System.Windows.Forms.Label darkLabel33;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbUnlisted_product;
     }
 }

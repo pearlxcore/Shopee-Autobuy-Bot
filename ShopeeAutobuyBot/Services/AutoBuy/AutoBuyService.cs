@@ -7,7 +7,6 @@ using Shopee_Autobuy_Bot.Services.Telegram;
 using Shopee_Autobuy_Bot.Utililties;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -495,6 +494,11 @@ namespace Shopee_Autobuy_Bot.Services
                             IncreaseQuantity();
                             _seleniumService.ClickElement(BuyNowButton);
                             _autoBuyLoggerService.AutoBuyProcessLog("Click 'Buy Now'.", Color.DarkGreen, true, true, true);
+                            if (ProductUnlisted())
+                            {
+                                _autoBuyLoggerService.AutoBuyProcessLog("Product unlisted.", Color.IndianRed, true, true, true);
+                                return;
+                            }
                             CartPage(buyMode);
                         }
                     }
@@ -505,10 +509,20 @@ namespace Shopee_Autobuy_Bot.Services
                         IncreaseQuantity();
                         _seleniumService.ClickElement(BuyNowButton);
                         _autoBuyLoggerService.AutoBuyProcessLog("Click 'Buy Now'.", Color.DarkGreen, true, true, true);
+                        if (ProductUnlisted())
+                        {
+                            _autoBuyLoggerService.AutoBuyProcessLog("Product unlisted.", Color.IndianRed, true, true, true);
+                            return;
+                        }
                         CartPage(buyMode);
                     }
                 }
             }
+        }
+
+        private bool ProductUnlisted()
+        {
+            return _seleniumService.ElementExists(By.XPath(ConstantElements.ProductPage.BuyNowButton));
         }
 
         private string SelectVariant()

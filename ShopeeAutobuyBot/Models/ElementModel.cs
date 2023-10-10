@@ -16,6 +16,7 @@
             public string QuantityCheckbox { get; set; }
             public string CurrentPriceLabel { get; set; }
             public string SaleBanner { get; set; }
+            public string UnlistedError { get; set; }
         }
 
         public class CartPage
