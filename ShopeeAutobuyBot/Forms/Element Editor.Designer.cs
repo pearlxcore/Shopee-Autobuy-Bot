@@ -82,6 +82,8 @@ namespace Shopee_Autobuy_Bot
             darkLabel5=new System.Windows.Forms.Label();
             darkLabel6=new System.Windows.Forms.Label();
             tabPage1=new System.Windows.Forms.TabPage();
+            label1=new System.Windows.Forms.Label();
+            tbUnlisted_product=new System.Windows.Forms.TextBox();
             darkLabel4=new System.Windows.Forms.Label();
             tbSaleBanner_product=new System.Windows.Forms.TextBox();
             tbCurrentPriceLabel_product=new System.Windows.Forms.TextBox();
@@ -115,8 +117,6 @@ namespace Shopee_Autobuy_Bot
             tbConvStoreType_SevenEleven=new System.Windows.Forms.TextBox();
             darkLabel38=new System.Windows.Forms.Label();
             darkLabel40=new System.Windows.Forms.Label();
-            label1=new System.Windows.Forms.Label();
-            tbUnlisted_product=new System.Windows.Forms.TextBox();
             darkMenuStrip1.SuspendLayout();
             tabPage5.SuspendLayout();
             tabPage3.SuspendLayout();
@@ -191,7 +191,6 @@ namespace Shopee_Autobuy_Bot
             exitToolStripMenuItem.Name="exitToolStripMenuItem";
             exitToolStripMenuItem.Size=new Size(252, 22);
             exitToolStripMenuItem.Text="Exit";
-            exitToolStripMenuItem.Visible=false;
             exitToolStripMenuItem.Click+=exitToolStripMenuItem_Click;
             // 
             // tabPage5
@@ -706,6 +705,27 @@ namespace Shopee_Autobuy_Bot
             tabPage1.TabIndex=0;
             tabPage1.Text="Product Page";
             // 
+            // label1
+            // 
+            label1.AutoSize=true;
+            label1.ForeColor=SystemColors.ControlText;
+            label1.Location=new Point(34, 269);
+            label1.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label1.Name="label1";
+            label1.Size=new Size(84, 13);
+            label1.TabIndex=63;
+            label1.Text="Unlisted Error :";
+            // 
+            // tbUnlisted_product
+            // 
+            tbUnlisted_product.Location=new Point(224, 263);
+            tbUnlisted_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbUnlisted_product.MaxLength=100;
+            tbUnlisted_product.Multiline=true;
+            tbUnlisted_product.Name="tbUnlisted_product";
+            tbUnlisted_product.Size=new Size(557, 25);
+            tbUnlisted_product.TabIndex=62;
+            // 
             // darkLabel4
             // 
             darkLabel4.AutoSize=true;
@@ -1087,27 +1107,6 @@ namespace Shopee_Autobuy_Bot
             darkLabel40.Size=new Size(79, 13);
             darkLabel40.TabIndex=67;
             darkLabel40.Text="Seven Eleven :";
-            // 
-            // label1
-            // 
-            label1.AutoSize=true;
-            label1.ForeColor=SystemColors.ControlText;
-            label1.Location=new Point(34, 269);
-            label1.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label1.Name="label1";
-            label1.Size=new Size(84, 13);
-            label1.TabIndex=63;
-            label1.Text="Unlisted Error :";
-            // 
-            // tbUnlisted_product
-            // 
-            tbUnlisted_product.Location=new Point(224, 263);
-            tbUnlisted_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbUnlisted_product.MaxLength=100;
-            tbUnlisted_product.Multiline=true;
-            tbUnlisted_product.Name="tbUnlisted_product";
-            tbUnlisted_product.Size=new Size(557, 25);
-            tbUnlisted_product.TabIndex=62;
             // 
             // Element_Editor
             // 

@@ -163,7 +163,6 @@ namespace Shopee_Autobuy_Bot
         {
             try
             {
-                //get delay config
                 string elementResponse = GetWithResponse($"{Urls.SabSettings.Element}");
                 AutoBuyInfo.ConstantElements = JsonConvert.DeserializeObject<ElementModel.Root>(elementResponse); // -> to escape string
                 LoadElementsToControls(AutoBuyInfo.ConstantElements);
