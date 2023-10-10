@@ -1,7 +1,4 @@
-﻿using NAudio.Wave;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using Shopee_Autobuy_Bot.Constants;
+﻿using Shopee_Autobuy_Bot.Constants;
 using Shopee_Autobuy_Bot.Services;
 using Shopee_Autobuy_Bot.Services.Logger;
 using Shopee_Autobuy_Bot.Services.Profile;
@@ -18,6 +15,7 @@ using System.Net;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
+using static Shopee_Autobuy_Bot.Constants.AutoBuyInfo;
 using static Shopee_Autobuy_Bot.Utililties.Helper;
 using Application = System.Windows.Forms.Application;
 using MessageBox = System.Windows.Forms.MessageBox;
@@ -497,24 +495,15 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 MessageBox.Show("SAB profile is empty. Create and select SAB profile to login", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string chromeProfile = "";
+
             if (listBoxChromeProfile.SelectedItem != null)
-                chromeProfile = listBoxChromeProfile.SelectedItem.ToString();
+                SAB_Account = listBoxChromeProfile.SelectedItem.ToString();
             else
             {
                 MessageBox.Show("Select SAB profile.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            //if (tbId.Text == string.Empty)
-            //{
-            //    MessageBox.Show("Specify user Id.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-
-            Helper.Shopee.chromeProfile = chromeProfile;
-
-            Helper.Shopee.Id = tbId.Text;
             new Thread(() =>
             {
                 Thread.CurrentThread.IsBackground = true;
@@ -609,79 +598,6 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 tbId.Enabled = true;
                 return;
             }
-        }
-
-        private ChromeDriverHelper firstStart(ChromeDriverHelper chromeDriverHelper)
-        {
-            chromeDriverHelper.driverService.HideCommandPromptWindow = true;
-            if (darkCheckBoxDisableImageExtension.Checked == true)
-            {
-                chromeDriverHelper.options.AddArgument("--disable-extensions");
-                chromeDriverHelper.options.AddUserProfilePreference("profile.default_content_setting_values.images", 2);
-                chromeDriverHelper.options.AddArgument("--blink-settings=imagesEnabled=false");
-            }
-            else
-                chromeDriverHelper.options.AddUserProfilePreference("profile.default_content_setting_values.images", 1);
-            if (darkCheckBoxHeadless.Checked == true)
-            {
-                chromeDriverHelper.options.AddArgument("headless");
-            }
-            chromeDriverHelper.options.AddArgument("--disable-blink-features=AutomationControlled");
-            chromeDriverHelper.options.AddArgument("user-data-dir=" + DirectoryPaths.SabProfileDirectory + $"{Helper.Shopee.chromeProfile}");
-            chromeDriverHelper.options.AddArgument($"--profile-directory=Default");
-            chromeDriverHelper.options.PageLoadStrategy = PageLoadStrategy.Eager;
-            chromeDriverHelper.options.AddExcludedArgument("enable-automation");
-            chromeDriverHelper.options.AddArgument("no-sandbox");
-            chromeDriverHelper.driverProc = chromeDriverHelper.driverService.ProcessId;
-            chromeDriverHelper.driver = (IWebDriver)new ChromeDriver(chromeDriverHelper.driverService, chromeDriverHelper.options, TimeSpan.FromMinutes(3.0));
-            chromeDriverHelper.driver.Manage().Window.Maximize();
-
-            return chromeDriverHelper;
-        }
-
-        private string GetWithResponse(string url)
-        {
-            string html_ = string.Empty;
-
-            HttpWebRequest request_ = (HttpWebRequest)WebRequest.Create(url);
-            request_.AutomaticDecompression = DecompressionMethods.GZip;
-
-            using (HttpWebResponse response = (HttpWebResponse)request_.GetResponse())
-            using (Stream stream_ = response.GetResponseStream())
-            using (StreamReader reader = new StreamReader(stream_))
-            {
-                html_ = reader.ReadToEnd();
-            }
-            return html_;
-        }
-
-        private string PostWithResponse(string url, string data)
-        {
-            string result = "";
-            using (var wb = new WebClient())
-            {
-                wb.Headers.Add("Content-Type", "application/json");
-                var response = wb.UploadString(url, "POST", data);
-                result = response;
-            }
-
-            //var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
-            //httpWebRequest.ContentType = "application/json";
-            //httpWebRequest.Method = "POST";
-
-            //using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
-            //{
-            //    string json = body;
-
-            //    streamWriter.Write(json);
-            //}
-
-            //var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-            //using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-            //{
-            //    result = streamReader.ReadToEnd();
-            //}
-            return result;
         }
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)

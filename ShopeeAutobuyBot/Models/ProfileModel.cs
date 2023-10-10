@@ -4,9 +4,8 @@
     {
         public class BotSettings
         {
-            public bool play_sound { get; set; }
-            public bool hide_browser { get; set; }
-            public bool disable_image { get; set; }
+            public bool alert_telegram { get; set; }
+            public bool desktop_notification { get; set; }
             public bool autorefresh_webpage { get; set; }
             public int autorefresh_interval { get; set; }
             public bool disable_logging { get; set; }

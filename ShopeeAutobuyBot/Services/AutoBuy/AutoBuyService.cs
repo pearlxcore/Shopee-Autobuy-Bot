@@ -2,9 +2,8 @@
 using OpenQA.Selenium.Interactions;
 using Shopee_Autobuy_Bot.Constants;
 using Shopee_Autobuy_Bot.Services.Logger;
+using Shopee_Autobuy_Bot.Services.Notification;
 using Shopee_Autobuy_Bot.Services.Profile;
-using Shopee_Autobuy_Bot.Services.Telegram;
-using Shopee_Autobuy_Bot.Utililties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -20,15 +19,15 @@ namespace Shopee_Autobuy_Bot.Services
     public class AutoBuyService : IAutoBuyService
     {
         private readonly IProfileService _profileService;
-        private readonly ITelegramService _telegramService;
+        private readonly INotificationService _notificationService;
         private readonly IAutoBuyLoggerService _autoBuyLoggerService;
         private readonly ISeleniumService _seleniumService;
         private readonly Button _startButton;
         public DateTime JobStartTime;
         public DateTime CheckOutStartTime;
         public TimeSpan TotalTimeSpan { get; private set; }
-        private TimeSpan CheckoutTimeSpan { get; set; }
-
+        public TimeSpan CheckoutTimeSpan { get; private set; }
+        public string OrderPrice { get; private set; }
         public bool Abort { get; set; } = false;
 
         public AutoBuyService(IAutoBuyLoggerService autoBuyLoggerService, ISeleniumService seleniumService, Button startButton, IProfileService profileService)
@@ -37,7 +36,7 @@ namespace Shopee_Autobuy_Bot.Services
             _seleniumService = seleniumService;
             _startButton = startButton;
             _profileService=profileService;
-            _telegramService = new TelegramService(_autoBuyLoggerService);
+            _notificationService = new NotificationService(_autoBuyLoggerService);
         }
 
         public void IncreaseQuantity()
@@ -203,7 +202,7 @@ namespace Shopee_Autobuy_Bot.Services
                 if (_seleniumService.GetElement(By.XPath(ConstantElements.CartPage.SelectAllLabel)).Text == "Select All (0)")
                 {
                     _autoBuyLoggerService.AutoBuyProcessLog("No items available to checkout.", Color.IndianRed, true, true, true);
-                    RefreshPageAndLoopAutobuy(GetCurrentMethodName(), new object[] { buyMode }, pageUrl, true);
+                    return;
                 }
                 else
                 {
@@ -450,7 +449,50 @@ namespace Shopee_Autobuy_Bot.Services
 
         private void BuyProduct(string buyMode)
         {
-            SetCurrentElement(nameof(ConstantElements.ProductPage.BuyNowButton), ConstantElements.ProductPage.BuyNowButton);
+            bool available = IsProductAvailable();
+            if (!available)
+            {
+                _autoBuyLoggerService.AutoBuyProcessLog("Product is not available.", Color.IndianRed, true, true, true);
+                RefreshPageAndLoopAutobuy("ProductPage", new object[] { buyMode }, _profileService.SelectedProfile.ProductDetail.product_link, true);
+                return;
+            }
+
+
+
+            var errorMessage = SelectVariant();
+            if (errorMessage.Length > 0)
+            {
+                _autoBuyLoggerService.AutoBuyProcessLog(errorMessage, Color.IndianRed, true, true, true);
+                if (errorMessage.Contains("Product only need") || errorMessage.Contains("Product need 2"))
+                    return;
+                RefreshPageAndLoopAutobuy("ProductPage", new object[] { buyMode }, _profileService.SelectedProfile.ProductDetail.product_link, true);
+                return;
+            }
+
+            bool unlisted = ProductUnlisted();
+            if (unlisted)
+            {
+                _autoBuyLoggerService.AutoBuyProcessLog("Product unlisted.", Color.IndianRed, true, true, true);
+                return;
+            }
+
+            if (buyMode == BuyingMode.Below_Price && !IsProductPriceSuitable())
+            {
+                // Refresh the page since the price hasn't changed yet
+                RefreshPageAndLoopAutobuy(GetCurrentMethodName(), new object[] { buyMode }, _profileService.SelectedProfile.ProductDetail.product_link, true);
+                return;
+            }
+
+            CheckOutStartTime = DateTime.Now;
+            _autoBuyLoggerService.AutoBuyProcessLog($"Checkout started at {CheckOutStartTime}", Color.Black, true, true, true);
+            IncreaseQuantity();
+            ClickBuyNowButton();
+
+            CartPage(buyMode);
+        }
+
+        private bool IsProductAvailable()
+        {
             string strButtonBuyNow = ConstantElements.ProductPage.BuyNowButton;
             IWebElement BuyNowButton;
             Thread.Sleep(ConfigInfo.delay_step_1);
@@ -463,66 +505,28 @@ namespace Shopee_Autobuy_Bot.Services
 
             BuyNowButton = _seleniumService.GetElement(By.XPath(strButtonBuyNow));
 
-            if (!_seleniumService.ElementExists(By.XPath(strButtonBuyNow)) || BuyNowButton.GetAttribute("aria-disabled").Equals("true"))
-            {
-                _autoBuyLoggerService.AutoBuyProcessLog("Product is not available.", Color.IndianRed, true, true, true);
-                RefreshPageAndLoopAutobuy("ProductPage", new object[] { buyMode }, _profileService.SelectedProfile.ProductDetail.product_link, true);
-            }
-            else if (BuyNowButton.GetAttribute("aria-disabled").Equals("false"))
-            {
-                var errorMessage = SelectVariant();
-                if (errorMessage.Length > 0)
-                {
-                    _autoBuyLoggerService.AutoBuyProcessLog(errorMessage, Color.IndianRed, true, true, true);
-                    if (errorMessage.Contains("Product only need") || errorMessage.Contains("Product need 2"))
-                        return;
-                    RefreshPageAndLoopAutobuy("ProductPage", new object[] { buyMode }, _profileService.SelectedProfile.ProductDetail.product_link, true);
-                }
-                else
-                {
-                    if (buyMode == BuyingMode.Below_Price)
-                    {
-                        if (!IsProductPriceSuitable())
-                        {
-                            // Refresh the page since the price hasn't changed yet
-                            RefreshPageAndLoopAutobuy(GetCurrentMethodName(), new object[] { buyMode }, _profileService.SelectedProfile.ProductDetail.product_link, true);
-                        }
-                        else
-                        {
-                            CheckOutStartTime = DateTime.Now;
-                            _autoBuyLoggerService.AutoBuyProcessLog($"Checkout started at {CheckOutStartTime}", Color.Black, true, true, true);
-                            IncreaseQuantity();
-                            _seleniumService.ClickElement(BuyNowButton);
-                            _autoBuyLoggerService.AutoBuyProcessLog("Click 'Buy Now'.", Color.DarkGreen, true, true, true);
-                            if (ProductUnlisted())
-                            {
-                                _autoBuyLoggerService.AutoBuyProcessLog("Product unlisted.", Color.IndianRed, true, true, true);
-                                return;
-                            }
-                            CartPage(buyMode);
-                        }
-                    }
-                    else
-                    {
-                        CheckOutStartTime = DateTime.Now;
-                        _autoBuyLoggerService.AutoBuyProcessLog($"Checkout started at {CheckOutStartTime}", Color.Black, true, true, true);
-                        IncreaseQuantity();
-                        _seleniumService.ClickElement(BuyNowButton);
-                        _autoBuyLoggerService.AutoBuyProcessLog("Click 'Buy Now'.", Color.DarkGreen, true, true, true);
-                        if (ProductUnlisted())
-                        {
-                            _autoBuyLoggerService.AutoBuyProcessLog("Product unlisted.", Color.IndianRed, true, true, true);
-                            return;
-                        }
-                        CartPage(buyMode);
-                    }
-                }
-            }
+            return _seleniumService.ElementExists(By.XPath(strButtonBuyNow)) && BuyNowButton.GetAttribute("aria-disabled").Equals("false");
+        }
+
+        private void ClickBuyNowButton()
+        {
+            SetCurrentElement(nameof(ConstantElements.ProductPage.BuyNowButton), ConstantElements.ProductPage.BuyNowButton);
+            string strButtonBuyNow = ConstantElements.ProductPage.BuyNowButton;
+            IWebElement BuyNowButton = _seleniumService.GetElement(By.XPath(strButtonBuyNow));
+
+            _seleniumService.ClickElement(BuyNowButton);
+            _autoBuyLoggerService.AutoBuyProcessLog("Click 'Buy Now'.", Color.DarkGreen, true, true, true);
         }
 
         private bool ProductUnlisted()
         {
-            return _seleniumService.ElementExists(By.XPath(ConstantElements.ProductPage.BuyNowButton));
+            try
+            {
+                return _seleniumService
+                .ElementExists(By.XPath(ConstantElements.ProductPage.UnlistedError));
+            }
+            catch { return false; }
+
         }
 
         private string SelectVariant()
@@ -536,6 +540,8 @@ namespace Shopee_Autobuy_Bot.Services
                     // select random variant
                     if (_profileService.SelectedProfile.ProductDetail.random_variant)
                     {
+                        // update variant into profile
+                        _profileService.SelectedProfile.ProductDetail.variant = "";
                         IReadOnlyCollection<IWebElement> variantElements = _seleniumService._driver.FindElements(By.XPath("//div[contains(@class, 'flex items-center bR6mEk')]"));
                         foreach (IWebElement variantElement in variantElements)
                         {
@@ -545,9 +551,17 @@ namespace Shopee_Autobuy_Bot.Services
                                 {
                                     _seleniumService.ClickElement(variant);
                                     _autoBuyLoggerService.AutoBuyProcessLog("Click " + variant.Text + ".", Color.DarkGreen, true, true, true);
+                                    _profileService.SelectedProfile.ProductDetail.variant += variant.Text + "|";
                                     break;
+
                                 }
                             }
+                        }
+
+                        // delete last '|' in variant string
+                        if (_profileService.SelectedProfile.ProductDetail.variant.EndsWith("|"))
+                        {
+                            _profileService.SelectedProfile.ProductDetail.variant = _profileService.SelectedProfile.ProductDetail.variant.Substring(0, _profileService.SelectedProfile.ProductDetail.variant.Length - 1);
                         }
                     }
                     else
@@ -865,7 +879,7 @@ namespace Shopee_Autobuy_Bot.Services
             {
                 SetCurrentElement(nameof(ConstantElements.CheckoutPage.OrderPrice), ConstantElements.CheckoutPage.OrderPrice);
                 _seleniumService.WaitElementVisible(By.XPath(ConstantElements.CheckoutPage.OrderPrice));
-                Helper.Shopee.OrderPrice = _seleniumService.GetElement(By.XPath(ConstantElements.CheckoutPage.OrderPrice)).Text;
+                OrderPrice = _seleniumService.GetElement(By.XPath(ConstantElements.CheckoutPage.OrderPrice)).Text;
 
                 SetCurrentElement(nameof(ConstantElements.CheckoutPage.PlaceOrderButton), ConstantElements.CheckoutPage.PlaceOrderButton);
                 _seleniumService.WaitElementVisible(By.XPath(ConstantElements.CheckoutPage.PlaceOrderButton))
@@ -975,10 +989,9 @@ namespace Shopee_Autobuy_Bot.Services
                         // If the code reaches here, it means the checkout was successful
                         _autoBuyLoggerService.AutoBuyProcessLog("Total time : " + TotalTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.Black, true, true, true);
                         _autoBuyLoggerService.AutoBuyProcessLog("Checkout time : " + CheckoutTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.Black, true, true, true);
-                        _telegramService.SendNotification(_profileService.SelectedProfile.ScheduleBot.schedule,
-                            _profileService.SelectedProfile.BuyingMode.ToString(),
-                            Helper.Shopee.OrderPrice,
-                            _profileService.SelectedProfile.ProductDetail.product_link);
+                        _notificationService.SendNotification(SAB_Account, _profileService, OrderPrice, CheckoutTimeSpan);
+
+                        // todo : add notifyicon
                     }
                 }
             }
@@ -1021,10 +1034,7 @@ namespace Shopee_Autobuy_Bot.Services
                         }
                         _autoBuyLoggerService.AutoBuyProcessLog("Total time : " + TotalTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.Black, true, true, true);
                         _autoBuyLoggerService.AutoBuyProcessLog("Checkout time : " + CheckoutTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.Black, true, true, true);
-                        _telegramService.SendNotification(_profileService.SelectedProfile.ScheduleBot.schedule,
-                            _profileService.SelectedProfile.BuyingMode.ToString(),
-                            Helper.Shopee.OrderPrice,
-                            _profileService.SelectedProfile.ProductDetail.product_link);
+                        _notificationService.SendNotification(SAB_Account, _profileService, OrderPrice, CheckoutTimeSpan);
                     }
                 }
             }

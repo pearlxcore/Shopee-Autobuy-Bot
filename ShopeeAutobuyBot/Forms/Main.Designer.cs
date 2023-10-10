@@ -46,8 +46,7 @@ namespace Shopee_Autobuy_Bot
             darkNumericUpDownCountdownHour=new System.Windows.Forms.NumericUpDown();
             darkNumericUpDownTimeOut=new System.Windows.Forms.NumericUpDown();
             darkLabel13=new System.Windows.Forms.Label();
-            darkCheckBoxPlaySound=new System.Windows.Forms.CheckBox();
-            darkCheckBoxDisableImageExtension=new System.Windows.Forms.CheckBox();
+            darkCheckBoxNotifyTelegram=new System.Windows.Forms.CheckBox();
             darkLabel5=new System.Windows.Forms.Label();
             darkLabel4=new System.Windows.Forms.Label();
             darkNumericUpDownRefreshSeconds=new System.Windows.Forms.NumericUpDown();
@@ -86,10 +85,10 @@ namespace Shopee_Autobuy_Bot
             darkButtonStart=new System.Windows.Forms.Button();
             timerlabelBig=new System.Windows.Forms.Label();
             darkSectionPanelBotSettings=new System.Windows.Forms.GroupBox();
+            checkBoxDesktopNotification=new System.Windows.Forms.CheckBox();
             darkCheckBoxLogging=new System.Windows.Forms.CheckBox();
             darkButton5=new System.Windows.Forms.Button();
             darkCheckBoxRefresh=new System.Windows.Forms.CheckBox();
-            darkCheckBoxHeadless=new System.Windows.Forms.CheckBox();
             darkMenuStrip1=new System.Windows.Forms.MenuStrip();
             gfrgToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
             elementEditorToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
@@ -113,6 +112,7 @@ namespace Shopee_Autobuy_Bot
             testToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
             saveCookiesToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
             fontTestToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
+            telegramToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
             fileToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
             UpgradeProToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
             exitToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
@@ -277,7 +277,7 @@ namespace Shopee_Autobuy_Bot
             // 
             darkNumericUpDownTimeOut.BackColor=SystemColors.Window;
             darkNumericUpDownTimeOut.ForeColor=SystemColors.ControlText;
-            darkNumericUpDownTimeOut.Location=new Point(138, 218);
+            darkNumericUpDownTimeOut.Location=new Point(138, 217);
             darkNumericUpDownTimeOut.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkNumericUpDownTimeOut.Maximum=new decimal(new int[] { 20, 0, 0, 0 });
             darkNumericUpDownTimeOut.Minimum=new decimal(new int[] { 1, 0, 0, 0 });
@@ -291,7 +291,7 @@ namespace Shopee_Autobuy_Bot
             // 
             darkLabel13.AutoSize=true;
             darkLabel13.ForeColor=SystemColors.ControlText;
-            darkLabel13.Location=new Point(20, 223);
+            darkLabel13.Location=new Point(20, 222);
             darkLabel13.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel13.Name="darkLabel13";
             darkLabel13.Size=new Size(104, 13);
@@ -299,30 +299,16 @@ namespace Shopee_Autobuy_Bot
             darkLabel13.Text="Time out (second) :";
             toolTip1.SetToolTip(darkLabel13, "Timeout in second when bot does not receive response from the webpage element.");
             // 
-            // darkCheckBoxPlaySound
+            // darkCheckBoxNotifyTelegram
             // 
-            darkCheckBoxPlaySound.AutoSize=true;
-            darkCheckBoxPlaySound.Enabled=false;
-            darkCheckBoxPlaySound.Location=new Point(24, 37);
-            darkCheckBoxPlaySound.Margin=new System.Windows.Forms.Padding(2);
-            darkCheckBoxPlaySound.Name="darkCheckBoxPlaySound";
-            darkCheckBoxPlaySound.Size=new Size(204, 17);
-            darkCheckBoxPlaySound.TabIndex=28;
-            darkCheckBoxPlaySound.Text="Play sound on successful checkout";
-            toolTip1.SetToolTip(darkCheckBoxPlaySound, "Enabling this option will play a sound on successful checkout.");
-            // 
-            // darkCheckBoxDisableImageExtension
-            // 
-            darkCheckBoxDisableImageExtension.AutoSize=true;
-            darkCheckBoxDisableImageExtension.Enabled=false;
-            darkCheckBoxDisableImageExtension.Location=new Point(24, 99);
-            darkCheckBoxDisableImageExtension.Margin=new System.Windows.Forms.Padding(2);
-            darkCheckBoxDisableImageExtension.Name="darkCheckBoxDisableImageExtension";
-            darkCheckBoxDisableImageExtension.Size=new Size(206, 17);
-            darkCheckBoxDisableImageExtension.TabIndex=25;
-            darkCheckBoxDisableImageExtension.Text="Disable website image && extension";
-            toolTip1.SetToolTip(darkCheckBoxDisableImageExtension, "Enabling this option will disable images in webpage and browser extension on the next restart. It may help improve the checkout time.");
-            darkCheckBoxDisableImageExtension.Click+=darkCheckBoxDisableImageExtension_Click;
+            darkCheckBoxNotifyTelegram.AutoSize=true;
+            darkCheckBoxNotifyTelegram.Location=new Point(24, 37);
+            darkCheckBoxNotifyTelegram.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxNotifyTelegram.Name="darkCheckBoxNotifyTelegram";
+            darkCheckBoxNotifyTelegram.Size=new Size(300, 17);
+            darkCheckBoxNotifyTelegram.TabIndex=28;
+            darkCheckBoxNotifyTelegram.Text="Send notification to Telegram on successful checkout";
+            toolTip1.SetToolTip(darkCheckBoxNotifyTelegram, "Enabling this option will play a sound on successful checkout.");
             // 
             // darkLabel5
             // 
@@ -540,7 +526,7 @@ namespace Shopee_Autobuy_Bot
             // darkCheckBoxTestMode
             // 
             darkCheckBoxTestMode.AutoSize=true;
-            darkCheckBoxTestMode.Location=new Point(24, 192);
+            darkCheckBoxTestMode.Location=new Point(24, 185);
             darkCheckBoxTestMode.Margin=new System.Windows.Forms.Padding(2);
             darkCheckBoxTestMode.Name="darkCheckBoxTestMode";
             darkCheckBoxTestMode.Size=new Size(78, 17);
@@ -767,18 +753,17 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkSectionPanelBotSettings
             // 
+            darkSectionPanelBotSettings.Controls.Add(checkBoxDesktopNotification);
             darkSectionPanelBotSettings.Controls.Add(darkCheckBoxTestMode);
             darkSectionPanelBotSettings.Controls.Add(darkCheckBoxLogging);
             darkSectionPanelBotSettings.Controls.Add(darkButton5);
             darkSectionPanelBotSettings.Controls.Add(darkCheckBoxRefresh);
-            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxHeadless);
             darkSectionPanelBotSettings.Controls.Add(darkLabel5);
             darkSectionPanelBotSettings.Controls.Add(darkNumericUpDownTimeOut);
             darkSectionPanelBotSettings.Controls.Add(darkLabel4);
-            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxPlaySound);
+            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxNotifyTelegram);
             darkSectionPanelBotSettings.Controls.Add(darkNumericUpDownRefreshSeconds);
             darkSectionPanelBotSettings.Controls.Add(darkLabel13);
-            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxDisableImageExtension);
             darkSectionPanelBotSettings.Location=new Point(14, 43);
             darkSectionPanelBotSettings.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             darkSectionPanelBotSettings.Name="darkSectionPanelBotSettings";
@@ -787,10 +772,20 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanelBotSettings.TabStop=false;
             darkSectionPanelBotSettings.Text="Bot Settings";
             // 
+            // checkBoxDesktopNotification
+            // 
+            checkBoxDesktopNotification.AutoSize=true;
+            checkBoxDesktopNotification.Location=new Point(24, 74);
+            checkBoxDesktopNotification.Margin=new System.Windows.Forms.Padding(2);
+            checkBoxDesktopNotification.Name="checkBoxDesktopNotification";
+            checkBoxDesktopNotification.Size=new Size(285, 17);
+            checkBoxDesktopNotification.TabIndex=54;
+            checkBoxDesktopNotification.Text="Show desktop notification on successful checkout";
+            // 
             // darkCheckBoxLogging
             // 
             darkCheckBoxLogging.AutoSize=true;
-            darkCheckBoxLogging.Location=new Point(24, 161);
+            darkCheckBoxLogging.Location=new Point(24, 148);
             darkCheckBoxLogging.Margin=new System.Windows.Forms.Padding(2);
             darkCheckBoxLogging.Name="darkCheckBoxLogging";
             darkCheckBoxLogging.Size=new Size(108, 17);
@@ -801,7 +796,7 @@ namespace Shopee_Autobuy_Bot
             // darkButton5
             // 
             darkButton5.Font=new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            darkButton5.Location=new Point(218, 55);
+            darkButton5.Location=new Point(190, 179);
             darkButton5.Margin=new System.Windows.Forms.Padding(2);
             darkButton5.Name="darkButton5";
             darkButton5.Size=new Size(146, 23);
@@ -813,26 +808,13 @@ namespace Shopee_Autobuy_Bot
             // darkCheckBoxRefresh
             // 
             darkCheckBoxRefresh.AutoSize=true;
-            darkCheckBoxRefresh.Location=new Point(24, 130);
+            darkCheckBoxRefresh.Location=new Point(24, 111);
             darkCheckBoxRefresh.Margin=new System.Windows.Forms.Padding(2);
             darkCheckBoxRefresh.Name="darkCheckBoxRefresh";
             darkCheckBoxRefresh.Size=new Size(141, 17);
             darkCheckBoxRefresh.TabIndex=48;
             darkCheckBoxRefresh.Text="Auto refresh webpage";
             toolTip1.SetToolTip(darkCheckBoxRefresh, "Enabling this will automatically refresh webpage. ");
-            // 
-            // darkCheckBoxHeadless
-            // 
-            darkCheckBoxHeadless.AutoSize=true;
-            darkCheckBoxHeadless.Enabled=false;
-            darkCheckBoxHeadless.Location=new Point(24, 68);
-            darkCheckBoxHeadless.Margin=new System.Windows.Forms.Padding(2);
-            darkCheckBoxHeadless.Name="darkCheckBoxHeadless";
-            darkCheckBoxHeadless.Size=new Size(136, 17);
-            darkCheckBoxHeadless.TabIndex=47;
-            darkCheckBoxHeadless.Text="Hide chrome browser";
-            toolTip1.SetToolTip(darkCheckBoxHeadless, "Enabling this option will hide chrome browser on  the next restart. It may help improve the checkout time.");
-            darkCheckBoxHeadless.Click+=darkCheckBoxHeadless_Click;
             // 
             // darkMenuStrip1
             // 
@@ -1022,7 +1004,7 @@ namespace Shopee_Autobuy_Bot
             // testToolStripMenuItem
             // 
             testToolStripMenuItem.BackColor=SystemColors.Control;
-            testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { saveCookiesToolStripMenuItem, fontTestToolStripMenuItem });
+            testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { saveCookiesToolStripMenuItem, fontTestToolStripMenuItem, telegramToolStripMenuItem });
             testToolStripMenuItem.ForeColor=SystemColors.ControlText;
             testToolStripMenuItem.Name="testToolStripMenuItem";
             testToolStripMenuItem.Size=new Size(39, 20);
@@ -1034,7 +1016,7 @@ namespace Shopee_Autobuy_Bot
             saveCookiesToolStripMenuItem.BackColor=SystemColors.Control;
             saveCookiesToolStripMenuItem.ForeColor=SystemColors.ControlText;
             saveCookiesToolStripMenuItem.Name="saveCookiesToolStripMenuItem";
-            saveCookiesToolStripMenuItem.Size=new Size(140, 22);
+            saveCookiesToolStripMenuItem.Size=new Size(180, 22);
             saveCookiesToolStripMenuItem.Text="save cookies";
             saveCookiesToolStripMenuItem.Click+=saveCookiesToolStripMenuItem_Click;
             // 
@@ -1043,9 +1025,16 @@ namespace Shopee_Autobuy_Bot
             fontTestToolStripMenuItem.BackColor=SystemColors.Control;
             fontTestToolStripMenuItem.ForeColor=SystemColors.ControlText;
             fontTestToolStripMenuItem.Name="fontTestToolStripMenuItem";
-            fontTestToolStripMenuItem.Size=new Size(140, 22);
+            fontTestToolStripMenuItem.Size=new Size(180, 22);
             fontTestToolStripMenuItem.Text="font test";
             fontTestToolStripMenuItem.Click+=fontTestToolStripMenuItem_Click;
+            // 
+            // telegramToolStripMenuItem
+            // 
+            telegramToolStripMenuItem.Name="telegramToolStripMenuItem";
+            telegramToolStripMenuItem.Size=new Size(180, 22);
+            telegramToolStripMenuItem.Text="telegram";
+            telegramToolStripMenuItem.Click+=telegramToolStripMenuItem_Click;
             // 
             // fileToolStripMenuItem
             // 
@@ -1443,8 +1432,7 @@ namespace Shopee_Autobuy_Bot
         private System.Windows.Forms.Button darkButton2;
         private System.Windows.Forms.Button darkButtonStart;
         private System.Windows.Forms.GroupBox darkSectionPanelLogs;
-        private System.Windows.Forms.CheckBox darkCheckBoxPlaySound;
-        private System.Windows.Forms.CheckBox darkCheckBoxDisableImageExtension;
+        private System.Windows.Forms.CheckBox darkCheckBoxNotifyTelegram;
         private System.Windows.Forms.Label darkLabel5;
         private System.Windows.Forms.Label darkLabel4;
         private System.Windows.Forms.NumericUpDown darkNumericUpDownRefreshSeconds;
@@ -1461,7 +1449,6 @@ namespace Shopee_Autobuy_Bot
         private System.Windows.Forms.CheckBox darkCheckBoxRedeemCoin;
         private System.Windows.Forms.Button darkButtonDeleteAllOrder;
         private System.Windows.Forms.GroupBox darkSectionPanelBotSettings;
-        private System.Windows.Forms.CheckBox darkCheckBoxHeadless;
         private System.Windows.Forms.CheckBox darkCheckBoxRefresh;
         private System.Windows.Forms.MenuStrip darkMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -1529,6 +1516,8 @@ namespace Shopee_Autobuy_Bot
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemLoadProfile;
         private System.Windows.Forms.ToolStripMenuItem saveCurrentProfileToolStripMenuItem;
         private System.Windows.Forms.CheckBox cbVariantPreSelected;
+        private System.Windows.Forms.ToolStripMenuItem telegramToolStripMenuItem;
+        private System.Windows.Forms.CheckBox checkBoxDesktopNotification;
     }
 }
 

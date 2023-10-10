@@ -3,8 +3,8 @@ using Shopee_Autobuy_Bot.Constants;
 using Shopee_Autobuy_Bot.Models;
 using Shopee_Autobuy_Bot.Services;
 using Shopee_Autobuy_Bot.Services.Logger;
+using Shopee_Autobuy_Bot.Services.Notification;
 using Shopee_Autobuy_Bot.Services.Profile;
-using Shopee_Autobuy_Bot.Services.Telegram;
 using Shopee_Autobuy_Bot.Utililties;
 using System;
 using System.Collections.Generic;
@@ -19,6 +19,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
+using static Shopee_Autobuy_Bot.Constants.AutoBuyInfo;
 
 namespace Shopee_Autobuy_Bot
 {
@@ -26,19 +27,14 @@ namespace Shopee_Autobuy_Bot
     {
         private UserModel UserInfo = new UserModel();
         private ChromeDriverHelper ChromedriverHelper = new ChromeDriverHelper();
-        private string userId { get; set; }
-
-
-
         private static Mutex mutex = null;
         public bool DoneSetupQuickBuyMode = false;
 
-        private string currentElement;
         private readonly ISeleniumService _seleniumService;
         private readonly IProfileService _profileService;
         private readonly IAutoBuyService _autoBuyService;
+        private readonly IAutoBuyLoggerService _autoBuyLoggerService;
 
-        IAutoBuyLoggerService _autoBuyLoggerService;
         public Main(ISeleniumService seleniumService, IProfileService profileService)
         {
             InitializeComponent();
@@ -85,8 +81,8 @@ namespace Shopee_Autobuy_Bot
             _profileService.SelectedProfile.ScheduleBot.schedule = darkCheckBoxScheduleBot.Checked;
             _profileService.SelectedProfile.BuyingMode.below_specific_price = tbPriceSpecific.Text;
             _profileService.SelectedProfile.BuyingMode.cart_below_specific_price = tbBelowSpecificPriceCARTCHECKOUTPrice.Text;
-            _profileService.SelectedProfile.BotSettings.play_sound = darkCheckBoxPlaySound.Checked;
-            _profileService.SelectedProfile.BotSettings.disable_image = darkCheckBoxDisableImageExtension.Checked;
+            _profileService.SelectedProfile.BotSettings.alert_telegram = darkCheckBoxNotifyTelegram.Checked;
+            _profileService.SelectedProfile.BotSettings.desktop_notification = checkBoxDesktopNotification.Checked;
 
             _profileService.SelectedProfile.ScheduleBot.hour = Convert.ToInt32(darkNumericUpDownCountdownHour.Value);
             _profileService.SelectedProfile.ScheduleBot.minute = Convert.ToInt32(darkNumericUpDownCountdownMinutes.Value);
@@ -103,7 +99,6 @@ namespace Shopee_Autobuy_Bot
             _profileService.SelectedProfile.ProductDetail.variant = darkTextBoxVariationString.Text;
             _profileService.SelectedProfile.ProductDetail.quantity = Convert.ToInt32(darkNumericUpDownProductQuantity.Value);
 
-            _profileService.SelectedProfile.BotSettings.hide_browser = darkCheckBoxHeadless.Checked;
 
             _profileService.SelectedProfile.BotSettings.disable_logging = darkCheckBoxLogging.Checked;
             _profileService.SelectedProfile.BotSettings.autorefresh_webpage = darkCheckBoxRefresh.Checked;
@@ -153,15 +148,6 @@ namespace Shopee_Autobuy_Bot
                     //    MessageBox.Show("Shopee account not logged in.", "Logged out", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //    return;
                     //}
-
-                    timerlabelBig.Text = "00:00:00:00";
-                    darkButtonDeleteAllOrder.Enabled = false;
-                    darkSectionPanelProductDetails.Enabled = false;
-                    darkSectionPanelTimerMode.Enabled = false;
-                    darkSectionPanelBuyingMode.Enabled = false;
-                    darkSectionPanelPaymentDetails.Enabled = false;
-                    richTextBoxLogs.Text = string.Empty;
-                    darkButtonStart.Text = "Stop";
 
                     if (_profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Normal && _profileService.SelectedProfile.ProductDetail.product_link == "")
                     {
@@ -241,7 +227,6 @@ namespace Shopee_Autobuy_Bot
                         AutoBuyInfo.AutoBuyStartTime = DateTime.Now/*.AddSeconds(Convert.ToDouble(darkNumericUpDownRefreshSeconds.Value))*/;
                     }
 
-                    Helper.Shopee.TimeOut = _profileService.SelectedProfile.BotSettings.timeout;
                     try
                     {
                         if (_profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Cart
@@ -259,11 +244,21 @@ namespace Shopee_Autobuy_Bot
                         }
                     }
 
-                    Helper.Shopee.BankType = (_profileService.SelectedProfile.PaymentDetail.payment_method == "Online Banking") ? _profileService.SelectedProfile.PaymentDetail.bank_type : "";
                     Helper.Shopee.Status = "Fail";
                     _autoBuyService.Abort = false;
                     _seleniumService.timeOut = _profileService.SelectedProfile.BotSettings.timeout;
                     _autoBuyLoggerService.AutoBuyProcessLog("Autobuy starts at : " + AutoBuyInfo.AutoBuyStartTime.ToString(), Color.Black, true, true, true);
+
+                    timerlabelBig.Text = "00:00:00:00";
+                    darkButtonDeleteAllOrder.Enabled = false;
+                    darkSectionPanelProductDetails.Enabled = false;
+                    darkSectionPanelTimerMode.Enabled = false;
+                    darkSectionPanelBuyingMode.Enabled = false;
+                    darkSectionPanelPaymentDetails.Enabled = false;
+                    darkSectionPanelBotSettings.Enabled = false;
+                    richTextBoxLogs.Text = string.Empty;
+                    darkButtonStart.Text = "Stop";
+
                     startWorkThreadAsync();
                 }
                 else
@@ -275,6 +270,7 @@ namespace Shopee_Autobuy_Bot
                     darkSectionPanelProductDetails.Enabled = false;
                     darkSectionPanelTimerMode.Enabled = false;
                     darkSectionPanelPaymentDetails.Enabled = false;
+                    darkSectionPanelBotSettings.Enabled = false;
                 }
             }).Start();
         }
@@ -359,6 +355,7 @@ namespace Shopee_Autobuy_Bot
                     darkSectionPanelProductDetails.Enabled = true;
                     darkSectionPanelTimerMode.Enabled = true;
                     darkSectionPanelPaymentDetails.Enabled = true;
+                    darkSectionPanelBotSettings.Enabled = true;
 
                     if (radioButtonPriceSpecificCartCheckout.Checked)
                         darkSectionPanelProductDetails.Enabled = false;
@@ -411,6 +408,7 @@ namespace Shopee_Autobuy_Bot
                             darkSectionPanelProductDetails.Enabled = true;
                             darkSectionPanelTimerMode.Enabled = true;
                             darkSectionPanelPaymentDetails.Enabled = true;
+                            darkSectionPanelBotSettings.Enabled = true;
 
                             if (radioButtonPriceSpecificCartCheckout.Checked)
                                 darkSectionPanelProductDetails.Enabled = false;
@@ -1132,9 +1130,8 @@ namespace Shopee_Autobuy_Bot
             {
                 var botSettings = new Utililties.ProfileModel.BotSettings()
                 {
-                    play_sound = darkCheckBoxPlaySound.Checked,
-                    hide_browser = darkCheckBoxHeadless.Checked,
-                    disable_image = darkCheckBoxDisableImageExtension.Checked,
+                    alert_telegram = darkCheckBoxNotifyTelegram.Checked,
+                    desktop_notification = checkBoxDesktopNotification.Checked,
                     autorefresh_webpage = darkCheckBoxRefresh.Checked,
                     autorefresh_interval = Convert.ToInt32(darkNumericUpDownRefreshSeconds.Value),
                     disable_logging = darkCheckBoxLogging.Checked,
@@ -1287,8 +1284,8 @@ namespace Shopee_Autobuy_Bot
                 darkCheckBoxScheduleBot.Checked = _profileService.SelectedProfile.ScheduleBot.schedule;
                 tbPriceSpecific.Text = _profileService.SelectedProfile.BuyingMode.below_specific_price;
                 tbBelowSpecificPriceCARTCHECKOUTPrice.Text = _profileService.SelectedProfile.BuyingMode.cart_below_specific_price;
-                darkCheckBoxPlaySound.Checked = _profileService.SelectedProfile.BotSettings.play_sound;
-                darkCheckBoxDisableImageExtension.Checked = _profileService.SelectedProfile.BotSettings.disable_image;
+                darkCheckBoxNotifyTelegram.Checked = _profileService.SelectedProfile.BotSettings.alert_telegram;
+                checkBoxDesktopNotification.Checked = _profileService.SelectedProfile.BotSettings.desktop_notification;
 
                 darkNumericUpDownCountdownHour.Value = _profileService.SelectedProfile.ScheduleBot.hour;
                 darkNumericUpDownCountdownMinutes.Value = _profileService.SelectedProfile.ScheduleBot.minute;
@@ -1302,7 +1299,6 @@ namespace Shopee_Autobuy_Bot
                 darkTextBoxVariationString.Text = _profileService.SelectedProfile.ProductDetail.variant;
                 darkNumericUpDownProductQuantity.Value = _profileService.SelectedProfile.ProductDetail.quantity;
 
-                darkCheckBoxHeadless.Checked = _profileService.SelectedProfile.BotSettings.hide_browser;
 
                 darkCheckBoxLogging.Checked = _profileService.SelectedProfile.BotSettings.disable_logging;
                 darkCheckBoxRefresh.Checked = _profileService.SelectedProfile.BotSettings.autorefresh_webpage;
@@ -1339,6 +1335,12 @@ namespace Shopee_Autobuy_Bot
                 cbRandom.Enabled = true;
                 darkTextBoxVariationString.Enabled = true;
             }
+        }
+
+        private void telegramToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            INotificationService telegramService = new NotificationService(_autoBuyLoggerService);
+            telegramService.SendNotification(SAB_Account, _profileService, _autoBuyService.OrderPrice, _autoBuyService.CheckoutTimeSpan);
         }
     }
 }

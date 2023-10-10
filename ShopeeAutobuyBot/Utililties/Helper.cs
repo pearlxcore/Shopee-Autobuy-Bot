@@ -343,68 +343,6 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
 
         public class Shopee
         {
-            private static string _chromeProfile;
-            public static string chromeProfile
-            {
-                get { return _chromeProfile; }
-                set { _chromeProfile = value; }
-            }
-
-            private static string Id_;
-            public static string Id
-            {
-                get { return Id_; }
-                set { Id_ = value; }
-            }
-
-            private static string OrderPrice_;
-            public static string OrderPrice
-            {
-                get { return OrderPrice_; }
-                set { OrderPrice_ = value; }
-            }
-
-            private static int delaySeconds_;
-            public static int delaySeconds
-            {
-                get { return delaySeconds_; }
-                set { delaySeconds_ = value; }
-            }
-            private static int TimeOut_;
-            public static int TimeOut
-            {
-                get { return TimeOut_; }
-                set { TimeOut_ = value; }
-            }
-
-            private static int ProductQuantity_;
-            public static int ProductQuantity
-            {
-                get { return ProductQuantity_; }
-                set { ProductQuantity_ = value; }
-            }
-
-            private static string BankType_;
-            public static string BankType
-            {
-                get { return BankType_; }
-                set { BankType_ = value; }
-            }
-
-            private static string ShopeePayPin_;
-            public static string ShopeePayPin
-            {
-                get { return ShopeePayPin_; }
-                set { ShopeePayPin_ = value; }
-            }
-
-            private static string CcLast4Digit_;
-            public static string CcLast4Digit
-            {
-                get { return CcLast4Digit_; }
-                set { CcLast4Digit_ = value; }
-            }
-
             private static string CountdownMicroseconds_;
             public static string CountdownMicroseconds
             {

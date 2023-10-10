@@ -98,8 +98,8 @@ namespace Shopee_Autobuy_Bot
                 darkCheckBoxScheduleBot.Checked = _profileService.SelectedProfile.ScheduleBot.schedule;
                 tbPriceSpecific.Text = _profileService.SelectedProfile.BuyingMode.below_specific_price;
                 tbBelowSpecificPriceCARTCHECKOUTPrice.Text = _profileService.SelectedProfile.BuyingMode.cart_below_specific_price;
-                darkCheckBoxPlaySound.Checked = _profileService.SelectedProfile.BotSettings.play_sound;
-                darkCheckBoxDisableImageExtension.Checked = _profileService.SelectedProfile.BotSettings.disable_image;
+                checkBoxDesktopNotification.Checked = _profileService.SelectedProfile.BotSettings.desktop_notification;
+                darkCheckBoxNotifyTelegram.Checked = _profileService.SelectedProfile.BotSettings.alert_telegram;
 
                 tbCountdownHour.Text = _profileService.SelectedProfile.ScheduleBot.hour.ToString();
                 tbCountdownMinutes.Text = _profileService.SelectedProfile.ScheduleBot.minute.ToString();
@@ -115,7 +115,6 @@ namespace Shopee_Autobuy_Bot
                 darkTextBoxVariationString.Text = _profileService.SelectedProfile.ProductDetail.variant;
                 tbQuality.Text = _profileService.SelectedProfile.ProductDetail.quantity.ToString();
 
-                darkCheckBoxHeadless.Checked = _profileService.SelectedProfile.BotSettings.hide_browser;
 
                 darkCheckBoxLogging.Checked = _profileService.SelectedProfile.BotSettings.disable_logging;
                 darkCheckBoxRefresh.Checked = _profileService.SelectedProfile.BotSettings.autorefresh_webpage;

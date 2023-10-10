@@ -69,6 +69,7 @@
             tbId.Size=new System.Drawing.Size(142, 22);
             tbId.TabIndex=1;
             tbId.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            tbId.Visible=false;
             tbId.TextChanged+=tbId_TextChanged;
             // 
             // darkLabel1
@@ -81,6 +82,7 @@
             darkLabel1.Size=new System.Drawing.Size(52, 13);
             darkLabel1.TabIndex=2;
             darkLabel1.Text="User Id : ";
+            darkLabel1.Visible=false;
             // 
             // darkLabel2
             // 

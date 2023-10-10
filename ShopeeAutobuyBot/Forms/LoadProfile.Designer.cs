@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace Shopee_Autobuy_Bot
 {
@@ -31,62 +32,61 @@ namespace Shopee_Autobuy_Bot
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadProfile));
-            btnLoadProfile=new System.Windows.Forms.Button();
-            btnDeleteProfile=new System.Windows.Forms.Button();
-            darkLabel1=new System.Windows.Forms.Label();
-            darkComboBoxProfile=new System.Windows.Forms.ComboBox();
-            darkSectionPanel1=new System.Windows.Forms.GroupBox();
-            darkCheckBoxRedeemShopeeVoucher=new System.Windows.Forms.CheckBox();
-            darkCheckBoxClaimShopVoucher=new System.Windows.Forms.CheckBox();
-            darkCheckBoxRedeemCoin=new System.Windows.Forms.CheckBox();
-            darkSectionPanelPaymentDetails=new System.Windows.Forms.GroupBox();
-            tbPaymentMethod=new System.Windows.Forms.TextBox();
-            tbBankType=new System.Windows.Forms.TextBox();
-            darkLabel14=new System.Windows.Forms.Label();
-            tbLast4Digit=new System.Windows.Forms.TextBox();
-            darkLabel6=new System.Windows.Forms.Label();
-            darkLabel8=new System.Windows.Forms.Label();
-            darkTextBoxShopeePayPin=new System.Windows.Forms.TextBox();
-            darkLabel7=new System.Windows.Forms.Label();
-            darkSectionPanelBuyingMode=new System.Windows.Forms.GroupBox();
-            tbBelowSpecificPriceCARTCHECKOUTPrice=new System.Windows.Forms.TextBox();
-            tbPriceSpecific=new System.Windows.Forms.TextBox();
-            radioButtonPriceSpecificCARTCHECKOUT=new System.Windows.Forms.RadioButton();
-            radioButtonCheckOutCart=new System.Windows.Forms.RadioButton();
-            radioButtonShockingSale=new System.Windows.Forms.RadioButton();
-            radioButtonBuyNormal=new System.Windows.Forms.RadioButton();
-            radioButtonPriceSpecific=new System.Windows.Forms.RadioButton();
-            darkSectionPanelBotSettings=new System.Windows.Forms.GroupBox();
-            tbTimeOut=new System.Windows.Forms.TextBox();
-            tbRefreshSecond=new System.Windows.Forms.TextBox();
-            darkCheckBoxTestMode=new System.Windows.Forms.CheckBox();
-            darkCheckBoxLogging=new System.Windows.Forms.CheckBox();
-            darkCheckBoxRefresh=new System.Windows.Forms.CheckBox();
-            darkCheckBoxHeadless=new System.Windows.Forms.CheckBox();
-            darkLabel5=new System.Windows.Forms.Label();
-            darkLabel4=new System.Windows.Forms.Label();
-            darkCheckBoxPlaySound=new System.Windows.Forms.CheckBox();
-            darkLabel13=new System.Windows.Forms.Label();
-            darkCheckBoxDisableImageExtension=new System.Windows.Forms.CheckBox();
-            darkSectionPanelProductDetails=new System.Windows.Forms.GroupBox();
-            cbVariantPreSelected=new System.Windows.Forms.CheckBox();
-            cbRandom=new System.Windows.Forms.CheckBox();
-            tbQuality=new System.Windows.Forms.TextBox();
-            darkLabel11=new System.Windows.Forms.Label();
-            darkTextBoxProductLink=new System.Windows.Forms.TextBox();
-            darkLabel10=new System.Windows.Forms.Label();
-            darkTextBoxVariationString=new System.Windows.Forms.TextBox();
-            darkLabel9=new System.Windows.Forms.Label();
-            darkSectionPanelTimerMode=new System.Windows.Forms.GroupBox();
-            tbCountdownSeconds=new System.Windows.Forms.TextBox();
-            tbCountdownMinutes=new System.Windows.Forms.TextBox();
-            tbCountdownHour=new System.Windows.Forms.TextBox();
-            darkCheckBoxTomorrow=new System.Windows.Forms.CheckBox();
-            darkCheckBoxScheduleBot=new System.Windows.Forms.CheckBox();
-            darkLabel3=new System.Windows.Forms.Label();
-            darkLabel2=new System.Windows.Forms.Label();
-            darkLabel12=new System.Windows.Forms.Label();
-            darkButton1=new System.Windows.Forms.Button();
+            btnLoadProfile=new Button();
+            btnDeleteProfile=new Button();
+            darkLabel1=new Label();
+            darkComboBoxProfile=new ComboBox();
+            darkSectionPanel1=new GroupBox();
+            darkCheckBoxRedeemShopeeVoucher=new CheckBox();
+            darkCheckBoxClaimShopVoucher=new CheckBox();
+            darkCheckBoxRedeemCoin=new CheckBox();
+            darkSectionPanelPaymentDetails=new GroupBox();
+            tbPaymentMethod=new TextBox();
+            tbBankType=new TextBox();
+            darkLabel14=new Label();
+            tbLast4Digit=new TextBox();
+            darkLabel6=new Label();
+            darkLabel8=new Label();
+            darkTextBoxShopeePayPin=new TextBox();
+            darkLabel7=new Label();
+            darkSectionPanelBuyingMode=new GroupBox();
+            tbBelowSpecificPriceCARTCHECKOUTPrice=new TextBox();
+            tbPriceSpecific=new TextBox();
+            radioButtonPriceSpecificCARTCHECKOUT=new RadioButton();
+            radioButtonCheckOutCart=new RadioButton();
+            radioButtonShockingSale=new RadioButton();
+            radioButtonBuyNormal=new RadioButton();
+            radioButtonPriceSpecific=new RadioButton();
+            darkSectionPanelBotSettings=new GroupBox();
+            checkBoxDesktopNotification=new CheckBox();
+            tbTimeOut=new TextBox();
+            tbRefreshSecond=new TextBox();
+            darkCheckBoxTestMode=new CheckBox();
+            darkCheckBoxLogging=new CheckBox();
+            darkCheckBoxRefresh=new CheckBox();
+            darkLabel5=new Label();
+            darkLabel4=new Label();
+            darkLabel13=new Label();
+            darkSectionPanelProductDetails=new GroupBox();
+            cbVariantPreSelected=new CheckBox();
+            cbRandom=new CheckBox();
+            tbQuality=new TextBox();
+            darkLabel11=new Label();
+            darkTextBoxProductLink=new TextBox();
+            darkLabel10=new Label();
+            darkTextBoxVariationString=new TextBox();
+            darkLabel9=new Label();
+            darkSectionPanelTimerMode=new GroupBox();
+            tbCountdownSeconds=new TextBox();
+            tbCountdownMinutes=new TextBox();
+            tbCountdownHour=new TextBox();
+            darkCheckBoxTomorrow=new CheckBox();
+            darkCheckBoxScheduleBot=new CheckBox();
+            darkLabel3=new Label();
+            darkLabel2=new Label();
+            darkLabel12=new Label();
+            darkButton1=new Button();
+            darkCheckBoxNotifyTelegram=new CheckBox();
             darkSectionPanel1.SuspendLayout();
             darkSectionPanelPaymentDetails.SuspendLayout();
             darkSectionPanelBuyingMode.SuspendLayout();
@@ -99,7 +99,7 @@ namespace Shopee_Autobuy_Bot
             // 
             btnLoadProfile.Font=new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnLoadProfile.Location=new Point(529, 13);
-            btnLoadProfile.Margin=new System.Windows.Forms.Padding(2);
+            btnLoadProfile.Margin=new Padding(2);
             btnLoadProfile.Name="btnLoadProfile";
             btnLoadProfile.Size=new Size(123, 24);
             btnLoadProfile.TabIndex=103;
@@ -110,7 +110,7 @@ namespace Shopee_Autobuy_Bot
             // 
             btnDeleteProfile.Font=new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnDeleteProfile.Location=new Point(656, 13);
-            btnDeleteProfile.Margin=new System.Windows.Forms.Padding(2);
+            btnDeleteProfile.Margin=new Padding(2);
             btnDeleteProfile.Name="btnDeleteProfile";
             btnDeleteProfile.Size=new Size(123, 24);
             btnDeleteProfile.TabIndex=104;
@@ -122,7 +122,7 @@ namespace Shopee_Autobuy_Bot
             darkLabel1.AutoSize=true;
             darkLabel1.ForeColor=SystemColors.ControlText;
             darkLabel1.Location=new Point(194, 18);
-            darkLabel1.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel1.Margin=new Padding(2, 0, 2, 0);
             darkLabel1.Name="darkLabel1";
             darkLabel1.Size=new Size(78, 15);
             darkLabel1.TabIndex=108;
@@ -130,10 +130,10 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkComboBoxProfile
             // 
-            darkComboBoxProfile.DropDownStyle=System.Windows.Forms.ComboBoxStyle.DropDownList;
+            darkComboBoxProfile.DropDownStyle=ComboBoxStyle.DropDownList;
             darkComboBoxProfile.FormattingEnabled=true;
             darkComboBoxProfile.Location=new Point(276, 13);
-            darkComboBoxProfile.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkComboBoxProfile.Margin=new Padding(2, 3, 2, 3);
             darkComboBoxProfile.Name="darkComboBoxProfile";
             darkComboBoxProfile.Size=new Size(249, 23);
             darkComboBoxProfile.TabIndex=107;
@@ -156,7 +156,7 @@ namespace Shopee_Autobuy_Bot
             darkCheckBoxRedeemShopeeVoucher.AutoSize=true;
             darkCheckBoxRedeemShopeeVoucher.Enabled=false;
             darkCheckBoxRedeemShopeeVoucher.Location=new Point(11, 77);
-            darkCheckBoxRedeemShopeeVoucher.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkCheckBoxRedeemShopeeVoucher.Margin=new Padding(2, 3, 2, 3);
             darkCheckBoxRedeemShopeeVoucher.Name="darkCheckBoxRedeemShopeeVoucher";
             darkCheckBoxRedeemShopeeVoucher.Size=new Size(179, 19);
             darkCheckBoxRedeemShopeeVoucher.TabIndex=52;
@@ -167,7 +167,7 @@ namespace Shopee_Autobuy_Bot
             darkCheckBoxClaimShopVoucher.AutoSize=true;
             darkCheckBoxClaimShopVoucher.Enabled=false;
             darkCheckBoxClaimShopVoucher.Location=new Point(11, 44);
-            darkCheckBoxClaimShopVoucher.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxClaimShopVoucher.Margin=new Padding(2);
             darkCheckBoxClaimShopVoucher.Name="darkCheckBoxClaimShopVoucher";
             darkCheckBoxClaimShopVoucher.Size=new Size(154, 19);
             darkCheckBoxClaimShopVoucher.TabIndex=50;
@@ -178,7 +178,7 @@ namespace Shopee_Autobuy_Bot
             darkCheckBoxRedeemCoin.AutoSize=true;
             darkCheckBoxRedeemCoin.Enabled=false;
             darkCheckBoxRedeemCoin.Location=new Point(11, 110);
-            darkCheckBoxRedeemCoin.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkCheckBoxRedeemCoin.Margin=new Padding(2, 3, 2, 3);
             darkCheckBoxRedeemCoin.Name="darkCheckBoxRedeemCoin";
             darkCheckBoxRedeemCoin.Size=new Size(95, 19);
             darkCheckBoxRedeemCoin.TabIndex=42;
@@ -195,7 +195,7 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanelPaymentDetails.Controls.Add(darkTextBoxShopeePayPin);
             darkSectionPanelPaymentDetails.Controls.Add(darkLabel7);
             darkSectionPanelPaymentDetails.Location=new Point(384, 308);
-            darkSectionPanelPaymentDetails.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkSectionPanelPaymentDetails.Margin=new Padding(2, 3, 2, 3);
             darkSectionPanelPaymentDetails.Name="darkSectionPanelPaymentDetails";
             darkSectionPanelPaymentDetails.Size=new Size(376, 195);
             darkSectionPanelPaymentDetails.TabIndex=113;
@@ -206,30 +206,30 @@ namespace Shopee_Autobuy_Bot
             // 
             tbPaymentMethod.Enabled=false;
             tbPaymentMethod.Location=new Point(145, 44);
-            tbPaymentMethod.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbPaymentMethod.Margin=new Padding(2, 3, 2, 3);
             tbPaymentMethod.MaxLength=4;
             tbPaymentMethod.Name="tbPaymentMethod";
             tbPaymentMethod.Size=new Size(202, 23);
             tbPaymentMethod.TabIndex=53;
-            tbPaymentMethod.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            tbPaymentMethod.TextAlign=HorizontalAlignment.Center;
             // 
             // tbBankType
             // 
             tbBankType.Enabled=false;
             tbBankType.Location=new Point(145, 78);
-            tbBankType.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbBankType.Margin=new Padding(2, 3, 2, 3);
             tbBankType.MaxLength=4;
             tbBankType.Name="tbBankType";
             tbBankType.Size=new Size(202, 23);
             tbBankType.TabIndex=52;
-            tbBankType.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            tbBankType.TextAlign=HorizontalAlignment.Center;
             // 
             // darkLabel14
             // 
             darkLabel14.AutoSize=true;
             darkLabel14.ForeColor=SystemColors.ControlText;
             darkLabel14.Location=new Point(17, 114);
-            darkLabel14.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel14.Margin=new Padding(2, 0, 2, 0);
             darkLabel14.Name="darkLabel14";
             darkLabel14.Size=new Size(175, 15);
             darkLabel14.TabIndex=51;
@@ -239,19 +239,19 @@ namespace Shopee_Autobuy_Bot
             // 
             tbLast4Digit.Enabled=false;
             tbLast4Digit.Location=new Point(223, 109);
-            tbLast4Digit.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbLast4Digit.Margin=new Padding(2, 3, 2, 3);
             tbLast4Digit.MaxLength=4;
             tbLast4Digit.Name="tbLast4Digit";
             tbLast4Digit.Size=new Size(124, 23);
             tbLast4Digit.TabIndex=50;
-            tbLast4Digit.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            tbLast4Digit.TextAlign=HorizontalAlignment.Center;
             // 
             // darkLabel6
             // 
             darkLabel6.AutoSize=true;
             darkLabel6.ForeColor=SystemColors.ControlText;
             darkLabel6.Location=new Point(17, 48);
-            darkLabel6.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel6.Margin=new Padding(2, 0, 2, 0);
             darkLabel6.Name="darkLabel6";
             darkLabel6.Size=new Size(105, 15);
             darkLabel6.TabIndex=14;
@@ -262,7 +262,7 @@ namespace Shopee_Autobuy_Bot
             darkLabel8.AutoSize=true;
             darkLabel8.ForeColor=SystemColors.ControlText;
             darkLabel8.Location=new Point(17, 82);
-            darkLabel8.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel8.Margin=new Padding(2, 0, 2, 0);
             darkLabel8.Name="darkLabel8";
             darkLabel8.Size=new Size(65, 15);
             darkLabel8.TabIndex=31;
@@ -272,19 +272,19 @@ namespace Shopee_Autobuy_Bot
             // 
             darkTextBoxShopeePayPin.Enabled=false;
             darkTextBoxShopeePayPin.Location=new Point(223, 141);
-            darkTextBoxShopeePayPin.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkTextBoxShopeePayPin.Margin=new Padding(2, 3, 2, 3);
             darkTextBoxShopeePayPin.MaxLength=6;
             darkTextBoxShopeePayPin.Name="darkTextBoxShopeePayPin";
             darkTextBoxShopeePayPin.Size=new Size(124, 23);
             darkTextBoxShopeePayPin.TabIndex=13;
-            darkTextBoxShopeePayPin.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            darkTextBoxShopeePayPin.TextAlign=HorizontalAlignment.Center;
             // 
             // darkLabel7
             // 
             darkLabel7.AutoSize=true;
             darkLabel7.ForeColor=SystemColors.ControlText;
             darkLabel7.Location=new Point(17, 147);
-            darkLabel7.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel7.Margin=new Padding(2, 0, 2, 0);
             darkLabel7.Name="darkLabel7";
             darkLabel7.Size=new Size(93, 15);
             darkLabel7.TabIndex=15;
@@ -300,7 +300,7 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanelBuyingMode.Controls.Add(radioButtonBuyNormal);
             darkSectionPanelBuyingMode.Controls.Add(radioButtonPriceSpecific);
             darkSectionPanelBuyingMode.Location=new Point(384, 177);
-            darkSectionPanelBuyingMode.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkSectionPanelBuyingMode.Margin=new Padding(2, 3, 2, 3);
             darkSectionPanelBuyingMode.Name="darkSectionPanelBuyingMode";
             darkSectionPanelBuyingMode.Size=new Size(376, 126);
             darkSectionPanelBuyingMode.TabIndex=112;
@@ -311,21 +311,21 @@ namespace Shopee_Autobuy_Bot
             // 
             tbBelowSpecificPriceCARTCHECKOUTPrice.Enabled=false;
             tbBelowSpecificPriceCARTCHECKOUTPrice.Location=new Point(280, 93);
-            tbBelowSpecificPriceCARTCHECKOUTPrice.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbBelowSpecificPriceCARTCHECKOUTPrice.Margin=new Padding(2, 3, 2, 3);
             tbBelowSpecificPriceCARTCHECKOUTPrice.Name="tbBelowSpecificPriceCARTCHECKOUTPrice";
             tbBelowSpecificPriceCARTCHECKOUTPrice.Size=new Size(67, 23);
             tbBelowSpecificPriceCARTCHECKOUTPrice.TabIndex=54;
-            tbBelowSpecificPriceCARTCHECKOUTPrice.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            tbBelowSpecificPriceCARTCHECKOUTPrice.TextAlign=HorizontalAlignment.Center;
             // 
             // tbPriceSpecific
             // 
             tbPriceSpecific.Enabled=false;
             tbPriceSpecific.Location=new Point(280, 63);
-            tbPriceSpecific.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbPriceSpecific.Margin=new Padding(2, 3, 2, 3);
             tbPriceSpecific.Name="tbPriceSpecific";
             tbPriceSpecific.Size=new Size(67, 23);
             tbPriceSpecific.TabIndex=50;
-            tbPriceSpecific.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            tbPriceSpecific.TextAlign=HorizontalAlignment.Center;
             // 
             // radioButtonPriceSpecificCARTCHECKOUT
             // 
@@ -333,7 +333,7 @@ namespace Shopee_Autobuy_Bot
             radioButtonPriceSpecificCARTCHECKOUT.Enabled=false;
             radioButtonPriceSpecificCARTCHECKOUT.ForeColor=SystemColors.ControlText;
             radioButtonPriceSpecificCARTCHECKOUT.Location=new Point(26, 96);
-            radioButtonPriceSpecificCARTCHECKOUT.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            radioButtonPriceSpecificCARTCHECKOUT.Margin=new Padding(2, 3, 2, 3);
             radioButtonPriceSpecificCARTCHECKOUT.Name="radioButtonPriceSpecificCARTCHECKOUT";
             radioButtonPriceSpecificCARTCHECKOUT.Size=new Size(220, 19);
             radioButtonPriceSpecificCARTCHECKOUT.TabIndex=53;
@@ -345,7 +345,7 @@ namespace Shopee_Autobuy_Bot
             radioButtonCheckOutCart.Enabled=false;
             radioButtonCheckOutCart.ForeColor=SystemColors.ControlText;
             radioButtonCheckOutCart.Location=new Point(26, 66);
-            radioButtonCheckOutCart.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            radioButtonCheckOutCart.Margin=new Padding(2, 3, 2, 3);
             radioButtonCheckOutCart.Name="radioButtonCheckOutCart";
             radioButtonCheckOutCart.Size=new Size(99, 19);
             radioButtonCheckOutCart.TabIndex=52;
@@ -357,7 +357,7 @@ namespace Shopee_Autobuy_Bot
             radioButtonShockingSale.Enabled=false;
             radioButtonShockingSale.ForeColor=SystemColors.ControlText;
             radioButtonShockingSale.Location=new Point(145, 36);
-            radioButtonShockingSale.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            radioButtonShockingSale.Margin=new Padding(2, 3, 2, 3);
             radioButtonShockingSale.Name="radioButtonShockingSale";
             radioButtonShockingSale.Size=new Size(163, 19);
             radioButtonShockingSale.TabIndex=51;
@@ -370,7 +370,7 @@ namespace Shopee_Autobuy_Bot
             radioButtonBuyNormal.Enabled=false;
             radioButtonBuyNormal.ForeColor=SystemColors.ControlText;
             radioButtonBuyNormal.Location=new Point(26, 36);
-            radioButtonBuyNormal.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            radioButtonBuyNormal.Margin=new Padding(2, 3, 2, 3);
             radioButtonBuyNormal.Name="radioButtonBuyNormal";
             radioButtonBuyNormal.Size=new Size(99, 19);
             radioButtonBuyNormal.TabIndex=50;
@@ -383,7 +383,7 @@ namespace Shopee_Autobuy_Bot
             radioButtonPriceSpecific.Enabled=false;
             radioButtonPriceSpecific.ForeColor=SystemColors.ControlText;
             radioButtonPriceSpecific.Location=new Point(146, 66);
-            radioButtonPriceSpecific.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            radioButtonPriceSpecific.Margin=new Padding(2, 3, 2, 3);
             radioButtonPriceSpecific.Name="radioButtonPriceSpecific";
             radioButtonPriceSpecific.Size=new Size(135, 19);
             radioButtonPriceSpecific.TabIndex=15;
@@ -391,51 +391,61 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkSectionPanelBotSettings
             // 
+            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxNotifyTelegram);
+            darkSectionPanelBotSettings.Controls.Add(checkBoxDesktopNotification);
             darkSectionPanelBotSettings.Controls.Add(tbTimeOut);
             darkSectionPanelBotSettings.Controls.Add(tbRefreshSecond);
             darkSectionPanelBotSettings.Controls.Add(darkCheckBoxTestMode);
             darkSectionPanelBotSettings.Controls.Add(darkCheckBoxLogging);
             darkSectionPanelBotSettings.Controls.Add(darkCheckBoxRefresh);
-            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxHeadless);
             darkSectionPanelBotSettings.Controls.Add(darkLabel5);
             darkSectionPanelBotSettings.Controls.Add(darkLabel4);
-            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxPlaySound);
             darkSectionPanelBotSettings.Controls.Add(darkLabel13);
-            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxDisableImageExtension);
             darkSectionPanelBotSettings.Location=new Point(14, 50);
-            darkSectionPanelBotSettings.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkSectionPanelBotSettings.Margin=new Padding(2, 3, 2, 3);
             darkSectionPanelBotSettings.Name="darkSectionPanelBotSettings";
             darkSectionPanelBotSettings.Size=new Size(364, 253);
             darkSectionPanelBotSettings.TabIndex=111;
             darkSectionPanelBotSettings.TabStop=false;
             darkSectionPanelBotSettings.Text="Bot Settings";
             // 
+            // checkBoxDesktopNotification
+            // 
+            checkBoxDesktopNotification.AutoSize=true;
+            checkBoxDesktopNotification.Enabled=false;
+            checkBoxDesktopNotification.Location=new Point(24, 74);
+            checkBoxDesktopNotification.Margin=new Padding(2);
+            checkBoxDesktopNotification.Name="checkBoxDesktopNotification";
+            checkBoxDesktopNotification.Size=new Size(290, 19);
+            checkBoxDesktopNotification.TabIndex=53;
+            checkBoxDesktopNotification.Text="Show desktop notification on successful checkout";
+            // 
             // tbTimeOut
             // 
             tbTimeOut.Enabled=false;
             tbTimeOut.Location=new Point(133, 219);
-            tbTimeOut.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbTimeOut.Margin=new Padding(2, 3, 2, 3);
             tbTimeOut.Name="tbTimeOut";
             tbTimeOut.Size=new Size(31, 23);
             tbTimeOut.TabIndex=52;
-            tbTimeOut.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            tbTimeOut.TextAlign=HorizontalAlignment.Center;
             // 
             // tbRefreshSecond
             // 
             tbRefreshSecond.Enabled=false;
             tbRefreshSecond.Location=new Point(257, 128);
-            tbRefreshSecond.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbRefreshSecond.Margin=new Padding(2, 3, 2, 3);
             tbRefreshSecond.Name="tbRefreshSecond";
             tbRefreshSecond.Size=new Size(31, 23);
             tbRefreshSecond.TabIndex=51;
-            tbRefreshSecond.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            tbRefreshSecond.TextAlign=HorizontalAlignment.Center;
             // 
             // darkCheckBoxTestMode
             // 
             darkCheckBoxTestMode.AutoSize=true;
             darkCheckBoxTestMode.Enabled=false;
-            darkCheckBoxTestMode.Location=new Point(24, 192);
-            darkCheckBoxTestMode.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxTestMode.Location=new Point(24, 185);
+            darkCheckBoxTestMode.Margin=new Padding(2);
             darkCheckBoxTestMode.Name="darkCheckBoxTestMode";
             darkCheckBoxTestMode.Size=new Size(80, 19);
             darkCheckBoxTestMode.TabIndex=49;
@@ -445,8 +455,8 @@ namespace Shopee_Autobuy_Bot
             // 
             darkCheckBoxLogging.AutoSize=true;
             darkCheckBoxLogging.Enabled=false;
-            darkCheckBoxLogging.Location=new Point(24, 161);
-            darkCheckBoxLogging.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxLogging.Location=new Point(24, 148);
+            darkCheckBoxLogging.Margin=new Padding(2);
             darkCheckBoxLogging.Name="darkCheckBoxLogging";
             darkCheckBoxLogging.Size=new Size(108, 19);
             darkCheckBoxLogging.TabIndex=50;
@@ -456,30 +466,19 @@ namespace Shopee_Autobuy_Bot
             // 
             darkCheckBoxRefresh.AutoSize=true;
             darkCheckBoxRefresh.Enabled=false;
-            darkCheckBoxRefresh.Location=new Point(24, 130);
-            darkCheckBoxRefresh.Margin=new System.Windows.Forms.Padding(2);
+            darkCheckBoxRefresh.Location=new Point(24, 111);
+            darkCheckBoxRefresh.Margin=new Padding(2);
             darkCheckBoxRefresh.Name="darkCheckBoxRefresh";
             darkCheckBoxRefresh.Size=new Size(142, 19);
             darkCheckBoxRefresh.TabIndex=48;
             darkCheckBoxRefresh.Text="Auto refresh webpage";
-            // 
-            // darkCheckBoxHeadless
-            // 
-            darkCheckBoxHeadless.AutoSize=true;
-            darkCheckBoxHeadless.Enabled=false;
-            darkCheckBoxHeadless.Location=new Point(24, 68);
-            darkCheckBoxHeadless.Margin=new System.Windows.Forms.Padding(2);
-            darkCheckBoxHeadless.Name="darkCheckBoxHeadless";
-            darkCheckBoxHeadless.Size=new Size(140, 19);
-            darkCheckBoxHeadless.TabIndex=47;
-            darkCheckBoxHeadless.Text="Hide chrome browser";
             // 
             // darkLabel5
             // 
             darkLabel5.AutoSize=true;
             darkLabel5.ForeColor=SystemColors.ControlText;
             darkLabel5.Location=new Point(292, 132);
-            darkLabel5.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel5.Margin=new Padding(2, 0, 2, 0);
             darkLabel5.Name="darkLabel5";
             darkLabel5.Size=new Size(50, 15);
             darkLabel5.TabIndex=11;
@@ -490,44 +489,22 @@ namespace Shopee_Autobuy_Bot
             darkLabel4.AutoSize=true;
             darkLabel4.ForeColor=SystemColors.ControlText;
             darkLabel4.Location=new Point(176, 132);
-            darkLabel4.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel4.Margin=new Padding(2, 0, 2, 0);
             darkLabel4.Name="darkLabel4";
             darkLabel4.Size=new Size(77, 15);
             darkLabel4.TabIndex=10;
             darkLabel4.Text="Refresh every";
             // 
-            // darkCheckBoxPlaySound
-            // 
-            darkCheckBoxPlaySound.AutoSize=true;
-            darkCheckBoxPlaySound.Enabled=false;
-            darkCheckBoxPlaySound.Location=new Point(24, 37);
-            darkCheckBoxPlaySound.Margin=new System.Windows.Forms.Padding(2);
-            darkCheckBoxPlaySound.Name="darkCheckBoxPlaySound";
-            darkCheckBoxPlaySound.Size=new Size(210, 19);
-            darkCheckBoxPlaySound.TabIndex=28;
-            darkCheckBoxPlaySound.Text="Play sound on successful checkout";
-            // 
             // darkLabel13
             // 
             darkLabel13.AutoSize=true;
             darkLabel13.ForeColor=SystemColors.ControlText;
-            darkLabel13.Location=new Point(20, 223);
-            darkLabel13.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel13.Location=new Point(20, 222);
+            darkLabel13.Margin=new Padding(2, 0, 2, 0);
             darkLabel13.Name="darkLabel13";
             darkLabel13.Size=new Size(109, 15);
             darkLabel13.TabIndex=45;
             darkLabel13.Text="Time out (second) :";
-            // 
-            // darkCheckBoxDisableImageExtension
-            // 
-            darkCheckBoxDisableImageExtension.AutoSize=true;
-            darkCheckBoxDisableImageExtension.Enabled=false;
-            darkCheckBoxDisableImageExtension.Location=new Point(24, 99);
-            darkCheckBoxDisableImageExtension.Margin=new System.Windows.Forms.Padding(2);
-            darkCheckBoxDisableImageExtension.Name="darkCheckBoxDisableImageExtension";
-            darkCheckBoxDisableImageExtension.Size=new Size(210, 19);
-            darkCheckBoxDisableImageExtension.TabIndex=25;
-            darkCheckBoxDisableImageExtension.Text="Disable website image && extension";
             // 
             // darkSectionPanelProductDetails
             // 
@@ -540,7 +517,7 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanelProductDetails.Controls.Add(darkTextBoxVariationString);
             darkSectionPanelProductDetails.Controls.Add(darkLabel9);
             darkSectionPanelProductDetails.Location=new Point(14, 308);
-            darkSectionPanelProductDetails.Margin=new System.Windows.Forms.Padding(2);
+            darkSectionPanelProductDetails.Margin=new Padding(2);
             darkSectionPanelProductDetails.Name="darkSectionPanelProductDetails";
             darkSectionPanelProductDetails.Size=new Size(364, 195);
             darkSectionPanelProductDetails.TabIndex=110;
@@ -552,7 +529,7 @@ namespace Shopee_Autobuy_Bot
             cbVariantPreSelected.AutoSize=true;
             cbVariantPreSelected.Enabled=false;
             cbVariantPreSelected.Location=new Point(214, 163);
-            cbVariantPreSelected.Margin=new System.Windows.Forms.Padding(2);
+            cbVariantPreSelected.Margin=new Padding(2);
             cbVariantPreSelected.Name="cbVariantPreSelected";
             cbVariantPreSelected.Size=new Size(128, 19);
             cbVariantPreSelected.TabIndex=116;
@@ -563,7 +540,7 @@ namespace Shopee_Autobuy_Bot
             cbRandom.AutoSize=true;
             cbRandom.Enabled=false;
             cbRandom.Location=new Point(98, 163);
-            cbRandom.Margin=new System.Windows.Forms.Padding(2);
+            cbRandom.Margin=new Padding(2);
             cbRandom.Name="cbRandom";
             cbRandom.Size=new Size(110, 19);
             cbRandom.TabIndex=55;
@@ -573,18 +550,18 @@ namespace Shopee_Autobuy_Bot
             // 
             tbQuality.Enabled=false;
             tbQuality.Location=new Point(98, 103);
-            tbQuality.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbQuality.Margin=new Padding(2, 3, 2, 3);
             tbQuality.Name="tbQuality";
             tbQuality.Size=new Size(68, 23);
             tbQuality.TabIndex=54;
-            tbQuality.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            tbQuality.TextAlign=HorizontalAlignment.Center;
             // 
             // darkLabel11
             // 
             darkLabel11.AutoSize=true;
             darkLabel11.ForeColor=SystemColors.ControlText;
             darkLabel11.Location=new Point(17, 37);
-            darkLabel11.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel11.Margin=new Padding(2, 0, 2, 0);
             darkLabel11.Name="darkLabel11";
             darkLabel11.Size=new Size(77, 15);
             darkLabel11.TabIndex=24;
@@ -594,10 +571,10 @@ namespace Shopee_Autobuy_Bot
             // 
             darkTextBoxProductLink.Enabled=false;
             darkTextBoxProductLink.Location=new Point(98, 37);
-            darkTextBoxProductLink.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkTextBoxProductLink.Margin=new Padding(2, 3, 2, 3);
             darkTextBoxProductLink.Multiline=true;
             darkTextBoxProductLink.Name="darkTextBoxProductLink";
-            darkTextBoxProductLink.ScrollBars=System.Windows.Forms.ScrollBars.Vertical;
+            darkTextBoxProductLink.ScrollBars=ScrollBars.Vertical;
             darkTextBoxProductLink.Size=new Size(244, 60);
             darkTextBoxProductLink.TabIndex=23;
             // 
@@ -606,7 +583,7 @@ namespace Shopee_Autobuy_Bot
             darkLabel10.AutoSize=true;
             darkLabel10.ForeColor=SystemColors.ControlText;
             darkLabel10.Location=new Point(17, 107);
-            darkLabel10.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel10.Margin=new Padding(2, 0, 2, 0);
             darkLabel10.Name="darkLabel10";
             darkLabel10.Size=new Size(59, 15);
             darkLabel10.TabIndex=21;
@@ -616,18 +593,18 @@ namespace Shopee_Autobuy_Bot
             // 
             darkTextBoxVariationString.Enabled=false;
             darkTextBoxVariationString.Location=new Point(98, 132);
-            darkTextBoxVariationString.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkTextBoxVariationString.Margin=new Padding(2, 3, 2, 3);
             darkTextBoxVariationString.Name="darkTextBoxVariationString";
             darkTextBoxVariationString.Size=new Size(244, 23);
             darkTextBoxVariationString.TabIndex=18;
-            darkTextBoxVariationString.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            darkTextBoxVariationString.TextAlign=HorizontalAlignment.Center;
             // 
             // darkLabel9
             // 
             darkLabel9.AutoSize=true;
             darkLabel9.ForeColor=SystemColors.ControlText;
             darkLabel9.Location=new Point(17, 137);
-            darkLabel9.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel9.Margin=new Padding(2, 0, 2, 0);
             darkLabel9.Name="darkLabel9";
             darkLabel9.Size=new Size(59, 15);
             darkLabel9.TabIndex=19;
@@ -644,7 +621,7 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanelTimerMode.Controls.Add(darkLabel2);
             darkSectionPanelTimerMode.Controls.Add(darkLabel12);
             darkSectionPanelTimerMode.Location=new Point(384, 50);
-            darkSectionPanelTimerMode.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkSectionPanelTimerMode.Margin=new Padding(2, 3, 2, 3);
             darkSectionPanelTimerMode.Name="darkSectionPanelTimerMode";
             darkSectionPanelTimerMode.Size=new Size(376, 121);
             darkSectionPanelTimerMode.TabIndex=109;
@@ -655,38 +632,38 @@ namespace Shopee_Autobuy_Bot
             // 
             tbCountdownSeconds.Enabled=false;
             tbCountdownSeconds.Location=new Point(264, 61);
-            tbCountdownSeconds.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbCountdownSeconds.Margin=new Padding(2, 3, 2, 3);
             tbCountdownSeconds.Name="tbCountdownSeconds";
             tbCountdownSeconds.Size=new Size(31, 23);
             tbCountdownSeconds.TabIndex=55;
-            tbCountdownSeconds.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            tbCountdownSeconds.TextAlign=HorizontalAlignment.Center;
             // 
             // tbCountdownMinutes
             // 
             tbCountdownMinutes.Enabled=false;
             tbCountdownMinutes.Location=new Point(172, 61);
-            tbCountdownMinutes.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbCountdownMinutes.Margin=new Padding(2, 3, 2, 3);
             tbCountdownMinutes.Name="tbCountdownMinutes";
             tbCountdownMinutes.Size=new Size(31, 23);
             tbCountdownMinutes.TabIndex=54;
-            tbCountdownMinutes.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            tbCountdownMinutes.TextAlign=HorizontalAlignment.Center;
             // 
             // tbCountdownHour
             // 
             tbCountdownHour.Enabled=false;
             tbCountdownHour.Location=new Point(75, 61);
-            tbCountdownHour.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbCountdownHour.Margin=new Padding(2, 3, 2, 3);
             tbCountdownHour.Name="tbCountdownHour";
             tbCountdownHour.Size=new Size(37, 23);
             tbCountdownHour.TabIndex=53;
-            tbCountdownHour.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            tbCountdownHour.TextAlign=HorizontalAlignment.Center;
             // 
             // darkCheckBoxTomorrow
             // 
             darkCheckBoxTomorrow.AutoSize=true;
             darkCheckBoxTomorrow.Enabled=false;
             darkCheckBoxTomorrow.Location=new Point(38, 89);
-            darkCheckBoxTomorrow.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkCheckBoxTomorrow.Margin=new Padding(2, 3, 2, 3);
             darkCheckBoxTomorrow.Name="darkCheckBoxTomorrow";
             darkCheckBoxTomorrow.Size=new Size(80, 19);
             darkCheckBoxTomorrow.TabIndex=16;
@@ -697,7 +674,7 @@ namespace Shopee_Autobuy_Bot
             darkCheckBoxScheduleBot.AutoSize=true;
             darkCheckBoxScheduleBot.Enabled=false;
             darkCheckBoxScheduleBot.Location=new Point(38, 38);
-            darkCheckBoxScheduleBot.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkCheckBoxScheduleBot.Margin=new Padding(2, 3, 2, 3);
             darkCheckBoxScheduleBot.Name="darkCheckBoxScheduleBot";
             darkCheckBoxScheduleBot.Size=new Size(310, 19);
             darkCheckBoxScheduleBot.TabIndex=15;
@@ -709,7 +686,7 @@ namespace Shopee_Autobuy_Bot
             darkLabel3.Enabled=false;
             darkLabel3.ForeColor=SystemColors.ControlText;
             darkLabel3.Location=new Point(208, 65);
-            darkLabel3.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel3.Margin=new Padding(2, 0, 2, 0);
             darkLabel3.Name="darkLabel3";
             darkLabel3.Size=new Size(51, 15);
             darkLabel3.TabIndex=14;
@@ -721,7 +698,7 @@ namespace Shopee_Autobuy_Bot
             darkLabel2.Enabled=false;
             darkLabel2.ForeColor=SystemColors.ControlText;
             darkLabel2.Location=new Point(117, 65);
-            darkLabel2.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel2.Margin=new Padding(2, 0, 2, 0);
             darkLabel2.Name="darkLabel2";
             darkLabel2.Size=new Size(50, 15);
             darkLabel2.TabIndex=5;
@@ -733,7 +710,7 @@ namespace Shopee_Autobuy_Bot
             darkLabel12.Enabled=false;
             darkLabel12.ForeColor=SystemColors.ControlText;
             darkLabel12.Location=new Point(36, 65);
-            darkLabel12.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            darkLabel12.Margin=new Padding(2, 0, 2, 0);
             darkLabel12.Name="darkLabel12";
             darkLabel12.Size=new Size(34, 15);
             darkLabel12.TabIndex=4;
@@ -743,17 +720,27 @@ namespace Shopee_Autobuy_Bot
             // 
             darkButton1.Font=new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             darkButton1.Location=new Point(719, 13);
-            darkButton1.Margin=new System.Windows.Forms.Padding(2);
+            darkButton1.Margin=new Padding(2);
             darkButton1.Name="darkButton1";
             darkButton1.Size=new Size(123, 24);
             darkButton1.TabIndex=115;
             darkButton1.Text="Save profile";
             darkButton1.Visible=false;
             // 
+            // darkCheckBoxNotifyTelegram
+            // 
+            darkCheckBoxNotifyTelegram.AutoSize=true;
+            darkCheckBoxNotifyTelegram.Location=new Point(24, 36);
+            darkCheckBoxNotifyTelegram.Margin=new Padding(2);
+            darkCheckBoxNotifyTelegram.Name="darkCheckBoxNotifyTelegram";
+            darkCheckBoxNotifyTelegram.Size=new Size(307, 19);
+            darkCheckBoxNotifyTelegram.TabIndex=54;
+            darkCheckBoxNotifyTelegram.Text="Send notification to Telegram on successful checkout";
+            // 
             // LoadProfile
             // 
             AutoScaleDimensions=new SizeF(7F, 15F);
-            AutoScaleMode=System.Windows.Forms.AutoScaleMode.Font;
+            AutoScaleMode=AutoScaleMode.Font;
             BackColor=SystemColors.ActiveCaption;
             ClientSize=new Size(972, 515);
             Controls.Add(darkButton1);
@@ -768,11 +755,11 @@ namespace Shopee_Autobuy_Bot
             Controls.Add(btnDeleteProfile);
             Controls.Add(btnLoadProfile);
             Font=new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            FormBorderStyle=System.Windows.Forms.FormBorderStyle.FixedDialog;
+            FormBorderStyle=FormBorderStyle.FixedDialog;
             Icon=(Icon)resources.GetObject("$this.Icon");
             MaximizeBox=false;
             Name="LoadProfile";
-            StartPosition=System.Windows.Forms.FormStartPosition.CenterScreen;
+            StartPosition=FormStartPosition.CenterScreen;
             Text="Load Profile";
             Load+=Profile_Load_1;
             darkSectionPanel1.ResumeLayout(false);
@@ -792,61 +779,62 @@ namespace Shopee_Autobuy_Bot
         }
 
         #endregion
-        private System.Windows.Forms.Button btnLoadProfile;
-        private System.Windows.Forms.Button btnDeleteProfile;
-        private System.Windows.Forms.Label darkLabel1;
-        private System.Windows.Forms.ComboBox darkComboBoxProfile;
-        private System.Windows.Forms.GroupBox darkSectionPanel1;
-        private System.Windows.Forms.CheckBox darkCheckBoxRedeemShopeeVoucher;
-        private System.Windows.Forms.CheckBox darkCheckBoxClaimShopVoucher;
-        private System.Windows.Forms.CheckBox darkCheckBoxRedeemCoin;
-        private System.Windows.Forms.GroupBox darkSectionPanelPaymentDetails;
-        private System.Windows.Forms.TextBox tbPaymentMethod;
-        private System.Windows.Forms.TextBox tbBankType;
-        private System.Windows.Forms.Label darkLabel14;
-        private System.Windows.Forms.TextBox tbLast4Digit;
-        private System.Windows.Forms.Label darkLabel6;
-        private System.Windows.Forms.Label darkLabel8;
-        private System.Windows.Forms.TextBox darkTextBoxShopeePayPin;
-        private System.Windows.Forms.Label darkLabel7;
-        private System.Windows.Forms.GroupBox darkSectionPanelBuyingMode;
-        private System.Windows.Forms.TextBox tbBelowSpecificPriceCARTCHECKOUTPrice;
-        private System.Windows.Forms.TextBox tbPriceSpecific;
-        private System.Windows.Forms.RadioButton radioButtonPriceSpecificCARTCHECKOUT;
-        private System.Windows.Forms.RadioButton radioButtonCheckOutCart;
-        private System.Windows.Forms.RadioButton radioButtonShockingSale;
-        private System.Windows.Forms.RadioButton radioButtonBuyNormal;
-        private System.Windows.Forms.RadioButton radioButtonPriceSpecific;
-        private System.Windows.Forms.GroupBox darkSectionPanelBotSettings;
-        private System.Windows.Forms.TextBox tbTimeOut;
-        private System.Windows.Forms.TextBox tbRefreshSecond;
-        private System.Windows.Forms.CheckBox darkCheckBoxTestMode;
-        private System.Windows.Forms.CheckBox darkCheckBoxLogging;
-        private System.Windows.Forms.CheckBox darkCheckBoxRefresh;
-        private System.Windows.Forms.CheckBox darkCheckBoxHeadless;
-        private System.Windows.Forms.Label darkLabel5;
-        private System.Windows.Forms.Label darkLabel4;
-        private System.Windows.Forms.CheckBox darkCheckBoxPlaySound;
-        private System.Windows.Forms.Label darkLabel13;
-        private System.Windows.Forms.CheckBox darkCheckBoxDisableImageExtension;
-        private System.Windows.Forms.GroupBox darkSectionPanelProductDetails;
-        private System.Windows.Forms.TextBox tbQuality;
-        private System.Windows.Forms.Label darkLabel11;
-        private System.Windows.Forms.TextBox darkTextBoxProductLink;
-        private System.Windows.Forms.Label darkLabel10;
-        private System.Windows.Forms.TextBox darkTextBoxVariationString;
-        private System.Windows.Forms.Label darkLabel9;
-        private System.Windows.Forms.GroupBox darkSectionPanelTimerMode;
-        private System.Windows.Forms.TextBox tbCountdownSeconds;
-        private System.Windows.Forms.TextBox tbCountdownMinutes;
-        private System.Windows.Forms.TextBox tbCountdownHour;
-        private System.Windows.Forms.CheckBox darkCheckBoxTomorrow;
-        private System.Windows.Forms.CheckBox darkCheckBoxScheduleBot;
-        private System.Windows.Forms.Label darkLabel3;
-        private System.Windows.Forms.Label darkLabel2;
-        private System.Windows.Forms.Label darkLabel12;
-        private System.Windows.Forms.Button darkButton1;
-        private System.Windows.Forms.CheckBox cbRandom;
-        private System.Windows.Forms.CheckBox cbVariantPreSelected;
+        private Button btnLoadProfile;
+        private Button btnDeleteProfile;
+        private Label darkLabel1;
+        private ComboBox darkComboBoxProfile;
+        private GroupBox darkSectionPanel1;
+        private CheckBox darkCheckBoxRedeemShopeeVoucher;
+        private CheckBox darkCheckBoxClaimShopVoucher;
+        private CheckBox darkCheckBoxRedeemCoin;
+        private GroupBox darkSectionPanelPaymentDetails;
+        private TextBox tbPaymentMethod;
+        private TextBox tbBankType;
+        private Label darkLabel14;
+        private TextBox tbLast4Digit;
+        private Label darkLabel6;
+        private Label darkLabel8;
+        private TextBox darkTextBoxShopeePayPin;
+        private Label darkLabel7;
+        private GroupBox darkSectionPanelBuyingMode;
+        private TextBox tbBelowSpecificPriceCARTCHECKOUTPrice;
+        private TextBox tbPriceSpecific;
+        private RadioButton radioButtonPriceSpecificCARTCHECKOUT;
+        private RadioButton radioButtonCheckOutCart;
+        private RadioButton radioButtonShockingSale;
+        private RadioButton radioButtonBuyNormal;
+        private RadioButton radioButtonPriceSpecific;
+        private GroupBox darkSectionPanelBotSettings;
+        private TextBox tbTimeOut;
+        private TextBox tbRefreshSecond;
+        private CheckBox darkCheckBoxTestMode;
+        private CheckBox darkCheckBoxLogging;
+        private CheckBox darkCheckBoxRefresh;
+        private CheckBox darkCheckBoxHeadless;
+        private Label darkLabel5;
+        private Label darkLabel4;
+        private Label darkLabel13;
+        private CheckBox darkCheckBoxDisableImageExtension;
+        private GroupBox darkSectionPanelProductDetails;
+        private TextBox tbQuality;
+        private Label darkLabel11;
+        private TextBox darkTextBoxProductLink;
+        private Label darkLabel10;
+        private TextBox darkTextBoxVariationString;
+        private Label darkLabel9;
+        private GroupBox darkSectionPanelTimerMode;
+        private TextBox tbCountdownSeconds;
+        private TextBox tbCountdownMinutes;
+        private TextBox tbCountdownHour;
+        private CheckBox darkCheckBoxTomorrow;
+        private CheckBox darkCheckBoxScheduleBot;
+        private Label darkLabel3;
+        private Label darkLabel2;
+        private Label darkLabel12;
+        private Button darkButton1;
+        private CheckBox cbRandom;
+        private CheckBox cbVariantPreSelected;
+        private CheckBox checkBoxDesktopNotification;
+        private CheckBox darkCheckBoxNotifyTelegram;
     }
 }
