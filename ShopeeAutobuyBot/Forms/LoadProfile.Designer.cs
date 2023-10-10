@@ -58,6 +58,7 @@ namespace Shopee_Autobuy_Bot
             radioButtonBuyNormal=new RadioButton();
             radioButtonPriceSpecific=new RadioButton();
             darkSectionPanelBotSettings=new GroupBox();
+            darkCheckBoxNotifyTelegram=new CheckBox();
             checkBoxDesktopNotification=new CheckBox();
             tbTimeOut=new TextBox();
             tbRefreshSecond=new TextBox();
@@ -86,7 +87,6 @@ namespace Shopee_Autobuy_Bot
             darkLabel2=new Label();
             darkLabel12=new Label();
             darkButton1=new Button();
-            darkCheckBoxNotifyTelegram=new CheckBox();
             darkSectionPanel1.SuspendLayout();
             darkSectionPanelPaymentDetails.SuspendLayout();
             darkSectionPanelBuyingMode.SuspendLayout();
@@ -409,6 +409,17 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanelBotSettings.TabStop=false;
             darkSectionPanelBotSettings.Text="Bot Settings";
             // 
+            // darkCheckBoxNotifyTelegram
+            // 
+            darkCheckBoxNotifyTelegram.AutoSize=true;
+            darkCheckBoxNotifyTelegram.Enabled=false;
+            darkCheckBoxNotifyTelegram.Location=new Point(24, 36);
+            darkCheckBoxNotifyTelegram.Margin=new Padding(2);
+            darkCheckBoxNotifyTelegram.Name="darkCheckBoxNotifyTelegram";
+            darkCheckBoxNotifyTelegram.Size=new Size(307, 19);
+            darkCheckBoxNotifyTelegram.TabIndex=54;
+            darkCheckBoxNotifyTelegram.Text="Send notification to Telegram on successful checkout";
+            // 
             // checkBoxDesktopNotification
             // 
             checkBoxDesktopNotification.AutoSize=true;
@@ -726,16 +737,6 @@ namespace Shopee_Autobuy_Bot
             darkButton1.TabIndex=115;
             darkButton1.Text="Save profile";
             darkButton1.Visible=false;
-            // 
-            // darkCheckBoxNotifyTelegram
-            // 
-            darkCheckBoxNotifyTelegram.AutoSize=true;
-            darkCheckBoxNotifyTelegram.Location=new Point(24, 36);
-            darkCheckBoxNotifyTelegram.Margin=new Padding(2);
-            darkCheckBoxNotifyTelegram.Name="darkCheckBoxNotifyTelegram";
-            darkCheckBoxNotifyTelegram.Size=new Size(307, 19);
-            darkCheckBoxNotifyTelegram.TabIndex=54;
-            darkCheckBoxNotifyTelegram.Text="Send notification to Telegram on successful checkout";
             // 
             // LoadProfile
             // 
