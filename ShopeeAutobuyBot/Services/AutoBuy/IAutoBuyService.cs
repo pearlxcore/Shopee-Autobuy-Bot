@@ -6,7 +6,7 @@ namespace Shopee_Autobuy_Bot.Services
     {
         TimeSpan TotalTimeSpan { get; }
         TimeSpan CheckoutTimeSpan { get; }
-        String OrderPrice { get; }
+        String TotalPayment { get; }
         void ShopeeAutobuy(DateTime? jobStartTime = null);
         bool Abort { get; set; }
     }

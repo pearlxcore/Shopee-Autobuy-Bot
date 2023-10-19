@@ -137,7 +137,10 @@ namespace Shopee_Autobuy_Bot
                 if (darkButtonStart.Text.Equals("Start"))
                 {
                     MapControlsToSelectedProfile();
-                    if (!IsProfileValid(_profileService.SelectedProfile))
+                    if (!IsProfileValid(_profileService.SelectedProfile) &&
+                        (_profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Normal
+                        || _profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Flash_Shocking
+                        || _profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Below_Price))
                     {
                         MessageBox.Show("Missing some product details", "Logged out", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -194,8 +197,9 @@ namespace Shopee_Autobuy_Bot
                         MessageBox.Show("Specify last 4 digit of debit/credit card to be used.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    if ((_profileService.SelectedProfile.BuyingMode.mode.ToString() != "Below_Price_Cart"
-                    && _profileService.SelectedProfile.BuyingMode.mode.ToString() != "Below_Price_Cart")
+                    if ((_profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Normal
+                        || _profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Flash_Shocking
+                        || _profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Below_Price)
                     && !_profileService.SelectedProfile.ProductDetail.product_link.Contains("https://shopee.com.my/"))
                     {
                         MessageBox.Show("Link not valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1340,7 +1344,7 @@ namespace Shopee_Autobuy_Bot
         private void telegramToolStripMenuItem_Click(object sender, EventArgs e)
         {
             INotificationService telegramService = new NotificationService(_autoBuyLoggerService);
-            telegramService.SendNotification(SAB_Account, _profileService, _autoBuyService.OrderPrice, _autoBuyService.CheckoutTimeSpan);
+            telegramService.SendNotification(SAB_Account, _profileService, _autoBuyService.TotalPayment, _autoBuyService.CheckoutTimeSpan);
         }
     }
 }

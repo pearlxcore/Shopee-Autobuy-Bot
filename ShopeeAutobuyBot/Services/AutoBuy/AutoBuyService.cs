@@ -27,7 +27,7 @@ namespace Shopee_Autobuy_Bot.Services
         public DateTime CheckOutStartTime;
         public TimeSpan TotalTimeSpan { get; private set; }
         public TimeSpan CheckoutTimeSpan { get; private set; }
-        public string OrderPrice { get; private set; }
+        public string TotalPayment { get; private set; }
         public bool Abort { get; set; } = false;
 
         public AutoBuyService(IAutoBuyLoggerService autoBuyLoggerService, ISeleniumService seleniumService, Button startButton, IProfileService profileService)
@@ -877,10 +877,6 @@ namespace Shopee_Autobuy_Bot.Services
 
             if (!_profileService.SelectedProfile.BotSettings.test_mode)
             {
-                SetCurrentElement(nameof(ConstantElements.CheckoutPage.OrderPrice), ConstantElements.CheckoutPage.OrderPrice);
-                _seleniumService.WaitElementVisible(By.XPath(ConstantElements.CheckoutPage.OrderPrice));
-                OrderPrice = _seleniumService.GetElement(By.XPath(ConstantElements.CheckoutPage.OrderPrice)).Text;
-
                 SetCurrentElement(nameof(ConstantElements.CheckoutPage.PlaceOrderButton), ConstantElements.CheckoutPage.PlaceOrderButton);
                 _seleniumService.WaitElementVisible(By.XPath(ConstantElements.CheckoutPage.PlaceOrderButton))
                     .SelectElement(By.XPath(ConstantElements.CheckoutPage.PlaceOrderButton))
@@ -975,6 +971,10 @@ namespace Shopee_Autobuy_Bot.Services
                     ShopeePayPayment();
                 }
 
+                SetCurrentElement(nameof(ConstantElements.PaymentPage.TotalPaymentLabel), ConstantElements.PaymentPage.TotalPaymentLabel);
+                _seleniumService.WaitElementVisible(By.XPath(ConstantElements.PaymentPage.TotalPaymentLabel));
+                TotalPayment = _seleniumService.GetElement(By.XPath(ConstantElements.PaymentPage.TotalPaymentLabel)).Text;
+
                 // Check if the URL is still in the checkout page
                 if (_seleniumService._driver.Url.Contains("/checkout"))
                 {
@@ -989,9 +989,7 @@ namespace Shopee_Autobuy_Bot.Services
                         // If the code reaches here, it means the checkout was successful
                         _autoBuyLoggerService.AutoBuyProcessLog("Total time : " + TotalTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.Black, true, true, true);
                         _autoBuyLoggerService.AutoBuyProcessLog("Checkout time : " + CheckoutTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.Black, true, true, true);
-                        _notificationService.SendNotification(SAB_Account, _profileService, OrderPrice, CheckoutTimeSpan);
-
-                        // todo : add notifyicon
+                        _notificationService.SendNotification(SAB_Account, _profileService, TotalPayment, CheckoutTimeSpan);
                     }
                 }
             }
@@ -1034,7 +1032,7 @@ namespace Shopee_Autobuy_Bot.Services
                         }
                         _autoBuyLoggerService.AutoBuyProcessLog("Total time : " + TotalTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.Black, true, true, true);
                         _autoBuyLoggerService.AutoBuyProcessLog("Checkout time : " + CheckoutTimeSpan.ToString("hh\\:mm\\:ss\\:ff"), Color.Black, true, true, true);
-                        _notificationService.SendNotification(SAB_Account, _profileService, OrderPrice, CheckoutTimeSpan);
+                        _notificationService.SendNotification(SAB_Account, _profileService, TotalPayment, CheckoutTimeSpan);
                     }
                 }
             }

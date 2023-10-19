@@ -7,6 +7,7 @@
             public ProductPage ProductPage { get; set; }
             public CartPage CartPage { get; set; }
             public CheckoutPage CheckoutPage { get; set; }
+            public PaymentPage PaymentPage { get; set; }
             public Payment Payment { get; set; }
         }
         public class ProductPage
@@ -37,7 +38,11 @@
             public string ShopeeVoucherOkButton { get; set; }
             public string RedeemCoinCheckbox { get; set; }
             public string ChangePaymentButton { get; set; }
-            public string OrderPrice { get; set; }
+        }
+
+        public class PaymentPage
+        {
+            public string TotalPaymentLabel { get; set; }
         }
 
         public class Payment

@@ -46,7 +46,7 @@ namespace Shopee_Autobuy_Bot
             tbClaimShopeeVcOkButton_placeOrder.Text = element.CheckoutPage.ShopeeVoucherOkButton;
             tbRedeemCoinCheckbox_placeOrder.Text = element.CheckoutPage.RedeemCoinCheckbox;
             tbCHangePaymentButton_placeOrder.Text = element.CheckoutPage.ChangePaymentButton;
-            tbOrderPrice_placeOrder.Text = element.CheckoutPage.OrderPrice;
+            tbTotalPayment.Text = element.PaymentPage.TotalPaymentLabel;
 
             // payment type
             tbPayment_OnlineBanking.Text = element.Payment.PaymentMethod.OnlineBanking;
@@ -107,7 +107,10 @@ namespace Shopee_Autobuy_Bot
                     ShopeeVoucherOkButton= tbClaimShopeeVcOkButton_placeOrder.Text,
                     RedeemCoinCheckbox= tbRedeemCoinCheckbox_placeOrder.Text,
                     ChangePaymentButton= tbCHangePaymentButton_placeOrder.Text,
-                    OrderPrice = tbOrderPrice_placeOrder.Text
+                };
+                var paymentPage = new ElementModel.PaymentPage()
+                {
+                    TotalPaymentLabel = tbTotalPayment.Text
                 };
                 var paymentMethod = new ElementModel.PaymentMethod()
                 {
@@ -146,6 +149,7 @@ namespace Shopee_Autobuy_Bot
                     ProductPage = productPage,
                     CartPage = cartPage,
                     CheckoutPage = checkoutPage,
+                    PaymentPage = paymentPage,
                     Payment = payment
                 };
                 SettingsHelper.Element.SaveElementsToFile(rootElement);
