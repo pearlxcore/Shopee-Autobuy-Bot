@@ -10,7 +10,7 @@
   "CartPage": {
     "CheckOutButton": "//*[@id=\"main\"]/div/div[2]/div/div/div[3]/section/div[7]/button[4]/span",
     "SelectAllCheckbox": "//*[@id=\"main\"]/div/div[2]/div/div/div[3]/section/div[7]/div[1]/label/div",
-    "CartTotalPriceLabel": "//div[contains(@class, 'WC0us+')]",
+    "CartTotalPriceLabel": "//div[contains(@class, 'WC0us+)]",
     "ClaimShopVoucherButton": "//button[contains(@class, 'btn') and contains(text(), 'Claim')]",
     "CartEmptyLabel": "//div[contains(@class, 'xkMOGx') and contains(text(), 'Your shopping cart is empty')]",
     "SelectAllLabel": "//button[contains(@class, 'iGlIrs clear-btn-style')]"
@@ -21,8 +21,10 @@
     "ShopeeVoucherContainer": "//div[contains(@class, 'qa9DDd U0bjBP VK0V4t')]",
     "ShopeeVoucherOkButton": "//button[contains(@class, 'btn') and contains(text(), 'OK')]",
     "RedeemCoinCheckbox": "//*[@id=\"main\"]/div/div[2]/div/div[2]/div[3]/div[2]/div[2]/label/div",
-    "ChangePaymentButton": "//div[contains(@class, '_1n5Ut6') and contains(text(), 'change')]",
-    "OrderPrice": "//div[contains(@class, '_9F3E9v')]"
+    "ChangePaymentButton": "//div[contains(@class, '_1n5Ut6') and contains(text(), 'change')]"
+  },
+  "PaymentPage": {
+    "TotalPaymentLabel": "//*[@id=\"main\"]/div/div[2]/div[2]/div/div[3]/div[2]/div"
   },
   "Payment": {
     "PaymentMethod": {
