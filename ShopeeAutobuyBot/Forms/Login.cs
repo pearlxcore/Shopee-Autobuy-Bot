@@ -231,6 +231,7 @@ namespace Shopee_Autobuy_Bot
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            WarningPrompt();
             var assembly = Assembly.GetEntryAssembly().GetName().Version.ToString();
             this.Text += $" {assembly}";
             try
@@ -328,6 +329,11 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
             {
                 MessageBox.Show(ex.Message, "Error LoginUser");
             }
+        }
+
+        private void WarningPrompt()
+        {
+            MessageBox.Show("If you have purchased this program, you may have fallen victim to a scam. This software is open source and freely available. Always download this program from github repository (github.com/pearlxcore/Shopee-Autobuy-Bot).", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         public void ChromedriverDownload(string chromeVersion)
