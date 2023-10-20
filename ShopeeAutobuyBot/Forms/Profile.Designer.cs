@@ -37,6 +37,10 @@ namespace Shopee_Autobuy_Bot
             darkLabel1=new Label();
             darkComboBoxProfile=new ComboBox();
             groupBox1=new GroupBox();
+            label4=new Label();
+            tbTelegramChatId=new TextBox();
+            label3=new Label();
+            tbTelegramApiToken=new TextBox();
             darkCheckBoxRedeemShopeeVoucher=new CheckBox();
             darkCheckBoxClaimShopVoucher=new CheckBox();
             darkCheckBoxRedeemCoin=new CheckBox();
@@ -87,11 +91,6 @@ namespace Shopee_Autobuy_Bot
             darkCheckBoxScheduleBot=new CheckBox();
             labelHourMinuteSecond=new Label();
             btnUpdateProfile=new Button();
-            groupBox1=new GroupBox();
-            label4=new Label();
-            tbTelegramChatId=new TextBox();
-            label3=new Label();
-            tbTelegramApiToken=new TextBox();
             groupBox5=new GroupBox();
             groupBox6=new GroupBox();
             label5=new Label();
@@ -99,6 +98,7 @@ namespace Shopee_Autobuy_Bot
             btnCreateNewProfile=new Button();
             tabControl1=new TabControl();
             tabPage2=new TabPage();
+            groupBox2=new GroupBox();
             tabPage1=new TabPage();
             groupBox1.SuspendLayout();
             darkSectionPanelPaymentDetails.SuspendLayout();
@@ -112,11 +112,11 @@ namespace Shopee_Autobuy_Bot
             ((System.ComponentModel.ISupportInitialize)numericUpDownSecond).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownMinute).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownHour).BeginInit();
-            groupBox1.SuspendLayout();
             groupBox5.SuspendLayout();
             groupBox6.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
+            groupBox2.SuspendLayout();
             tabPage1.SuspendLayout();
             SuspendLayout();
             // 
@@ -166,20 +166,61 @@ namespace Shopee_Autobuy_Bot
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(darkCheckBoxRedeemShopeeVoucher);
-            groupBox1.Controls.Add(darkCheckBoxClaimShopVoucher);
-            groupBox1.Controls.Add(darkCheckBoxRedeemCoin);
-            groupBox1.Location=new Point(357, 15);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(tbTelegramChatId);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(tbTelegramApiToken);
+            groupBox1.Location=new Point(184, 275);
             groupBox1.Name="groupBox1";
-            groupBox1.Size=new Size(342, 111);
-            groupBox1.TabIndex=114;
+            groupBox1.Size=new Size(343, 109);
+            groupBox1.TabIndex=116;
             groupBox1.TabStop=false;
-            groupBox1.Text="Voucher && coin";
+            groupBox1.Text="Telegram Settings";
+            // 
+            // label4
+            // 
+            label4.AutoSize=true;
+            label4.ForeColor=SystemColors.ControlText;
+            label4.Location=new Point(14, 67);
+            label4.Margin=new Padding(2, 0, 2, 0);
+            label4.Name="label4";
+            label4.Size=new Size(51, 15);
+            label4.TabIndex=28;
+            label4.Text="Chat Id :";
+            // 
+            // tbTelegramChatId
+            // 
+            tbTelegramChatId.Location=new Point(95, 63);
+            tbTelegramChatId.Margin=new Padding(2, 3, 2, 3);
+            tbTelegramChatId.Name="tbTelegramChatId";
+            tbTelegramChatId.ScrollBars=ScrollBars.Vertical;
+            tbTelegramChatId.Size=new Size(233, 23);
+            tbTelegramChatId.TabIndex=27;
+            // 
+            // label3
+            // 
+            label3.AutoSize=true;
+            label3.ForeColor=SystemColors.ControlText;
+            label3.Location=new Point(14, 38);
+            label3.Margin=new Padding(2, 0, 2, 0);
+            label3.Name="label3";
+            label3.Size=new Size(65, 15);
+            label3.TabIndex=26;
+            label3.Text="Api Token :";
+            // 
+            // tbTelegramApiToken
+            // 
+            tbTelegramApiToken.Location=new Point(95, 34);
+            tbTelegramApiToken.Margin=new Padding(2, 3, 2, 3);
+            tbTelegramApiToken.Name="tbTelegramApiToken";
+            tbTelegramApiToken.ScrollBars=ScrollBars.Vertical;
+            tbTelegramApiToken.Size=new Size(233, 23);
+            tbTelegramApiToken.TabIndex=25;
             // 
             // darkCheckBoxRedeemShopeeVoucher
             // 
             darkCheckBoxRedeemShopeeVoucher.AutoSize=true;
-            darkCheckBoxRedeemShopeeVoucher.Location=new Point(82, 53);
+            darkCheckBoxRedeemShopeeVoucher.Location=new Point(87, 52);
             darkCheckBoxRedeemShopeeVoucher.Margin=new Padding(2, 3, 2, 3);
             darkCheckBoxRedeemShopeeVoucher.Name="darkCheckBoxRedeemShopeeVoucher";
             darkCheckBoxRedeemShopeeVoucher.Size=new Size(179, 19);
@@ -189,7 +230,7 @@ namespace Shopee_Autobuy_Bot
             // darkCheckBoxClaimShopVoucher
             // 
             darkCheckBoxClaimShopVoucher.AutoSize=true;
-            darkCheckBoxClaimShopVoucher.Location=new Point(82, 28);
+            darkCheckBoxClaimShopVoucher.Location=new Point(87, 27);
             darkCheckBoxClaimShopVoucher.Margin=new Padding(2);
             darkCheckBoxClaimShopVoucher.Name="darkCheckBoxClaimShopVoucher";
             darkCheckBoxClaimShopVoucher.Size=new Size(154, 19);
@@ -199,7 +240,7 @@ namespace Shopee_Autobuy_Bot
             // darkCheckBoxRedeemCoin
             // 
             darkCheckBoxRedeemCoin.AutoSize=true;
-            darkCheckBoxRedeemCoin.Location=new Point(82, 78);
+            darkCheckBoxRedeemCoin.Location=new Point(87, 77);
             darkCheckBoxRedeemCoin.Margin=new Padding(2, 3, 2, 3);
             darkCheckBoxRedeemCoin.Name="darkCheckBoxRedeemCoin";
             darkCheckBoxRedeemCoin.Size=new Size(95, 19);
@@ -330,6 +371,7 @@ namespace Shopee_Autobuy_Bot
             // 
             // tbBelowSpecificPriceCARTCHECKOUTPrice
             // 
+            tbBelowSpecificPriceCARTCHECKOUTPrice.Enabled=false;
             tbBelowSpecificPriceCARTCHECKOUTPrice.Location=new Point(265, 73);
             tbBelowSpecificPriceCARTCHECKOUTPrice.Margin=new Padding(2, 3, 2, 3);
             tbBelowSpecificPriceCARTCHECKOUTPrice.Name="tbBelowSpecificPriceCARTCHECKOUTPrice";
@@ -339,6 +381,7 @@ namespace Shopee_Autobuy_Bot
             // 
             // tbPriceSpecific
             // 
+            tbPriceSpecific.Enabled=false;
             tbPriceSpecific.Location=new Point(265, 48);
             tbPriceSpecific.Margin=new Padding(2, 3, 2, 3);
             tbPriceSpecific.Name="tbPriceSpecific";
@@ -368,6 +411,7 @@ namespace Shopee_Autobuy_Bot
             radioButtonCheckOutCart.Size=new Size(99, 19);
             radioButtonCheckOutCart.TabIndex=52;
             radioButtonCheckOutCart.Text="Cart checkout";
+            radioButtonCheckOutCart.CheckedChanged+=radioButtonCheckOutCart_CheckedChanged;
             // 
             // radioButtonShockingSale
             // 
@@ -560,7 +604,7 @@ namespace Shopee_Autobuy_Bot
             numericUpDownQuantity.Name="numericUpDownQuantity";
             numericUpDownQuantity.Size=new Size(38, 23);
             numericUpDownQuantity.TabIndex=117;
-            numericUpDownQuantity.Value=new decimal(new int[] { 5, 0, 0, 0 });
+            numericUpDownQuantity.Value=new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // cbVariantPreSelected
             // 
@@ -656,6 +700,7 @@ namespace Shopee_Autobuy_Bot
             // label2
             // 
             label2.AutoSize=true;
+            label2.Enabled=false;
             label2.ForeColor=SystemColors.ControlText;
             label2.Location=new Point(123, 54);
             label2.Margin=new Padding(2, 0, 2, 0);
@@ -667,6 +712,7 @@ namespace Shopee_Autobuy_Bot
             // label1
             // 
             label1.AutoSize=true;
+            label1.Enabled=false;
             label1.ForeColor=SystemColors.ControlText;
             label1.Location=new Point(61, 54);
             label1.Margin=new Padding(2, 0, 2, 0);
@@ -678,6 +724,7 @@ namespace Shopee_Autobuy_Bot
             // numericUpDownSecond
             // 
             numericUpDownSecond.BackColor=SystemColors.Window;
+            numericUpDownSecond.Enabled=false;
             numericUpDownSecond.ForeColor=SystemColors.ControlText;
             numericUpDownSecond.Location=new Point(140, 50);
             numericUpDownSecond.Margin=new Padding(2, 3, 2, 3);
@@ -689,6 +736,7 @@ namespace Shopee_Autobuy_Bot
             // numericUpDownMinute
             // 
             numericUpDownMinute.BackColor=SystemColors.Window;
+            numericUpDownMinute.Enabled=false;
             numericUpDownMinute.ForeColor=SystemColors.ControlText;
             numericUpDownMinute.Location=new Point(78, 50);
             numericUpDownMinute.Margin=new Padding(2, 3, 2, 3);
@@ -700,6 +748,7 @@ namespace Shopee_Autobuy_Bot
             // numericUpDownHour
             // 
             numericUpDownHour.BackColor=SystemColors.Window;
+            numericUpDownHour.Enabled=false;
             numericUpDownHour.ForeColor=SystemColors.ControlText;
             numericUpDownHour.Location=new Point(16, 50);
             numericUpDownHour.Margin=new Padding(2, 3, 2, 3);
@@ -707,11 +756,11 @@ namespace Shopee_Autobuy_Bot
             numericUpDownHour.Name="numericUpDownHour";
             numericUpDownHour.Size=new Size(38, 23);
             numericUpDownHour.TabIndex=17;
-            numericUpDownHour.Value=new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // darkCheckBoxTomorrow
             // 
             darkCheckBoxTomorrow.AutoSize=true;
+            darkCheckBoxTomorrow.Enabled=false;
             darkCheckBoxTomorrow.Location=new Point(16, 80);
             darkCheckBoxTomorrow.Margin=new Padding(2, 3, 2, 3);
             darkCheckBoxTomorrow.Name="darkCheckBoxTomorrow";
@@ -733,6 +782,7 @@ namespace Shopee_Autobuy_Bot
             // labelHourMinuteSecond
             // 
             labelHourMinuteSecond.AutoSize=true;
+            labelHourMinuteSecond.Enabled=false;
             labelHourMinuteSecond.ForeColor=SystemColors.ControlText;
             labelHourMinuteSecond.Location=new Point(182, 54);
             labelHourMinuteSecond.Margin=new Padding(2, 0, 2, 0);
@@ -751,59 +801,6 @@ namespace Shopee_Autobuy_Bot
             btnUpdateProfile.TabIndex=115;
             btnUpdateProfile.Text="Update profile";
             btnUpdateProfile.Click+=btnSaveProfile_Click;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(tbTelegramChatId);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(tbTelegramApiToken);
-            groupBox1.Location=new Point(184, 275);
-            groupBox1.Name="groupBox1";
-            groupBox1.Size=new Size(343, 109);
-            groupBox1.TabIndex=116;
-            groupBox1.TabStop=false;
-            groupBox1.Text="Telegram Settings";
-            // 
-            // label4
-            // 
-            label4.AutoSize=true;
-            label4.ForeColor=SystemColors.ControlText;
-            label4.Location=new Point(14, 67);
-            label4.Margin=new Padding(2, 0, 2, 0);
-            label4.Name="label4";
-            label4.Size=new Size(51, 15);
-            label4.TabIndex=28;
-            label4.Text="Chat Id :";
-            // 
-            // tbTelegramChatId
-            // 
-            tbTelegramChatId.Location=new Point(95, 63);
-            tbTelegramChatId.Margin=new Padding(2, 3, 2, 3);
-            tbTelegramChatId.Name="tbTelegramChatId";
-            tbTelegramChatId.ScrollBars=ScrollBars.Vertical;
-            tbTelegramChatId.Size=new Size(233, 23);
-            tbTelegramChatId.TabIndex=27;
-            // 
-            // label3
-            // 
-            label3.AutoSize=true;
-            label3.ForeColor=SystemColors.ControlText;
-            label3.Location=new Point(14, 38);
-            label3.Margin=new Padding(2, 0, 2, 0);
-            label3.Name="label3";
-            label3.Size=new Size(65, 15);
-            label3.TabIndex=26;
-            label3.Text="Api Token :";
-            // 
-            // tbTelegramApiToken
-            // 
-            tbTelegramApiToken.Location=new Point(95, 34);
-            tbTelegramApiToken.Margin=new Padding(2, 3, 2, 3);
-            tbTelegramApiToken.Name="tbTelegramApiToken";
-            tbTelegramApiToken.ScrollBars=ScrollBars.Vertical;
-            tbTelegramApiToken.Size=new Size(233, 23);
-            tbTelegramApiToken.TabIndex=25;
             // 
             // groupBox5
             // 
@@ -877,17 +874,29 @@ namespace Shopee_Autobuy_Bot
             // tabPage2
             // 
             tabPage2.BackColor=SystemColors.ActiveCaption;
+            tabPage2.Controls.Add(groupBox2);
             tabPage2.Controls.Add(groupBoxBuyingMode);
             tabPage2.Controls.Add(groupBoxTimerMode);
             tabPage2.Controls.Add(darkSectionPanelPaymentDetails);
             tabPage2.Controls.Add(darkSectionPanelProductDetails);
-            tabPage2.Controls.Add(groupBox1);
             tabPage2.Location=new Point(4, 24);
             tabPage2.Name="tabPage2";
             tabPage2.Padding=new Padding(3);
             tabPage2.Size=new Size(710, 398);
             tabPage2.TabIndex=1;
             tabPage2.Text="Buying Settings";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(darkCheckBoxRedeemShopeeVoucher);
+            groupBox2.Controls.Add(darkCheckBoxClaimShopVoucher);
+            groupBox2.Controls.Add(darkCheckBoxRedeemCoin);
+            groupBox2.Location=new Point(357, 15);
+            groupBox2.Name="groupBox2";
+            groupBox2.Size=new Size(353, 111);
+            groupBox2.TabIndex=117;
+            groupBox2.TabStop=false;
+            groupBox2.Text="Telegram Settings";
             // 
             // tabPage1
             // 
@@ -936,14 +945,14 @@ namespace Shopee_Autobuy_Bot
             ((System.ComponentModel.ISupportInitialize)numericUpDownSecond).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownMinute).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownHour).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             groupBox5.ResumeLayout(false);
             groupBox5.PerformLayout();
             groupBox6.ResumeLayout(false);
             groupBox6.PerformLayout();
             tabControl1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             tabPage1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -1024,5 +1033,6 @@ namespace Shopee_Autobuy_Bot
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
+        private GroupBox groupBox2;
     }
 }

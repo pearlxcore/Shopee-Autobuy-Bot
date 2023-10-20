@@ -46,6 +46,12 @@ namespace Shopee_Autobuy_Bot
 
         private void btnDeleteProfile_Click(object sender, EventArgs e)
         {
+            if (darkComboBoxProfile.Text == string.Empty)
+            {
+                MessageBox.Show("Select profile to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (profileList.Count == 0)
                 return;
 
@@ -143,6 +149,12 @@ namespace Shopee_Autobuy_Bot
 
         private void btnSaveProfile_Click(object sender, EventArgs e)
         {
+            if (darkComboBoxProfile.Text == string.Empty)
+            {
+                MessageBox.Show("Select profile to load", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             foreach (var item in profileList)
             {
                 if (item.profile_name == darkComboBoxProfile.SelectedItem.ToString())
