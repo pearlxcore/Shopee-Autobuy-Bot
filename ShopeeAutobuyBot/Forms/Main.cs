@@ -456,12 +456,12 @@ namespace Shopee_Autobuy_Bot
 
         private void darkRadioButtonCountdownMode_CheckedChanged(object sender, EventArgs e)
         {
-            BotSettings();
+            ScheduleBotUiUpdate();
         }
 
         private void darkRadioButtonRefreshMode_CheckedChanged(object sender, EventArgs e)
         {
-            BotSettings();
+            ScheduleBotUiUpdate();
         }
 
         private static bool IsAlreadyRunning()
@@ -585,7 +585,7 @@ namespace Shopee_Autobuy_Bot
             }
         }
 
-        private void BotSettings()
+        private void ScheduleBotUiUpdate()
         {
             //enable/disable when changing radio check
             if (darkCheckBoxScheduleBot.Checked)
@@ -595,9 +595,9 @@ namespace Shopee_Autobuy_Bot
                 darkNumericUpDownCountDownSecond.Enabled = true;
                 darkCheckBoxTomorrow.Enabled = true;
 
-                darkLabel1.Enabled = true;
-                darkLabel2.Enabled = true;
-                darkLabel3.Enabled = true;
+                labelHour.Enabled = true;
+                labelMinute.Enabled = true;
+                labelSecond.Enabled = true;
 
                 if (darkNumericUpDownCountdownHour.Value == 24)
                 {
@@ -619,9 +619,9 @@ namespace Shopee_Autobuy_Bot
                 darkNumericUpDownCountDownSecond.Enabled = false;
                 darkCheckBoxTomorrow.Enabled = false;
 
-                darkLabel1.Enabled = false;
-                darkLabel2.Enabled = false;
-                darkLabel3.Enabled = false;
+                labelHour.Enabled = false;
+                labelMinute.Enabled = false;
+                labelSecond.Enabled = false;
             }
         }
 
@@ -875,7 +875,7 @@ namespace Shopee_Autobuy_Bot
 
         private void darkCheckBoxCountDownMode_CheckedChanged(object sender, EventArgs e)
         {
-            BotSettings();
+            ScheduleBotUiUpdate();
         }
 
         private void radioButtonPriceSpecific_CheckedChanged(object sender, EventArgs e)
@@ -1163,8 +1163,8 @@ namespace Shopee_Autobuy_Bot
         private void cbRandom_CheckedChanged(object sender, EventArgs e)
         {
             darkTextBoxVariationString.Enabled = (cbRandom.Checked) ? false : true;
-            //if (cbRandom.Checked)
-            //    darkTextBoxVariationString.Text = "";
+            cbVariantPreSelected.Enabled = (cbRandom.Checked) ? false : true;
+
         }
 
 

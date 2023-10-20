@@ -38,10 +38,10 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanelTimerMode=new System.Windows.Forms.GroupBox();
             darkCheckBoxTomorrow=new System.Windows.Forms.CheckBox();
             darkCheckBoxScheduleBot=new System.Windows.Forms.CheckBox();
-            darkLabel3=new System.Windows.Forms.Label();
+            labelSecond=new System.Windows.Forms.Label();
             darkNumericUpDownCountDownSecond=new System.Windows.Forms.NumericUpDown();
-            darkLabel2=new System.Windows.Forms.Label();
-            darkLabel1=new System.Windows.Forms.Label();
+            labelMinute=new System.Windows.Forms.Label();
+            labelHour=new System.Windows.Forms.Label();
             darkNumericUpDownCountdownMinutes=new System.Windows.Forms.NumericUpDown();
             darkNumericUpDownCountdownHour=new System.Windows.Forms.NumericUpDown();
             darkNumericUpDownTimeOut=new System.Windows.Forms.NumericUpDown();
@@ -160,10 +160,10 @@ namespace Shopee_Autobuy_Bot
             // 
             darkSectionPanelTimerMode.Controls.Add(darkCheckBoxTomorrow);
             darkSectionPanelTimerMode.Controls.Add(darkCheckBoxScheduleBot);
-            darkSectionPanelTimerMode.Controls.Add(darkLabel3);
+            darkSectionPanelTimerMode.Controls.Add(labelSecond);
             darkSectionPanelTimerMode.Controls.Add(darkNumericUpDownCountDownSecond);
-            darkSectionPanelTimerMode.Controls.Add(darkLabel2);
-            darkSectionPanelTimerMode.Controls.Add(darkLabel1);
+            darkSectionPanelTimerMode.Controls.Add(labelMinute);
+            darkSectionPanelTimerMode.Controls.Add(labelHour);
             darkSectionPanelTimerMode.Controls.Add(darkNumericUpDownCountdownMinutes);
             darkSectionPanelTimerMode.Controls.Add(darkNumericUpDownCountdownHour);
             darkSectionPanelTimerMode.Location=new Point(384, 43);
@@ -198,17 +198,17 @@ namespace Shopee_Autobuy_Bot
             toolTip1.SetToolTip(darkCheckBoxScheduleBot, "Enabling this will let the bot to run at specific time set by user in 24 hour format.");
             darkCheckBoxScheduleBot.CheckedChanged+=darkCheckBoxCountDownMode_CheckedChanged;
             // 
-            // darkLabel3
+            // labelSecond
             // 
-            darkLabel3.AutoSize=true;
-            darkLabel3.Enabled=false;
-            darkLabel3.ForeColor=SystemColors.ControlText;
-            darkLabel3.Location=new Point(210, 65);
-            darkLabel3.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
-            darkLabel3.Name="darkLabel3";
-            darkLabel3.Size=new Size(50, 13);
-            darkLabel3.TabIndex=14;
-            darkLabel3.Text="Seconds";
+            labelSecond.AutoSize=true;
+            labelSecond.Enabled=false;
+            labelSecond.ForeColor=SystemColors.ControlText;
+            labelSecond.Location=new Point(210, 65);
+            labelSecond.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            labelSecond.Name="labelSecond";
+            labelSecond.Size=new Size(50, 13);
+            labelSecond.TabIndex=14;
+            labelSecond.Text="Seconds";
             // 
             // darkNumericUpDownCountDownSecond
             // 
@@ -222,29 +222,29 @@ namespace Shopee_Autobuy_Bot
             darkNumericUpDownCountDownSecond.Size=new Size(38, 22);
             darkNumericUpDownCountDownSecond.TabIndex=13;
             // 
-            // darkLabel2
+            // labelMinute
             // 
-            darkLabel2.AutoSize=true;
-            darkLabel2.Enabled=false;
-            darkLabel2.ForeColor=SystemColors.ControlText;
-            darkLabel2.Location=new Point(115, 65);
-            darkLabel2.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
-            darkLabel2.Name="darkLabel2";
-            darkLabel2.Size=new Size(49, 13);
-            darkLabel2.TabIndex=5;
-            darkLabel2.Text="Minutes";
+            labelMinute.AutoSize=true;
+            labelMinute.Enabled=false;
+            labelMinute.ForeColor=SystemColors.ControlText;
+            labelMinute.Location=new Point(115, 65);
+            labelMinute.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            labelMinute.Name="labelMinute";
+            labelMinute.Size=new Size(49, 13);
+            labelMinute.TabIndex=5;
+            labelMinute.Text="Minutes";
             // 
-            // darkLabel1
+            // labelHour
             // 
-            darkLabel1.AutoSize=true;
-            darkLabel1.Enabled=false;
-            darkLabel1.ForeColor=SystemColors.ControlText;
-            darkLabel1.Location=new Point(36, 65);
-            darkLabel1.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
-            darkLabel1.Name="darkLabel1";
-            darkLabel1.Size=new Size(33, 13);
-            darkLabel1.TabIndex=4;
-            darkLabel1.Text="Hour";
+            labelHour.AutoSize=true;
+            labelHour.Enabled=false;
+            labelHour.ForeColor=SystemColors.ControlText;
+            labelHour.Location=new Point(36, 65);
+            labelHour.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            labelHour.Name="labelHour";
+            labelHour.Size=new Size(33, 13);
+            labelHour.TabIndex=4;
+            labelHour.Text="Hour";
             // 
             // darkNumericUpDownCountdownMinutes
             // 
@@ -841,7 +841,7 @@ namespace Shopee_Autobuy_Bot
             elementEditorToolStripMenuItem.BackColor=SystemColors.Control;
             elementEditorToolStripMenuItem.ForeColor=SystemColors.ControlText;
             elementEditorToolStripMenuItem.Name="elementEditorToolStripMenuItem";
-            elementEditorToolStripMenuItem.Size=new Size(180, 22);
+            elementEditorToolStripMenuItem.Size=new Size(153, 22);
             elementEditorToolStripMenuItem.Text="Element editor";
             elementEditorToolStripMenuItem.Click+=elementEditorToolStripMenuItem_Click;
             // 
@@ -850,7 +850,7 @@ namespace Shopee_Autobuy_Bot
             scanSaleItemsToolStripMenuItem.BackColor=SystemColors.Control;
             scanSaleItemsToolStripMenuItem.ForeColor=SystemColors.ControlText;
             scanSaleItemsToolStripMenuItem.Name="scanSaleItemsToolStripMenuItem";
-            scanSaleItemsToolStripMenuItem.Size=new Size(180, 22);
+            scanSaleItemsToolStripMenuItem.Size=new Size(153, 22);
             scanSaleItemsToolStripMenuItem.Text="Scan sale item";
             scanSaleItemsToolStripMenuItem.Visible=false;
             scanSaleItemsToolStripMenuItem.Click+=scanSaleItemsToolStripMenuItem_Click;
@@ -860,7 +860,7 @@ namespace Shopee_Autobuy_Bot
             profileToolStripMenuItem.BackColor=SystemColors.Control;
             profileToolStripMenuItem.ForeColor=SystemColors.ControlText;
             profileToolStripMenuItem.Name="profileToolStripMenuItem";
-            profileToolStripMenuItem.Size=new Size(180, 22);
+            profileToolStripMenuItem.Size=new Size(153, 22);
             profileToolStripMenuItem.Text="Profile Settings";
             profileToolStripMenuItem.Click+=profileToolStripMenuItem_Click;
             // 
@@ -870,7 +870,7 @@ namespace Shopee_Autobuy_Bot
             sessionCookieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { loadCookiesToolStripMenuItem, saveCookieToolStripMenuItem, cleToolStripMenuItem, testToolStripMenuItem1 });
             sessionCookieToolStripMenuItem.ForeColor=SystemColors.ControlText;
             sessionCookieToolStripMenuItem.Name="sessionCookieToolStripMenuItem";
-            sessionCookieToolStripMenuItem.Size=new Size(180, 22);
+            sessionCookieToolStripMenuItem.Size=new Size(153, 22);
             sessionCookieToolStripMenuItem.Text="Session cookie";
             sessionCookieToolStripMenuItem.Visible=false;
             // 
@@ -916,14 +916,14 @@ namespace Shopee_Autobuy_Bot
             toolStripSeparator2.ForeColor=SystemColors.ControlText;
             toolStripSeparator2.Margin=new System.Windows.Forms.Padding(0, 0, 0, 1);
             toolStripSeparator2.Name="toolStripSeparator2";
-            toolStripSeparator2.Size=new Size(177, 6);
+            toolStripSeparator2.Size=new Size(150, 6);
             // 
             // exitToolStripMenuItem1
             // 
             exitToolStripMenuItem1.BackColor=SystemColors.Control;
             exitToolStripMenuItem1.ForeColor=SystemColors.ControlText;
             exitToolStripMenuItem1.Name="exitToolStripMenuItem1";
-            exitToolStripMenuItem1.Size=new Size(180, 22);
+            exitToolStripMenuItem1.Size=new Size(153, 22);
             exitToolStripMenuItem1.Text="Exit";
             exitToolStripMenuItem1.Click+=exitToolStripMenuItem1_Click;
             // 
@@ -932,7 +932,7 @@ namespace Shopee_Autobuy_Bot
             testCookieToolStripMenuItem.BackColor=SystemColors.Control;
             testCookieToolStripMenuItem.ForeColor=SystemColors.ControlText;
             testCookieToolStripMenuItem.Name="testCookieToolStripMenuItem";
-            testCookieToolStripMenuItem.Size=new Size(180, 22);
+            testCookieToolStripMenuItem.Size=new Size(153, 22);
             testCookieToolStripMenuItem.Text="test cookie";
             testCookieToolStripMenuItem.Visible=false;
             testCookieToolStripMenuItem.Click+=testCookieToolStripMenuItem_Click;
@@ -1416,8 +1416,8 @@ namespace Shopee_Autobuy_Bot
         private System.Windows.Forms.Label darkLabel5;
         private System.Windows.Forms.Label darkLabel4;
         private System.Windows.Forms.NumericUpDown darkNumericUpDownRefreshSeconds;
-        private System.Windows.Forms.Label darkLabel2;
-        private System.Windows.Forms.Label darkLabel1;
+        private System.Windows.Forms.Label labelMinute;
+        private System.Windows.Forms.Label labelHour;
         private System.Windows.Forms.NumericUpDown darkNumericUpDownCountdownMinutes;
         private System.Windows.Forms.NumericUpDown darkNumericUpDownCountdownHour;
         private System.Windows.Forms.Label timerlabelBig;
@@ -1434,7 +1434,7 @@ namespace Shopee_Autobuy_Bot
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem UpgradeProToolStripMenuItem;
-        private System.Windows.Forms.Label darkLabel3;
+        private System.Windows.Forms.Label labelSecond;
         private System.Windows.Forms.NumericUpDown darkNumericUpDownCountDownSecond;
         private System.Windows.Forms.CheckBox darkCheckBoxTestMode;
         private System.Windows.Forms.GroupBox darkSectionPanelBuyingMode;

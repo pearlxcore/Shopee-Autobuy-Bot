@@ -36,7 +36,7 @@ namespace Shopee_Autobuy_Bot
             btnDeleteProfile=new Button();
             darkLabel1=new Label();
             darkComboBoxProfile=new ComboBox();
-            darkSectionPanel1=new GroupBox();
+            groupBox1=new GroupBox();
             darkCheckBoxRedeemShopeeVoucher=new CheckBox();
             darkCheckBoxClaimShopVoucher=new CheckBox();
             darkCheckBoxRedeemCoin=new CheckBox();
@@ -49,7 +49,7 @@ namespace Shopee_Autobuy_Bot
             darkLabel8=new Label();
             darkTextBoxShopeePayPin=new TextBox();
             darkLabel7=new Label();
-            darkSectionPanelBuyingMode=new GroupBox();
+            groupBoxBuyingMode=new GroupBox();
             tbBelowSpecificPriceCARTCHECKOUTPrice=new TextBox();
             tbPriceSpecific=new TextBox();
             radioButtonPriceSpecific_CartCheckout=new RadioButton();
@@ -57,7 +57,7 @@ namespace Shopee_Autobuy_Bot
             radioButtonShockingSale=new RadioButton();
             radioButtonBuyNormal=new RadioButton();
             radioButtonPriceSpecific=new RadioButton();
-            darkSectionPanelBotSettings=new GroupBox();
+            groupBoxBotSettings=new GroupBox();
             numericUpDownTimeOut=new NumericUpDown();
             numericUpDownRefreshInterval=new NumericUpDown();
             darkCheckBoxNotifyTelegram=new CheckBox();
@@ -77,7 +77,7 @@ namespace Shopee_Autobuy_Bot
             darkLabel10=new Label();
             darkTextBoxVariationString=new TextBox();
             darkLabel9=new Label();
-            darkSectionPanelTimerMode=new GroupBox();
+            groupBoxTimerMode=new GroupBox();
             label2=new Label();
             label1=new Label();
             numericUpDownSecond=new NumericUpDown();
@@ -85,7 +85,7 @@ namespace Shopee_Autobuy_Bot
             numericUpDownHour=new NumericUpDown();
             darkCheckBoxTomorrow=new CheckBox();
             darkCheckBoxScheduleBot=new CheckBox();
-            darkLabel12=new Label();
+            labelHourMinuteSecond=new Label();
             btnUpdateProfile=new Button();
             groupBox1=new GroupBox();
             label4=new Label();
@@ -100,15 +100,15 @@ namespace Shopee_Autobuy_Bot
             tabControl1=new TabControl();
             tabPage2=new TabPage();
             tabPage1=new TabPage();
-            darkSectionPanel1.SuspendLayout();
+            groupBox1.SuspendLayout();
             darkSectionPanelPaymentDetails.SuspendLayout();
-            darkSectionPanelBuyingMode.SuspendLayout();
-            darkSectionPanelBotSettings.SuspendLayout();
+            groupBoxBuyingMode.SuspendLayout();
+            groupBoxBotSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownTimeOut).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownRefreshInterval).BeginInit();
             darkSectionPanelProductDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownQuantity).BeginInit();
-            darkSectionPanelTimerMode.SuspendLayout();
+            groupBoxTimerMode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownSecond).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownMinute).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownHour).BeginInit();
@@ -164,17 +164,17 @@ namespace Shopee_Autobuy_Bot
             darkComboBoxProfile.TabIndex=107;
             darkComboBoxProfile.SelectedIndexChanged+=darkComboBoxProfile_SelectedIndexChanged;
             // 
-            // darkSectionPanel1
+            // groupBox1
             // 
-            darkSectionPanel1.Controls.Add(darkCheckBoxRedeemShopeeVoucher);
-            darkSectionPanel1.Controls.Add(darkCheckBoxClaimShopVoucher);
-            darkSectionPanel1.Controls.Add(darkCheckBoxRedeemCoin);
-            darkSectionPanel1.Location=new Point(357, 15);
-            darkSectionPanel1.Name="darkSectionPanel1";
-            darkSectionPanel1.Size=new Size(342, 111);
-            darkSectionPanel1.TabIndex=114;
-            darkSectionPanel1.TabStop=false;
-            darkSectionPanel1.Text="Voucher && coin";
+            groupBox1.Controls.Add(darkCheckBoxRedeemShopeeVoucher);
+            groupBox1.Controls.Add(darkCheckBoxClaimShopVoucher);
+            groupBox1.Controls.Add(darkCheckBoxRedeemCoin);
+            groupBox1.Location=new Point(357, 15);
+            groupBox1.Name="groupBox1";
+            groupBox1.Size=new Size(342, 111);
+            groupBox1.TabIndex=114;
+            groupBox1.TabStop=false;
+            groupBox1.Text="Voucher && coin";
             // 
             // darkCheckBoxRedeemShopeeVoucher
             // 
@@ -234,6 +234,7 @@ namespace Shopee_Autobuy_Bot
             darkComboBoxPaymentMethod.Name="darkComboBoxPaymentMethod";
             darkComboBoxPaymentMethod.Size=new Size(191, 23);
             darkComboBoxPaymentMethod.TabIndex=116;
+            darkComboBoxPaymentMethod.SelectedIndexChanged+=darkComboBoxPaymentMethod_SelectedIndexChanged;
             // 
             // darkComboBoxBankType
             // 
@@ -310,22 +311,22 @@ namespace Shopee_Autobuy_Bot
             darkLabel7.TabIndex=15;
             darkLabel7.Text="ShopeePay PIN :";
             // 
-            // darkSectionPanelBuyingMode
+            // groupBoxBuyingMode
             // 
-            darkSectionPanelBuyingMode.Controls.Add(tbBelowSpecificPriceCARTCHECKOUTPrice);
-            darkSectionPanelBuyingMode.Controls.Add(tbPriceSpecific);
-            darkSectionPanelBuyingMode.Controls.Add(radioButtonPriceSpecific_CartCheckout);
-            darkSectionPanelBuyingMode.Controls.Add(radioButtonCheckOutCart);
-            darkSectionPanelBuyingMode.Controls.Add(radioButtonShockingSale);
-            darkSectionPanelBuyingMode.Controls.Add(radioButtonBuyNormal);
-            darkSectionPanelBuyingMode.Controls.Add(radioButtonPriceSpecific);
-            darkSectionPanelBuyingMode.Location=new Point(11, 15);
-            darkSectionPanelBuyingMode.Margin=new Padding(2, 3, 2, 3);
-            darkSectionPanelBuyingMode.Name="darkSectionPanelBuyingMode";
-            darkSectionPanelBuyingMode.Size=new Size(342, 111);
-            darkSectionPanelBuyingMode.TabIndex=112;
-            darkSectionPanelBuyingMode.TabStop=false;
-            darkSectionPanelBuyingMode.Text="Buy Mode";
+            groupBoxBuyingMode.Controls.Add(tbBelowSpecificPriceCARTCHECKOUTPrice);
+            groupBoxBuyingMode.Controls.Add(tbPriceSpecific);
+            groupBoxBuyingMode.Controls.Add(radioButtonPriceSpecific_CartCheckout);
+            groupBoxBuyingMode.Controls.Add(radioButtonCheckOutCart);
+            groupBoxBuyingMode.Controls.Add(radioButtonShockingSale);
+            groupBoxBuyingMode.Controls.Add(radioButtonBuyNormal);
+            groupBoxBuyingMode.Controls.Add(radioButtonPriceSpecific);
+            groupBoxBuyingMode.Location=new Point(11, 15);
+            groupBoxBuyingMode.Margin=new Padding(2, 3, 2, 3);
+            groupBoxBuyingMode.Name="groupBoxBuyingMode";
+            groupBoxBuyingMode.Size=new Size(342, 111);
+            groupBoxBuyingMode.TabIndex=112;
+            groupBoxBuyingMode.TabStop=false;
+            groupBoxBuyingMode.Text="Buy Mode";
             // 
             // tbBelowSpecificPriceCARTCHECKOUTPrice
             // 
@@ -355,6 +356,7 @@ namespace Shopee_Autobuy_Bot
             radioButtonPriceSpecific_CartCheckout.Size=new Size(220, 19);
             radioButtonPriceSpecific_CartCheckout.TabIndex=53;
             radioButtonPriceSpecific_CartCheckout.Text="Below specific price (Cart checkout) :";
+            radioButtonPriceSpecific_CartCheckout.CheckedChanged+=radioButtonPriceSpecific_CartCheckout_CheckedChanged;
             // 
             // radioButtonCheckOutCart
             // 
@@ -401,26 +403,27 @@ namespace Shopee_Autobuy_Bot
             radioButtonPriceSpecific.Size=new Size(135, 19);
             radioButtonPriceSpecific.TabIndex=15;
             radioButtonPriceSpecific.Text="Below specific price :";
+            radioButtonPriceSpecific.CheckedChanged+=radioButtonPriceSpecific_CheckedChanged;
             // 
-            // darkSectionPanelBotSettings
+            // groupBoxBotSettings
             // 
-            darkSectionPanelBotSettings.Controls.Add(numericUpDownTimeOut);
-            darkSectionPanelBotSettings.Controls.Add(numericUpDownRefreshInterval);
-            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxNotifyTelegram);
-            darkSectionPanelBotSettings.Controls.Add(checkBoxDesktopNotification);
-            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxTestMode);
-            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxLogging);
-            darkSectionPanelBotSettings.Controls.Add(darkCheckBoxRefresh);
-            darkSectionPanelBotSettings.Controls.Add(darkLabel5);
-            darkSectionPanelBotSettings.Controls.Add(darkLabel4);
-            darkSectionPanelBotSettings.Controls.Add(darkLabel13);
-            darkSectionPanelBotSettings.Location=new Point(184, 15);
-            darkSectionPanelBotSettings.Margin=new Padding(2, 3, 2, 3);
-            darkSectionPanelBotSettings.Name="darkSectionPanelBotSettings";
-            darkSectionPanelBotSettings.Size=new Size(343, 254);
-            darkSectionPanelBotSettings.TabIndex=111;
-            darkSectionPanelBotSettings.TabStop=false;
-            darkSectionPanelBotSettings.Text="Bot Settings";
+            groupBoxBotSettings.Controls.Add(numericUpDownTimeOut);
+            groupBoxBotSettings.Controls.Add(numericUpDownRefreshInterval);
+            groupBoxBotSettings.Controls.Add(darkCheckBoxNotifyTelegram);
+            groupBoxBotSettings.Controls.Add(checkBoxDesktopNotification);
+            groupBoxBotSettings.Controls.Add(darkCheckBoxTestMode);
+            groupBoxBotSettings.Controls.Add(darkCheckBoxLogging);
+            groupBoxBotSettings.Controls.Add(darkCheckBoxRefresh);
+            groupBoxBotSettings.Controls.Add(darkLabel5);
+            groupBoxBotSettings.Controls.Add(darkLabel4);
+            groupBoxBotSettings.Controls.Add(darkLabel13);
+            groupBoxBotSettings.Location=new Point(184, 15);
+            groupBoxBotSettings.Margin=new Padding(2, 3, 2, 3);
+            groupBoxBotSettings.Name="groupBoxBotSettings";
+            groupBoxBotSettings.Size=new Size(343, 254);
+            groupBoxBotSettings.TabIndex=111;
+            groupBoxBotSettings.TabStop=false;
+            groupBoxBotSettings.Text="Bot Settings";
             // 
             // numericUpDownTimeOut
             // 
@@ -568,6 +571,7 @@ namespace Shopee_Autobuy_Bot
             cbVariantPreSelected.Size=new Size(128, 19);
             cbVariantPreSelected.TabIndex=116;
             cbVariantPreSelected.Text="Variant pre selected";
+            cbVariantPreSelected.CheckedChanged+=cbVariantPreSelected_CheckedChanged;
             // 
             // cbRandom
             // 
@@ -578,6 +582,7 @@ namespace Shopee_Autobuy_Bot
             cbRandom.Size=new Size(110, 19);
             cbRandom.TabIndex=55;
             cbRandom.Text="Random variant";
+            cbRandom.CheckedChanged+=cbRandom_CheckedChanged;
             // 
             // darkLabel11
             // 
@@ -630,23 +635,23 @@ namespace Shopee_Autobuy_Bot
             darkLabel9.TabIndex=19;
             darkLabel9.Text="Variation :";
             // 
-            // darkSectionPanelTimerMode
+            // groupBoxTimerMode
             // 
-            darkSectionPanelTimerMode.Controls.Add(label2);
-            darkSectionPanelTimerMode.Controls.Add(label1);
-            darkSectionPanelTimerMode.Controls.Add(numericUpDownSecond);
-            darkSectionPanelTimerMode.Controls.Add(numericUpDownMinute);
-            darkSectionPanelTimerMode.Controls.Add(numericUpDownHour);
-            darkSectionPanelTimerMode.Controls.Add(darkCheckBoxTomorrow);
-            darkSectionPanelTimerMode.Controls.Add(darkCheckBoxScheduleBot);
-            darkSectionPanelTimerMode.Controls.Add(darkLabel12);
-            darkSectionPanelTimerMode.Location=new Point(11, 274);
-            darkSectionPanelTimerMode.Margin=new Padding(2, 3, 2, 3);
-            darkSectionPanelTimerMode.Name="darkSectionPanelTimerMode";
-            darkSectionPanelTimerMode.Size=new Size(342, 110);
-            darkSectionPanelTimerMode.TabIndex=109;
-            darkSectionPanelTimerMode.TabStop=false;
-            darkSectionPanelTimerMode.Text="Schedule Bot";
+            groupBoxTimerMode.Controls.Add(label2);
+            groupBoxTimerMode.Controls.Add(label1);
+            groupBoxTimerMode.Controls.Add(numericUpDownSecond);
+            groupBoxTimerMode.Controls.Add(numericUpDownMinute);
+            groupBoxTimerMode.Controls.Add(numericUpDownHour);
+            groupBoxTimerMode.Controls.Add(darkCheckBoxTomorrow);
+            groupBoxTimerMode.Controls.Add(darkCheckBoxScheduleBot);
+            groupBoxTimerMode.Controls.Add(labelHourMinuteSecond);
+            groupBoxTimerMode.Location=new Point(11, 274);
+            groupBoxTimerMode.Margin=new Padding(2, 3, 2, 3);
+            groupBoxTimerMode.Name="groupBoxTimerMode";
+            groupBoxTimerMode.Size=new Size(342, 110);
+            groupBoxTimerMode.TabIndex=109;
+            groupBoxTimerMode.TabStop=false;
+            groupBoxTimerMode.Text="Schedule Bot";
             // 
             // label2
             // 
@@ -723,17 +728,18 @@ namespace Shopee_Autobuy_Bot
             darkCheckBoxScheduleBot.Size=new Size(310, 19);
             darkCheckBoxScheduleBot.TabIndex=15;
             darkCheckBoxScheduleBot.Text="Schedule bot to run at specific time (24-hours format)";
+            darkCheckBoxScheduleBot.CheckedChanged+=darkCheckBoxScheduleBot_CheckedChanged;
             // 
-            // darkLabel12
+            // labelHourMinuteSecond
             // 
-            darkLabel12.AutoSize=true;
-            darkLabel12.ForeColor=SystemColors.ControlText;
-            darkLabel12.Location=new Point(182, 54);
-            darkLabel12.Margin=new Padding(2, 0, 2, 0);
-            darkLabel12.Name="darkLabel12";
-            darkLabel12.Size=new Size(137, 15);
-            darkLabel12.TabIndex=4;
-            darkLabel12.Text="(Hour : Minute : Second)";
+            labelHourMinuteSecond.AutoSize=true;
+            labelHourMinuteSecond.ForeColor=SystemColors.ControlText;
+            labelHourMinuteSecond.Location=new Point(182, 54);
+            labelHourMinuteSecond.Margin=new Padding(2, 0, 2, 0);
+            labelHourMinuteSecond.Name="labelHourMinuteSecond";
+            labelHourMinuteSecond.Size=new Size(137, 15);
+            labelHourMinuteSecond.TabIndex=4;
+            labelHourMinuteSecond.Text="(Hour : Minute : Second)";
             // 
             // btnUpdateProfile
             // 
@@ -871,11 +877,11 @@ namespace Shopee_Autobuy_Bot
             // tabPage2
             // 
             tabPage2.BackColor=SystemColors.ActiveCaption;
-            tabPage2.Controls.Add(darkSectionPanelBuyingMode);
-            tabPage2.Controls.Add(darkSectionPanelTimerMode);
+            tabPage2.Controls.Add(groupBoxBuyingMode);
+            tabPage2.Controls.Add(groupBoxTimerMode);
             tabPage2.Controls.Add(darkSectionPanelPaymentDetails);
             tabPage2.Controls.Add(darkSectionPanelProductDetails);
-            tabPage2.Controls.Add(darkSectionPanel1);
+            tabPage2.Controls.Add(groupBox1);
             tabPage2.Location=new Point(4, 24);
             tabPage2.Name="tabPage2";
             tabPage2.Padding=new Padding(3);
@@ -886,7 +892,7 @@ namespace Shopee_Autobuy_Bot
             // tabPage1
             // 
             tabPage1.BackColor=SystemColors.ActiveCaption;
-            tabPage1.Controls.Add(darkSectionPanelBotSettings);
+            tabPage1.Controls.Add(groupBoxBotSettings);
             tabPage1.Controls.Add(groupBox1);
             tabPage1.Location=new Point(4, 24);
             tabPage1.Name="tabPage1";
@@ -912,21 +918,21 @@ namespace Shopee_Autobuy_Bot
             StartPosition=FormStartPosition.CenterScreen;
             Text="Profile Settings";
             Load+=Profile_Load_1;
-            darkSectionPanel1.ResumeLayout(false);
-            darkSectionPanel1.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             darkSectionPanelPaymentDetails.ResumeLayout(false);
             darkSectionPanelPaymentDetails.PerformLayout();
-            darkSectionPanelBuyingMode.ResumeLayout(false);
-            darkSectionPanelBuyingMode.PerformLayout();
-            darkSectionPanelBotSettings.ResumeLayout(false);
-            darkSectionPanelBotSettings.PerformLayout();
+            groupBoxBuyingMode.ResumeLayout(false);
+            groupBoxBuyingMode.PerformLayout();
+            groupBoxBotSettings.ResumeLayout(false);
+            groupBoxBotSettings.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownTimeOut).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownRefreshInterval).EndInit();
             darkSectionPanelProductDetails.ResumeLayout(false);
             darkSectionPanelProductDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownQuantity).EndInit();
-            darkSectionPanelTimerMode.ResumeLayout(false);
-            darkSectionPanelTimerMode.PerformLayout();
+            groupBoxTimerMode.ResumeLayout(false);
+            groupBoxTimerMode.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownSecond).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownMinute).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownHour).EndInit();
@@ -947,7 +953,7 @@ namespace Shopee_Autobuy_Bot
         private Button btnDeleteProfile;
         private Label darkLabel1;
         private ComboBox darkComboBoxProfile;
-        private GroupBox darkSectionPanel1;
+        private GroupBox groupBox1;
         private CheckBox darkCheckBoxRedeemShopeeVoucher;
         private CheckBox darkCheckBoxClaimShopVoucher;
         private CheckBox darkCheckBoxRedeemCoin;
@@ -958,7 +964,7 @@ namespace Shopee_Autobuy_Bot
         private Label darkLabel8;
         private TextBox darkTextBoxShopeePayPin;
         private Label darkLabel7;
-        private GroupBox darkSectionPanelBuyingMode;
+        private GroupBox groupBoxBuyingMode;
         private TextBox tbBelowSpecificPriceCARTCHECKOUTPrice;
         private TextBox tbPriceSpecific;
         private RadioButton radioButtonPriceSpecific_CartCheckout;
@@ -966,7 +972,7 @@ namespace Shopee_Autobuy_Bot
         private RadioButton radioButtonShockingSale;
         private RadioButton radioButtonBuyNormal;
         private RadioButton radioButtonPriceSpecific;
-        private GroupBox darkSectionPanelBotSettings;
+        private GroupBox groupBoxBotSettings;
         private CheckBox darkCheckBoxTestMode;
         private CheckBox darkCheckBoxLogging;
         private CheckBox darkCheckBoxRefresh;
@@ -981,10 +987,10 @@ namespace Shopee_Autobuy_Bot
         private Label darkLabel10;
         private TextBox darkTextBoxVariationString;
         private Label darkLabel9;
-        private GroupBox darkSectionPanelTimerMode;
+        private GroupBox groupBoxTimerMode;
         private CheckBox darkCheckBoxTomorrow;
         private CheckBox darkCheckBoxScheduleBot;
-        private Label darkLabel12;
+        private Label labelHourMinuteSecond;
         private Button btnUpdateProfile;
         private Button btnSaveProfile;
         private CheckBox cbRandom;
@@ -1001,7 +1007,7 @@ namespace Shopee_Autobuy_Bot
         private NumericUpDown numericUpDownQuantity;
         private ComboBox darkComboBoxPaymentMethod;
         private ComboBox darkComboBoxBankType;
-        private GroupBox groupBox1;
+        private GroupBox darkSectionPanel1;
         private Label label4;
         private TextBox tbTelegramChatId;
         private Label label3;

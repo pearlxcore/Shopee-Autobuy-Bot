@@ -611,9 +611,9 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
             var isRunning = seleniumServiceList.Any(x => x._driver != null);
             if (isRunning)
             {
-                var dialog = MessageBox.Show("Close all running bot?", "Confirm", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (dialog == DialogResult.Cancel)
-                    return;
+                //var dialog = MessageBox.Show("Close all running bot?", "Confirm", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                //if (dialog == DialogResult.Cancel)
+                //    return;
 
                 try
                 {

@@ -23,6 +23,7 @@ namespace Shopee_Autobuy_Bot
         private void Profile_Load_1(object sender, EventArgs e)
         {
             LoadProfile();
+            darkComboBoxPaymentMethod.Text = "Default";
         }
 
         private void LoadProfile()
@@ -307,5 +308,224 @@ namespace Shopee_Autobuy_Bot
             catch (Exception ex) { MessageBox.Show("An error occured while saving profile", "Error"); }
         }
 
+        private void cbRandom_CheckedChanged(object sender, EventArgs e)
+        {
+            darkTextBoxVariationString.Enabled = (cbRandom.Checked) ? false : true;
+            cbVariantPreSelected.Enabled = (cbRandom.Checked) ? false : true;
+        }
+
+        private void cbVariantPreSelected_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbVariantPreSelected.Checked)
+            {
+                cbRandom.Enabled = false;
+                darkTextBoxVariationString.Enabled = false;
+            }
+            else
+            {
+                cbRandom.Enabled = true;
+                darkTextBoxVariationString.Enabled = true;
+            }
+        }
+
+        private void darkCheckBoxScheduleBot_CheckedChanged(object sender, EventArgs e)
+        {
+            ScheduleBotUiUpdate();
+        }
+
+        private void ScheduleBotUiUpdate()
+        {
+            //enable/disable when changing radio check
+            if (darkCheckBoxScheduleBot.Checked)
+            {
+                numericUpDownHour.Enabled = true;
+                numericUpDownMinute.Enabled = true;
+                numericUpDownSecond.Enabled = true;
+                darkCheckBoxTomorrow.Enabled = true;
+
+                labelHourMinuteSecond.Enabled = true;
+
+                if (numericUpDownHour.Value == 24)
+                {
+                    numericUpDownMinute.Value = 0;
+                    numericUpDownSecond.Value = 0;
+                    numericUpDownMinute.Enabled = false;
+                    numericUpDownSecond.Enabled = false;
+                }
+                else
+                {
+                    numericUpDownMinute.Enabled = true;
+                    numericUpDownSecond.Enabled = true;
+                }
+            }
+            else
+            {
+                numericUpDownHour.Enabled = false;
+                numericUpDownMinute.Enabled = false;
+                numericUpDownSecond.Enabled = false;
+                darkCheckBoxTomorrow.Enabled = false;
+
+                labelHourMinuteSecond.Enabled = false;
+
+            }
+        }
+
+        private void darkComboBoxPaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EnableDisableControlOnPaymentMethod();
+        }
+
+        private void EnableDisableControlOnPaymentMethod()
+        {
+            if (darkComboBoxPaymentMethod.Text == "ShopeePay")
+                darkCheckBoxRedeemShopeeVoucher.Enabled = true;
+            else
+            {
+                darkCheckBoxRedeemShopeeVoucher.Enabled = false;
+            }
+
+            if (darkComboBoxPaymentMethod.Text == "Default")
+            {
+                foreach (Control x in darkSectionPanelPaymentDetails.Controls)
+                {
+                    x.Enabled = false;
+                }
+                darkComboBoxPaymentMethod.Enabled = true;
+                darkCheckBoxRedeemCoin.Enabled = true;
+                darkCheckBoxRedeemShopeeVoucher.Enabled = true;
+
+                darkLabel6.Enabled = true;
+            }
+
+            if (darkComboBoxPaymentMethod.Text == "Credit / Debit Card")
+            {
+                foreach (Control x in darkSectionPanelPaymentDetails.Controls)
+                {
+                    x.Enabled = false;
+                }
+                darkComboBoxPaymentMethod.Enabled = true;
+                darkCheckBoxRedeemCoin.Enabled = true;
+                darkCheckBoxRedeemShopeeVoucher.Enabled = true;
+
+                tbLast4Digit.Enabled = true;
+                darkLabel14.Enabled = true;
+                darkLabel6.Enabled = true;
+            }
+
+            if (darkComboBoxPaymentMethod.Text == "ATM / Cash Deposit")
+            {
+                foreach (Control x in darkSectionPanelPaymentDetails.Controls)
+                {
+                    x.Enabled = false;
+                }
+                darkComboBoxPaymentMethod.Enabled = true;
+                darkCheckBoxRedeemCoin.Enabled = true;
+                darkCheckBoxRedeemShopeeVoucher.Enabled = true;
+
+                darkLabel6.Enabled = true;
+            }
+
+            if (darkComboBoxPaymentMethod.Text == "Online Banking")
+            {
+                foreach (Control x in darkSectionPanelPaymentDetails.Controls)
+                {
+                    x.Enabled = false;
+                }
+                darkComboBoxPaymentMethod.Enabled = true;
+                darkCheckBoxRedeemCoin.Enabled = true;
+                darkComboBoxBankType.Enabled = true;
+                darkCheckBoxRedeemShopeeVoucher.Enabled = true;
+
+                darkLabel8.Enabled = true;
+                darkLabel6.Enabled = true;
+            }
+
+            if (darkComboBoxPaymentMethod.Text == "ShopeePay")
+            {
+                foreach (Control x in darkSectionPanelPaymentDetails.Controls)
+                {
+                    x.Enabled = false;
+                }
+                darkComboBoxPaymentMethod.Enabled = true;
+                darkCheckBoxRedeemCoin.Enabled = true;
+                darkCheckBoxRedeemShopeeVoucher.Enabled = true;
+                darkTextBoxShopeePayPin.Enabled = true;
+                darkLabel7.Enabled = true;
+                darkLabel6.Enabled = true;
+            }
+
+            if (darkComboBoxPaymentMethod.Text == "Cash on Delivery")
+            {
+                foreach (Control x in darkSectionPanelPaymentDetails.Controls)
+                {
+                    x.Enabled = false;
+                }
+                darkComboBoxPaymentMethod.Enabled = true;
+                darkCheckBoxRedeemCoin.Enabled = true;
+                darkCheckBoxRedeemShopeeVoucher.Enabled = true;
+                darkLabel6.Enabled = true;
+            }
+
+            if (darkComboBoxPaymentMethod.Text == "7-Eleven")
+            {
+                foreach (Control x in darkSectionPanelPaymentDetails.Controls)
+                {
+                    x.Enabled = false;
+                }
+                darkComboBoxPaymentMethod.Enabled = true;
+                darkCheckBoxRedeemShopeeVoucher.Enabled = true;
+
+                darkCheckBoxRedeemCoin.Enabled = true;
+                darkLabel6.Enabled = true;
+            }
+
+            if (darkComboBoxPaymentMethod.Text == "KK Mart")
+            {
+                foreach (Control x in darkSectionPanelPaymentDetails.Controls)
+                {
+                    x.Enabled = false;
+                }
+                darkComboBoxPaymentMethod.Enabled = true;
+                darkCheckBoxRedeemShopeeVoucher.Enabled = true;
+
+                darkCheckBoxRedeemCoin.Enabled = true;
+                darkLabel6.Enabled = true;
+            }
+
+            if (darkComboBoxPaymentMethod.Text != "Online Banking")
+            {
+                darkComboBoxBankType.SelectedIndex = -1;
+            }
+        }
+
+        private void radioButtonPriceSpecific_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonPriceSpecific.Checked)
+            {
+                tbPriceSpecific.Enabled = true;
+            }
+            else
+            {
+                tbPriceSpecific.Enabled = false;
+            }
+        }
+
+        private void radioButtonPriceSpecific_CartCheckout_CheckedChanged(object sender, EventArgs e)
+        {
+            darkSectionPanelProductDetails.Enabled = (radioButtonPriceSpecific_CartCheckout.Checked) ? false : true;
+            if (radioButtonPriceSpecific_CartCheckout.Checked)
+            {
+                tbBelowSpecificPriceCARTCHECKOUTPrice.Enabled = true;
+            }
+            else
+            {
+                tbBelowSpecificPriceCARTCHECKOUTPrice.Enabled = false;
+            }
+        }
+
+        private void radioButtonCheckOutCart_CheckedChanged(object sender, EventArgs e)
+        {
+            darkSectionPanelProductDetails.Enabled = (radioButtonCheckOutCart.Checked) ? false : true;
+        }
     }
 }
