@@ -98,8 +98,8 @@ namespace Shopee_Autobuy_Bot
             tbNewProfileName=new TextBox();
             btnCreateNewProfile=new Button();
             tabControl1=new TabControl();
-            tabPage1=new TabPage();
             tabPage2=new TabPage();
+            tabPage1=new TabPage();
             darkSectionPanel1.SuspendLayout();
             darkSectionPanelPaymentDetails.SuspendLayout();
             darkSectionPanelBuyingMode.SuspendLayout();
@@ -116,8 +116,8 @@ namespace Shopee_Autobuy_Bot
             groupBox5.SuspendLayout();
             groupBox6.SuspendLayout();
             tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
+            tabPage1.SuspendLayout();
             SuspendLayout();
             // 
             // btnLoadProfile
@@ -868,18 +868,6 @@ namespace Shopee_Autobuy_Bot
             tabControl1.Size=new Size(718, 426);
             tabControl1.TabIndex=122;
             // 
-            // tabPage1
-            // 
-            tabPage1.BackColor=SystemColors.ActiveCaption;
-            tabPage1.Controls.Add(darkSectionPanelBotSettings);
-            tabPage1.Controls.Add(groupBox1);
-            tabPage1.Location=new Point(4, 24);
-            tabPage1.Name="tabPage1";
-            tabPage1.Padding=new Padding(3);
-            tabPage1.Size=new Size(710, 398);
-            tabPage1.TabIndex=0;
-            tabPage1.Text="Bot Settings";
-            // 
             // tabPage2
             // 
             tabPage2.BackColor=SystemColors.ActiveCaption;
@@ -895,7 +883,19 @@ namespace Shopee_Autobuy_Bot
             tabPage2.TabIndex=1;
             tabPage2.Text="Buying Settings";
             // 
-            // LoadProfile
+            // tabPage1
+            // 
+            tabPage1.BackColor=SystemColors.ActiveCaption;
+            tabPage1.Controls.Add(darkSectionPanelBotSettings);
+            tabPage1.Controls.Add(groupBox1);
+            tabPage1.Location=new Point(4, 24);
+            tabPage1.Name="tabPage1";
+            tabPage1.Padding=new Padding(3);
+            tabPage1.Size=new Size(710, 398);
+            tabPage1.TabIndex=0;
+            tabPage1.Text="Bot Settings";
+            // 
+            // Profile
             // 
             AutoScaleDimensions=new SizeF(7F, 15F);
             AutoScaleMode=AutoScaleMode.Font;
@@ -908,9 +908,9 @@ namespace Shopee_Autobuy_Bot
             FormBorderStyle=FormBorderStyle.FixedDialog;
             Icon=(Icon)resources.GetObject("$this.Icon");
             MaximizeBox=false;
-            Name="LoadProfile";
+            Name="Profile";
             StartPosition=FormStartPosition.CenterScreen;
-            Text="Load Profile";
+            Text="Profile Settings";
             Load+=Profile_Load_1;
             darkSectionPanel1.ResumeLayout(false);
             darkSectionPanel1.PerformLayout();
@@ -937,8 +937,8 @@ namespace Shopee_Autobuy_Bot
             groupBox6.ResumeLayout(false);
             groupBox6.PerformLayout();
             tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
