@@ -13,6 +13,12 @@
             public int timeout { get; set; }
         }
 
+        public class TelegramSettings
+        {
+            public string chat_id { get; set; }
+            public string api_token { get; set; }
+        }
+
         public class ProductDetail
         {
             public string product_link { get; set; }
@@ -59,6 +65,7 @@
         {
             public string profile_name { get; set; }
             public BotSettings BotSettings = new BotSettings();
+            public TelegramSettings TelegramSettings = new TelegramSettings();
             public ProductDetail ProductDetail = new ProductDetail();
             public Voucher_Coin Voucher_Coin = new Voucher_Coin();
             public ScheduleBot ScheduleBot = new ScheduleBot();

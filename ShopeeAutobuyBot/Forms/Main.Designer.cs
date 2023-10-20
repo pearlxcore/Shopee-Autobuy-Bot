@@ -94,8 +94,6 @@ namespace Shopee_Autobuy_Bot
             elementEditorToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
             scanSaleItemsToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
             profileToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
-            toolStripMenuItemLoadProfile=new System.Windows.Forms.ToolStripMenuItem();
-            saveCurrentProfileToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
             sessionCookieToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
             loadCookiesToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
             saveCookieToolStripMenuItem=new System.Windows.Forms.ToolStripMenuItem();
@@ -843,7 +841,7 @@ namespace Shopee_Autobuy_Bot
             elementEditorToolStripMenuItem.BackColor=SystemColors.Control;
             elementEditorToolStripMenuItem.ForeColor=SystemColors.ControlText;
             elementEditorToolStripMenuItem.Name="elementEditorToolStripMenuItem";
-            elementEditorToolStripMenuItem.Size=new Size(151, 22);
+            elementEditorToolStripMenuItem.Size=new Size(180, 22);
             elementEditorToolStripMenuItem.Text="Element editor";
             elementEditorToolStripMenuItem.Click+=elementEditorToolStripMenuItem_Click;
             // 
@@ -852,7 +850,7 @@ namespace Shopee_Autobuy_Bot
             scanSaleItemsToolStripMenuItem.BackColor=SystemColors.Control;
             scanSaleItemsToolStripMenuItem.ForeColor=SystemColors.ControlText;
             scanSaleItemsToolStripMenuItem.Name="scanSaleItemsToolStripMenuItem";
-            scanSaleItemsToolStripMenuItem.Size=new Size(151, 22);
+            scanSaleItemsToolStripMenuItem.Size=new Size(180, 22);
             scanSaleItemsToolStripMenuItem.Text="Scan sale item";
             scanSaleItemsToolStripMenuItem.Visible=false;
             scanSaleItemsToolStripMenuItem.Click+=scanSaleItemsToolStripMenuItem_Click;
@@ -860,29 +858,11 @@ namespace Shopee_Autobuy_Bot
             // profileToolStripMenuItem
             // 
             profileToolStripMenuItem.BackColor=SystemColors.Control;
-            profileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { toolStripMenuItemLoadProfile, saveCurrentProfileToolStripMenuItem });
             profileToolStripMenuItem.ForeColor=SystemColors.ControlText;
             profileToolStripMenuItem.Name="profileToolStripMenuItem";
-            profileToolStripMenuItem.Size=new Size(151, 22);
+            profileToolStripMenuItem.Size=new Size(180, 22);
             profileToolStripMenuItem.Text="Profile";
-            // 
-            // toolStripMenuItemLoadProfile
-            // 
-            toolStripMenuItemLoadProfile.BackColor=SystemColors.Control;
-            toolStripMenuItemLoadProfile.ForeColor=SystemColors.ControlText;
-            toolStripMenuItemLoadProfile.Name="toolStripMenuItemLoadProfile";
-            toolStripMenuItemLoadProfile.Size=new Size(181, 22);
-            toolStripMenuItemLoadProfile.Text="Load profile settings";
-            toolStripMenuItemLoadProfile.Click+=toolStripMenuItemLoadProfile_Click;
-            // 
-            // saveCurrentProfileToolStripMenuItem
-            // 
-            saveCurrentProfileToolStripMenuItem.BackColor=SystemColors.Control;
-            saveCurrentProfileToolStripMenuItem.ForeColor=SystemColors.ControlText;
-            saveCurrentProfileToolStripMenuItem.Name="saveCurrentProfileToolStripMenuItem";
-            saveCurrentProfileToolStripMenuItem.Size=new Size(181, 22);
-            saveCurrentProfileToolStripMenuItem.Text="Save current profile";
-            saveCurrentProfileToolStripMenuItem.Click+=saveCurrentProfileToolStripMenuItem_Click;
+            profileToolStripMenuItem.Click+=profileToolStripMenuItem_Click;
             // 
             // sessionCookieToolStripMenuItem
             // 
@@ -890,7 +870,7 @@ namespace Shopee_Autobuy_Bot
             sessionCookieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { loadCookiesToolStripMenuItem, saveCookieToolStripMenuItem, cleToolStripMenuItem, testToolStripMenuItem1 });
             sessionCookieToolStripMenuItem.ForeColor=SystemColors.ControlText;
             sessionCookieToolStripMenuItem.Name="sessionCookieToolStripMenuItem";
-            sessionCookieToolStripMenuItem.Size=new Size(151, 22);
+            sessionCookieToolStripMenuItem.Size=new Size(180, 22);
             sessionCookieToolStripMenuItem.Text="Session cookie";
             sessionCookieToolStripMenuItem.Visible=false;
             // 
@@ -936,14 +916,14 @@ namespace Shopee_Autobuy_Bot
             toolStripSeparator2.ForeColor=SystemColors.ControlText;
             toolStripSeparator2.Margin=new System.Windows.Forms.Padding(0, 0, 0, 1);
             toolStripSeparator2.Name="toolStripSeparator2";
-            toolStripSeparator2.Size=new Size(148, 6);
+            toolStripSeparator2.Size=new Size(177, 6);
             // 
             // exitToolStripMenuItem1
             // 
             exitToolStripMenuItem1.BackColor=SystemColors.Control;
             exitToolStripMenuItem1.ForeColor=SystemColors.ControlText;
             exitToolStripMenuItem1.Name="exitToolStripMenuItem1";
-            exitToolStripMenuItem1.Size=new Size(151, 22);
+            exitToolStripMenuItem1.Size=new Size(180, 22);
             exitToolStripMenuItem1.Text="Exit";
             exitToolStripMenuItem1.Click+=exitToolStripMenuItem1_Click;
             // 
@@ -952,7 +932,7 @@ namespace Shopee_Autobuy_Bot
             testCookieToolStripMenuItem.BackColor=SystemColors.Control;
             testCookieToolStripMenuItem.ForeColor=SystemColors.ControlText;
             testCookieToolStripMenuItem.Name="testCookieToolStripMenuItem";
-            testCookieToolStripMenuItem.Size=new Size(151, 22);
+            testCookieToolStripMenuItem.Size=new Size(180, 22);
             testCookieToolStripMenuItem.Text="test cookie";
             testCookieToolStripMenuItem.Visible=false;
             testCookieToolStripMenuItem.Click+=testCookieToolStripMenuItem_Click;
@@ -1513,8 +1493,6 @@ namespace Shopee_Autobuy_Bot
         private System.Windows.Forms.ToolStripMenuItem cleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemLoadProfile;
-        private System.Windows.Forms.ToolStripMenuItem saveCurrentProfileToolStripMenuItem;
         private System.Windows.Forms.CheckBox cbVariantPreSelected;
         private System.Windows.Forms.ToolStripMenuItem telegramToolStripMenuItem;
         private System.Windows.Forms.CheckBox checkBoxDesktopNotification;

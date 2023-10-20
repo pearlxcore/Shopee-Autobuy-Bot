@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Shopee_Autobuy_Bot.Constants;
+using Shopee_Autobuy_Bot.Utililties;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -9,7 +10,7 @@ namespace Shopee_Autobuy_Bot.Services.Profile
     public class ProfileService : IProfileService
     {
         public static bool _saveProfile { get; set; } = false;
-        public bool SaveProfile { get => _saveProfile; set => _saveProfile = value; }
+        public bool IsSavingProfile { get => _saveProfile; set => _saveProfile = value; }
 
         public static bool _loadProfile { get; set; } = false;
         public bool LoadProfile { get => _loadProfile; set => _loadProfile = value; }
@@ -24,7 +25,7 @@ namespace Shopee_Autobuy_Bot.Services.Profile
         }
 
         private static string _name { get; set; }
-        public string Name { get => _name; set => _name = value; }
+        public string NewProfileName { get => _name; set => _name = value; }
 
         public List<Utililties.ProfileModel.Root> LoadProfiles()
         {
@@ -48,9 +49,9 @@ namespace Shopee_Autobuy_Bot.Services.Profile
             return true;
         }
 
-        public void CreateProfile(Utililties.ProfileModel.Root root)
+        public void CreateNewProfile(Utililties.ProfileModel.Root profile)
         {
-            string jsonString = JsonConvert.SerializeObject(root, Formatting.Indented);
+            string jsonString = JsonConvert.SerializeObject(profile, Formatting.Indented);
             var profilePath = DirectoryPaths.ProfileSettingsPath;
             var profileIsExists = File.Exists(profilePath);
 
@@ -58,12 +59,49 @@ namespace Shopee_Autobuy_Bot.Services.Profile
                 File.WriteAllText(profilePath, "[\n" + jsonString + "\n]");
             else
             {
-                var profiles = File.ReadAllText(profilePath);
-                var list = JsonConvert.DeserializeObject<List<Utililties.ProfileModel.Root>>(profiles);
-                list.Add(root);
-                var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
+                var profileString = File.ReadAllText(profilePath);
+                var profileList = JsonConvert.DeserializeObject<List<Utililties.ProfileModel.Root>>(profileString);
+                profileList.Add(profile);
+                var convertedJson = JsonConvert.SerializeObject(profileList, Formatting.Indented);
                 File.WriteAllText(profilePath, convertedJson);
             }
         }
+
+        public void UpdateExistingProfile(ProfileModel.Root existingProfile)
+        {
+            string jsonString = JsonConvert.SerializeObject(existingProfile, Formatting.Indented);
+            var profilePath = DirectoryPaths.ProfileSettingsPath;
+
+            if (File.Exists(profilePath))
+            {
+                var profileString = File.ReadAllText(profilePath);
+                var profileList = JsonConvert.DeserializeObject<List<Utililties.ProfileModel.Root>>(profileString);
+
+                bool matched = false;
+
+                for (int i = 0; i < profileList.Count; i++)
+                {
+                    if (profileList[i].profile_name == existingProfile.profile_name)
+                    {
+                        profileList[i] = existingProfile;
+                        matched = true;
+                        break;
+                    }
+                }
+
+                if (!matched)
+                    profileList.Add(existingProfile);
+
+                var convertedJson = JsonConvert.SerializeObject(profileList, Formatting.Indented);
+                File.WriteAllText(profilePath, convertedJson);
+            }
+            else
+            {
+                // If the file doesn't exist, create a new one with the profile
+                File.WriteAllText(profilePath, "[\n" + jsonString + "\n]");
+            }
+        }
+
+
     }
 }

@@ -6,10 +6,11 @@ namespace Shopee_Autobuy_Bot.Services.Profile
     {
         public bool DeleteProfile(string profileName);
         public List<Utililties.ProfileModel.Root> LoadProfiles();
-        public void CreateProfile(Utililties.ProfileModel.Root root);
+        public void CreateNewProfile(Utililties.ProfileModel.Root profile);
+        public void UpdateExistingProfile(Utililties.ProfileModel.Root profile);
         Utililties.ProfileModel.Root SelectedProfile { get; set; }
-        string Name { get; set; }
+        string NewProfileName { get; set; }
         bool LoadProfile { get; set; }
-        bool SaveProfile { get; set; }
+        bool IsSavingProfile { get; set; }
     }
 }

@@ -1128,84 +1128,6 @@ namespace Shopee_Autobuy_Bot
             }
         }
 
-        private void SaveBotProfile()
-        {
-            try
-            {
-                var botSettings = new Utililties.ProfileModel.BotSettings()
-                {
-                    alert_telegram = darkCheckBoxNotifyTelegram.Checked,
-                    desktop_notification = checkBoxDesktopNotification.Checked,
-                    autorefresh_webpage = darkCheckBoxRefresh.Checked,
-                    autorefresh_interval = Convert.ToInt32(darkNumericUpDownRefreshSeconds.Value),
-                    disable_logging = darkCheckBoxLogging.Checked,
-                    test_mode = darkCheckBoxTestMode.Checked,
-                    timeout = Convert.ToInt32(darkNumericUpDownTimeOut.Value)
-                };
-                var productInfo = new Utililties.ProfileModel.ProductDetail()
-                {
-                    product_link = darkTextBoxProductLink.Text,
-                    variant = darkTextBoxVariationString.Text,
-                    quantity = Convert.ToInt32(darkNumericUpDownProductQuantity.Value),
-                    random_variant = cbRandom.Checked,
-                    variant_preSelected = cbVariantPreSelected.Checked
-                };
-                var voucherInfo = new Utililties.ProfileModel.Voucher_Coin()
-                {
-                    claim_shop_vc = darkCheckBoxClaimShopVoucher.Checked,
-                    redeeem_shopee_vc = darkCheckBoxRedeemShopeeVoucher.Checked,
-                    redeem_coin = darkCheckBoxRedeemCoin.Checked
-                };
-                var scheduleInfo = new Utililties.ProfileModel.ScheduleBot()
-                {
-                    schedule = darkCheckBoxScheduleBot.Checked,
-                    hour = Convert.ToInt32(darkNumericUpDownCountdownHour.Value),
-                    minute = Convert.ToInt32(darkNumericUpDownCountdownMinutes.Value),
-                    second = Convert.ToInt32(darkNumericUpDownCountDownSecond.Value),
-                    tomorrow = darkCheckBoxTomorrow.Checked
-                };
-
-                string buyMode = "";
-                if (radioButtonBuyNormal.Checked)
-                    buyMode = "Normal";
-                if (radioButtonShockingSale.Checked)
-                    buyMode = "Flash_Shocking";
-                if (radioButtonPriceSpecific.Checked)
-                    buyMode = "Below_Price";
-                if (radioButtonPriceSpecificCartCheckout.Checked)
-                    buyMode = "Below_Price_Cart";
-                if (radioButtonCheckOutCart.Checked)
-                    buyMode = "Cart";
-
-                var buyingMode = new Utililties.ProfileModel.BuyingMode()
-                {
-                    mode = buyMode,
-                    below_specific_price = tbPriceSpecific.Text,
-                    cart_below_specific_price = tbBelowSpecificPriceCARTCHECKOUTPrice.Text
-                };
-                var paymentInfo = new Utililties.ProfileModel.PaymentDetail()
-                {
-                    payment_method = darkComboBoxPaymentMethod.Text,
-                    bank_type = darkComboBoxBankType.Text,
-                    last_4_digit_card = tbLast4Digit.Text,
-                    shopeepay_pin = darkTextBoxShopeePayPin.Text
-                };
-                var root = new Utililties.ProfileModel.Root()
-                {
-                    profile_name = _profileService.Name,
-                    BotSettings = botSettings,
-                    ProductDetail = productInfo,
-                    Voucher_Coin = voucherInfo,
-                    ScheduleBot = scheduleInfo,
-                    BuyingMode = buyingMode,
-                    PaymentDetail = paymentInfo
-                };
-                _profileService.CreateProfile(root);
-                MessageBox.Show("New profile (" + _profileService.Name + ") successfully saved into profile.settings", "Profile saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex) { MessageBox.Show("An error occured while saving profile", "Error"); }
-        }
-
         private void testCookieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var allcookies = ChromedriverHelper.driver.Manage().Cookies.AllCookies;
@@ -1268,7 +1190,32 @@ namespace Shopee_Autobuy_Bot
 
         private void toolStripMenuItemLoadProfile_Click(object sender, EventArgs e)
         {
-            LoadProfile profile = new LoadProfile(_profileService);
+
+        }
+
+        private void cbVariantPreSelected_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbVariantPreSelected.Checked)
+            {
+                cbRandom.Enabled = false;
+                darkTextBoxVariationString.Enabled = false;
+            }
+            else
+            {
+                cbRandom.Enabled = true;
+                darkTextBoxVariationString.Enabled = true;
+            }
+        }
+
+        private void telegramToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            INotificationService telegramService = new NotificationService(_autoBuyLoggerService);
+            telegramService.SendNotification(SAB_Account, _profileService, _autoBuyService.TotalPayment, _autoBuyService.CheckoutTimeSpan);
+        }
+
+        private void profileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile(_profileService);
             profile.ShowDialog();
 
             if (_profileService.LoadProfile)
@@ -1317,34 +1264,6 @@ namespace Shopee_Autobuy_Bot
 
                 MessageBox.Show("Profile loaded", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        private void saveCurrentProfileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SaveProfile profileName = new SaveProfile(_profileService);
-            profileName.ShowDialog();
-            if (_profileService.SaveProfile)
-                SaveBotProfile();
-        }
-
-        private void cbVariantPreSelected_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbVariantPreSelected.Checked)
-            {
-                cbRandom.Enabled = false;
-                darkTextBoxVariationString.Enabled = false;
-            }
-            else
-            {
-                cbRandom.Enabled = true;
-                darkTextBoxVariationString.Enabled = true;
-            }
-        }
-
-        private void telegramToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            INotificationService telegramService = new NotificationService(_autoBuyLoggerService);
-            telegramService.SendNotification(SAB_Account, _profileService, _autoBuyService.TotalPayment, _autoBuyService.CheckoutTimeSpan);
         }
     }
 }

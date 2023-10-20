@@ -23,7 +23,7 @@ namespace Shopee_Autobuy_Bot.Services.Notification
         {
             if (profileService.SelectedProfile.BotSettings.desktop_notification)
             {
-                string checkoutTime = checkoutTimeSpan.ToString("hh\\:mm\\:ss\\:ff");
+                string checkoutTime = checkoutTimeSpan.ToString("mm\\:ss\\:ff");
 
                 Icon appIcon = Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
                 NotifyIcon notifyIcon = new NotifyIcon();
@@ -39,7 +39,7 @@ namespace Shopee_Autobuy_Bot.Services.Notification
             {
                 try
                 {
-                    string checkoutTime = checkoutTimeSpan.ToString("hh\\:mm\\:ss\\:ff");
+                    string checkoutTime = checkoutTimeSpan.ToString("mm\\:ss\\:ff");
                     var variantMode = "";
                     variantMode = (profileService.SelectedProfile.ProductDetail.variant_preSelected) ? "(Pre selected)" : "";
                     variantMode = (profileService.SelectedProfile.ProductDetail.random_variant) ? "(Random)" : "";
@@ -52,8 +52,8 @@ Total Price  : {orderPrice}
 Chekout Time : {checkoutTime}";
 
                     string urlString = "https://api.telegram.org/bot{0}/sendMessage?chat_id={1}&text={2}";
-                    string apiToken = "1914520458:AAGKuro58sqowR4fawgcn9XuE4o9cC0jyvg";
-                    string chatId = "@SAB_pxc";
+                    string apiToken = profileService.SelectedProfile.TelegramSettings.api_token;
+                    string chatId = profileService.SelectedProfile.TelegramSettings.chat_id;
                     urlString = String.Format(urlString, apiToken, chatId, message);
                     WebRequest request = WebRequest.Create(urlString);
                     Stream rs = request.GetResponse().GetResponseStream();
