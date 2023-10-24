@@ -21,6 +21,13 @@ Shopee Autobuy Bot is an automation program designed to assist users with purcha
 - Handles products with more than one variation, using the '|' character to separate each variation.
 - Provides an option to enable coin/voucher redemption, although this may increase checkout time.
 
+### Managing Website Element Changes:
+
+Shopee Autobuy Bot utilizes Selenium to automate tasks by interacting with website elements. When users encounter changes in these website elements, they can:
+
+1. Manual update website element in Element Editor.
+2. Update element from repository. (Feel free to make pull request with element changes)
+
 ### Recommended setup:
 
 * Bot settings
