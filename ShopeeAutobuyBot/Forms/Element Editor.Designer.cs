@@ -93,6 +93,9 @@ namespace Shopee_Autobuy_Bot
             darkLabel1=new System.Windows.Forms.Label();
             darkLabel14=new System.Windows.Forms.Label();
             tabControl1=new System.Windows.Forms.TabControl();
+            tabPage7=new System.Windows.Forms.TabPage();
+            tbTotalPayment=new System.Windows.Forms.TextBox();
+            label2=new System.Windows.Forms.Label();
             tabPage6=new System.Windows.Forms.TabPage();
             darkLabel32=new System.Windows.Forms.Label();
             tbErrMess_PayNowMaintenance=new System.Windows.Forms.TextBox();
@@ -115,18 +118,15 @@ namespace Shopee_Autobuy_Bot
             tbConvStoreType_SevenEleven=new System.Windows.Forms.TextBox();
             darkLabel38=new System.Windows.Forms.Label();
             darkLabel40=new System.Windows.Forms.Label();
-            tabPage7=new System.Windows.Forms.TabPage();
-            tbTotalPayment=new System.Windows.Forms.TextBox();
-            label2=new System.Windows.Forms.Label();
             darkMenuStrip1.SuspendLayout();
             tabPage5.SuspendLayout();
             tabPage3.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage1.SuspendLayout();
             tabControl1.SuspendLayout();
+            tabPage7.SuspendLayout();
             tabPage6.SuspendLayout();
             tabPage4.SuspendLayout();
-            tabPage7.SuspendLayout();
             SuspendLayout();
             // 
             // darkMenuStrip1
@@ -212,10 +212,10 @@ namespace Shopee_Autobuy_Bot
             tabPage5.Controls.Add(darkLabel22);
             tabPage5.Controls.Add(darkLabel23);
             tabPage5.Controls.Add(darkLabel24);
-            tabPage5.Location=new Point(4, 22);
+            tabPage5.Location=new Point(4, 24);
             tabPage5.Name="tabPage5";
             tabPage5.Padding=new System.Windows.Forms.Padding(3);
-            tabPage5.Size=new Size(814, 339);
+            tabPage5.Size=new Size(814, 337);
             tabPage5.TabIndex=4;
             tabPage5.Text="Payment Method (Cart Page)";
             // 
@@ -234,7 +234,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbPayment_GooglePay.Location=new Point(224, 264);
             tbPayment_GooglePay.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbPayment_GooglePay.MaxLength=100;
             tbPayment_GooglePay.Multiline=true;
             tbPayment_GooglePay.Name="tbPayment_GooglePay";
             tbPayment_GooglePay.Size=new Size(557, 25);
@@ -244,7 +243,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbPayment_Debit_CreditCard.Location=new Point(224, 156);
             tbPayment_Debit_CreditCard.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbPayment_Debit_CreditCard.MaxLength=100;
             tbPayment_Debit_CreditCard.Multiline=true;
             tbPayment_Debit_CreditCard.Name="tbPayment_Debit_CreditCard";
             tbPayment_Debit_CreditCard.Size=new Size(557, 25);
@@ -254,7 +252,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbPayment_COD.Location=new Point(224, 120);
             tbPayment_COD.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbPayment_COD.MaxLength=100;
             tbPayment_COD.Multiline=true;
             tbPayment_COD.Name="tbPayment_COD";
             tbPayment_COD.Size=new Size(557, 25);
@@ -264,7 +261,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbPayment_CreditCardInstallment.Location=new Point(224, 228);
             tbPayment_CreditCardInstallment.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbPayment_CreditCardInstallment.MaxLength=100;
             tbPayment_CreditCardInstallment.Multiline=true;
             tbPayment_CreditCardInstallment.Name="tbPayment_CreditCardInstallment";
             tbPayment_CreditCardInstallment.Size=new Size(557, 25);
@@ -274,7 +270,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbPayment_ATM_CashDeposit.Location=new Point(224, 85);
             tbPayment_ATM_CashDeposit.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbPayment_ATM_CashDeposit.MaxLength=100;
             tbPayment_ATM_CashDeposit.Multiline=true;
             tbPayment_ATM_CashDeposit.Name="tbPayment_ATM_CashDeposit";
             tbPayment_ATM_CashDeposit.Size=new Size(557, 25);
@@ -284,7 +279,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbPayment_ConvenienceStore.Location=new Point(224, 192);
             tbPayment_ConvenienceStore.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbPayment_ConvenienceStore.MaxLength=100;
             tbPayment_ConvenienceStore.Multiline=true;
             tbPayment_ConvenienceStore.Name="tbPayment_ConvenienceStore";
             tbPayment_ConvenienceStore.Size=new Size(557, 25);
@@ -294,7 +288,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbPayment_OnlineBanking.Location=new Point(224, 49);
             tbPayment_OnlineBanking.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbPayment_OnlineBanking.MaxLength=100;
             tbPayment_OnlineBanking.Multiline=true;
             tbPayment_OnlineBanking.Name="tbPayment_OnlineBanking";
             tbPayment_OnlineBanking.Size=new Size(557, 25);
@@ -392,7 +385,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbClaimShopeeVcOkButton_placeOrder.Location=new Point(224, 175);
             tbClaimShopeeVcOkButton_placeOrder.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbClaimShopeeVcOkButton_placeOrder.MaxLength=100;
             tbClaimShopeeVcOkButton_placeOrder.Multiline=true;
             tbClaimShopeeVcOkButton_placeOrder.Name="tbClaimShopeeVcOkButton_placeOrder";
             tbClaimShopeeVcOkButton_placeOrder.Size=new Size(557, 25);
@@ -402,7 +394,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbShopeeVcContainer_placeOrder.Location=new Point(224, 139);
             tbShopeeVcContainer_placeOrder.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbShopeeVcContainer_placeOrder.MaxLength=100;
             tbShopeeVcContainer_placeOrder.Multiline=true;
             tbShopeeVcContainer_placeOrder.Name="tbShopeeVcContainer_placeOrder";
             tbShopeeVcContainer_placeOrder.Size=new Size(557, 25);
@@ -412,7 +403,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbCHangePaymentButton_placeOrder.Location=new Point(224, 247);
             tbCHangePaymentButton_placeOrder.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbCHangePaymentButton_placeOrder.MaxLength=100;
             tbCHangePaymentButton_placeOrder.Multiline=true;
             tbCHangePaymentButton_placeOrder.Name="tbCHangePaymentButton_placeOrder";
             tbCHangePaymentButton_placeOrder.Size=new Size(557, 25);
@@ -422,7 +412,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbSelectShopeeVcButton_placeOrder.Location=new Point(224, 103);
             tbSelectShopeeVcButton_placeOrder.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbSelectShopeeVcButton_placeOrder.MaxLength=100;
             tbSelectShopeeVcButton_placeOrder.Multiline=true;
             tbSelectShopeeVcButton_placeOrder.Name="tbSelectShopeeVcButton_placeOrder";
             tbSelectShopeeVcButton_placeOrder.Size=new Size(557, 25);
@@ -432,7 +421,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbRedeemCoinCheckbox_placeOrder.Location=new Point(224, 211);
             tbRedeemCoinCheckbox_placeOrder.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbRedeemCoinCheckbox_placeOrder.MaxLength=100;
             tbRedeemCoinCheckbox_placeOrder.Multiline=true;
             tbRedeemCoinCheckbox_placeOrder.Name="tbRedeemCoinCheckbox_placeOrder";
             tbRedeemCoinCheckbox_placeOrder.Size=new Size(557, 25);
@@ -442,7 +430,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbPLaceOrderButton_placeOrder.Location=new Point(224, 67);
             tbPLaceOrderButton_placeOrder.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbPLaceOrderButton_placeOrder.MaxLength=100;
             tbPLaceOrderButton_placeOrder.Multiline=true;
             tbPLaceOrderButton_placeOrder.Name="tbPLaceOrderButton_placeOrder";
             tbPLaceOrderButton_placeOrder.Size=new Size(557, 25);
@@ -529,10 +516,10 @@ namespace Shopee_Autobuy_Bot
             tabPage2.Controls.Add(darkLabel8);
             tabPage2.Controls.Add(darkLabel5);
             tabPage2.Controls.Add(darkLabel6);
-            tabPage2.Location=new Point(4, 22);
+            tabPage2.Location=new Point(4, 24);
             tabPage2.Name="tabPage2";
             tabPage2.Padding=new System.Windows.Forms.Padding(3);
-            tabPage2.Size=new Size(814, 339);
+            tabPage2.Size=new Size(814, 337);
             tabPage2.TabIndex=1;
             tabPage2.Text="Cart Page";
             // 
@@ -540,7 +527,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbSelectAllLabel.Location=new Point(224, 246);
             tbSelectAllLabel.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbSelectAllLabel.MaxLength=100;
             tbSelectAllLabel.Multiline=true;
             tbSelectAllLabel.Name="tbSelectAllLabel";
             tbSelectAllLabel.Size=new Size(557, 25);
@@ -572,7 +558,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbCheckoutButton_cart.Location=new Point(224, 67);
             tbCheckoutButton_cart.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbCheckoutButton_cart.MaxLength=100;
             tbCheckoutButton_cart.Multiline=true;
             tbCheckoutButton_cart.Name="tbCheckoutButton_cart";
             tbCheckoutButton_cart.Size=new Size(557, 25);
@@ -582,7 +567,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbCartEmptyLabel_cart.Location=new Point(224, 211);
             tbCartEmptyLabel_cart.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbCartEmptyLabel_cart.MaxLength=100;
             tbCartEmptyLabel_cart.Multiline=true;
             tbCartEmptyLabel_cart.Name="tbCartEmptyLabel_cart";
             tbCartEmptyLabel_cart.Size=new Size(557, 25);
@@ -592,7 +576,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbCartTotalPrice.Location=new Point(224, 139);
             tbCartTotalPrice.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbCartTotalPrice.MaxLength=100;
             tbCartTotalPrice.Multiline=true;
             tbCartTotalPrice.Name="tbCartTotalPrice";
             tbCartTotalPrice.Size=new Size(557, 25);
@@ -602,7 +585,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbSelectAllCheckbox_cart.Location=new Point(224, 103);
             tbSelectAllCheckbox_cart.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbSelectAllCheckbox_cart.MaxLength=100;
             tbSelectAllCheckbox_cart.Multiline=true;
             tbSelectAllCheckbox_cart.Name="tbSelectAllCheckbox_cart";
             tbSelectAllCheckbox_cart.Size=new Size(557, 25);
@@ -612,7 +594,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbClaimShopVC_cart.Location=new Point(224, 175);
             tbClaimShopVC_cart.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbClaimShopVC_cart.MaxLength=100;
             tbClaimShopVC_cart.Multiline=true;
             tbClaimShopVC_cart.Name="tbClaimShopVC_cart";
             tbClaimShopVC_cart.Size=new Size(557, 25);
@@ -699,7 +680,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbUnlisted_product.Location=new Point(224, 263);
             tbUnlisted_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbUnlisted_product.MaxLength=100;
             tbUnlisted_product.Multiline=true;
             tbUnlisted_product.Name="tbUnlisted_product";
             tbUnlisted_product.Size=new Size(557, 25);
@@ -720,7 +700,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbSaleBanner_product.Location=new Point(224, 229);
             tbSaleBanner_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbSaleBanner_product.MaxLength=100;
             tbSaleBanner_product.Multiline=true;
             tbSaleBanner_product.Name="tbSaleBanner_product";
             tbSaleBanner_product.Size=new Size(557, 25);
@@ -730,7 +709,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbCurrentPriceLabel_product.Location=new Point(224, 193);
             tbCurrentPriceLabel_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbCurrentPriceLabel_product.MaxLength=100;
             tbCurrentPriceLabel_product.Multiline=true;
             tbCurrentPriceLabel_product.Name="tbCurrentPriceLabel_product";
             tbCurrentPriceLabel_product.Size=new Size(557, 25);
@@ -740,7 +718,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbQuantityTextbox_product.Location=new Point(224, 157);
             tbQuantityTextbox_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbQuantityTextbox_product.MaxLength=100;
             tbQuantityTextbox_product.Multiline=true;
             tbQuantityTextbox_product.Name="tbQuantityTextbox_product";
             tbQuantityTextbox_product.Size=new Size(557, 25);
@@ -750,7 +727,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbVariationFlexBox_product.Location=new Point(224, 121);
             tbVariationFlexBox_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbVariationFlexBox_product.MaxLength=100;
             tbVariationFlexBox_product.Multiline=true;
             tbVariationFlexBox_product.Name="tbVariationFlexBox_product";
             tbVariationFlexBox_product.Size=new Size(557, 25);
@@ -760,7 +736,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbBuyNowButton_product.Location=new Point(224, 85);
             tbBuyNowButton_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbBuyNowButton_product.MaxLength=100;
             tbBuyNowButton_product.Multiline=true;
             tbBuyNowButton_product.Name="tbBuyNowButton_product";
             tbBuyNowButton_product.Size=new Size(557, 25);
@@ -826,6 +801,37 @@ namespace Shopee_Autobuy_Bot
             tabControl1.Size=new Size(822, 365);
             tabControl1.TabIndex=54;
             // 
+            // tabPage7
+            // 
+            tabPage7.BackColor=SystemColors.ActiveCaption;
+            tabPage7.Controls.Add(tbTotalPayment);
+            tabPage7.Controls.Add(label2);
+            tabPage7.Location=new Point(4, 24);
+            tabPage7.Name="tabPage7";
+            tabPage7.Size=new Size(814, 337);
+            tabPage7.TabIndex=8;
+            tabPage7.Text="Payment Page";
+            // 
+            // tbTotalPayment
+            // 
+            tbTotalPayment.Location=new Point(223, 157);
+            tbTotalPayment.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbTotalPayment.Multiline=true;
+            tbTotalPayment.Name="tbTotalPayment";
+            tbTotalPayment.Size=new Size(557, 25);
+            tbTotalPayment.TabIndex=68;
+            // 
+            // label2
+            // 
+            label2.AutoSize=true;
+            label2.ForeColor=SystemColors.ControlText;
+            label2.Location=new Point(34, 163);
+            label2.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label2.Name="label2";
+            label2.Size=new Size(112, 13);
+            label2.TabIndex=69;
+            label2.Text="Total Payment label :";
+            // 
             // tabPage6
             // 
             tabPage6.BackColor=SystemColors.ActiveCaption;
@@ -845,10 +851,10 @@ namespace Shopee_Autobuy_Bot
             tabPage6.Controls.Add(darkLabel29);
             tabPage6.Controls.Add(darkLabel30);
             tabPage6.Controls.Add(darkLabel31);
-            tabPage6.Location=new Point(4, 22);
+            tabPage6.Location=new Point(4, 24);
             tabPage6.Name="tabPage6";
             tabPage6.Padding=new System.Windows.Forms.Padding(3);
-            tabPage6.Size=new Size(814, 339);
+            tabPage6.Size=new Size(814, 337);
             tabPage6.TabIndex=6;
             tabPage6.Text="Payment Error Message (Cart Page)";
             // 
@@ -868,7 +874,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbErrMess_PayNowMaintenance.Location=new Point(224, 282);
             tbErrMess_PayNowMaintenance.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbErrMess_PayNowMaintenance.MaxLength=100;
             tbErrMess_PayNowMaintenance.Multiline=true;
             tbErrMess_PayNowMaintenance.Name="tbErrMess_PayNowMaintenance";
             tbErrMess_PayNowMaintenance.Size=new Size(557, 25);
@@ -891,7 +896,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbErrMess_InactiveProduct.Location=new Point(224, 247);
             tbErrMess_InactiveProduct.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbErrMess_InactiveProduct.MaxLength=100;
             tbErrMess_InactiveProduct.Multiline=true;
             tbErrMess_InactiveProduct.Name="tbErrMess_InactiveProduct";
             tbErrMess_InactiveProduct.Size=new Size(557, 25);
@@ -902,7 +906,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbErrMess_InsuffShopeePay.Location=new Point(224, 139);
             tbErrMess_InsuffShopeePay.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbErrMess_InsuffShopeePay.MaxLength=100;
             tbErrMess_InsuffShopeePay.Multiline=true;
             tbErrMess_InsuffShopeePay.Name="tbErrMess_InsuffShopeePay";
             tbErrMess_InsuffShopeePay.Size=new Size(557, 25);
@@ -913,7 +916,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbErrMess_ActivateShopeePay.Location=new Point(224, 103);
             tbErrMess_ActivateShopeePay.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbErrMess_ActivateShopeePay.MaxLength=100;
             tbErrMess_ActivateShopeePay.Multiline=true;
             tbErrMess_ActivateShopeePay.Name="tbErrMess_ActivateShopeePay";
             tbErrMess_ActivateShopeePay.Size=new Size(557, 25);
@@ -924,7 +926,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbErrMess_CartOutOfStock.Location=new Point(224, 211);
             tbErrMess_CartOutOfStock.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbErrMess_CartOutOfStock.MaxLength=100;
             tbErrMess_CartOutOfStock.Multiline=true;
             tbErrMess_CartOutOfStock.Name="tbErrMess_CartOutOfStock";
             tbErrMess_CartOutOfStock.Size=new Size(557, 25);
@@ -935,7 +936,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbErrMess_BankMaintenance.Location=new Point(224, 67);
             tbErrMess_BankMaintenance.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbErrMess_BankMaintenance.MaxLength=100;
             tbErrMess_BankMaintenance.Multiline=true;
             tbErrMess_BankMaintenance.Name="tbErrMess_BankMaintenance";
             tbErrMess_BankMaintenance.Size=new Size(557, 25);
@@ -946,7 +946,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbErrMess_TransExceeded.Location=new Point(224, 175);
             tbErrMess_TransExceeded.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbErrMess_TransExceeded.MaxLength=100;
             tbErrMess_TransExceeded.Multiline=true;
             tbErrMess_TransExceeded.Name="tbErrMess_TransExceeded";
             tbErrMess_TransExceeded.Size=new Size(557, 25);
@@ -957,7 +956,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbErrMess_InvalidShopeePayPin.Location=new Point(224, 31);
             tbErrMess_InvalidShopeePayPin.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbErrMess_InvalidShopeePayPin.MaxLength=100;
             tbErrMess_InvalidShopeePayPin.Multiline=true;
             tbErrMess_InvalidShopeePayPin.Name="tbErrMess_InvalidShopeePayPin";
             tbErrMess_InvalidShopeePayPin.Size=new Size(557, 25);
@@ -1037,10 +1035,10 @@ namespace Shopee_Autobuy_Bot
             tabPage4.Controls.Add(tbConvStoreType_SevenEleven);
             tabPage4.Controls.Add(darkLabel38);
             tabPage4.Controls.Add(darkLabel40);
-            tabPage4.Location=new Point(4, 22);
+            tabPage4.Location=new Point(4, 24);
             tabPage4.Name="tabPage4";
             tabPage4.Padding=new System.Windows.Forms.Padding(3);
-            tabPage4.Size=new Size(814, 339);
+            tabPage4.Size=new Size(814, 337);
             tabPage4.TabIndex=7;
             tabPage4.Text="Convenience Store Type (Cart Page)";
             // 
@@ -1048,7 +1046,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbConvStoreType_KKMart.Location=new Point(212, 175);
             tbConvStoreType_KKMart.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbConvStoreType_KKMart.MaxLength=100;
             tbConvStoreType_KKMart.Multiline=true;
             tbConvStoreType_KKMart.Name="tbConvStoreType_KKMart";
             tbConvStoreType_KKMart.Size=new Size(557, 25);
@@ -1059,7 +1056,6 @@ namespace Shopee_Autobuy_Bot
             // 
             tbConvStoreType_SevenEleven.Location=new Point(212, 139);
             tbConvStoreType_SevenEleven.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbConvStoreType_SevenEleven.MaxLength=100;
             tbConvStoreType_SevenEleven.Multiline=true;
             tbConvStoreType_SevenEleven.Name="tbConvStoreType_SevenEleven";
             tbConvStoreType_SevenEleven.Size=new Size(557, 25);
@@ -1088,38 +1084,6 @@ namespace Shopee_Autobuy_Bot
             darkLabel40.TabIndex=67;
             darkLabel40.Text="Seven Eleven :";
             // 
-            // tabPage7
-            // 
-            tabPage7.BackColor=SystemColors.ActiveCaption;
-            tabPage7.Controls.Add(tbTotalPayment);
-            tabPage7.Controls.Add(label2);
-            tabPage7.Location=new Point(4, 22);
-            tabPage7.Name="tabPage7";
-            tabPage7.Size=new Size(814, 339);
-            tabPage7.TabIndex=8;
-            tabPage7.Text="Payment Page";
-            // 
-            // tbTotalPayment
-            // 
-            tbTotalPayment.Location=new Point(223, 157);
-            tbTotalPayment.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbTotalPayment.MaxLength=100;
-            tbTotalPayment.Multiline=true;
-            tbTotalPayment.Name="tbTotalPayment";
-            tbTotalPayment.Size=new Size(557, 25);
-            tbTotalPayment.TabIndex=68;
-            // 
-            // label2
-            // 
-            label2.AutoSize=true;
-            label2.ForeColor=SystemColors.ControlText;
-            label2.Location=new Point(34, 163);
-            label2.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label2.Name="label2";
-            label2.Size=new Size(112, 13);
-            label2.TabIndex=69;
-            label2.Text="Total Payment label :";
-            // 
             // Element_Editor
             // 
             AutoScaleDimensions=new SizeF(6F, 13F);
@@ -1147,12 +1111,12 @@ namespace Shopee_Autobuy_Bot
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             tabControl1.ResumeLayout(false);
+            tabPage7.ResumeLayout(false);
+            tabPage7.PerformLayout();
             tabPage6.ResumeLayout(false);
             tabPage6.PerformLayout();
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
-            tabPage7.ResumeLayout(false);
-            tabPage7.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }

@@ -209,7 +209,7 @@ namespace Shopee_Autobuy_Bot.Services
                     // Claim shop voucher
                     if (_profileService.SelectedProfile.Voucher_Coin.claim_shop_vc)
                     {
-                        RedeemShopeVoucher();
+                        RedeemShopVoucher();
                     }
 
                     Thread.Sleep(ConfigInfo.delay_step_2);
@@ -250,7 +250,7 @@ namespace Shopee_Autobuy_Bot.Services
             CheckoutPage();
         }
 
-        private void RedeemShopeVoucher()
+        private void RedeemShopVoucher()
         {
             Thread.Sleep(ConfigInfo.delay_claim_shop_voucher);
 
@@ -870,7 +870,7 @@ namespace Shopee_Autobuy_Bot.Services
             // Redeem any Shopee voucher
             if (_profileService.SelectedProfile.Voucher_Coin.redeeem_shopee_vc)
             {
-                RedeemShopVoucher();
+                RedeemShopeeVoucher();
             }
 
             Thread.Sleep(ConfigInfo.delay_step_5);
@@ -920,7 +920,7 @@ namespace Shopee_Autobuy_Bot.Services
             }
         }
 
-        private void RedeemShopVoucher()
+        private void RedeemShopeeVoucher()
         {
             string strSelectVoucher = ConstantElements.CheckoutPage.SelectShopeeVoucherButton;
             SetCurrentElement(nameof(ConstantElements.CheckoutPage.SelectShopeeVoucherButton), ConstantElements.CheckoutPage.SelectShopeeVoucherButton);
@@ -931,16 +931,14 @@ namespace Shopee_Autobuy_Bot.Services
             _autoBuyLoggerService.AutoBuyProcessLog("Click 'Select Voucher'.", Color.DarkGreen, true, true, true);
             Thread.Sleep(ConfigInfo.delay_any_shopee_voucher);
 
-            _seleniumService.WaitElementClickable(By.XPath(ConstantElements.CheckoutPage.ShopeeVoucherContainer));
-            _seleniumService.WaitElementVisible(By.XPath(ConstantElements.CheckoutPage.ShopeeVoucherContainer));
-
-            string strEnterVoucherCodeOKButton = ConstantElements.CheckoutPage.ShopeeVoucherOkButton;
-            _seleniumService.WaitElementExists(By.XPath(ConstantElements.CheckoutPage.ShopeeVoucherOkButton))
-                .SelectElement(By.XPath(ConstantElements.CheckoutPage.ShopeeVoucherOkButton))
-                .ClickElement();
+            //_seleniumService.WaitElementClickable(By.XPath(ConstantElements.CheckoutPage.ShopeeVoucherContainer));
+            //_seleniumService.WaitElementVisible(By.XPath(ConstantElements.CheckoutPage.ShopeeVoucherContainer));
 
             SetCurrentElement(nameof(ConstantElements.CheckoutPage.ShopeeVoucherOkButton), ConstantElements.CheckoutPage.ShopeeVoucherOkButton);
-            _seleniumService.SelectElement(By.XPath(strEnterVoucherCodeOKButton))
+            string strEnterVoucherCodeOKButton = ConstantElements.CheckoutPage.ShopeeVoucherOkButton;
+
+            _seleniumService.WaitElementExists(By.XPath(strEnterVoucherCodeOKButton))
+                .SelectElement(By.XPath(strEnterVoucherCodeOKButton))
                 .ClickElement();
 
             Thread.Sleep(ConfigInfo.delay_any_shopee_voucher);
