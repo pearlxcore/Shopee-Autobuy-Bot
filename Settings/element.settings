@@ -16,10 +16,10 @@
     "SelectAllLabel": "//button[contains(@class, 'iGlIrs clear-btn-style')]"
   },
   "CheckoutPage": {
-    "PlaceOrderButton": "//*[@id=\"main\"]/div/div[2]/div/div[2]/div[4]/div[2]/div[4]/button",
-    "SelectShopeeVoucherButton": "//button[contains(@class, '_6dwQij') and contains(text(), 'Select Voucher')]",
+    "PlaceOrderButton": "//*[@id=\"main\"]/div/div[2]/div/div[2]/div[4]/div[2]/div[6]/button",
+    "SelectShopeeVoucherButton": "//*[@id=\"main\"]/div/div[2]/div/div[2]/div[3]/div[1]/div[2]/button",
     "ShopeeVoucherContainer": "//div[contains(@class, 'qa9DDd U0bjBP VK0V4t')]",
-    "ShopeeVoucherOkButton": "//button[contains(@class, 'btn') and contains(text(), 'OK')]",
+    "ShopeeVoucherOkButton": "//button[contains(@class, 'btn btn-solid-primary btn--s btn--inline e5P6KA')]",
     "RedeemCoinCheckbox": "//*[@id=\"main\"]/div/div[2]/div/div[2]/div[3]/div[2]/div[2]/label/div",
     "ChangePaymentButton": "//div[contains(@class, '_1n5Ut6') and contains(text(), 'change')]"
   },
