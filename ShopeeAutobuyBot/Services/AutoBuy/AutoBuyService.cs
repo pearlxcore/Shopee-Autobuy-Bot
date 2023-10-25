@@ -589,7 +589,7 @@ namespace Shopee_Autobuy_Bot.Services
                         foreach (string variantName in variantNames)
                         {
                             Thread.Sleep(100);
-                            string template = "//button[contains(@class, 'product-variation') and contains(text(), '" + variantName + "')]";
+                            string template = "//button[contains(@class, 'hUWqqt _69cHHm') and contains(text(), '" + variantName + "')]";
 
                             if (!_seleniumService.ElementExists(By.XPath(template)) || _seleniumService.ElementExists(By.XPath($"{template}[contains(@class, '--disabled')]")))
                             {

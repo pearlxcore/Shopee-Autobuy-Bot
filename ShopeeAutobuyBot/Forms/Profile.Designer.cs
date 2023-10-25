@@ -896,7 +896,7 @@ namespace Shopee_Autobuy_Bot
             groupBox2.Size=new Size(353, 111);
             groupBox2.TabIndex=117;
             groupBox2.TabStop=false;
-            groupBox2.Text="Telegram Settings";
+            groupBox2.Text="Coin && Voucher";
             // 
             // tabPage1
             // 
@@ -925,7 +925,7 @@ namespace Shopee_Autobuy_Bot
             MaximizeBox=false;
             Name="Profile";
             StartPosition=FormStartPosition.CenterScreen;
-            Text="Profile Settings";
+            Text="Autobuy Profile";
             Load+=Profile_Load_1;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

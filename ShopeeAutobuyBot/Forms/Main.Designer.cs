@@ -861,7 +861,7 @@ namespace Shopee_Autobuy_Bot
             profileToolStripMenuItem.ForeColor=SystemColors.ControlText;
             profileToolStripMenuItem.Name="profileToolStripMenuItem";
             profileToolStripMenuItem.Size=new Size(153, 22);
-            profileToolStripMenuItem.Text="Profile Settings";
+            profileToolStripMenuItem.Text="Autobuy Profile";
             profileToolStripMenuItem.Click+=profileToolStripMenuItem_Click;
             // 
             // sessionCookieToolStripMenuItem
