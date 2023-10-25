@@ -357,11 +357,14 @@ namespace Shopee_Autobuy_Bot.Services
 
         private void CartPage_SelectAllCheckBox()
         {
-            SetCurrentElement(nameof(ConstantElements.CartPage.SelectAllCheckbox), ConstantElements.CartPage.SelectAllCheckbox);
-            _seleniumService
-                .WaitElementExists(By.XPath(ConstantElements.CartPage.SelectAllCheckbox))
-                .SelectElement(By.XPath(ConstantElements.CartPage.SelectAllCheckbox))
-                .ClickElement();
+            if (_profileService.SelectedProfile.BuyingMode.mode != BuyingMode.Normal || _profileService.SelectedProfile.BuyingMode.mode != BuyingMode.Flash_Shocking)
+            {
+                SetCurrentElement(nameof(ConstantElements.CartPage.SelectAllCheckbox), ConstantElements.CartPage.SelectAllCheckbox);
+                _seleniumService
+                    .WaitElementExists(By.XPath(ConstantElements.CartPage.SelectAllCheckbox))
+                    .SelectElement(By.XPath(ConstantElements.CartPage.SelectAllCheckbox))
+                    .ClickElement();
+            }
         }
 
         private void ProductPage(string buyMode)
