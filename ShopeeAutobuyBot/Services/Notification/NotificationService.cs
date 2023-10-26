@@ -46,7 +46,7 @@ namespace Shopee_Autobuy_Bot.Services.Notification
 
                     string message = $@"Account  : {sabAccount}
 Product Link : {profileService.SelectedProfile.ProductDetail.product_link}
-Variation  : {profileService.SelectedProfile.ProductDetail.variant} {variantMode}
+Variant  : {profileService.SelectedProfile.ProductDetail.variant} {variantMode}
 Mode : {profileService.SelectedProfile.BuyingMode.mode}
 Total Price  : {orderPrice}
 Chekout Time : {checkoutTime}";

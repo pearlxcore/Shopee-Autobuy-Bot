@@ -535,17 +535,19 @@ namespace Shopee_Autobuy_Bot.Services
         private string SelectVariant()
         {
             // if variant container is exists.
-            if (_seleniumService.ElementExists(By.XPath(ConstantElements.ProductPage.ProductVariationContainer)))
+            if (_seleniumService.ElementExists(By.XPath(ConstantElements.ProductPage.ProductVariantContainer)))
             {
                 // variant pre check, ignore this method
                 if (!_profileService.SelectedProfile.ProductDetail.variant_preSelected)
                 {
+                    SetCurrentElement(nameof(ConstantElements.ProductPage.ProductVariantContainer), ConstantElements.ProductPage.ProductVariantContainer);
+
                     // select random variant
                     if (_profileService.SelectedProfile.ProductDetail.random_variant)
                     {
                         // update variant into profile
                         _profileService.SelectedProfile.ProductDetail.variant = "";
-                        IReadOnlyCollection<IWebElement> variantElements = _seleniumService._driver.FindElements(By.XPath("//div[contains(@class, 'flex items-center bR6mEk')]"));
+                        IReadOnlyCollection<IWebElement> variantElements = _seleniumService._driver.FindElements(By.XPath(ConstantElements.ProductPage.ProductVariantContainer));
                         foreach (IWebElement variantElement in variantElements)
                         {
                             foreach (IWebElement variant in variantElement.FindElements(By.XPath(".//*")))
@@ -570,12 +572,12 @@ namespace Shopee_Autobuy_Bot.Services
                     else
                     {
                         // variant type eg Size, Color
-                        var variantElements = _seleniumService._driver.FindElements(By.XPath("//div[contains(@class, 'flex items-center bR6mEk')]"));
+                        var variantElements = _seleniumService._driver.FindElements(By.XPath(ConstantElements.ProductPage.ProductVariantContainer));
                         var variantTypeCount = variantElements.Count;
 
                         if (_profileService.SelectedProfile.ProductDetail.variant == string.Empty)
                         {
-                            return "Specify product variation.";
+                            return "Specify product variant.";
                         }
 
                         // split the variation input into an array of variant names
@@ -589,18 +591,23 @@ namespace Shopee_Autobuy_Bot.Services
                         foreach (string variantName in variantNames)
                         {
                             Thread.Sleep(100);
-                            string template = "//button[contains(@class, 'hUWqqt _69cHHm') and contains(text(), '" + variantName + "')]";
+                            string variantButtonTemplate = $"//button[contains(@class, '{ConstantElements.ProductPage.VariantButton}')  and text() = '{variantName}']";
+                            string greyedVariantButtonTemplate = $"//button[contains(@class, '{ConstantElements.ProductPage.VariantButtonGreyedClass}')  and text() = '{variantName}']";
 
-                            if (!_seleniumService.ElementExists(By.XPath(template)) || _seleniumService.ElementExists(By.XPath($"{template}[contains(@class, '--disabled')]")))
+                            bool greyedButtonExist = _seleniumService.ElementExists(By.XPath(greyedVariantButtonTemplate));
+                            bool variantButtonExist = _seleniumService.ElementExists(By.XPath(variantButtonTemplate));
+
+                            if (!variantButtonExist || greyedButtonExist)
                             {
                                 return $"'{variantName}' not available.";
                             }
 
-                            var variationElement = _seleniumService.GetElement(By.XPath(template));
-                            if (!variationElement.GetAttribute("class").Equals("product-variation product-variation--selected"))
+                            var variantElement = _seleniumService.GetElement(By.XPath(variantButtonTemplate));
+                            if (!variantElement.GetAttribute("class").Contains($"{ConstantElements.ProductPage.VariantButtonClickedClass}")) // if variant button not clicked
                             {
-                                _seleniumService.ClickElement(variationElement);
-                                _autoBuyLoggerService.AutoBuyProcessLog("Click " + variationElement.Text + ".", Color.DarkGreen, true, true, true);
+                                _seleniumService.ClickElement(variantElement);
+                                var variantName_ = variantElement.Text;
+                                _autoBuyLoggerService.AutoBuyProcessLog("Click " + variantName_ + ".", Color.DarkGreen, true, true, true);
                             }
                         }
 
@@ -639,7 +646,7 @@ namespace Shopee_Autobuy_Bot.Services
             string strBankType = "";
             if (_profileService.SelectedProfile.PaymentDetail.bank_type != string.Empty)
                 strBankType = "//div[contains(@class, 'checkout-bank-transfer-item__title') and contains(text(), '" + _profileService.SelectedProfile.PaymentDetail.bank_type + "')]";
-            string strDebitCreditVariation = "//div[contains(@class, '_11C6dM ') and contains(text(), '" + _profileService.SelectedProfile.PaymentDetail.last_4_digit_card + "')]";
+            string strDebitCreditVariant = "//div[contains(@class, '_11C6dM ') and contains(text(), '" + _profileService.SelectedProfile.PaymentDetail.last_4_digit_card + "')]";
             string strCreditDebitOption = "";
 
             _seleniumService.WaitUrlContainString("checkout");
@@ -676,12 +683,12 @@ namespace Shopee_Autobuy_Bot.Services
                     if (_seleniumService.GetElement(By.XPath(strCreditDebitOption)).Text.Contains("Credit / Debit Card"))
                     {
                         _seleniumService.ClickElement();
-                        if (!_seleniumService.ElementExists(By.XPath(strDebitCreditVariation)))
+                        if (!_seleniumService.ElementExists(By.XPath(strDebitCreditVariant)))
                         {
                             _autoBuyLoggerService.AutoBuyProcessLog("Credit / Debit variation ending with " + _profileService.SelectedProfile.PaymentDetail.last_4_digit_card + " is not available. Aborting..", Color.IndianRed, true, true, true);
                             return;
                         }
-                        _seleniumService.SelectElement(By.XPath(strDebitCreditVariation))
+                        _seleniumService.SelectElement(By.XPath(strDebitCreditVariant))
                             .ClickElement();
                         _autoBuyLoggerService.AutoBuyProcessLog("Select 'Credit / Debit card (" + _profileService.SelectedProfile.PaymentDetail.last_4_digit_card + ")'.", Color.DarkGreen, true, true, true);
                     }

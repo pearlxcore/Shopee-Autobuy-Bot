@@ -125,7 +125,7 @@ namespace Shopee_Autobuy_Bot
                 cbRandom.Checked = _profileService.SelectedProfile.ProductDetail.random_variant;
                 cbVariantPreSelected.Checked = _profileService.SelectedProfile.ProductDetail.variant_preSelected;
 
-                darkTextBoxVariationString.Text = _profileService.SelectedProfile.ProductDetail.variant;
+                darkTextBoxVariantString.Text = _profileService.SelectedProfile.ProductDetail.variant;
                 numericUpDownQuantity.Value = Convert.ToInt32(_profileService.SelectedProfile.ProductDetail.quantity.ToString());
 
                 tbTelegramChatId.Text = _profileService.SelectedProfile.TelegramSettings.chat_id;
@@ -171,7 +171,7 @@ namespace Shopee_Autobuy_Bot
                     item.TelegramSettings.api_token = tbTelegramApiToken.Text;
 
                     item.ProductDetail.product_link = darkTextBoxProductLink.Text;
-                    item.ProductDetail.variant = darkTextBoxVariationString.Text;
+                    item.ProductDetail.variant = darkTextBoxVariantString.Text;
                     item.ProductDetail.quantity = Convert.ToInt32(numericUpDownQuantity.Value);
                     item.ProductDetail.random_variant = cbRandom.Checked;
                     item.ProductDetail.variant_preSelected = cbVariantPreSelected.Checked;
@@ -257,7 +257,7 @@ namespace Shopee_Autobuy_Bot
                 var productInfo = new Utililties.ProfileModel.ProductDetail()
                 {
                     product_link = darkTextBoxProductLink.Text,
-                    variant = darkTextBoxVariationString.Text,
+                    variant = darkTextBoxVariantString.Text,
                     quantity = Convert.ToInt32(numericUpDownQuantity.Value),
                     random_variant = cbRandom.Checked,
                     variant_preSelected = cbVariantPreSelected.Checked
@@ -322,7 +322,7 @@ namespace Shopee_Autobuy_Bot
 
         private void cbRandom_CheckedChanged(object sender, EventArgs e)
         {
-            darkTextBoxVariationString.Enabled = (cbRandom.Checked) ? false : true;
+            darkTextBoxVariantString.Enabled = (cbRandom.Checked) ? false : true;
             cbVariantPreSelected.Enabled = (cbRandom.Checked) ? false : true;
         }
 
@@ -331,12 +331,12 @@ namespace Shopee_Autobuy_Bot
             if (cbVariantPreSelected.Checked)
             {
                 cbRandom.Enabled = false;
-                darkTextBoxVariationString.Enabled = false;
+                darkTextBoxVariantString.Enabled = false;
             }
             else
             {
                 cbRandom.Enabled = true;
-                darkTextBoxVariationString.Enabled = true;
+                darkTextBoxVariantString.Enabled = true;
             }
         }
 

@@ -56,7 +56,7 @@ namespace Shopee_Autobuy_Bot
             darkLabel7=new System.Windows.Forms.Label();
             darkComboBoxCourier=new System.Windows.Forms.ComboBox();
             darkLabel9=new System.Windows.Forms.Label();
-            darkTextBoxVariationString=new System.Windows.Forms.TextBox();
+            darkTextBoxVariantString=new System.Windows.Forms.TextBox();
             darkLabel10=new System.Windows.Forms.Label();
             darkNumericUpDownProductQuantity=new System.Windows.Forms.NumericUpDown();
             darkSectionPanelProductDetails=new System.Windows.Forms.GroupBox();
@@ -408,17 +408,17 @@ namespace Shopee_Autobuy_Bot
             darkLabel9.Name="darkLabel9";
             darkLabel9.Size=new Size(59, 13);
             darkLabel9.TabIndex=19;
-            darkLabel9.Text="Variation :";
+            darkLabel9.Text="Variant :";
             // 
             // darkTextBoxVariationString
             // 
-            darkTextBoxVariationString.Location=new Point(98, 134);
-            darkTextBoxVariationString.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            darkTextBoxVariationString.Name="darkTextBoxVariationString";
-            darkTextBoxVariationString.Size=new Size(244, 22);
-            darkTextBoxVariationString.TabIndex=18;
-            darkTextBoxVariationString.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
-            toolTip1.SetToolTip(darkTextBoxVariationString, "Product variant (if required). If the product have more than 1 variant (eg : Colour and Size), separate the variant with '|' character without space. For example : RED|XXL");
+            darkTextBoxVariantString.Location=new Point(98, 134);
+            darkTextBoxVariantString.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            darkTextBoxVariantString.Name="darkTextBoxVariantString";
+            darkTextBoxVariantString.Size=new Size(244, 22);
+            darkTextBoxVariantString.TabIndex=18;
+            darkTextBoxVariantString.TextAlign=System.Windows.Forms.HorizontalAlignment.Center;
+            toolTip1.SetToolTip(darkTextBoxVariantString, "Product variant (if required). If the product have more than 1 variant (eg : Colour and Size), separate the variant with '|' character without space. For example : RED|XXL");
             // 
             // darkLabel10
             // 
@@ -453,7 +453,7 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanelProductDetails.Controls.Add(darkLabel11);
             darkSectionPanelProductDetails.Controls.Add(darkTextBoxProductLink);
             darkSectionPanelProductDetails.Controls.Add(darkLabel10);
-            darkSectionPanelProductDetails.Controls.Add(darkTextBoxVariationString);
+            darkSectionPanelProductDetails.Controls.Add(darkTextBoxVariantString);
             darkSectionPanelProductDetails.Controls.Add(darkNumericUpDownProductQuantity);
             darkSectionPanelProductDetails.Controls.Add(darkLabel9);
             darkSectionPanelProductDetails.Location=new Point(14, 301);
@@ -1395,7 +1395,7 @@ namespace Shopee_Autobuy_Bot
         private System.Windows.Forms.ComboBox darkComboBoxPaymentMethod;
         private System.Windows.Forms.ComboBox darkComboBoxCourier;
         private System.Windows.Forms.Label darkLabel7;
-        private System.Windows.Forms.TextBox darkTextBoxVariationString;
+        private System.Windows.Forms.TextBox darkTextBoxVariantString;
         private System.Windows.Forms.GroupBox darkSectionPanelProductDetails;
         private System.Windows.Forms.Label darkLabel12;
         private System.Windows.Forms.Label darkLabel11;

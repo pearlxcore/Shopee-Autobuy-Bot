@@ -357,11 +357,11 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 set { Courier_ = value; }
             }
 
-            private static string VariationString_;
-            public static string VariationString
+            private static string VariantString_;
+            public static string VariantString
             {
-                get { return VariationString_; }
-                set { VariationString_ = value; }
+                get { return VariantString_; }
+                set { VariantString_ = value; }
             }
 
             private static string PaymentMethod_;
@@ -412,11 +412,11 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 set { RandomVariant_ = value; }
             }
 
-            private static bool HasVariation_;
-            public static bool HasVariation
+            private static bool HasVariant_;
+            public static bool HasVariant
             {
-                get { return HasVariation_; }
-                set { HasVariation_ = value; }
+                get { return HasVariant_; }
+                set { HasVariant_ = value; }
             }
         }
     }

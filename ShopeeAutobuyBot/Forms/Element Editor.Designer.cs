@@ -80,13 +80,27 @@ namespace Shopee_Autobuy_Bot
             darkLabel5=new System.Windows.Forms.Label();
             darkLabel6=new System.Windows.Forms.Label();
             tabPage1=new System.Windows.Forms.TabPage();
+            panel5=new System.Windows.Forms.Panel();
+            panel6=new System.Windows.Forms.Panel();
+            panel7=new System.Windows.Forms.Panel();
+            panel8=new System.Windows.Forms.Panel();
+            panel1=new System.Windows.Forms.Panel();
+            panel3=new System.Windows.Forms.Panel();
+            panel4=new System.Windows.Forms.Panel();
+            panel2=new System.Windows.Forms.Panel();
+            tbVariantButtonGreyed_product=new System.Windows.Forms.TextBox();
+            label5=new System.Windows.Forms.Label();
+            tbVariantButtonClicked_product=new System.Windows.Forms.TextBox();
+            tbVariantButton_product=new System.Windows.Forms.TextBox();
+            label3=new System.Windows.Forms.Label();
+            label4=new System.Windows.Forms.Label();
             label1=new System.Windows.Forms.Label();
             tbUnlisted_product=new System.Windows.Forms.TextBox();
             darkLabel4=new System.Windows.Forms.Label();
             tbSaleBanner_product=new System.Windows.Forms.TextBox();
             tbCurrentPriceLabel_product=new System.Windows.Forms.TextBox();
             tbQuantityTextbox_product=new System.Windows.Forms.TextBox();
-            tbVariationFlexBox_product=new System.Windows.Forms.TextBox();
+            tbVariantContainer_product=new System.Windows.Forms.TextBox();
             tbBuyNowButton_product=new System.Windows.Forms.TextBox();
             darkLabel3=new System.Windows.Forms.Label();
             darkLabel2=new System.Windows.Forms.Label();
@@ -123,6 +137,10 @@ namespace Shopee_Autobuy_Bot
             tabPage3.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage1.SuspendLayout();
+            panel5.SuspendLayout();
+            panel6.SuspendLayout();
+            panel1.SuspendLayout();
+            panel3.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage7.SuspendLayout();
             tabPage6.SuspendLayout();
@@ -374,10 +392,10 @@ namespace Shopee_Autobuy_Bot
             tabPage3.Controls.Add(darkLabel9);
             tabPage3.Controls.Add(darkLabel11);
             tabPage3.Controls.Add(darkLabel12);
-            tabPage3.Location=new Point(4, 22);
+            tabPage3.Location=new Point(4, 24);
             tabPage3.Name="tabPage3";
             tabPage3.Padding=new System.Windows.Forms.Padding(3);
-            tabPage3.Size=new Size(814, 339);
+            tabPage3.Size=new Size(814, 337);
             tabPage3.TabIndex=2;
             tabPage3.Text="Checkout Page";
             // 
@@ -646,13 +664,21 @@ namespace Shopee_Autobuy_Bot
             // tabPage1
             // 
             tabPage1.BackColor=SystemColors.ActiveCaption;
+            tabPage1.Controls.Add(panel5);
+            tabPage1.Controls.Add(panel1);
+            tabPage1.Controls.Add(tbVariantButtonGreyed_product);
+            tabPage1.Controls.Add(label5);
+            tabPage1.Controls.Add(tbVariantButtonClicked_product);
+            tabPage1.Controls.Add(tbVariantButton_product);
+            tabPage1.Controls.Add(label3);
+            tabPage1.Controls.Add(label4);
             tabPage1.Controls.Add(label1);
             tabPage1.Controls.Add(tbUnlisted_product);
             tabPage1.Controls.Add(darkLabel4);
             tabPage1.Controls.Add(tbSaleBanner_product);
             tabPage1.Controls.Add(tbCurrentPriceLabel_product);
             tabPage1.Controls.Add(tbQuantityTextbox_product);
-            tabPage1.Controls.Add(tbVariationFlexBox_product);
+            tabPage1.Controls.Add(tbVariantContainer_product);
             tabPage1.Controls.Add(tbBuyNowButton_product);
             tabPage1.Controls.Add(darkLabel3);
             tabPage1.Controls.Add(darkLabel2);
@@ -665,11 +691,142 @@ namespace Shopee_Autobuy_Bot
             tabPage1.TabIndex=0;
             tabPage1.Text="Product Page";
             // 
+            // panel5
+            // 
+            panel5.BackColor=SystemColors.ControlDark;
+            panel5.Controls.Add(panel6);
+            panel5.Controls.Add(panel8);
+            panel5.Location=new Point(67, 117);
+            panel5.Name="panel5";
+            panel5.Size=new Size(681, 1);
+            panel5.TabIndex=71;
+            panel5.Paint+=panel5_Paint;
+            // 
+            // panel6
+            // 
+            panel6.BackColor=SystemColors.ActiveCaptionText;
+            panel6.Controls.Add(panel7);
+            panel6.Location=new Point(0, 5);
+            panel6.Name="panel6";
+            panel6.Size=new Size(681, 1);
+            panel6.TabIndex=72;
+            // 
+            // panel7
+            // 
+            panel7.BackColor=SystemColors.ActiveCaptionText;
+            panel7.Location=new Point(0, -38);
+            panel7.Name="panel7";
+            panel7.Size=new Size(681, 1);
+            panel7.TabIndex=71;
+            // 
+            // panel8
+            // 
+            panel8.BackColor=SystemColors.ActiveCaptionText;
+            panel8.Location=new Point(0, -38);
+            panel8.Name="panel8";
+            panel8.Size=new Size(681, 1);
+            panel8.TabIndex=71;
+            // 
+            // panel1
+            // 
+            panel1.BackColor=SystemColors.ControlDark;
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panel2);
+            panel1.Location=new Point(67, 156);
+            panel1.Name="panel1";
+            panel1.Size=new Size(681, 1);
+            panel1.TabIndex=70;
+            // 
+            // panel3
+            // 
+            panel3.BackColor=SystemColors.ActiveCaptionText;
+            panel3.Controls.Add(panel4);
+            panel3.Location=new Point(0, 5);
+            panel3.Name="panel3";
+            panel3.Size=new Size(681, 1);
+            panel3.TabIndex=72;
+            // 
+            // panel4
+            // 
+            panel4.BackColor=SystemColors.ActiveCaptionText;
+            panel4.Location=new Point(0, -38);
+            panel4.Name="panel4";
+            panel4.Size=new Size(681, 1);
+            panel4.TabIndex=71;
+            // 
+            // panel2
+            // 
+            panel2.BackColor=SystemColors.ActiveCaptionText;
+            panel2.Location=new Point(0, -38);
+            panel2.Name="panel2";
+            panel2.Size=new Size(681, 1);
+            panel2.TabIndex=71;
+            // 
+            // tbVariantButtonGreyed_product
+            // 
+            tbVariantButtonGreyed_product.Location=new Point(593, 124);
+            tbVariantButtonGreyed_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbVariantButtonGreyed_product.Multiline=true;
+            tbVariantButtonGreyed_product.Name="tbVariantButtonGreyed_product";
+            tbVariantButtonGreyed_product.Size=new Size(151, 25);
+            tbVariantButtonGreyed_product.TabIndex=68;
+            // 
+            // label5
+            // 
+            label5.AutoSize=true;
+            label5.ForeColor=SystemColors.ControlText;
+            label5.Location=new Point(526, 130);
+            label5.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label5.Name="label5";
+            label5.Size=new Size(58, 13);
+            label5.TabIndex=69;
+            label5.Text="Disabled :";
+            // 
+            // tbVariantButtonClicked_product
+            // 
+            tbVariantButtonClicked_product.Location=new Point(369, 124);
+            tbVariantButtonClicked_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbVariantButtonClicked_product.Multiline=true;
+            tbVariantButtonClicked_product.Name="tbVariantButtonClicked_product";
+            tbVariantButtonClicked_product.Size=new Size(151, 25);
+            tbVariantButtonClicked_product.TabIndex=66;
+            // 
+            // tbVariantButton_product
+            // 
+            tbVariantButton_product.Location=new Point(179, 124);
+            tbVariantButton_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbVariantButton_product.Multiline=true;
+            tbVariantButton_product.Name="tbVariantButton_product";
+            tbVariantButton_product.Size=new Size(131, 25);
+            tbVariantButton_product.TabIndex=64;
+            // 
+            // label3
+            // 
+            label3.AutoSize=true;
+            label3.ForeColor=SystemColors.ControlText;
+            label3.Location=new Point(315, 130);
+            label3.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label3.Name="label3";
+            label3.Size=new Size(50, 13);
+            label3.TabIndex=67;
+            label3.Text="Clicked :";
+            // 
+            // label4
+            // 
+            label4.AutoSize=true;
+            label4.ForeColor=SystemColors.ControlText;
+            label4.Location=new Point(67, 130);
+            label4.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label4.Name="label4";
+            label4.Size=new Size(88, 13);
+            label4.TabIndex=65;
+            label4.Text="Variant button :";
+            // 
             // label1
             // 
             label1.AutoSize=true;
             label1.ForeColor=SystemColors.ControlText;
-            label1.Location=new Point(34, 269);
+            label1.Location=new Point(67, 271);
             label1.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             label1.Name="label1";
             label1.Size=new Size(84, 13);
@@ -678,18 +835,18 @@ namespace Shopee_Autobuy_Bot
             // 
             // tbUnlisted_product
             // 
-            tbUnlisted_product.Location=new Point(224, 263);
+            tbUnlisted_product.Location=new Point(179, 265);
             tbUnlisted_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             tbUnlisted_product.Multiline=true;
             tbUnlisted_product.Name="tbUnlisted_product";
-            tbUnlisted_product.Size=new Size(557, 25);
+            tbUnlisted_product.Size=new Size(566, 25);
             tbUnlisted_product.TabIndex=62;
             // 
             // darkLabel4
             // 
             darkLabel4.AutoSize=true;
             darkLabel4.ForeColor=SystemColors.ControlText;
-            darkLabel4.Location=new Point(34, 235);
+            darkLabel4.Location=new Point(67, 238);
             darkLabel4.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel4.Name="darkLabel4";
             darkLabel4.Size=new Size(74, 13);
@@ -698,54 +855,54 @@ namespace Shopee_Autobuy_Bot
             // 
             // tbSaleBanner_product
             // 
-            tbSaleBanner_product.Location=new Point(224, 229);
+            tbSaleBanner_product.Location=new Point(179, 232);
             tbSaleBanner_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             tbSaleBanner_product.Multiline=true;
             tbSaleBanner_product.Name="tbSaleBanner_product";
-            tbSaleBanner_product.Size=new Size(557, 25);
+            tbSaleBanner_product.Size=new Size(566, 25);
             tbSaleBanner_product.TabIndex=60;
             // 
             // tbCurrentPriceLabel_product
             // 
-            tbCurrentPriceLabel_product.Location=new Point(224, 193);
+            tbCurrentPriceLabel_product.Location=new Point(179, 199);
             tbCurrentPriceLabel_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             tbCurrentPriceLabel_product.Multiline=true;
             tbCurrentPriceLabel_product.Name="tbCurrentPriceLabel_product";
-            tbCurrentPriceLabel_product.Size=new Size(557, 25);
+            tbCurrentPriceLabel_product.Size=new Size(566, 25);
             tbCurrentPriceLabel_product.TabIndex=58;
             // 
             // tbQuantityTextbox_product
             // 
-            tbQuantityTextbox_product.Location=new Point(224, 157);
+            tbQuantityTextbox_product.Location=new Point(179, 166);
             tbQuantityTextbox_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             tbQuantityTextbox_product.Multiline=true;
             tbQuantityTextbox_product.Name="tbQuantityTextbox_product";
-            tbQuantityTextbox_product.Size=new Size(557, 25);
+            tbQuantityTextbox_product.Size=new Size(566, 25);
             tbQuantityTextbox_product.TabIndex=56;
             // 
-            // tbVariationFlexBox_product
+            // tbVariantContainer_product
             // 
-            tbVariationFlexBox_product.Location=new Point(224, 121);
-            tbVariationFlexBox_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
-            tbVariationFlexBox_product.Multiline=true;
-            tbVariationFlexBox_product.Name="tbVariationFlexBox_product";
-            tbVariationFlexBox_product.Size=new Size(557, 25);
-            tbVariationFlexBox_product.TabIndex=54;
+            tbVariantContainer_product.Location=new Point(179, 82);
+            tbVariantContainer_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
+            tbVariantContainer_product.Multiline=true;
+            tbVariantContainer_product.Name="tbVariantContainer_product";
+            tbVariantContainer_product.Size=new Size(566, 25);
+            tbVariantContainer_product.TabIndex=54;
             // 
             // tbBuyNowButton_product
             // 
-            tbBuyNowButton_product.Location=new Point(224, 85);
+            tbBuyNowButton_product.Location=new Point(179, 49);
             tbBuyNowButton_product.Margin=new System.Windows.Forms.Padding(2, 3, 2, 3);
             tbBuyNowButton_product.Multiline=true;
             tbBuyNowButton_product.Name="tbBuyNowButton_product";
-            tbBuyNowButton_product.Size=new Size(557, 25);
+            tbBuyNowButton_product.Size=new Size(566, 25);
             tbBuyNowButton_product.TabIndex=52;
             // 
             // darkLabel3
             // 
             darkLabel3.AutoSize=true;
             darkLabel3.ForeColor=SystemColors.ControlText;
-            darkLabel3.Location=new Point(34, 199);
+            darkLabel3.Location=new Point(67, 205);
             darkLabel3.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel3.Name="darkLabel3";
             darkLabel3.Size=new Size(108, 13);
@@ -756,7 +913,7 @@ namespace Shopee_Autobuy_Bot
             // 
             darkLabel2.AutoSize=true;
             darkLabel2.ForeColor=SystemColors.ControlText;
-            darkLabel2.Location=new Point(34, 163);
+            darkLabel2.Location=new Point(67, 172);
             darkLabel2.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel2.Name="darkLabel2";
             darkLabel2.Size=new Size(98, 13);
@@ -767,18 +924,18 @@ namespace Shopee_Autobuy_Bot
             // 
             darkLabel1.AutoSize=true;
             darkLabel1.ForeColor=SystemColors.ControlText;
-            darkLabel1.Location=new Point(34, 127);
+            darkLabel1.Location=new Point(67, 88);
             darkLabel1.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel1.Name="darkLabel1";
-            darkLabel1.Size=new Size(144, 13);
+            darkLabel1.Size=new Size(98, 13);
             darkLabel1.TabIndex=55;
-            darkLabel1.Text="Product variation flex box :";
+            darkLabel1.Text="Variant container:";
             // 
             // darkLabel14
             // 
             darkLabel14.AutoSize=true;
             darkLabel14.ForeColor=SystemColors.ControlText;
-            darkLabel14.Location=new Point(34, 91);
+            darkLabel14.Location=new Point(67, 55);
             darkLabel14.Margin=new System.Windows.Forms.Padding(2, 0, 2, 0);
             darkLabel14.Name="darkLabel14";
             darkLabel14.Size=new Size(97, 13);
@@ -1110,6 +1267,10 @@ namespace Shopee_Autobuy_Bot
             tabPage2.PerformLayout();
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel3.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             tabPage7.ResumeLayout(false);
             tabPage7.PerformLayout();
@@ -1173,7 +1334,7 @@ namespace Shopee_Autobuy_Bot
         private System.Windows.Forms.TextBox tbSaleBanner_product;
         private System.Windows.Forms.TextBox tbCurrentPriceLabel_product;
         private System.Windows.Forms.TextBox tbQuantityTextbox_product;
-        private System.Windows.Forms.TextBox tbVariationFlexBox_product;
+        private System.Windows.Forms.TextBox tbVariantContainer_product;
         private System.Windows.Forms.TextBox tbBuyNowButton_product;
         private System.Windows.Forms.Label darkLabel3;
         private System.Windows.Forms.Label darkLabel2;
@@ -1209,5 +1370,19 @@ namespace Shopee_Autobuy_Bot
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TextBox tbTotalPayment;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbVariantButtonClicked_product;
+        private System.Windows.Forms.TextBox tbVariantButton_product;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox tbVariantButtonGreyed_product;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -79,7 +79,7 @@ namespace Shopee_Autobuy_Bot
             darkLabel11=new Label();
             darkTextBoxProductLink=new TextBox();
             darkLabel10=new Label();
-            darkTextBoxVariationString=new TextBox();
+            darkTextBoxVariantString=new TextBox();
             darkLabel9=new Label();
             groupBoxTimerMode=new GroupBox();
             label2=new Label();
@@ -584,7 +584,7 @@ namespace Shopee_Autobuy_Bot
             darkSectionPanelProductDetails.Controls.Add(darkLabel11);
             darkSectionPanelProductDetails.Controls.Add(darkTextBoxProductLink);
             darkSectionPanelProductDetails.Controls.Add(darkLabel10);
-            darkSectionPanelProductDetails.Controls.Add(darkTextBoxVariationString);
+            darkSectionPanelProductDetails.Controls.Add(darkTextBoxVariantString);
             darkSectionPanelProductDetails.Controls.Add(darkLabel9);
             darkSectionPanelProductDetails.Location=new Point(357, 131);
             darkSectionPanelProductDetails.Margin=new Padding(2);
@@ -661,12 +661,12 @@ namespace Shopee_Autobuy_Bot
             // 
             // darkTextBoxVariationString
             // 
-            darkTextBoxVariationString.Location=new Point(90, 77);
-            darkTextBoxVariationString.Margin=new Padding(2, 3, 2, 3);
-            darkTextBoxVariationString.Name="darkTextBoxVariationString";
-            darkTextBoxVariationString.Size=new Size(244, 23);
-            darkTextBoxVariationString.TabIndex=18;
-            darkTextBoxVariationString.TextAlign=HorizontalAlignment.Center;
+            darkTextBoxVariantString.Location=new Point(90, 77);
+            darkTextBoxVariantString.Margin=new Padding(2, 3, 2, 3);
+            darkTextBoxVariantString.Name="darkTextBoxVariantString";
+            darkTextBoxVariantString.Size=new Size(244, 23);
+            darkTextBoxVariantString.TabIndex=18;
+            darkTextBoxVariantString.TextAlign=HorizontalAlignment.Center;
             // 
             // darkLabel9
             // 
@@ -677,7 +677,7 @@ namespace Shopee_Autobuy_Bot
             darkLabel9.Name="darkLabel9";
             darkLabel9.Size=new Size(59, 15);
             darkLabel9.TabIndex=19;
-            darkLabel9.Text="Variation :";
+            darkLabel9.Text="Variant :";
             // 
             // groupBoxTimerMode
             // 
@@ -994,7 +994,7 @@ namespace Shopee_Autobuy_Bot
         private Label darkLabel11;
         private TextBox darkTextBoxProductLink;
         private Label darkLabel10;
-        private TextBox darkTextBoxVariationString;
+        private TextBox darkTextBoxVariantString;
         private Label darkLabel9;
         private GroupBox groupBoxTimerMode;
         private CheckBox darkCheckBoxTomorrow;

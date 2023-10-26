@@ -96,7 +96,7 @@ namespace Shopee_Autobuy_Bot
             _profileService.SelectedProfile.ProductDetail.random_variant = cbRandom.Checked;
             _profileService.SelectedProfile.ProductDetail.variant_preSelected = cbVariantPreSelected.Checked;
 
-            _profileService.SelectedProfile.ProductDetail.variant = darkTextBoxVariationString.Text;
+            _profileService.SelectedProfile.ProductDetail.variant = darkTextBoxVariantString.Text;
             _profileService.SelectedProfile.ProductDetail.quantity = Convert.ToInt32(darkNumericUpDownProductQuantity.Value);
 
 
@@ -1064,10 +1064,7 @@ namespace Shopee_Autobuy_Bot
 
         private void darkSectionPanelBuyingMode_Click(object sender, EventArgs e)
         {
-            if (!Properties.Settings.Default.DontShowThisAgain)
-            {
 
-            }
         }
 
         private void saveCookiesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1162,7 +1159,7 @@ namespace Shopee_Autobuy_Bot
 
         private void cbRandom_CheckedChanged(object sender, EventArgs e)
         {
-            darkTextBoxVariationString.Enabled = (cbRandom.Checked) ? false : true;
+            darkTextBoxVariantString.Enabled = (cbRandom.Checked) ? false : true;
             cbVariantPreSelected.Enabled = (cbRandom.Checked) ? false : true;
 
         }
@@ -1198,12 +1195,12 @@ namespace Shopee_Autobuy_Bot
             if (cbVariantPreSelected.Checked)
             {
                 cbRandom.Enabled = false;
-                darkTextBoxVariationString.Enabled = false;
+                darkTextBoxVariantString.Enabled = false;
             }
             else
             {
                 cbRandom.Enabled = true;
-                darkTextBoxVariationString.Enabled = true;
+                darkTextBoxVariantString.Enabled = true;
             }
         }
 
@@ -1247,7 +1244,7 @@ namespace Shopee_Autobuy_Bot
 
                 darkTextBoxProductLink.Text = _profileService.SelectedProfile.ProductDetail.product_link;
                 cbRandom.Checked = _profileService.SelectedProfile.ProductDetail.random_variant;
-                darkTextBoxVariationString.Text = _profileService.SelectedProfile.ProductDetail.variant;
+                darkTextBoxVariantString.Text = _profileService.SelectedProfile.ProductDetail.variant;
                 darkNumericUpDownProductQuantity.Value = _profileService.SelectedProfile.ProductDetail.quantity;
 
 

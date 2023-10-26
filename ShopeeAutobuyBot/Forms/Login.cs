@@ -632,7 +632,6 @@ Where(pr => pr.ProcessName == "chromedriver"); // without '.exe'
                 catch { }
             }
 
-            Properties.Settings.Default.ID = tbId.Text;
             Properties.Settings.Default.Save();
             if (Helper.ProgramRegistration.MultipleInstances != true)
             {

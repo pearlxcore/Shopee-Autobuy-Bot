@@ -16,18 +16,31 @@ namespace Shopee_Autobuy_Bot
             InitializeComponent();
         }
 
+        private void LoadElementSettings()
+        {
+            Constants.AutoBuyInfo.ConstantElements = SettingsHelper.Element.LoadElementsFromFile();
+            if (Constants.AutoBuyInfo.ConstantElements is null)
+            {
+                MessageBox.Show("No local elements settings found. Create new settings by saving new one or choose option 'Update element from repository' in Element Editor window.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                LoadElementsToControls(Constants.AutoBuyInfo.ConstantElements);
+            }
+        }
+
         private void Element_Editor_Load(object sender, EventArgs e)
         {
-            if (AutoBuyInfo.ConstantElements is null)
-            { MessageBox.Show("No elements settings found. Create new settings by saving new one or choose option 'Update element from repository'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
-            else
-                LoadElementsToControls(AutoBuyInfo.ConstantElements);
+            LoadElementSettings();
         }
 
         private void LoadElementsToControls(ElementModel.Root element)
         {
             tbBuyNowButton_product.Text = element.ProductPage.BuyNowButton;
-            tbVariationFlexBox_product.Text = element.ProductPage.ProductVariationContainer;
+            tbVariantContainer_product.Text = element.ProductPage.ProductVariantContainer;
+            tbVariantButton_product.Text = element.ProductPage.VariantButton;
+            tbVariantButtonClicked_product.Text = element.ProductPage.VariantButtonClickedClass;
+            tbVariantButtonGreyed_product.Text = element.ProductPage.VariantButtonGreyedClass;
             tbQuantityTextbox_product.Text = element.ProductPage.QuantityCheckbox;
             tbCurrentPriceLabel_product.Text = element.ProductPage.CurrentPriceLabel;
             tbSaleBanner_product.Text = element.ProductPage.SaleBanner;
@@ -84,7 +97,10 @@ namespace Shopee_Autobuy_Bot
                 var productPage = new ElementModel.ProductPage()
                 {
                     BuyNowButton= tbBuyNowButton_product.Text,
-                    ProductVariationContainer= tbVariationFlexBox_product.Text,
+                    ProductVariantContainer= tbVariantContainer_product.Text,
+                    VariantButton = tbVariantButton_product.Text,
+                    VariantButtonClickedClass = tbVariantButtonClicked_product.Text,
+                    VariantButtonGreyedClass = tbVariantButtonGreyed_product.Text,
                     QuantityCheckbox= tbQuantityTextbox_product.Text,
                     CurrentPriceLabel= tbCurrentPriceLabel_product.Text,
                     SaleBanner= tbSaleBanner_product.Text,
@@ -214,6 +230,11 @@ namespace Shopee_Autobuy_Bot
         }
 
         private void darkTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
         }
