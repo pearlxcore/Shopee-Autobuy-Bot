@@ -235,6 +235,9 @@ namespace Shopee_Autobuy_Bot
             if (_headless)
                 chromeOptions.AddArgument("headless");
             chromeOptions.AddArgument("--disable-blink-features=AutomationControlled");
+            //chromeOptions.EnableMobileEmulation("iPhone X");
+            //chromeOptions.AddArgument("--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Mobile/15E148 Safari/604.1");
+
             chromeOptions.AddArgument($"user-data-dir={DirectoryPaths.SabProfileDirectory}{_chromeProfile}");
             chromeOptions.AddArgument($"--profile-directory=Default");
             chromeOptions.PageLoadStrategy = PageLoadStrategy.Eager;

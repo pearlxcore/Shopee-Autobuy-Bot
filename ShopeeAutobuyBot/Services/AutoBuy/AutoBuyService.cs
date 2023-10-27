@@ -180,7 +180,7 @@ namespace Shopee_Autobuy_Bot.Services
                 string pageUrl = "https://shopee.com.my/cart";
                 _seleniumService.WaitUrlContainString(pageUrl);
                 _autoBuyLoggerService.AutoBuyProcessLog("Cart page loaded.", Color.DarkGreen, true, true, true);
-                Thread.Sleep(ConfigInfo.delay_step_96);
+                //Thread.Sleep(ConfigInfo.delay_step_96);
 
                 if (_seleniumService.UrlContainString("https://shopee.com.my/buyer/login"))
                 {
@@ -212,7 +212,7 @@ namespace Shopee_Autobuy_Bot.Services
                         RedeemShopVoucher();
                     }
 
-                    Thread.Sleep(ConfigInfo.delay_step_2);
+                    //Thread.Sleep(ConfigInfo.delay_step_2);
 
                     if (buyMode == BuyingMode.Normal || buyMode == BuyingMode.Flash_Shocking || buyMode == BuyingMode.Below_Price)
                     {
@@ -252,7 +252,7 @@ namespace Shopee_Autobuy_Bot.Services
 
         private void RedeemShopVoucher()
         {
-            Thread.Sleep(ConfigInfo.delay_claim_shop_voucher);
+            //Thread.Sleep(ConfigInfo.delay_claim_shop_voucher);
 
             if (_seleniumService.ElementExists(By.XPath(ConstantElements.CartPage.ClaimShopVoucherButton)))
             {
@@ -498,7 +498,7 @@ namespace Shopee_Autobuy_Bot.Services
         {
             string strButtonBuyNow = ConstantElements.ProductPage.BuyNowButton;
             IWebElement BuyNowButton;
-            Thread.Sleep(ConfigInfo.delay_step_1);
+            //Thread.Sleep(ConfigInfo.delay_step_1);
 
             try
             {
@@ -534,88 +534,71 @@ namespace Shopee_Autobuy_Bot.Services
 
         private string SelectVariant()
         {
-            // if variant container is exists.
-            if (_seleniumService.ElementExists(By.XPath(ConstantElements.ProductPage.ProductVariantContainer)))
+            if (!_seleniumService.ElementExists(By.XPath(ConstantElements.ProductPage.ProductVariantContainer)))
+                return "";
+
+            if (_profileService.SelectedProfile.ProductDetail.variant_preSelected)
+                return "";
+
+            SetCurrentElement(nameof(ConstantElements.ProductPage.ProductVariantContainer), ConstantElements.ProductPage.ProductVariantContainer);
+
+            var variantContainers = _seleniumService._driver.FindElements(By.XPath(ConstantElements.ProductPage.ProductVariantContainer));
+            var variantNames = _profileService.SelectedProfile.ProductDetail.variant.Split('|');
+
+            if (_profileService.SelectedProfile.ProductDetail.random_variant)
             {
-                // variant pre check, ignore this method
-                if (!_profileService.SelectedProfile.ProductDetail.variant_preSelected)
+                _profileService.SelectedProfile.ProductDetail.variant = SelectRandomVariant(variantContainers);
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(_profileService.SelectedProfile.ProductDetail.variant))
+                    return "Specify product variant";
+
+                if (variantContainers.Count != variantNames.Length)
+                    return $"Product needs {variantContainers.Count} variant types";
+
+                SelectUserVariants(variantContainers, variantNames);
+            }
+
+            return "";
+        }
+
+        private string SelectRandomVariant(IReadOnlyCollection<IWebElement> variantContainers)
+        {
+            var selectedVariants = new List<string>();
+
+            foreach (var variantContainer in variantContainers)
+            {
+                foreach (var variant in variantContainer.FindElements(By.TagName("button")))
                 {
-                    SetCurrentElement(nameof(ConstantElements.ProductPage.ProductVariantContainer), ConstantElements.ProductPage.ProductVariantContainer);
-
-                    // select random variant
-                    if (_profileService.SelectedProfile.ProductDetail.random_variant)
+                    if (variant.GetAttribute("aria-disabled") == "false")
                     {
-                        // update variant into profile
-                        _profileService.SelectedProfile.ProductDetail.variant = "";
-                        IReadOnlyCollection<IWebElement> variantElements = _seleniumService._driver.FindElements(By.XPath(ConstantElements.ProductPage.ProductVariantContainer));
-                        foreach (IWebElement variantElement in variantElements)
-                        {
-                            foreach (IWebElement variant in variantElement.FindElements(By.XPath(".//*")))
-                            {
-                                if (!variant.GetAttribute("class").Equals("product-variation product-variation--disabled"))
-                                {
-                                    _seleniumService.ClickElement(variant);
-                                    _autoBuyLoggerService.AutoBuyProcessLog("Click " + variant.Text + ".", Color.DarkGreen, true, true, true);
-                                    _profileService.SelectedProfile.ProductDetail.variant += variant.Text + "|";
-                                    break;
-
-                                }
-                            }
-                        }
-
-                        // delete last '|' in variant string
-                        if (_profileService.SelectedProfile.ProductDetail.variant.EndsWith("|"))
-                        {
-                            _profileService.SelectedProfile.ProductDetail.variant = _profileService.SelectedProfile.ProductDetail.variant.Substring(0, _profileService.SelectedProfile.ProductDetail.variant.Length - 1);
-                        }
-                    }
-                    else
-                    {
-                        // variant type eg Size, Color
-                        var variantElements = _seleniumService._driver.FindElements(By.XPath(ConstantElements.ProductPage.ProductVariantContainer));
-                        var variantTypeCount = variantElements.Count;
-
-                        if (_profileService.SelectedProfile.ProductDetail.variant == string.Empty)
-                        {
-                            return "Specify product variant.";
-                        }
-
-                        // split the variation input into an array of variant names
-                        string[] variantNames = _profileService.SelectedProfile.ProductDetail.variant.Split('|');
-
-                        if (variantNames.Length != variantTypeCount)
-                        {
-                            return $"Product needs {variantTypeCount} variant types.";
-                        }
-
-                        foreach (string variantName in variantNames)
-                        {
-                            Thread.Sleep(100);
-                            string variantButtonTemplate = $"//button[contains(@class, '{ConstantElements.ProductPage.VariantButton}')  and text() = '{variantName}']";
-                            string greyedVariantButtonTemplate = $"//button[contains(@class, '{ConstantElements.ProductPage.VariantButtonGreyedClass}')  and text() = '{variantName}']";
-
-                            bool greyedButtonExist = _seleniumService.ElementExists(By.XPath(greyedVariantButtonTemplate));
-                            bool variantButtonExist = _seleniumService.ElementExists(By.XPath(variantButtonTemplate));
-
-                            if (!variantButtonExist || greyedButtonExist)
-                            {
-                                return $"'{variantName}' not available.";
-                            }
-
-                            var variantElement = _seleniumService.GetElement(By.XPath(variantButtonTemplate));
-                            if (!variantElement.GetAttribute("class").Contains($"{ConstantElements.ProductPage.VariantButtonClickedClass}")) // if variant button not clicked
-                            {
-                                _seleniumService.ClickElement(variantElement);
-                                var variantName_ = variantElement.Text;
-                                _autoBuyLoggerService.AutoBuyProcessLog("Click " + variantName_ + ".", Color.DarkGreen, true, true, true);
-                            }
-                        }
-
-                        // all variations are available, continue with other logic here
+                        _seleniumService.ClickElement(variant);
+                        _autoBuyLoggerService.AutoBuyProcessLog("Click " + variant.Text + ".", Color.DarkGreen, true, true, true);
+                        selectedVariants.Add(variant.Text);
+                        break;
                     }
                 }
             }
-            return "";
+
+            return string.Join("|", selectedVariants);
+        }
+
+        private void SelectUserVariants(IReadOnlyCollection<IWebElement> variantContainers, string[] variantNames)
+        {
+            var num = 0;
+            foreach (var variantContainer in variantContainers)
+            {
+                foreach (var variant in variantContainer.FindElements(By.TagName("button"))
+                    .Where(v => variantNames.Contains(v.Text) && v.GetAttribute("aria-disabled") == "false"))
+                {
+                    _seleniumService.ClickElement(variant);
+                    _autoBuyLoggerService.AutoBuyProcessLog("Click " + variant.Text + ".", Color.DarkGreen, true, true, true);
+                    num++;
+                    if (num == variantNames.Length)
+                        break;
+                }
+            }
         }
 
         private void CheckoutPage()
@@ -869,7 +852,7 @@ namespace Shopee_Autobuy_Bot.Services
         private void PlaceOrder()
         {
             _seleniumService.WaitUrlContainString("checkout");
-            Thread.Sleep(ConfigInfo.delay_step_5);
+            //Thread.Sleep(ConfigInfo.delay_step_5);
 
             // Redeem coin if desired
             if (_profileService.SelectedProfile.Voucher_Coin.redeem_coin)
@@ -883,7 +866,7 @@ namespace Shopee_Autobuy_Bot.Services
                 RedeemShopeeVoucher();
             }
 
-            Thread.Sleep(ConfigInfo.delay_step_5);
+            //Thread.Sleep(ConfigInfo.delay_step_5);
 
             if (!_profileService.SelectedProfile.BotSettings.test_mode)
             {
@@ -939,7 +922,7 @@ namespace Shopee_Autobuy_Bot.Services
                 .ClickElement();
 
             _autoBuyLoggerService.AutoBuyProcessLog("Click 'Select Voucher'.", Color.DarkGreen, true, true, true);
-            Thread.Sleep(ConfigInfo.delay_any_shopee_voucher);
+            //Thread.Sleep(ConfigInfo.delay_any_shopee_voucher);
 
             //_seleniumService.WaitElementClickable(By.XPath(ConstantElements.CheckoutPage.ShopeeVoucherContainer));
             //_seleniumService.WaitElementVisible(By.XPath(ConstantElements.CheckoutPage.ShopeeVoucherContainer));
