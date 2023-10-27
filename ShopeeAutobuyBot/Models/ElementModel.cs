@@ -14,6 +14,9 @@
         {
             public string BuyNowButton { get; set; }
             public string ProductVariantContainer { get; set; }
+            public string VariantButton { get; set; }
+            public string VariantButtonClickedClass { get; set; }
+            public string VariantButtonGreyedClass { get; set; }
             public string QuantityCheckbox { get; set; }
             public string CurrentPriceLabel { get; set; }
             public string SaleBanner { get; set; }

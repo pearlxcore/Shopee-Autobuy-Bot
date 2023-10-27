@@ -38,7 +38,9 @@ namespace Shopee_Autobuy_Bot
         {
             tbBuyNowButton_product.Text = element.ProductPage.BuyNowButton;
             tbVariantContainer_product.Text = element.ProductPage.ProductVariantContainer;
-
+            tbVariantButton_product.Text = element.ProductPage.VariantButton;
+            tbVariantButtonClicked_product.Text = element.ProductPage.VariantButtonClickedClass;
+            tbVariantButtonGreyed_product.Text = element.ProductPage.VariantButtonGreyedClass;
             tbQuantityTextbox_product.Text = element.ProductPage.QuantityCheckbox;
             tbCurrentPriceLabel_product.Text = element.ProductPage.CurrentPriceLabel;
             tbSaleBanner_product.Text = element.ProductPage.SaleBanner;
@@ -96,6 +98,9 @@ namespace Shopee_Autobuy_Bot
                 {
                     BuyNowButton= tbBuyNowButton_product.Text,
                     ProductVariantContainer= tbVariantContainer_product.Text,
+                    VariantButton = tbVariantButton_product.Text,
+                    VariantButtonClickedClass = tbVariantButtonClicked_product.Text,
+                    VariantButtonGreyedClass = tbVariantButtonGreyed_product.Text,
                     QuantityCheckbox= tbQuantityTextbox_product.Text,
                     CurrentPriceLabel= tbCurrentPriceLabel_product.Text,
                     SaleBanner= tbSaleBanner_product.Text,
