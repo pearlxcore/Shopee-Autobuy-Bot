@@ -557,7 +557,7 @@ namespace Shopee_Autobuy_Bot.Services
                 if (variantContainers.Count != variantNames.Length)
                     return $"Product needs {variantContainers.Count} variant types";
 
-                SelectUserVariants(variantContainers, variantNames);
+                SelectUserVariant(variantContainers, variantNames);
             }
 
             return "";
@@ -584,7 +584,7 @@ namespace Shopee_Autobuy_Bot.Services
             return string.Join("|", selectedVariants);
         }
 
-        private void SelectUserVariants(IReadOnlyCollection<IWebElement> variantContainers, string[] variantNames)
+        private void SelectUserVariant(IReadOnlyCollection<IWebElement> variantContainers, string[] variantNames)
         {
             var num = 0;
             foreach (var variantContainer in variantContainers)
