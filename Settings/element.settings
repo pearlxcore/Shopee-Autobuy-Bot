@@ -1,7 +1,7 @@
 {
   "ProductPage": {
     "BuyNowButton": "//button[contains(@class, 'btn btn-solid-primary btn--l') and contains(text(), 'buy now')]",
-    "ProductVariationContainer": "//div[contains(@class, 'flex items-center bR6mEk')]",
+    "ProductVariantContainer": "//div[contains(@class, 'flex items-center bR6mEk')]",
     "QuantityCheckbox": "//input[contains(@class, 'xNxl-t VWjjde')]",
     "CurrentPriceLabel": "//div[contains(@class, 'pqTWkA')]",
     "SaleBanner": "//div[contains(@class, 'O4v6r9')]",
@@ -10,13 +10,13 @@
   "CartPage": {
     "CheckOutButton": "//*[@id=\"main\"]/div/div[2]/div/div/div[3]/section/div[7]/button[4]/span",
     "SelectAllCheckbox": "//*[@id=\"main\"]/div/div[2]/div/div/div[3]/section/div[7]/div[1]/label/div",
-    "CartTotalPriceLabel": "//div[contains(@class, 'WC0us+)]",
+    "CartTotalPriceLabel": "//div[contains(@class, 'WC0us+')]",
     "ClaimShopVoucherButton": "//button[contains(@class, 'btn') and contains(text(), 'Claim')]",
     "CartEmptyLabel": "//div[contains(@class, 'xkMOGx') and contains(text(), 'Your shopping cart is empty')]",
     "SelectAllLabel": "//button[contains(@class, 'iGlIrs clear-btn-style')]"
   },
   "CheckoutPage": {
-    "PlaceOrderButton": "//*[@id=\"main\"]/div/div[2]/div/div[2]/div[4]/div[2]/div[6]/button",
+    "PlaceOrderButton": "//button[contains(@class, 'stardust-button') and contains(text(), 'Place Order')]",
     "SelectShopeeVoucherButton": "//*[@id=\"main\"]/div/div[2]/div/div[2]/div[3]/div[1]/div[2]/button",
     "ShopeeVoucherContainer": "//div[contains(@class, 'qa9DDd U0bjBP VK0V4t')]",
     "ShopeeVoucherOkButton": "//button[contains(@class, 'btn btn-solid-primary btn--s btn--inline e5P6KA')]",
