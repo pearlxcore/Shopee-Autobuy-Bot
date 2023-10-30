@@ -161,6 +161,8 @@ namespace Shopee_Autobuy_Bot.Services
                 {
                     if (methodName == "ProductPage")
                         ProductPage(_profileService.SelectedProfile.BuyingMode.mode);
+                    if (methodName == "BuyProduct")
+                        BuyProduct(_profileService.SelectedProfile.BuyingMode.mode);
                     if (methodName == "CartPage")
                         CartPage(_profileService.SelectedProfile.BuyingMode.mode);
                     if (methodName == "CheckoutPage")
@@ -457,42 +459,44 @@ namespace Shopee_Autobuy_Bot.Services
             {
                 _autoBuyLoggerService.AutoBuyProcessLog("Product is not available.", Color.IndianRed, true, true, true);
                 RefreshPageAndLoopAutobuy("ProductPage", new object[] { buyMode }, _profileService.SelectedProfile.ProductDetail.product_link, true);
-                return;
             }
-
-
-
-            var errorMessage = SelectVariant();
-            if (errorMessage.Length > 0)
+            else
             {
-                _autoBuyLoggerService.AutoBuyProcessLog(errorMessage, Color.IndianRed, true, true, true);
-                if (errorMessage.Contains("Product only need") || errorMessage.Contains("Product need 2"))
-                    return;
-                RefreshPageAndLoopAutobuy("ProductPage", new object[] { buyMode }, _profileService.SelectedProfile.ProductDetail.product_link, true);
-                return;
+                var errorMessage = SelectVariant();
+                if (errorMessage.Length > 0)
+                {
+                    _autoBuyLoggerService.AutoBuyProcessLog(errorMessage, Color.IndianRed, true, true, true);
+                    if (errorMessage.Contains("Product only need") || errorMessage.Contains("Product need 2"))
+                    {
+                        RefreshPageAndLoopAutobuy("ProductPage", new object[] { buyMode }, _profileService.SelectedProfile.ProductDetail.product_link, true);
+                    }
+                }
+                else
+                {
+                    bool unlisted = ProductUnlisted();
+                    if (unlisted)
+                    {
+                        _autoBuyLoggerService.AutoBuyProcessLog("Product unlisted.", Color.IndianRed, true, true, true);
+                        RefreshPageAndLoopAutobuy(GetCurrentMethodName(), new object[] { buyMode }, _profileService.SelectedProfile.ProductDetail.product_link, true);
+                    }
+                    else if (buyMode == BuyingMode.Below_Price && !IsProductPriceSuitable())
+                    {
+                        // Refresh the page since the price hasn't changed yet
+                        _autoBuyLoggerService.AutoBuyProcessLog("Price not match.", Color.IndianRed, true, true, true);
+                        RefreshPageAndLoopAutobuy(GetCurrentMethodName(), new object[] { buyMode }, _profileService.SelectedProfile.ProductDetail.product_link, true);
+                    }
+                    else
+                    {
+                        CheckOutStartTime = DateTime.Now;
+                        _autoBuyLoggerService.AutoBuyProcessLog($"Checkout started at {CheckOutStartTime}", Color.Black, true, true, true);
+                        IncreaseQuantity();
+                        ClickBuyNowButton();
+                        CartPage(buyMode);
+                    }
+                }
             }
-
-            bool unlisted = ProductUnlisted();
-            if (unlisted)
-            {
-                _autoBuyLoggerService.AutoBuyProcessLog("Product unlisted.", Color.IndianRed, true, true, true);
-                return;
-            }
-
-            if (buyMode == BuyingMode.Below_Price && !IsProductPriceSuitable())
-            {
-                // Refresh the page since the price hasn't changed yet
-                RefreshPageAndLoopAutobuy(GetCurrentMethodName(), new object[] { buyMode }, _profileService.SelectedProfile.ProductDetail.product_link, true);
-                return;
-            }
-
-            CheckOutStartTime = DateTime.Now;
-            _autoBuyLoggerService.AutoBuyProcessLog($"Checkout started at {CheckOutStartTime}", Color.Black, true, true, true);
-            IncreaseQuantity();
-            ClickBuyNowButton();
-
-            CartPage(buyMode);
         }
+
 
         private bool IsProductAvailable()
         {

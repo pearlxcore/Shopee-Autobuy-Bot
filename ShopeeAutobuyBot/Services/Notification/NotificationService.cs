@@ -1,4 +1,5 @@
-﻿using Shopee_Autobuy_Bot.Services.Logger;
+﻿using Shopee_Autobuy_Bot.Constants;
+using Shopee_Autobuy_Bot.Services.Logger;
 using Shopee_Autobuy_Bot.Services.Profile;
 using System;
 using System.Drawing;
@@ -44,12 +45,23 @@ namespace Shopee_Autobuy_Bot.Services.Notification
                     variantMode = (profileService.SelectedProfile.ProductDetail.variant_preSelected) ? "(Pre selected)" : "";
                     variantMode = (profileService.SelectedProfile.ProductDetail.random_variant) ? "(Random)" : "";
 
-                    string message = $@"Account  : {sabAccount}
-Product Link : {profileService.SelectedProfile.ProductDetail.product_link}
+                    string message = "";
+
+                    if (profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Cart || profileService.SelectedProfile.BuyingMode.mode == BuyingMode.Below_Price_Cart)
+                    {
+                        message = $@"Account  : {sabAccount}
+Mode : {profileService.SelectedProfile.BuyingMode.mode}
+Total Price  : {orderPrice}
+Chekout Time : {checkoutTime}";
+                    }
+                    else
+                    {
+                        message = $@"Account  : {sabAccount}
 Variant  : {profileService.SelectedProfile.ProductDetail.variant} {variantMode}
 Mode : {profileService.SelectedProfile.BuyingMode.mode}
 Total Price  : {orderPrice}
 Chekout Time : {checkoutTime}";
+                    }
 
                     string urlString = "https://api.telegram.org/bot{0}/sendMessage?chat_id={1}&text={2}";
                     string apiToken = profileService.SelectedProfile.TelegramSettings.api_token;
