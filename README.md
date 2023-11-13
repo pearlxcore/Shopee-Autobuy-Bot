@@ -2,7 +2,7 @@
 
 **For educational purpose only. Use at your own risk.**
 
-Shopee Autobuy Bot is an automation program designed to assist users with purchasing products on the Shopee website, utilizing the [Selenium Framework](https://www.selenium.dev/) for the automation process. Initially a subscription-based program, I have now decided to make this project open source. The program will use an external API for configuration and program updates. Download the compiled program [here](https://github.com/pearlxcore/ShopeeAutobuyBot/releases). Suggestion or bug report [here](https://github.com/pearlxcore/ShopeeAutobuyBot/issues).
+Shopee Autobuy Bot is an automation program designed to assist users with purchasing products on the Shopee website, utilizing the [Selenium Framework](https://www.selenium.dev/) for the automation process. Download the compiled program [here](https://github.com/pearlxcore/ShopeeAutobuyBot/releases). Suggestion or bug report [here](https://github.com/pearlxcore/ShopeeAutobuyBot/issues).
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R524N7X)  
 
