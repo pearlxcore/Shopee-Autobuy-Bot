@@ -1,4 +1,4 @@
-﻿using OpenQA.Selenium;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
@@ -59,9 +59,9 @@ namespace Shopee_Autobuy_Bot
 
         public SeleniumHandler GoToUrl(string url)
         {
-            _driver.Navigate().GoToUrl(url);
             return this;
         }
+
 
         public SeleniumHandler RefreshPage()
         {
