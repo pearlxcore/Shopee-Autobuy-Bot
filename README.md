@@ -1,4 +1,6 @@
-### Shopee Autobuy Bot (Malaysia)
+### Shopee Autobuy Bot (Malaysia) ** No longer working **
+
+
 
 [![Github All Releases](https://img.shields.io/github/downloads/pearlxcore/Shopee-Autobuy-Bot/total.svg)]()
 
