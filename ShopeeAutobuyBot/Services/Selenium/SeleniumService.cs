@@ -1,4 +1,4 @@
-﻿using OpenQA.Selenium;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
@@ -6,6 +6,7 @@ using Shopee_Autobuy_Bot.Constants;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 
 namespace Shopee_Autobuy_Bot
 {
@@ -53,7 +54,28 @@ namespace Shopee_Autobuy_Bot
 
         public SeleniumService GoToUrl(string url)
         {
+            // Open a new tab using JavaScript
+            IJavaScriptExecutor js = (IJavaScriptExecutor)_driver;
+            js.ExecuteScript("window.open();");
+            // Sleep for 1 second (adjust as needed)
+            Thread.Sleep(1000);
+
+
+            // Switch to the new tab
+            var windowHandles = _driver.WindowHandles;
+            _driver.SwitchTo().Window(windowHandles[^1]);
+            // Sleep for 1 second (adjust as needed)
+            Thread.Sleep(1000);
+
+
+
+            // Navigate to the specified URL in the new tab
             _driver.Navigate().GoToUrl(url);
+            // Sleep for 1 second (adjust as needed)
+            Thread.Sleep(1000);
+
+
+
             return this;
         }
 
