@@ -22,19 +22,12 @@ namespace Shopee_Autobuy_Bot
         private string sslM;
 
         public Login()
-        {
+{
+    connectionString = Environment.GetEnvironmentVariable("SHOPEE_DB_CONNECTION_STRING")
+        ?? throw new InvalidOperationException("SHOPEE_DB_CONNECTION_STRING is not configured.");
 
-            server = "202.71.110.6";
-            database = "pearlxc1_db";
-            user = "pearlxc1_user";
-            password = "aGI6joeg!,]4";
-            port = "3306";
-
-            connectionString = "SERVER=143.198.217.144;PORT=3306;DATABASE=pearlxc1_db;UID=pearlxc1_user";
-            //connectionString = String.Format("server={0};port={1};user id={2}; password={3}; database={4}", server, port, user, password, database);
-
-            connection = new MySqlConnection(connectionString);
-        }
+    connection = new MySqlConnection(connectionString);
+}
 
         public void con()
         {
